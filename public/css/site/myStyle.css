@@ -1,0 +1,14 @@
+
+/*  Effect And Animation Div Elements */
+.div-transition:hover {
+
+transform : scale(0.9) ;
+}
+
+.div-transition {
+
+transition : transform .5s ;
+}
+
+
+/*  Effect And Animation Div Elements */
