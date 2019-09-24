@@ -1,135 +1,121 @@
-<@extends('admin.Layouts.layout_main')
+<@extends('site.Layouts.layout_main')
 
 
 @section('content')
 
+
+
+<!-- Body Card ( Main) -->
+
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">ایجاد دسته بندی </h4>
-                  <p class="card-category"> </p>
-                </div>
 
-                 <!-- form Section -->
 
-         <div class="card-body">
+          <div class="col-md-12">
+            <div class="card shadow border-0">
+              <div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h4>ویرایش دسته بندی</h4></div>
+                
+              </div>
 
-        <form method="POST" action="{{route('admin.category.update',$category['pk_categories'])}}" enctype="multipart/form-data" >
+              <div class="card-body px-lg-5 py-lg-5">
+                
+              
+   <form method="POST" action="{{route('admin.category.update',$category['pk_categories'])}}" enctype="multipart/form-data" style="height:270px;">
         @csrf
-             <div class="row">
 
-                    
+     <div class="row">   
 
-                   <div class="col-md-4">
-                   <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">نام</label>
-                            <input value="{{ $category['name'] }}" name="name" type="text" class="form-control">
-                          
+        <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control"value="{{ $category['name'] }}" name="name" placeholder="نام " type="text">
                     </div>
+                  </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+
+          
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $category['desc'] }}" name="desc" class="form-control" placeholder="توضیحات" type="text">
                     </div>
+                  </div>
 
-                 <div class="col-md-4">
-                     <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">توضیحات</label>
-                            <input value="{{ $category['desc'] }}" name="desc"  type="text" class="form-control">
-                          
-                           </div>
-                     </div>
+        </div>
 
+  <div class="col-md-4">
 
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $category['link'] }}" name="link" class="form-control" placeholder="لینک" type="text">
+                    </div>
+                  </div>
 
+        </div>
 
-          </div>
-
-          <!-- row -->
-
-          <div class="row">
-
-<div class="col-md-4">
-    <div class="form-group bmd-form-group">
-      <label class="bmd-label-floating">لینک</label>
-      <input value="{{ $category['link'] }}" name="link"  type="text" class="form-control">
-    
-     </div>
-</div>
+    </div>
 
 
-<div class="col-md-3">
-                     <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
 
-                            <div class="row">
 
-                                <div class="col-md-4">
-                                <label class="bmd-label-floating">نوع </label>
-                                </div>
+   <!-- Select Box -->
+   <div class="col-md-4">
+        <div class="row">
 
-                                <div class="col-md-8">
 
-                                  <select name="type" class="dropdown-toggle btn btn-primary btn-round btn-block">
-                                  
-                                  <option class="" value="محصول" 
+                        <div class="col-md-2">
+                        <span>نوع</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="type" class="form-control">
+                                  <option  value="محصول"
                                   @if($category->type == "محصول" )
                                   selected="selected"
-                                  @endif >محصول </option>
-                                  <option class="" value="پست" 
+                                  @endif
+                                  >محصول </option>
+                                  <option value="پست"
                                   @if($category->type == "پست"  )
                                   selected="selected"
-                                  @endif >پست </option>
-                                 
+                                  @endif>پست </option>
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
                      </div>
-                </div>
-
-
-                          <div class="col-md-3">
-                          <div class="container-fluid">    
-                          <div class="form-group bmd-form-group">
-                          <div class="row">
-
-                          
-                           </div>
-                           </div>
-                           </div>
-                           </div>
-            </div>
-
-
-</div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
 
 
 
-        
-
-                  <!-- End data Section Form ; Below is blank row--> 
-                  <div class="row text-center" style="padding-top:50px">
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                         
-
-                    <div class="clearfix">
-
-                    <button type="submit" class="btn btn-primary pull-right">ثبت درخواست</button>
-                    </div>
-
-
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- section operation form -->
                 
-                  </form>
-                <!-- End Tag Form Section -->
+  
+                
+                  <div class="text-center" style="padding-top:20px">
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
 
 
      <!-- Body Card ( Main) -->
