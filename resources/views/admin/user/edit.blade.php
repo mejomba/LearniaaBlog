@@ -1,157 +1,120 @@
-<@extends('admin.Layouts.layout_main')
+<@extends('site.Layouts.layout_main')
 
 
 @section('content')
 
+<!-- Body Card ( Main) -->
+
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">ایجاد کاربر </h4>
-                  <p class="card-category"> </p>
-                </div>
 
-                 <!-- form Section -->
 
-         <div class="card-body">
+          <div class="col-md-12">
+            <div class="card shadow border-0">
+              <div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h4>ویرایش کاربر </h4></div>
+                
+              </div>
 
-        <form method="POST" action="{{route('admin.user.update',$user['pk_users'])}}" enctype="multipart/form-data" >
+              <div class="card-body px-lg-5 py-lg-5">
+                
+              
+   <form method="POST" action="{{route('admin.user.update',$user['pk_users'])}}" enctype="multipart/form-data" style="min-height:270px;">
         @csrf
-             <div class="row">
 
-                      <div class="col-md-4">
-                          <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">نام کاربر</label>
-                            <input  value="{{ $user['name'] }}" name="name" type="text" class="form-control">
-                          
-                           </div>
+     <div class="row">   
+
+        <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
                       </div>
-
-                   <div class="col-md-4">
-                   <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating"> شماره موبایل</label>
-                            <input  value="{{ $user['mobile'] }}" name="mobile"   type="text" class="form-control">
-                          
+                      <input class="form-control" value="{{ $user['name'] }}" name="name" placeholder="نام کاربر" type="text">
                     </div>
+                  </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input  name="mobile" value="{{ $user['mobile'] }}"  class="form-control" placeholder="شماره موبایل" type="text">
                     </div>
+                  </div>
 
-                 <div class="col-md-4">
-                     <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating"> گذرواژه</label>
-                            <input  name="password" type="text" class="form-control">
-                          
-                           </div>
-                     </div>
+        </div>
 
-
-
-
-          </div>
-
-          <!-- row -->
-
-          <div class="row">
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="password"  class="form-control" placeholder="رمز عبور" type="text">
+                    </div>
+                  </div>
+        </div>
 
 
+    <!-- Select Box -->
+    <div class="col-md-4">
+        <div class="row">
 
 
-<div class="col-md-3">
-                     <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                <label class="bmd-label-floating">نوع </label>
-                                </div>
-
-                                <div class="col-md-8">
-
-                                  <select name="type" class="dropdown-toggle btn btn-primary btn-round btn-block">
-                                 
-                                  <option class="" value="مدیر"
-                                  @if($user->type =="مدیر" )
+                        <div class="col-md-2">
+                        <span>نوع</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="type" class="form-control">
+                                  <option value="مدیر"  @if($user->type =="مدیر" )
                                   selected="selected"
                                   @endif >مدیر </option>
-                                  <option class="" value="نویسنده"
-                                  @if($user->type == "نویسنده" )
+                                  <option value="نویسنده" @if($user->type == "نویسنده" )
                                   selected="selected"
-                                  @endif >نویسنده </option>
-                                  <option class="" value="کاربر"
-                                  @if($user->type == "کاربر" )
+                                  @endif>نویسنده </option>
+                                  <option value="کاربر"  @if($user->type == "کاربر" )
                                   selected="selected"
-                                  @endif >کاربر </option>
-
+                                  @endif>کاربر </option>
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
                      </div>
-                </div>
-
-
-                <div class="col-md-3">
-                <div class="container-fluid">    
-                          <div class="form-group bmd-form-group">
-                          <div class="row">
-
-                          
-
-                            
-                           </div>
-                           </div>
-                           </div>
-                           </div>
-               </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
 
 
 
-                  <!-- End data Section Form ; Below is blank row--> 
-                  <div class="row text-center" style="padding-top:50px">
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                         
 
-                    <div class="clearfix">
+    </div>
 
-                    <button type="submit" class="btn btn-primary pull-right">ثبت درخواست</button>
-                    </div>
-
-
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- section operation form -->
                 
-                  </form>
-                <!-- End Tag Form Section -->
+  
+                
+                  <div class="text-center" style="padding-top:20px">
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 
 
      <!-- Body Card ( Main) -->
      </div>
-
 
 
 
@@ -163,6 +126,7 @@
           </div>
         </div>
         </div>
+
 
 
 @endsection

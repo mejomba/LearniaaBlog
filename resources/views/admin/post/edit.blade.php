@@ -1,254 +1,229 @@
-<@extends('admin.Layouts.layout_main')
+<@extends('site.Layouts.layout_main')
 
 
 @section('content')
 
+
+
+<!-- Body Card ( Main) -->
+
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">ایجاد پست </h4>
-                  <p class="card-category"> </p>
-                </div>
 
-                 <!-- form Section -->
 
-         <div class="card-body" style="padding-top:15px">
+          <div class="col-md-12">
+            <div class="card shadow border-0">
+              <div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h4>ویرایش پست</h4></div>
+                
+              </div>
 
-        <form method="POST" action="{{ route('admin.post.update', $post['pk_post']) }}" enctype="multipart/form-data" >
+              <div class="card-body px-lg-5 py-lg-5">
+                
+              
+   <form method="POST"  action="{{ route('admin.post.update', $post['pk_post']) }}" enctype="multipart/form-data" style="min-height:270px;">
         @csrf
-             <div class="row">
 
-                      <div class="col-md-4">
-                          <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">عنوان</label>
-                            <input type="text" name="title" value="{{ $post['title'] }}" class="form-control">
-                          
-                           </div>
+     <div class="row">   
+
+        <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
                       </div>
+                      <input class="form-control" value="{{ $post['title'] }}" name="title" placeholder="عنوان " type="text">
+                    </div>
+                  </div>
 
-                   <div class="col-md-4">
-                   <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
-
-                        <div class="row">
-                        <label class="bmd-label-floating">تگ ها</label>
-                        </div>  
+        </div>
 
 
-                            <div class="row" style="padding-top:30px">
+      
+        <!-- Check Box -->
+        <div class="col-md-4">
+        <div class="row">
 
-                            @foreach($tags as $tag)
-                                <div class="col-md-2">
-                                <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" 
-                                  name="pk_tags[]" type="checkbox" 
-                                  value="{{ $tag->pk_tags }}"
-                                  
-                             @if(in_array( $tag->pk_tags , json_decode($post->pk_tags,false) ))
+
+                        <div class="col-md-2">
+                        <span>تگ ها</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    @foreach($tags as $tag)                                
+                                <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
+                              <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
+                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}"
+                              @if(in_array( $tag->pk_tags , json_decode($post->pk_tags,false) ))
                               {
                                 checked="checked"
                               }
-                              @endif >
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              @endif>                            
+                              <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }}</label>
+                            </div>
+                            @endforeach 
+                                  
+
+                                  </div>
                                 </div>
-
-                                <div class="col-md-4">
-
-                                {{ $tag->fa_name }}
-                                
-                                </div>
-                                @endforeach   
-                          
-
-                          </div>
-
-                        </div>
                      </div>
-                </div>
+            
+   
+        </div>
+        </div>
+         <!-- Check Box -->
+           
+
+            <!-- Select Box -->
+            <div class="col-md-4">
+        <div class="row">
 
 
-                 <div class="col-md-4">
-                     <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                <label class="bmd-label-floating">دسته بندی</label>
-                                </div>
-
-                                <div class="col-md-8">
-
-                                  <select name="pk_categories" class="dropdown-toggle btn btn-primary btn-round btn-block">
+                        <div class="col-md-2">
+                        <span>دسته بندی</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="pk_categories" class="form-control">
                                   @foreach ($categories as $category)
-                                  <option class="" value="{{ $category->pk_categories }}"
+                                  <option value="{{ $category->pk_categories }}"
                                   @if($post->pk_categories == $category->pk_categories )
                                   selected="selected"
-                                  @endif
-                                  >
-                                  {{ $category->name }}</option>
-                                 
-                                  @endforeach
+                                  @endif>{{ $category->name }}</option>
+                                  @endforeach 
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
                      </div>
-                </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+
+             <!-- Select Box -->
+        <div class="col-md-4">
+        <div class="row">
 
 
-
-                <div class="col-md-3">
-                     <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                <label class="bmd-label-floating">وضعیت </label>
-                                </div>
-
-                                <div class="col-md-8">
-
-                                  <select name="status" class="dropdown-toggle btn btn-primary btn-round btn-block">
-                                  
-                                  <option class="" value="انتشار"
-                                  @if($post->status == "انتشار" )
+                        <div class="col-md-3">
+                        <span>وضعیت</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="status" class="form-control">
+                                  <option value="انتشار" @if($post->status == "انتشار" )
                                   selected="selected"
                                   @endif
                                    >انتشار</option>
-                                  <option class="" value="پیش نویس"
-                                  @if($post->status == "پیش نویس" )
+                                  <option value="پیش نویس"  @if($post->status == "پیش نویس" )
                                   selected="selected"
                                   @endif
                                   >پیش نویس</option>
-                                 
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
                      </div>
-                </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+
+         
+             <!-- Select Box -->
+        <div class="col-md-4">
+        <div class="row">
 
 
-                <div class="col-md-3">
-                <div class="container-fluid">    
-                          <div class="form-group bmd-form-group">
-                          <div class="row">
-
-                          <div class="col-md-6">
-                                <label class="bmd-label-floating">تصویر شاخص </label>
+                        <div class="col-md-2">
+                        <span>تصویر </span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="pic_content" name="pic_content">
+                                  </div>
                                 </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+           
+           
 
-                                <div class="col-md-6">
-                            <span  class="btn btn-primary btn-round btn-file btn-block">
-                            <input  type="file" id="pic_content" name="pic_content">
-                            </span>
-                           </div>
-                           </div>
-                           </div>
-                           </div>
-               </div>
-               <div class="col-md-6">
-               <div class="form-group bmd-form-group">
+          <!--                json process            -->  
+          @php  $json = json_decode($post->extras,false)  @endphp                       
 
-               </div>
-               </div>
 
-               
-                                  
-                <!--                json process            -->  
-                @php  $json = json_decode($post->extras,false)  @endphp    
 
-          <div class="container-fluid" style="padding-top:27px">
-          <div class="row">
+        <div class="col-md-4">
 
-               <div class="col-md-3">
-               
-                           <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">مدت زمان مطالعه</label>
-                            <input type="text" value="{{$json->readtime ?? '' }}" name="readtime" class="form-control">
-                           </div>
-               </div>
-
-               <div class="col-md-3">
-               
-                         <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">تاریخ ایجاد</label>
-                            <input type="text" value="{{$json->create_at ?? '' }}" name="create_at" class="form-control">
-                          
-                           </div>
-
-               </div>
-
-               <div class="col-md-3">
-
-                    <div class="form-group bmd-form-group">
-                                  <label class="bmd-label-floating">توضیح کوتاه</label>
-                                  <input type="text" value="{{$json->desc_short ?? '' }}" name="desc_short" class="form-control">
-                                
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="readtime" value="{{$json->readtime ?? '' }}" class="form-control" placeholder="مدت زمان مطالعه " type="text">
                     </div>
-               
-               </div>
+                  </div>
+
+        </div>
+
+     
+        <div class="col-md-4">
+            <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <input name="create_at" value="{{$json->create_at ?? '' }}" class="form-control" placeholder="تاریخ ایجاد " type="text">
+                        </div>
+                      </div>
+
+        </div>
 
 
-               <div class="col-md-3">
-               
-               </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <input name="desc_short" value="{{$json->desc_short ?? '' }}" class="form-control" placeholder="توضیح کوتاه" type="text">
+                        </div>
+                      </div>
 
-               </div>
-               </div>    
-               
+            </div>
+        </div>
 
 
-             
-               <div class="col-md-12">
-                          <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating" style="padding-right:10px">محتوا </label>
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                  
 
+            </div>
+        </div>
+       
+       
+
+        <div class="col-md-12">
+               <span> محتوا</span>  
                             <!-- ckeditor -->
                             <textarea name="content" class="form-control" id="article-ckeditor">{{$post->content}}</textarea>
                           
-                          
-                    <!--      
-                            <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script> 
-                            <script src="https://cdn.ckeditor.com/ckfinder/ckfinder.js"></script>
-                            <script>
-                          import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-
-                            ClassicEditor
-                                .create( document.querySelector( '#article-ckeditor' ), {
-                                language: {
-                                    // The UI will be English.
-                                    ui: 'en',
-
-                                    // But the content will be edited in Arabic.
-                                    content: 'ar'
-                                }
-                                ckfinder: {
-                                    uploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}"
-                                }
-                            } )
-                                .catch( error => {
-                                    console.error( error );
-                                } );
-                        </script>
-
-                        -->
-
                             <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                             <script>
                                 CKEDITOR.replace( 'article-ckeditor' , {
@@ -259,39 +234,31 @@
                             </script> 
                             <!-- ckeditor -->
 
-                           </div>
-               </div>
-
-
-              
-
-
-
-
-                </div>
-
-
-                  <!-- End data Section Form ; Below is blank row--> 
-                    <div class="row text-center" style="padding-top:50px">
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
                          
-
-                    <div class="clearfix">
-
-                    <button type="submit" class="btn btn-primary pull-right">ثبت درخواست</button>
-                    </div>
+                     </div>
 
 
 
-                        </div>
-                      </div>
-                    </div>
 
-                    <!-- section operation form -->
                 
-                  </form>
-                <!-- End Tag Form Section -->
+  
+                
+                  <div class="text-center" style="padding-top:20px">
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
+
+     <!-- Body Card ( Main) -->
+     </div>
+
+
+
+
+                 
 
                 </div>
               </div>
@@ -300,6 +267,5 @@
           </div>
         </div>
         </div>
-
 
 @endsection

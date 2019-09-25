@@ -1,84 +1,78 @@
-<@extends('admin.Layouts.layout_main')
+<@extends('site.Layouts.layout_main')
 
 
 @section('content')
 
+
+<!-- Body Card ( Main) -->
+
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">ایجاد تگ </h4>
-                  <p class="card-category"> </p>
-                </div>
-
-                 <!-- form Section -->
-
-         <div class="card-body">
-
-        <form method="POST" action="{{route('admin.tag.update',$tag['pk_tags'])}}" enctype="multipart/form-data" >
-        @csrf
-             <div class="row">
-
-                     
-
-                   <div class="col-md-4">
-                   <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">نام فارسی</label>
-                            <input name="fa_name" type="text" value="{{ $tag['fa_name'] }}" class="form-control">
-                          
-                    </div>
-                    </div>
-
-                 <div class="col-md-4">
-                     <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">نام انگلیسی</label>
-                            <input name="en_name" type="text" value="{{ $tag['en_name'] }}" class="form-control">
-                          
-                           </div>
-                     </div>
 
 
-
-
-          </div>
-
-          <!-- row -->
-
-          <div class="row">
-
-      
-
-                  <!-- End data Section Form ; Below is blank row--> 
-                  <div class="row text-center" style="padding-top:50px">
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                         
-
-                    <div class="clearfix">
-
-                    <button type="submit" class="btn btn-primary pull-right">ثبت درخواست</button>
-                    </div>
-
-
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- section operation form -->
+          <div class="col-md-12">
+            <div class="card shadow border-0">
+              <div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h4>ویرایش تگ</h4></div>
                 
-                  </form>
-                <!-- End Tag Form Section -->
+              </div>
+
+              <div class="card-body px-lg-5 py-lg-5">
+                
+              
+   <form method="POST" action="{{route('admin.tag.update',$tag['pk_tags'])}}" enctype="multipart/form-data" style="min-height:270px;">
+        @csrf
+
+     <div class="row">   
+
+        <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control" value="{{ $tag['fa_name'] }}" name="fa_name" placeholder="نام فارسی" type="text">
+                    </div>
+                  </div>
+
+        </div>
+
+        <div class="col-md-4">
 
 
+          
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="en_name" value="{{ $tag['en_name'] }}" class="form-control" placeholder="نام انگلیسی" type="text">
+                    </div>
+                  </div>
 
+        </div>
 
+        <div class="col-md-4">
+        </div>
 
+    </div>
 
+                
+  
+                
+                  <div class="text-center" style="padding-top:20px">
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
 
      <!-- Body Card ( Main) -->
      </div>
+
+
 
 
 
@@ -89,6 +83,7 @@
           </div>
         </div>
         </div>
+
 
 
 @endsection

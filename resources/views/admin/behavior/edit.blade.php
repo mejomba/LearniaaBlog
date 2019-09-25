@@ -1,118 +1,107 @@
-<@extends('admin.Layouts.layout_main')
+<@extends('site.Layouts.layout_main')
 
 
 @section('content')
 
+
+
+<!-- Body Card ( Main) -->
+
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">ایجاد پاسخ نظر </h4>
-                  <p class="card-category"> </p>
-                </div>
 
-                 <!-- form Section -->
 
-         <div class="card-body">
+          <div class="col-md-12">
+            <div class="card shadow border-0">
+              <div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h4>ایجاد پاسخ نظر </h4></div>
+                
+              </div>
 
-        <form method="POST" action="{{route('admin.behavior.update',$behavior['pk_behavior'])}}" enctype="multipart/form-data" >
+              <div class="card-body px-lg-5 py-lg-5">
+                
+              
+   <form method="POST" action="{{route('admin.behavior.update',$behavior['pk_behavior'])}}" enctype="multipart/form-data" style="min-height:270px;">
         @csrf
-             <div class="row">
 
-                 <div class="col-md-6">
-                     <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">محتوا کاربر</label>
-                            <input disabled name="content" type="text" value="{{ $behavior['content'] }}" class="form-control">
-                          
-                           </div>
-                     </div>
+     <div class="row">   
 
+        <div class="col-md-4">
 
-                      @php  $json = json_decode($behavior->extras,false);  @endphp  
-
-                <div class="col-md-6">
-                <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">پاسخ</label>
-                        <input name="reply" type="text" value="{{ $json->reply ?? '' }}" class="form-control">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
                       
-                </div>
-                </div>
+                      <input class="form-control" disabled name="content" type="text" value="{{ $behavior['content'] }}"
+                       placeholder="محتوا کاربر" type="text">
+                    </div>
+                  </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+        @php  $json = json_decode($behavior->extras,false);  @endphp  
+          
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input  name="reply" type="text" value="{{ $json->reply ?? '' }}" class="form-control" placeholder="پاسخ" type="text">
+                    </div>
+                  </div>
+
+        </div>
 
 
-                <div class="col-md-3">
-                     <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
+    
+   <!-- Select Box -->
+   <div class="col-md-4">
+        <div class="row">
 
-                            <div class="row">
 
-                                <div class="col-md-4">
-                                <label class="bmd-label-floating">وضعیت </label>
-                                </div>
-
-                                <div class="col-md-8">
-
-                                  <select name="status" class="dropdown-toggle btn btn-primary btn-round btn-block">
-                                  
-                                  <option class="" value="رد نظر"
+                        <div class="col-md-2">
+                        <span>وضعیت</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select  name="status" class="form-control">
+                                  <option  value="رد نظر"
                                   @if($behavior->status == "رد نظر" )
                                   selected="selected"
                                   @endif
                                    >رد نظر</option>
-                                  <option class="" value="تایید شده"
+                                  <option value="تایید شده"
                                   @if($behavior->status == "تایید شده" )
                                   selected="selected"
                                   @endif
                                   >تایید شده</option>
-                                 
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
                      </div>
-
-
-
-                     </div>
-          </div>
-
-          <!-- row -->
-          <div class="row">
-
-      
-
-          <!-- End data Section Form ; Below is blank row--> 
-          <div class="col-md-12 text-center">
-                <div class="form-group bmd-form-group">
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+    
+  
                 
-
-            <div class="clearfix">
-
-            <button type="submit" class="btn btn-primary pull-right">ثبت درخواست<div class="ripple-container"></div></button>
-            </div>
-
-
-
-                </div>
+                  <div class="text-center" style="padding-top:20px">
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
+                  </div>
+                </form>
               </div>
-
-            <!-- section operation form -->
-
+            </div>
           </div>
-                
-                  </form>
-      <!-- End Tag Form Section -->
-
-
-
-
-
+  </div>
 
 
      <!-- Body Card ( Main) -->
+
      </div>
 
 
