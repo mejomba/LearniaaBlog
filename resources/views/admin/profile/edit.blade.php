@@ -3,57 +3,68 @@
 
 @section('content')
 
+
+
+<!-- Body Card ( Main) -->
+
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">ویرایش پروفایل </h4>
-                  <p class="card-category"> </p>
-                </div>
 
-                 <!-- form Section -->
 
-         <div class="card-body">
+          <div class="col-md-12">
+            <div class="card shadow border-0">
+              <div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h4>ویرایش پروفایل </h4></div>
+                
+              </div>
 
-        <form method="POST" action="{{route('admin.profile.update',$profile['pk_profiles'])}}" enctype="multipart/form-data" >
+              <div class="card-body px-lg-5 py-lg-5">
+                
+              
+   <form method="POST" action="{{route('admin.profile.update',$profile['pk_profiles'])}}" 
+   enctype="multipart/form-data" style="min-height:270px;">
         @csrf
 
-                      @php $month_birthday =  substr($profile->birthday,5,2)  @endphp
+        @php $month_birthday =  substr($profile->birthday,5,2)  @endphp
                       @php $year_birthday =  substr($profile->birthday,0,4)  @endphp
                       @php $day_birthday =  substr($profile->birthday,8,2)  @endphp
-                      
 
-             <div class="row">
+                             
 
-                     
 
-                   <div class="col-md-1">
-                   <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating"> روز تولد</label>
-                            <input value="{{$day_birthday}}" name="day_birthday" type="text" class="form-control">
-                          
+     <div class="row">   
+
+        <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control"  value="{{$day_birthday}}" name="day_birthday" placeholder="روز تولد " type="text">
                     </div>
-                    </div>
+                  </div>
+
+        </div>
 
 
+        
 
-                    <div class="col-md-2">
-                   <div class="form-group bmd-form-group">
-                         
-                   <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
+   <!-- Select Box -->
+   <div class="col-md-4">
+        <div class="row">
 
-                            <div class="row">
 
-                               
-
-                                <div class="col-md-12">
-
-                     
-
-                                  <select name="month_birthday" class="dropdown-toggle btn btn-primary btn-round btn-block">
-                                  
+                        <div class="col-md-2">
+                        <span>ماه</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="month_birthday" class="form-control">
+                                 
                                   <option class="" value="01" 
                                   @if($month_birthday == "01" )
                                   selected="selected"
@@ -107,77 +118,66 @@
                                   @endif >دی </option>
 
                                   <option class="" value="11" 
-                                  @if($month_birthday == "بهمن" )
+                                  @if($month_birthday == "11" )
                                   selected="selected"
                                   @endif >بهمن </option>
 
                                   <option class="" value="12" 
-                                  @if($month_birthday == "اسفند" )
+                                  @if($month_birthday == "12" )
                                   selected="selected"
                                   @endif >اسفند </option>
 
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
-                        </div>
-
-
-
-
-
-
-                    </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <div class="col-md-1">
-                   <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">سال تولد</label>
-                            <input value="{{$year_birthday}}" name="year_birthday" type="text" class="form-control">
-                          
-                    </div>
-                    </div>
-
-                    
-
-
-
-                 <div class="col-md-3"  style="padding-right:47px">
-                     <div class="form-group bmd-form-group">
-                            <label class="bmd-label-floating">پست الکترونیکی</label>
-                            <input value="{{ $profile['email'] }}" name="email" type="text" class="form-control">
-                          
-                           </div>
                      </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
 
-                     <div class="col-md-4">
-                   
+
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{$year_birthday}}" name="year_birthday" class="form-control" placeholder="سال تولد" type="text">
+                    </div>
+                  </div>
+
+        </div>
 
 
-                     <div class="container-fluid">    
-                        <div class="form-group bmd-form-group">
+  <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $profile['email'] }}" name="email" class="form-control" placeholder="پست الکترونیکی" type="text">
+                    </div>
+                  </div>
 
-                            <div class="row">
+        </div>
+    
 
-                                <div class="col-md-4" style="padding-right:67px">
-                                <label class="bmd-label-floating">استان </label>
-                                </div>
 
-                                <div class="col-md-8">
+       <!-- Select Box -->
+   <div class="col-md-4">
+        <div class="row">
 
-                                  <select name="state" class="dropdown-toggle btn btn-primary btn-round btn-block">
-                                  
+
+                        <div class="col-md-2">
+                        <span>استان</span> 
+                        </div>
+                        <div class="col-md-10">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="state" class="form-control">
+                                 
                                   <option class="" value="تهران" 
                                   @if($profile->state == "تهران" )
                                   selected="selected"
@@ -334,85 +334,56 @@
 
 
                                   </select>
-                                
+                                  </div>
                                 </div>
-
-                           </div>
-
-                        </div>
                      </div>
-
-
-
-
-
-                     </div>
-
-          </div>
-
-
-          <div class="row">
-
-                     
-
-
-
-<div class="col-md-8">
-  <div class="form-group bmd-form-group">
-         <label class="bmd-label-floating">آدرس </label>
-         <input value="{{ $profile['address'] }}" name="address" type="text" class="form-control">
-       
+            
+   
         </div>
-  </div>
-
-  <div class="col-md-4">
-  <div class="form-group bmd-form-group">
-         <label class="bmd-label-floating">رمز عبور </label>
-         <input name="password" type="text" class="form-control">
-       
         </div>
-  </div>
-
-</div>
+         <!-- Select Box -->
 
 
-
-          <!-- row -->
-
-          <div class="row">
-
-          
-                  <!-- End data Section Form ; Below is blank row--> 
-                  <div class="row text-center" style="padding-top:50px">
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                         
-
-                    <div class="clearfix">
-
-                    <button type="submit" class="btn btn-primary pull-right">ثبت درخواست</button>
-                    </div>
-
-
-
-                        </div>
+         <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
                       </div>
+                      <input value="{{ $profile['address'] }}" name="address" class="form-control" placeholder="آدرس" type="text">
                     </div>
+                  </div>
 
-                    <!-- section operation form -->
-                
-                  </form>
-                <!-- End Tag Form Section -->
-
+        </div>
+    </div>
 
 
+    <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="password" class="form-control" placeholder="رمز عبور" type="text">
+                    </div>
+                  </div>
+
+        </div>
+    
+
+
+                  <div class="text-center" style="padding-top:20px">
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
 
 
 
      <!-- Body Card ( Main) -->
      </div>
-
-
+     
 
 
 

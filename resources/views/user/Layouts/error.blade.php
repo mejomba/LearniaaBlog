@@ -2,27 +2,29 @@
 @foreach ($errors->all() as $error)
 <div class="alert alert-danger text-center">
                 <div class="container">
-                    <div class="alert-icon">
-                    
-                    </div>
+
+                 
+
+                <img src="{{ asset('images/Template/error.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
                     
                     
                    
                     <b>پیام خطا:</b>    {{ $error }}       
                    
-                    </div>
+                </div>
         </div>
       
         @endforeach             
 @endif
 
+
 @if(Session::has('success'))
 
 <div class="alert alert-success text-center">
                 <div class="container">
-                    <div class="alert-icon">
-                    
-                    </div>
+                   
+                    <img src="{{ asset('images/Template/error.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                   
                     
                     
                    
@@ -32,4 +34,8 @@
         </div>
 
 @endif
+
+
+
+
         

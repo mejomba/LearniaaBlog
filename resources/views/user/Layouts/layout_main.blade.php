@@ -8,50 +8,65 @@
 
 </head>
 
-<body class="">
-<div class="wrapper">
 
-@include('user.Layouts.sidebar')
-
-
-
-<div class="main-panel">
+<body class="landing-page sidebar-collapse">
 
 @include('user.Layouts.nav')
 
-<div class="content">
-<div class="container-fluid">
 
-@include('user.Layouts.error')
+  <div class="card shadow border-21" 
+  style="margin-left:15px;margin-right: 15px;margin-top:110px;padding-bottom: 60px;margin-bottom: 15px;">
+  
+              
+              <div class="container-fluid" style="margin-top:15px">
 
-@yield('content')
+                @include('user.Layouts.error')
+                
+              </div>
 
-</div>
+              <!-- Full Container Page Content -->
+
+            <div class="container-fluid" style="margin-top:15px">
+
+                  <div class="row">
+                  <div class="col-md-12">
+                  @include('user.Layouts.sidebar_horizontal')
+                  </div>
+                  </div>
+
+                  <div class="row" style="padding-top:15px">
+                  <div class="col-md-12">  
+
+                      @yield('content')
+
+                  </div>
+                  </div>
+            </div>
+
+            <!-- Full Container Page Content -->
 
 
+  </div>
 
 
-</div>
 @include('user.Layouts.footer')
-</div>
+ 
+
+<script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
+
+  <script src="{{ asset('js/site/argon.js') }}" type="text/javascript"></script>
 
 
-    <script src="{{ asset('js/Dashboard_js/core/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/Dashboard_js/core/popper.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/Dashboard_js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/Dashboard_js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-    <!-- Chartist JS -->
-    <script src="{{ asset('js/Dashboard_js/plugins/chartist.min.js') }}"></script>
-    <!--  Notifications Plugin    -->
-    <script src="{{ asset('js/Dashboard_js/plugins/bootstrap-notify.js') }}"></script>
-    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="{{ asset('js/Dashboard_js/material-dashboard.js') }}" type="text/javascript"></script>
-
-
-
-
-</div>
+  <!--
+  <script src="{{ asset('js/core/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/site/headroom.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/site/onscreen.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/site/moment.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/bootstrap-datetimepicker.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
+-->
 </body>
 </html>
-
-

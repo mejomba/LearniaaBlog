@@ -1,4 +1,4 @@
-<@extends('site.Layouts.layout_main')
+@extends('admin.Layouts.layout_main')
 
 
 @section('content')

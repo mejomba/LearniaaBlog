@@ -9,7 +9,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h4 class="card-title text-center">جدول تگ ها</h4>
+                <h4 class="card-title text-center">جدول رفتارها </h4>
                   <p class="card-category text-center">
                     
 

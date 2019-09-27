@@ -13,7 +13,7 @@
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.category.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;background: linear-gradient(to right, #1aafd0 0%, #1aafd0 51%, #1aafd0 100%);"> ایجاد دسته بندی
+                  style="font-size:1.0rem"> ایجاد دسته بندی
                   </a>                
 
                     </p>

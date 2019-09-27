@@ -13,7 +13,7 @@
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.user.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;background: linear-gradient(to right, #1aafd0 0%, #1aafd0 51%, #1aafd0 100%);"> ایجاد کاربر
+                  style="font-size:1.0rem;"> ایجاد کاربر
                   </a>                
 
                     </p>

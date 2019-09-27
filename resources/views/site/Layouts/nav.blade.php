@@ -15,43 +15,13 @@
 
           <li class="dropdown nav-item">
          
-          <!-- DropDown Link 
-
-            <a href=" " class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
-              <div class="ripple-container">
-
-            </div>
-            <div class="ripple-container">
-
-            </div>
-
-            <div class="ripple-container">
-
-            </div>
-
-            آموزش سریع 
-          </a>
-            <div class="dropdown-menu dropdown-with-icons">
-              <a href=" " class="dropdown-item">
-                <img class="img-raised rounded-circle img-fluid" src="{{ asset('images/Template/google_icon.png') }}"
-                 alt="Thumbnail Image" height="auto" width="auto">                
-                کاربران
-              </a>
-              <a href="#" class="dropdown-item">
-                <img class="img-raised rounded-circle img-fluid" src="{{ asset('images/Template/google_icon.png') }}" 
-                alt="Thumbnail Image" height="auto" width="auto">                
-                خروج
-              </a>
-            </div>
-          </li>
-
-          -->
+       
 
           <li class="nav-item">
-            <a class="nav-link" href="{{route('product.show')}}"  rel="tooltip" title="" data-placement="bottom"
+            <a class="nav-link" href="#" style="color:gray"  rel="tooltip" title="" data-placement="bottom"
             data-original-title="به زودی">
             <img src="{{ asset('images/Template/nav/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-             آموزش سریع
+            آموزش سریع   (به زودی) 
             </a>
           </li>
 
