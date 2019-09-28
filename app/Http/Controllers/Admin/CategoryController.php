@@ -159,7 +159,7 @@ class CategoryController extends Controller
                     'type' => 'required|String', 
                     'name' => 'required|min:3', 
                     'desc' => 'required|min:3|max:500',
-                    'link' => 'required|min:3|max:500',
+                    'link' => 'min:3|max:500',
                  ];
 
              
@@ -169,7 +169,6 @@ class CategoryController extends Controller
                 'name.required' => ' نام  وارد نشده است',
                 'name.min' => 'نام  کوتاه تر از حد مجاز است',
                 'link.min' => 'لینک وارد شده کوتاه تر از حد مجاز است ',
-                'link.required' => ' لینک وارد نشده است ',
                 'link.max' => 'لینک وارد شده بیشتر تر از حد مجاز است ',
                 'desc.required' => ' توضیحات وارد نشده است ',
                 'desc.min' => ' توضیحات  کوتاه تر از حد مجاز است',
