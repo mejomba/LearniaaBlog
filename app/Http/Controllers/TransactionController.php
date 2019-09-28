@@ -15,10 +15,10 @@ class TransactionController extends Controller
     {
         $instance_Model_transaction = new Transaction();
         $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
+        $user =  Auth::user() ;
 
-        $Transaction = Transaction::where('type','Post')->get();
-
-        $transactions = Transaction::get();
+        $Transactions = Transaction::where('Transaction->pk_user','user->pk_user')->get();
+        
         return view('admin.Transaction.index',compact('Transactions','names'));
     }
 
