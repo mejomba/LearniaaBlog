@@ -1,5 +1,9 @@
 @extends('admin.Layouts.layout_main')
 
+@section('Head')
+<title> ویرایش تگ | لرنیا </title>
+  <meta  name="description" content=" ویرایش تگ | لرنیا">
+@endsection
 
 @section('content')
 

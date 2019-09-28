@@ -1,5 +1,9 @@
 @extends('site.Layouts.layout_auth')
 
+@section('Head')
+<title> ورود  | لرنیا  </title>
+  <meta  name="description" content=" ورود| لرنیا">
+@endsection
 
 @section('content')
 

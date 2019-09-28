@@ -1,5 +1,10 @@
 @extends('site.Layouts.layout_auth')
 
+@section('Head')
+<title> ثبت نام | لرنیا  </title>
+  <meta  name="description" content="ثبت نام| لرنیا">
+@endsection
+
 @section('content')
 
 <div class="row">

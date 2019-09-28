@@ -1,5 +1,9 @@
 @extends('site.Layouts.layout_auth')
 
+@section('Head')
+<title> تایید رمز  | لرنیا  </title>
+  <meta  name="description" content=" تایید رمز| لرنیا">
+@endsection
 
 @section('content')
 

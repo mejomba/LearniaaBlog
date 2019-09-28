@@ -1,5 +1,13 @@
 @extends('site.Layouts.layout_main')
 
+@section('Head')
+                    @foreach($detail_post as $one_post)
+                    @php  $json = json_decode($one_post['extras'],false) @endphp
+
+                    <title> {{$one_post['title']}}  </title>
+                      <meta  name="description" content="{{$json->desc_short}}">
+                      @endforeach
+@endsection
 
 @section('content')
 
@@ -34,9 +42,7 @@ ul.timeline > li:before {
     height: 20px;
     z-index: 400;
 }
-
 </style>
-
 
 
 <style>
@@ -67,23 +73,44 @@ ul.timeline > li:before {
 
 .btn-1 {
   background-image: linear-gradient(to right, #DCE35B 0%, #45B649 51%, #DCE35B 100%);
+
+  background-image: linear-gradient(to right, #F9F871 0%, #FFE171 51%, #F9F871 100%);
+
+  #FFE171
 }
 
 .btn-2 {
   background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+
+ /* background-image: linear-gradient(to right, #F9F871 0%, #20C5BA  51%, #F9F871 100%); */
+
+   
 }
 
 .btn-3 {
   background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
+
+  background-image: linear-gradient(to right, #FFC6A3 0%, #F88F6F 51%, #FFC6A3 100%);
+
+  background-image: linear-gradient(to right, #9BDE7D 0%, #68EDCB 51%, #9BDE7D 100%);
+
+  background-image: linear-gradient(to right, #68EDCB 0%, #9BDE7D 51%, #68EDCB 100%);
+
+ /* background-image: linear-gradient(to right, #20C5BA 0%, #F9F871 51%, #20C5BA 100%); */
 }
 
 .btn-4 {
   background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC 51%, #FC354C 100%);
+
+  background-image: linear-gradient(to right, #008E85 0%, #0ABFBC 51%, #008E85 100%);
+
+  
 }
 
 .btn-5 {
   background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
 }
+
 
 .btn_save_comment{
   background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC 51%, #FC354C 100%);
@@ -268,7 +295,7 @@ ul.timeline > li:before {
  <!-- Section -->
 </div>
 </div>
-</div>
+
 
 
 
@@ -340,12 +367,12 @@ ul.timeline > li:before {
                    <div class="card-body card-header-primary"
                        style="border-radius:15px; background: linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);">
                      <div class="row">  
-                        <div class="col-md-4" style="padding-right:1.0rem">             
+                        <div class="col-md-3" style="padding-right:1.0rem">             
                           <div>
                               <h5>پاسخ مدیر سایت:</h5>
                           </div>
                       </div>
-                      <div class="col-md-8" >             
+                      <div class="col-md-9" >             
                         
                               <p style="color:#FFF;padding-top:0.2rem"> {{$json->reply}} </p>    
                       </div>                    

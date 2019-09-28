@@ -1,5 +1,11 @@
 @extends('site.Layouts.layout_main')
 
+@section('Head')
+<title> درباره ما | لرنیا  </title>
+  <meta  name="description" content="درباره ما | لرنیال">
+@endsection
+
+
 @section('content')
 
   <!-- Section --> 

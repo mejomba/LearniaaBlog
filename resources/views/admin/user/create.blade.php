@@ -1,5 +1,9 @@
 @extends('admin.Layouts.layout_main')
 
+@section('Head')
+<title> ایجاد کاربر | لرنیا </title>
+  <meta  name="description" content=" ایجاد کاربر | لرنیا">
+@endsection
 
 @section('content')
 

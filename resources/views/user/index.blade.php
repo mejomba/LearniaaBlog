@@ -1,5 +1,9 @@
 @extends('user.Layouts.layout_main')
 
+@section('Head')
+<title> حساب کاربری | لرنیا  </title>
+  <meta  name="description" content="حساب کاربری| لرنیا">
+@endsection
 
 @section('content')
 <div class="col-md-12 text-center">

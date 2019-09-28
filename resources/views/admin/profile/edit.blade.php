@@ -1,5 +1,9 @@
 @extends('admin.Layouts.layout_main')
 
+@section('Head')
+<title> ویرایش پروفایل | لرنیا </title>
+  <meta  name="description" content=" ویرایش پروفایل | لرنیا">
+@endsection
 
 @section('content')
 
@@ -349,7 +353,19 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input value="{{ $profile['address'] }}" name="address" class="form-control" placeholder="آدرس" type="text">
+                      <input name="password" class="form-control" placeholder="رمز عبور" type="text">
+                    </div>
+                  </div>
+
+        </div>
+
+
+         <div class="col-md-6">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <textarea value="{{ $profile['address'] }}" name="address" class="form-control" placeholder="آدرس" type="text"></textarea> 
                     </div>
                   </div>
 
@@ -357,16 +373,7 @@
     </div>
 
 
-    <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input name="password" class="form-control" placeholder="رمز عبور" type="text">
-                    </div>
-                  </div>
-
-        </div>
+ 
     
 
 

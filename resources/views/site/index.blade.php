@@ -1,5 +1,10 @@
 @extends('site.Layouts.layout_landing')
 
+@section('Head')
+<title> صفحه اصلی | لرنیا  </title>
+  <meta  name="description" content="صفحه اصلی | لرنیا">
+@endsection
+
 
 @section('text_landing')
 
