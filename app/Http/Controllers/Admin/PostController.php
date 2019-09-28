@@ -145,7 +145,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $categories = Category::where('type','Post')->get();
+        $categories = Category::where('type','پست')->get();
         $tags = Tag::get();
         return view('admin.post.edit',compact('categories','tags','post'));
     }

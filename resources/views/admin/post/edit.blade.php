@@ -50,24 +50,28 @@
         <div class="row">
 
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         <span>تگ ها</span> 
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
                                     </div>
                                     @foreach($tags as $tag)                                
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
-                              <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
-                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}"
-                              @if(in_array( $tag->pk_tags , json_decode($post->pk_tags,false) ))
+                              <input class="custom-control-input" id="{{ $tag->pk_tags ?? '' }}" 
+                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags ?? '' }}"
+                              @if(is_array($tag->pk_tags) AND in_array( $tag->pk_tags ?? '' , json_decode($post->pk_tags,false) ))
                               {
                                 checked="checked"
                               }
+                              @else
+                              {
+
+                              }
                               @endif>                            
-                              <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }}</label>
+                              <label class="custom-control-label" for="{{ $tag->pk_tags ?? ''  }}"> {{ $tag->fa_name ?? '' }}</label>
                             </div>
                             @endforeach 
                                   
@@ -87,10 +91,10 @@
         <div class="row">
 
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         <span>دسته بندی</span> 
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
@@ -150,10 +154,10 @@
         <div class="row">
 
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         <span>تصویر </span> 
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  

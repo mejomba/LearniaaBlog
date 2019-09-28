@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tag;
+use App\Product;
+use App\Learner;
+use App\Category;
+use App\Post;
+use App\Behavior;
 
 class ProductController extends Controller
 {
@@ -13,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $recent_product = product::where('status', 'انتشار')->get()->take(9);
+        $recent_product = Product::where('status', 'انتشار')->get()->take(9);
       
         // dd(json_decode($recent_post[0]['extras'],false));
         return view('site.product.index',compact('recent_product'));
@@ -49,18 +55,9 @@ class ProductController extends Controller
     public function show($slug)
     {  
         $detail_post = Post::where('pk_post', $slug)->get();
-        $recent_product = product::get()->take(6);
+        $recent_product = Product::get()->take(6);
         $behavior_product= Behavior::where('pk_product', $slug)->where('status','تایید شده')->get();
-        /*
-        
-       // $tags = Tag::all();
- 
-        $comments = Comment::where('post_id', $post->id)->get();
-   
-        $category = Category::find($post->category_id);
-        $relatedPosts = $category->posts()->get();
-        return view('postDetail',compact('post','tags','relatedPosts','comments'));
-        */
+       
         return view('site.product.detail',compact('recent_product','behavior_product'));
     }
 

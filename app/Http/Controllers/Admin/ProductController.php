@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Tag;
+use App\Product;
+use App\Learner;
+use App\Category;
+
 class ProductController extends Controller
 {
     /**
@@ -14,9 +18,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $instance_Model_product = new product();
+        $instance_Model_product = new Product();
         $names =   $instance_Model_product->GetListAllNameColumns_ForTable();
-        $products = product::get();
+        $products = Product::get();
         return view('admin.product.index',compact('products','names'));    }
 
     /**a
@@ -26,10 +30,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $learners = learner::where('type','product')->get();
-        $categories = Category::where('type','product')->get();
+        $learners = Learner::get();
+        $categories = Category::where('type','محصول')->get();
         $tags = Tag::get();
-        return view('admin.product.create',compact('categories','tags','product'));
+        return view('admin.product.create',compact('categories','tags','learners'));
     }
 
     /**
@@ -51,7 +55,7 @@ class ProductController extends Controller
     
         else
           {
-             $new_instance = new product();
+             $new_instance = new Product();
     
              if(request()->pk_tags != null)
            {  
@@ -117,15 +121,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = product::find($id);
-        $categories = Category::where('type','product')->get();
-        $tags = tag::where('type','product')->get();
-        $learners = learner::get();
+        $product = Product::find($id);
+        $categories = Category::where('type','محصول')->get();
+        $tags = Tag::get();
+        $learners = Learner::get();
 
-
-
-
-    
         return view('admin.product.edit',compact('product','categories','tags','learners'));  
     }
 
@@ -141,10 +141,6 @@ class ProductController extends Controller
 
 
 
-
-
-
-
         $validator =  $this->validation($request);
 
         if ($validator->fails())
@@ -157,7 +153,7 @@ class ProductController extends Controller
         else
           {
             // Get Selected Item Fron DB  
-            $product = product::find($id);
+            $product = Product::find($id);
 
             //process
             if(request()->pk_tags != null)
@@ -166,12 +162,7 @@ class ProductController extends Controller
               $product->pk_tags =  $data_tags ;
              }
 
-
-
-
-
-
-             $product = product::find($id);
+            
              $product->pk_tree = request()->pk_tree ;
              $product->pk_learner = request()->pk_learner ;
              $product->pk_behavior = request()->pk_behavior ;
@@ -198,15 +189,6 @@ class ProductController extends Controller
 
 
 
-
-
-
-
-
-
-             
-
-
              ////
 
 
@@ -231,7 +213,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
 
-        $post = product::find($id);
+        $post = Product::find($id);
     
         if($product->delete())
         {
