@@ -59,10 +59,10 @@
         <div class="row">
 
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         <span>ماه</span> 
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
@@ -172,10 +172,10 @@
         <div class="row">
 
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         <span>استان</span> 
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  

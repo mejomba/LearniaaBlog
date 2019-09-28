@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Transaction;
 
-class CommentController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,11 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $instance_Model_transaction = new Transaction();
+        $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
+        $user =  Auth::user() ;
+        $transactions = Transaction::where('pk_users', $user->pk_users)->get();
+        return view('admin.Transaction.index',compact('transactions','names'));
     }
 
     /**

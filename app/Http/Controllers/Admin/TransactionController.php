@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Transaction;
 
 class TransactionController extends Controller
 {
@@ -14,9 +15,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $instance_Model_transaction = new transaction();
+        $instance_Model_transaction = new Transaction();
         $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
-        $transactions = transaction::get();
+        $transactions = Transaction::get();
         return view('admin.transaction.index',compact('transactions','names'));
     }
 
