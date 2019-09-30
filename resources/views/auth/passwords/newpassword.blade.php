@@ -13,7 +13,7 @@
           <form class="form" method="POST" action="{{route('reset.delete',$pk_user)}}">
               @csrf
               <div class="card-header card-header-primary text-center">
-                <h4 class="card-title"> تغییر رمز عبور</h4>
+                <h1 class="card-title"> تغییر رمز عبور</h1>
                
               </div>
               <p class="description text-center"></p>

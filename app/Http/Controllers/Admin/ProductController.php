@@ -8,6 +8,7 @@ use App\Tag;
 use App\Product;
 use App\Learner;
 use App\Category;
+use Validator;
 
 class ProductController extends Controller
 {

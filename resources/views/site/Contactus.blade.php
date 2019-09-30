@@ -13,9 +13,9 @@
           <!-- Text -->
             <div class="col-md-7" dir="rtl">
 
-            <h2 class="title" style="font-size:30px;color: #303030">
+            <h1 class="title" style="font-size:30px;color: #303030">
                     با ما در ارتباط باشید 
-                  </h2>
+                  </h1>
 
             <!-- Text -->
 
@@ -40,15 +40,15 @@
               </div>
               <div class="card-body px-lg-5 py-lg-5">
                 
-                <form role="form" style="
-      height: 270px;
-  ">
+                <form role="form" method="POST" action="{{route('message.store')}}" style="height: 270px; ">
+                @csrf
+
                   <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control" placeholder="نام و نام خانوادگی" type="text">
+                      <input name="name" id="name" class="form-control" placeholder="نام و نام خانوادگی" type="text">
                     </div>
                   </div>
   
@@ -57,7 +57,7 @@
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control" placeholder="ایمیل" type="text">
+                      <input name="email" id="email" class="form-control" placeholder="ایمیل" type="text">
                     </div>
                   </div>
   
@@ -66,12 +66,12 @@
                       <div class="input-group-prepend">
                         
                       </div>
-                      <textarea name="content" id="content" type="text" class="form-control" placeholder="متن پیام"></textarea>
+                      <textarea name="message" id="message" type="text" class="form-control" placeholder="متن پیام"></textarea>
                     </div>
                   </div>
                 
                   <div class="text-center" style="padding-top:20px">
-                    <button type="button" class="btn btn-primary">ارسال پیام</button>
+                    <button type="submit" class="btn btn-primary">ارسال پیام</button>
                   </div>
                 </form>
               </div>

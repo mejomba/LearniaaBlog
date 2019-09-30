@@ -119,12 +119,6 @@
 -->
 
 
-
-
-
-
-
-
 <div class="card card-nav-tabs">
                 <div class="card-header card-header-primary">
                   <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->

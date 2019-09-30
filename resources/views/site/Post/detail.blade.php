@@ -11,114 +11,6 @@
 
 @section('content')
 
-<style>
-ul.timeline {
-    list-style-type: none;
-    position: relative;
-}
-ul.timeline:before {
-    content: ' ';
-    background: #d4d9df;
-    display: inline-block;
-    position: absolute;
-    right: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 400;
-}
-ul.timeline > li {
-    margin: 20px 0;
-    padding-right: 20px;
-}
-ul.timeline > li:before {
-    content: ' ';
-    background: white;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #22c0e8;
-    right: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 400;
-}
-</style>
-
-
-<style>
-
-.btnblog
-{
-  color : #fff ;
-  text-transform:uppercase ;
-  transition : 0.5s ;
-  padding : 0.825rem 0.825rem ;
-  width : 100% ;
-  background-color : ;
-  border-color : ;
-  background-size : 100% auto ;
- 
-
-}
-
-.btnblog:hover 
-{
-  background-position: right center; /* change the direction of the change here */
-}
-
-.btn-title {
-    background-image: linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);
-}
-
-
-.btn-1 {
-  background-image: linear-gradient(to right, #DCE35B 0%, #45B649 51%, #DCE35B 100%);
-
-  background-image: linear-gradient(to right, #F9F871 0%, #FFE171 51%, #F9F871 100%);
-
-  #FFE171
-}
-
-.btn-2 {
-  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
-
- /* background-image: linear-gradient(to right, #F9F871 0%, #20C5BA  51%, #F9F871 100%); */
-
-   
-}
-
-.btn-3 {
-  background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
-
-  background-image: linear-gradient(to right, #FFC6A3 0%, #F88F6F 51%, #FFC6A3 100%);
-
-  background-image: linear-gradient(to right, #9BDE7D 0%, #68EDCB 51%, #9BDE7D 100%);
-
-  background-image: linear-gradient(to right, #68EDCB 0%, #9BDE7D 51%, #68EDCB 100%);
-
- /* background-image: linear-gradient(to right, #20C5BA 0%, #F9F871 51%, #20C5BA 100%); */
-}
-
-.btn-4 {
-  background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC 51%, #FC354C 100%);
-
-  background-image: linear-gradient(to right, #008E85 0%, #0ABFBC 51%, #008E85 100%);
-
-  
-}
-
-.btn-5 {
-  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
-}
-
-
-.btn_save_comment{
-  background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC 51%, #FC354C 100%);
-}
-
-</style>
-
-
 
 <div class="row">
 
@@ -130,9 +22,9 @@ ul.timeline > li:before {
 
     <div class="row" style="padding-top: 5px;padding-left:15px;padding-right:15px" >
 
-        <button class="btn   btn-round btnblog btn-title" style="border-radius:10px" >
+        <button class="btn   btn-round btnblogPost btn-title" style="border-radius:10px" >
 
-            <h3 style="color:#FFFFFF" class="">{{$one_post['title']}}</h3>
+            <h1 style="color:#FFFFFF" class="">{{$one_post['title']}}</h1>
         
 
 
@@ -206,28 +98,28 @@ ul.timeline > li:before {
 
 
                         <div class="container-fluid">
-                        <div class="row" style="padding-top:50px;padding-bottom:15px;padding-left:35px">
+                        <div class="row" style="padding-top:50px;padding-bottom:15px;">
                             
                              
      <div class="col-md-3">
-     <a  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
+     <a style="margin-bottom: 15px;" href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblogPost btn-1">
        توسعه مهارت   
         </a>
     
      </div>
 
      <div class="col-md-3">
-     <a  href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
+     <a style="margin-bottom: 15px;" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblogPost btn-2"     >    برنامه نویسی   </a>
  
      </div>
 
      <div class="col-md-3">
-     <a href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
+     <a style="margin-bottom: 15px;" href="{{route('category.show','وب')}}" class="btn  btn-round btnblogPost btn-3"   > وب </a>
     
      </div>
 
      <div class="col-md-3">
-     <a href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>
+     <a style="margin-bottom: 15px;" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblogPost btn-4"    >   هک و امنیت </a>
     
      </div>
 
@@ -331,7 +223,7 @@ ul.timeline > li:before {
 
                       <div class="col-md-3">
                           <div class="form-group bmd-form-group">
-                          <button type="submit" class="btn btn-primary btn-title btnblog">ثبت </button>
+                          <button type="submit" class="btn btn-primary btn-title btnblogPost">ثبت </button>
                           
                            </div>
                       </div>                   

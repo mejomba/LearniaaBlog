@@ -18,7 +18,9 @@
           <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h4>ویرایش دسته بندی</h4></div>
+                <div class="text-center">
+                <h1>ویرایش دسته بندی</h1>
+                </div>
                 
               </div>
 

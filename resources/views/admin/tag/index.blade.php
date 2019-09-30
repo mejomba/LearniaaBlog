@@ -13,7 +13,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h4 class="card-title text-center">جدول تگ ها</h4>
+                <h1 class="card-title text-center">جدول تگ ها</h1>
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.tag.create')}}" class="btn btn-primary btn-round" 

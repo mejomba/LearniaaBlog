@@ -8,7 +8,7 @@
 </head>
 
 
-<body class="landing-page sidebar-collapse">
+<body>
 
 @include('site.Layouts.nav')
 

@@ -140,7 +140,7 @@ class ProfileController extends Controller
                     'month_birthday' => 'nullable|numeric', 
                     'year_birthday' => 'nullable|numeric|digits:4', 
                     'day_birthday' => 'nullable|numeric', 
-                    'email' => 'nullable|E-Mail',
+                    'email' => 'nullable|email',
                     'state' => 'nullable|String', 
                   
                     'address' => 'nullable|String',
@@ -155,7 +155,7 @@ class ProfileController extends Controller
                 'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
 
 
-                'email.E-Mail' => 'پست الکترونیکی  صحیح وارد نشده است ',
+                'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
                  'state.String' => 'استان صحیح وارد نشده است',
                
                 'address.String' => 'آدرس  صحیح وارد نشده است ',
