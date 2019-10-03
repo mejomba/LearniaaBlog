@@ -180,40 +180,8 @@ class CategoryController extends Controller
     }
 
 
-    /* Api */
-
-
-    public function storeApi(Request $request)
-    {
-         $validator =  $this->validation($request);
-
-            if ($validator->fails())
-            {
-                return redirect()->back()
-                            ->withErrors($validator)
-                            ->withInput();
-        }
-
-        else
-        {
-            
-                $category = new Category();
-                $category->type = request()->type ;
-                $category->name = request()->name ;
-                $category->desc = request()->desc ;
-               
-
-                    if($category->save())
-                    {
-                        return response()->json('ok', 200);
-                    }
-                    else
-                    {
-                        return 'error';
-                    }
-
-        }
-    }
+   
+    
 
 
 }

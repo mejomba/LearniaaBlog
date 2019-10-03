@@ -340,12 +340,15 @@ function add_category()
   var desc =  $('#desc_category').val() ;
   var type =  $('#type_category').val() ;
 
-    $.ajax('{{route('admin.category.storeApi')}}', 
+  console.log(name+'-'+desc+'-'+type);
+
+    $.ajax('{{route('admin.category.store')}}', 
   {
+        headers : { 'Accept':'application/json', 'Authorization' : 'Bearer '.$accessToken,},
       dataType: 'json', 
       timeout: 500, 
-      type:'POST',    
-      data: { name: name , desc : desc , type : type },
+      type:'GET',    
+      data: { 'name': name , 'desc' : desc , 'type' : type , '_token' : "{{ csrf_token() }}" },
       success: function (data) 
       {   
         console.log('add Complete');
