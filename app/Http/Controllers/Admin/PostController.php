@@ -33,7 +33,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::where('type','پست')->get();
-        $tags = Tag::get();
+        $tags = Tag::where('type','پست')->get();
         return view('admin.post.create',compact('categories','tags'));
     }
 
@@ -146,7 +146,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $categories = Category::where('type','پست')->get();
-        $tags = Tag::get();
+        $tags = Tag::where('type','پست')->get();
         return view('admin.post.edit',compact('categories','tags','post'));
     }
 

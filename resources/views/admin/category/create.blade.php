@@ -45,8 +45,8 @@
 
         </div>
 
+       <!-- input Box -->
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -56,22 +56,10 @@
                   </div>
 
         </div>
-
       <!-- input Box -->
-        <div class="col-md-4">
-            <div class="form-group">
-                        <div class="input-group input-group-alternative">
-                          <div class="input-group-prepend">
-                          </div>
-                          <input name="link" class="form-control" placeholder="لینک " type="text">
-                        </div>
-                      </div>
-
-            </div>
-        </div>
-        <!-- input Box -->
-
-
+      
+       
+       
         <!-- Select Box -->
         <div class="col-md-4">
         <div class="row">

@@ -20,7 +20,6 @@ class Category extends Model
       return  [ 'pk_categories' => 'کلید دسته بندی',
                 'name' => 'نام',
                 'desc' => 'توضیحات',
-                'link' => 'لینک',
                 'type'=> 'نوع',
                 ] ;
    }

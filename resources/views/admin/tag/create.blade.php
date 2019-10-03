@@ -57,8 +57,31 @@
 
         </div>
 
-        <div class="col-md-4">
+          <!-- Select Box -->
+          <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>نوع</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="type" class="form-control">
+                                  <option value="محصول">محصول </option>
+                                  <option value="پست">پست </option>
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
         </div>
+        </div>
+         <!-- Select Box -->
 
     </div>
 

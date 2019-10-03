@@ -56,6 +56,10 @@
                           {{ $tag['en_name'] }} 
                           </td>
 
+                          <td>
+                          {{ $tag['type'] }} 
+                          </td>
+
                       
                           <td>
 

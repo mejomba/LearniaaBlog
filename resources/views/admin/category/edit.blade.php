@@ -60,19 +60,7 @@
 
         </div>
 
-  <div class="col-md-4">
-
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input value="{{ $category['link'] }}" name="link" class="form-control" placeholder="لینک" type="text">
-                    </div>
-                  </div>
-
-        </div>
-
-    </div>
+ 
 
 
 

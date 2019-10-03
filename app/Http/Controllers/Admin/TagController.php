@@ -55,6 +55,7 @@ class TagController extends Controller
                     $tag = new Tag();
                     $tag->fa_name = request()->fa_name ;
                     $tag->en_name = request()->en_name ;
+                    $tag->type = request()->type ;
             
             
                     if($tag->save())
@@ -117,6 +118,7 @@ class TagController extends Controller
             $tag = Tag::find($id);
             $tag->fa_name = request()->fa_name ;
             $tag->en_name = request()->en_name ;
+            $tag->type = request()->type ;
       
     
             if($tag->save())
@@ -162,6 +164,7 @@ class TagController extends Controller
         $rules =  [
                     'fa_name' => 'required|String',  
                     'en_name' => 'required|String', 
+                    'type' => 'required|String', 
                
                  ];
 
@@ -171,6 +174,9 @@ class TagController extends Controller
 
                 'en_name.required' => 'نام انگلیسی وارد نشده است',
                 'en_name.String' => 'نام انگلیسی صحیح وارد نشده است',
+
+                'type.required' => 'نوع  وارد نشده است',
+                'type.String' => 'نوع  صحیح وارد نشده است',
 
 
                 ];

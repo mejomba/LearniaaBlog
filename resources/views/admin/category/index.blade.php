@@ -57,9 +57,6 @@
                           </td>
 
                           <td>
-                          {{ $category['link'] }} 
-                          </td>
-                          <td>
                           {{ $category['type'] }} 
                           </td>
                          
