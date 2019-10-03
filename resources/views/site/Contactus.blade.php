@@ -21,8 +21,8 @@
 
              <!-- Image -->
             <img  
-             src="{{ asset('images/Template/customer_service.svg') }}"
-             width="500px" height="90%" alt="Thumbnail Image">
+             src="{{ asset('images/Template/customer_service.svg') }}" style=""
+             width="90%" height="90%" alt="Thumbnail Image">
               <!-- Image -->     
             
             </div>

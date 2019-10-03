@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-        <ul class="navbar-nav col-md-7" style="padding-right:35px">
+        <ul class="navbar-nav col-md-7">
 
           <li class="nav-item">
             <a class="nav-link" href="#" style="color:gray"  rel="tooltip" title="" data-placement="bottom"
@@ -74,14 +74,14 @@
         </ul>
           
 
- <ul class="navbar-nav col-md-3 "  >
+ <ul class="navbar-nav col-md-3 col-10 "  >
 <!-- serach box site -->
 
 <form class="navbar-form" dir="rtl" action="{{route('search.index')}}" style="padding-top:10px">
               
         <div class="row">
 
-             <div class="col-md-9" style="padding-left:0px;padding-right:0px">
+             <div class="col-md-9 col-9" style="padding-left:0px;padding-right:0px">
                 <div class="form-group">
 
                       <input type="hidden"  name="type_search" value="{{Request::segment(1)}}" 
@@ -92,7 +92,7 @@
                       </div>
                 </div>        
 
-               <div class="col-md-3"> 
+               <div class="col-md-3 col-3"> 
                <div class="form-group">
 
                       <button type="submit"  class="btn btn-white btn-round btn-just-icon">
