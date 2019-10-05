@@ -18,7 +18,9 @@
           <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h4>ایجاد دسته بندی</h4></div>
+                <div class="text-center">
+                <h1>ایجاد دسته بندی</h1>
+                </div>
                 
               </div>
 
@@ -43,8 +45,8 @@
 
         </div>
 
+       <!-- input Box -->
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -54,22 +56,10 @@
                   </div>
 
         </div>
-
       <!-- input Box -->
-        <div class="col-md-4">
-            <div class="form-group">
-                        <div class="input-group input-group-alternative">
-                          <div class="input-group-prepend">
-                          </div>
-                          <input name="link" class="form-control" placeholder="لینک " type="text">
-                        </div>
-                      </div>
-
-            </div>
-        </div>
-        <!-- input Box -->
-
-
+      
+       
+       
         <!-- Select Box -->
         <div class="col-md-4">
         <div class="row">

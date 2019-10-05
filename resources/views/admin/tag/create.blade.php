@@ -16,7 +16,9 @@
           <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h4>ایجاد تگ</h4></div>
+                <div class="text-center">
+                <h1>ایجاد تگ</h1>
+                </div>
                 
               </div>
 
@@ -55,8 +57,31 @@
 
         </div>
 
-        <div class="col-md-4">
+          <!-- Select Box -->
+          <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>نوع</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="type" class="form-control">
+                                  <option value="محصول">محصول </option>
+                                  <option value="پست">پست </option>
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
         </div>
+        </div>
+         <!-- Select Box -->
 
     </div>
 

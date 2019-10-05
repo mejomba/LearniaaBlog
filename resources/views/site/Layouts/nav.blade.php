@@ -1,21 +1,37 @@
 
-  <nav id="sectionsNav" style="background-color:#F9F838 !important" class="navbar fixed-top navbar-expand-lg">
+  <nav id="sectionsNav" style="background-color:#F9F838 !important" class="navbar navbar-horizontal fixed-top navbar-expand-lg">
     <div class="container-fluid">
-      <div class="navbar-translate">
-      <a href="{{route('index')}}">  <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" height="80px" width="80px"> </a> <div class="ripple-container"></div><div class="ripple-container"></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav col-md-9" style="padding-right:35px">
+      <div class="navbar-brand">
+    
 
-          <li class="dropdown nav-item">
-         
-       
+      <button style="float-left" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default"
+       aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+       <img src="{{ asset('images/Template/menu.svg') }}" alt="Thumbnail Image"  height="20px" width="20px">
+       <!--span class="navbar-toggler-icon"></span-->
+        </button>
+        <a href="{{route('index')}}">
+          <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" style="height:75px !important" height="100px !important" width="80px"> 
+       </a> 
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-default">
+
+      <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                    <a href="{{route('index')}}">
+                        <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" height="80px" width="80px"> 
+                    </a> 
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        <ul class="navbar-nav col-md-7">
 
           <li class="nav-item">
             <a class="nav-link" href="#" style="color:gray"  rel="tooltip" title="" data-placement="bottom"
@@ -32,6 +48,7 @@
              بلاگ
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{route('Contactus')}}">
             <img src="{{ asset('images/Template/nav/call.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
@@ -41,9 +58,9 @@
             </div>
           </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom"
-           >
+            <a class="nav-link" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
            <img src="{{ asset('images/Template/nav/team.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
              درباره ما
             <div class="ripple-container">
@@ -51,19 +68,20 @@
             </div>
           </a>
           </li>
+
           
           
         </ul>
           
 
- <ul class="navbar-nav col-md-3 "  >
+ <ul class="navbar-nav col-md-3 col-10 "  >
 <!-- serach box site -->
 
 <form class="navbar-form" dir="rtl" action="{{route('search.index')}}" style="padding-top:10px">
               
         <div class="row">
 
-             <div class="col-md-9" style="padding-left:0px;padding-right:0px">
+             <div class="col-md-9 col-9" style="padding-left:0px;padding-right:0px">
                 <div class="form-group">
 
                       <input type="hidden"  name="type_search" value="{{Request::segment(1)}}" 
@@ -74,7 +92,7 @@
                       </div>
                 </div>        
 
-               <div class="col-md-3"> 
+               <div class="col-md-3 col-3"> 
                <div class="form-group">
 
                       <button type="submit"  class="btn btn-white btn-round btn-just-icon">
@@ -84,7 +102,7 @@
                       </div>
               </div>
 
-        </div>
+        
         </form>
 
  

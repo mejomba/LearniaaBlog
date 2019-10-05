@@ -2,10 +2,13 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+   use HasApiTokens ; 
+
     protected $table = 'categories';
     protected $primaryKey = 'pk_categories';
 
@@ -20,7 +23,6 @@ class Category extends Model
       return  [ 'pk_categories' => 'کلید دسته بندی',
                 'name' => 'نام',
                 'desc' => 'توضیحات',
-                'link' => 'لینک',
                 'type'=> 'نوع',
                 ] ;
    }

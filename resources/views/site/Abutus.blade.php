@@ -18,9 +18,9 @@
             <div class="row text-center">
             <div class="col-md-12">  
 
-            <h2 class="title" style="padding-right: 30px;font-size:30px;color: #303030">
+            <h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">
                         ما دقیقا چکار می کنیم
-                        </h2>
+                        </h1>
 
              <!-- Text -->
 

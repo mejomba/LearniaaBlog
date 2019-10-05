@@ -11,7 +11,7 @@
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
         <div class="card shadow border-0">
     <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h4>ثبت نام کاربران</h4></div>
+                <div class="text-center"><h1>ثبت نام کاربران</h1></div>
               </div>
 
     <div class="card-body px-lg-5 py-lg-5">

@@ -22,93 +22,25 @@
 
 @section('content')
 
-<style>
-
-.btnblog
-{
-  color : #fff ;
-  text-transform:uppercase ;
-  transition : 0.5s ;
-  padding : 2.125rem 2.25rem ;
-  width : 100% ;
-  background-color : ;
-  border-color : ;
-  background-size : 200% auto ;
-  font-size: 20px;
-
-}
-
-.btnblog:hover 
-{
-  background-position: right center; /* change the direction of the change here */
-}
-
-.btn-1 {
-  background-image: linear-gradient(to right, #DCE35B 0%, #45B649 51%, #DCE35B 100%);
-
-  background-image: linear-gradient(to right, #F9F871 0%, #FFE171 51%, #F9F871 100%);
-
-  #FFE171
-}
-
-.btn-2 {
-  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
-
- /* background-image: linear-gradient(to right, #F9F871 0%, #20C5BA  51%, #F9F871 100%); */
-
-   
-}
-
-.btn-3 {
-  background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
-
-  background-image: linear-gradient(to right, #FFC6A3 0%, #F88F6F 51%, #FFC6A3 100%);
-
-  background-image: linear-gradient(to right, #9BDE7D 0%, #68EDCB 51%, #9BDE7D 100%);
-
-  background-image: linear-gradient(to right, #68EDCB 0%, #9BDE7D 51%, #68EDCB 100%);
-
- /* background-image: linear-gradient(to right, #20C5BA 0%, #F9F871 51%, #20C5BA 100%); */
-}
-
-.btn-4 {
-  background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC 51%, #FC354C 100%);
-
-  background-image: linear-gradient(to right, #008E85 0%, #0ABFBC 51%, #008E85 100%);
-
-  
-}
-
-.btn-5 {
-  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
-}
-
-/* Magic Stuff End -> */
-</style>
-
-
 <div class="container-fluid">
-  <div class="row" style="padding-top:15px;padding-bottom:15px;padding-left:35px">
-       
+  <div class="row" style="padding-top:15px;padding-bottom:15px">
      <div class="col-md-3">
-     <a  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
+     <a style="margin-bottom: 15px;"  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
        توسعه مهارت های شخصی  
         </a>
+     </div>
+
+     <div class="col-md-3">
+     <a style="margin-bottom: 15px;" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
+     </div>
+
+     <div class="col-md-3">
+     <a style="margin-bottom: 15px;" href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
     
      </div>
 
      <div class="col-md-3">
-     <a  href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
- 
-     </div>
-
-     <div class="col-md-3">
-     <a href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
-    
-     </div>
-
-     <div class="col-md-3">
-     <a href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>
+     <a style="margin-bottom: 15px;" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>
     
      </div>
 
@@ -128,9 +60,9 @@
 
                   
                   <h3> <span>
-                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                     بخوانید ، بدانید ، لذت ببرید 
-                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                     </span></h3>
 
 
@@ -144,7 +76,7 @@
    </div>
 
 <div style="border-bottom:2px solid #20c3b8;margin-bottom:10px">
-<h3> آخرین نوشته ها<h3>
+<h1> آخرین نوشته ها<h1>
 </div>
 
 

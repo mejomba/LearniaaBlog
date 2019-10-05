@@ -16,7 +16,7 @@
 </head>
 
 
-<body class="landing-page sidebar-collapse" style="background-color:#FFFFFF ;">
+<body  style="background-color:#FFFFFF ;">
 
 
 @include('site.Layouts.nav')

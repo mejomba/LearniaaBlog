@@ -18,7 +18,9 @@
           <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h4>ویرایش دسته بندی</h4></div>
+                <div class="text-center">
+                <h1>ویرایش دسته بندی</h1>
+                </div>
                 
               </div>
 
@@ -58,19 +60,7 @@
 
         </div>
 
-  <div class="col-md-4">
-
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input value="{{ $category['link'] }}" name="link" class="form-control" placeholder="لینک" type="text">
-                    </div>
-                  </div>
-
-        </div>
-
-    </div>
+ 
 
 
 

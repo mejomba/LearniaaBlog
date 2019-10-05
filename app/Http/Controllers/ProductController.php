@@ -9,6 +9,7 @@ use App\Learner;
 use App\Category;
 use App\Post;
 use App\Behavior;
+use Validator;
 
 class ProductController extends Controller
 {

@@ -14,6 +14,7 @@ class Tag extends Model
        return  [ 'pk_tags' => 'کلید تگ ها',
                  'fa_name' => 'نام فارسی',
                  'en_name' => 'نام انگلیسی',
+                 'type' => 'نوع ',
             
                  ] ;
     }

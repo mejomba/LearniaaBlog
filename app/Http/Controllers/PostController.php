@@ -13,7 +13,7 @@ class PostController extends Controller
       $recent_post = Post::where('status', 'انتشار')->get()->take(9);
       
        // dd(json_decode($recent_post[0]['extras'],false));
-       return view('site.Post.index',compact('recent_post'));
+       return view('site.post.index',compact('recent_post'));
        
     }
     public function detail($slug)
@@ -31,7 +31,7 @@ class PostController extends Controller
         $relatedPosts = $category->posts()->get();
         return view('postDetail',compact('post','tags','relatedPosts','comments'));
         */
-        return view('site.Post.detail',compact('detail_post','recent_post','behavior_post'));
+        return view('site.post.detail',compact('detail_post','recent_post','behavior_post'));
     }
     public function postByTag($slug)
     {

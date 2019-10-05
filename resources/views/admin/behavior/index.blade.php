@@ -13,7 +13,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h4 class="card-title text-center">جدول رفتارها </h4>
+                <h1 class="card-title text-center">جدول رفتارها </h1>
                   <p class="card-category text-center">
                     
 

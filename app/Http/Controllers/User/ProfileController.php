@@ -139,11 +139,10 @@ class ProfileController extends Controller
             'month_birthday' => 'nullable|numeric', 
             'year_birthday' => 'nullable|numeric|digits:4', 
             'day_birthday' => 'nullable|numeric', 
-            'email' => 'nullable|E-Mail',
+            'email' => 'nullable|email|max:20',
             'state' => 'nullable|String', 
-          
-            'address' => 'nullable|String',
-            'password' => 'nullable|min:6'  ,
+            'address' => 'nullable|String|max:100',
+            'password' => 'nullable|min:6|max:20'  ,
          ];
 
      
@@ -154,12 +153,16 @@ $messages = [
         'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
 
 
-        'email.E-Mail' => 'پست الکترونیکی  صحیح وارد نشده است ',
+        'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
+        'email.max' => 'پست الکترونیکی  طولانی وارد شده است ',
+        
          'state.String' => 'استان صحیح وارد نشده است',
        
         'address.String' => 'آدرس  صحیح وارد نشده است ',
+        'address.max' => ' آدرس  طولانی وارد شده است ',
 
         'password.required' => 'رمز عبور وارد نشده است',
+        'password.max' => 'رمز عبور  طولانی وارد شده است ',
         'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
         ];
 

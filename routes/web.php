@@ -32,6 +32,10 @@ Route::get('/reset/show/{id}', 'ResetPasswordController@show')->name('reset.show
 Route::get('/reset/update/{id}', 'ResetPasswordController@update')->name('reset.update');
 Route::post('/reset/delete/{id}', 'ResetPasswordController@destroy')->name('reset.delete');
 
+
+Route::post('/message/store', 'MessageController@store')->name('message.store');
+
+
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {
 
