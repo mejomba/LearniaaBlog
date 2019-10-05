@@ -342,13 +342,12 @@ function add_category()
 
   console.log(name+'-'+desc+'-'+type);
 
-    $.ajax('{{route('admin.category.store')}}', 
+    $.ajax('{{route('admin.api.category.store')}}', 
   {
-        headers : { 'Accept':'application/json', 'Authorization' : 'Bearer '.$accessToken,},
       dataType: 'json', 
       timeout: 500, 
       type:'GET',    
-      data: { 'name': name , 'desc' : desc , 'type' : type , '_token' : "{{ csrf_token() }}" },
+      data: { 'name': name , 'desc' : desc , 'type' : type },
       success: function (data) 
       {   
         console.log('add Complete');
