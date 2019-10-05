@@ -18,8 +18,15 @@ class TransactionController extends Controller
         $instance_Model_transaction = new Transaction();
         $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
         $user =  Auth::user() ;
+<<<<<<< HEAD:app/Http/Controllers/TransactionController.php
+
+        $Transactions = Transaction::where('Transaction->pk_user','user->pk_user')->get();
+        
+        return view('admin.Transaction.index',compact('Transactions','names'));
+=======
         $transactions = Transaction::where('pk_users', $user->pk_users)->get();
         return view('admin.Transaction.index',compact('transactions','names'));
+>>>>>>> ac138968e49066937d805bfb238c7bd93ed73778:app/Http/Controllers/User/TransactionController.php
     }
 
     /**
