@@ -278,7 +278,7 @@ class PostController extends Controller
                     'title' => 'required|min:3', 
                     'title' => 'required|min:3',
                     'content' => 'required|min:3',
-                    'pic_content' => 'file',
+                    'pic_content' => 'file|nullable',
                     'status' => 'required',
                  ];
 
