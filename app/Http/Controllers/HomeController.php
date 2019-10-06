@@ -35,10 +35,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-      //  $posts = Post::get()->take(6);
-      //  $caStegories = Category::get()->take(6);
-     //   return view('index',compact('posts','categories'));
-
      return redirect(route('post.index'));
      
     }

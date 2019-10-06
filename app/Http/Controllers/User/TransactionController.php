@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Transaction;
-use Validator;
+use Auth;
 
 class TransactionController extends Controller
 {
@@ -18,36 +19,48 @@ class TransactionController extends Controller
         $instance_Model_transaction = new Transaction();
         $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
         $user =  Auth::user() ;
-<<<<<<< HEAD:app/Http/Controllers/TransactionController.php
-
-        $Transactions = Transaction::where('Transaction->pk_user','user->pk_user')->get();
-        
-        return view('admin.Transaction.index',compact('Transactions','names'));
-=======
         $transactions = Transaction::where('pk_users', $user->pk_users)->get();
-        return view('admin.Transaction.index',compact('transactions','names'));
->>>>>>> ac138968e49066937d805bfb238c7bd93ed73778:app/Http/Controllers/User/TransactionController.php
+        return view('user.transaction.index',compact('transactions','names'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 
+     *  انتقال به صفحه افزایش موجودی
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+         /// compact $wallet to view 
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     *    انتقال به صفحه بانک و انجام افزایش موجودی
      */
+
     public function store(Request $request)
     {
-        //
+                 
+                 $invoice = (new Invoice)->amount( request()->amount);
+                $responce =    Payment::purchase($invoice, function($driver, $transactionId)  { });
+               
+                    // Get information payment & Save Database
+                  $transactionId = $invoice->getTransactionId();
+                  $driver = $invoice->getDriver();
+
+                  $user =  Auth::user() ;
+          
+                  $transaction = new Transaction();
+                  $transaction->pk_users =  $user->pk_users ;
+                  $transaction->price = request()->amount;
+                  $transaction->digital_receipt = $transactionId ;
+                  $transaction->date = now()->timestamp ;
+                  $transaction->time = now()->timestamp ;
+                  
+                  $transaction->save();
+          
+                  return Payment::purchase($invoice, function($driver, $transactionId) {
+                    // store transactionId in database, we need it to verify payment in future.
+                })->pay();
     }
 
     /**

@@ -63,7 +63,7 @@ class ProfileController extends Controller
     
      public function edit()
     {
-        $user =  Auth::user() ;
+        $user =  Auth::user() ; 
         $profile = Profile::where('pk_users',$user->pk_users)->first();
         
        return view('user.profile.edit',compact('profile'));
