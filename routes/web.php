@@ -4,8 +4,10 @@
 Route::get('/', 'HomeController@index')->name('index');
 */
 
+/*
 Route::get('/payment/paymentstart', 'HomeController@paymentstart')->name('paymentstart');
 Route::get('/payment/paymentcomplete', 'HomeController@paymentcomplete')->name('paymentcomplete');
+*/
 
 Route::get('/products', 'HomeController@show')->name('product.show');
 
@@ -88,6 +90,15 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/behavior/delete/{id}', 'BehaviorController@destroy')->name('admin.behavior.delete');
     Route::post('/behavior/update/{id}', 'BehaviorController@update')->name('admin.behavior.update');
 
+
+
+    Route::get('/discount/index', 'DiscountController@index')->name('admin.discount.index');
+    Route::get('/discount/create', 'DiscountController@create')->name('admin.discount.create');
+    Route::get('/discount/edit/{id}', 'DiscountController@edit')->name('admin.discount.edit');
+    Route::post('/discount/store', 'DiscountController@store')->name('admin.discount.store');
+    Route::get('/discount/delete/{id}', 'DiscountController@destroy')->name('admin.discount.delete');
+    Route::post('/discount/update/{id}', 'DiscountController@update')->name('admin.discount.update');
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 
@@ -99,8 +110,10 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Profile/edit/', 'ProfileController@edit')->name('user.profile.edit');
     Route::post('/Profile/update/{id}', 'ProfileController@update')->name('user.profile.update');
 
-    Route::get('/Transaction', 'TransactionController@index')->name('user.transaction.index');
-    Route::get('/Transaction/create/', 'TransactionController@create')->name('user.transaction.create');
+    Route::get('/Transaction/index', 'TransactionController@index')->name('user.transaction.index');
+    Route::get('/Transaction/create', 'TransactionController@create')->name('user.transaction.create');
+    Route::post('/Transaction/store', 'TransactionController@store')->name('user.transaction.store');
+    Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
    
 
 });

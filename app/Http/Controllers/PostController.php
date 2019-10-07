@@ -12,7 +12,6 @@ class PostController extends Controller
     {
       $recent_post = Post::where('status', 'انتشار')->get()->take(9);
       
-       // dd(json_decode($recent_post[0]['extras'],false));
        return view('site.post.index',compact('recent_post'));
        
     }

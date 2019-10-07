@@ -15,13 +15,14 @@ class Transaction extends Model
 
     public function GetListAllNameColumns_ForTable()
     {
-       return  [ 'time' => 'زمان',
-                 'date' => 'تاریخ ',
-                 'digital_receipt' => 'رسید دیجیتال ',
+       return  [ 'pk_transaction' => 'کلید تراکنش',
+                 'pk_users' => 'کلید کاربر',
+                 'digital_receipt' => 'کد پیگیری ( رسید دیجیتال )',
                  'price' => 'قیمت',
-                 'type' => 'نوع',
-                 'created_at' => 'ساخته شده در',
-                 'updated_at' => 'ویرایش شده در',
+                 'type' => 'نوع تراکنش',
+                 'created_at' => 'زمان و تاریخ ثبت',
+                 'updated_at' => 'زمان و تاریخ اصلاحیه',
+                 'extras' => 'توضیحات',
 
                  ] ;
     }

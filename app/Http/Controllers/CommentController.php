@@ -52,7 +52,7 @@ class CommentController extends Controller
         $comment->comment = $NewComment;
         if($comment->save())
         {
-            return redirect()->back()->with('success','Your Comment Send Success');
+            return redirect()->back()->with('success','پیام شما با موفقیت ارسال شد');
 
         }
 

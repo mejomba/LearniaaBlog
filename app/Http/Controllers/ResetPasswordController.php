@@ -82,7 +82,7 @@ class ResetPasswordController extends Controller
                 }
                 else
                 {
-                    return redirect()->back()->with('error','خطا : مشکل در');
+                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
                 }
                 
                
@@ -170,7 +170,7 @@ class ResetPasswordController extends Controller
                 }
                 else
                 {
-                    return redirect()->back()->with('error','خطا : مشکل در');
+                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
                 }
            }
 
@@ -211,22 +211,15 @@ class ResetPasswordController extends Controller
 
         $rules =  [
             
-            'mobile' => 'required|numeric|min:3|exists:users'
-         ];
+                     'mobile' => 'required|numeric|min:3|exists:users'
+                 ];
 
-    
-
-
-
-            $messages = [
-
-           
-            'mobile.required' => 'شماره تلفن همراه  وارد نشده است',
-            'mobile.min' => ' شماره تلفن همراه  کوتاه تر از حد مجاز است',
-            'mobile.numeric' => ' شماره تلفن همراه صحیح وارد نشده است ',
-            'mobile.exists' => ' شماره تلفن همراه شما ثبت نام نشده است ',    
-          
-                    ];
+            $messages = [                      
+                            'mobile.required' => 'شماره تلفن همراه  وارد نشده است',
+                            'mobile.min' => ' شماره تلفن همراه  کوتاه تر از حد مجاز است',
+                            'mobile.numeric' => ' شماره تلفن همراه صحیح وارد نشده است ',
+                            'mobile.exists' => ' شماره تلفن همراه شما ثبت نام نشده است ',    
+                       ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
 

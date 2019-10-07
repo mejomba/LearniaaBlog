@@ -36,6 +36,23 @@
 @endif
 
 
+@if(Session::has('report'))
+
+<div class="alert alert-danger text-center">
+                <div class="container">
+                   
+                    <img src="{{ asset('images/Template/error.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                   
+                    
+                    
+                   
+                    <b>پیام خطا:</b>   {{ Session::get('report') }}       
+                   
+                    </div>
+        </div>
+
+@endif
+
 
 
         

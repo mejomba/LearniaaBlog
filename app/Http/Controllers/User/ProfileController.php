@@ -115,7 +115,7 @@ class ProfileController extends Controller
                 }
                 else
                 {
-                    return redirect()->back()->with('error','خطا : مشکل در');
+                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
                 }
                
             }
