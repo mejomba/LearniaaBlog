@@ -21,10 +21,8 @@ class ProductController extends Controller
     public function index()
     {
         $recent_product = Product::where('status', 'انتشار')->get()->take(9);
-      
-        // dd(json_decode($recent_post[0]['extras'],false));
         return view('site.product.index',compact('recent_product'));
-            }
+     }
 
     /**
      * Show the form for creating a new resource.

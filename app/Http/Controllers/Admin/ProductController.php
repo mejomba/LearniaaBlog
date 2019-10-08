@@ -8,6 +8,7 @@ use App\Tag;
 use App\Product;
 use App\Learner;
 use App\Category;
+use App\User;
 use Validator;
 
 class ProductController extends Controller
@@ -33,7 +34,7 @@ class ProductController extends Controller
     {
         $learners = Learner::get();
         $categories = Category::where('type','محصول')->get();
-        $tags = Tag::get();
+        $tags = Tag::where('type','محصول')->get();
         return view('admin.product.create',compact('categories','tags','learners'));
     }
 
@@ -59,39 +60,34 @@ class ProductController extends Controller
              $new_instance = new Product();
     
              if(request()->pk_tags != null)
-           {  
+             {  
                 $data_tags = json_encode(request()->pk_tags,false);  
-                $new_instance->pk_tags =  $data_tags ;
+                $new_instance->pk_tag =  $data_tags ;
                }
     
-                 // process User --> Get info Writer And Save $new_instance
-
-             $new_instance->product = request()->product ;
-             $new_instance->pk_categories = request()->pk_categories ;
-             $new_instance->pk_tree = request()->pk_tree;
+             $new_instance->pk_category = request()->pk_category ;
              $new_instance->pk_learner = request()->pk_learner;
-             $new_instance->pk_behavior = request()->pk_behavior;
              $new_instance->title = request()->title;
-             $pic = request()->file('pic');
+            
+             if(request()->pic)
+             {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $pic->move(public_path('images'),$pic_name);
+                $new_instance->pic = $pic_name ;
+            } 
+
              $new_instance->price = request()->price;
              $new_instance->time = request()->time;
              $new_instance->desc = request()->desc;
              $new_instance->count = request()->count;
              $new_instance->language = request()->language;
              $new_instance->subtitle = request()->subtitle;
+             $new_instance->status = request()->status;
                  
-             /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
-    
-    
-    
-                // process extras --> save all option to array And save to $new_instance
-              
-    
-               // Save To database 
-    
                 if(  $new_instance->save())
                 {
-                    return redirect(route('admin.post.index'))->with('success','پست با موفقیت ایجاد شد ');
+                    return redirect(route('admin.product.index'))->with('success','محصول با موفقیت ایجاد شد ');
                 }
                 else
                 {
@@ -124,7 +120,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $categories = Category::where('type','محصول')->get();
-        $tags = Tag::get();
+        $tags = Tag::where('type','محصول')->get();
         $learners = Learner::get();
 
         return view('admin.product.edit',compact('product','categories','tags','learners'));  
@@ -214,34 +210,30 @@ class ProductController extends Controller
     public function destroy($id)
     {
 
-        $post = Product::find($id);
-    
-        if($product->delete())
-        {
-            return redirect(route('admin.product.index'))->with('success','محصول با موفقیت حذف شد ');
-        }
-        else
-        {
-            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-        }
-
-
-
+            $product = Product::find($id);
+        
+            if($product->delete())
+            {
+                return redirect(route('admin.product.index'))->with('success','محصول با موفقیت حذف شد ');
+            }
+            else
+            {
+                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+            }
     }
+
 
 
     public function validation(Request $request)
     {
 
         $rules =  [
-                    'pk_product' => 'required|numeric', 
-                    'pk_category' => 'required|min:3', 
-                    'pk_tag' => 'required',
-                    'pk_tree' => 'required',
+                   
+                    'pk_category' => 'required', 
+                    'pk_tags' => 'required',
                     'pk_learner' => 'required',
-                    'pk_behavior' => 'required',
                     'title' => 'required|min:3',
-                    'pic' => 'required|min:3',
+                    'pic' => 'required|file',
                     'price' => 'required|min:3',
                     'time' => 'required|min:3',
                     'desc' => 'required|min:3',
@@ -286,18 +278,34 @@ class ProductController extends Controller
 
                 'subtitle.required' => 'زیرنویس  وارد نشده است',
                 'subtitle.min' => 'زیرنویس  وارد شده کوچکتر از حد مجاز است',
-
-
-
-
-
-
-
-                ];
+             ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
 
         return $validator ;
+    }
+
+
+
+    public function upload(Request $request)
+    {
+            if($request->hasFile('upload')) 
+            {
+              $originName = $request->file('upload')->getClientOriginalName();
+              $fileName = pathinfo($originName, PATHINFO_FILENAME);
+              $extension = $request->file('upload')->getClientOriginalExtension();
+              $fileName = $fileName.'_'.time().'.'.$extension;
+          
+              $request->file('upload')->move(public_path('images'), $fileName);
+
+              $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+              $url = asset('images/product'.$fileName); 
+              $msg = 'Image uploaded successfully'; 
+              $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+                
+              @header('Content-type: text/html; charset=utf-8'); 
+              echo $response;
+          }
     }
 
 

@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Learner;
+use Validator;
+use Auth;
+use App\Profile;
+use App\User;
 
 class LearnerController extends Controller
 {
@@ -15,9 +20,9 @@ class LearnerController extends Controller
     public function index()
     {
         $instance_Model_learner = new learner();
-        $names =   $instance_Model_product->GetListAllNameColumns_ForTable();
-        $learner = Learner::get();
-        return view('admin.learner.index',compact('learner','names'));    
+        $names =   $instance_Model_learner->GetListAllNameColumns_ForTable();
+        $learners = Learner::get();
+        return view('admin.learner.index',compact('learners','names'));    
     }
 
     
@@ -29,12 +34,8 @@ class LearnerController extends Controller
      */
     public function create()
     {
-
-        $user =  Auth::user() ;
-        $pk_user =  $user->pk_users ;
-        $profile = Profile::where('pk_user',$pk_user)->get();
-        $pk_profile = $profile->pk_profile ;
-        return view('admin.learner.create',compact('pk_user','pk_profile'));  
+        $users = User::get();  
+        return view('admin.learner.create',compact('users'));  
     }
 
     /**
@@ -58,32 +59,27 @@ class LearnerController extends Controller
           {
              $new_instance = new Learner();
     
-             
-    
-                 // process User --> Get info Writer And Save $new_instance
-                 $user =  Auth::user() ;
-                 $new_instance->pk_writers =  $user->pk_users ;
-            
-             $new_instance->pk_learner = request()->pk_learner ;
-             $new_instance->pk_user = request()->pk_user ;
-            
-             $new_instance->pk_profile = request()->pk_profile ;
-             $new_instance->pic = request()->pic     ;
-             $new_instance->desc = request()->desc     ;
+
+             $new_instance->pk_user = request()->pk_users ;
+             $profile = Profile::where('pk_users', request()->pk_users)->get()->first();
+             $new_instance->pk_profile = $profile->pk_profiles ;
+             $new_instance->desc = request()->desc ;
 
     
              /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
     
-                $pic = request()->file('pic_content');
+             if(request()->pic)
+             {
+                $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
                 $pic->move(public_path('images'),$pic_name);
-                $new_instance->pic_content = $pic_name ;
-    
+                $new_instance->pic = $pic_name ;
+            }   
     
                
                 if(  $new_instance->save())
                 {
-                    return redirect(route('admin.learner.index'))->with('success','پست با موفقیت ایجاد شد ');
+                    return redirect(route('admin.learner.index'))->with('success','مدرس با موفقیت ایجاد شد ');
                 }
                 else
                 {
@@ -115,12 +111,10 @@ class LearnerController extends Controller
     public function edit($id)
     {
         $learner = Learner::find($id);
-        $user = User::find($learner->pk_user);
-        $learner = Profile::find($profile->pk_profile);
+      
+        $users = User::get();
 
-        $learners = Learner::get();
-
-        return view('admin.product.edit',compact('product','categories'));  
+        return view('admin.learner.edit',compact('users','learner'));  
     }
 
     /**
@@ -146,21 +140,20 @@ class LearnerController extends Controller
             // Get Selected Item Fron DB  
             $learner = Learner::find($id);
 
-           
-            
-             $product->pk_learner = request()->pk_learner ;
-             $product->pk_user = request()->pk_user ;
-             $product->pk_profile = request()->pk_profile ;
-             $product->desc = request()->desc ;
+        
+
+             $learner->desc = request()->desc ;
      
-             $pic = request()->file('pic_content');
-             $pic_name = $pic->getClientOriginalName();
-             $pic->move(public_path('images'),$pic_name);
-             $new_instance->pic_content = $pic_name ;
- 
+             if(request()->pic)
+             {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $pic->move(public_path('images'),$pic_name);
+                $new_instance->pic = $pic_name ;
+            }  
      
 
-             if(  $product->save())
+             if(  $learner->save())
              {
                  return redirect(route('admin.learner.index'))->with('success','مدرس با موفقیت ویرایش شد ');
              }

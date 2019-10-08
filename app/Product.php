@@ -12,14 +12,19 @@ class Product extends Model
 
     public function GetListAllNameColumns_ForTable()
     {
-       return  [ 'title' => 'زمان',
+       return  [ 'pk_product' => 'کلید محصول',
+                'pk_category' => 'کلید دسته بندی ',
+                'pk_tag' => 'کلید تگ  ',
+                'pk_learner' => 'کلید مدرس',
+                 'title' => 'زمان',
                  'pic' => 'تصویر ',
                  'price' => 'قیمت  ',
-                 'time' => 'زمان',
+                 'time' => 'مدت زمان',
                  'desc' => 'توضیحات',
                  'count' => 'تعداد قسمت ها',
-                 'language' => ' زبان',
-                 'subtitle' => 'زیرنویس',
+                 'language' => ' زبان دوره',
+                 'subtitle' => 'زبان زیرنویس',
+                 'status' => 'وضعیت',
 
                  ] ;
     }

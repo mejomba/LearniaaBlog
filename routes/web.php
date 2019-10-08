@@ -99,6 +99,21 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/discount/delete/{id}', 'DiscountController@destroy')->name('admin.discount.delete');
     Route::post('/discount/update/{id}', 'DiscountController@update')->name('admin.discount.update');
 
+    Route::get('/learner/index', 'LearnerController@index')->name('admin.learner.index');
+    Route::get('/learner/create', 'LearnerController@create')->name('admin.learner.create');
+    Route::get('/learner/edit/{id}', 'LearnerController@edit')->name('admin.learner.edit');
+    Route::post('/learner/store', 'LearnerController@store')->name('admin.learner.store');
+    Route::get('/learner/delete/{id}', 'LearnerController@destroy')->name('admin.learner.delete');
+    Route::post('/learner/update/{id}', 'LearnerController@update')->name('admin.learner.update');
+
+    Route::get('/product/index', 'ProductController@index')->name('admin.product.index');
+    Route::get('/product/create', 'ProductController@create')->name('admin.product.create');
+    Route::get('/product/edit/{id}', 'ProductController@edit')->name('admin.product.edit');
+    Route::post('/product/store', 'ProductController@store')->name('admin.product.store');
+    Route::get('/product/delete/{id}', 'ProductController@destroy')->name('admin.product.delete');
+    Route::post('/product/update/{id}', 'ProductController@update')->name('admin.product.update');
+    Route::post('/product/upload', 'ProductController@upload')->name('admin.product.upload');
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

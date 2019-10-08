@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> نمایش محصول | لرنیا </title>
-  <meta  name="description" content=" نمایش محصول | لرنیا">
+<title> نمایش مدرس | لرنیا </title>
+  <meta  name="description" content=" نمایش مدرس | لرنیا">
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول محصول</h1>
+                <h1 class="card-title text-center">جدول مدرس ها</h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.product.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد محصول
+                  <a href="{{route('admin.learner.create')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem;"> ایجاد مدرس
                   </a>                
 
                     </p>
@@ -42,68 +42,40 @@
                     </thead>
 
                       <tbody>
-                      @foreach($products as $product)
+                      @foreach($learners as $learner)
                         <tr>
                           
                           <td>
-                          {{ $product['pk_product'] }} 
+                          {{ $learner['pk_learner'] }} 
                           </td>
                           <td>
-                          {{ $product['pk_category'] }} 
-                          </td>
-
-                          <td>
-                          {{ $product['pk_tag'] }} 
+                          {{ $learner['pk_user'] }} 
                           </td>
 
                           <td>
-                          {{ $product['pk_learner'] }} 
+                          {{ $learner['pk_profile'] }} 
                           </td>
 
                           <td>
-                          {{ $product['title'] }} 
-                          </td>
-
-                          <td>
-                          <img src="{{ asset('images/' . $product['pic'] ) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
+                          <img src="{{ asset('images/' . $learner['pic'] ) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
                       
                           </td>
 
                           <td>
-                          {{ $product['price'] }} 
+                          {{ $learner['desc'] }} 
                           </td>
 
-                          <td>
-                          {{ $product['time'] }} 
-                          </td>
-
-                          <td>
-                          {{ $product['desc'] }} 
-                          </td>
-
-                          <td>
-                          {{ $product['count'] }} 
-                          </td>
-
-                          <td>
-                          {{ $product['language'] }} 
-                          </td>
                       
                           <td>
-                          {{ $product['subtitle'] }} 
-                          </td>
-
-
-                       <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a style="color:#00bcd4" href="{{ route('admin.product.edit', $product['pk_product']) }}"> 
+                      <a style="color:#00bcd4" href="{{ route('admin.learner.edit', $learner['pk_learner']) }}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
 
                         <span style="font-size: 1.3rem;color:black;padding-right:25px">
-                      <a style="color:#e91e63" href="{{ route('admin.product.delete', $product['pk_product']) }}">
+                      <a style="color:#e91e63" href="{{ route('admin.learner.delete', $learner['pk_learner']) }}">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                         </a>
                         

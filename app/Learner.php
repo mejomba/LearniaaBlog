@@ -3,23 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Learner extends Model
 {
     protected $table = 'learners';
     protected $primaryKey = 'pk_learner';
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function GetListAllNameColumns_ForTable()
     {
@@ -30,4 +19,12 @@ class Learner extends Model
                  'desc'=> 'توضیحات',
                  ] ;
     }
+
+
+    public function user()
+    {
+
+     return $this->hasOne('App\User', 'pk_users', 'pk_user');
+    }
+
 }

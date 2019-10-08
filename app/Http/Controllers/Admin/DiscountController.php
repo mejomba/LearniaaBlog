@@ -91,7 +91,8 @@ class DiscountController extends Controller
      */
     public function edit($id)
     {
-        //
+        $discount = Discount::find($id);
+        return view('admin.discount.edit',compact('discount'));
     }
 
     /**
@@ -103,7 +104,35 @@ class DiscountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator =  $this->validation($request);
+
+        if ($validator->fails())
+        {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+        }
+    
+        else
+        {  
+            $discount = Discount::find($id);
+            $discount->serial = request()->serial ;
+            $discount->status = request()->status ;
+            $owners =  explode("-",request()->owners);
+            $data_owners = json_encode($owners,false); 
+            $discount->owners = $data_owners ;
+    
+    
+            if($discount->save())
+            {
+                    return redirect(route('admin.discount.index'))->with('success','بن تخفیف با موفقیت ویرایش شد');
+            }
+            else
+            {
+                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+            }
+
+        }
     }
 
     /**
@@ -114,7 +143,16 @@ class DiscountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $discount = Discount::find($id);
+    
+        if($discount->delete())
+        {
+            return redirect(route('admin.discount.index'))->with('success','بن تخفیف با موفقیت حذف شد ');
+        }
+        else
+        {
+            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+        }
     }
 
     public function validation(Request $request)

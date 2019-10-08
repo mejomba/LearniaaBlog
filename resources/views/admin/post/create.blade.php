@@ -134,7 +134,7 @@
          <!-- Select Box -->
 
          
-             <!-- Select Box -->
+             <!-- Picture Box -->
         <div class="col-md-4">
         <div class="row">
 
@@ -155,7 +155,7 @@
    
         </div>
         </div>
-         <!-- Select Box -->
+         <!-- Picture Box -->
            
            
 

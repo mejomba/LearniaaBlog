@@ -46,8 +46,6 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-       
-       
       $validator =  $this->validation($request);
 
     if ($validator->fails())
@@ -321,6 +319,8 @@ class PostController extends Controller
           }
     }
 
+/*
+
     public function upload2()
     {
   
@@ -382,7 +382,7 @@ class PostController extends Controller
      }
     }
   
-
+*/
 
 
 
