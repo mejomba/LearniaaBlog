@@ -9,7 +9,7 @@ Route::get('/payment/paymentstart', 'HomeController@paymentstart')->name('paymen
 Route::get('/payment/paymentcomplete', 'HomeController@paymentcomplete')->name('paymentcomplete');
 */
 
-Route::get('/products', 'HomeController@show')->name('product.show');
+Route::get('/product', 'ProductController@index')->name('product.index');
 
 Route::get('/', 'HomeController@index')->name('index');
 

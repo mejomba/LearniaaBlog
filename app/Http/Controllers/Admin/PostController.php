@@ -177,6 +177,10 @@ class PostController extends Controller
               $data_tags = json_encode(request()->pk_tags,false);  
               $post->pk_tags =  $data_tags ;
              }
+             else
+             {
+               $post->pk_tags =  "" ;
+             }
 
              $user =  Auth::user() ;
              $post->pk_writers =  $user->pk_users ;

@@ -63,7 +63,7 @@ class ProductController extends Controller
              {  
                 $data_tags = json_encode(request()->pk_tags,false);  
                 $new_instance->pk_tag =  $data_tags ;
-               }
+             }
     
              $new_instance->pk_category = request()->pk_category ;
              $new_instance->pk_learner = request()->pk_learner;
@@ -135,9 +135,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-
         $validator =  $this->validation($request);
 
         if ($validator->fails())
@@ -149,48 +146,49 @@ class ProductController extends Controller
     
         else
           {
-            // Get Selected Item Fron DB  
-            $product = Product::find($id);
-
-            //process
-            if(request()->pk_tags != null)
-            {  
-              $data_tags = json_encode(request()->pk_tags,false);  
-              $product->pk_tags =  $data_tags ;
-             }
-
-            
-             $product->pk_tree = request()->pk_tree ;
-             $product->pk_learner = request()->pk_learner ;
-             $product->pk_behavior = request()->pk_behavior ;
-             $product->title = request()->title ;
-             $product->pic = request()->pic ;
-             $product->price = request()->price ;
-             $product->desc = request()->desc ;
-             $product->count = request()->count ;
-             $product->language = request()->language ;
-             $product->subtitle = request()->subtitle ;
-
-     
-        
-     
-
-             if(  $product->save())
-             {
-                 return redirect(route('admin.product.index'))->with('success','محصول با موفقیت ویرایش شد ');
+             $new_instance = Product::find($id);
+    
+             if(request()->pk_tags != null)
+             {  
+                $data_tags = json_encode(request()->pk_tags,false);  
+                $new_instance->pk_tag =  $data_tags ;
              }
              else
              {
-                 return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                $new_instance->pk_tag =  "" ;
              }
-
-
-
-             ////
-
-
+    
+             $new_instance->pk_category = request()->pk_category ;
+             $new_instance->pk_learner = request()->pk_learner;
+             $new_instance->title = request()->title;
             
+             if(request()->pic)
+             {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $pic->move(public_path('images'),$pic_name);
+                $new_instance->pic = $pic_name ;
+            } 
+
+             $new_instance->price = request()->price;
+             $new_instance->time = request()->time;
+             $new_instance->desc = request()->desc;
+             $new_instance->count = request()->count;
+             $new_instance->language = request()->language;
+             $new_instance->subtitle = request()->subtitle;
+             $new_instance->status = request()->status;
+                 
+                if($new_instance->save())
+                {
+                    return redirect(route('admin.product.index'))->with('success','محصول با موفقیت ویرایش شد ');
+                }
+                else
+                {
+                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                }
           }
+    
+    
     }
 
 
@@ -228,57 +226,36 @@ class ProductController extends Controller
     {
 
         $rules =  [
-                   
-                    'pk_category' => 'required', 
-                    'pk_tags' => 'required',
-                    'pk_learner' => 'required',
-                    'title' => 'required|min:3',
-                    'pic' => 'required|file',
-                    'price' => 'required|min:3',
-                    'time' => 'required|min:3',
-                    'desc' => 'required|min:3',
-                    'count' => 'required|min:3',
-                    'language' => 'required|min:3',
-                    'subtitle' => 'required|min:3',
+                    'pk_category' => 'required|numeric', 
+                    'pk_learner' => 'required|numeric',
+                    'title' => 'required',
+                    'pic' => 'nullable|file',
+                    'price' => 'required|numeric',
+                    'time' => 'required',
+                    'desc' => 'required',
+                    'count' => 'required|numeric',
+                    'language' => 'required',
+                    'subtitle' => 'required',
                  ];
 
     $messages = [
-                'pk_product.required' => 'کلید محصولات وارد نشده است',
-                'pk_product.numeric' => 'کلید محصولات صحیح وارد نشده است ',
+                
                 'pk_category.required' => 'کلید دسته بندی وارد نشده است',
                 'pk_category.numeric' => 'کلید دسته بندی صحیح وارد نشده است ',
-                'pk_tag.required' => 'کلید تگ وارد نشده است',
-                'pk_tree.required' => 'کلید درخت وارد نشده است',
                 'pk_learner.required' => 'کلید مدرس وارد نشده است',
-                'pk_behavior.required' => 'کلید رفتار وارد نشده است',
-
-
+                'pk_learner.numeric' => 'کلید مدرس صحیح وارد نشده است ',
                 'title.required' => 'عنوان  وارد نشده است',
-                'title.min' => 'عنوان  وارد شده کوچکتر از حد مجاز است',
-
                 'pic.required' => 'تصویر  وارد نشده است',
-                'pic.min' => 'عنوان  وارد شده کوچکتر از حد مجاز است',
                 'pic.file' => 'فیلد تصویر فاقد فایل تصویر است',
-                
-
                 'price.required' => 'قیمت  وارد نشده است',
-                'price.min' => 'قیمت  وارد شده کوچکتر از حد مجاز است',
-
+                'price.numeric' => 'قیمت  وارد شده صحیح نیست',
                 'time.required' => 'زمان  وارد نشده است',
-                'time.min' => 'زمان  وارد شده کوچکتر از حد مجاز است',
-
                 'desc.required' => 'توضیحات  وارد نشده است',
-                'desc.min' => 'توضیحات  وارد شده کوچکتر از حد مجاز است',
-
                 'count.required' => 'تعداد ویدیو وارد نشده است',
-                'count.min' => 'تعداد ویدیو وارد شده کوچکتر از حد مجاز است',
-
+                'count.numeric' => 'تعداد ویدیو صحیح وارد نشده است',
                 'language.required' => 'زبان آموزش وارد نشده است',
-                'language.min' => 'زبان آموزش  وارد شده کوچکتر از حد مجاز است',
-
                 'subtitle.required' => 'زیرنویس  وارد نشده است',
-                'subtitle.min' => 'زیرنویس  وارد شده کوچکتر از حد مجاز است',
-             ];
+               ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
 
@@ -296,7 +273,7 @@ class ProductController extends Controller
               $extension = $request->file('upload')->getClientOriginalExtension();
               $fileName = $fileName.'_'.time().'.'.$extension;
           
-              $request->file('upload')->move(public_path('images'), $fileName);
+              $request->file('upload')->move(public_path('images/product'), $fileName);
 
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
               $url = asset('images/product'.$fileName); 

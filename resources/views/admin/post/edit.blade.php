@@ -64,7 +64,9 @@
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
                               <input class="custom-control-input" id="{{ $tag->pk_tags ?? '' }}" 
                               name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags ?? '' }}"
-                              @if(is_array($tag->pk_tags) AND in_array( $tag->pk_tags ?? '' , json_decode($post->pk_tags,false) ))
+                              @if( is_array(json_decode($post->pk_tags,false)) AND 
+                                  in_array($tag->pk_tags ,  json_decode($post->pk_tags,false))
+                                 )
                               {
                                 checked="checked"
                               }

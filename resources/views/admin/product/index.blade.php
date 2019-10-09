@@ -93,6 +93,10 @@
                           {{ $product['subtitle'] }} 
                           </td>
 
+                          <td>
+                          {{ $product['status'] }} 
+                          </td>
+
 
                        <td>
 

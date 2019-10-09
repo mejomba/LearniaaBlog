@@ -6,7 +6,7 @@
      
               <div class="col-md-7 col-12" style="padding-right:10%">
               <div class="row">
-              <a class="nav-link col-md-3 col-3" href="{{route('product.show')}}"  rel="tooltip" title="" data-placement="bottom"
+              <a class="nav-link col-md-3 col-3" href="{{route('product.index')}}"  rel="tooltip" title="" data-placement="bottom"
             data-original-title="به زودی">
             <img src="{{ asset('images/Template/nav/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
              آموزش سریع
