@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Learner;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,6 +28,12 @@ class Product extends Model
                  'status' => 'وضعیت',
 
                  ] ;
+    }
+
+    public function learner()
+    {
+
+     return $this->hasOne('App\Learner', 'pk_learner', 'pk_learner');
     }
     
 }

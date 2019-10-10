@@ -20,8 +20,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $recent_Products = Product::where('status', 'انتشار')->get()->take(9);
         $categories = Category::where('type','محصول')->get();
-        return view('site.product.index',compact('categories'));
+        return view('site.product.index',compact('categories','recent_Products'));
      }
 
     /**
@@ -51,7 +52,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function detail($slug)
     {  
         $detail_post = Post::where('pk_post', $slug)->get();
         $recent_product = Product::get()->take(6);

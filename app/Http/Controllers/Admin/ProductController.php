@@ -73,7 +73,7 @@ class ProductController extends Controller
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $pic->move(public_path('images'),$pic_name);
+                $pic->move(public_path('images/product'),$pic_name);
                 $new_instance->pic = $pic_name ;
             } 
 
@@ -166,7 +166,7 @@ class ProductController extends Controller
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $pic->move(public_path('images'),$pic_name);
+                $pic->move(public_path('images/product'),$pic_name);
                 $new_instance->pic = $pic_name ;
             } 
 

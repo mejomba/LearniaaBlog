@@ -5,6 +5,7 @@ Route::get('/', 'HomeController@index')->name('index');
 */
 
 Route::get('/product', 'ProductController@index')->name('product.index');
+Route::get('/product/{slug}', 'ProductController@detail')->name('product.detail');
 
 Route::get('/', 'HomeController@index')->name('index');
 

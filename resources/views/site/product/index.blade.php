@@ -71,6 +71,15 @@
             <div class="nav-wrapper">
                 <ul class="nav nav-pills nav-fill flex-column flex-sm-row" id="tabs-icons-text" role="tablist">
                    
+                   <!-- dadas
+                <li class="nav-item">
+                        <a class="nav-link mb-sm-3 mb-md-0 active " id="tab" data-toggle="tab"
+                         href="#tab_text" role="tab" 
+                        aria-controls="tab" aria-selected="true">
+                        جدیدترین </a>
+                    </li>
+                    -->
+
                 @foreach($categories as $category)
 
                     <li class="nav-item">
@@ -103,20 +112,83 @@
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">
 
-               @foreach($categories as $category)
-                    @foreach($categories as $category)
                             <!-- Section -->
 
-                                    <!-- Panel -->
-                                    <div class="tab-pane fade" id="tab2_text" role="tabpanel"  aria-labelledby="tab2">
+                                   
+
+                                     
+                @foreach($categories as $category)
+               
+                     <!-- Panel -->
+                     <div class="tab-pane " id="tab{{$category['pk_categories']}}_text" role="tabpanel"
+                                      aria-labelledby="tab{{$category['pk_categories']}}">
+
+                          <div class="row">
+                               @foreach($category->product as $product)
+                                
                                     <!-- Data -->
-                                        <p class="description">AAAA</p>
+                                    <div class="col-md-4 div-transition">
+
+                                        <a href="{{route('product.detail', $product['pk_product'] )}}">
+                                        <img  src="{{ asset('images/product/'.$product['pic'] ) }}"  
+                                        class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
+                                                                
+                                        <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
+                                            <h4 style="font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
+                                            </a>
+                                                    
+                                        <div class="post-meta" >
+
+                                        <div class="post-meta-content" class="meta_title_post text-muted">
+
+                                                <span class="post-auhor-date">
+                                                <span class="text-muted">
+                                                <img src="{{ asset('images/Template/user.svg') }}" 
+                                                alt="Thumbnail Image" height="20px" width="20px">
+                                                {{$product->learner->user['name']}} </span>
+                                                <span  class="text-muted"> | 
+                                                <img src="{{ asset('images/Template/calendar.svg') }}" 
+                                                alt="Thumbnail Image" height="20px" width="20px">
+
+                                                    {{ $product->count }} قسمت
+                                                </span>
+                                            
+                                                </span>
+
+                                                <span class="text-muted" > |
+                                                <img src="{{ asset('images/Template/clock.svg') }}" 
+                                                alt="Thumbnail Image" height="20px" width="20px">
+
+                                                    {{ $product->time }} دقیقه
+                                                </span>  
+
+                                              
+
+                                            <div class="post-content">
+                                                <p> @php $text =  substr($product->desc,0,380);
+                                                        $char = substr($text,strlen($text)-1,1);
+                                                        if($char != "." | $char != " ")
+                                                        {
+                                                        echo  substr($text,0,378);
+                                                        }
+                                                        else
+                                                        {
+                                                        echo $text ;
+                                                        }                                  
+                                                    @endphp  </p>
+                                            </div>
+
                                     <!-- Data -->
+                                    </div> 
                                     </div>
+                                    </div>
+                                    
                                 <!-- Panel -->  
                                 
                             <!-- Section -->
                     @endforeach
+                    </div>
+                    </div>
                 @endforeach     
 
                          
