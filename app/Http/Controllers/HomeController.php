@@ -31,11 +31,4 @@ class HomeController extends Controller
         
         }
 
-        public function show()
-        {
-          $prdoucts = array();
-
-          return view('site.index',compact('prdoucts'));
-        }
-
 }

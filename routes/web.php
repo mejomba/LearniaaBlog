@@ -4,11 +4,6 @@
 Route::get('/', 'HomeController@index')->name('index');
 */
 
-/*
-Route::get('/payment/paymentstart', 'HomeController@paymentstart')->name('paymentstart');
-Route::get('/payment/paymentcomplete', 'HomeController@paymentcomplete')->name('paymentcomplete');
-*/
-
 Route::get('/product', 'ProductController@index')->name('product.index');
 
 Route::get('/', 'HomeController@index')->name('index');
@@ -133,23 +128,4 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
 
 });
 
-
-Route::group(['prefix' => 'writer','namespace' => 'Writer','middleware'=>'auth'], function() 
-{
-    Route::get('/home/index', 'HomeController@index')->name('writer.home');
-    Route::get('/home', 'HomeController@index')->name('writer.home');
-
-    Route::get('/Profile/edit/', 'ProfileController@edit')->name('writer.profile.edit');
-    Route::post('/Profile/update/{id}', 'ProfileController@update')->name('writer.profile.update');
-});
-
-
-
-
 Auth::routes();
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
