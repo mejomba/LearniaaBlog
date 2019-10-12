@@ -19,7 +19,7 @@ class PostController extends Controller
     {
         $detail_post = Post::where('pk_post', $slug)->get();
         $recent_post = Post::get()->take(6);
-        $behavior_post = Behavior::where('pk_post', $slug)->where('status','تایید شده')->get();
+        $behavior_post = Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
         /*
         
        // $tags = Tag::all();

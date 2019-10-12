@@ -53,7 +53,7 @@
                           </td>
 
                           <td>
-                          {{ $behavior_one['pk_post'] }} 
+                          {{ $behavior_one['pk_entity'] }} 
                           </td>
 
                           <td>

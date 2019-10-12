@@ -84,6 +84,7 @@ class ProductController extends Controller
              $new_instance->language = request()->language;
              $new_instance->subtitle = request()->subtitle;
              $new_instance->status = request()->status;
+             $new_instance->file = request()->file;
                  
                 if(  $new_instance->save())
                 {
@@ -177,6 +178,7 @@ class ProductController extends Controller
              $new_instance->language = request()->language;
              $new_instance->subtitle = request()->subtitle;
              $new_instance->status = request()->status;
+             $new_instance->file = request()->file;
                  
                 if($new_instance->save())
                 {
@@ -236,6 +238,7 @@ class ProductController extends Controller
                     'count' => 'required|numeric',
                     'language' => 'required',
                     'subtitle' => 'required',
+                    'file' => 'required',
                  ];
 
     $messages = [
@@ -255,6 +258,7 @@ class ProductController extends Controller
                 'count.numeric' => 'تعداد ویدیو صحیح وارد نشده است',
                 'language.required' => 'زبان آموزش وارد نشده است',
                 'subtitle.required' => 'زیرنویس  وارد نشده است',
+                'file.required' => 'فایل محصول  وارد نشده است',
                ];
 
         $validator = Validator::make($request->all(),$rules,$messages);

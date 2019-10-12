@@ -257,6 +257,12 @@
         <div class="col-md-4">
             <div class="form-group">
                   
+            <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <textarea name="file" id="file" type="text" class="form-control" placeholder="ادرس فایل"></textarea>
+                        </div>
+           
 
             </div>
         </div>

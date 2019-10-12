@@ -23,7 +23,7 @@ class Behavior extends Model
     public function GetListAllNameColumns_ForTable()
    {
       return  [ 'pk_behavior' => 'کلید رفتار ',
-                'pk_post' => 'کلید پست',
+                'pk_entity' => 'کلید موجودیت',
                 'pk_users' => 'کلید کاربر',
                 'type' => 'نوع',
                 'content'=> 'محتوا',

@@ -18,7 +18,7 @@
 @php  $json = json_decode($one_post['extras'],false) @endphp
 
 
-<div class="col-md-7" >
+<div class="col-md-7">
 
     <div class="row" style="padding-top: 5px;padding-left:15px;padding-right:15px" >
 

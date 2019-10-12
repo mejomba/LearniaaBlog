@@ -54,11 +54,11 @@ class ProductController extends Controller
      */
     public function detail($slug)
     {  
-        $detail_post = Post::where('pk_post', $slug)->get();
+        $detail_product = Product::where('pk_product', $slug)->get();
         $recent_product = Product::get()->take(6);
-        $behavior_product= Behavior::where('pk_product', $slug)->where('status','تایید شده')->get();
+        $behavior_product= Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
        
-        return view('site.product.detail',compact('recent_product','behavior_product'));
+        return view('site.product.detail',compact('detail_product','recent_product','behavior_product'));
     }
 
     /**
