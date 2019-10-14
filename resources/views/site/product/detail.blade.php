@@ -21,7 +21,7 @@
 
         <button class="btn btn-round btnblogPost btn-title" style="border-radius:10px" >
 
-            <h1 style="color:#FFFFFF" class="">{{$product['title']}}</h1>  
+            <h2 style="color:#FFFFFF" class="text-center">نام دوره : {{$product['title']}}</h2>  
 </div>
 @endforeach
 
@@ -52,7 +52,8 @@
                 </div>
 
 
-                <div class="container-fluid" style="margin-top:40px">
+                <div class="container-fluid"  style="margin-top:40px;border-bottom:2px solid #20c3b8;text-align:justify">
+                <h3>درباره دوره</h3>
                 @php echo htmlspecialchars_decode($product['desc']) ; @endphp 
                 </div>
                 
@@ -75,7 +76,12 @@
 
 
                         <div class="container-fluid">
-                        <div class="row" style="padding-top:50px;padding-bottom:15px;">
+
+                        <div style="border-bottom:2px solid #20c3b8;margin-bottom:5px">
+<h3> اطلاعات دوره <h3>
+</div>
+
+                        <div class="row" style="padding-top:10px;padding-bottom:15px;">
 
                                             <!-- Information Product -->
 
@@ -122,21 +128,21 @@
                                       <!-- Row 2 -->
 
 
-                                      <div class="col-md-4">
+                                      <div class="col-md-4 text-center">
                                       {{$product->learner->user['name']}}
                                       </div>
 
-                                      <div class="col-md-4">
+                                      <div class="col-md-4 text-center">
                                       {{ $product->count }} قسمت
                                       </div>
 
-                                      <div class="col-md-4">
+                                      <div class="col-md-4 text-center">
                                       {{ $product->time }} دقیقه
                                       </div>
                                             
-                                                <div class="col-md-12" style="padding-top:15px">
+                                                <div class="col-md-12 text-center" style="padding-top:35px">
                                                         <button class="btn btn-round btn-1  btn-title" style="border-radius:10px" >
-                                                        <h2>قیمت : {{$product->price}} (تومان)</h2>
+                                                        <h5 style="margin-top:5px">خرید دوره : @php echo number_format($product->price) ;  @endphp  (تومان)</h5>
                                                         </button>
                                                     </div>
                                         </div>
@@ -154,7 +160,7 @@
 
     <!-- Section Learner -->
 
-<div style="border-bottom:2px solid #20c3b8;margin-bottom:10px">
+<div style="border-bottom:2px solid #20c3b8;margin-bottom:5px;margin-top:20px;">
 <h3> اطلاعات مدرس <h3>
 </div>
 
@@ -162,9 +168,49 @@
      <div class="container-fluid" style="padding-top:15px;padding-bottom:15px;;font-size:15px">
 
        <div class="row" style="margin-top:10px">
-       
-               
-       </div>
+            
+                <div class="col-md-3">
+                </div>
+                
+                <div class="col-md-8">
+                  <img src="{{ asset('images/learner/'.$product->learner['pic'] ) }}"
+                    alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="width: 160px;height:150px">
+              </div>
+            
+              <div class="col-md-1">
+            </div>
+     
+      </div>
+
+      <div class="row" style="margin-top:20px">
+
+      <div class="col-md-1">
+                </div>
+                
+                <div class="col-md-9 text-center" style="font-size:18px">
+                {{$product->learner->user['name']}}
+              </div>
+            
+              <div class="col-md-1">
+            </div>
+
+      </div>
+
+      <div class="row" style="margin-top:20px">
+
+<div class="col-md-1">
+          </div>
+          
+          <div class="col-md-10 text-center" style="font-size:18px;">
+          <p style="text-align:justify">
+          {{$product->learner['desc']}}
+          </p>
+        </div>
+      
+        <div class="col-md-1">
+      </div>
+
+</div>
 
        
         </div>
@@ -175,8 +221,113 @@
 
 
 
+
+
+ <!---(New Products)   Static Section -->
+ <div class="container-fluid" style="padding-top:15px;padding-bottom:15px;;font-size:15px">
+
+ <div class="row" style="margin-top:10px">
+
+    <div class="col-md-8">
+
+          <h3 class="" style=""> دوره های پیشنهادی </h3>
+    </div>
+
+    <div class="col-md-4 text-center">
+    </div>
+
+  </div>
+
+       <div class="row" style="margin-top:10px">
+
+      
+     
+      <div class="col-md-8">
+
+      <div class="card shadow">
+                    <div class="card-body">
+
+            <div class="tab-pane active show " id="tab_text" role="tabpanel"  aria-labelledby="tab">          
+                         <div class="row"> 
+                        
+                               @foreach($recent_Products as $product)
+                                
+                                    <!-- Data -->
+                                    <div class="col-md-4 div-transition">
+
+                                        <a href="{{route('product.detail', $product['pk_product'] )}}">
+                                        <img  src="{{ asset('images/product/'.$product['pic'] ) }}"  
+                                        class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
+                                                                
+                                        <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
+                                            <h4 style="font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
+                                            </a>
+                                                    
+                                        <div class="post-meta" >
+
+                                        <div class="post-meta-content" class="meta_title_post text-muted">
+
+                                                <span class="post-auhor-date">
+                                                <span class="text-muted">
+                                                <img src="{{ asset('images/Template/user.svg') }}" 
+                                                alt="Thumbnail Image" height="20px" width="20px">
+                                                {{$product->learner->user['name']}} </span>
+                                                <span  class="text-muted"> | 
+                                                <img src="{{ asset('images/Template/calendar.svg') }}" 
+                                                alt="Thumbnail Image" height="20px" width="20px">
+
+                                                    {{ $product->count }} قسمت
+                                                </span>
+                                            
+                                                </span>
+
+                                                <span class="text-muted" > |
+                                                <img src="{{ asset('images/Template/clock.svg') }}" 
+                                                alt="Thumbnail Image" height="20px" width="20px">
+
+                                                    {{ $product->time }} دقیقه
+                                                </span>  
+
+                                              
+
+                                            <div class="post-content">
+                                                <p>  </p>
+                                            </div>
+
+                                    <!-- Data -->
+                                    </div> 
+                                    </div>
+                                    </div>
+                                    
+                                <!-- Panel -->  
+                                
+                            <!-- Section -->
+                    @endforeach
+                    </div>
+                    </div>
+
+               </div>
+              </div>      
+
+         </div>                                                 
+
+
+       <div class="col-md-4">
+      </div>              
+
+
+      </div>
+       </div>                
+
+    <!---(New Products)   Static Section -->
+
+
+
+
+
+
 <!-- Comment -->
-<div class="row" style="padding-bottom:45px">
+<div class="row" style="padding-bottom:45px;padding-top:60px">
 
 <div class="col-md-12">
 
