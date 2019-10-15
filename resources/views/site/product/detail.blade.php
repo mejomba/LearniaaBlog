@@ -44,7 +44,17 @@
                    <!-- Aparat Video  -->
                     <!-- Without Blade Becuase Convert to String -->
 
-                   @php echo $product['file'] ;  @endphp 
+
+                   @php
+                   if($payment_status == "Payed")
+                  {  
+                    echo $product['file'] ; 
+                  }
+                  else
+                  {
+                    echo $product['preview'] ; 
+                  }
+                  @endphp 
 
                     <!-- Aparat Video  -->
 
@@ -141,9 +151,12 @@
                                       </div>
                                             
                                                 <div class="col-md-12 text-center" style="padding-top:35px">
-                                                        <button class="btn btn-round btn-1  btn-title" style="border-radius:10px" >
-                                                        <h5 style="margin-top:5px">خرید دوره : @php echo number_format($product->price) ;  @endphp  (تومان)</h5>
-                                                        </button>
+                                                           <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
+                                                           @csrf
+                                                            <button class="btn btn-round btn-1 btn-title"  type="submit" style="border-radius:10px" >
+                                                            <h5 style="margin-top:5px">خرید دوره : @php echo number_format($product->price) ;  @endphp  (تومان)</h5>
+                                                            </button>
+                                                            </form>  
                                                     </div>
                                         </div>
                                     </div>

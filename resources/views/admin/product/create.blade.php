@@ -266,6 +266,19 @@
 
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                  
+            <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <textarea name="preview" id="preview" type="text" class="form-control" placeholder="ادرس پیش نمایش"></textarea>
+                        </div>
+           
+
+            </div>
+        </div>
        
        
 

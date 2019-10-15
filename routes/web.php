@@ -6,6 +6,7 @@ Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}', 'ProductController@detail')->name('product.detail');
+Route::post('/product/pay/{slug}', 'ProductController@pay')->name('product.pay');
 
 Route::get('/', 'HomeController@index')->name('index');
 
