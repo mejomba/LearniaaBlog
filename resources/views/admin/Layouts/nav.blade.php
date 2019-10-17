@@ -34,10 +34,10 @@
         <ul class="navbar-nav col-md-7">
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color:gray"  rel="tooltip" title="" data-placement="bottom"
+            <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
             data-original-title="به زودی">
             <img src="{{ asset('images/Template/nav/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-            آموزش سریع   (به زودی) 
+            آموزش سریع 
             </a>
           </li>
 
@@ -77,7 +77,7 @@
  <ul class="navbar-nav col-md-3 col-10 "  >
 <!-- serach box site -->
 
-<form class="navbar-form" dir="rtl" action="{{route('search.index')}}" style="padding-top:10px">
+<form class="navbar-form" dir="rtl" action="{{route('search.index','search')}}" style="padding-top:10px">
               
         <div class="row">
 

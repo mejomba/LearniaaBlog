@@ -1,11 +1,11 @@
 @extends('site.Layouts.layout_main')
 
 @section('Head')
-                    @foreach($detail_product as $product)
+                   
 
                     <title> {{$product['title']}}  </title>
-                      <meta  name="description" content="{{$product->desc}}">
-                      @endforeach
+                      <meta  name="description" content="{{$product['desc']}}">
+                     
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
 <div class="row">
 
-@foreach($detail_product as $product)
+
 
 <div class="col-md-8" >
 
@@ -23,7 +23,7 @@
 
             <h2 style="color:#FFFFFF" class="text-center">نام دوره : {{$product['title']}}</h2>  
 </div>
-@endforeach
+
 
 </button>
 
@@ -35,13 +35,7 @@
             <div class="container-fluid" style="padding-top: 5px;margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
                 <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px" >
 
-                <!-- Example
-                    <video class="img-raised rounded img-fluid"
-                     src="https://as7.cdn.asset.aparat.com/aparat-video/dd103528b00bb6c2fbe28c2286020da317378201-480p__26835.mp4"
-                height="250px" width="100%" >
-                    -->
-
-                   <!-- Aparat Video  -->
+                   <!-- JW Player Video  -->
                     <!-- Without Blade Becuase Convert to String -->
 
 
@@ -153,8 +147,25 @@
                                                 <div class="col-md-12 text-center" style="padding-top:35px">
                                                            <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
                                                            @csrf
-                                                            <button class="btn btn-round btn-1 btn-title"  type="submit" style="border-radius:10px" >
-                                                            <h5 style="margin-top:5px">خرید دوره : @php echo number_format($product->price) ;  @endphp  (تومان)</h5>
+                                                            <button class="btn btn-round btn-1 btn-title" 
+
+                                                            @if($payment_status == "Payed")
+                                                            disabled
+                                                            @endif
+                                                            
+                                                             type="submit" style="border-radius:10px" >
+                                                            <h5 style="margin-top:5px">خرید دوره : 
+                                                            @php 
+                                                            if($product->price != 0)
+                                                            {
+                                                              echo number_format($product->price) ;
+                                                            }
+                                                            else
+                                                            {
+                                                              echo 'رایگان';
+                                                            }
+                                                            
+                                                             @endphp  (تومان)</h5>
                                                             </button>
                                                             </form>  
                                                     </div>
@@ -357,7 +368,7 @@
       <form action="{{ route('behavior.store') }}" method="POST">
       @csrf
 
-      <input type="hidden" name="pk_product" value="{{$detail_product[0]->pk_product}}">
+      <input type="hidden" name="pk_product" value="{{$product->pk_product}}">
       <input type="hidden" name="type" value="comment">
                                       
              <div class="row" style="padding-right:120px">

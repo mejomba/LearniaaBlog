@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12"  style="min-height:285px">
               <div class="card">
                 <div class="card-header card-header-primary">
                 <h1 class="card-title text-center">لیست تراکنش ها</h1>
@@ -77,15 +77,6 @@
                       
                          
 
-                          <td>
-
-                        <span style="font-size: 1.3rem;color:black">
-                      <a style="color:#00bcd4" href="{{ route('user.transaction.show', $transaction['pk_transaction']) }}"> 
-                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-
-                        </td>
                           
                         </tr>
                         @endforeach

@@ -1,4 +1,4 @@
-@extends('admin.Layouts.layout_main')
+@extends('user.Layouts.layout_main')
 
 @section('Head')
 <title> لیست تراکنش ها | لرنیا </title>
@@ -48,7 +48,7 @@
                           {{ $transaction['pk_transaction'] }} 
                           </td>
                           <td>
-                          {{ $transaction['pk_admins'] }} 
+                          {{ $transaction['pk_users'] }} 
                           </td>
 
                           <td>
@@ -80,7 +80,7 @@
                           <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a style="color:#00bcd4" href="{{ route('admin.transaction.show', $transaction['pk_transaction']) }}"> 
+                      <a style="color:#00bcd4" href="{{ route('user.transaction.show', $transaction['pk_transaction']) }}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>

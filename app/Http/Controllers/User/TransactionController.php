@@ -72,11 +72,25 @@ class TransactionController extends Controller
                             $transaction = new Transaction();
                             $transaction->pk_users =  $user->pk_users ;
                             $transaction->price = request()->price;
-                            $transaction->type = 'افزایش موجودی کیف پول';
+                            $transaction->type = request()->type;
                             $transaction->digital_receipt = $transactionId ;
                              // process extras --> save all option to array And save to $new_instance
                             $data_extras = array();
                             $data_extras["problem"] = 'عملیات موفق';
+                            
+                            /// Diffrent Between Pay From Bank OR Wallet
+
+                            if(request()->slug == null)
+                            {
+                                $transaction->pk_product = 0;
+                            }
+                            else
+                            {
+                                $transaction->pk_product = request()->slug ;
+                            }
+
+                            $transaction->status = 'در انتظار تایید';
+
                             $transaction->extras =  json_encode($data_extras,false) ; 
 
                             $transaction->save();
@@ -100,7 +114,11 @@ class TransactionController extends Controller
             $user =  Auth::user() ;    
             $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();
             Payment::amount( (int)$transaction->price)->transactionId($transaction->digital_receipt)->verify();
-            
+
+           $status_transaction =  $transaction::find( $transaction['pk_transaction']);
+           $status_transaction->status = 'معتبر';
+           $status_transaction->save();
+           
             // Finalize Success Payment From Bank //
 
                     
@@ -112,14 +130,17 @@ class TransactionController extends Controller
                         $profile->save();
 
                        // Redirect User To Target Page //
-                        return redirect()->back()->with('success','عملیات بانکی با موفقیت انجام شد');      
+                        return redirect()->route('user.transaction.create')->with('success','عملیات بانکی با موفقیت انجام شد');      
                     }
                     
-                    /* Add Another if to Type Transaction
-                    if($transaction->type == '*******')
+                    
+                    if($transaction->type == 'خرید دوره آموزشی')
                     {
+                        return redirect()->route('product.detail',
+                        ['slug' => $transaction->pk_product ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+             
                     }
-                    */
+                    
            }
             catch (InvalidPaymentException $exception)
              {
@@ -127,13 +148,30 @@ class TransactionController extends Controller
                 $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();
 
                  // process extras --> save all option to array And save to $new_instance
-                    $data_extras = array();
+                 $transaction->status = 'نا معتبر';
+                 
+                 $data_extras = array();
                     $data_extras["problem"] =  $exception->getMessage();
                     $transaction->extras =  json_encode($data_extras,false) ;    
                     $transaction->save();
-                        
-                return redirect(route('user.transaction.create'))->with('report','خطا : مشکل در انجام عملیات بانکی');
-              
+
+                    if($transaction->type == 'افزایش موجودی کیف پول')
+                    {  
+                      return redirect(route('user.transaction.create'))->with('report','خطا : مشکل در انجام عملیات بانکی');
+                    }
+                    if($transaction->type == 'خرید دوره آموزشی')
+                    {
+                        if($transaction->pk_product == 0)
+                        {
+                            return redirect()->route('product.index')->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                        }
+                        else
+                        {
+                            return redirect()->route('product.detail',
+                            ['slug' => $transaction->pk_product ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                        }
+                    }
+
            }
     }
 
@@ -191,5 +229,12 @@ class TransactionController extends Controller
         $validator = Validator::make($request->all(),$rules,$messages);
 
         return $validator ;
+    }
+
+    public function productlist()
+    {
+        $transaction =  Transaction::where('type', 'خرید دوره آموزشی' )->get();
+
+        return view('user.transaction.productlist',compact());
     }
 }

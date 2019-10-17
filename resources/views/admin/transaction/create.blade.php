@@ -1,4 +1,4 @@
-@extends('user.Layouts.layout_main')
+@extends('admin.Layouts.layout_main')
 
 @section('Head')
 <title> افزایش موجودی کیف  | لرنیا  </title>
@@ -25,7 +25,7 @@
               <div class="card-body px-lg-5 py-lg-5">
                 
               
-   <form method="GET" action="{{ route('user.transaction.store') }}"
+   <form method="GET" action="{{ route('admin.transaction.store') }}"
    enctype="multipart/form-data" style="min-height:270px;">
         @csrf
 

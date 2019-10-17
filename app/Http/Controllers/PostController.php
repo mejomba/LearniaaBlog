@@ -5,6 +5,8 @@ use App\Post;
 use App\Tag;
 use App\Category;
 use App\Behavior;
+use App\Product;
+
 
 class PostController extends Controller
 {
@@ -44,5 +46,52 @@ class PostController extends Controller
         $pk_categories = $category['pk_categories'];
         $recent_post = Post::where('pk_categories', $pk_categories)->get();
         return view('site.post.index',compact('recent_post'));
+    }
+
+    public function search(Request $request)
+    {
+        if( request()->type_search == null)
+        {
+            return view('site.post.index');
+        }
+        elseif(request()->type_search == "post")
+        {
+                    $result_data =  Post::where('title', 'LIKE', '%'.request()->content_search.'%')->get();
+
+                    if($result_data->count() == 0)
+                    {
+                        $recent_post = Post::get()->take(6);
+                        
+                        return view('site.post.index',compact('recent_post'));
+                    }
+                    else
+                    {
+                        $recent_post = $result_data ;
+                        
+                        return view('site.post.index',compact('recent_post'));   
+                    }
+
+         
+        }
+        elseif(request()->type_search == "product")
+        {
+            $result_data =  Product::where('title', 'LIKE', '%'.request()->content_search.'%')->get();
+
+          if($result_data->count() == 0)
+          {
+            $recent_Products = Product::get()->take(6);
+            $categories = Category::where('type','محصول')->get();
+            
+            return view('site.product.index',compact('recent_Products','categories'));
+          }
+          else
+          {
+            $recent_Products = $result_data ;
+            $categories = Category::where('type','محصول')->get();
+            
+            return view('site.product.index',compact('recent_Products','categories'));   
+          }
+        }
+
     }
 }

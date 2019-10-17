@@ -8,6 +8,8 @@ Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}', 'ProductController@detail')->name('product.detail');
 Route::post('/product/pay/{slug}', 'ProductController@pay')->name('product.pay');
 
+
+
 Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/post', 'PostController@index')->name('post.index');
@@ -19,7 +21,7 @@ Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
 
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
 
-Route::get('/search', 'SearchController@store')->name('search.index');
+Route::get('/post/search/{slug}', 'PostController@search')->name('search.index');
 
 
 Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
@@ -111,6 +113,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/product/update/{id}', 'ProductController@update')->name('admin.product.update');
     Route::post('/product/upload', 'ProductController@upload')->name('admin.product.upload');
 
+    Route::get('/Transaction/index', 'TransactionController@index')->name('admin.transaction.index');
+    Route::get('/Transaction/create', 'TransactionController@create')->name('admin.transaction.create');
+    Route::get('/Transaction/store', 'TransactionController@store')->name('admin.transaction.store');
+    Route::get('/Transaction/show', 'TransactionController@show')->name('admin.transaction.show');
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 
@@ -124,8 +131,9 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
 
     Route::get('/Transaction/index', 'TransactionController@index')->name('user.transaction.index');
     Route::get('/Transaction/create', 'TransactionController@create')->name('user.transaction.create');
-    Route::post('/Transaction/store', 'TransactionController@store')->name('user.transaction.store');
+    Route::get('/Transaction/store', 'TransactionController@store')->name('user.transaction.store');
     Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
+    Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('user.transaction.productlist');
    
 
 });

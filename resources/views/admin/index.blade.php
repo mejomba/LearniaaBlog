@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<div class="col-md-12 text-center" dir="rtl">
+<div class="col-md-12 text-center" dir="rtl" style="padding-top:100px">
     <div class="row">
        
         <div class="col-4">  
@@ -14,7 +14,7 @@
         </div>
 
         <div class="col-4">
-        <img src="{{ asset('images/Template/dashboard.svg') }}" alt="Thumbnail Image" width="50%" height="30% ">
+        <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" width="300px" height="320px ">
       
         </div>
         
