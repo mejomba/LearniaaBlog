@@ -117,6 +117,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/Transaction/create', 'TransactionController@create')->name('admin.transaction.create');
     Route::get('/Transaction/store', 'TransactionController@store')->name('admin.transaction.store');
     Route::get('/Transaction/show', 'TransactionController@show')->name('admin.transaction.show');
+    Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('admin.transaction.productlist');
 
 });
 

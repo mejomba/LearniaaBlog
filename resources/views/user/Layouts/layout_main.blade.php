@@ -35,7 +35,7 @@
                   </div>
 
                   <div class="row" style="padding-top:15px">
-                  <div class="col-md-12">  
+                  <div class="col-md-12" style="min-height:285px">  
 
                       @yield('content')
 

@@ -1,4 +1,4 @@
-@extends('user.Layouts.layout_main')
+@extends('admin.Layouts.layout_main')
 
 @section('Head')
 <title> لیست خریداری شده ها | لرنیا </title>
@@ -51,7 +51,7 @@
 
                           <td>
                           <a style="margin-bottom: 15px;" href="{{route('product.detail',$transaction['pk_product'])}}" 
-                          class="btn btn-round btnblogSmall btn-6" >  مشاهده  </a>
+                          class="btn btn-round  btn-6" >  مشاهده  </a>
                           </td>
 
                          

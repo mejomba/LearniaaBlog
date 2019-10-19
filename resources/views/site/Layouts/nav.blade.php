@@ -126,7 +126,7 @@
           </li>  
                     @endif
                 @else
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="background-color:white;border-radius:1.2rem;">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" 
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

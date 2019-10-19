@@ -231,10 +231,20 @@ class TransactionController extends Controller
         return $validator ;
     }
 
+
+
+
     public function productlist()
     {
-        $transaction =  Transaction::where('type', 'خرید دوره آموزشی' )->get();
+        $user =  Auth::user() ;
 
-        return view('user.transaction.productlist',compact());
+        $names = [ 
+                    'شماره محصول' ,
+                    'نام محصول',
+                    'مشاهده',
+                ];
+        $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
+
+        return view('user.transaction.productlist',compact('names','transactions'));
     }
 }

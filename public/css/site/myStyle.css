@@ -17,6 +17,24 @@ transition : transform .5s ;
 
 /*  Landing Gradiant Buutons Custom */
 
+
+.btnblogSmall
+{
+  color : #000 ;
+  text-transform:uppercase ;
+  transition : 0.5s ;
+ 
+  background-size : 200% auto ;
+  font-size: 16px;
+
+}
+
+.btnblogSmall:hover 
+{
+  background-position: right center; /* change the direction of the change here */
+}
+
+
 .btnblog
 {
   color : #000 ;
@@ -24,8 +42,7 @@ transition : transform .5s ;
   transition : 0.5s ;
   padding : 2.125rem 2.25rem ;
   width : 100% ;
-  background-color : ;
-  border-color : ;
+  
   background-size : 200% auto ;
   font-size: 20px;
 
@@ -45,7 +62,7 @@ transition : transform .5s ;
 
   background-image: linear-gradient(to right, #F9F871 0%, #FFE171 51%, #F9F871 100%);
 
-  #FFE171
+  
 }
 
 .btn-2 {
@@ -80,6 +97,10 @@ transition : transform .5s ;
   background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
 }
 
+.btn-6 {
+  background-image: linear-gradient(to right, #F9F838 0%, #F9F838 51%, #F9F838 100%);
+}
+
 
 
 /*  Landing Gradiant Buutons Custom */
@@ -96,8 +117,7 @@ transition : transform .5s ;
   transition : 0.5s ;
   padding : 0.825rem 0.825rem ;
   width : 100% ;
-  background-color : ;
-  border-color : ;
+  
   background-size : 100% auto ;
  
 

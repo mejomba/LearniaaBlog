@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\Category;
 use App\Tag;
 use Validator;
 use Auth;
+use Illuminate\Http\File;
+
 
 class PostController extends Controller
 {
@@ -77,10 +80,10 @@ class PostController extends Controller
 
          /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
 
-            $pic = request()->file('pic_content');
-            $pic_name = $pic->getClientOriginalName();
-            $pic->move(public_path('images'),$pic_name);
-            $new_instance->pic_content = $pic_name ;
+         $pic = request()->file('pic_content');
+         $pic_name = $pic->getClientOriginalName();
+         $path = Storage::putFileAs( 'post', $pic, $pic_name);
+         $post->pic_content = $pic_name ;
 
 
             // process extras --> save all option to array And save to $new_instance
@@ -196,15 +199,11 @@ class PostController extends Controller
 
              if(request()->pic_content)
              {
-              $pic = request()->file('pic_content');
-              $pic_name = $pic->getClientOriginalName();
-              $pic->move(public_path('images'),$pic_name);
-              $post->pic_content = $pic_name ;
+                    $pic = request()->file('pic_content');
+                    $pic_name = $pic->getClientOriginalName();
+                    $path = Storage::putFileAs( 'post', $pic, $pic_name);
+                    $post->pic_content = $pic_name ;
              }
-
-
-             ////
-
 
              $data_extras = array();
 
@@ -306,15 +305,25 @@ class PostController extends Controller
     {
             if($request->hasFile('upload')) 
             {
+              /*
               $originName = $request->file('upload')->getClientOriginalName();
               $fileName = pathinfo($originName, PATHINFO_FILENAME);
               $extension = $request->file('upload')->getClientOriginalExtension();
               $fileName = $fileName.'_'.time().'.'.$extension;
-          
               $request->file('upload')->move(public_path('images'), $fileName);
+              */
+
+              $pic = request()->file('upload');
+              $pic_name = $pic->getClientOriginalName();
+              $path = Storage::putFileAs( 'post', $pic, $pic_name);
+
+              $url2 = Storage::url('post/'.$pic_name);
+               
+         
 
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-              $url = asset('images/'.$fileName); 
+          /*    $url = 'https://5c76fd66bf6fa1001152cbea.storage.liara.ir/post/'.$pic_name; */
+              $url =   $url2 ;  
               $msg = 'Image uploaded successfully'; 
               $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
                 
@@ -322,76 +331,6 @@ class PostController extends Controller
               echo $response;
           }
     }
-
-/*
-
-    public function upload2()
-    {
-  
-     try {
-      if ($this->request->hasFiles() == true) {
-          $errors = []; // Store all foreseen and unforseen errors here
-          $fileExtensions = ['jpeg','jpg','png','gif','svg'];
-          $uploadDirectory = "images/";
-          $Y=date("Y");
-          $M=date("m");
-             foreach ($this->request->getUploadedFiles() as $file) {
-          if (in_array($file->getExtension(),$fileExtensions)) {
-             if($file->getSize()<2000000) 
-             {
-  
-              if (!file_exists($uploadDirectory.$Y)) {
-                  mkdir($uploadDirectory.$Y, 0777, true);
-              }
-              if (!file_exists($uploadDirectory.$Y.'/'.$M)) {
-                  mkdir($uploadDirectory.$Y.'/'.$M, 0777, true);
-              }
-              $namenew=md5($file->getName().time()).'.'.$file->getExtension();
-              $uploadDirectory .=$Y.'/'.$M.'/'; 
-              $file->moveTo($uploadDirectory.$namenew);
-             }
-             else{
-              $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
-             }
-          }
-          else{$errors[] = "This file extension is not allowed. Please upload a JPEG ,svg,gif,,jpg,PNG file";}
-  
-      if(empty($errors))
-      {   
-         echo '{
-          "uploaded": true,
-          "url": "http://127.0.0.1:8000/images/'.$Y.'/'.$M.'/'.$namenew.'"}';
-      }
-      else{
-          echo '{
-          "uploaded": false,
-          "error": {
-              "message": "could not upload this image1"
-          }';}
-      }
-  }
-  else{
-      echo '{
-      "uploaded": false,
-      "error": {
-          "message": "could not upload this image1"
-      }';}
-  }
-  catch (\Exception $e) {
-         echo '{
-          "uploaded": false,
-          "error": {
-              "message": "could not upload this image0"
-          }';
-     }
-    }
-  
-*/
-
-
-
-
-
 
 
 }

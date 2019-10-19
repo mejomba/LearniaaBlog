@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'liara'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => env('FILESYSTEM_CLOUD', 'liara'),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,6 +62,16 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+        ],
+
+        'liara' => [
+            'driver' => 's3',
+            'region' => 'us-east-1',
+            'use_path_style_endpoint' => true,
+            'key' => 'ZF9H2EEMVVOAQBSGCAG17',
+            'secret' => 'SwiVtMv83KpDY9Sti0Iqf0TaPnnVuwNbdqHikh2Yp',
+            'bucket' => 'learniaa',
+            'endpoint' => 'https://5c76fd66bf6fa1001152cbea.storage.liara.ir',
         ],
 
     ],

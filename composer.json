@@ -14,6 +14,7 @@
         "ipecompany/smsirlaravel": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
         "shetabit/payment": "^1.2",
         "twbs/bootstrap": "^4.3",
         "unisharp/laravel-ckeditor": "^4.7"
