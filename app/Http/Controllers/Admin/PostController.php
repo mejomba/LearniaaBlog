@@ -83,7 +83,7 @@ class PostController extends Controller
          $pic = request()->file('pic_content');
          $pic_name = $pic->getClientOriginalName();
          $path = Storage::putFileAs( 'post', $pic, $pic_name);
-         $post->pic_content = $pic_name ;
+         $new_instance->pic_content = $pic_name ;
 
 
             // process extras --> save all option to array And save to $new_instance
