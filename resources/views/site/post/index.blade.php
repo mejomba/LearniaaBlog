@@ -88,7 +88,8 @@
 
             <div class="col-md-4 div-transition">
 
-                    <a href="{{route('post.detail', $one_post['pk_post'] )}}">  <img  src="{{ asset('images/'.$one_post['pic_content'] ) }}"  
+                    <a href="{{route('post.detail', $one_post['pk_post'] )}}"> 
+                       <img  src="{{  Storage::url('post/'.$one_post['pic_content']) }}"  
                       class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
                                             
                       <a class="text-muted" href="{{route('post.detail', $one_post['pk_post'] )}}"> 

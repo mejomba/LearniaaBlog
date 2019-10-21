@@ -14,7 +14,7 @@ Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
-Route::get('/Aboutus', 'HomeController@show_Abutus')->name('Aboutus');
+Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/post/{slug}', 'PostController@detail')->name('post.detail');
 Route::get('/post/category/{slug}', 'PostController@postByCategory')->name('post.category');
 Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');

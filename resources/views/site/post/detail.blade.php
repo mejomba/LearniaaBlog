@@ -70,7 +70,7 @@
             <div class="container-fluid" style="padding-top: 5px;margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
                 <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px" >
 
-                    <img class="img-raised rounded img-fluid" src="{{ asset('images/'.$one_post['pic_content'] ) }}"
+                    <img class="img-raised rounded img-fluid" src="{{   Storage::url('post/'.$one_post['pic_content'])   }}"
                 height="450px" width="100%" >
                     
                 </div>
@@ -97,35 +97,46 @@
    <div class="col-md-5">
 
 
-                        <div class="container-fluid">
-                        <div class="row" style="padding-top:50px;padding-bottom:15px;">
+          <div class="container-fluid">
+          <div class="row" style="padding-top:10px;padding-bottom:15px;">
                             
-                             
-     <div class="col-md-3">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblogPost btn-1">
-       توسعه مهارت   
-        </a>
-    
-     </div>
-
-     <div class="col-md-3">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblogPost btn-2"     >    برنامه نویسی   </a>
- 
-     </div>
-
-     <div class="col-md-3">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','وب')}}" class="btn  btn-round btnblogPost btn-3"   > وب </a>
-    
-     </div>
-
-     <div class="col-md-3">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblogPost btn-4"    >   هک و امنیت </a>
-    
-     </div>
-
-
+                        <div class="col-md-1">
                         </div>
+
+                        <div class="col-md-5">
+                        <a style="margin-bottom: 15px;width:90%" 
+                        href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblogPost btn-1">
+                          توسعه مهارت   
+                            </a>
                         </div>
+
+                        <div class="col-md-5">
+                        <a style="margin-bottom: 15px;width:90%" 
+                        href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblogPost btn-2">    برنامه نویسی   </a>
+                        </div>
+
+                        <div class="col-md-1">
+                        </div>
+
+                        <div class="col-md-1">
+                        </div>
+
+                        <div class="col-md-5">
+                        <a style="margin-bottom: 15px;width:90%" 
+                        href="{{route('category.show','وب')}}" class="btn  btn-round btnblogPost btn-3"> وب </a>
+                        </div>
+
+                        <div class="col-md-5">
+                        <a style="margin-bottom: 15px;width:90%" 
+                        href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblogPost btn-4">   هک و امنیت </a>
+                        </div>
+
+                        <div class="col-md-1">
+                        </div>
+
+
+        </div>
+        </div>
             <!-- Section -->
 
             
@@ -144,7 +155,8 @@
        
                 <div class="col-md-3">
 
-                        <a href="{{route('post.detail', $one_post['pk_post'] )}}">  <img src="{{ asset('images/'.$one_post['pic_content'] ) }}"  
+                        <a href="{{route('post.detail', $one_post['pk_post'] )}}"> 
+                           <img src="{{ Storage::url('post/'.$one_post['pic_content'])  }}"  
                             class="img-raised rounded img-fluid" style="width: 200px;height: 100px;" ></a>
                 </div>
                

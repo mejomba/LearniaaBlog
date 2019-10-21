@@ -41,9 +41,9 @@
 
                   
                   <h3> <span>
-                  <img src="{{ asset('images/Template/student.svg') }}" alt="Thumbnail Image" height="80px" width="80px">
+                  <img src="{{ asset('images/Template/student.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                     سریع ، آسان ، لذت بخش 
-                    <img src="{{ asset('images/Template/student.svg') }}" alt="Thumbnail Image" height="80px" width="80px">
+                    <img src="{{ asset('images/Template/student.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                     </span></h3>
 
 
@@ -124,7 +124,7 @@
                                     <div class="col-md-4 div-transition">
 
                                         <a href="{{route('product.detail', $product['pk_product'] )}}">
-                                        <img  src="{{ asset('images/product/'.$product['pic'] ) }}"  
+                                        <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  
                                         class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
                                                                 
                                         <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
@@ -203,7 +203,7 @@
                                     <div class="col-md-4 div-transition">
 
                                         <a href="{{route('product.detail', $product['pk_product'] )}}">
-                                        <img  src="{{ asset('images/product/'.$product['pic'] ) }}"  
+                                        <img  src="{{  Storage::url('product/'.$product['pic'])  }}"  
                                         class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
                                                                 
                                         <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 

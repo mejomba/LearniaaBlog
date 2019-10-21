@@ -72,7 +72,7 @@ class LearnerController extends Controller
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $pic->move(public_path('images'),$pic_name);
+                $path = Storage::putFileAs( 'learner', $pic, $pic_name);
                 $new_instance->pic = $pic_name ;
             }   
     
@@ -148,7 +148,7 @@ class LearnerController extends Controller
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $pic->move(public_path('images'),$pic_name);
+                $path = Storage::putFileAs( 'learner', $pic, $pic_name);
                 $new_instance->pic = $pic_name ;
             }  
      

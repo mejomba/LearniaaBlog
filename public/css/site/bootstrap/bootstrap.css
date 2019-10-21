@@ -4282,7 +4282,7 @@ input[type='button'].btn-block
 
 .input-group-append
 {
-    padding-right : 10px ;
+    padding-right : 0px ; 
 }
 
 .input-group-text
@@ -4302,7 +4302,7 @@ input[type='button'].btn-block
     color: #495057;
     border: 1px solid #ced4da;
     border-radius: .25rem; 
-    background-color: #e9ecef;
+    background-color: #20C5BA ;
 
     align-items: center;
 }

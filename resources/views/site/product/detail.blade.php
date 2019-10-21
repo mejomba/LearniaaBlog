@@ -197,7 +197,7 @@
                 </div>
                 
                 <div class="col-md-8">
-                  <img src="{{ asset('images/learner/'.$product->learner['pic'] ) }}"
+                  <img src="{{  Storage::url('learner/'.$product->learner['pic'])  }}"
                     alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="width: 160px;height:150px">
               </div>
             
@@ -280,7 +280,7 @@
                                     <div class="col-md-4 div-transition">
 
                                         <a href="{{route('product.detail', $product['pk_product'] )}}">
-                                        <img  src="{{ asset('images/product/'.$product['pic'] ) }}"  
+                                        <img  src="{{ Storage::url('product/'.$product['pic'])  }}"  
                                         class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
                                                                 
                                         <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 

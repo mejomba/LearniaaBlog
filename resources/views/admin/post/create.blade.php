@@ -64,7 +64,7 @@
                                     @foreach($tags as $tag)                                
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
                               <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
-                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" checked="">                            
+                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" >                            
                               <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }}</label>
                             </div>
                             @endforeach 
@@ -219,9 +219,12 @@
                             <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                             <script>
                                 CKEDITOR.replace( 'article-ckeditor' , {
+    language:'fa',
+   filebrowserUploadMethod: 'form',
     contentsLangDirection: 'rtl',
     filebrowserUploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
+    filebrowserImageUploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}",
+   
 } );
                             </script> 
                             <!-- ckeditor -->                         

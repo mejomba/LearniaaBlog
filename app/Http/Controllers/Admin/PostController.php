@@ -324,11 +324,21 @@ class PostController extends Controller
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
           /*    $url = 'https://5c76fd66bf6fa1001152cbea.storage.liara.ir/post/'.$pic_name; */
               $url =   $url2 ;  
-              $msg = 'Image uploaded successfully'; 
-              $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+              $msg = 'تصویر با موفقیت اپلود شد'; 
+           //   $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
                 
-              @header('Content-type: text/html; charset=utf-8'); 
-              echo $response;
+              @header('Content-type: text/html; charset=utf-8');
+
+              return   $response = [
+                "uploaded" => 1,
+                "filename" =>  $pic_name,
+                "url" => $url,
+                "error" => $msg
+                ];
+
+
+              
+            //  return $response;
           }
     }
 

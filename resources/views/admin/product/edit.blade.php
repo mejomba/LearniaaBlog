@@ -314,9 +314,11 @@
                             <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                             <script>
                                 CKEDITOR.replace( 'article-ckeditor' , {
+   language:'fa',
+   filebrowserUploadMethod: 'form',
     contentsLangDirection: 'rtl',
     filebrowserUploadUrl: "{{route('admin.product.upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
+    filebrowserImageUploadUrl: "{{route('admin.product.upload', ['_token' => csrf_token() ])}}",
 } );
                             </script> 
                             <!-- ckeditor -->                         

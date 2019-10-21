@@ -65,7 +65,7 @@
                           </td>
 
                           <td>
-                          <img src="{{ asset('images/' . $product['pic'] ) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
+                          <img src="{{  Storage::url('post/'.$product['pic']) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
                       
                           </td>
 

@@ -1,5 +1,5 @@
 
-  <nav id="sectionsNav" style="background-color:#F9F838 !important" class="navbar navbar-horizontal fixed-top navbar-expand-lg">
+  <nav id="sectionsNav" style="background-color:#F9F860 !important" class="navbar navbar-horizontal fixed-top navbar-expand-lg">
     <div class="container-fluid">
       <div class="navbar-brand">
     
@@ -10,7 +10,7 @@
        <!--span class="navbar-toggler-icon"></span-->
         </button>
         <a href="{{route('index')}}">
-          <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" style="height:75px !important" height="100px !important" width="80px"> 
+          <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" style="height:75px !important" height="100px !important" width="80px"> 
        </a> 
       </div>
       <div class="collapse navbar-collapse" id="navbar-default">
@@ -19,8 +19,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                     <a href="{{route('index')}}">
-                        <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" height="80px" width="80px"> 
-                    </a> 
+                    <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" height="75px" width="100px">                     </a> 
                     </div>
                     <div class="col-6 collapse-close">
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,75 +30,80 @@
                 </div>
             </div>
 
-        <ul class="navbar-nav col-md-7">
+            <ul class="navbar-nav col-md-7">
 
-          <li class="nav-item">
-          <a class="nav-link" href="{{route('product.index')}}"  rel="tooltip" title="" data-placement="bottom"
-            data-original-title="به زودی">
-            <img src="{{ asset('images/Template/nav/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-            آموزش سریع 
-            </a>
-          </li>
+<li class="nav-item">
+  <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
+  data-original-title="به زودی">
+  <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+  آموزش سریع 
+  </a>
+</li>
 
-          <li class="nav-item">
-            <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
-            >
-            <img src="{{ asset('images/Template/nav/blog.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
-             بلاگ
-            </a>
-          </li>
+<li class="nav-item">
+  <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
+  >
+  <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+   بلاگ
+  </a>
+</li>
 
-      
+<li class="nav-item">
+  <a class="nav-link" href="{{route('Contactus')}}">
+  <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">  
+  تماس با ما 
+    <div class="ripple-container">
 
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('Contactus')}}">
-            <img src="{{ asset('images/Template/nav/call.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
-            تماس با ما 
-              <div class="ripple-container">
+  </div>
+</a>
+</li>
 
-            </div>
-          </a>
-          </li>
+<li class="nav-item">
+  <a class="nav-link" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
+ <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+   درباره ما
+  <div class="ripple-container">
 
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
-           <img src="{{ asset('images/Template/nav/team.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
-             درباره ما
-            <div class="ripple-container">
+  </div>
+</a>
+</li>
 
-            </div>
-          </a>
-          </li>
 
-          
-          
-        </ul>
-          
 
- <ul class="navbar-nav col-md-3 col-10 "  >
+</ul>
+
+        <ul class="navbar-nav col-md-3 col-10 "  dir="ltr" style="margin-top:15px" >
 <!-- serach box site -->
 
-<form class="navbar-form" dir="rtl" action="{{route('search.index','search')}}" style="padding-top:10px">
+<form class="navbar-form" dir="rtl" action="{{route('search.index','search')}}" >
               
         <div class="row">
 
-             <div class="col-md-9 col-9" style="padding-left:0px;padding-right:0px">
+             <div class="col-md-11 col-11" style="padding-left:0px;padding-right:0px">
                 <div class="form-group">
 
                       <input type="hidden"  name="type_search" value="{{Request::segment(1)}}" 
                       class="form-control" placeholder="جستجو...">
 
-                      <input type="text"  name="content_search" 
-                      class="form-control form-control-alternative" placeholder="جستجو...">
-                      </div>
-                </div>        
+                      <div class="input-group">
+                          <input type="text"  name="content_search" 
+                          class="form-control form-control-alternative" placeholder="جستجو...">
+                            <div class="input-group-append">
+                            <span class="input-group-text">
+                            <input type="submit" hidden="true" />
+                          <img src="{{ asset('images/Template/search.svg') }}" alt="Thumbnail Image" height="20px" width="20px"></span>
+                         
+                           </div>
 
-               <div class="col-md-3 col-3"> 
+                      </div>
+
+                </div>
+             </div>        
+
+               <div class="col-md-1 col-1"> 
                <div class="form-group">
 
-                      <button type="submit"  class="btn btn-white btn-round btn-just-icon">
-                      <img src="{{ asset('images/Template/search.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                      </button>
+                    
                       </div>
                       </div>
               </div>
@@ -109,7 +113,7 @@
 
  
 <!-- serach box site -->
-</ul>   
+</ul> 
 
 
 <ul class="navbar-nav col-md-2" dir="ltr">
@@ -128,11 +132,12 @@
           </li>  
                     @endif
                 @else
-                    <li class="nav-item dropdown" style="background-color:white;border-radius:1.2rem;">
+                    <li class="nav-item dropdown" style="border-radius:1.2rem;">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" 
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                        <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
+                         <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

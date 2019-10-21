@@ -1,5 +1,5 @@
 
-  <footer class="footer footer-default" style="background-color:#F9F838">
+  <footer class="footer footer-default" style="background-color:#F9F860">
     <div class="container-fluid" >
 
      <div class="row">
@@ -8,16 +8,16 @@
               <div class="row">
               <a class="nav-link col-md-3 col-3" href="{{route('product.index')}}"  rel="tooltip" title="" data-placement="bottom"
             data-original-title="به زودی">
-            <img src="{{ asset('images/Template/nav/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+            <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
              آموزش سریع
             </a>
             <a class="nav-link col-md-3 col-3"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
             >
-            <img src="{{ asset('images/Template/nav/blog.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
+            <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
              بلاگ
             </a>
             <a class="nav-link col-md-3 col-3" href="{{route('Contactus')}}">
-            <img src="{{ asset('images/Template/nav/call.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
+            <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  
             تماس با ما 
               <div class="ripple-container">
 
@@ -25,7 +25,7 @@
           </a>
           <a class="nav-link col-md-3 col-3" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom"
            >
-           <img src="{{ asset('images/Template/nav/team.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
+           <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
              درباره ما
             <div class="ripple-container">
 

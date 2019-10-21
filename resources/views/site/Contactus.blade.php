@@ -66,7 +66,7 @@
                       <div class="input-group-prepend">
                         
                       </div>
-                      <textarea name="message" id="message" type="text" class="form-control" placeholder="متن پیام"></textarea>
+                      <textarea name="message" style="max-height:100px" id="message" type="text" class="form-control" placeholder="متن پیام"></textarea>
                     </div>
                   </div>
                 

@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Tag;
 use App\Product;
 use App\Learner;
 use App\Category;
 use App\User;
 use Validator;
+use Illuminate\Http\File;
 
 class ProductController extends Controller
 {
@@ -73,7 +75,7 @@ class ProductController extends Controller
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $pic->move(public_path('images/product'),$pic_name);
+                $path = Storage::putFileAs( 'product', $pic, $pic_name);
                 $new_instance->pic = $pic_name ;
             } 
 
@@ -168,7 +170,7 @@ class ProductController extends Controller
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $pic->move(public_path('images/product'),$pic_name);
+                $path = Storage::putFileAs( 'product', $pic, $pic_name);
                 $new_instance->pic = $pic_name ;
             } 
 
@@ -276,20 +278,35 @@ class ProductController extends Controller
     {
             if($request->hasFile('upload')) 
             {
+                /*
               $originName = $request->file('upload')->getClientOriginalName();
               $fileName = pathinfo($originName, PATHINFO_FILENAME);
               $extension = $request->file('upload')->getClientOriginalExtension();
               $fileName = $fileName.'_'.time().'.'.$extension;
-          
               $request->file('upload')->move(public_path('images/product'), $fileName);
 
+              */
+
+              $pic = request()->file('upload');
+              $pic_name = $pic->getClientOriginalName();
+              $path = Storage::putFileAs( 'product', $pic, $pic_name);
+              $url2 = Storage::url('product/'.$pic_name);
+
+
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-              $url = asset('images/product'.$fileName); 
-              $msg = 'Image uploaded successfully'; 
-              $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+            //  $url = asset('images/product'.$fileName);
+            $url =   $url2 ;   
+              $msg = 'اپلود تصویر با موفقیت انجام شد'; 
+           //   $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
                 
-              @header('Content-type: text/html; charset=utf-8'); 
-              echo $response;
+           @header('Content-type: text/html; charset=utf-8');
+
+           return   $response = [
+             "uploaded" => 1,
+             "filename" =>  $pic_name,
+             "url" => $url,
+             "error" => $msg
+             ];
           }
     }
 

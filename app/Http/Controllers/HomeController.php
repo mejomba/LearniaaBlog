@@ -25,9 +25,9 @@ class HomeController extends Controller
           return view('site.Contactus');
         
         }
-        public function show_Abutus()
+        public function show_Aboutus()
         {
-          return view('site.Abutus');
+          return view('site.Aboutus');
         
         }
 

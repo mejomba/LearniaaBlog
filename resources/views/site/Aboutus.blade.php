@@ -32,16 +32,16 @@
 
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6">
 
-                    <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px"
-                    src="{{ asset('images/Template/looking_for_idea_with_team(1).svg') }}"
-                    width="150px" height="50px" alt="Thumbnail Image" >
+                    <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px;border-radius:20% !important;"
+                    src="{{ asset('images/Template/sss.svg') }}"
+                    width="300px" height="100px" alt="Thumbnail Image" >
 
                     
                     </div>
                             
-                   
+                   <!-- 
                     <div class="col-md-3">
 
                     <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px"
@@ -49,6 +49,7 @@
                     width="150px" height="50px" alt="Thumbnail Image" >
 
                     </div>
+                     -->
 
                     <div class="col-md-3">
 

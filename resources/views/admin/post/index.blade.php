@@ -61,7 +61,7 @@
                           
                           <td>
 
-                            <img src="{{ asset('images/' . $post['pic_content'] ) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
+                            <img src="{{  Storage::url('post/'.$post['pic_content'])  }}" width="100px" height="60px" alt="Thumbnail Image" class="">
                       
                           </td>
 
