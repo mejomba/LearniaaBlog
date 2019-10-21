@@ -33,15 +33,16 @@
 <div class="post-meta-content" class="meta_title_post text-muted" style="font-size:15px">
 
           <span class="post-auhor-date">
-          <span class="text-muted"> <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="20px" width="20px">&nbsp;{{$one_post->writer['name']}}</span>
-          <span  class="text-muted"> | 
+          <span class="" style="color:#000"> 
+          <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="20px" width="20px">&nbsp;{{$one_post->writer['name']}}</span>
+          <span  class="" style="color:#000"> | 
           <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
             {{ $json->create_at }}
           </span>
       
           </span>
 
-         <span class="text-muted" > | 
+         <span class="" style="color:#000" > | 
          <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
             {{ $json->readtime }} دقیقه
            </span>  
