@@ -211,10 +211,10 @@
        
        
 
-        <div class="col-md-12">
+        <div class="col-md-12" style="min-height:700px">
                <span> محتوا</span>  
                             <!-- ckeditor -->
-                            <textarea name="content" class="form-control" id="article-ckeditor"></textarea>
+                            <textarea name="content"  class="form-control" id="article-ckeditor"></textarea>
                           
                             <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                             <script>

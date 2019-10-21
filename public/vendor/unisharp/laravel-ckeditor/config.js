@@ -8,4 +8,6 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	config.font_names = 'Shabnam/Shabnam;' + config.font_names;
+		
+		config.height = '500px';   // CSS unit (percent).
 };
