@@ -24,7 +24,18 @@ class PostController extends Controller
     {
         $instance_Model_post = new Post();
         $names =   $instance_Model_post->GetListAllNameColumns_ForTable();
-        $posts = Post::get();
+
+
+        $user =  Auth::user() ;
+        if($user->type == 'مدیر')
+        {
+          $posts = Post::get();
+        }
+        else
+        {
+          $posts = Post::where('pk_writers', $user->pk_users)->get();
+        }
+
         return view('admin.post.index',compact('posts','names'));
     }
 

@@ -10,6 +10,7 @@ use App\Profile;
 use App\Behavior;
 use Validator;
 use Hash;
+use App\Classes\PayamakSefid\SendSms;
 
 class UserController extends Controller
 {
@@ -46,9 +47,48 @@ class UserController extends Controller
             $user->type = request()->type ;
             $user->mobile = request()->mobile ;
             $user->password = Hash::make(request()->password)   ; 
+           
+           
+            $profile = new Profile();
+          
     
                 if($user->save())
                 {
+                    $id = User::where('mobile',request()->mobile)->first();
+                   
+                    $profile->pk_users =  $id['pk_users'] ;
+                    $profile->save();
+
+                                // add contact to sms panel //
+
+
+           
+            date_default_timezone_set("Asia/Tehran");
+            $APIKey = '9e748ce762b7c17478c4b783';
+            $SecretKey = 'H$c7M~Ax#Z@7Y%3';
+
+              $PayamakSefid = new SendSms($APIKey,$SecretKey);
+              $Groups =  $PayamakSefid->GetContactGroups();
+              $Groups = $Groups->ContactGroups ; 
+
+             $ContactData = array(
+                'ContactsDetails' => array(
+                                            array(
+                                                'Prefix' => ' ',
+                                                'FirstName' => ' ',
+                                                "LastName" => $data['name'] ,
+                                                'Mobile' =>   $data['mobile'],
+                                                'EmojiId' => '1'
+                                            )
+                                         ),
+                'GroupId' =>  $Groups[0]->GroupId
+            );
+
+
+              $PayamakSefid->AddContacts($ContactData);
+           
+            //  End (add contact to sms panel) //
+
                         return redirect(route('admin.user.index'))->with('success','کاربر با موفقیت ایجاد شد');
                 }
                 else
@@ -104,9 +144,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        
     
         if($user->delete())
         {
+
+            $profile = Profile::where('pk_users',$id)->delete();
             $behavior = Behavior::where('pk_users',$id)->delete();
             return redirect(route('admin.user.index'))->with('success','کاربر با موفقیت حذف شد ');
         }
@@ -126,7 +169,7 @@ class UserController extends Controller
         $rules =  [
                     'type' => 'required|String', 
                     'name' => 'required|min:3|String', 
-                    'mobile' => 'required|numeric|min:3|unique:user',
+                    'mobile' => 'required|numeric|min:3|unique:users',
                     'password' => 'nullable|min:6'  ,
                   
                  ];

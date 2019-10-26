@@ -10,13 +10,7 @@
      داشبورد</a>
   </li>
   
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"   href="{{route('admin.user.index')}}" 
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    کاربر</a>
-  </li>
- 
+
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab"  href="{{route('admin.post.index')}}" 
      role="tab" aria-controls="tabs-text-3" aria-selected="false">
@@ -24,19 +18,50 @@
     پست</a>
   </li>
 
-  <li class="nav-item">
+
+ 
+
+  
+  <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-1-tab"  href="{{route('admin.category.index')}}"
-     role="tab" aria-controls="tabs-text-1" aria-selected="true">
-     <img src="{{ asset('images/Template/category.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-     دسته بندی</a>
+     id="tabs-text-2-tab"   href="{{route('admin.profile.edit')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    پروفایل</a>
   </li>
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.transaction.create')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/wallet.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    کیف پول</a>
+  </li>
+
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"  href="{{route('admin.tag.index')}}" 
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
     <img src="{{ asset('images/Template/tag.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     تگ</a>
   </li>
+
+@if( $user =  Auth::user()->type == 'مدیر')
+
+<li class="nav-item">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-1-tab"  href="{{route('admin.category.index')}}"
+     role="tab" aria-controls="tabs-text-1" aria-selected="true">
+     <img src="{{ asset('images/Template/category.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+     دسته بندی</a>
+  </li>
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"   href="{{route('admin.user.index')}}" 
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    کاربر</a>
+  </li>
+ 
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab"  href="{{route('admin.behavior.index')}}"
      role="tab" aria-controls="tabs-text-3" aria-selected="false">
@@ -68,22 +93,7 @@
     مدرس</a>
   </li>
 
-
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.profile.edit')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    پروفایل</a>
-  </li>
-
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.transaction.create')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/wallet.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    کیف پول</a>
-  </li>
+@endif
 
 
 

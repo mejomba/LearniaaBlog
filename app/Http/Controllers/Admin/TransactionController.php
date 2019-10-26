@@ -21,7 +21,17 @@ class TransactionController extends Controller
     {
         $instance_Model_transaction = new Transaction();
         $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
-        $transactions = Transaction::get();
+
+        $user =  Auth::user() ;
+        if($user->type == 'مدیر')
+        {
+            $transactions = Transaction::get();   
+        }
+        else
+        {
+            $transactions = Transaction::where('pk_users', $user->pk_users)->get();
+        }
+    
         return view('admin.transaction.index',compact('transactions','names'));
     }
 

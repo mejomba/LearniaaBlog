@@ -85,13 +85,14 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'],
             'password' => Hash::make($data['password']),
             'type' => 'کاربر',
+            
          ]);
 
          $new_user = User::where('mobile',$data['mobile'])->first();
             
             $profile = new Profile();
             $profile->pk_users = $new_user->pk_users ;
-
+            
             $profile->save();
 
             // add contact to sms panel //
@@ -122,7 +123,7 @@ class RegisterController extends Controller
 
               $PayamakSefid->AddContacts($ContactData);
            
-            //                 //    
+            //  End (add contact to sms panel) //
             return $user;
 
 

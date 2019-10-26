@@ -150,7 +150,7 @@
                             @endif
 
                             @if(Auth::user()->type == "نویسنده")
-                                <a class="dropdown-item" href="{{ route('writer.home') }}">سامانه نویسندگان</a>
+                                <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه نویسندگان</a>
                             @endif
 
                             @if(Auth::user()->type == "کاربر")
