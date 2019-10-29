@@ -157,7 +157,7 @@ class CategoryController extends Controller
 
         $rules =  [
                     'type' => 'required|String', 
-                    'name' => 'required|min:3', 
+                    'name' => 'required|min:2', 
                     'desc' => 'required|min:3|max:500',
                  ];
 
