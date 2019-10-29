@@ -76,8 +76,8 @@ class UserController extends Controller
                                             array(
                                                 'Prefix' => ' ',
                                                 'FirstName' => ' ',
-                                                "LastName" => $data['name'] ,
-                                                'Mobile' =>   $data['mobile'],
+                                                "LastName" => request()->name ,
+                                                'Mobile' =>   request()->mobile,
                                                 'EmojiId' => '1'
                                             )
                                          ),

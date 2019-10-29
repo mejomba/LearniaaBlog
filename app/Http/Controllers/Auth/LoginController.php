@@ -33,7 +33,7 @@ class LoginController extends Controller
         }
         elseif ( $user->type == "نویسنده")
         {
-            return redirect('/');     
+            return redirect('admin/post/index');     
         }
         elseif ($user->type == "کاربر")
          {

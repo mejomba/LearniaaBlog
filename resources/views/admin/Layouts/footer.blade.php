@@ -40,11 +40,25 @@
                 
       </div>
 
-      <div class="col-md-3" style="font-size:12px;padding-top:5px">
-                      <img src="{{ asset('images/Template/copyright.svg') }}" 
-                      alt="Thumbnail Image" height="28px" width="28px">
-                  تمام حقوق مادی و معنوی این وب سایت به لرنیا تعلق دارد
+     
+      <div class="col-md-3 col-12" style="font-size:12px">
+
+               <div class="row">
+              
+                   <style>#zarinpal{margin:auto} #zarinpal img {width: 70px; height:50px}</style>
+
+                      <div class="col-md-12 col-7" id="zarinpal">
+                      <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
+                      
+                      تمام حقوق متعلق به
+                      <a href="{{route('index')}}" >لرنیا</a> 
+                          است
+                      </div>
+
                 </div>
+                  
+              
+      </div>
 
  <div class="col-md-2 col-12 text-center">
 

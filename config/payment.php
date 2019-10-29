@@ -26,7 +26,7 @@ return [
             'apiPurchaseUrl' => 'https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json',
             'apiPaymentUrl' => 'https://www.zarinpal.com/pg/StartPay/',
             'apiVerificationUrl' => 'https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json',
-            'merchantId' => '6077b942-0f5f-11e9-8804-005056a205be',
+            'merchantId' => '80653178-f7ec-11e9-8662-000c295eb8fc',
             'callbackUrl' => env('Bank_CallBackURL', ''),
             'description' => 'payment in '.config('app.name'),
         ],

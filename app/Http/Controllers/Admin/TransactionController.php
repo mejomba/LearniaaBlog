@@ -70,9 +70,11 @@ class TransactionController extends Controller
                  // Get information payment & Save Database
                   $driver = $invoice->getDriver();
 
+                  $url= route('admin.transaction.show');
+
                   if($invoice)
                   {   
-                        return Payment::purchase($invoice, function($driver, $transactionId) 
+                        return Payment::callbackUrl($url)->purchase($invoice, function($driver, $transactionId) 
                         {
                             // store transactionId in database, we need it to verify payment in future.
                             $user =  Auth::user() ;
