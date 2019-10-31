@@ -225,6 +225,28 @@
     filebrowserUploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}",
     filebrowserImageUploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}",
    
+
+
+    on: {
+        instanceReady: function() {
+            this.dataProcessor.htmlFilter.addRules( {
+                elements: {
+                    img: function( el ) {
+                        // Add an attribute.
+                        if ( !el.attributes.alt )
+                            el.attributes.alt = 'عکس بارگذاری نشده است';
+
+                        // Add some class.
+                        el.addClass( 'col-12' );
+                    }
+                }
+            } );            
+        }
+    }
+
+
+
+
 } );
                             </script> 
                             <!-- ckeditor -->                         
