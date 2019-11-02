@@ -282,7 +282,7 @@
                             </script> 
                             <!-- ckeditor -->                         
                      </div>
-
+                 </div>
                     
                 
                   <div class="text-center" style="padding-top:20px">
