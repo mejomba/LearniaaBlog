@@ -10,7 +10,7 @@
        <!--span class="navbar-toggler-icon"></span-->
         </button>
         <a href="{{route('index')}}">
-          <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" style="height:75px !important" height="100px !important" width="80px"> 
+          <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" style="height:75px !important" height="100px !important" width="80px"> 
        </a> 
       </div>
       <div class="collapse navbar-collapse" id="navbar-default">

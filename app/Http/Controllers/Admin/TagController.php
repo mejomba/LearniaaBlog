@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Tag;
 use Validator;
+use Auth;
 
 class TagController extends Controller
 {
@@ -16,7 +17,18 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::get();
+        $user =  Auth::user() ;
+
+        if($user->type == 'مدیر')
+        {
+            $tags = Tag::get();
+        }
+        else
+        {
+          $tags = Tag::where('pk_users',$user->pk_users)->get();
+        }
+
+        
         $instance_Model_tag =new Tag();
         $names = $instance_Model_tag->GetListAllNameColumns_ForTable();
         return view('admin.tag.index', compact('names','tags'));
@@ -56,6 +68,9 @@ class TagController extends Controller
                     $tag->fa_name = request()->fa_name ;
                     $tag->en_name = request()->en_name ;
                     $tag->type = request()->type ;
+
+                    $user =  Auth::user() ;
+                    $tag->pk_users =  $user->pk_users ;
             
             
                     if($tag->save())

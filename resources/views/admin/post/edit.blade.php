@@ -218,16 +218,44 @@
                       </div>
 
             </div>
-        </div>
+        
 
+        @php
+        $user =  Auth::user() ;
+        @endphp
 
         
-        <div class="col-md-4">
-            <div class="form-group">
-                  
+        @if($user->type == 'مدیر')
+            <!-- Select Box -->
+            <div class="col-md-4">
+        <div class="row">
 
-            </div>
+
+                        <div class="col-md-3">
+                        <span>نویسنده</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="pk_users" class="form-control">
+                                  @foreach ($users as $user)
+                                  <option value="{{ $user->pk_users }}"  
+                                  @if($user->pk_users == $post->pk_writers )
+                                  selected="selected"
+                                  @endif>{{ $user->name }}</option>
+                                  @endforeach 
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
         </div>
+        </div>
+         <!-- Select Box -->
+         @endif
        
        
 

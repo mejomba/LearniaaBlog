@@ -121,7 +121,15 @@
                                     <div class="input-group-prepend">  
                                     </div>
                                   <select name="status" class="form-control">
-                                  <option value="انتشار">انتشار</option>
+                                  @php
+                                  $user =  Auth::user() ;
+                                  @endphp  
+
+                                    @if($user->type == 'مدیر')
+                                      <option value="انتشار">انتشار</option>
+                                    @endif
+                                   
+      
                                   <option value="پیش نویس">پیش نویس</option>
                                   </select>
                                   </div>
@@ -198,16 +206,39 @@
                       </div>
 
             </div>
-        </div>
+       
 
 
         
-        <div class="col-md-4">
-            <div class="form-group">
-                  
 
-            </div>
+            @if($user->type == 'مدیر')
+            <!-- Select Box -->
+            <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>نویسنده</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="pk_users" class="form-control">
+                                  @foreach ($users as $user)
+                                  <option value="{{ $user->pk_users }}">{{ $user->name }}</option>
+                                  @endforeach 
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
         </div>
+        </div>
+         <!-- Select Box -->
+         @endif
        
        
 

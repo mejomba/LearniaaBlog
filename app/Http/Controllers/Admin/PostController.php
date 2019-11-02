@@ -9,6 +9,7 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use Validator;
+use App\User;
 use Auth;
 use Illuminate\Http\File;
 
@@ -45,10 +46,25 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $user =  Auth::user() ;
         $categories = Category::where('type','پست')->get();
-        $tags = Tag::where('type','پست')->get();
-        return view('admin.post.create',compact('categories','tags'));
+
+       
+        if($user->type == 'مدیر')
+        {
+          $tags = Tag::where('type','پست')->get();
+        }
+        else
+        {
+          $tags = Tag::where('type','پست')->where('pk_users',$user->pk_users)->get();
+        }
+
+        // list writers User For Admin
+        $users = User::get();
+
+
+        return view('admin.post.create',compact('categories','tags','users'));
     }
 
     /**
@@ -81,7 +97,16 @@ class PostController extends Controller
 
              // process User --> Get info Writer And Save $new_instance
              $user =  Auth::user() ;
-             $new_instance->pk_writers =  $user->pk_users ;
+
+             if($user->type == 'مدیر')
+             {
+              $new_instance->pk_writers = request()->pk_users ;
+             }
+             else
+             {
+              $new_instance->pk_writers =  $user->pk_users ;
+             }
+
         
          $new_instance->pk_categories = request()->pk_categories ;
          $new_instance->title = request()->title ;
@@ -156,10 +181,24 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $user =  Auth::user() ;
         $post = Post::find($id);
         $categories = Category::where('type','پست')->get();
-        $tags = Tag::where('type','پست')->get();
-        return view('admin.post.edit',compact('categories','tags','post'));
+
+
+        if($user->type == 'مدیر')
+        {
+          $tags = Tag::where('type','پست')->get();
+        }
+        else
+        {
+          $tags = Tag::where('type','پست')->where('pk_users',$user->pk_users)->get();
+        }
+
+             // list writers User For Admin
+             $users = User::get();
+
+        return view('admin.post.edit',compact('categories','tags','post','users'));
     }
 
     /**
@@ -196,8 +235,23 @@ class PostController extends Controller
                $post->pk_tags =  "" ;
              }
 
-             $user =  Auth::user() ;
-             $post->pk_writers =  $user->pk_users ;
+            // process User --> Get info Writer And Save $new_instance
+                $user =  Auth::user() ;
+
+                if($user->type == 'مدیر')
+                {
+                $post->pk_writers = request()->pk_users ;
+                }
+                else
+                {
+                $post->pk_writers =  $user->pk_users ;
+                }
+
+
+
+
+
+
             
              $post->pk_categories = request()->pk_categories ;
              $post->title = request()->title ;
