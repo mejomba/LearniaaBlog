@@ -69,7 +69,9 @@
 
                             @if($post['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
+                            <a target="_blank" href="{{route('post.detail', $post['pk_post'] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                            </a>
                             </span>
                             
 
