@@ -89,16 +89,16 @@
                        <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a style="color:#00bcd4" href="{{ route('admin.post.edit', $post['pk_post']) }}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{route('admin.post.edit', $post['pk_post'] )}}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
 
                         <span style="font-size: 1.3rem;color:black;padding-right:25px">
-                      <a style="color:#e91e63" href="{{ route('admin.post.delete', $post['pk_post']) }}">
+                        <button style="color:#e91e63" type="button" class="btn"
+                         onclick="Modal_Delete( {{ $post['pk_post'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                        </a>
-                      
+                      </button>
                         </span>
 
                         </td>
@@ -108,8 +108,55 @@
                         @endforeach
                         
                         
-                        
-                        
+ <!---- Modal Delete -->                       
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">تایید حذف کردن</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+       <!-- Form &  Body -->
+       
+          <div class="card-body px-lg-1 py-lg-1">
+            <div class="row">   
+          
+            </div>
+            </div>
+
+        <!-- Form &  Body -->
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">انصراف</button>
+        <button type="button" class="btn btn-primary" onclick="del()" data-dismiss="modal">حذف</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+var id = 0 ;
+function Modal_Delete(row)
+{
+  id = row ;
+  $("#exampleModal").show();
+}
+
+function del()
+{ 
+  var getUrl = window.location;
+  var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
+  location.replace( baseUrl + "admin/post/delete/"+ id);
+}
+</script>
+<!---- Modal Delete -->         
                         
                       </tbody>
                     </table>
