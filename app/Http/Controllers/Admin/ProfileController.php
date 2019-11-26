@@ -8,6 +8,8 @@ use App\Profile;
 use App\User;
 use Validator;
 use Auth;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -100,6 +102,19 @@ class ProfileController extends Controller
                 
                 $profile->address =  request()->address   ;
                 $profile->pk_users =  $user->pk_users ;
+
+
+                if(request()->pic)
+                    {
+                        $pic = request()->file('pic');
+                        $pic_name = $pic->getClientOriginalName();
+                        $path = Storage::putFileAs( 'profile', $pic, $pic_name);
+                        $profile->pic = $pic_name ;
+                    } 
+                    else
+                    {
+                        $profile->pic = 'profile_default.jpg' ;
+                    }
     
                 if($profile->save())
                 {
@@ -142,7 +157,7 @@ class ProfileController extends Controller
                     'day_birthday' => 'nullable|numeric', 
                     'email' => 'nullable|email',
                     'state' => 'nullable|String', 
-                  
+                    'pic' => 'nullable|file',
                     'address' => 'nullable|String',
                     'password' => 'nullable|min:6'  ,
                  ];
@@ -153,7 +168,8 @@ class ProfileController extends Controller
                 'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
                 'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
                 'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
-
+                
+                'pic.file' => 'فیلد تصویر فاقد فایل تصویر است',
 
                 'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
                  'state.String' => 'استان صحیح وارد نشده است',

@@ -57,6 +57,29 @@ transition : transform .5s ;
     background-image: linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);
 }
 
+.btn-download {
+  background-image: linear-gradient(to right top, #F9F871, #F9F871, #F9F871, #F9F871, #F9F871);
+  border-color : #F9F871;
+  color:#000;
+  background-position: right center;
+}
+.btn-download:hover {
+  background-image: linear-gradient(to right top, #F9F871, #F9F871, #F9F871, #F9F871, #F9F871);
+  border-color : #F9F871;
+  color:#000;
+  background-position: right center;
+}
+
+.btn-disabled {
+  pointer-events: none;
+  cursor: default;
+  background-image: linear-gradient(to right top, #F9F871, #F9F871, #F9F871, #F9F871, #F9F871);
+  border-color : #F9F871;
+  color:#000;
+  background-position: right center;
+}
+
+
 .btn-1 {
   background-image: linear-gradient(to right, #DCE35B 0%, #45B649 51%, #DCE35B 100%);
 

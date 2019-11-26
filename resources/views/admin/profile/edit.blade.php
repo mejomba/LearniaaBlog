@@ -362,21 +362,49 @@
         </div>
 
 
-         <div class="col-md-6">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <textarea value="{{ $profile['address'] }}" name="address" class="form-control" placeholder="آدرس" type="text"></textarea> 
-                    </div>
-                  </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
+                                  </div>
+                                  <textarea value="{{ $profile['address'] }}" name="address" class="form-control" placeholder="آدرس" type="text"></textarea> 
+                                </div>
 
-        </div>
+                    </div>
+                    </div>
+
+
+
+                    
+                <!-- Picture Box -->
+                <div class="col-md-6">
+                <div class="row">
+
+
+                  <div class="col-md-3">
+                  <span>تصویر </span> 
+                  </div>
+                  <div class="col-md-9">
+                <div class="form-group focused">
+                            <div class="input-group input-group-alternative">
+                              <div class="input-group-prepend">  
+                              </div>
+                              <input  type="file" id="pic" name="pic">
+                            </div>
+                          </div>
+                </div>
+
+
+                </div>
+            </div>
+            <!-- Picture Box -->
+
+
+
+
+  <!----- End OF Fields From -->
     </div>
 
-
- 
-    
 
 
                   <div class="text-center" style="padding-top:20px">

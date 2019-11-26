@@ -7,8 +7,8 @@
  </style>
 
  
-<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/Template/favicon.png') }}">
-  <link rel="icon" type="image/png" href="{{ asset('images/Template/favicon.png') }}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/Template/logo.png') }}">
+<link rel="icon"  href="{{ asset('images/Template/logo.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
     لرنیا
@@ -23,7 +23,7 @@
   <link href="{{ asset('css/site/argon.css') }}" rel="stylesheet">
 
   <link href="{{ asset('css/site/nucleo.css') }}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"-->
   
   <link href="{{ asset('css/site/bootstrap/bootstrap.css') }}" rel="stylesheet">
   <link href="{{ asset('css/site/bootstrap/bootstrap-reboot.css') }}" rel="stylesheet">

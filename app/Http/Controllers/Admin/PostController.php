@@ -121,6 +121,14 @@ class PostController extends Controller
          $path = Storage::putFileAs( 'post', $pic, $pic_name);
          $new_instance->pic_content = $pic_name ;
 
+         if(request()->pdf_content)
+         {
+                $pdf = request()->file('pdf_content');
+                $pdf_name = $pdf->getClientOriginalName();
+                $path = Storage::putFileAs( 'pdf', $pdf, $pdf_name);
+                $post->pdf_content = $pdf_name ;
+         }
+
 
             // process extras --> save all option to array And save to $new_instance
             $data_extras = array();
@@ -270,6 +278,14 @@ class PostController extends Controller
                     $post->pic_content = $pic_name ;
              }
 
+             if(request()->pdf_content)
+             {
+                    $pdf = request()->file('pdf_content');
+                    $pdf_name = $pdf->getClientOriginalName();
+                    $path = Storage::putFileAs( 'pdf', $pdf, $pdf_name);
+                    $post->pdf_content = $pdf_name ;
+             }
+
              $data_extras = array();
 
              if(request()->readtime)
@@ -342,9 +358,9 @@ class PostController extends Controller
         $rules =  [
                     'pk_categories' => 'required|numeric', 
                     'title' => 'required|min:3', 
-                    'title' => 'required|min:3',
                     'content' => 'required|min:3',
                     'pic_content' => 'file|nullable',
+                    'pdf_content' => 'file|nullable|mimetypes:application/pdf',
                     'status' => 'required',
                  ];
 
@@ -355,7 +371,8 @@ class PostController extends Controller
                 'title.min' => 'عنوان  کوتاه تر از حد مجاز وارد شده است',
                 'content.required' => 'محتوا  وارد نشده است',
                 'content.min' => 'محتوا کوتاه تر از حد مجاز وارد شده است',
-                
+                'pdf_content.file' => 'فایل پی دی اف  صحیح وارد نشده است',
+                'pdf_content.mimetypes' => 'فایل پی دی اف  صحیح وارد نشده است',
                 'pic_content.file' => 'تصویر شاخص  صحیح وارد نشده است',
                 'status.required' => 'وضعیت  وارد نشده است',
                 ];

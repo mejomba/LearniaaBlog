@@ -71,7 +71,7 @@
 
                            
 
-                            <span style="font-size: 1.3rem;color:black;padding-right:25px">
+                            <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
                          onclick="Modal_Delete( {{ $category['pk_categories'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">

@@ -239,6 +239,33 @@
         </div>
          <!-- Select Box -->
          @endif
+
+
+
+          <!-- Picture Box -->
+          <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>فایل PDF </span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="pdf_content" name="pdf_content">
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Picture Box -->
+           
+
        
        
 

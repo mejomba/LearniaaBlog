@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('posts', 'ApiController@index');
+
+Route::get('writers/{id}', 'ApiController@writer');
+
+Route::get('postsByCategory/{categoryOfPage}', 'ApiController@postsByCategory');
 
 Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.category.store');
 

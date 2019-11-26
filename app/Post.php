@@ -23,6 +23,10 @@ class Post extends Model
                 ] ;
    }
 
+   public function profile()
+    {
+       return $this->hasOne(Profile::class,'pk_users','pk_writers');
+    }
 
 
     public function category()

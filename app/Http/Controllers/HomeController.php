@@ -16,16 +16,17 @@ class HomeController extends Controller
      
         public function index()
         {
-          /// Not Redirect
+            /// Not Redirect
 
-               // return redirect(route('post.index'));
+           // return redirect(route('post.index'));
 
 
           // Make Your Data Page & Select Your View For Show Landing Page
           // Copy & Paste All of Code PostController.Index into Method
 
-                $recent_post = Post::where('status', 'انتشار')->get();
-                return view('site.post.index',compact('recent_post'));
+                 $recent_post = Post::where('status', 'انتشار')->orderBy('pk_post', 'desc')->get()->take(6);
+                $categoryOfPage = "All";
+                return view('site.post.index',compact('recent_post','categoryOfPage'));
         
         }
 

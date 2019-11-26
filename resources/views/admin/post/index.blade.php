@@ -69,7 +69,7 @@
 
                             @if($post['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('post.detail', $post['pk_post'] )}}"> 
+                            <a target="_blank" href="{{route('post.detail',  ['slug' => $post['pk_post'] , 'desc' =>  $post['title'] ] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                             </a>
                             </span>
@@ -94,7 +94,7 @@
                        </a>
                         </span>
 
-                        <span style="font-size: 1.3rem;color:black;padding-right:25px">
+                        <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
                          onclick="Modal_Delete( {{ $post['pk_post'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">

@@ -8,6 +8,8 @@ use App\Profile;
 use App\User;
 use Validator;
 use Auth;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -99,6 +101,18 @@ class ProfileController extends Controller
                 $profile->state = request()->state    ;
                 $profile->address =  request()->address   ;
                 $profile->pk_users =  $user->pk_users ;
+
+                if(request()->pic)
+                {
+                    $pic = request()->file('pic');
+                    $pic_name = $pic->getClientOriginalName();
+                    $path = Storage::putFileAs( 'profile', $pic, $pic_name);
+                    $profile->pic = $pic_name ;
+                } 
+                else
+                {
+                    $profile->pic = 'profile_default.jpg' ;
+                }
     
                 if($profile->save())
                 {
@@ -139,7 +153,7 @@ class ProfileController extends Controller
             'month_birthday' => 'nullable|numeric', 
             'year_birthday' => 'nullable|numeric|digits:4', 
             'day_birthday' => 'nullable|numeric', 
-            'email' => 'nullable|email|max:20',
+            'email' => 'nullable|email|max:40',
             'state' => 'nullable|String', 
             'address' => 'nullable|String|max:100',
             'password' => 'nullable|min:6|max:20'  ,

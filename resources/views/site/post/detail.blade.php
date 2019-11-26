@@ -32,24 +32,50 @@
 
 <div class="post-meta-content" class="meta_title_post text-muted" style="font-size:15px">
 
-          <span class="post-auhor-date">
-          <span class="" style="color:#000"> 
-          <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="20px" width="20px">&nbsp;{{$one_post->writer['name']}}</span>
-          <span  class="" style="color:#000"> | 
-          <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-            {{ $json->create_at }}
-          </span>
+ <div class="row">
+
+ <div class="col-1">
+</div>
+
+ <div  class="col-3">
+            <span class="post-auhor-date">
+            <span class="" style="color:#000">
+          
+            @if($one_post->profile['pic'])
+            <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
+                        class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+            @else         
+            <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+            @endif
+            &nbsp;{{$one_post->writer['name']}}</span>
+
+</div> 
+
+<div class="col-4" style="padding-top:15px">
+            <span  class="" style="color:#000" >  
+            <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+              {{ $json->create_at }}
+            </span>
+        
+            </span>
+  </div> 
+
+  <div class="col-3" style="padding-top:15px">
+          <span class="" style="color:#000" >  
+          <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+          00: {{ $json->readtime }}   
+            </span>  
+
+      <div class="post-content">
+            <p> </p>
+      </div>
+
+  </div>   
+
+  <div class="col-1">
+</div>
       
-          </span>
-
-         <span class="" style="color:#000" > | 
-         <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-            {{ $json->readtime }} دقیقه
-           </span>  
-
-    <div class="post-content">
-          <p> </p>
-    </div>
+</div>
 
 </div>
 </div>   
@@ -86,10 +112,38 @@
                 <p></p>
                 <p></p>
 
+                <div style="border-top:2px solid #20c3b8;margin-bottom:10px">
+                                       
+                                        </div>
+                         
+
+                    <div class="row">
+                            <div class="col-md-10  col-8">
+                                       
+                                        <h4> دریافت فایل  (PDF) :</h4>
+                                      
+                                       
+                          </div>
+                          <div class="col-md-2 col-4">
+                            @if($one_post['pdf_content'])
+                          <a style="padding-bottom : 5px" _target="blank" href="{{Storage::url('pdf/'.$one_post['pdf_content'])}}"  
+                          class="btn btn-primary btn-download btnblogPost">دانلود </a>
+                           @else
+                           <a style="padding-bottom : 5px"
+                            class="btn btn-primary btn-disabled btnblogPost ">دانلود </a>
+                           @endif
+                        
+                          </div>
+                  </div>
+
+                  <div style="border-bottom:2px solid #20c3b8;margin-top:10px">
+                                       
+                                       </div>
+
             </div>
         </div>
 
-
+ 
 
 
     </div>
@@ -156,7 +210,7 @@
        
                 <div class="col-md-3">
 
-                        <a href="{{route('post.detail', $one_post['pk_post'] )}}"> 
+                        <a href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}"> 
                            <img src="{{ Storage::url('post/'.$one_post['pic_content'])  }}"  
                             class="img-raised rounded img-fluid" style="width: 200px;height: 100px;" ></a>
                 </div>
@@ -165,7 +219,7 @@
                       
                 <div class="row">
 
-                        <a class="text-muted" href="{{route('post.detail', $one_post['pk_post'] )}}"> 
+                        <a class="text-muted" href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}"> 
                             <h4 style="font-size: 20px;margin-bottom:0px" >{{$one_post['title']}}</h4>
                             </a>
                  </div>           
@@ -195,9 +249,9 @@
        </div>
 
         @endforeach
-
-        </div>
+ </div>
  <!-- Section -->
+
 </div>
 </div>
 
