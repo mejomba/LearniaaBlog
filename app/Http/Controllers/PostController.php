@@ -39,15 +39,19 @@ class PostController extends Controller
         $category = Category::where('name', $name)->first();
         $pk_categories = $category['pk_categories'];
         $recent_post = Post::where('pk_categories', $pk_categories)->where('status', 'انتشار')->get()->take(6);
-        $categoryOfPage =   $pk_categories;
+        $categor9yOfPage =   $pk_categories;
+       
         return view('site.post.index',compact('recent_post','categoryOfPage'));
     }
 
     public function search(Request $request)
     {
+      
         if( request()->type_search == null)
         {
-            return view('site.post.index');
+          $recent_post = Post::where('status', 'انتشار')->get()->take(6);
+          $categoryOfPage = "All";
+            return view('site.post.index',compact('recent_post','categoryOfPage'));
         }
         elseif(request()->type_search == "post")
         {
@@ -56,14 +60,15 @@ class PostController extends Controller
                     if($result_data->count() == 0)
                     {
                         $recent_post = Post::get()->take(6);
-                        
-                        return view('site.post.index',compact('recent_post'));
+                       
+                        $categoryOfPage = "All";
+                        return view('site.post.index',compact('recent_post','categoryOfPage'));
                     }
                     else
                     {
                         $recent_post = $result_data ;
-                        
-                        return view('site.post.index',compact('recent_post'));   
+                        $categoryOfPage = "All";
+                        return view('site.post.index',compact('recent_post','categoryOfPage'));   
                     }
 
          
@@ -88,5 +93,6 @@ class PostController extends Controller
           }
         }
 
+        
     }
 }

@@ -43,7 +43,7 @@
 <li class="nav-item">
   <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
   >
-  <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
    بلاگ
   </a>
 </li>
@@ -76,7 +76,7 @@
         <ul class="navbar-nav col-md-3 col-10 "  dir="ltr" style="margin-top:15px" >
 <!-- serach box site -->
 
-<form class="navbar-form" dir="rtl" action="{{route('search.index','search')}}" >
+<form class="navbar-form" dir="rtl" action="{{route('search.index')}}" >
               
         <div class="row">
 

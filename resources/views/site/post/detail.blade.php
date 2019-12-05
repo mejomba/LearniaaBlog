@@ -263,9 +263,12 @@
 
 <div class="col-md-12">
 
+
+ @if($behavior_post == null) 
+
 <h3 class="title text-center">نظرات و پیشنهادات</h3>
 
-
+@endif    
 
 	<div class="row">
 		<div class="col-md-6 offset-md-3">
