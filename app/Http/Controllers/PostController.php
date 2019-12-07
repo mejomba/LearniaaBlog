@@ -20,7 +20,7 @@ class PostController extends Controller
     public function detail($slug,$desc)
     {  
         $detail_post = Post::where('pk_post', $slug)->get();
-        $recent_post = Post::get()->take(6);
+        $recent_post = Post::where('status', 'انتشار')->orderBy('pk_post', 'desc')->get()->take(6);
         $behavior_post = Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
        
         return view('site.post.detail',compact('detail_post','recent_post','behavior_post'));

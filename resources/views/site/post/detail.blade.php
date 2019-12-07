@@ -24,7 +24,7 @@
 
         <button class="btn   btn-round btnblogPost btn-title" style="border-radius:10px" >
 
-            <h1 style="color:#FFFFFF" class="">{{$one_post['title']}}</h1>
+            <h2 style="color:#FFFFFF" class="">{{$one_post['title']}}</h2>
         
 
 
@@ -37,8 +37,8 @@
  <div class="col-1">
 </div>
 
- <div  class="col-3">
-            <span class="post-auhor-date">
+<div  class="col-10" style="padding-top:15px">
+<span class="post-auhor-date">
             <span class="" style="color:#000">
           
             @if($one_post->profile['pic'])
@@ -48,29 +48,29 @@
             <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
             @endif
             &nbsp;{{$one_post->writer['name']}}</span>
+            |
 
-</div> 
-
-<div class="col-4" style="padding-top:15px">
             <span  class="" style="color:#000" >  
             <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
               {{ $json->create_at }}
             </span>
         
             </span>
-  </div> 
 
-  <div class="col-3" style="padding-top:15px">
-          <span class="" style="color:#000" >  
+            |
+
+            <span class="" style="color:#000" >  
           <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-          00: {{ $json->readtime }}   
+          00:{{ $json->readtime }}   
             </span>  
 
       <div class="post-content">
             <p> </p>
       </div>
 
-  </div>   
+
+</div>
+
 
   <div class="col-1">
 </div>
@@ -118,27 +118,22 @@
                          
 
                     <div class="row">
-                            <div class="col-md-10  col-8">
-                                       
-                                        <h4> دریافت فایل  (PDF) :</h4>
-                                      
-                                       
-                          </div>
-                          <div class="col-md-2 col-4">
+                           
+                          <div class="col-md-3 col-4 center">
                             @if($one_post['pdf_content'])
                           <a style="padding-bottom : 5px" _target="blank" href="{{Storage::url('pdf/'.$one_post['pdf_content'])}}"  
-                          class="btn btn-primary btn-download btnblogPost">دانلود </a>
+                          class="btn btn-primary btn-download btnblogPost">دریافت فایل  (PDF) </a>
                            @else
                            <a style="padding-bottom : 5px"
-                            class="btn btn-primary btn-disabled btnblogPost ">دانلود </a>
+                            class="btn btn-primary btn-disabled btnblogPost ">دریافت فایل  (PDF) </a>
                            @endif
                         
                           </div>
                   </div>
 
-                  <div style="border-bottom:2px solid #20c3b8;margin-top:10px">
+                 <!-- <div style="border-bottom:2px solid #20c3b8;margin-top:10px">
                                        
-                                       </div>
+                                       </div>  -->
 
             </div>
         </div>
@@ -259,12 +254,12 @@
 
 
 <!-- Comment -->
-<div class="row" style="padding-bottom:45px">
+<div class="row" style="padding-bottom:45px;padding-top:35px">
 
 <div class="col-md-12">
 
 
- @if($behavior_post == null) 
+ @if($behavior_post != null) 
 
 <h3 class="title text-center">نظرات و پیشنهادات</h3>
 
