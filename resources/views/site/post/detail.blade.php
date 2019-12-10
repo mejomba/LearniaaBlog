@@ -258,8 +258,8 @@
 
 <div class="col-md-12">
 
-
- @if($behavior_post != null) 
+@php $user =  Auth::user();  @endphp
+@if($user['pk_users'] != null) 
 
 <h3 class="title text-center">نظرات و پیشنهادات</h3>
 
@@ -268,7 +268,7 @@
 	<div class="row">
 		<div class="col-md-6 offset-md-3">
 			
-      @php $user =  Auth::user();  @endphp
+     
         @if($user['pk_users'] != null)                                
 
       <form action="{{ route('behavior.store') }}" method="POST">

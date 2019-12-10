@@ -227,7 +227,7 @@
     
 
     Data.insertAdjacentHTML('beforeend',`<div class="col-md-4 div-transition">
-   <a href="${baseUrl+"post/" +json.pk_post }"> 
+   <a href="${baseUrl+"post/" +json.pk_post  + "/" + json.title }"> 
    <img src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/post/${json.pic_content}" class="img-raised rounded img-fluid" style="width: 703px;height: 250px;"></a>                  
   <a class="text-muted" href="${baseUrl+"/post/" +json.pk_post + "/" + json.title }"> 
     <h4 style="font-size: 20px;margin-bottom:0px">${json.title}</h4>

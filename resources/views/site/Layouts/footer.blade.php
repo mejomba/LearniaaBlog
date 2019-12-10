@@ -13,7 +13,7 @@
             </a>
             <a class="nav-link col-md-3 col-3"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
             >
-            <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+            <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
              بلاگ
             </a>
             <a class="nav-link col-md-3 col-3" href="{{route('Contactus')}}">
