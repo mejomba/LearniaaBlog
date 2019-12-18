@@ -10,7 +10,7 @@
        <!--span class="navbar-toggler-icon"></span-->
         </button>
         <a href="{{route('index')}}">
-          <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" style="height:75px !important" height="100px !important" width="80px"> 
+          <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" style="height:60px !important" height="100px !important" width="80px"> 
        </a> 
       </div>
       <div class="collapse navbar-collapse" id="navbar-default">
@@ -35,8 +35,8 @@
 <li class="nav-item">
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
-  <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-  آموزش سریع 
+  <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+  آموزش  
   </a>
 </li>
 
@@ -75,11 +75,11 @@
         <ul class="navbar-nav col-md-3 col-10 "  dir="ltr" style="margin-top:15px" >
 <!-- serach box site -->
 
-<form class="navbar-form" dir="rtl" action="{{route('search.index')}}" >
+<form class="navbar-form" style="margin-bottom:0px" dir="rtl" action="{{route('search.index')}}" >
               
         <div class="row">
 
-             <div class="col-md-11 col-11" style="padding-left:0px;padding-right:0px">
+             <div class="col-md-12 col-11" style="padding-left:0px;padding-right:0px">
                 <div class="form-group">
 
                       <input type="hidden"  name="type_search" value="{{Request::segment(1)}}" 
@@ -88,25 +88,13 @@
                       <div class="input-group">
                           <input type="text"  name="content_search" 
                           class="form-control form-control-alternative" placeholder="جستجو...">
-                            <div class="input-group-append">
-                            <span class="input-group-text">
-                            <input type="submit" hidden="true" />
-                          <img src="{{ asset('images/Template/search.svg') }}" alt="Thumbnail Image" height="20px" width="20px"></span>
-                         
-                           </div>
+
+                          <button class="input-group-text" type="submit" style="font-size:0.8rem !important">بگرد</button>
 
                       </div>
-
                 </div>
              </div>        
-
-               <div class="col-md-1 col-1"> 
-               <div class="form-group">
-
-                    
-                      </div>
-                      </div>
-              </div>
+         </div>
 
         
         </form>

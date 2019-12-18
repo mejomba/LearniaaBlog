@@ -237,11 +237,11 @@
 
               <span class="post-auhor-date">
               <span class="text-muted">
-              <img src="http://127.0.0.1:8000/images/Template/user.svg" alt="Thumbnail Image" height="20px" width="20px">
+              <img src="${baseUrl+ "/images/Template/user.svg"}"  alt="Thumbnail Image" height="20px" width="20px">
               ${writer.name}
                 </span>
               <span class="text-muted"> | 
-              <img src="http://127.0.0.1:8000/images/Template/calendar.svg" alt="Thumbnail Image" height="20px" width="20px">
+              <img src="${baseUrl+ "/images/Template/calendar.svg"}" alt="Thumbnail Image" height="20px" width="20px">
 
               ${json.extras.create_at}
               </span>
@@ -249,7 +249,7 @@
               </span>
 
              <span class="text-muted"> |
-             <img src="http://127.0.0.1:8000/images/Template/clock.svg" alt="Thumbnail Image" height="20px" width="20px">
+             <img src=${baseUrl+ "/images/Template/clock.svg"}" alt="Thumbnail Image" height="20px" width="20px">
 
              ${json.extras.readtime} دقیقه
                </span>  
@@ -282,9 +282,9 @@
                                               json = JSON.stringify(json);
                                               json = JSON.parse(json);
 
-                                              if(json.next_page_url != null)
+                                              if(json.first_page_url != null)
                                                 {
-                                                  page_url =  json.next_page_url;
+                                                  page_url =  json.first_page_url;
                                                 }
                                                 else
                                                 {
@@ -292,6 +292,8 @@
                                                   $("#btn_more").css("display","none");
                                                        return 0;
                                                 }
+
+
                                             })
 
                                             first_run = 1 ;
@@ -313,9 +315,9 @@
                                             
                                               json = JSON.parse(json);
 
-                                              if(json.next_page_url != null)
+                                              if(json.first_page_url != null)
                                                 {
-                                                  page_url =  json.next_page_url;
+                                                  page_url =  json.first_page_url;
                                                 }
                                                 else
                                                 {

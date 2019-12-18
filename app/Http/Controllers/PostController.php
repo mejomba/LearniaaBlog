@@ -39,7 +39,7 @@ class PostController extends Controller
         $category = Category::where('name', $name)->first();
         $pk_categories = $category['pk_categories'];
         $recent_post = Post::where('pk_categories', $pk_categories)->where('status', 'انتشار')->get()->take(6);
-        $categor9yOfPage =   $pk_categories;
+        $categoryOfPage =   $pk_categories;
        
         return view('site.post.index',compact('recent_post','categoryOfPage'));
     }

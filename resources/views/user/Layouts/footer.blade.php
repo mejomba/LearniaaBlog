@@ -8,8 +8,8 @@
               <div class="row">
               <a class="nav-link col-md-3 col-3" href="{{route('product.index')}}"  rel="tooltip" title="" data-placement="bottom"
             data-original-title="به زودی">
-            <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-             آموزش سریع
+            <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+             آموزش 
             </a>
             <a class="nav-link col-md-3 col-3"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
             >
