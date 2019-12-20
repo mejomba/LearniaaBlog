@@ -9,6 +9,7 @@ use Validator;
 use Auth;
 use App\Profile;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class LearnerController extends Controller
 {
