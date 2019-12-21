@@ -40,7 +40,7 @@
 
 
                    @php
-                   if($payment_status == "Payed")
+                   if($payment_status == "Payed" || $product->price == 0 )
                   {  
                     echo $product['file'] ; 
                   }
@@ -85,23 +85,16 @@
 <h3> اطلاعات دوره <h3>
 </div>
 
-                        <div class="row" style="padding-top:10px;padding-bottom:15px;">
+ <!-- Information Product -->
 
-                                            <!-- Information Product -->
+ <div class="container-fluid">
 
-                                            <div class="col-md-12">
-                                  
-                                        <div class="post-meta" >
-
-                                      <div class="post-meta-content" class="meta_title_post text-muted">
-
-                                      <div class="row" style="padding-top:15px">
-
-                                      
-                                      <div class="col-4 col-md-4"  style="font-size:13px">
-                                                <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
-                                               <span style="padding-right:5px"> @php 
+     <div class="row" style="padding-top:25px;padding-bottom:15px;">
+  
+                          <div class="col-4 col-md-4"  style="font-size:13px">
+                                  <img src="{{ asset('images/Template/price-tag.svg') }}" 
+                                      alt="Thumbnail Image" height="42px" width="62px">
+                                       <span style="padding-right:5px"> @php 
                                                             if($product->price != 0)
                                                             {
                                                               echo '  '.number_format($product->price) ;
@@ -118,56 +111,50 @@
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Thumbnail Image" height="42px" width="62px">
                                                 {{ $product->time }} دقیقه
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Thumbnail Image" height="42px" width="62px">
                                                 {{ $product->count }} درس
                                                 </div>
 
+              </div>
+               <!-- Payment -->
 
-                                     
-                  
+                                 <div class="col-md-12 text-center" style="padding-top:35px">
+                                      <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
+                                        @csrf
+                                        <button class="btn btn-round btn-1 btn-title" 
 
-      <!-- Payment -->
+                                         @if($payment_status == "Payed")
+                                          disabled
+                                           @endif
 
-     <div class="col-md-12 text-center" style="padding-top:35px">
-                                                           <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
-                                                           @csrf
-                                                            <button class="btn btn-round btn-1 btn-title" 
-
-                                                            @if($payment_status == "Payed")
-                                                            disabled
-                                                            @endif
+                                           @if($product->price == 0)
+                                          disabled
+                                           @endif
                                                             
-                                                             type="submit" style="border-radius:10px" >
-                                                            <h5 style="margin-top:5px">خرید دوره : 
-                                                            @php 
-                                                            if($product->price != 0)
-                                                            {
-                                                              echo number_format($product->price) ;
-                                                            }
-                                                            else
-                                                            {
-                                                              echo 'رایگان';
-                                                            }
+                                            type="submit" style="border-radius:10px" >
+                                             <h5 style="margin-top:5px">خرید دوره : 
+                                              @php 
+                                               if($product->price != 0)
+                                               {
+                                                 echo number_format($product->price) ;
+                                                }
+                                                  else
+                                                  {
+                                                    echo 'رایگان';
+                                                   }
                                                             
-                                                             @endphp  (تومان)</h5>
+                                                    @endphp  (تومان)</h5>
                                                             </button>
                                                             </form>  
-                                                    </div>
-                                        </div>
-                                    </div>
-                                    </div>   
+                                           </div>
 
-                                  </div>
-                                          
-
-                          
-
+                              
 
                </div>
               </div>
@@ -193,8 +180,8 @@
                   <div class="row">
                   {{$product->learner->user['name']}}
                   </div>
-                  <div class="row">
-                  {{$product->learner['desc']}}
+                  <div class="row" style="padding-top: 9px;">
+                  {{$product->learner['job']}}
                   </div>
 
               </div>

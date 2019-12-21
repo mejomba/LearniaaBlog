@@ -248,7 +248,7 @@
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Thumbnail Image" height="42px" width="62px">
                                                <span style="padding-right:5px"> @php 
                                                             if($product->price != 0)
                                                             {
@@ -266,13 +266,13 @@
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Thumbnail Image" height="42px" width="62px">
                                                 {{ $product->time }} دقیقه
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Thumbnail Image" height="42px" width="62px">
                                                 {{ $product->count }} درس
                                                 </div>
 
