@@ -235,7 +235,7 @@ class ProductController extends Controller
                     'pk_category' => 'required|numeric', 
                     'pk_learner' => 'required|numeric',
                     'title' => 'required',
-                    'pic' => 'nullable|file',
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
                     'price' => 'required|numeric',
                     'time' => 'required',
                     'desc' => 'required',
@@ -247,14 +247,15 @@ class ProductController extends Controller
                  ];
 
     $messages = [
+      
                 
                 'pk_category.required' => 'کلید دسته بندی وارد نشده است',
                 'pk_category.numeric' => 'کلید دسته بندی صحیح وارد نشده است ',
                 'pk_learner.required' => 'کلید مدرس وارد نشده است',
                 'pk_learner.numeric' => 'کلید مدرس صحیح وارد نشده است ',
                 'title.required' => 'عنوان  وارد نشده است',
-                'pic.required' => 'تصویر  وارد نشده است',
-                'pic.file' => 'فیلد تصویر فاقد فایل تصویر است',
+                'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
                 'price.required' => 'قیمت  وارد نشده است',
                 'price.numeric' => 'قیمت  وارد شده صحیح نیست',
                 'time.required' => 'زمان  وارد نشده است',

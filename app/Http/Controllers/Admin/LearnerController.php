@@ -65,6 +65,8 @@ class LearnerController extends Controller
              $profile = Profile::where('pk_users', request()->pk_users)->get()->first();
              $new_instance->pk_profile = $profile->pk_profiles ;
              $new_instance->desc = request()->desc ;
+             $new_instance->job = request()->job ;
+
 
     
              /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
@@ -141,20 +143,19 @@ class LearnerController extends Controller
             // Get Selected Item Fron DB  
             $learner = Learner::find($id);
 
-        
-
              $learner->desc = request()->desc ;
+             $learner->job = request()->job ;
      
              if(request()->pic)
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
                 $path = Storage::putFileAs( 'learner', $pic, $pic_name);
-                $new_instance->pic = $pic_name ;
+                $learner->pic = $pic_name ;
             }  
      
 
-             if(  $learner->save())
+             if($learner->save())
              {
                  return redirect(route('admin.learner.index'))->with('success','مدرس با موفقیت ویرایش شد ');
              }
@@ -163,10 +164,6 @@ class LearnerController extends Controller
                  return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
              }
 
-
-
-             
-         
         }
             
           
@@ -198,16 +195,21 @@ class LearnerController extends Controller
     {
 
         $rules =  [
-                    'pic' => 'file|nullable',
-                    'desc' => 'required|string|min:3|max:300',
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
+                    'desc' => 'nullable|string|min:3|max:300',
+                    'job' => 'required|string|min:3|max:300'
                  ];
 
     $messages = [
-                'desc.max' => 'محتوا بلند تر از حد مجاز وارد شده است',
-                'desc.string' => 'محتوا صحیح نمی باشد',
-                'desc.required' => 'محتوا  وارد نشده است',
-                'desc.min' => 'محتوا کوتاه تر از حد مجاز وارد شده است',
-                'pic.file' => 'تصویر شاخص  صحیح وارد نشده است',
+                    'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                    'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
+                    'desc.max' => 'محتوا بلند تر از حد مجاز وارد شده است',
+                    'desc.string' => 'محتوا صحیح نمی باشد',
+                    'desc.min' => 'محتوا کوتاه تر از حد مجاز وارد شده است',
+                    'job.max' => 'حوزه کاری بلند تر از حد مجاز وارد شده است',
+                    'job.string' => 'حوزه کاری صحیح نمی باشد',
+                    'job.required' => 'حوزه کاری  وارد نشده است',
+                    'job.min' => 'حوزه کاری کوتاه تر از حد مجاز وارد شده است',
                 ];
 
         $validator = Validator::make($request->all(),$rules,$messages);

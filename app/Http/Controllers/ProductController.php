@@ -58,24 +58,29 @@ class ProductController extends Controller
     public function detail($slug)
     {  
         $product = Product::where('pk_product', $slug)->first();
-        $recent_Products = Product::get()->take(6);
+        $recent_Products = Product::where('status', 'انتشار')->get()->take(3);
         $behavior_product= Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
 
-        $user =  Auth::user() ;
-        $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','معتبر')->where('pk_users',$user->pk_users)->first();
         $payment_status ="";
-       
+
+        $user =  Auth::user() ;
+        
+        if($user != null)
+        {
+          $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','معتبر')->where('pk_users',$user->pk_users)->first();
+          if($payment_checks)
+          {
+            $payment_status ="Payed";
+          }
+
+        }
+
         if($user == null)
         {
             $payment_status ="No Pay";
         }
         
-       //  if($payment_checks)
-       if($user == null)
-         {
-            $payment_status ="Payed";
-         }
-          
+       
         return view('site.product.detail',compact('product','recent_Products','behavior_product','payment_status'));
     }
 
@@ -143,11 +148,12 @@ class ProductController extends Controller
            $transaction->type = 'خرید دوره آموزشی';
            $transaction->digital_receipt =  rand(0,1000000000) ;
            $transaction->pk_product =  $slug ;
+           $transaction->status = "عملیات موفق";
             // process extras --> save all option to array And save to $new_instance
            $data_extras = array();
            $data_extras["problem"] = 'عملیات موفق';
            $data_extras["type"] = 'خرید ازموجودی کیف پول';
-         
+          
            $transaction->extras =  json_encode($data_extras,false) ; 
 
            $transaction->save();
@@ -163,7 +169,7 @@ class ProductController extends Controller
              ['price' => $product->price , 'type' => 'خرید دوره آموزشی' , 'slug' => $slug ]);
         }
 
-        
+
     }
 
     

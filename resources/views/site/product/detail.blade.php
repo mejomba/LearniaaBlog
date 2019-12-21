@@ -21,7 +21,7 @@
 
         <button class="btn btn-round btnblogPost btn-title" style="border-radius:10px" >
 
-            <h2 style="color:#FFFFFF" class="text-center">نام دوره : {{$product['title']}}</h2>  
+            <h2 style="color:#FFFFFF" class="text-center">{{$product['title']}}</h2>  
 </div>
 
 
@@ -98,53 +98,43 @@
                                       <div class="row" style="padding-top:15px">
 
                                       
+                                      <div class="col-4 col-md-4"  style="font-size:13px">
+                                                <img src="{{ asset('images/Template/price-tag.svg') }}" 
+                                                alt="Thumbnail Image" height="42px" width="42px">
+                                               <span style="padding-right:5px"> @php 
+                                                            if($product->price != 0)
+                                                            {
+                                                              echo '  '.number_format($product->price) ;
+                                                              echo ' تومان';
+                                                            }
+                                                            else
+                                                            {
+                                                              echo 'رایگان';
+                                                            }
+                                                            
+                                                             @endphp
+                                                             </span>
+                                                </div>
 
-                                      <div class="col-md-4">
-                                      
-                                      <span class="text-muted">
-                                                  <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                                                  نام مدرس</span>
+                                                <div class="col-4 col-md-4" style="font-size:13px">
+                                                <img src="{{ asset('images/Template/stopwatch.svg') }}" 
+                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                {{ $product->time }} دقیقه
+                                                </div>
 
-                                      </div>
-
-                                      <div class="col-md-4">
-
-                                      <span  class="text-muted">  
-                                                  <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                                                  تعداد ویدیو
-                                                  
-                                                  </span>
-
-                                      </div>     
-                                                
-                                      <div class="col-md-4">
-
-                                      <span class="text-muted" > 
-                                                <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-
-                                                  مدت زمان
-                                              
-                                                  </span>  
-
-                                      </div>
-
-
-                                      <!-- Row 2 -->
+                                                <div class="col-4 col-md-4"  style="font-size:13px">
+                                                <img src="{{ asset('images/Template/video-camera.svg') }}" 
+                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                {{ $product->count }} درس
+                                                </div>
 
 
-                                      <div class="col-md-4 text-center">
-                                      {{$product->learner->user['name']}}
-                                      </div>
+                                     
+                  
 
-                                      <div class="col-md-4 text-center">
-                                      {{ $product->count }} قسمت
-                                      </div>
+      <!-- Payment -->
 
-                                      <div class="col-md-4 text-center">
-                                      {{ $product->time }} دقیقه
-                                      </div>
-                                            
-                                                <div class="col-md-12 text-center" style="padding-top:35px">
+     <div class="col-md-12 text-center" style="padding-top:35px">
                                                            <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
                                                            @csrf
                                                             <button class="btn btn-round btn-1 btn-title" 
@@ -193,17 +183,23 @@
 
        <div class="row" style="margin-top:10px">
             
-                <div class="col-md-3">
+                <div class="col-md-4">
+                <img src="{{  Storage::url('learner/'.$product->learner['pic'])  }}"
+                    alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="width: 90px;height:90px">
                 </div>
                 
-                <div class="col-md-8">
-                  <img src="{{  Storage::url('learner/'.$product->learner['pic'])  }}"
-                    alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="width: 160px;height:150px">
+                <div class="col-md-8" style="padding-top: 9px;">
+    
+                  <div class="row">
+                  {{$product->learner->user['name']}}
+                  </div>
+                  <div class="row">
+                  {{$product->learner['desc']}}
+                  </div>
+
               </div>
             
-              <div class="col-md-1">
-            </div>
-     
+             
       </div>
 
       <div class="row" style="margin-top:20px">

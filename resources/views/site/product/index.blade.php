@@ -74,7 +74,7 @@
                    
                    
                 <li class="nav-item">
-                        <a class="nav-link mb-sm-3 mb-md-0 active " style="border-radius:0.7rem" id="tab" data-toggle="tab"
+                        <a class="nav-link mb-sm-3 mb-md-0 active " style="border-radius:0.7rem;font-size:17px" id="tab" data-toggle="tab"
                          href="#tab_text" role="tab" 
                         aria-controls="tab" aria-selected="true">
                         جدیدترین </a>
@@ -84,7 +84,7 @@
                 @foreach($categories as $category)
 
                     <li class="nav-item">
-                        <a class="nav-link mb-sm-3 mb-md-0 " style="border-radius:0.7rem" id="tab{{$category['pk_categories']}}" data-toggle="tab"
+                        <a class="nav-link mb-sm-3 mb-md-0 " style="border-radius:0.7rem;font-size:17px" id="tab{{$category['pk_categories']}}" data-toggle="tab"
                          href="#tab{{$category['pk_categories']}}_text" role="tab" 
                         aria-controls="tab{{$category['pk_categories']}}" aria-selected="true">
                         {{$category['name']}} </a>
@@ -153,7 +153,7 @@
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                alt="Thumbnail Image" height="42px" width="42px">
                                                <span style="padding-right:5px"> @php 
                                                             if($product->price != 0)
                                                             {
@@ -171,13 +171,13 @@
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                alt="Thumbnail Image" height="42px" width="42px">
                                                 {{ $product->time }} دقیقه
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                alt="Thumbnail Image" height="42px" width="42px">
                                                 {{ $product->count }} درس
                                                 </div>
 
@@ -248,7 +248,7 @@
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                alt="Thumbnail Image" height="42px" width="42px">
                                                <span style="padding-right:5px"> @php 
                                                             if($product->price != 0)
                                                             {
@@ -266,13 +266,13 @@
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                alt="Thumbnail Image" height="42px" width="42px">
                                                 {{ $product->time }} دقیقه
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                alt="Thumbnail Image" height="42px" width="42px">
                                                 {{ $product->count }} درس
                                                 </div>
 

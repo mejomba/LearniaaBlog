@@ -150,34 +150,33 @@ class ProfileController extends Controller
     {
 
         $rules =  [
-            'month_birthday' => 'nullable|numeric', 
-            'year_birthday' => 'nullable|numeric|digits:4', 
-            'day_birthday' => 'nullable|numeric', 
-            'email' => 'nullable|email|max:40',
-            'state' => 'nullable|String', 
-            'address' => 'nullable|String|max:100',
-            'password' => 'nullable|min:6|max:20'  ,
+                    'month_birthday' => 'nullable|numeric', 
+                    'year_birthday' => 'nullable|numeric|digits:4', 
+                    'day_birthday' => 'nullable|numeric', 
+                    'email' => 'nullable|email',
+                    'state' => 'nullable|String', 
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
+                    'address' => 'nullable|String',
+                    'password' => 'nullable|min:6'  ,
          ];
 
      
 $messages = [
-        'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
-        'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
-        'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
-        'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
+                'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
+                'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
+                'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
+                'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
+                
+                'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
 
+                'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
+                'state.String' => 'استان صحیح وارد نشده است',
+            
+                'address.String' => 'آدرس  صحیح وارد نشده است ',
 
-        'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
-        'email.max' => 'پست الکترونیکی  طولانی وارد شده است ',
-        
-         'state.String' => 'استان صحیح وارد نشده است',
-       
-        'address.String' => 'آدرس  صحیح وارد نشده است ',
-        'address.max' => ' آدرس  طولانی وارد شده است ',
-
-        'password.required' => 'رمز عبور وارد نشده است',
-        'password.max' => 'رمز عبور  طولانی وارد شده است ',
-        'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
+                'password.required' => 'رمز عبور وارد نشده است',
+                'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
         ];
 
         $validator = Validator::make($request->all(),$rules,$messages);

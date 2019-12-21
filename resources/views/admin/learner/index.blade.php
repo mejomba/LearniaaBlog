@@ -62,7 +62,7 @@
                           </td>
 
                           <td>
-                          {{ $learner['desc'] }} 
+                          {{$learner->user['name']}}    ----- {{$learner['job']}}
                           </td>
 
                       

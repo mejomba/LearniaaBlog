@@ -359,12 +359,13 @@ class PostController extends Controller
                     'pk_categories' => 'required|numeric', 
                     'title' => 'required|min:3', 
                     'content' => 'required|min:3',
-                    'pic_content' => 'file|nullable',
+                    'pic_content' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
                     'pdf_content' => 'file|nullable|mimetypes:application/pdf',
                     'status' => 'required',
                  ];
 
-    $messages = [
+    $messages = [ 
+      
                 'pk_categories.required' => 'دسته بندی وارد نشده است',
                 'pk_categories.numeric' => 'دسته بندی  صحیح نمی باشد',
                 'title.required' => 'عنوان  وارد نشده است',
@@ -373,7 +374,8 @@ class PostController extends Controller
                 'content.min' => 'محتوا کوتاه تر از حد مجاز وارد شده است',
                 'pdf_content.file' => 'فایل پی دی اف  صحیح وارد نشده است',
                 'pdf_content.mimetypes' => 'فایل پی دی اف  صحیح وارد نشده است',
-                'pic_content.file' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic_content.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic_content.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
                 'status.required' => 'وضعیت  وارد نشده است',
                 ];
 

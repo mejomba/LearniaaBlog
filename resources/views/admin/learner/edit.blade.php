@@ -44,14 +44,11 @@
                                     <div class="input-group input-group-alternative">
                                       <div class="input-group-prepend">  
                                       </div>
-                                    <select disabled name="pk_users" class="form-control">
-                                    @foreach ($users as $user)
-                                    <option value="{{ $user->pk_users }}" 
-                                    @if($learner->pk_user == "{{ $user->pk_users }}")
-                                    selected="selected"
-                                    @endif
-                                  >{{ $user->name }}</option>
-                                    @endforeach 
+                                    <select  name="pk_users" class="form-control">
+                                   <option value="{{ $learner['pk_user'] }}"  selected="selected"> 
+                                   {{$learner->user['name']}}
+                                   </option>
+                                    
                                     </select>
                                     </div>
                                   </div>
@@ -73,9 +70,22 @@
                     </div>
           </div>
 
+
+          <div class="col-md-4">
+          <div class="form-group">
+                      <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                          
+                        </div>
+                        <input class="form-control" name="job" value="{{ $learner['job'] }}"  placeholder=" حوزه کاری" type="text">
+                      </div>
+                    </div>
+           </div>
+
+
+
           <div class="col-md-4">
           <div class="row">
-
 
                           <div class="col-md-3">
                           <span>تصویر </span> 

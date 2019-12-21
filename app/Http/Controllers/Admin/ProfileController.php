@@ -157,7 +157,7 @@ class ProfileController extends Controller
                     'day_birthday' => 'nullable|numeric', 
                     'email' => 'nullable|email',
                     'state' => 'nullable|String', 
-                    'pic' => 'nullable|file',
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
                     'address' => 'nullable|String',
                     'password' => 'nullable|min:6'  ,
                  ];
@@ -169,7 +169,8 @@ class ProfileController extends Controller
                 'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
                 'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
                 
-                'pic.file' => 'فیلد تصویر فاقد فایل تصویر است',
+                'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
 
                 'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
                  'state.String' => 'استان صحیح وارد نشده است',
