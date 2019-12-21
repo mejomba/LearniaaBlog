@@ -64,7 +64,7 @@
                                     @foreach($tags as $tag)                                
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
                               <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
-                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" checked="">                            
+                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}">                            
                               <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }}</label>
                             </div>
                             @endforeach 

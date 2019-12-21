@@ -36,7 +36,7 @@
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
   <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-  آموزش  
+  لرنیا کوئیک  
   </a>
 </li>
 

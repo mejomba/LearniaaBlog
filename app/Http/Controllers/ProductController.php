@@ -62,7 +62,7 @@ class ProductController extends Controller
         $behavior_product= Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
 
         $user =  Auth::user() ;
-        $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','معتبر')->first();
+        $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','معتبر')->where('pk_users',$user->pk_users)->first();
         $payment_status ="";
        
         if($user == null)
@@ -70,7 +70,8 @@ class ProductController extends Controller
             $payment_status ="No Pay";
         }
         
-         if($payment_checks)
+       //  if($payment_checks)
+       if($user == null)
          {
             $payment_status ="Payed";
          }

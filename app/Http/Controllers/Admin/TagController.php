@@ -178,7 +178,7 @@ class TagController extends Controller
 
         $rules =  [
                     'fa_name' => 'required|String',  
-                    'en_name' => 'required|String', 
+                    'en_name' => 'nullable|String', 
                     'type' => 'required|String', 
                
                  ];
@@ -187,7 +187,7 @@ class TagController extends Controller
                 'fa_name.required' => 'نام فارسی وارد نشده است',
                 'fa_name.String' => 'نام فارسی صحیح وارد نشده است',
 
-                'en_name.required' => 'نام انگلیسی وارد نشده است',
+              
                 'en_name.String' => 'نام انگلیسی صحیح وارد نشده است',
 
                 'type.required' => 'نوع  وارد نشده است',

@@ -15,7 +15,7 @@
 @section('pic_landing')
 
     
-<img src="{{ asset('images/Template/teacher.svg') }}" alt="Thumbnail Image" class="" width="100%" style="float:left">
+<img src="{{ asset('images/Template/teacher.svg') }}" alt="Thumbnail Image" class="" width="70%" style="float:left">
 
 @endsection
 
@@ -58,10 +58,10 @@
                 <div class="col-md-4" style="text-align:center">
 
                   
-                  <h3> <span>
-                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                  <h3 style="font-size:20px" > <span>
+                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                     بخوانید ، بدانید ، لذت ببرید 
-                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                     </span></h3>
 
 
@@ -212,7 +212,7 @@
 <script>
 
   var getUrl = window.location;
-  var baseUrl = "https:" + "//" + getUrl.host + "/" ;
+  var baseUrl = "https:" + "//" + getUrl.host  ;
   var page_url = "";
   var first_run = 0 ;
   var writer = "";

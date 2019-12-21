@@ -61,7 +61,7 @@
 
             <span class="" style="color:#000" >  
           <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-          00:{{ $json->readtime }}   
+         {{ $json->readtime }}:00
             </span>  
 
       <div class="post-content">
@@ -256,17 +256,17 @@
 <!-- Comment -->
 <div class="row" style="padding-bottom:45px;padding-top:35px">
 
-<div class="col-md-12">
+<div class="col-md-12" >
 
 @php $user =  Auth::user();  @endphp
 @if($user['pk_users'] != null) 
 
-<h3 class="title text-center">نظرات و پیشنهادات</h3>
+<h3 class="title ">نظرات و پیشنهادات</h3>
 
 @endif    
 
 	<div class="row">
-		<div class="col-md-6 offset-md-3">
+		<div class="col-md-6 ">
 			
      
         @if($user['pk_users'] != null)                                
@@ -277,7 +277,7 @@
       <input type="hidden" name="pk_post" value="{{$detail_post[0]->pk_post}}">
       <input type="hidden" name="type" value="comment">
                                       
-             <div class="row" style="padding-right:120px">
+             <div class="row" style="padding-right:10px">
                       <div class="col-md-9">
                           <div class="form-group bmd-form-group">
                            
@@ -322,17 +322,30 @@
                <div class="col-md-12" >
                   <div class=" card-login" style="margin-top:5px">
                    <div class="card-body card-header-primary"
-                       style="border-radius:15px; background: linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);">
+                       style="border-radius:15px; background: rgba(30, 183, 173, 0.7);">
                      <div class="row">  
-                        <div class="col-md-3" style="padding-right:1.0rem">             
-                          <div>
-                              <h5>پاسخ مدیر سایت:</h5>
-                          </div>
-                      </div>
-                      <div class="col-md-9" >             
-                        
-                              <p style="color:#FFF;padding-top:0.2rem"> {{$json->reply}} </p>    
-                      </div>                    
+
+                              <div class="col-md-3" style="padding-right:1.0rem">             
+                                <div>
+                                    <h5>پاسخ مدیر سایت:</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3" >
+                            </div>
+                            <div class="col-md-3" >
+                            </div>
+                            <div class="col-md-3" >
+                            </div>
+
+
+                      <div class="col-md-12" >             
+                              <div  style="padding-right:9px;padding-left:9px;">         
+                              <p style="color:#FFF;padding-top:0.2rem; text-align: justify;"> {{$json->reply}} </p>   
+                              </div>  
+                      </div>  
+
+
                     </div> 
                   </div>
                   </div>              

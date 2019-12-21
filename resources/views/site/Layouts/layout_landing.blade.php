@@ -28,16 +28,15 @@
   
   <div class="row">
 
-            <div class="col-md-3">
+            <div class="col-12 col-md-4">
                 
                   @yield('text_landing')
 
               </div>
 
-              <div class="col-md-4">
-              </div>
+             
 
-              <div class="col-md-5">
+              <div class="col-12 col-md-8">
                 
                   @yield('pic_landing')
 

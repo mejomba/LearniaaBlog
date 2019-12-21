@@ -30,7 +30,6 @@
 
   <link href="{{ asset('css/site/myStyle.css') }}" rel="stylesheet">
 
-
    <!--link href="{{ asset('css/site/bootstrap/bootstrap-grid.css') }}" rel="stylesheet"-->
 
 

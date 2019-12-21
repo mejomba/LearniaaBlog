@@ -65,7 +65,7 @@
                           </td>
 
                           <td>
-                          <img src="{{  Storage::url('post/'.$product['pic']) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
+                          <img src="{{  Storage::url('product/'.$product['pic']) }}" width="100px" height="60px" alt="Thumbnail Image" class="">
                       
                           </td>
 
@@ -77,9 +77,6 @@
                           {{ $product['time'] }} 
                           </td>
 
-                          <td>
-                          {{ $product['desc'] }} 
-                          </td>
 
                           <td>
                           {{ $product['count'] }} 

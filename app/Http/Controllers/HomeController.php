@@ -10,6 +10,12 @@ use Shetabit\Payment\Invoice;
 use Shetabit\Payment\Facade\Payment;
 use Shetabit\Payment\Exceptions\InvalidPaymentException;
 use App\Transaction;
+use App\Tag;
+use App\Product;
+use App\Learner;
+use App\Profile;
+use App\Behavior;
+use Validator;
 
 class HomeController extends Controller
 {
@@ -24,9 +30,10 @@ class HomeController extends Controller
           // Make Your Data Page & Select Your View For Show Landing Page
           // Copy & Paste All of Code PostController.Index into Method
 
-                 $recent_post = Post::where('status', 'انتشار')->orderBy('pk_post', 'desc')->get()->take(6);
-                $categoryOfPage = "All";
-                return view('site.post.index',compact('recent_post','categoryOfPage'));
+            // 
+            $recent_Products = Product::where('status', 'انتشار')->get()->take(9);
+            $categories = Category::where('type','محصول')->get();
+            return view('site.product.index',compact('categories','recent_Products'));
         
         }
 

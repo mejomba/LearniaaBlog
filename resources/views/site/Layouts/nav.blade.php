@@ -38,13 +38,12 @@
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
   <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-  آموزش  
+  لرنیا کوئیک  
   </a>
 </li>
 
 <li class="nav-item">
-  <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
-  >
+  <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom">
   <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
    بلاگ
   </a>

@@ -132,13 +132,13 @@ class BehaviorController extends Controller
     {
 
         $rules =  [
-                    'reply' => 'required|String',  
+                    'reply' => 'nullable|String',  
                    
                
                  ];
 
     $messages = [
-                'reply.required' => 'نظر شما وارد نشده است',
+               
                 'reply.String' => 'نظر شما صحیح وارد نشده است',
                 ];
 

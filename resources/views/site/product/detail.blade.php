@@ -355,7 +355,7 @@
 
 <div class="col-md-12">
 
-@if($behavior_post == null) 
+@if($behavior_product == null) 
 
 <h3 class="title text-center">نظرات و پیشنهادات</h3>
 
