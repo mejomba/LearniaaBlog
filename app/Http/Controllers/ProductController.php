@@ -163,10 +163,7 @@ class ProductController extends Controller
              ['price' => $product->price , 'type' => 'خرید دوره آموزشی' , 'slug' => $slug ]);
         }
 
-
-
         
-     
     }
 
     

@@ -147,7 +147,7 @@
                                             <!-- Writer -->
 
 
-                                            <!-- Videos -->
+                                            <!-- Videos INFORMATION -->
                                             <div class="container-fluid" style="margin-top:20px;padding-bottom:20px">
                                             <div class="row">
 
@@ -183,58 +183,7 @@
 
                                             </div>
                                             </div>
-                                            <!-- Videos -->
-
-                                      <!--    
-
-                                       <div class="post-meta" >
-
-                                        <div class="post-meta-content" class="meta_title_post text-muted">
-
-                                                <span class="post-auhor-date">
-                                                <span class="text-muted">
-                                                <img src="{{ asset('images/Template/user.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-                                                {{$product->learner->user['name']}} </span>
-                                                <span  class="text-muted"> | 
-                                                <img src="{{ asset('images/Template/calendar.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-
-                                                    {{ $product->count }} قسمت
-                                                </span>
-                                            
-                                                </span>
-
-                                                <span class="text-muted" > |
-                                                <img src="{{ asset('images/Template/clock.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-
-                                                    {{ $product->time }} دقیقه
-                                                </span>  
-
-                                              
-
-                                            <div class="post-content">
-                                                <p> @php $text =  substr($product->desc,0,380);
-                                                        $char = substr($text,strlen($text)-1,1);
-                                                        if($char != "." | $char != " ")
-                                                        {
-                                                        echo  substr($text,0,378);
-                                                        }
-                                                        else
-                                                        {
-                                                        echo $text ;
-                                                        }                                  
-                                                    @endphp  </p>
-                                            </div>
-
-                                   
-
-                                    </div> 
-
-                                    </div>
-
-                                    -->
+                                             <!-- Videos INFORMATION -->
 
                                     </div>                         
                                   
@@ -254,7 +203,7 @@
 
 
 
-                            <!-- Section -->
+                 <!-- (Dynamic Categories Products) Section -->
      
                 @foreach($categories as $category)
                
@@ -262,70 +211,82 @@
                      <div class="tab-pane " id="tab{{$category['pk_categories']}}_text" role="tabpanel"
                                       aria-labelledby="tab{{$category['pk_categories']}}">
 
+                     <div class="container-fluid">  
+
                           <div class="row">
                                @foreach($category->product as $product)
                                 
                                     <!-- Data -->
-                                    <div class="col-md-4 div-transition">
+                                    <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
 
                                         <a href="{{route('product.detail', $product['pk_product'] )}}">
                                         <img  src="{{  Storage::url('product/'.$product['pic'])  }}"  
-                                        class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
+                                        class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
                                                                 
                                         <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
-                                            <h4 style="font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
+                                            <h4 style="padding-top:10px;font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
                                             </a>
-                                                    
-                                        <div class="post-meta" >
 
-                                        <div class="post-meta-content" class="meta_title_post text-muted">
-
-                                                <span class="post-auhor-date">
-                                                <span class="text-muted">
-                                                <img src="{{ asset('images/Template/user.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-                                                {{$product->learner->user['name']}} </span>
-                                                <span  class="text-muted"> | 
-                                                <img src="{{ asset('images/Template/calendar.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-
-                                                    {{ $product->count }} قسمت
-                                                </span>
+                                          <!-- Writer -->
+                                 <div class="container-fluid" style="margin-top:20px">
+                                            <span class="" style="padding-top:40px;color:#000">
                                             
-                                                </span>
-
-                                                <span class="text-muted" > |
-                                                <img src="{{ asset('images/Template/clock.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-
-                                                    {{ $product->time }} دقیقه
-                                                </span>  
-
-                                              
-
-                                            <div class="post-content">
-                                                <p> @php $text =  substr($product->desc,0,380);
-                                                        $char = substr($text,strlen($text)-1,1);
-                                                        if($char != "." | $char != " ")
-                                                        {
-                                                        echo  substr($text,0,378);
-                                                        }
-                                                        else
-                                                        {
-                                                        echo $text ;
-                                                        }                                  
-                                                    @endphp  </p>
-                                            </div>
-
-                                    <!-- Data -->
-                                    </div> 
+                                            @if($product->learner['pic'])
+                                            <img  src="{{ Storage::url('learner/'.$product->learner['pic'])  }}"  
+                                                        class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                                            @else         
+                                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                                            @endif
+                                            &nbsp;{{$product->learner->user['name']}}</span>
                                     </div>
+                                                    <!-- Writer -->               
+
+                                            <!-- Videos INFORMATION -->
+
+                                            <div class="container-fluid" style="margin-top:20px;padding-bottom:20px">
+                                            <div class="row">
+
+                                                <div class="col-4 col-md-4"  style="font-size:13px">
+                                                <img src="{{ asset('images/Template/price-tag.svg') }}" 
+                                                alt="Thumbnail Image" height="40px" width="40px">
+                                               <span style="padding-right:5px"> @php 
+                                                            if($product->price != 0)
+                                                            {
+                                                              echo '  '.number_format($product->price) ;
+                                                              echo ' تومان';
+                                                            }
+                                                            else
+                                                            {
+                                                              echo 'رایگان';
+                                                            }
+                                                            
+                                                             @endphp
+                                                             </span>
+                                                </div>
+
+                                                <div class="col-4 col-md-4" style="font-size:13px">
+                                                <img src="{{ asset('images/Template/stopwatch.svg') }}" 
+                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                {{ $product->time }} دقیقه
+                                                </div>
+
+                                                <div class="col-4 col-md-4"  style="font-size:13px">
+                                                <img src="{{ asset('images/Template/video-camera.svg') }}" 
+                                                alt="Thumbnail Image" height="40px" width="40px">
+                                                {{ $product->count }} درس
+                                                </div>
+
+                                            </div>
+                                            </div>
+                                             <!-- Videos INFORMATION -->
+
                                     </div>
                                     
                                 <!-- Panel -->  
                                 
                             <!-- Section -->
                     @endforeach
+                    </div>
                     </div>
                     </div>
                 @endforeach     

@@ -30,7 +30,7 @@ class Category extends Model
    public function product()
    {
 
-    return $this->hasMany('App\Product', 'pk_category', 'pk_categories');
+    return $this->hasMany('App\Product', 'pk_category', 'pk_categories')->where('status','انتشار');
    }
 
 
