@@ -58,7 +58,7 @@ class ProductController extends Controller
     public function detail($slug,$desc)
     {  
         $product = Product::where('pk_product', $slug)->first();
-        $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(3);
+        $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(4);
         $behavior_product= Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
 
         $payment_status ="";

@@ -125,13 +125,32 @@ transition : transform .5s ;
 }
 
 
+.card_info_Learner 
+{
+  padding : 2px 5px ;
+  position : absolute ;
+  top : -14px ;
+  left : 50% ;
+  transform : translateX(-50%) ;
+  border-radius : 3px ;
+  border : 1px solid rgba(0, 0, 0, 0.1) ;
+  font-size : 13px ;
+  font-weight : normal ;
+  line-height : 22px ;
+  color : #bababa ;
+  background-color : #ffffff ;
+  border-top : 1px solid rgba(0, 0, 0, 0.1);
 
-/*  Landing Gradiant Buutons Custom */
+}
 
+.border_card_info_Learner
+{
+  position : relative ;
+  border-top : 1px solid rgba(0, 0, 0, 0.1) ;
+  padding : 30px 0 ;
+  margin-top : 30px;
+}
 
-
-
-/*  Detail Post Gradiant Buutons Custom */
 
 .btnblogPost
 {
@@ -157,10 +176,6 @@ transition : transform .5s ;
 }
 
 
-/*  Detail Post Gradiant Buutons Custom */
-
-
-/*  Detail Post TimeLine Comments */
 
 ul.timeline {
     list-style-type: none;
@@ -193,50 +208,8 @@ ul.timeline > li:before {
     z-index: 400;
 }
 
-/*  Detail Post TimeLine Comments */
-
-
 .navbar-default .navbar-toggle .icon-bar {
     background-color: black;
 }
 
-
-
-
-/*  Embeded Css From Fnesh */
-
-.card_info_Learner 
-{
-  padding : 2px 5px ;
-  position : absolute ;
-  top : -14px ;
-  left : 50% ;
-  transform : translateX(-50%) ;
-  border-radius : 3px ;
-  border : 1px solid rgba(0, 0, 0, 0.1) ;
-  font-size : 13px ;
-  font-weight : normal ;
-  line-height : 22px ;
-  color : #bababa ;
-  background-color : #ffffff ;
-  border-top : 1px solid rgba(0, 0, 0, 0.1);
-
-}
-
-.border_card_info_Learner
-{
-  position : relative ;
-  border-top : 1px solid rgba(0, 0, 0, 0.1) ;
-  padding : 30px 0 ;
-  margin-top : 30px;
-}
-
-
-
-/*  Embeded Css From Fnesh */
-
-
-/*  Embeded Css From Danesh */
-
 a.daneshka-scroll-bottom{display:inline-block;width:100%;color:#787b86;font:normal 20px/1 vazir;text-decoration:none;transition:opacity .3s;height:50px;position:relative}a.daneshka-scroll-bottom span{position:absolute;top:0;left:50%;width:30px;height:50px;margin-left:-15px;border:2px solid #20C5BA;border-radius:50px;box-sizing:border-box}a.daneshka-scroll-bottom span::before{position:absolute;top:10px;left:50%;content:'';width:6px;height:6px;margin-left:-3px;background-color:#787b86;border-radius:100%;-webkit-animation:sdb10 2s infinite;animation:sdb10 2s infinite;box-sizing:border-box}@keyframes sdb10{0%{transform:translate(0,0);opacity:0}40%{opacity:1}80%{transform:translate(0,20px);opacity:0}100%{opacity:0}}.margintop-40{margin-top:40px!important}.float-l{float:left!important}.float-r{float:right!important}.over-flow{overflow:hidden!important;margin-top:40px}.icon-holder{margin:0 70px;width:calc(100% - 120px)!important}.white{background:#fff;z-index:3}
-/*  Embeded Css From Danesh */
