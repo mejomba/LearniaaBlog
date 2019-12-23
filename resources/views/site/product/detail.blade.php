@@ -94,51 +94,81 @@
                           <div class="col-4 col-md-4"  style="font-size:13px">
                                   <img src="{{ asset('images/Template/price-tag.svg') }}" 
                                       alt="Thumbnail Image" height="42px" width="62px">
-                                       <span style="padding-right:5px"> @php 
-                                                            if($product->price != 0)
-                                                            {
-                                                              echo '  '.number_format($product->price) ;
-                                                              echo ' تومان';
-                                                            }
-                                                            else
-                                                            {
-                                                              echo 'رایگان';
-                                                            }
-                                                            
-                                                             @endphp
-                                                             </span>
+                                     
                                                 </div>
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
                                                 alt="Thumbnail Image" height="42px" width="62px">
-                                                {{ $product->time }} دقیقه
+                                               
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
                                                 alt="Thumbnail Image" height="42px" width="62px">
-                                                {{ $product->count }} درس
+                                               
                                                 </div>
 
               </div>
+
+
+              <div class="row" style="padding-right:15px">
+
+<div class="col-4 col-md-4"  style="font-size:13px">
+   
+   <span style="padding-right:5px"> @php 
+                if($product->price != 0)
+                {
+                  echo '  '.number_format($product->price) ;
+                  echo ' تومان';
+                }
+                else
+                {
+                  echo 'رایگان';
+                }
+                
+                 @endphp
+                 </span>
+    </div>
+
+    <div class="col-4 col-md-4" style="font-size:13px">
+   
+    {{ $product->time }} 
+    </div>
+
+    <div class="col-4 col-md-4"  style="font-size:13px">
+   
+    {{ $product->count }} درس
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
                <!-- Payment -->
 
+               @if($payment_status == "Payed" || $product->price == 0 )
+
+               <div class="col-md-12 text-center" style="padding-top:35px">
+               <a style="padding-bottom : 5px" _target="blank" 
+               href="{{ $product['download_link'] }}"  
+               class="btn btn-primary btn-download btnblogPost">دریافت فایل</a>
+
+              </div>
+               @else
                                  <div class="col-md-12 text-center" style="padding-top:35px">
                                       <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
                                         @csrf
                                         <button class="btn btn-round btn-1 btn-title" 
-
-                                         @if($payment_status == "Payed")
-                                          disabled
-                                           @endif
-
-                                           @if($product->price == 0)
-                                          disabled
-                                           @endif
+                                      
                                                             
                                             type="submit" style="border-radius:10px" >
-                                             <h5 style="margin-top:5px">خرید دوره : 
+                                             <h5 style="margin-top:5px;font-size:16px">خرید دوره : 
                                               @php 
                                                if($product->price != 0)
                                                {
@@ -153,6 +183,7 @@
                                                             </button>
                                                             </form>  
                                            </div>
+                          @endif               
 
                               
 
@@ -170,12 +201,12 @@
 
        <div class="row" style="margin-top:10px">
             
-                <div class="col-md-4">
+                <div class="col-md-4 col-4">
                 <img src="{{  Storage::url('learner/'.$product->learner['pic'])  }}"
                     alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="width: 90px;height:90px">
                 </div>
                 
-                <div class="col-md-8" style="padding-top: 9px;">
+                <div class="col-md-8 col-8" style="padding-top: 3px;">
     
                   <div class="row">
                   {{$product->learner->user['name']}}
@@ -189,13 +220,21 @@
              
       </div>
 
-      <div class="row" style="margin-top:20px">
+      <div class="row" >
 
       <div class="col-md-1">
                 </div>
                 
-                <div class="col-md-9 text-center" style="font-size:18px">
-                {{$product->learner->user['name']}}
+                <div class="col-md-9 text-center" style="font-size:15px">
+                <div  class="border_card_info_Learner aboutAuthor  wi-100 flex-row jus-between al-start">
+                <div class="card_info_Learner">درباره مدرس</div>
+
+                <p style="text-align:justify">
+                {{$product->learner['desc']}}
+                </p>
+
+                </div>
+               
               </div>
             
               <div class="col-md-1">
@@ -210,7 +249,7 @@
           
           <div class="col-md-10 text-center" style="font-size:18px;">
           <p style="text-align:justify">
-          {{$product->learner['desc']}}
+         
           </p>
         </div>
       
@@ -240,8 +279,6 @@
           <h3 class="" style=""> دوره های پیشنهادی </h3>
     </div>
 
-    <div class="col-md-4 text-center">
-    </div>
 
   </div>
 
@@ -254,81 +291,101 @@
       <div class="card shadow">
                     <div class="card-body">
 
-            <div class="tab-pane active show " id="tab_text" role="tabpanel"  aria-labelledby="tab">          
-                         <div class="row"> 
-                        
-                               @foreach($recent_Products as $product)
-                                
-                                    <!-- Data -->
-                                    <div class="col-md-4 div-transition">
+       
 
-                                        <a href="{{route('product.detail', $product['pk_product'] )}}">
-                                        <img  src="{{ Storage::url('product/'.$product['pic'])  }}"  
-                                        class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
-                                                                
-                                        <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
-                                            <h4 style="font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
-                                            </a>
-                                                    
-                                        <div class="post-meta" >
-
-                                        <div class="post-meta-content" class="meta_title_post text-muted">
-
-                                                <span class="post-auhor-date">
-                                                <span class="text-muted">
-                                                <img src="{{ asset('images/Template/user.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-                                                {{$product->learner->user['name']}} </span>
-                                                <span  class="text-muted"> | 
-                                                <img src="{{ asset('images/Template/calendar.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-
-                                                    {{ $product->count }} قسمت
-                                                </span>
-                                            
-                                                </span>
-
-                                                <span class="text-muted" > |
-                                                <img src="{{ asset('images/Template/clock.svg') }}" 
-                                                alt="Thumbnail Image" height="20px" width="20px">
-
-                                                    {{ $product->time }} دقیقه
-                                                </span>  
-
-                                              
-
-                                            <div class="post-content">
-                                                <p>  </p>
-                                            </div>
-
-                                    <!-- Data -->
-                                    </div> 
-                                    </div>
-                                    </div>
-                                    
-                                <!-- Panel -->  
-                                
-                            <!-- Section -->
-                    @endforeach
-                    </div>
-                    </div>
-
-               </div>
-              </div>      
-
-         </div>                                                 
-
-
-       <div class="col-md-4">
-      </div>              
-
-
-      </div>
-       </div>                
-
+                    <div class="tab-pane active show " id="tab_text" role="tabpanel"  aria-labelledby="tab"> 
+                             
+                             <div class="container-fluid">
+     
+                              <div class="row"> 
+                             
+     
+     
+                                    @foreach($recent_Products as $product)
+                                     
+                                         <!-- Data -->
+                                         <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
+     
+                                             <a  href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}">
+                                             <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  
+                                             class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
+                                                                     
+                                             <a class="text-muted" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}"> 
+                                                 <h4 style="padding-top:10px;font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
+                                                 </a>
+     
+                                                 <!-- Writer -->
+                                      <div class="container-fluid" style="margin-top:20px">
+                                                 <span class="" style="padding-top:40px;color:#000">
+                                                 
+                                                 @if($product->learner['pic'])
+                                                 <img  src="{{ Storage::url('learner/'.$product->learner['pic'])  }}"  
+                                                             class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                                                 @else         
+                                                 <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                                                 @endif
+                                                 &nbsp;{{$product->learner->user['name']}}</span>
+                                         </div>
+                                                 <!-- Writer -->
+     
+     
+                                                 <!-- Videos INFORMATION -->
+                                                 <div class="container-fluid" style="margin-top:20px;padding-bottom:20px">
+                                                 <div class="row">
+     
+                                                     <div class="col-4 col-md-4"  style="font-size:13px">
+                                                     <img src="{{ asset('images/Template/price-tag.svg') }}" 
+                                                     alt="Thumbnail Image" height="42px" width="42px">
+                                                    <span style="padding-right:5px"> @php 
+                                                                 if($product->price != 0)
+                                                                 {
+                                                                   echo '  '.number_format($product->price) ;
+                                                                   echo ' تومان';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                   echo 'رایگان';
+                                                                 }
+                                                                 
+                                                                  @endphp
+                                                                  </span>
+                                                     </div>
+     
+                                                     <div class="col-4 col-md-4" style="font-size:13px">
+                                                     <img src="{{ asset('images/Template/stopwatch.svg') }}" 
+                                                     alt="Thumbnail Image" height="42px" width="42px">
+                                                     {{ $product->time }} 
+                                                     </div>
+     
+                                                     <div class="col-4 col-md-4"  style="font-size:13px">
+                                                     <img src="{{ asset('images/Template/video-camera.svg') }}" 
+                                                     alt="Thumbnail Image" height="42px" width="42px">
+                                                     {{ $product->count }} درس
+                                                     </div>
+     
+                                                 </div>
+                                                 </div>
+                                                  <!-- Videos INFORMATION -->
+     
+                                         </div>                         
+                                       
+     
+                                         
+                                         
+                                     <!-- Panel -->  
+                                     
+                                 <!-- Section -->
+                         @endforeach
+                         </div>
+                         </div>
+     
+                         </div>
     <!---(New Products)   Static Section -->
 
-
+    </div>
+    </div>
+    </div>
+    </div>
 
 
 
@@ -338,16 +395,17 @@
 
 <div class="col-md-12">
 
-@if($behavior_product == null) 
+@php $user =  Auth::user();  @endphp
+@if($user['pk_users'] != null) 
 
-<h3 class="title text-center">نظرات و پیشنهادات</h3>
+<h3 class="title">نظرات و پیشنهادات</h3>
 
 @endif
 
 	<div class="row">
-		<div class="col-md-6 offset-md-3">
+		<div class="col-md-6">
 			
-      @php $user =  Auth::user();  @endphp
+     
         @if($user['pk_users'] != null)                                
 
       <form action="{{ route('behavior.store') }}" method="POST">
@@ -356,7 +414,7 @@
       <input type="hidden" name="pk_product" value="{{$product->pk_product}}">
       <input type="hidden" name="type" value="comment">
                                       
-             <div class="row" style="padding-right:120px">
+             <div class="row" >
                       <div class="col-md-9">
                           <div class="form-group bmd-form-group">
                            
@@ -401,17 +459,26 @@
                <div class="col-md-12" >
                   <div class=" card-login" style="margin-top:5px">
                    <div class="card-body card-header-primary"
-                       style="border-radius:15px; background: linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);">
+                       style="border-radius:15px; background: rgba(30, 183, 173, 0.7);">
                      <div class="row">  
                         <div class="col-md-3" style="padding-right:1.0rem">             
                           <div>
                               <h5>پاسخ مدیر سایت:</h5>
                           </div>
                       </div>
-                      <div class="col-md-9" >             
-                        
-                              <p style="color:#FFF;padding-top:0.2rem"> {{$json->reply}} </p>    
-                      </div>                    
+                     
+                      <div class="col-md-3" >
+                            </div>
+                            <div class="col-md-3" >
+                            </div>
+                            <div class="col-md-3" >
+                            </div>
+
+                              <div class="col-md-12" >             
+                                <div  style="padding-right:9px;padding-left:9px;">         
+                                <p style="color:#FFF;padding-top:0.2rem; text-align: justify;"> {{$json->reply}} </p>   
+                                </div>  
+                              </div>                    
                     </div> 
                   </div>
                   </div>              

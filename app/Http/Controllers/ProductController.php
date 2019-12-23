@@ -23,7 +23,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $recent_Products = Product::where('status', 'انتشار')->get()->take(9);
+        $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(30);
         $categories = Category::where('type','محصول')->get();
         return view('site.product.index',compact('categories','recent_Products'));
      }
@@ -55,10 +55,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function detail($slug)
+    public function detail($slug,$desc)
     {  
         $product = Product::where('pk_product', $slug)->first();
-        $recent_Products = Product::where('status', 'انتشار')->get()->take(3);
+        $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(3);
         $behavior_product= Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
 
         $payment_status ="";

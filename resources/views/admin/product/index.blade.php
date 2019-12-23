@@ -70,14 +70,24 @@
                           </td>
 
                           <td>
-                          {{ $product['price'] }} 
+                                @php 
+                                if($product->price != 0)
+                                {
+                                  echo number_format($product->price) ;
+                                }
+                                else
+                                  {
+                                    echo 'رایگان';
+                                  }
+                                                                  
+                                @endphp
                           </td>
 
                           <td>
                           {{ $product['time'] }} 
                           </td>
 
-
+                         
                           <td>
                           {{ $product['count'] }} 
                           </td>
@@ -91,7 +101,26 @@
                           </td>
 
                           <td>
-                          {{ $product['status'] }} 
+
+
+                          @if($product['status'] == 'انتشار')
+                            <span style="font-size: 1.3rem;color:gray">
+                            <a target="_blank" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ] )}}"> 
+                            <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                            </a>
+                            </span>
+                            
+
+                            @else
+
+                            <span style="font-size: 1.3rem;color:gray">
+                            <img src="{{ asset('images/Template/draft.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+
+                            </span>
+
+                            @endif
+
+                       
                           </td>
 
 

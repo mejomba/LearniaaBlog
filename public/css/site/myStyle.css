@@ -203,7 +203,37 @@ ul.timeline > li:before {
 
 
 
+/*  Embeded Css From Fnesh */
 
+.card_info_Learner 
+{
+  padding : 2px 5px ;
+  position : absolute ;
+  top : -14px ;
+  left : 50% ;
+  transform : translateX(-50%) ;
+  border-radius : 3px ;
+  border : 1px solid rgba(0, 0, 0, 0.1) ;
+  font-size : 13px ;
+  font-weight : normal ;
+  line-height : 22px ;
+  color : #bababa ;
+  background-color : #ffffff ;
+  border-top : 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.border_card_info_Learner
+{
+  position : relative ;
+  border-top : 1px solid rgba(0, 0, 0, 0.1) ;
+  padding : 30px 0 ;
+  margin-top : 30px;
+}
+
+
+
+/*  Embeded Css From Fnesh */
 
 
 /*  Embeded Css From Danesh */

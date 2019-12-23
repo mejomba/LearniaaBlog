@@ -124,11 +124,11 @@
                                     <!-- Data -->
                                     <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
 
-                                        <a  href="{{route('product.detail', $product['pk_product'] )}}">
+                                        <a  href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}">
                                         <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  
                                         class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
                                                                 
-                                        <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
+                                        <a class="text-muted" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}"> 
                                             <h4 style="padding-top:10px;font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
                                             </a>
 
@@ -172,7 +172,7 @@
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
                                                 alt="Thumbnail Image" height="42px" width="42px">
-                                                {{ $product->time }} دقیقه
+                                                {{ $product->time }} 
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
@@ -219,11 +219,11 @@
                                     <!-- Data -->
                                     <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
 
-                                        <a href="{{route('product.detail', $product['pk_product'] )}}">
+                                        <a href="{{route('product.detail', ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ] )}}">
                                         <img  src="{{  Storage::url('product/'.$product['pic'])  }}"  
                                         class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
                                                                 
-                                        <a class="text-muted" href="{{route('product.detail', $product['pk_product'] )}}"> 
+                                        <a class="text-muted" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}"> 
                                             <h4 style="padding-top:10px;font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
                                             </a>
 
@@ -267,7 +267,7 @@
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
                                                 alt="Thumbnail Image" height="42px" width="62px">
-                                                {{ $product->time }} دقیقه
+                                                {{ $product->time }} 
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">

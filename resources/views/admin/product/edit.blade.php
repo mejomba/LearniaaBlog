@@ -292,18 +292,26 @@
 
 
         <div class="col-md-4">
-            <div class="form-group">
-                  
+            <div class="form-group">      
             <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
                           </div>
                           <textarea name="preview" id="preview" type="text" class="form-control" placeholder="ادرس پیش نمایش">{{ $product['preview'] }}</textarea>
                         </div>
-           
-
-            </div>
+             </div>
         </div>
        
+
+
+        <div class="col-md-4">
+            <div class="form-group">      
+            <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <textarea name="download_link" id="download_link" type="text" class="form-control" placeholder="ادرس دریافت فایل">{{ $product['download_link'] }}</textarea>
+                        </div>
+             </div>
+        </div>
        
 
         <div class="col-md-12">

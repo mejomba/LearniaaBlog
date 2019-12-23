@@ -24,7 +24,7 @@ class ProductController extends Controller
     {
         $instance_Model_product = new Product();
         $names =   $instance_Model_product->GetListAllNameColumns_ForTable();
-        $products = Product::get();
+        $products = Product::orderBy('pk_product', 'desc')->get();
         return view('admin.product.index',compact('products','names'));    }
 
     /**a
@@ -88,6 +88,7 @@ class ProductController extends Controller
              $new_instance->status = request()->status;
              $new_instance->file = request()->file;
              $new_instance->preview = request()->preview;
+             $new_instance->download_link = request()->download_link;
                  
                 if(  $new_instance->save())
                 {
@@ -183,7 +184,8 @@ class ProductController extends Controller
              $new_instance->status = request()->status;
              $new_instance->file = request()->file;
              $new_instance->preview = request()->preview;
-                 
+             $new_instance->download_link = request()->download_link;
+             
                 if($new_instance->save())
                 {
                     return redirect(route('admin.product.index'))->with('success','محصول با موفقیت ویرایش شد ');
@@ -244,11 +246,12 @@ class ProductController extends Controller
                     'subtitle' => 'required',
                     'file' => 'required',
                     'preview' => 'required',
+                    'download_link' => 'required',
                  ];
 
     $messages = [
       
-                
+        
                 'pk_category.required' => 'کلید دسته بندی وارد نشده است',
                 'pk_category.numeric' => 'کلید دسته بندی صحیح وارد نشده است ',
                 'pk_learner.required' => 'کلید مدرس وارد نشده است',

@@ -33,6 +33,7 @@
 
      <div class="row">   
 
+      <!-- Text Box -->
         <div class="col-md-4">
 
         <div class="form-group">
@@ -46,40 +47,9 @@
 
         </div>
 
+      <!-- Text Box -->
 
-      
-        <!-- Check Box -->
-        <div class="col-md-4">
-        <div class="row">
-
-
-                        <div class="col-md-3">
-                        <span>تگ ها</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                    @foreach($tags as $tag)                                
-                                <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
-                              <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
-                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}">                            
-                              <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }}</label>
-                            </div>
-                            @endforeach 
-                                  
-
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-         <!-- Check Box -->
-           
-
+        
             <!-- Select Box -->
             <div class="col-md-4">
         <div class="row">
@@ -106,6 +76,71 @@
         </div>
         </div>
          <!-- Select Box -->
+
+
+
+      <!-- Select Box -->
+      <div class="col-md-4">
+                <div class="row">
+
+
+                                <div class="col-md-3">
+                                <span>کاربر </span> 
+                                </div>
+                                <div class="col-md-9">
+                              <div class="form-group focused">
+                                          <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">  
+                                            </div>
+                                          <select name="pk_learner" class="form-control">
+                                          @foreach ($learners as $learner)
+                                          <option value="{{ $learner->pk_learner }}">{{ $learner->user->name }}</option>
+                                          @endforeach 
+                                          </select>
+                                          </div>
+                                        </div>
+                              </div>
+                    
+
+                </div>
+                </div>
+                  <!-- Select Box -->
+                
+
+
+      
+        <!-- Check Box -->
+        <div class="col-md-12">
+        <div class="row">
+
+
+                        <div class="col-md-1">
+                        <span>تگ ها</span> 
+                        </div>
+                        <div class="col-md-11">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    @foreach($tags as $tag)                                
+                                <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
+                              <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
+                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}">                            
+                              <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }} |</label>
+                            </div>
+                            @endforeach 
+                                  
+
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Check Box -->
+           
+
 
              <!-- Select Box -->
         <div class="col-md-4">
@@ -158,33 +193,7 @@
          <!-- Picture Box -->
 
 
-          <!-- Select Box -->
-          <div class="col-md-4">
-          <div class="row">
-
-
-                          <div class="col-md-3">
-                          <span>کاربر </span> 
-                          </div>
-                          <div class="col-md-9">
-                        <div class="form-group focused">
-                                    <div class="input-group input-group-alternative">
-                                      <div class="input-group-prepend">  
-                                      </div>
-                                    <select name="pk_learner" class="form-control">
-                                    @foreach ($learners as $learner)
-                                    <option value="{{ $learner->pk_learner }}">{{ $learner->user->name }}</option>
-                                    @endforeach 
-                                    </select>
-                                    </div>
-                                  </div>
-                        </div>
-              
-
-          </div>
-          </div>
-            <!-- Select Box -->
-           
+         
            
 
 
@@ -268,17 +277,25 @@
         </div>
 
         <div class="col-md-4">
-            <div class="form-group">
-                  
+            <div class="form-group">        
             <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
                           </div>
                           <textarea name="preview" id="preview" type="text" class="form-control" placeholder="ادرس پیش نمایش"></textarea>
                         </div>
-           
-
+              </div>
             </div>
-        </div>
+
+
+            <div class="col-md-4">
+            <div class="form-group">        
+            <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <textarea name="download_link" id="download_link" type="text" class="form-control" placeholder="ادرس دریافت فایل"></textarea>
+                        </div>
+              </div>
+            </div>
        
        
 
