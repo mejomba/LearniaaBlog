@@ -226,8 +226,8 @@
                 </div>
                 
                 <div class="col-md-9 text-center" style="font-size:15px">
-                <div  class="border_card_info_Learner aboutAuthor  wi-100 flex-row jus-between al-start">
-                <div class="card_info_Learner">درباره مدرس</div>
+                <div  class="bordercardinfoLearner aboutAuthor  wi-100 flex-row jus-between al-start">
+                <div class="cardinfoLearner">درباره مدرس</div>
 
                 <p style="text-align:justify">
                 {{$product->learner['desc']}}

@@ -4278,6 +4278,7 @@ input[type='button'].btn-block
 .input-group-prepend
 {
     padding-right : 10px ;
+    padding-left : 10px ;
 }
 
 .input-group-append

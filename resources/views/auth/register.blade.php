@@ -24,7 +24,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       <img class="img-raised rounded-circle img-fluid" 
-                      src="{{ asset('images/Template/user_icon.png') }}" alt="Thumbnail Image" height="auto" width="auto">
+                      src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
                       <input name="name" id="name" type="text" class="form-control" placeholder="نام ">
                     </div>
@@ -35,7 +35,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       <img class="img-raised rounded-circle img-fluid" 
-                      src="{{ asset('images/Template/phone_icon.png')}}" alt="Thumbnail Image" height="auto" width="auto">
+                      src="{{ asset('images/Template/phone_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
                       <input name="mobile" id="mobile" type="text" class="form-control" placeholder="تلفن همراه">
                     </div>
@@ -46,7 +46,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       <img class="img-raised rounded-circle img-fluid" 
-                      src="{{ asset('images/Template/key_icon.png')}}" alt="Thumbnail Image" height="auto" width="auto">
+                      src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
                       <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور">
                     </div>
@@ -54,7 +54,11 @@
 
                   <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت نام </button>
+                    <a href="{{route('login')}}" class="btn btn-warning btn-round">ورود 
+                      </a> 
                   </div>
+
+                  
 
 
               </div>
