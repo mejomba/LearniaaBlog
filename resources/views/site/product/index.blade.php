@@ -158,7 +158,7 @@
                                                             if($product->price != 0)
                                                             {
                                                               echo '  '.number_format($product->price) ;
-                                                              echo ' تومان';
+                                                             
                                                             }
                                                             else
                                                             {
@@ -253,7 +253,7 @@
                                                             if($product->price != 0)
                                                             {
                                                               echo '  '.number_format($product->price) ;
-                                                              echo ' تومان';
+                                                              
                                                             }
                                                             else
                                                             {

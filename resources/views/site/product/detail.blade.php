@@ -120,7 +120,7 @@
                 if($product->price != 0)
                 {
                   echo '  '.number_format($product->price) ;
-                  echo ' تومان';
+                 
                 }
                 else
                 {
@@ -157,7 +157,7 @@
                <div class="col-md-12 text-center" style="padding-top:35px">
                <a style="padding-bottom : 5px" _target="blank" 
                href="{{ $product['download_link'] }}"  
-               class="btn btn-primary btn-download btnblogPost">دریافت فایل</a>
+               class="btn btn-primary btn-video btnblogPost">دریافت فایل</a>
 
               </div>
                @else
@@ -340,7 +340,7 @@
                                                                  if($product->price != 0)
                                                                  {
                                                                    echo '  '.number_format($product->price) ;
-                                                                   echo ' تومان';
+                                                                  
                                                                  }
                                                                  else
                                                                  {

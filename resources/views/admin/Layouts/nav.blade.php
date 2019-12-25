@@ -121,7 +121,7 @@
                 @else
                     <li class="nav-item dropdown" style="border-radius:1.2rem;">
 
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" 
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" href="#" role="button" 
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
                          <span class="caret"></span>

@@ -46,16 +46,94 @@
         </div>
 
 
+
+      <!-- Select Box -->
+      <div class="col-md-4">
+            <div class="row">
+
+
+                            <div class="col-md-3">
+                            <span>دسته بندی</span> 
+                            </div>
+                            <div class="col-md-9">
+                          <div class="form-group focused">
+                                      <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">  
+                                        </div>
+                                      <select name="pk_categories" class="form-control">
+                                      @foreach ($categories as $category)
+                                      <option value="{{ $category->pk_categories }}"
+                                      @if($post->pk_categories == $category->pk_categories )
+                                      selected="selected"
+                                      @endif>{{ $category->name }}</option>
+                                      @endforeach 
+                                      </select>
+                                      </div>
+                                    </div>
+                        </div>
+                
       
-        <!-- Check Box -->
-        <div class="col-md-4">
+            </div>
+            </div>
+            <!-- Select Box -->
+
+
+
+
+
+
+
+            @php
+        $user =  Auth::user() ;
+        @endphp
+
+        
+        @if($user->type == 'مدیر')
+            <!-- Select Box -->
+            <div class="col-md-4">
         <div class="row">
 
 
                         <div class="col-md-3">
-                        <span>تگ ها</span> 
+                        <span>نویسنده</span> 
                         </div>
                         <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="pk_users" class="form-control">
+                                  @foreach ($users as $user)
+                                  <option value="{{ $user->pk_users }}"  
+                                  @if($user->pk_users == $post->pk_writers )
+                                  selected="selected"
+                                  @endif>{{ $user->name }}</option>
+                                  @endforeach 
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+         @endif
+
+
+
+
+
+
+        <!-- Check Box -->
+        <div class="col-md-12">
+        <div class="row">
+
+
+                        <div class="col-md-1">
+                        <span>تگ ها</span> 
+                        </div>
+                        <div class="col-md-11">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
@@ -75,7 +153,7 @@
 
                               }
                               @endif>                            
-                              <label class="custom-control-label" for="{{ $tag->pk_tags ?? ''  }}"> {{ $tag->fa_name ?? '' }}</label>
+                              <label class="custom-control-label" for="{{ $tag->pk_tags ?? ''  }}"> {{ $tag->fa_name ?? '' }} |</label>
                             </div>
                             @endforeach 
                                   
@@ -90,36 +168,7 @@
          <!-- Check Box -->
            
 
-            <!-- Select Box -->
-            <div class="col-md-4">
-        <div class="row">
-
-
-                        <div class="col-md-3">
-                        <span>دسته بندی</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                  <select name="pk_categories" class="form-control">
-                                  @foreach ($categories as $category)
-                                  <option value="{{ $category->pk_categories }}"
-                                  @if($post->pk_categories == $category->pk_categories )
-                                  selected="selected"
-                                  @endif>{{ $category->name }}</option>
-                                  @endforeach 
-                                  </select>
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-         <!-- Select Box -->
-
+          
              <!-- Select Box -->
         <div class="col-md-4">
         <div class="row">
@@ -220,42 +269,7 @@
             </div>
         
 
-        @php
-        $user =  Auth::user() ;
-        @endphp
 
-        
-        @if($user->type == 'مدیر')
-            <!-- Select Box -->
-            <div class="col-md-4">
-        <div class="row">
-
-
-                        <div class="col-md-3">
-                        <span>نویسنده</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                  <select name="pk_users" class="form-control">
-                                  @foreach ($users as $user)
-                                  <option value="{{ $user->pk_users }}"  
-                                  @if($user->pk_users == $post->pk_writers )
-                                  selected="selected"
-                                  @endif>{{ $user->name }}</option>
-                                  @endforeach 
-                                  </select>
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-         <!-- Select Box -->
-         @endif
        
 
 
