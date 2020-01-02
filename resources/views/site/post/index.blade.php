@@ -15,7 +15,7 @@
 @section('pic_landing')
 
     
-<img src="{{ asset('images/Template/teacher.svg') }}" alt="Thumbnail Image" class="" width="70%" style="float:left">
+<img src="{{ asset('images/Template/teacher.svg') }}" alt="Thumbnail Image" class="" width="65%" style="float:left">
 
 @endsection
 
