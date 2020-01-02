@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Message;
 use Validator;
+use Auth;
+use App\Profile;
 
 class MessageController extends Controller
 {
@@ -48,23 +50,76 @@ class MessageController extends Controller
         else
         {  
 
-            
             $Message = new Message(); 
-            $Message->name = request()->name ; 
-            $Message->email = request()->email ;  
-            $Message->message = request()->message ;     
+              $Message->name = request()->name ; 
+                $Message->email = request()->email ;  
+                $Message->message = request()->message ;  
+            
 
-            if($Message->save())
+                    if($Message->save())
+                    {
+                            return redirect(route('Contactus'))->with('success','پیام با موفقیت ارسال شد');
+                    }
+                    else
+                    {
+                        return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                    }
+                   
+        }
+    }
+
+    public function newspaper(Request $request)
+    {
+        $validator =  $this->validation($request);
+
+        if ($validator->fails())
+        {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+        }
+    
+        else
+        {  
+            $Message = new Message(); 
+            $user =  Auth::user() ;
+            if($user->pk_users != null)
             {
-                    return redirect(route('Contactus'))->with('success','پیام با موفقیت ارسال شد');
+                $profile = Profile::where('pk_users',$user->pk_users)->first();
+                $profile->email = request()->email ; 
+                if($profile->save())
+                {
+                    return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
+                }
+                else
+                {
+                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                }
             }
+             
             else
             {
-                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-            }
+                $Message->name = request()->name ; 
+                $Message->email = request()->email ;  
+                $Message->message = request()->message ;
+
+                    if($Message->save())
+                    {
+                        return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
+                    }
+                    else
+                    {
+                        return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                    }
+          } 
 
         }
     }
+
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -116,7 +171,7 @@ class MessageController extends Controller
 
         $rules =  [
                     'name' => 'required|String|max:50',  
-                    'email' => 'required|email|max:70',
+                    'email' => 'required|unique:messages|email|max:70',
                     'message' => 'required|String|max:500', 
                
                  ];

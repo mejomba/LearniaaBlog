@@ -76,7 +76,9 @@
         </div>
          <!-- Select Box -->
 
-
+         @php
+           $user =  Auth::user() ;
+         @endphp  
 
 
          @if($user->type == 'مدیر')

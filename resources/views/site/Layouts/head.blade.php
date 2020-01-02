@@ -17,8 +17,7 @@
   @yield('Head')
   
   <!-- Extra details for Live View on GitHub Pages -->
-  <!-- Canonical SEO -->
-  <link rel="canonical" href="https://www.learniaa.ir/">
+
   <!--     Fonts and icons     -->
 
   <!-- CSS Files -->
@@ -35,4 +34,14 @@
    <!--link href="{{ asset('css/site/bootstrap/bootstrap-grid.css') }}" rel="stylesheet"-->
 
 
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155041698-1');
+</script>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
   

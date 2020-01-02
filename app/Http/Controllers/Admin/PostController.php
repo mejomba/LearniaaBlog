@@ -30,11 +30,11 @@ class PostController extends Controller
         $user =  Auth::user() ;
         if($user->type == 'مدیر')
         {
-          $posts = Post::get();
+          $posts = Post::orderBy('pk_post', 'desc')->orderBy('pk_post', 'desc')->get();
         }
         else
         {
-          $posts = Post::where('pk_writers', $user->pk_users)->get();
+          $posts = Post::where('pk_writers', $user->pk_users)->orderBy('pk_post', 'desc')->get();
         }
 
         return view('admin.post.index',compact('posts','names'));
@@ -126,7 +126,7 @@ class PostController extends Controller
                 $pdf = request()->file('pdf_content');
                 $pdf_name = $pdf->getClientOriginalName();
                 $path = Storage::putFileAs( 'pdf', $pdf, $pdf_name);
-                $post->pdf_content = $pdf_name ;
+                $new_instance->pdf_content = $pdf_name ;
          }
 
 

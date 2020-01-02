@@ -4171,6 +4171,8 @@ input[type='button'].btn-block
 
 .input-group
 {
+    padding-top : 5px ;
+    
     position: relative;
 
     display: flex;
@@ -4279,6 +4281,7 @@ input[type='button'].btn-block
 {
     padding-right : 10px ;
     padding-left : 10px ;
+    padding-bottom : 5px ;
 }
 
 .input-group-append

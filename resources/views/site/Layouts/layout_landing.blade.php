@@ -25,7 +25,13 @@
 
   <div class="page-header" data-parallax="true"
    style="background-color:#FFFFFF;margin-left:15px;margin-right: 15px;margin-top:110px;margin-bottom:15px">
-  
+   
+      <div class="container-fluid" style="margin-top:15px">
+
+    @include('site.Layouts.error')
+
+    </div>
+
   <div class="row">
 
             <div class="col-12 col-md-4">

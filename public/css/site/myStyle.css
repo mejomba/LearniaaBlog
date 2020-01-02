@@ -238,4 +238,16 @@ ul.timeline > li:before {
 
 
 
+.banner{
+  height:auto;
+  width:100%;
+  padding:20px 0;
+  margin:25px 0 0;
+  background-attachment:scroll,scroll;
+  background-clip:border-box,border-box;background-color:rgba(0,0,0,0);
+  background-image:url("http://127.0.0.1:8000/images/template/pattern.png"),linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);
+  background-position:center center,0 0;
+  background-repeat:repeat,no-repeat}
+
+
 a.daneshka-scroll-bottom{display:inline-block;width:100%;color:#787b86;font:normal 20px/1 vazir;text-decoration:none;transition:opacity .3s;height:50px;position:relative}a.daneshka-scroll-bottom span{position:absolute;top:0;left:50%;width:30px;height:50px;margin-left:-15px;border:2px solid #20C5BA;border-radius:50px;box-sizing:border-box}a.daneshka-scroll-bottom span::before{position:absolute;top:10px;left:50%;content:'';width:6px;height:6px;margin-left:-3px;background-color:#787b86;border-radius:100%;-webkit-animation:sdb10 2s infinite;animation:sdb10 2s infinite;box-sizing:border-box}@keyframes sdb10{0%{transform:translate(0,0);opacity:0}40%{opacity:1}80%{transform:translate(0,20px);opacity:0}100%{opacity:0}}.margintop-40{margin-top:40px!important}.float-l{float:left!important}.float-r{float:right!important}.over-flow{overflow:hidden!important;margin-top:40px}.icon-holder{margin:0 70px;width:calc(100% - 120px)!important}.white{background:#fff;z-index:3}

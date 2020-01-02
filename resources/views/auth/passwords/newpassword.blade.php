@@ -22,7 +22,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <img class="img-raised rounded-circle img-fluid" 
-                      src="{{ asset('images/Template/key_icon.png') }}" alt="Thumbnail Image" height="auto" width="auto">
+                      src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
                     </span>
                   </div>
                   <input name="newpassword" id="newpassword" type="text" class="form-control" placeholder="رمز عبور جدید">

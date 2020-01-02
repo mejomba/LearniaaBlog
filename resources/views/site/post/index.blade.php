@@ -274,7 +274,7 @@
 
           if(first_run == 0)
           {  
-                 fetch(baseUrl + 'api/posts')
+                 fetch(baseUrl + '/api/posts')
                  .then( response =>    response.json())
                     .then((json) => {
                                             

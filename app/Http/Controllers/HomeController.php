@@ -48,4 +48,9 @@ class HomeController extends Controller
         
         }
 
+        public function Page500()
+        {
+          return view('error.500');
+        }
+
 }

@@ -16,14 +16,6 @@
 
 */
 
-
-@font-face
- {
-    font-family:'Shabnam';/*تعریف یک نام برای فونت*/
-    src: url({{ asset("/font/Shabnam.ttf") }}) }
-
-
-
 :root
 {
     --blue: #5e72e4;

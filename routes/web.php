@@ -3,12 +3,15 @@
 /*  Landing Original page 
 Route::get('/', 'HomeController@index')->name('index');
 */
+/*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
 Route::post('/product/pay/{slug}', 'ProductController@pay')->name('product.pay');
 
 Route::get('/', 'HomeController@index')->name('index');
+
+
 
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
@@ -24,13 +27,14 @@ Route::get('/post/search', 'PostController@search')->name('search.index');
 
 Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
 
-Route::get('/reset', 'ResetPasswordController@index')->name('reset.index');
+Route::get('/resetpassword', 'ResetPasswordController@index')->name('reset.index');
 Route::post('/reset/store', 'ResetPasswordController@store')->name('reset.store');
 Route::get('/reset/show/{id}', 'ResetPasswordController@show')->name('reset.show');
 Route::get('/reset/update/{id}', 'ResetPasswordController@update')->name('reset.update');
 Route::post('/reset/delete/{id}', 'ResetPasswordController@destroy')->name('reset.delete');
 
 Route::post('/message/store', 'MessageController@store')->name('message.store');
+Route::post('/message/newspaper', 'MessageController@newspaper')->name('message.newspaper');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {

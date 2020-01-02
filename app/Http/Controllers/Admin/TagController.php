@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Rules\CheckTagExists;
 use App\Tag;
 use Validator;
 use Auth;
+
 
 class TagController extends Controller
 {
@@ -21,11 +23,11 @@ class TagController extends Controller
 
         if($user->type == 'مدیر')
         {
-            $tags = Tag::get();
+            $tags = Tag::orderBy('pk_tags', 'desc')->get();
         }
         else
         {
-          $tags = Tag::where('pk_users',$user->pk_users)->get();
+          $tags = Tag::where('pk_users',$user->pk_users)->orderBy('pk_tags', 'desc')->get();
         }
 
         
@@ -53,36 +55,49 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $validator =  $this->validation($request);
+        $validator =  $this->CheckTagExists($request);
 
-                if ($validator->fails())
-                {
-                        return redirect()->back()
-                                    ->withErrors($validator)
-                                    ->withInput();
-                }
-            
-                else
-                {  
-                    $tag = new Tag();
-                    $tag->fa_name = request()->fa_name ;
-                    $tag->en_name = request()->en_name ;
-                    $tag->type = request()->type ;
+        if ($validator->fails())
+           {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+          }
+    
+        else
+          {  
+                   $validator =  $this->validation($request);
 
-                    $user =  Auth::user() ;
-                    $tag->pk_users =  $user->pk_users ;
-            
-            
-                    if($tag->save())
-                    {
-                            return redirect(route('admin.tag.index'))->with('success','تگ با موفقیت ایجاد شد');
-                    }
-                    else
-                    {
-                        return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-                    }
+                                    if ($validator->fails())
+                                    {
+                                            return redirect()->back()
+                                                        ->withErrors($validator)
+                                                        ->withInput();
+                                    }
+                                
+                                    else
+                                    {  
+                                        $tag = new Tag();
+                                        $tag->fa_name = request()->fa_name ;
+                                        $tag->en_name = request()->en_name ;
+                                        $tag->type = request()->type ;
 
-                }
+                                        $user =  Auth::user() ;
+                                        $tag->pk_users =  $user->pk_users ;
+                                
+                                
+                                        if($tag->save())
+                                        {
+                                                return redirect(route('admin.tag.index'))->with('success','تگ با موفقیت ایجاد شد');
+                                        }
+                                        else
+                                        {
+                                            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                                        }
+
+                                    }
+             }
+
         }
         
 
@@ -200,4 +215,26 @@ class TagController extends Controller
 
         return $validator ;
     }
+
+
+    public function CheckTagExists(Request $request)
+    {
+
+        $rules =  [  'fa_name' => [ new CheckTagExists(request()->type )]  ];
+            
+            $messages = [  ];
+
+                   
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
+
+
+
+
+
+
 }

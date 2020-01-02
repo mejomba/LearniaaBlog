@@ -288,7 +288,7 @@
 
                       <div class="col-md-3">
                           <div class="form-group bmd-form-group">
-                          <button type="submit" class="btn btn-primary btn-title btnblogPost">ثبت </button>
+                          <button type="submit" style="width:100px;font-size:12px;" class="btn btn-primary btn-title btnblogPost">ثبت </button>
                           
                            </div>
                       </div>                   
