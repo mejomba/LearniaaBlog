@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
 use Shetabit\Payment\Invoice;
 use Shetabit\Payment\Facade\Payment;
 use Shetabit\Payment\Exceptions\InvalidPaymentException;
+use Spatie\Sitemap\SitemapGenerator;
 use App\Transaction;
 use App\Tag;
 use App\Product;
@@ -51,6 +53,13 @@ class HomeController extends Controller
         public function Page500()
         {
           return view('error.500');
+        }
+
+        public function SitemapCreate()
+        {
+          SitemapGenerator::create('https://learniaa.com')->writeToFile('sitemap.xml');
+          return redirect('https://learniaa.com/sitemap.xml');
+          
         }
 
 }

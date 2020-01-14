@@ -46,7 +46,7 @@
                                   
                               </div>
                               <label style="padding-left:10px"> موجودی ( تومان ) </label>
-                              <input class="form-control" disabled  value="{{$wallet}}" name="wallet" placeholder="موجودی" type="text">
+                              <input class="form-control" disabled  value="{{ $wallet }}" name="wallet" placeholder="موجودی" type="text">
                               </div>
                           </div>
 

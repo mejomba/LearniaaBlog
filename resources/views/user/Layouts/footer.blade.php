@@ -18,12 +18,12 @@
             </a>
             
             <a class="nav-link col-md-3 col-3" href="{{route('Contactus')}}">
-            <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  
+            <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">  
             تماس با ما 
           </a>
 
           <a class="nav-link col-md-3 col-3" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
-           <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+           <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
              درباره ما
           </a>
 

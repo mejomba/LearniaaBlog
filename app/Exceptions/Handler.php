@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Log; 
 
 class Handler extends ExceptionHandler
 {
@@ -46,7 +47,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        /*
         if ($e instanceof \ErrorException) {
+            return response()->view('error.500', [], 500);
+        }
+        */
+      //  dd($exception);
+     
+        
+
+        if ($exception instanceof \Exception) 
+        {
+            Log::error($exception->getMessage());
+            dd($exception->getMessage());
             return response()->view('error.500', [], 500);
         }
 

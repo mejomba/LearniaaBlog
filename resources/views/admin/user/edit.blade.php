@@ -99,7 +99,15 @@
         </div>
          <!-- Select Box -->
 
-
+         <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="wallet" value="{{ $wallet }}" class="form-control" placeholder="کیف پول" type="text">
+                    </div>
+                  </div>
+        </div>
 
 
     </div>

@@ -11,11 +11,10 @@ Route::post('/product/pay/{slug}', 'ProductController@pay')->name('product.pay')
 
 Route::get('/', 'HomeController@index')->name('index');
 
-
-
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
 Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
+Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
 Route::get('/post/{slug}/{desc}', 'PostController@detail')->name('post.detail');
 Route::get('/post/category/{slug}', 'PostController@postByCategory')->name('post.category');

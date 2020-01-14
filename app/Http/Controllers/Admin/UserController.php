@@ -102,7 +102,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.user.edit',compact('user'));
+        $profile = Profile::where('pk_users', $user->pk_users)->get()->first();
+        $wallet =  $profile->wallet ;
+        return view('admin.user.edit',compact('user','wallet'));
     }
 
 
@@ -124,7 +126,17 @@ class UserController extends Controller
             $user->name = request()->name ;
             $user->type = request()->type ;
             $user->mobile = request()->mobile ;
-            $user->password = Hash::make(request()->password)   ; 
+           
+            if( request()->password != null )
+            {
+                $user->password = Hash::make(request()->password)   ; 
+            }
+
+            /* Update Wallet Manually By Admin */
+            $profile = Profile::where('pk_users', $user->pk_users)->get()->first();
+            $profile->wallet = request()->wallet ;
+            $profile->save();
+            /* Update Wallet Manually By Admin */
 
                 if($user->save())
                 {
@@ -171,7 +183,7 @@ class UserController extends Controller
                     'name' => 'required|min:3|String', 
                     'mobile' => 'required|numeric|min:3|unique:users',
                     'password' => 'nullable|min:6'  ,
-                  
+                    'wallet' => 'nullable|String'  ,
                  ];
 
             

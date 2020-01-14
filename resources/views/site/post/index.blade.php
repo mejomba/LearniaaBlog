@@ -201,6 +201,7 @@
 
 
 </div>
+@include('site.Layouts.newspaper')
 </div>
 </div>
 
@@ -227,7 +228,7 @@
     
 
     Data.insertAdjacentHTML('beforeend',`<div class="col-md-4 div-transition">
-   <a href="${baseUrl+"post/" +json.pk_post  + "/" + json.title }"> 
+   <a href="${baseUrl+"/post/" +json.pk_post  + "/" + json.title }"> 
    <img src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/post/${json.pic_content}" class="img-raised rounded img-fluid" style="width: 703px;height: 250px;"></a>                  
   <a class="text-muted" href="${baseUrl+"/post/" +json.pk_post + "/" + json.title }"> 
     <h4 style="font-size: 20px;margin-bottom:0px">${json.title}</h4>
@@ -249,7 +250,7 @@
               </span>
 
              <span class="text-muted"> |
-             <img src=${baseUrl+ "/images/Template/clock.svg"}" alt="Thumbnail Image" height="20px" width="20px">
+             <img src="${baseUrl+ "/images/Template/clock.svg"}" alt="Thumbnail Image" height="20px" width="20px">
 
              ${json.extras.readtime} دقیقه
                </span>  
@@ -305,7 +306,7 @@
   {
     if(first_run == 0)
           {  
-              fetch(baseUrl + 'api/postsByCategory/'+categoryOfPage)
+              fetch(baseUrl + '/api/postsByCategory/'+categoryOfPage)
                     .then(response =>   response.json())
                     .then((json) => {
                                             
@@ -382,7 +383,7 @@
     {
       
       
-      fetch(baseUrl + 'api/writers/'+item.pk_writers)
+      fetch(baseUrl + '/api/writers/'+item.pk_writers)
               .then(response =>   response.json())
               .then((json) => {
                                     

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Profile;
-use App\Classes\PayamakSefid\SendSms;
+
 
 class RegisterController extends Controller
 {
@@ -23,7 +23,6 @@ class RegisterController extends Controller
     |
     */
    
-
     use RegistersUsers;
 
     /**
@@ -61,13 +60,12 @@ class RegisterController extends Controller
             'mobile.unique' => 'شماره تلفن همراه قبلا ثبت نام شده است',
             'password.required' => 'رمز عبور وارد نشده است',
             'password.min' => 'رمز عبور صحیح وارد نشده است',
-        
         ];
 
         return Validator::make($data, [
             'name' => ['required', 'string', 'min:5'],
             'mobile' => ['required', 'numeric', 'unique:users','digits:11'],
-            'password' => ['required', 'string', 'min:3',],
+            'password' => ['required', 'string', 'min:3'],
         ], $messages);
     }
 
@@ -79,53 +77,40 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         $user =  User::create([
             'name' => $data['name'],
             'mobile' => $data['mobile'],
             'password' => Hash::make($data['password']),
             'type' => 'کاربر',
-            
          ]);
 
          $new_user = User::where('mobile',$data['mobile'])->first();
             
             $profile = new Profile();
             $profile->pk_users = $new_user->pk_users ;
-            
             $profile->save();
 
-            // add contact to sms panel //
-
-
-           
-            date_default_timezone_set("Asia/Tehran");
-            $APIKey = '9e748ce762b7c17478c4b783';
-            $SecretKey = 'H$c7M~Ax#Z@7Y%3';
-
-              $PayamakSefid = new SendSms($APIKey,$SecretKey);
-              $Groups =  $PayamakSefid->GetContactGroups();
-              $Groups = $Groups->ContactGroups ; 
-
-             $ContactData = array(
-                'ContactsDetails' => array(
-                                            array(
-                                                'Prefix' => ' ',
-                                                'FirstName' => ' ',
-                                                "LastName" => $data['name'] ,
-                                                'Mobile' =>   $data['mobile'],
-                                                'EmojiId' => '1'
-                                            )
-                                         ),
-                'GroupId' =>  $Groups[0]->GroupId
+            /* add contact to sms panel */
+            $url = 'https://ippanel.com/api/select';
+            $param = array(
+                "op" => "phoneBookAdd",
+                "uname" => "09901918193",
+                "pass" => "0020503679",
+                "number" => $data['mobile'],
+                "phoneBookId" => "399808",
             );
-
-
-              $PayamakSefid->AddContacts($ContactData);
+            $handler = curl_init($url);
+            curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($handler, CURLOPT_POSTFIELDS, json_encode($param));
+            curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($handler);
+            
+            /* add contact to sms panel */
            
-            //  End (add contact to sms panel) //
+
+            // Finaly Process Register //
             return $user;
 
-
+          
     }
 }

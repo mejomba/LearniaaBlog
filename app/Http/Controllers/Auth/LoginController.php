@@ -61,25 +61,64 @@ class LoginController extends Controller
 
     protected function validateLogin(Request $request)
     {
-        $rules =  [
-                     'mobile' => 'required|numeric', 
-                    'password' => 'required|min:3',
-                 ];
-        
-        $messages = [
-            'mobile.required' => 'تلفن همراه وارد نشده است',
-            'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
-            'password.required' => 'رمز عبور وارد نشده است',
-            'password.min' => 'رمز عبور صحیح وارد نشده است',
-        ];
 
-        $this->validate($request,$rules, $messages);
+        $validator =  $this->validation($request);
+
+        if ($validator->fails())
+           {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+          }
+    
+        else
+          {
+                    $rules =  [
+                        'mobile' => 'required|numeric', 
+                    'password' => 'required|min:3',
+                    ];
+            
+                    $messages = [
+                    'mobile.required' => 'تلفن همراه وارد نشده است',
+                    'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
+                    'password.required' => 'رمز عبور وارد نشده است',
+                    'password.min' => 'رمز عبور صحیح وارد نشده است',
+                    ];
+
+                    $this->validate($request,$rules, $messages);
+          }
+
+       
+
+        
             
     }
 
 
+    public function validation(Request $request)
+    {
+        $rules =  [
+            'mobile' => 'required|numeric', 
+           'password' => 'required|min:3',
+        ];
+
+        $messages = [
+        'mobile.required' => 'تلفن همراه وارد نشده است',
+        'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
+        'password.required' => 'رمز عبور وارد نشده است',
+        'password.min' => 'رمز عبور صحیح وارد نشده است',
+        ];
+
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
+
     public function username()
-{
-    return 'mobile';
-}
+    {
+        return 'mobile';
+    }
+
 }

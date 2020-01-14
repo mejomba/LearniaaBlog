@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
-use App\Classes\PayamakSefid\SendSms;
 use App\Reset;
 use App\User;
 use App\Rules\CustomValue;
 use Hash;
+use SoapClient;
 
 class ResetPasswordController extends Controller
 {
@@ -19,7 +19,7 @@ class ResetPasswordController extends Controller
      */
     public function index()
     {
-        return view('Auth.passwords.reset');
+       return view('auth.passwords.reset');
     }
 
     /**
@@ -51,15 +51,8 @@ class ResetPasswordController extends Controller
     
         else
           {  
-                date_default_timezone_set("Asia/Tehran");
-                $APIKey = '9e748ce762b7c17478c4b783';
-                $SecretKey = 'H$c7M~Ax#Z@7Y%3';
-
                 $Random_Generate = rand(0,9999);
-
                 $user = User::where('mobile',request()->mobile)->first();
-
-
                 $reset_new = new Reset();
                 $reset_new->pk_user = $user['pk_users'] ;
                 $pk_user = $user['pk_users'] ;
@@ -67,26 +60,41 @@ class ResetPasswordController extends Controller
                 $reset_new->save();
             
                 // Send data
-                $SendData = array(
-                    'Message' =>  $Random_Generate ,
-                    'MobileNumbers' => array(request()->mobile)  ,
-                    'CanContinueInCaseOfError' => true
-                );
-            
-                $PayamakSefid_SendByMobileNumbers = new SendSms($APIKey,$SecretKey);
-               
-                if( $SendByMobileNumbers = $PayamakSefid_SendByMobileNumbers->SendByMobileNumbers($SendData))
+                $url = "https://ippanel.com/services.jspd";
+                $rcpt_nm = array(request()->mobile);
+                $param = array
+                            (
+                                'uname'=>'09901918193',
+                                'pass'=>'0020503679',
+                                'from'=>'500010707',
+                                'message'=> $Random_Generate ,
+                                'to'=>json_encode($rcpt_nm),
+                                'op'=>'send'
+                            );
+                            
+                $handler = curl_init($url);             
+                curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($handler, CURLOPT_POSTFIELDS, $param);                       
+                curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+                $response2 = curl_exec($handler);
+                $response2 = json_decode($response2);
+                $res_code = $response2[0];
+                $res_data = $response2[1];
+                //  echo $res_data;
+
+                return redirect(route('reset.show',compact('pk_user')));
+        
+                /*
+                if( $res_data )
                 {    
-                       
-                        return redirect(route('reset.show',compact('pk_user')));
+                           
                 }
                 else
                 {
                     return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
                 }
-                
-               
-                
+                */
+                  
            }
     }
 
@@ -99,7 +107,7 @@ class ResetPasswordController extends Controller
     public function show($id)
     {
         $pk_user = $id ;
-        return view('Auth.passwords.verify',compact('pk_user'));
+        return view('auth.passwords.verify',compact('pk_user'));
     }
 
     /**
@@ -137,7 +145,7 @@ class ResetPasswordController extends Controller
         
             else
               {  
-                return view('Auth.passwords.newpassword',compact('pk_user'));
+                return view('auth.passwords.newpassword',compact('pk_user'));
               }
         
     }
