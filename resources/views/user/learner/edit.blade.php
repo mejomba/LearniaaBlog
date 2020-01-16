@@ -1,4 +1,4 @@
-@extends('admin.Layouts.layout_main')
+@extends('user.Layouts.layout_main')
 
 @section('Head')
 <title> ویرایش مدرس | لرنیا </title>
@@ -25,7 +25,7 @@
               <div class="card-body px-lg-5 py-lg-5">
                 
               
-   <form method="POST" action="{{route('admin.learner.update',$learner['pk_learner'])}}" enctype="multipart/form-data" style="min-height:270px;">
+   <form method="POST" action="{{route('user.learner.update',$learner['pk_learner'])}}" enctype="multipart/form-data" style="min-height:270px;">
    @csrf
 
 <div class="row">   

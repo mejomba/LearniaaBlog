@@ -10,6 +10,7 @@ use App\Category;
 use App\Tag;
 use Validator;
 use App\User;
+use App\Objects;
 use Auth;
 use Illuminate\Http\File;
 
@@ -89,11 +90,21 @@ class PostController extends Controller
       {
          $new_instance = new Post();
 
-         if(request()->pk_tags != null)
-          {  
-            $data_tags = json_encode(request()->pk_tags,false);  
-            $new_instance->pk_tags =  $data_tags ;
-           }
+          if(request()->pk_tags != null)
+            {  
+                $pk_object = uniqid(); 
+                
+                foreach (request()->pk_tags as $key => $tag) 
+                {
+                  $new_objects = new Objects();
+                  $new_objects->pk_object = $pk_object ;
+                  $new_objects->pk_type = 'پست';
+                  $new_objects->pk_tag = $tag ;
+                  $new_objects->save();
+                }
+
+                $new_instance->pk_objects =  $pk_object ;
+            }
 
              // process User --> Get info Writer And Save $new_instance
              $user =  Auth::user() ;
@@ -193,6 +204,13 @@ class PostController extends Controller
         $post = Post::find($id);
         $categories = Category::where('type','پست')->get();
 
+        $row_objects = Objects::where('pk_object', $post->pk_objects)->select('pk_tag')->get();
+        $objects =array();
+        foreach ($row_objects as $object)
+        {
+          
+          array_push($objects,$object->pk_tag);
+        }
 
         if($user->type == 'مدیر')
         {
@@ -206,7 +224,9 @@ class PostController extends Controller
              // list writers User For Admin
              $users = User::get();
 
-        return view('admin.post.edit',compact('categories','tags','post','users'));
+        return view('admin.post.edit',compact('categories','tags','post','users','objects'));
+        
+        
     }
 
     /**
@@ -229,19 +249,28 @@ class PostController extends Controller
     
         else
           {
-            // Get Selected Item Fron DB  
+            // Get Selected Item From DB  
             $post = Post::find($id);
 
             //process
             if(request()->pk_tags != null)
-            {  
-              $data_tags = json_encode(request()->pk_tags,false);  
-              $post->pk_tags =  $data_tags ;
+            {    
+                  foreach (request()->pk_tags as $key => $tag) 
+                  {
+                      $row = Objects::where('pk_tag',$tag)->where('pk_object',$post->pk_objects)->first();
+                      if($row == null)
+                      {
+                        $new_objects = new Objects();
+                        $new_objects->pk_object = $post->pk_objects ;
+                        $new_objects->pk_type = 'پست';
+                        $new_objects->pk_tag = $tag ;
+                        $new_objects->save();
+                      }
+                  }
+
              }
-             else
-             {
-               $post->pk_tags =  "" ;
-             }
+
+             
 
             // process User --> Get info Writer And Save $new_instance
                 $user =  Auth::user() ;

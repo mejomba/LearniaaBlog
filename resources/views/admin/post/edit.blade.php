@@ -138,13 +138,13 @@
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
                                     </div>
+                                   
                                     @foreach($tags as $tag)                                
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
                               <input class="custom-control-input" id="{{ $tag->pk_tags ?? '' }}" 
                               name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags ?? '' }}"
-                              @if( is_array(json_decode($post->pk_tags,false)) AND 
-                                  in_array($tag->pk_tags ,  json_decode($post->pk_tags,false))
-                                 )
+                              @if( in_array($tag->pk_tags , $objects ))
+                                 
                               {
                                 checked="checked"
                               }

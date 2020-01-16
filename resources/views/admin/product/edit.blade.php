@@ -88,7 +88,7 @@
 
 
                               <div class="col-md-3">
-                              <span>کاربر </span> 
+                              <span>مدرس </span> 
                               </div>
                               <div class="col-md-9">
                             <div class="form-group focused">
@@ -135,9 +135,7 @@
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
                               <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
                               name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" 
-                              @if( is_array(json_decode($product->pk_tag,false)) AND 
-                                  in_array($tag->pk_tags ,  json_decode($product->pk_tag,false))
-                                 )
+                              @if( in_array($tag->pk_tags , $objects ))
                               {
                                 checked="checked"
                               }

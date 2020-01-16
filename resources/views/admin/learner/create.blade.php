@@ -37,7 +37,7 @@
 
 
                           <div class="col-md-3">
-                          <span>کاربر </span> 
+                          <span>مدرس </span> 
                           </div>
                           <div class="col-md-9">
                         <div class="form-group focused">

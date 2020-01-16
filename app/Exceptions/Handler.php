@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Log; 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 
 class Handler extends ExceptionHandler
 {
@@ -47,22 +49,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        /*
-        if ($e instanceof \ErrorException) {
-            return response()->view('error.500', [], 500);
-        }
-        */
-      //  dd($exception);
-     
-        
-
+       
         if ($exception instanceof \Exception) 
         {
             Log::error($exception->getMessage());
-            dd($exception->getMessage());
-            return response()->view('error.500', [], 500);
-        }
+            $status_code = $exception->getCode();
 
+           if( $status_code == 2002 | $status_code == 400 | $status_code == 500  )  
+            { 
+                return response()->view('error.500', [], 500);
+            }
+        }
+       
+        
         return parent::render($request, $exception);
     }
 }

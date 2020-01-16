@@ -10,6 +10,7 @@ use App\Product;
 use App\Learner;
 use App\Category;
 use App\User;
+use App\Objects;
 use Validator;
 use Illuminate\Http\File;
 
@@ -63,10 +64,20 @@ class ProductController extends Controller
     
              if(request()->pk_tags != null)
              {  
-                $data_tags = json_encode(request()->pk_tags,false);  
-                $new_instance->pk_tag =  $data_tags ;
+                 $pk_object = uniqid(); 
+                 
+                 foreach (request()->pk_tags as $key => $tag) 
+                 {
+                   $new_objects = new Objects();
+                   $new_objects->pk_object = $pk_object ;
+                   $new_objects->pk_type = 'محصول';
+                   $new_objects->pk_tag = $tag ;
+                   $new_objects->save();
+                 }
+ 
+                 $new_instance->pk_objects =  $pk_object ;
              }
-    
+
              $new_instance->pk_category = request()->pk_category ;
              $new_instance->pk_learner = request()->pk_learner;
              $new_instance->title = request()->title;
@@ -128,7 +139,16 @@ class ProductController extends Controller
         $tags = Tag::where('type','محصول')->get();
         $learners = Learner::get();
 
-        return view('admin.product.edit',compact('product','categories','tags','learners'));  
+
+        $row_objects = Objects::where('pk_object', $product->pk_objects)->select('pk_tag')->get();
+        $objects =array();
+        foreach ($row_objects as $object)
+        {
+          
+          array_push($objects,$object->pk_tag);
+        }
+
+        return view('admin.product.edit',compact('product','categories','tags','learners','objects'));  
     }
 
     /**
@@ -151,42 +171,49 @@ class ProductController extends Controller
     
         else
           {
-             $new_instance = Product::find($id);
+             $product = Product::find($id);
+
     
              if(request()->pk_tags != null)
-             {  
-                $data_tags = json_encode(request()->pk_tags,false);  
-                $new_instance->pk_tag =  $data_tags ;
-             }
-             else
-             {
-                $new_instance->pk_tag =  "" ;
-             }
-    
-             $new_instance->pk_category = request()->pk_category ;
-             $new_instance->pk_learner = request()->pk_learner;
-             $new_instance->title = request()->title;
+             {    
+                   foreach (request()->pk_tags as $key => $tag) 
+                   {
+                       $row = Objects::where('pk_tag',$tag)->where('pk_object',$product->pk_objects)->first();
+                       if($row == null)
+                       {
+                         $new_objects = new Objects();
+                         $new_objects->pk_object = $product->pk_objects ;
+                         $new_objects->pk_type = 'محصول';
+                         $new_objects->pk_tag = $tag ;
+                         $new_objects->save();
+                       }
+                   }
+              }
+
+             $product->pk_category = request()->pk_category ;
+             $product->pk_learner = request()->pk_learner;
+             $product->title = request()->title;
             
              if(request()->pic)
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
                 $path = Storage::putFileAs( 'product', $pic, $pic_name);
-                $new_instance->pic = $pic_name ;
+                $product->pic = $pic_name ;
             } 
 
-             $new_instance->price = request()->price;
-             $new_instance->time = request()->time;
-             $new_instance->desc = request()->desc;
-             $new_instance->count = request()->count;
-             $new_instance->language = request()->language;
-             $new_instance->subtitle = request()->subtitle;
-             $new_instance->status = request()->status;
-             $new_instance->file = request()->file;
-             $new_instance->preview = request()->preview;
-             $new_instance->download_link = request()->download_link;
+             $product->price = request()->price;
+             $product->time = request()->time;
+             $product->desc = request()->desc;
+             $product->count = request()->count;
+             $product->language = request()->language;
+             $product->subtitle = request()->subtitle;
+             $product->status = request()->status;
+             $product->file = request()->file;
+             $product->preview = request()->preview;
+             $product->download_link = request()->download_link;
              
-                if($new_instance->save())
+                if($product->save())
                 {
                     return redirect(route('admin.product.index'))->with('success','محصول با موفقیت ویرایش شد ');
                 }
