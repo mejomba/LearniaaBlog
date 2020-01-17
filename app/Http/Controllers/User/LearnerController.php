@@ -4,6 +4,11 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+use App\Learner;
+use Validator;
+use Auth;
 
 class LearnerController extends Controller
 {
@@ -127,4 +132,34 @@ class LearnerController extends Controller
     {
         //
     }
+
+
+    public function validation(Request $request)
+    {
+
+        $rules =  [
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
+                    'desc' => 'nullable|string|min:3|max:300',
+                    'job' => 'required|string|min:3|max:300'
+                 ];
+
+    $messages = [
+                    'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                    'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
+                    'desc.max' => 'محتوا بلند تر از حد مجاز وارد شده است',
+                    'desc.string' => 'محتوا صحیح نمی باشد',
+                    'desc.min' => 'محتوا کوتاه تر از حد مجاز وارد شده است',
+                    'job.max' => 'حوزه کاری بلند تر از حد مجاز وارد شده است',
+                    'job.string' => 'حوزه کاری صحیح نمی باشد',
+                    'job.required' => 'حوزه کاری  وارد نشده است',
+                    'job.min' => 'حوزه کاری کوتاه تر از حد مجاز وارد شده است',
+                ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
+
+    
 }

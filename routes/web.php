@@ -120,6 +120,9 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Profile/edit/', 'ProfileController@edit')->name('user.profile.edit');
     Route::post('/Profile/update/{id}', 'ProfileController@update')->name('user.profile.update');
 
+    Route::get('/learner/edit/{id}', 'LearnerController@edit')->name('user.learner.edit');
+    Route::post('/learner/update/{id}', 'LearnerController@update')->name('user.learner.update');
+
     Route::get('/Transaction/index', 'TransactionController@index')->name('user.transaction.index');
     Route::get('/Transaction/create', 'TransactionController@create')->name('user.transaction.create');
     Route::get('/Transaction/store', 'TransactionController@store')->name('user.transaction.store');

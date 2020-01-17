@@ -241,10 +241,12 @@ class TransactionController extends Controller
         $user =  Auth::user() ;
 
         $names = [ 
-                    'شماره محصول' ,
-                    'نام محصول',
-                    'مشاهده',
-                ];
+            'شماره محصول' ,
+            'نام محصول',
+            'قیمت',
+            'مشاهده',
+        ];
+        
         $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
 
         return view('user.transaction.productlist',compact('names','transactions'));

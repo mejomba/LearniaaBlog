@@ -367,7 +367,7 @@
                                 <div class="input-group input-group-alternative">
                                   <div class="input-group-prepend">
                                   </div>
-                                  <textarea value="{{ $profile['address'] }}" name="address" class="form-control" placeholder="آدرس" type="text"></textarea> 
+                                  <textarea name="address" class="form-control" placeholder="آدرس" type="text">{{ $profile['address'] }}</textarea> 
                                 </div>
 
                     </div>

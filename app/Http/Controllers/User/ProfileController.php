@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
 use App\User;
+use App\Learner;
 use Validator;
 use Auth;
 use Illuminate\Http\File;
@@ -116,15 +117,24 @@ class ProfileController extends Controller
     
                 if($profile->save())
                 {
+                    if(request()->password)
+                    {
+                      $user = User::where('pk_users',$user->pk_users)->first();
+                      $user->password =  Hash::make(request()->password)   ; 
+                      $user->save();
+  
+                    }  
+
+                    $is_Learner = Learner::where('pk_user',$user->pk_users)->first();
+                    if($is_Learner != null)
+                    {
+                        return redirect(route('user.learner.edit',$is_Learner['pk_learner']));
+                    }  
+                    else
+                    {
                         return redirect(route('user.home'))->with('success','پروفایل با موفقیت  شد');
+                    }  
 
-                  if(request()->password)
-                  {
-                    $user = User::where('pk_users',$user->pk_users)->first();
-                    $user->password =  Hash::make(request()->password)   ; 
-                    $user->save();
-
-                  }  
 
                 }
                 else

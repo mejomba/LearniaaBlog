@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Profile;
+use App\Learner;
 
 class User extends Authenticatable
 {
@@ -48,6 +49,11 @@ class User extends Authenticatable
     public function profile()
     {
        return $this->hasOne(Profile::class);
+    }
+
+    public function learner()
+    {
+       return $this->hasOne(Learner::class,'pk_user');
     }
 
 

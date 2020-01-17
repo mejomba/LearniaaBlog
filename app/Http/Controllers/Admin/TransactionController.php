@@ -244,14 +244,24 @@ class TransactionController extends Controller
 
     public function productlist()
     {
+
         $user =  Auth::user() ;
 
         $names = [ 
                     'شماره محصول' ,
                     'نام محصول',
+                    'قیمت',
                     'مشاهده',
                 ];
-        $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
+
+        if($user->type == 'مدیر')
+        {
+            $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->get();
+        }
+        else
+        {
+            $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
+        }
 
         return view('admin.transaction.productlist',compact('names','transactions'));
     }

@@ -50,8 +50,16 @@
                           </td>
 
                           <td>
-                          <a style="margin-bottom: 15px;" href="{{route('product.detail',$transaction['pk_product'])}}" 
-                          class="btn btn-round btnblogSmall btn-6" >  مشاهده  </a>
+                          @if($transaction->product['price'] == 0)
+                          رایگان
+                          @else
+                          {{ $transaction->product['price'] }} 
+                          @endif
+                          </td>
+
+                          <td>
+                          <a style="margin-bottom: 15px;" href="{{route('product.detail',[$transaction['pk_product'] , $transaction->product['title'] ] )}}" 
+                          class="btn btn-primary btn-round" >  مشاهده  </a>
                           </td>
 
                          
