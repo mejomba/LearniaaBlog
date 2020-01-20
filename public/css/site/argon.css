@@ -17216,7 +17216,7 @@ textarea[resize='horizontal']
 
 .focused .input-group-text
 {
-    color: #8898aa;
+    color: white;
     border-color: rgba(50, 151, 211, .25);
     background-color: #20C5BA;
 }

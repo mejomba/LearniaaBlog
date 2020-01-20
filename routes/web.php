@@ -22,7 +22,7 @@ Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
 
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
 
-Route::get('/post/search', 'PostController@search')->name('search.index');
+Route::get('/search', 'HomeController@search')->name('search.index');
 
 Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
 

@@ -62,4 +62,48 @@ class HomeController extends Controller
           
         }
 
+        public function search(Request $request)
+        {
+          
+            if(request()->type_search == "post" )
+            {
+                $result_data =  Post::where('title', 'LIKE', '%'.request()->content_search.'%')->where('status', 'انتشار')->get();
+    
+                if($result_data->count() == 0)
+                {
+                    $recent_post = Post::get()->take(6);
+                  
+                    $categoryOfPage = "All";
+                    return view('site.post.index',compact('recent_post','categoryOfPage'));
+                }
+                else
+                {
+                    $recent_post = $result_data ;
+                    $categoryOfPage = "All";
+                    return view('site.post.index',compact('recent_post','categoryOfPage'));   
+                }
+    
+            }
+            else /* request()->type_search == "product" || request()->type_search == null */
+            {
+                       $result_data =  Product::where('title', 'LIKE', '%'.request()->content_search.'%')->where('status', 'انتشار')->get();
+    
+                        if($result_data->count() == 0)
+                        {
+                          $recent_Products = Product::get()->take(6);
+                          $categories = Category::where('type','محصول')->get();
+                          
+                          return view('site.product.index',compact('recent_Products','categories'));
+                        }
+                        else
+                        {
+                          $recent_Products = $result_data ;
+                          $categories = Category::where('type','محصول')->get();
+                          
+                          return view('site.product.index',compact('recent_Products','categories'));   
+                        }
+            }
+            
+        }
+
 }
