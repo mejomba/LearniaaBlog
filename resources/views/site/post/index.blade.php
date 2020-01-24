@@ -2,12 +2,13 @@
 
 @section('Head')
 <title> بلاگ | لرنیا  </title>
-  <meta  name="description" content="بلاگ | لرنیا">
+  <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+  <meta  name="keywords"    content="اخبار,مقالات,بلاگ,لرنیا" > 
 @endsection
 
 @section('text_landing')
     
-<img src="{{ asset('images/Template/text_blog2.png') }}" alt="Thumbnail Image" class="" width="100%" style="float:left">
+<img src="{{ asset('images/Template/text_blog2.png') }}" alt="Learniaa" class="" width="100%" style="float:left">
 
 @endsection
 
@@ -15,7 +16,7 @@
 @section('pic_landing')
 
     
-<img src="{{ asset('images/Template/teacher.svg') }}" alt="Thumbnail Image" class="" width="65%" style="float:left">
+<img src="{{ asset('images/Template/teacher.svg') }}" alt="Learniaa" class="" width="65%" style="float:left">
 
 @endsection
 
@@ -59,9 +60,9 @@
 
                   
                   <h3 style="font-size:20px" > <span>
-                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
                     بخوانید ، بدانید ، لذت ببرید 
-                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
                     </span></h3>
 
 
@@ -90,7 +91,7 @@
             <div class="col-md-4 div-transition">
 
                     <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}"> 
-                       <img  src="{{  Storage::url('post/'.$one_post['pic_content']) }}"  
+                       <img  src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"  
                       class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
                                             
                       <a class="text-muted" href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}"> 
@@ -103,10 +104,10 @@
 
                                   <span class="post-auhor-date">
                                   <span class="text-muted">
-                                  <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                                  <img src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="20px" width="20px">
                                    {{$one_post->writer['name']}} </span>
                                   <span  class="text-muted"> | 
-                                  <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                                  <img src="{{ asset('images/Template/calendar.svg') }}" alt="Learniaa" height="20px" width="20px">
 
                                     {{ $json->create_at }}
                                   </span>
@@ -114,7 +115,7 @@
                                   </span>
 
                                  <span class="text-muted" > |
-                                 <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                                 <img src="{{ asset('images/Template/clock.svg') }}" alt="Learniaa" height="20px" width="20px">
   
                                     {{ $json->readtime }} دقیقه
                                    </span>  
@@ -229,7 +230,7 @@
 
     Data.insertAdjacentHTML('beforeend',`<div class="col-md-4 div-transition">
    <a href="${baseUrl+"/post/" +json.pk_post  + "/" + json.title }"> 
-   <img src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/post/${json.pic_content}" class="img-raised rounded img-fluid" style="width: 703px;height: 250px;"></a>                  
+   <img src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/post/${json.pic_content}" class="img-raised rounded img-fluid" alt="${json.title}" style="width: 703px;height: 250px;"></a>                  
   <a class="text-muted" href="${baseUrl+"/post/" +json.pk_post + "/" + json.title }"> 
     <h4 style="font-size: 20px;margin-bottom:0px">${json.title}</h4>
     </a>   
@@ -238,11 +239,11 @@
 
               <span class="post-auhor-date">
               <span class="text-muted">
-              <img src="${baseUrl+ "/images/Template/user.svg"}"  alt="Thumbnail Image" height="20px" width="20px">
+              <img src="${baseUrl+ "/images/Template/user.svg"}"  alt="Learniaa" height="20px" width="20px">
               ${writer.name}
                 </span>
               <span class="text-muted"> | 
-              <img src="${baseUrl+ "/images/Template/calendar.svg"}" alt="Thumbnail Image" height="20px" width="20px">
+              <img src="${baseUrl+ "/images/Template/calendar.svg"}" alt="Learniaa" height="20px" width="20px">
 
               ${json.extras.create_at}
               </span>
@@ -250,7 +251,7 @@
               </span>
 
              <span class="text-muted"> |
-             <img src="${baseUrl+ "/images/Template/clock.svg"}" alt="Thumbnail Image" height="20px" width="20px">
+             <img src="${baseUrl+ "/images/Template/clock.svg"}" alt="Learniaa" height="20px" width="20px">
 
              ${json.extras.readtime} دقیقه
                </span>  

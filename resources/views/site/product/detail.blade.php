@@ -2,10 +2,9 @@
 
 @section('Head')
                    
-
-                    <title> {{$product['title']}}  </title>
-                      <meta  name="description" content="{{$product['desc']}}">
-                     
+ <title>لرنیا | {{$product['title']}} </title>
+ <meta  name="description" content="{{$product['desc']}}">
+ <meta  name="keywords" content="@php echo implode(',',$meta_keywords); @endphp" >                  
 @endsection
 
 @section('content')
@@ -93,19 +92,19 @@
   
                           <div class="col-4 col-md-4"  style="font-size:13px">
                                   <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                      alt="Thumbnail Image" height="42px" width="62px">
+                                      alt="Learniaa" height="42px" width="62px">
                                      
                                                 </div>
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="62px">
+                                                alt="Learniaa" height="42px" width="62px">
                                                
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="62px">
+                                                alt="Learniaa" height="42px" width="62px">
                                                
                                                 </div>
 
@@ -203,7 +202,7 @@
             
                 <div class="col-md-4 col-4">
                 <img src="{{  Storage::url('learner/'.$product->learner['pic'])  }}"
-                    alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="width: 90px;height:90px">
+                alt="{{$product->learner->user['name']}}" class="img-fluid rounded-circle shadow-lg" style="width: 90px;height:90px">
                 </div>
                 
                 <div class="col-md-8 col-8" style="padding-top: 3px;">
@@ -307,7 +306,7 @@
                                          <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
      
                                              <a  href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}">
-                                             <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  
+                                             <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  alt="{{ $product['title'] }}" 
                                              class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
                                                                      
                                              <a class="text-muted" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}"> 
@@ -320,9 +319,9 @@
                                                  
                                                  @if($product->learner['pic'])
                                                  <img  src="{{ Storage::url('learner/'.$product->learner['pic'])  }}"  
-                                                             class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                                                 alt="{{$product->learner->user['name']}}" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
                                                  @else         
-                                                 <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                                                 <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                                                  @endif
                                                  &nbsp;{{$product->learner->user['name']}}</span>
                                          </div>
@@ -335,7 +334,7 @@
      
                                                      <div class="col-4 col-md-4"  style="font-size:13px">
                                                      <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                     alt="Thumbnail Image" height="42px" width="42px">
+                                                     alt="Learniaa" height="42px" width="42px">
                                                     <span style="padding-right:5px"> @php 
                                                                  if($product->price != 0)
                                                                  {
@@ -353,13 +352,13 @@
      
                                                      <div class="col-4 col-md-4" style="font-size:13px">
                                                      <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                     alt="Thumbnail Image" height="42px" width="42px">
+                                                     alt="Learniaa" height="42px" width="42px">
                                                      {{ $product->time }} 
                                                      </div>
      
                                                      <div class="col-4 col-md-4"  style="font-size:13px">
                                                      <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                     alt="Thumbnail Image" height="42px" width="42px">
+                                                     alt="Learniaa" height="42px" width="42px">
                                                      {{ $product->count }} درس
                                                      </div>
      

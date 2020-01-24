@@ -1,12 +1,16 @@
 @extends('site.Layouts.layout_main')
 
 @section('Head')
-                    @foreach($detail_post as $one_post)
-                    @php  $json = json_decode($one_post['extras'],false) @endphp
 
-                    <title> {{$one_post['title']}}  </title>
-                      <meta  name="description" content="{{$json->desc_short}}">
-                      @endforeach
+      @foreach($detail_post as $one_post)
+      @php  $json = json_decode($one_post['extras'],false) @endphp
+
+      <title> لرنیا | {{$one_post['title']}} </title>
+      <meta  name="description" content="{{$json->desc_short}}">
+      @endforeach
+
+      <meta  name="keywords" content="@php echo implode(',',$meta_keywords); @endphp" > 
+
 @endsection
 
 @section('content')
@@ -43,15 +47,15 @@
           
             @if($one_post->profile['pic'])
             <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
-                        class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+            alt="{{$one_post->writer['name']}}" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
             @else         
-            <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+            <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
             @endif
             &nbsp;{{$one_post->writer['name']}}</span>
             |
 
             <span  class="" style="color:#000" >  
-            <img src="{{ asset('images/Template/calendar.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+            <img src="{{ asset('images/Template/calendar.svg') }}" alt="Learniaa" height="40px" width="40px">
               {{ $json->create_at }}
             </span>
         
@@ -60,7 +64,7 @@
             |
 
             <span class="" style="color:#000" >  
-          <img src="{{ asset('images/Template/clock.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+          <img src="{{ asset('images/Template/clock.svg') }}" alt="Learniaa" height="40px" width="40px">
          {{ $json->readtime }}:00
             </span>  
 
@@ -98,7 +102,7 @@
                 <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px" >
 
                     <img class="img-raised rounded img-fluid" src="{{   Storage::url('post/'.$one_post['pic_content'])   }}"
-                height="450px" width="100%" >
+                    alt="{{ $one_post['title'] }}"   height="450px" width="100%" >
                     
                 </div>
 
@@ -207,7 +211,7 @@
 
                         <a href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}"> 
                            <img src="{{ Storage::url('post/'.$one_post['pic_content'])  }}"  
-                            class="img-raised rounded img-fluid" style="width: 200px;height: 100px;" ></a>
+                           alt="{{ $one_post['title'] }}"  class="img-raised rounded img-fluid" style="width: 200px;height: 100px;" ></a>
                 </div>
                
                 <div class="col-md-9"> 

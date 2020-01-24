@@ -3,6 +3,7 @@
 @section('Head')
 <title> ارتباط با ما | لرنیا  </title>
   <meta  name="description" content="ارتباط با ما | لرنیا ">
+  <meta  name="keywords"    content="تماس با ما,ارتباط با ما,لرنیا" > 
 @endsection
 
 @section('content')
@@ -22,7 +23,7 @@
              <!-- Image -->
             <img  
              src="{{ asset('images/Template/customer_service.svg') }}" style=""
-             width="90%" height="90%" alt="Thumbnail Image">
+             width="90%" height="90%" alt="Learniaa">
               <!-- Image -->     
             
             </div>

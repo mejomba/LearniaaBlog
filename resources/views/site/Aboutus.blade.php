@@ -3,6 +3,7 @@
 @section('Head')
 <title> درباره ما | لرنیا  </title>
   <meta  name="description" content="درباره ما | لرنیال">
+  <meta  name="keywords"    content="تاریخچه ما,درباره ما,لرنیا" > 
 @endsection
 
 
@@ -36,7 +37,7 @@
 
                     <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px;border-radius:20% !important;"
                     src="{{ asset('images/Template/sss.svg') }}"
-                    width="300px" height="100px" alt="Thumbnail Image" >
+                    width="300px" height="100px" alt="Learniaa" >
 
                     
                     </div>

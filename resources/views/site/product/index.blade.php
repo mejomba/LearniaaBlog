@@ -1,14 +1,15 @@
 @extends('site.Layouts.layout_landing')
 
 @section('Head')
-<title> آموزش سریع | لرنیا  </title>
-  <meta  name="description" content="آموزش سریع | لرنیا">
+<title> لرنیا | وب سایت آموزش آنلاین  </title>
+  <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+  <meta  name="keywords"    content="آموزش آنلاین,آموزش مبتدی کامپیوتر,یادگیری,لرنیا" > 
 @endsection
 
 @section('text_landing')
 
     
-<img src="{{ asset('images/Template/Header_Product.png') }}" alt="Thumbnail Image" class="" width="100%" style="float:right">
+<img src="{{ asset('images/Template/Header_Product.png') }}" alt="Learniaa" class="" width="100%" style="float:right">
 
 <a href="#Move_Down" class="daneshka-scroll-bottom text-center" style="margin-top: 20px;"> <span></span></a>
 
@@ -18,7 +19,7 @@
 @section('pic_landing')
 
     
-<img src="{{ asset('images/Template/Product_landing.svg') }}" alt="Thumbnail Image" class="" width="70%" style="float:left;padding-left:50px">
+<img src="{{ asset('images/Template/Product_landing.svg') }}" alt="Learniaa" class="" width="70%" style="float:left;padding-left:50px">
 
 @endsection
 
@@ -43,9 +44,9 @@
 
                   
                   <h3 style="font-size:20px"> <span>
-                  <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                  <img src="{{ asset('images/Template/learn.svg') }}" alt="Learniaa" height="30px" width="30px">
                     سریع ، آسان ، لذت بخش 
-                    <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                    <img src="{{ asset('images/Template/learn.svg') }}" alt="Learniaa" height="30px" width="30px">
                     </span></h3>
 
 
@@ -125,11 +126,11 @@
                                     <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
 
                                         <a  href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}">
-                                        <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  
+                                        <img  src="{{ Storage::url('product/'.$product['pic'])   }}"  alt="{{ $product['title'] }}"
                                         class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
                                                                 
                                         <a class="text-muted" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}"> 
-                                            <h4 style="padding-top:10px;font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h4>
+                                            <h1 style="padding-top:10px;font-size: 20px;margin-bottom:0px" >{{$product['title']}}</h1>
                                             </a>
 
                                             <!-- Writer -->
@@ -138,11 +139,11 @@
                                             
                                             @if($product->learner['pic'])
                                             <img  src="{{ Storage::url('learner/'.$product->learner['pic'])  }}"  
-                                                        class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                                            alt="{{$product->learner->user['name']}}"  class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
                                             @else         
-                                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                                             @endif
-                                            &nbsp;{{$product->learner->user['name']}}</span>
+                                            &nbsp;<h2  style="font-size:15px">{{$product->learner->user['name']}}</h2></span>
                                     </div>
                                             <!-- Writer -->
 
@@ -153,7 +154,7 @@
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Learniaa" height="42px" width="42px">
                                                <span style="padding-right:5px"> @php 
                                                             if($product->price != 0)
                                                             {
@@ -171,13 +172,13 @@
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Learniaa" height="42px" width="42px">
                                                 {{ $product->time }} 
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="42px">
+                                                alt="Learniaa" height="42px" width="42px">
                                                 {{ $product->count }} درس
                                                 </div>
 
@@ -220,7 +221,7 @@
                                     <div class="col-md-4 div-transition"   style="background: white;margin-top:15px;box-shadow:0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);">
 
                                         <a href="{{route('product.detail', ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ] )}}">
-                                        <img  src="{{  Storage::url('product/'.$product['pic'])  }}"  
+                                        <img  src="{{  Storage::url('product/'.$product['pic'])  }}"  alt="{{ $product['title'] }}"
                                         class="img-raised rounded img-fluid" style="margin-top:15px;width: 500px;height: 250px;" ></a>
                                                                 
                                         <a class="text-muted" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ]  )}}"> 
@@ -233,9 +234,9 @@
                                             
                                             @if($product->learner['pic'])
                                             <img  src="{{ Storage::url('learner/'.$product->learner['pic'])  }}"  
-                                                        class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                                            alt="{{$product->learner->user['name']}}"  class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
                                             @else         
-                                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                                             @endif
                                             &nbsp;{{$product->learner->user['name']}}</span>
                                     </div>
@@ -248,7 +249,7 @@
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/price-tag.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="62px">
+                                                alt="Learniaa" height="42px" width="62px">
                                                <span style="padding-right:5px"> @php 
                                                             if($product->price != 0)
                                                             {
@@ -266,13 +267,13 @@
 
                                                 <div class="col-4 col-md-4" style="font-size:13px">
                                                 <img src="{{ asset('images/Template/stopwatch.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="62px">
+                                                alt="Learniaa" height="42px" width="62px">
                                                 {{ $product->time }} 
                                                 </div>
 
                                                 <div class="col-4 col-md-4"  style="font-size:13px">
                                                 <img src="{{ asset('images/Template/video-camera.svg') }}" 
-                                                alt="Thumbnail Image" height="42px" width="62px">
+                                                alt="Learniaa" height="42px" width="62px">
                                                 {{ $product->count }} درس
                                                 </div>
 

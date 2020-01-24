@@ -11,6 +11,7 @@ use App\Post;
 use App\Profile;
 use App\Behavior;
 use App\Transaction;
+use App\Search;
 use Validator;
 use Auth;
 
@@ -61,6 +62,15 @@ class ProductController extends Controller
         $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(4);
         $behavior_product= Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
 
+          /* Meta Keyword */
+        $data_search = Search::where('pk_search',$product['pk_search'])->get();
+        $meta_keywords = array();
+        foreach($data_search as $keyword)
+        {
+            array_push($meta_keywords,$keyword->tag['fa_name']) ;
+        }
+         /* Meta Keyword */
+
         $payment_status ="";
 
         $user =  Auth::user() ;
@@ -81,7 +91,7 @@ class ProductController extends Controller
         }
         
        
-        return view('site.product.detail',compact('product','recent_Products','behavior_product','payment_status'));
+        return view('site.product.detail',compact('product','recent_Products','behavior_product','payment_status','meta_keywords'));
     }
 
     /**

@@ -6,7 +6,7 @@ use App\Tag;
 use App\Category;
 use App\Behavior;
 use App\Product;
-
+use App\Search;
 
 class PostController extends Controller
 {
@@ -23,7 +23,16 @@ class PostController extends Controller
         $recent_post = Post::where('status', 'انتشار')->orderBy('pk_post', 'desc')->get()->take(6);
         $behavior_post = Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
        
-        return view('site.post.detail',compact('detail_post','recent_post','behavior_post'));
+        /* Meta Keyword */
+        $data_search = Search::where('pk_search',$detail_post[0]['pk_search'])->get();
+        $meta_keywords = array();
+        foreach($data_search as $keyword)
+        {
+            array_push($meta_keywords,$keyword->tag['fa_name']) ;
+        }
+         /* Meta Keyword */
+        
+        return view('site.post.detail',compact('detail_post','recent_post','behavior_post','meta_keywords'));
     }
     /*
     public function postByTag($slug)
