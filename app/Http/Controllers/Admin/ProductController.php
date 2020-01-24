@@ -10,7 +10,7 @@ use App\Product;
 use App\Learner;
 use App\Category;
 use App\User;
-use App\Objects;
+use App\Search;
 use Validator;
 use Illuminate\Http\File;
 
@@ -64,18 +64,18 @@ class ProductController extends Controller
     
              if(request()->pk_tags != null)
              {  
-                 $pk_object = uniqid(); 
+                 $pk_search = uniqid(); 
                  
                  foreach (request()->pk_tags as $key => $tag) 
                  {
-                   $new_objects = new Objects();
-                   $new_objects->pk_object = $pk_object ;
-                   $new_objects->pk_type = 'محصول';
-                   $new_objects->pk_tag = $tag ;
-                   $new_objects->save();
+                   $new_Search = new Search();
+                   $new_Search->pk_search = $pk_search ;
+                   $new_Search->pk_type = 'محصول';
+                   $new_Search->pk_tag = $tag ;
+                   $new_Search->save();
                  }
  
-                 $new_instance->pk_objects =  $pk_object ;
+                 $new_instance->pk_search =  $pk_search ;
              }
 
              $new_instance->pk_category = request()->pk_category ;
@@ -140,15 +140,15 @@ class ProductController extends Controller
         $learners = Learner::get();
 
 
-        $row_objects = Objects::where('pk_object', $product->pk_objects)->select('pk_tag')->get();
-        $objects =array();
-        foreach ($row_objects as $object)
+        $row_Search = Search::where('pk_search', $product->pk_search)->select('pk_tag')->get();
+        $Search =array();
+        foreach ($row_Search as $search)
         {
           
-          array_push($objects,$object->pk_tag);
+          array_push($Search,$search->pk_tag);
         }
 
-        return view('admin.product.edit',compact('product','categories','tags','learners','objects'));  
+        return view('admin.product.edit',compact('product','categories','tags','learners','Search'));  
     }
 
     /**
@@ -178,14 +178,14 @@ class ProductController extends Controller
              {    
                    foreach (request()->pk_tags as $key => $tag) 
                    {
-                       $row = Objects::where('pk_tag',$tag)->where('pk_object',$product->pk_objects)->first();
+                       $row = Search::where('pk_tag',$tag)->where('pk_search',$product->pk_search)->first();
                        if($row == null)
                        {
-                         $new_objects = new Objects();
-                         $new_objects->pk_object = $product->pk_objects ;
-                         $new_objects->pk_type = 'محصول';
-                         $new_objects->pk_tag = $tag ;
-                         $new_objects->save();
+                         $new_Search = new Search();
+                         $new_Search->pk_search = $product->pk_search ;
+                         $new_Search->pk_type = 'محصول';
+                         $new_Search->pk_tag = $tag ;
+                         $new_Search->save();
                        }
                    }
               }

@@ -10,7 +10,7 @@ use App\Category;
 use App\Tag;
 use Validator;
 use App\User;
-use App\Objects;
+use App\Search;
 use Auth;
 use Illuminate\Http\File;
 
@@ -92,18 +92,18 @@ class PostController extends Controller
 
           if(request()->pk_tags != null)
             {  
-                $pk_object = uniqid(); 
+                $pk_search = uniqid(); 
                 
                 foreach (request()->pk_tags as $key => $tag) 
                 {
-                  $new_objects = new Objects();
-                  $new_objects->pk_object = $pk_object ;
-                  $new_objects->pk_type = 'پست';
-                  $new_objects->pk_tag = $tag ;
-                  $new_objects->save();
+                  $new_Search = new Search();
+                  $new_Search->pk_search = $pk_search ;
+                  $new_Search->pk_type = 'پست';
+                  $new_Search->pk_tag = $tag ;
+                  $new_Search->save();
                 }
 
-                $new_instance->pk_objects =  $pk_object ;
+                $new_instance->pk_search =  $pk_search ;
             }
 
              // process User --> Get info Writer And Save $new_instance
@@ -204,12 +204,12 @@ class PostController extends Controller
         $post = Post::find($id);
         $categories = Category::where('type','پست')->get();
 
-        $row_objects = Objects::where('pk_object', $post->pk_objects)->select('pk_tag')->get();
-        $objects =array();
-        foreach ($row_objects as $object)
+        $row_Search = Search::where('pk_search', $post->pk_search)->select('pk_tag')->get();
+        $Search =array();
+        foreach ($row_Search as $search)
         {
           
-          array_push($objects,$object->pk_tag);
+          array_push($Search,$search->pk_tag);
         }
 
         if($user->type == 'مدیر')
@@ -224,7 +224,7 @@ class PostController extends Controller
              // list writers User For Admin
              $users = User::get();
 
-        return view('admin.post.edit',compact('categories','tags','post','users','objects'));
+        return view('admin.post.edit',compact('categories','tags','post','users','Search'));
         
         
     }
@@ -257,14 +257,14 @@ class PostController extends Controller
             {    
                   foreach (request()->pk_tags as $key => $tag) 
                   {
-                      $row = Objects::where('pk_tag',$tag)->where('pk_object',$post->pk_objects)->first();
+                      $row = Search::where('pk_tag',$tag)->where('pk_search',$post->pk_search)->first();
                       if($row == null)
                       {
-                        $new_objects = new Objects();
-                        $new_objects->pk_object = $post->pk_objects ;
-                        $new_objects->pk_type = 'پست';
-                        $new_objects->pk_tag = $tag ;
-                        $new_objects->save();
+                        $new_Search = new Search();
+                        $new_Search->pk_search = $post->pk_search ;
+                        $new_Search->pk_type = 'پست';
+                        $new_Search->pk_tag = $tag ;
+                        $new_Search->save();
                       }
                   }
 

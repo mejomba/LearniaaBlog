@@ -135,7 +135,7 @@
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
                               <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
                               name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" 
-                              @if( in_array($tag->pk_tags , $objects ))
+                              @if( in_array($tag->pk_tags , $Search ))
                               {
                                 checked="checked"
                               }

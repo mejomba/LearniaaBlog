@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Objects extends Model
+class Search extends Model
 {
-    protected $table = 'objects';
+    protected $table = 'search';
     protected $primaryKey = 'pk_row';
 }
