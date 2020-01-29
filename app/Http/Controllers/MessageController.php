@@ -83,7 +83,7 @@ class MessageController extends Controller
         {  
             $Message = new Message(); 
             $user =  Auth::user() ;
-            if($user->pk_users != null)
+            if(isset($user->pk_users))
             {
                 $profile = Profile::where('pk_users',$user->pk_users)->first();
                 $profile->email = request()->email ; 
@@ -106,6 +106,48 @@ class MessageController extends Controller
                     if($Message->save())
                     {
                         return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
+                    }
+                    else
+                    {
+                        return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                    }
+          } 
+
+        }
+    }
+
+
+
+
+    public function newspaperMobile(Request $request)
+    {
+        $validator =  $this->validationByMobile($request);
+
+        if ($validator->fails())
+        {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+        }
+    
+        else
+        {  
+            $Message = new Message(); 
+            $user =  Auth::user() ;
+            if(isset($user->pk_users))
+            {
+
+            }
+             
+            else
+            {
+                $Message->name = request()->name ; 
+                $Message->email = request()->mobile ;  
+                $Message->message = request()->message ;
+
+                    if($Message->save())
+                    {
+                        return redirect()->back()->with('success','عضویت در خبرنامه با موفقیت انجام شد');
                     }
                     else
                     {
@@ -196,5 +238,43 @@ class MessageController extends Controller
 
         return $validator ;
     }
+
+
+
+
+
+    public function validationByMobile(Request $request)
+    {
+
+        $rules =  [
+                    'name' => 'required|String|max:200',  
+                    'mobile' => 'required',
+                    'message' => 'required|String|max:500', 
+               
+                 ];
+
+    $messages = [
+                 
+                 'mobile.required' => 'پست الکترونیکی وارد نشده است',
+                 'mobile.max' => 'پست الکترونیکی طولانی وارد شده است',
+              
+                'name.required' => 'نام  وارد نشده است',
+                'name.String' => 'نام  صحیح وارد نشده است',
+                'name.max' => 'نام  طولانی وارد شده است',
+
+                'message.required' => 'پیام  وارد نشده است',
+                'message.String' => 'پیام  صحیح وارد نشده است',
+                'message.max' => 'پیام  طولانی وارد شده است',
+
+
+                ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
+
+
 
 }

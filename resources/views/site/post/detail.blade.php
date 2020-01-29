@@ -116,11 +116,8 @@
                 <p></p>
                 <p></p>
 
-                <div style="border-top:2px solid #20c3b8;margin-bottom:10px">
-                                       
-                                        </div>
-                         
-
+                <div style="border-top:2px solid #20c3b8;margin-bottom:10px"> </div>
+                
                     <div class="row">
                            
                           <div class="col-md-3 col-4 center">
@@ -132,16 +129,24 @@
                             class="btn btn-primary btn-disabled btnblogPost ">دریافت فایل  (PDF) </a>
                            @endif
                         
+
+                         
+
+
+                        
                           </div>
+                          @include('site.Layouts.newspapermobile')
                   </div>
 
+                  
                  <!-- <div style="border-bottom:2px solid #20c3b8;margin-top:10px">
                                        
                                        </div>  -->
 
             </div>
+           
         </div>
-
+        
  
 
 

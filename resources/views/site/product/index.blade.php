@@ -143,7 +143,7 @@
                                             @else         
                                             <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                                             @endif
-                                            &nbsp;<h2  style="font-size:15px">{{$product->learner->user['name']}}</h2></span>
+                                            &nbsp;{{$product->learner->user['name']}}</span>
                                     </div>
                                             <!-- Writer -->
 

@@ -34,6 +34,7 @@ Route::post('/reset/delete/{id}', 'ResetPasswordController@destroy')->name('rese
 
 Route::post('/message/store', 'MessageController@store')->name('message.store');
 Route::post('/message/newspaper', 'MessageController@newspaper')->name('message.newspaper');
+Route::post('/message/newspaperMobile', 'MessageController@newspaperMobile')->name('message.newspaperMobile');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {
