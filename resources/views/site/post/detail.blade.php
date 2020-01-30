@@ -133,9 +133,12 @@
                          
 
 
-                        
+                          
                           </div>
+
+                          
                           @include('site.Layouts.newspapermobile')
+                          
                   </div>
 
                   

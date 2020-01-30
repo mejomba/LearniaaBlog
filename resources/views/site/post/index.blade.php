@@ -30,14 +30,21 @@
         </a>
      </div>
 
-     <div class="col-md-3">
+     <div class="col-md-2">
+     <a style="margin-bottom: 15px;" href="{{route('category.show','دنیای دیجیتال')}}" class="btn  btn-round btnblog btn-6"   > دنیای دیجیتال </a>
+    
+     </div>
+
+     <div class="col-md-2">
      <a style="margin-bottom: 15px;" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
      </div>
 
-     <div class="col-md-3">
+     <div class="col-md-2">
      <a style="margin-bottom: 15px;" href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
     
      </div>
+
+    
 
      <div class="col-md-3">
      <a style="margin-bottom: 15px;" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>

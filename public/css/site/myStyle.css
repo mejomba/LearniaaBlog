@@ -143,6 +143,11 @@ transition : transform .5s ;
 }
 
 
+.btn-6 {
+  background-image: linear-gradient(to right, #68EDCB 0%, #20C5BA 51%, #68EDCB 100%);
+}
+
+
 .cardinfoLearner 
 {
   padding : 2px 5px ;
