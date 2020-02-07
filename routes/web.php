@@ -64,6 +64,22 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/tag/edit/{id}', 'TagController@edit')->name('admin.tag.edit');
     Route::post('/tag/update/{id}', 'TagController@update')->name('admin.tag.update');
 
+
+    Route::get('/tree/index', 'TreeController@index_Tree')->name('admin.tree.index');
+    Route::get('/tree/create', 'TreeController@create_Tree')->name('admin.tree.create');
+    Route::post('/tree/store', 'TreeController@store_Tree')->name('admin.tree.store');
+    Route::get('/tree/delete/{id}', 'TreeController@destroy_Tree')->name('admin.tree.delete');
+    Route::get('/tree/edit/{id}', 'TreeController@edit_Tree')->name('admin.tree.edit');
+    Route::post('/tree/update/{id}', 'TreeController@update_Tree')->name('admin.tree.update');
+    Route::post('/tree/upload', 'TreeController@upload')->name('admin.tree.upload');
+
+    Route::get('/node/create/{id}', 'TreeController@create_Node')->name('admin.node.create');
+    Route::post('/node/store', 'TreeController@store_Node')->name('admin.node.store');
+    Route::get('/node/delete/{id}', 'TreeController@destroy_Node')->name('admin.node.delete');
+    Route::get('/node/edit/{id}', 'TreeController@edit_Node')->name('admin.node.edit');
+    Route::post('/node/update/{id}', 'TreeController@update_Node')->name('admin.node.update');
+
+
     Route::get('/user/index', 'UserController@index')->name('admin.user.index');
     Route::get('/user/create', 'UserController@create')->name('admin.user.create');
     Route::get('/user/delete/{id}', 'UserController@destroy')->name('admin.user.delete');
@@ -103,6 +119,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/product/delete/{id}', 'ProductController@destroy')->name('admin.product.delete');
     Route::post('/product/update/{id}', 'ProductController@update')->name('admin.product.update');
     Route::post('/product/upload', 'ProductController@upload')->name('admin.product.upload');
+    Route::get('/product/show/{slug}', 'ProductController@show')->name('admin.product.show');
+  
+
 
     Route::get('/Transaction/index', 'TransactionController@index')->name('admin.transaction.index');
     Route::get('/Transaction/create', 'TransactionController@create')->name('admin.transaction.create');

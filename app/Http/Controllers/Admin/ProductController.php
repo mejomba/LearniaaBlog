@@ -123,7 +123,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        
+        $product = Product::find($id);
+        return redirect(route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ] ));
     }
 
     /**

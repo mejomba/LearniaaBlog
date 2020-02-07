@@ -19,25 +19,6 @@
   </li>
 
 
- 
-
-  
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.profile.edit')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    پروفایل</a>
-  </li>
-
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.transaction.create')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/wallet.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    کیف پول</a>
-  </li>
-
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"  href="{{route('admin.tag.index')}}" 
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
@@ -53,6 +34,23 @@
      role="tab" aria-controls="tabs-text-1" aria-selected="true">
      <img src="{{ asset('images/Template/category.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
      دسته بندی</a>
+  </li>
+
+  
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.product.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/product.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    محصول</a>
+  </li>
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.tree.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/tree.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    درخت</a>
   </li>
 
   <li class="nav-item primary">
@@ -77,13 +75,6 @@
     بن تخفیف</a>
   </li>
 
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.product.index')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/product.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    محصول</a>
-  </li>
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
@@ -104,6 +95,24 @@
 <!-- Row 2 -->
 
 <ul class="nav nav-pills nav-fill flex-column flex-sm-row" id="tabs-text" role="tablist" style="margin-top:5px">
+
+<li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.profile.edit')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    پروفایل</a>
+  </li>
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.transaction.create')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/wallet.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    کیف پول</a>
+  </li>
+
+
 <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
      id="tabs-text-2-tab"   href="{{route('admin.transaction.index')}}"
@@ -111,6 +120,8 @@
     <img src="{{ asset('images/Template/transaction.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     تراکنش </a>
   </li>
+
+
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
