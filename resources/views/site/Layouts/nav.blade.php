@@ -32,26 +32,35 @@
                 </div>
             </div>
 
-            <ul class="navbar-nav col-md-7">
+ <ul class="navbar-nav col-md-7">
+
+ <li class="nav-item">
+  <a class="nav-link" href="{{route('academy.index')}}"   rel="tooltip" title="" data-placement="bottom"
+  data-original-title="به زودی">
+  <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
+  لرنیا آکادمی  
+  </a>
+</li>
+
 
 <li class="nav-item">
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
-  <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+  <img src="{{ asset('images/Template/stopwatch.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
   لرنیا کوئیک  
   </a>
 </li>
 
 <li class="nav-item">
   <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom">
-  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
    بلاگ
   </a>
 </li>
 
 <li class="nav-item">
   <a class="nav-link" href="{{route('Contactus')}}">
-  <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">  
+  <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="50px" width="50px">  
   تماس با ما 
     <div class="ripple-container">
 
@@ -61,7 +70,7 @@
 
 <li class="nav-item">
   <a class="nav-link" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
- <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+ <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
    درباره ما
   <div class="ripple-container">
 

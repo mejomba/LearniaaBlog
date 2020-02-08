@@ -32,7 +32,7 @@
   <link href="{{ asset('css/site/myStyle.css') }}" rel="stylesheet">
 
    <!--link href="{{ asset('css/site/bootstrap/bootstrap-grid.css') }}" rel="stylesheet"-->
-
+   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>

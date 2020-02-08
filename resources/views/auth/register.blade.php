@@ -18,7 +18,10 @@
 
             <form class="form" method="POST" action="{{route('register')}}">
               @csrf
-             
+
+              @if(isset($_GET['introduction_Tree']))
+              <input type="hidden"  name="introduction_Tree" value="Yes" class="form-control" > 
+             @endif
               
               <div class="form-group">
                     <div class="input-group input-group-alternative">

@@ -108,6 +108,18 @@ class RegisterController extends Controller
             /* add contact to sms panel */
            
 
+             /* Check Register User For Learniaa Academy */
+            if(isset($data['introduction_Tree']))
+            {
+                $this->redirectTo = '/post';
+            }
+            else
+            {
+                $this->redirectTo = '/';
+            }
+             /* Check Register User For Learniaa Academy */
+
+             
             // Finaly Process Register //
             return $user;
 
