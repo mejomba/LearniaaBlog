@@ -19,7 +19,7 @@
 @section('pic_landing')
 
     
-<img src="{{ asset('images/Template/Academy_landing.svg') }}" alt="Learniaa" class="" width="65%" style="float:left;padding-left:50px">
+<img src="{{ asset('images/Template/academy.svg') }}" alt="Learniaa" class="" width="65%" style="float:left;padding-left:50px">
 
 @endsection
 
