@@ -38,7 +38,8 @@ Route::post('/message/newspaperMobile', 'MessageController@newspaperMobile')->na
 
 
 Route::get('/academy', 'AcademyController@index')->name('academy.index');
-
+Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
+Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
 
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 

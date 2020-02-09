@@ -55,7 +55,7 @@ class Handler extends ExceptionHandler
             Log::error($exception->getMessage());
             $status_code = $exception->getCode();
 
-           if( isset($status_code)  )  
+           if( $status_code == '500' || $status_code == '404'  )  
             { 
                 return response()->view('error.500', [], 500);
             }

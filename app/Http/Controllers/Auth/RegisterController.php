@@ -111,7 +111,7 @@ class RegisterController extends Controller
              /* Check Register User For Learniaa Academy */
             if(isset($data['introduction_Tree']))
             {
-                $this->redirectTo = '/post';
+                $this->redirectTo = '/academy/detail';
             }
             else
             {
@@ -119,7 +119,7 @@ class RegisterController extends Controller
             }
              /* Check Register User For Learniaa Academy */
 
-             
+
             // Finaly Process Register //
             return $user;
 

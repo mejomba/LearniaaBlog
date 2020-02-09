@@ -235,6 +235,14 @@ class TreeController extends Controller
               $tree->has_children = request()->has_children ;
               $tree->name = request()->name ;
               $tree->description = request()->description ;
+
+              if(request()->pic)
+              {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $path = Storage::putFileAs( 'tree', $pic, $pic_name);
+                $tree->pic = $pic_name ;
+              }
              
               if(request()->pk_product != null)
               {
@@ -288,6 +296,14 @@ class TreeController extends Controller
               $tree->name = request()->name ;
               $tree->description = request()->description ;
               $tree->has_children = request()->has_children ;
+
+              if(request()->pic)
+              {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $path = Storage::putFileAs( 'tree', $pic, $pic_name);
+                $tree->pic = $pic_name ;
+              }
 
               if(request()->pk_product != null)
               {

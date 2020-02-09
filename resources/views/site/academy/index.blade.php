@@ -56,7 +56,7 @@
         <div class="videowrapper col-md-10 text-center">
             <video class="afterglow"  id="my-video"  width="600" height="300" 
             data-overscale="false"  poster="{{ asset('images/Template/Poster_Academy.png')  }}"
-            src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Beginner_Tree/RemoteDesktop_Beginner_Tree.mp4">
+            src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Beginner_Tree/Video_Intro_Academy.mp4">
             </video>  
             </div>   
 
@@ -71,7 +71,19 @@
         </div>
 
         <div class="videowrapper col-md-10 text-center">
-        <a href="{{ route('register',['introduction_Tree'=>'Yes'])}}" class="btn btn-warning btn-round">  بیا شروع کنیم </a>  
+        @if (Auth::check())
+        <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round">
+        <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
+       src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
+       width="40px" height="40px" alt="Profile_BeginnerTree" >   بزن بریم  </a>  
+        
+        @else
+        <a href="{{ route('register',['introduction_Tree'=>'Yes'])}}" class="btn btn-warning btn-round">
+        <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
+       src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
+       width="40px" height="40px" alt="Profile_BeginnerTree" >   بزن بریم  </a>  
+
+        @endif
         </div> 
 
         <div class="col-md-1">

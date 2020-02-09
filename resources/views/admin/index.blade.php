@@ -14,7 +14,7 @@
         </div>
 
         <div class="col-4">
-        <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" width="300px" height="320px ">
+        <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" width="100px" height="100px ">
       
         </div>
         

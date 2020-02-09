@@ -75,22 +75,22 @@ class ProductController extends Controller
 
         $user =  Auth::user() ;
         
-        if($user != null)
+        if(Auth::check())
         {
-          $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','معتبر')->where('pk_users',$user->pk_users)->first();
-          if($payment_checks)
-          {
-            $payment_status ="Payed";
-          }
+            
+            $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
+            if($payment_checks)
+            {
+              $payment_status ="Payed";
+            }
+           // dd($payment_checks);
 
         }
-
-        if($user == null)
+        else
         {
             $payment_status ="No Pay";
         }
-        
-       
+
         return view('site.product.detail',compact('product','recent_Products','behavior_product','payment_status','meta_keywords'));
     }
 

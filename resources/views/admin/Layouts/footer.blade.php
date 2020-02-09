@@ -22,7 +22,6 @@
             بلاگ
             </a>
             
-          
           <a class="nav-link col-md-2 col-3" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
            <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
              درباره ما
@@ -34,21 +33,24 @@
       </div>
 
 
-      
+     
 
       <div class="col-md-2 col-12 text-center" style="font-size:10px">
 
                <div class="row" style="padding-bottom:10px">
+               
               
                    <style>#zarinpal{margin:auto} #zarinpal img {width: 70px; height:50px}</style>
 
                       <div class="col-md-12 col-8" id="zarinpal">
                       <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
+                      <img  style="width:150px !important" src="{{ asset('images/Template/Banks.jpg') }}"
+                alt="Thumbnail Image" height="auto"  >
                       </div>
-
+                    
                 </div>
                   
-              
+             
       </div>
 
      

@@ -44,6 +44,8 @@
 
                       <div class="col-md-12 col-8" id="zarinpal">
                       <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
+                      <img  style="width:150px !important" src="{{ asset('images/Template/Banks.jpg') }}"
+                alt="Thumbnail Image" height="auto"  >
                       </div>
 
                 </div>

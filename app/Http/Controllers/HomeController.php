@@ -33,9 +33,11 @@ class HomeController extends Controller
           // Copy & Paste All of Code PostController.Index into Method
 
             // 
-            $recent_Products = Product::where('status', 'انتشار')->get()->take(9);
+           /* $recent_Products = Product::where('status', 'انتشار')->get()->take(9);
             $categories = Category::where('type','محصول')->get();
             return view('site.product.index',compact('categories','recent_Products'));
+            */
+            return view('site.academy.index');
         
         }
 

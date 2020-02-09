@@ -9,6 +9,7 @@ use Shetabit\Payment\Facade\Payment;
 use Shetabit\Payment\Exceptions\InvalidPaymentException;
 use App\Transaction;
 use App\Profile;
+use App\Product;
 use Auth;
 use Validator;
 
@@ -118,7 +119,7 @@ class TransactionController extends Controller
             Payment::amount( (int)$transaction->price)->transactionId($transaction->digital_receipt)->verify();
 
            $status_transaction =  $transaction::find( $transaction['pk_transaction']);
-           $status_transaction->status = 'معتبر';
+           $status_transaction->status = 'عملیات موفق';
            $status_transaction->save();
            
             // Finalize Success Payment From Bank //
@@ -138,8 +139,9 @@ class TransactionController extends Controller
                     
                     if($transaction->type == 'خرید دوره آموزشی')
                     {
+                        $product = Product::find($transaction->pk_product);
                         return redirect()->route('product.detail',
-                        ['slug' => $transaction->pk_product ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                        ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
              
                     }
                     
@@ -169,8 +171,9 @@ class TransactionController extends Controller
                         }
                         else
                         {
+                            $product = Product::find($transaction->pk_product);
                             return redirect()->route('product.detail',
-                            ['slug' => $transaction->pk_product ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                            ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
                         }
                     }
 
