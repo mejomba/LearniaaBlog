@@ -23,12 +23,12 @@
             <input name="name" id="name" value="ناشناس" type="hidden" class="form-control"> 
             <input name="message" id="message" value="درخواست خبرنامه" type="hidden" class="form-control">
 
-                         <div class="form-group focused" style="background: white;">
-                        <div class="input-group input-group-alternative">
+                         <div class="form-group focused" style="background: white;height:50px">
+                        <div class="input-group input-group-alternative" >
                         <div class="input-group-prepend">
                         <img class="img-raised  img-fluid" 
                         src="{{ asset('images/Template/user_email.svg')}}" 
-                        alt="Thumbnail Image" height="45px" width="45px">
+                        alt="Thumbnail Image" height="40px" width="40px">
                         </div>
                         <input name="email" id="email" type="text" class="form-control" 
                         placeholder="پست الکترونیکی">
