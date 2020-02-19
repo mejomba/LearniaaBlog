@@ -138,7 +138,20 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                             @if(Auth::user()->type == "مدیر")
-                                <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
+                            <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
+                                <a class="dropdown-item" href="{{route('admin.post.index')}}" > پست</a>
+                                <a class="dropdown-item" href="{{route('admin.tag.index')}}"> تگ</a>
+                                <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
+                                <a class="dropdown-item" href="{{route('admin.product.index')}}"> محصول</a>
+                                <a class="dropdown-item" href="{{route('admin.product.index')}}"> درخت</a>
+                                <a class="dropdown-item" href="{{route('admin.user.index')}}"> کاربر</a>
+                                <a class="dropdown-item" href="{{route('admin.behavior.index')}}"> رفتار</a>
+                                <a class="dropdown-item"  href="{{route('admin.discount.index')}}"> بن تخفیف</a>
+                                <a class="dropdown-item"  href="{{route('admin.discount.index')}}">  مدرس</a>
+                                <a class="dropdown-item"  href="{{route('admin.profile.edit')}}">  پروفایل</a>
+                                <a class="dropdown-item"  href="{{route('admin.transaction.create')}}">کیف پول</a>
+                                <a class="dropdown-item"   href="{{route('admin.transaction.index')}}">  تراکنش</a>
+                                <a class="dropdown-item"  href="{{route('admin.transaction.productlist')}}"> خریداری شده</a>
                             @endif
 
                             @if(Auth::user()->type == "نویسنده")
@@ -146,7 +159,11 @@
                             @endif
 
                             @if(Auth::user()->type == "کاربر")
-                                <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
+                            <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
+                                <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
+                                <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">  خریداری شده</a>
+                                <a class="dropdown-item" href="{{route('user.transaction.create')}}">   کیف پول</a>
+                                <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a>
                             @endif
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
