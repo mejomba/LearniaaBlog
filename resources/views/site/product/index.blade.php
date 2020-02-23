@@ -11,7 +11,12 @@
     
 <img src="{{ asset('images/Template/Header_Product.png') }}" alt="Learniaa" class="" width="100%" style="float:right">
 
-<a href="#Move_Down" class="daneshka-scroll-bottom text-center" style="margin-top: 20px;"> <span></span></a>
+<div class="col-md-12 text-center">
+<a href="#" class="btn btn-warning btn-round">
+ <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
+src="{{  Storage::url('tree/'.'downFlash.png') }}"
+width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a> 
+</div>
 
 @endsection
 
@@ -19,7 +24,7 @@
 @section('pic_landing')
 
     
-<img src="{{ asset('images/Template/Product_landing.svg') }}" alt="Learniaa" class="" width="70%" style="float:left;padding-left:50px">
+<img src="{{ asset('images/Template/Product_landing.svg') }}" alt="Learniaa" class="" width="70%" style="float:left;margin-left:50px">
 
 @endsection
 
@@ -43,13 +48,6 @@
                 <div class=" col-10 col-md-4" style="text-align:center">
 
                   
-                  <h3 style="font-size:20px"> <span>
-                  <img src="{{ asset('images/Template/learn.svg') }}" alt="Learniaa" height="30px" width="30px">
-                    سریع ، آسان ، لذت بخش 
-                    <img src="{{ asset('images/Template/learn.svg') }}" alt="Learniaa" height="30px" width="30px">
-                    </span></h3>
-
-
                 </div>
 
                 <div class="col-1 col-md-4">

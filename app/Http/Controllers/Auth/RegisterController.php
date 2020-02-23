@@ -82,6 +82,7 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'],
             'password' => Hash::make($data['password']),
             'type' => 'کاربر',
+            'attract' => $data['attract']
          ]);
 
          $new_user = User::where('mobile',$data['mobile'])->first();
@@ -115,7 +116,9 @@ class RegisterController extends Controller
             }
             else
             {
-                $this->redirectTo = '/';
+              //  $this->redirectTo = '/';
+
+                $this->redirectTo = '/academy/detail';
             }
              /* Check Register User For Learniaa Academy */
 

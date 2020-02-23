@@ -9,17 +9,17 @@
 
               <a class="nav-link col-md-2 col-3" href="{{route('academy.index')}}"   rel="tooltip" title="" data-placement="bottom">
             <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-            لرنیا آکادمی  
+            آکادمی آموزش   
             </a>
 
             <a class="nav-link col-md-2 col-3" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom">
             <img src="{{ asset('images/Template/stopwatch.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-            لرنیا کوئیک  
+            کوئیک لرن   
             </a>
 
             <a class="nav-link col-md-2 col-3"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom">
             <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-            بلاگ
+            وبلاگ 
             </a>
             
           

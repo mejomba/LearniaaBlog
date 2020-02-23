@@ -36,7 +36,7 @@
   <a class="nav-link" href="{{route('academy.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
   <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
-  لرنیا آکادمی  
+  آکادمی آموزش   
   </a>
 </li>
 
@@ -44,7 +44,7 @@
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
   <img src="{{ asset('images/Template/stopwatch.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
-  لرنیا کوئیک  
+  کوئیک لرن   
   </a>
 </li>
 
@@ -52,7 +52,7 @@
   <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
   >
   <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
-   بلاگ
+  وبلاگ 
   </a>
 </li>
 

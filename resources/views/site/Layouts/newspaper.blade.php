@@ -36,7 +36,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-4 col-12 text-center" style="padding-bottom:5px">
                         <button type="submit" class="btn btn-warning btn-round">ثبت</button>
                     </div>
                     
