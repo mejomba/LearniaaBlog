@@ -19,9 +19,17 @@
             <div class="row text-center">
             <div class="col-md-12">  
 
+<!--
             <h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">
             نقشه راه کامپیوتر برای مبتدیان
             </h1>
+-->
+
+            <button class="btn btn-round btnblogPost btn-title" style="border-radius:10px" >
+<h2 style="color:#FFFFFF" class="text-center"> نقشه راه کامپیوتر برای مبتدیان</h2>  
+<h4 style="color:#F9F860" class="text-center"> !! روی آموزش ها بزن و ببین !!</h4>  
+</button>            
+
 
              <!-- Text -->
 
@@ -35,7 +43,7 @@
 
                     <div class="col-md-6">
 
-                    <img class="img-fluid rounded-circle shadow-lg" style="border-radius:20% !important;"
+                    <img class="img-fluid rounded-circle shadow-lg" style="border-radius:20% !important;margin-top:20px;"
                     src="{{ asset('images/Template/RoadMap_BeginnerTree.jpg') }}"
                     width="900px" height="400px" alt="Learniaa" >
 
@@ -82,9 +90,11 @@
                     @foreach($nodes as $node)
                           <li>
                             <span class="text-muted float-right" style="display:contents" > 
-                            <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
+                            <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"> 
+                             <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
                                         src="{{  Storage::url('tree/'.$node['pic']) }}"
                                         width="50px" height="50px" alt="{{$node['name']}}" >
+                                        </a> 
                             </span>
                            
                                 <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"> 

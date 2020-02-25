@@ -40,13 +40,16 @@
   </a>
 </li>
 
+
+
 <li class="nav-item">
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
   <img src="{{ asset('images/Template/stopwatch.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
-  کوئیک لرن   
+  لرنیا کوئیک   
   </a>
 </li>
+
 
 <li class="nav-item">
   <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
@@ -132,7 +135,7 @@
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" href="#" role="button" 
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
+                        <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="35px" width="35px">
                          <span class="caret"></span>
                         </a>
 

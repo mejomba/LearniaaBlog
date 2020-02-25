@@ -41,7 +41,7 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
 <div id="Move_Down" class="container-fluid">
 
 <button class="btn btn-round btnblogPost btn-title" style="border-radius:10px" >
-<h2 style="color:#FFFFFF" class="text-center"> اگه کار با کامپیوتر رو بلد نیستی فیلم رو ببین !!!</h2>  
+<h2 style="color:#FFFFFF" class="text-center"> اگه کار با سایت رو بلد نیستی فیلم رو ببین !!!</h2>  
 </button>
 
 
@@ -61,16 +61,12 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
 
  <div class="videowrapper col-md-10 text-center">
  @if (Auth::check())
- <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round">
- <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
-src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
-width="40px" height="40px" alt="Profile_BeginnerTree" >   بزن بریم  </a>  
+ <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round" style="font-size:20px">
+ ثبت نام --> شروع  </a>  
  
  @else
- <a href="{{ route('register',['introduction_Tree'=>'Yes'])}}" class="btn btn-warning btn-round">
- <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
-src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
-width="40px" height="40px" alt="Profile_BeginnerTree" >   بزن بریم  </a>  
+ <a href="{{ route('register',['introduction_Tree'=>'Yes'])}}" style="font-size:20px" class="btn btn-warning btn-round">
+   ثبت نام --> شروع   </a>  
 
  @endif
  </div> 
@@ -85,7 +81,7 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >   بزن بریم  </a>
         </div> 
 
         <div class="videowrapper col-md-10 text-center">
-            <video class="afterglow"  id="my-video"  width="500" height="200" 
+            <video class="afterglow"  id="my-video"  width="500" height="270" 
             data-overscale="false"  poster="{{ asset('images/Template/Poster_Academy.png')  }}"
             src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Beginner_Tree/Video_Intro_Academy.mp4">
             </video>  

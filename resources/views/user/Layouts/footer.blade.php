@@ -12,16 +12,23 @@
             آکادمی آموزش   
             </a>
 
+         
+<!--
             <a class="nav-link col-md-2 col-3" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom">
             <img src="{{ asset('images/Template/stopwatch.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
             کوئیک لرن   
             </a>
+ -->           
 
-            <a class="nav-link col-md-2 col-3"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom">
+ <a class="nav-link col-md-2 col-3"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom">
             <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
             وبلاگ 
             </a>
-            
+
+            <a class="nav-link col-md-2 col-3" href="{{route('Contactus')}}">
+            <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">  
+            تماس با ما  
+          </a>
           
           <a class="nav-link col-md-2 col-3" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
            <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="40px" width="40px">

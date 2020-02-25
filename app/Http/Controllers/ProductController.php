@@ -24,7 +24,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(9);
+      //  $recent_Products = Product::where('status', 'انتشار')->orderBy('pk_product', 'desc')->get()->take(9);
+
+       // Load All Beginners Course in New Section Product
+        $recent_Products = Product::where('status', 'انتشار')->where('pk_category','1008')->get();
+
         $categories = Category::where('type','محصول')->get();
         return view('site.product.index',compact('categories','recent_Products'));
      }

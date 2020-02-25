@@ -12,7 +12,7 @@
 <!---- RoadMap Help Section --->
 
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 col-12" style="padding-top:15px">
       @if(isset($nodes_previous['pk_product']))
       <a href="{{ route('academy.show', ['id' => $nodes_previous['pk_product'] , 'desc' =>  $nodes_previous['name'] ]) }}"
       class="btn btn-warning btn-round">
@@ -24,7 +24,7 @@
     <div class="col-md-3">
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 col-12" style="padding-top:15px">
        <a href="{{ route('academy.detail')}}" class="btn btn-primary btn-round">
        <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
        src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
@@ -34,7 +34,7 @@
     <div class="col-md-2">
    
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-12" style="padding-top:15px">
       @if(isset($nodes_next['pk_product']))
       <a href="{{ route('academy.show', ['id' => $nodes_next['pk_product'] , 'desc' =>  $nodes_next['name'] ]) }}"
       class="btn btn-warning btn-round">
