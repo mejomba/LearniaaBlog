@@ -37,7 +37,18 @@ class LoginController extends Controller
         }
         elseif ($user->type == "کاربر")
          {
-           return redirect('/');
+                    if( request()->LocationUser == "Academy_Product")
+                    {
+                        return redirect('/academy/show/'.request()->Product.'/'.request()->NameProduct); 
+                    }
+                    else
+                    {
+                    //  $this->redirectTo = '/';
+
+                        return redirect('/academy/detail'); 
+                    }
+
+               
           }
 
     }
@@ -74,16 +85,16 @@ class LoginController extends Controller
         else
           {
                     $rules =  [
-                        'mobile' => 'required|numeric', 
-                    'password' => 'required|min:3',
-                    ];
+                                'mobile' => 'required|numeric', 
+                                'password' => 'required|min:3',
+                              ];
             
                     $messages = [
-                    'mobile.required' => 'تلفن همراه وارد نشده است',
-                    'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
-                    'password.required' => 'رمز عبور وارد نشده است',
-                    'password.min' => 'رمز عبور صحیح وارد نشده است',
-                    ];
+                                'mobile.required' => 'تلفن همراه وارد نشده است',
+                                'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
+                                'password.required' => 'رمز عبور وارد نشده است',
+                                'password.min' => 'رمز عبور صحیح وارد نشده است',
+                              ];
 
                     $this->validate($request,$rules, $messages);
           }

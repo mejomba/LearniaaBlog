@@ -200,9 +200,14 @@
                                  <div class="col-md-12 text-center" style="padding-top:35px">
                                       <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
                                         @csrf
-                                        <button class="btn btn-round btn-1 btn-title" 
-                                      
-                                                            
+                                        <input type="hidden" name="LocationUser" value="Academy_Product">
+                                        <input type="hidden" name="NameProduct" value="{{$product['title']}}">
+                                        <button 
+                                        @if(Auth::check())
+                                                            class="btn btn-warning" 
+                                                            @else
+                                                            class="btn btn-round btn-1 btn-title" 
+                                        @endif                    
                                             type="submit" style="border-radius:10px" >
                                              <h5 style="margin-top:5px;font-size:16px">خرید دوره : 
                                               @php 

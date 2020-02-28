@@ -17,6 +17,9 @@
     <div class="card-body px-lg-5 py-lg-5">
       
           <form class="form" method="POST" action="{{route('login')}}">
+            <input type="hidden" name="LocationUser" value="{{ $_GET['LocationUser'] }}">
+            <input type="hidden" name="Product" value="{{ $_GET['Product'] }}">
+            <input type="hidden" name="NameProduct" value="{{ $_GET['NameProduct'] }}">
               @csrf
 
 
@@ -42,9 +45,22 @@
 
 
                   <div class="text-center" style="padding-top:20px">
-                    <button type="submit" class="btn btn-primary">ورود </button>
-                    <a href="{{route('reset.index')}}" class="btn btn-warning btn-round">  فراموشی رمزعبور
+                    <button type="submit" class="btn btn-primary" style="width:180px">ورود</button>
+                    <a href="{{route('reset.index')}}" class="btn btn-round" style="margin-top:10px" >فراموشی رمزعبور
                       </a> 
+
+                    <h4 style="color:#000000;margin-top:20px" class="text-center">ثبت نام کاربران جدید</h4>
+
+                    <a href="{{route('register',['LocationUser' => $_GET['LocationUser'] ,
+                                                 'Product' => $_GET['Product'] ,
+                                                 'NameProduct' => $_GET['NameProduct']  ])
+                             }}"
+
+                     class="btn btn-warning btn-round" style="border-radius:30px;width:150px" >
+                    ثبت نام
+                    </a>
+
+                 
                   </div>
 
                 

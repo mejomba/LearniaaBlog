@@ -17,12 +17,11 @@
     <div class="card-body px-lg-5 py-lg-5">
 
             <form class="form" method="POST" action="{{route('register')}}">
+            <input type="hidden" name="LocationUser" value="{{ $_GET['LocationUser'] }}">
+            <input type="hidden" name="Product" value="{{ $_GET['Product'] }}">
+            <input type="hidden" name="NameProduct" value="{{ $_GET['NameProduct'] }}">
               @csrf
 
-              @if(isset($_GET['introduction_Tree']))
-              <input type="hidden"  name="introduction_Tree" value="Yes" class="form-control" > 
-             @endif
-              
               <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -79,7 +78,7 @@
                   </div>
 
                   <div class="text-center" style="padding-top:20px">
-                    <button type="submit" class="btn btn-primary">همین حالا شروع کن </button>
+                    <button type="submit" class="btn btn-primary">همین حالا ثبت نام کن </button>
                  <!--   <a href="{{route('login')}}" class="btn btn-warning btn-round">ورود 
                       </a> -->
                   </div>

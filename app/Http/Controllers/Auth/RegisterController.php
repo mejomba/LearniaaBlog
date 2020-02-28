@@ -110,9 +110,10 @@ class RegisterController extends Controller
            
 
              /* Check Register User For Learniaa Academy */
-            if(isset($data['introduction_Tree']))
+            if( $data['LocationUser'] == "Academy_Product")
             {
-                $this->redirectTo = '/academy/detail';
+                
+                $this->redirectTo = '/product/pay/'.$data['Product'];
             }
             else
             {

@@ -13,7 +13,7 @@
  style="float:right">
 
  <div class="col-md-12 text-center">
-<a href="#" class="btn btn-warning btn-round">
+<a href="#" class="btn btn-warning btn-round" style="margin-top:20px">
  <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
 src="{{  Storage::url('tree/'.'downFlash.png') }}"
 width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a> 
@@ -60,15 +60,10 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
  </div>
 
  <div class="videowrapper col-md-10 text-center">
- @if (Auth::check())
- <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round" style="font-size:20px">
- ثبت نام --> شروع  </a>  
- 
- @else
- <a href="{{ route('register',['introduction_Tree'=>'Yes'])}}" style="font-size:20px" class="btn btn-warning btn-round">
-   ثبت نام --> شروع   </a>  
 
- @endif
+ <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round" style="line-height: 2;font-size:16px;">
+ مشاهده نقشه راه مبتدیان </a>  
+ 
  </div> 
 
  <div class="col-md-1">

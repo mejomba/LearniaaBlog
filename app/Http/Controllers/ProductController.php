@@ -138,7 +138,11 @@ class ProductController extends Controller
 
         if($user == null)
         {
-            return redirect()->back()->with('report',' خطا : لطفا در سایت ورود یا ثبت نام نمایید');
+            return redirect(route(
+                                  "login",["LocationUser" => request()->LocationUser ,
+                                  "Product" => $slug ,
+                                  "NameProduct" => request()->NameProduct ])
+            )->with('report','  در صورت داشتن حساب کاربری ، ورود و یا برای اولین بار  ثبت نام کنید');
         }
 
         $product = Product::where('pk_product', $slug)->first();
