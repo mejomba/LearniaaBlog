@@ -129,7 +129,7 @@
             data-placement="bottom" href="{{route('login',['LocationUser' => 'null' ,
                                                             'Product' => 'null' ,
                                                               'NameProduct' => 'null'  ])}}"
-            > ورود
+            >ورود
             <div class="ripple-container"></div>
           </a>
           </li>  
