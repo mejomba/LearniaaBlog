@@ -119,13 +119,18 @@
 <ul class="navbar-nav col-md-2" dir="ltr">
   @guest
   <li class="nav-item">
-    <a class="nav-link" target="_parent" href="{{ route('register',['LocationUser' => 'null' , 'product' => 'null' ]) }}">ثبت نام</a>
+    <a class="nav-link" target="_parent" href="{{ route('register',['LocationUser' => 'null' ,
+                                                                    'Product' => 'null' ,
+                                                                    'NameProduct' => 'null' ]) }}">
+      ثبت نام</a>
      </li>
    
           @if (Route::has('register'))
           <li class="nav-item">
             <a class="nav-link" target="_parent"  rel="tooltip" title="" 
-            data-placement="bottom" href="{{route('login',['LocationUser' => 'null' , 'product' => 'null' ])}}"
+            data-placement="bottom" href="{{route('login',['LocationUser' => 'null' ,
+                                                            'Product' => 'null' ,
+                                                              'NameProduct' => 'null'  ])}}"
             > ورود
             <div class="ripple-container"></div>
           </a>
