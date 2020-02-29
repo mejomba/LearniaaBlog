@@ -77,8 +77,9 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
 
         <div class="videowrapper col-md-10 text-center">
             <video class="afterglow"  id="my-video"  width="500" height="270" 
-            data-overscale="false"  poster="{{ asset('images/Template/Poster_Academy.png')  }}"
-            src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Beginner_Tree/Video_Intro_Academy.mp4">
+            data-overscale="false"  poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}"
+            src="{{ Storage::url('Videos_Beginner_Tree/Video_Intro_Academy.mp4') }}">
+
             </video>  
             </div>   
 
