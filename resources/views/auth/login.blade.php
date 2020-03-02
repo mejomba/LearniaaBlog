@@ -17,11 +17,26 @@
     <div class="card-body px-lg-5 py-lg-5">
       
           <form class="form" method="POST" action="{{route('login')}}">
-            <input type="hidden" name="LocationUser" value="{{ $_GET['LocationUser'] }}">
-            <input type="hidden" name="Product" value="{{ $_GET['Product'] }}">
-            <input type="hidden" name="NameProduct" value="{{ $_GET['NameProduct'] }}">
-              @csrf
+           @csrf
+            
+            @if(isset($_GET['pk_product']))
+            <input type="hidden" name="pk_product" value="{{ $_GET['pk_product'] }}">
+            @else
+            <input type="hidden" name="pk_product" value="null">
+            @endif
 
+            @if(isset($_GET['title']))
+            <input type="hidden" name="title" value="{{ $_GET['title'] }}">
+            @else
+            <input type="hidden" name="title" value="null">
+            @endif
+
+            @if(isset($_GET['digital_receipt']))
+            <input type="hidden" name="digital_receipt" value="{{ $_GET['digital_receipt'] }}">
+            @else
+            <input type="hidden" name="digital_receipt" value="null">
+            @endif
+           
 
               <div class="form-group">
                     <div class="input-group input-group-alternative">
@@ -29,7 +44,8 @@
                       <img class="img-raised rounded-circle img-fluid" 
                       src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
-                      <input name="mobile" id="mobile" type="text" class="form-control" placeholder="تلفن همراه">
+                      <input name="mobile" id="mobile" type="text" class="form-control" placeholder="شماره تلفن همراه">
+                     
                     </div>
                   </div>
 
@@ -45,20 +61,11 @@
 
 
                   <div class="text-center" style="padding-top:20px">
-                    <button type="submit" class="btn btn-primary" style="width:180px">ورود</button>
-                    <a href="{{route('reset.index')}}" class="btn btn-round" style="margin-top:10px" >فراموشی رمزعبور
+                    <button type="submit" class="btn btn-primary" style="width:200px">ورود</button>
+                    <a href="{{route('reset.index')}}" class="btn btn-round" style="margin-top:10px" >فراموشی رمز عبور
                       </a> 
 
-                    <h4 style="color:#000000;margin-top:20px" class="text-center">ثبت نام کاربران جدید</h4>
-
-                    <a href="{{route('register',['LocationUser' => $_GET['LocationUser'] ,
-                                                 'Product' => $_GET['Product'] ,
-                                                 'NameProduct' => $_GET['NameProduct']  ])
-                             }}"
-
-                     class="btn btn-warning btn-round" style="border-radius:30px;width:150px" >
-                    ثبت نام
-                    </a>
+                   
 
                  
                   </div>

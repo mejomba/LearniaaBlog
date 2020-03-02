@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Profile;
-
+use App\Transaction;
 
 class RegisterController extends Controller
 {
@@ -110,10 +110,13 @@ class RegisterController extends Controller
            
 
              /* Check Register User For Learniaa Academy */
-            if( $data['LocationUser'] == "Academy_Product")
+            if( $data['digital_receipt'] != "null")
             {
-                
-                $this->redirectTo = '/product/pay/'.$data['Product'];
+                $transaction =  Transaction::where('digital_receipt', $data['digital_receipt'] )->get()->first();
+                $transaction->pk_users = $new_user->pk_users ;
+                $transaction->save();
+
+                $this->redirectTo = '/academy/show/'.$data['pk_product'] . '/'   .$data['title'];
             }
             else
             {

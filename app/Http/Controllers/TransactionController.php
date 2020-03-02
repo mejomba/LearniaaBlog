@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
+
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -64,7 +65,7 @@ class TransactionController extends Controller
                  // Get information payment & Save Database
                   $driver = $invoice->getDriver();
 
-                  $url= route('user.transaction.show');
+                  $url= route('transaction.show');
 
                   if($invoice)
                   {   
@@ -80,7 +81,7 @@ class TransactionController extends Controller
                             }
                             else
                             {
-                                $transaction->pk_users =  0000000000 ;
+                                $transaction->pk_users =  0 ;
                             }
                            
                             $transaction->price = request()->price;
@@ -133,8 +134,8 @@ class TransactionController extends Controller
             }
             else
             {
-                $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();
-
+                $transaction =  Transaction::where('digital_receipt', $_GET['Authority'] )->get()->first();
+               
             }
 
            Payment::amount( (int)$transaction->price)->transactionId($transaction->digital_receipt)->verify();
@@ -160,14 +161,29 @@ class TransactionController extends Controller
                     
                     if($transaction->type == 'خرید دوره آموزشی')
                     {
-                        /*
-                        $product = Product::find($transaction->pk_product);
-                        return redirect()->route('product.detail',
-                        ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
-                        */
-
                         if(Auth::check())
                         {
+                            $product = Product::find($transaction->pk_product);
+                            return redirect()->route('product.detail',
+                            ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+    
+                        }
+                        else
+                        {
+                            /*
+                            return redirect()->route('reset.callbacklogin',
+                            ['slug' => $transaction->pk_product ,
+                             'desc' =>  $product['title'] ,
+                             'LocationUser' => 'BankPayment' ])->with('success','برای مشاهده و دریافت دوره آموزشی  فرم ثبت نام را تکمیل نمایید');    
+                            */
+                            $product = Product::find($transaction->pk_product);
+
+                             return redirect()->route('transaction.callback',
+                             ['pk_product' => $transaction->pk_product ,
+                              'title' =>  $product['title'] ,
+                              'LocationUser' => 'BankPayment', 
+                              'digital_receipt'=> $_GET['Authority'] ]);    
+                     
 
                         }
 
@@ -178,9 +194,16 @@ class TransactionController extends Controller
            }
             catch (InvalidPaymentException $exception)
              {
-                $user =  Auth::user() ;    
-                $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();
-
+                $transaction = "";
+                 if(Auth::check())
+                 {
+                    $user =  Auth::user() ;    
+                    $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();    
+                 }
+                 else
+                 {
+                    $transaction =  Transaction::where('digital_receipt', $_GET['Authority'] )->get()->first();
+                }
                  // process extras --> save all option to array And save to $new_instance
                  $transaction->status = 'نا معتبر';
                  
@@ -243,6 +266,29 @@ class TransactionController extends Controller
     {
         //
     }
+
+    public function callback(Request $request)
+    {
+         
+       return redirect(route('transaction.showcallbackform',
+       ['pk_product' => request()->pk_product ,
+        'title' =>  request()->title ,
+        'digital_receipt'=>  request()->digital_receipt
+        ]))->with('success','برای مشاهده و دریافت دوره آموزشی  تلفن همراه را وارد نمایید');    
+
+      
+    }
+
+    public function showcallbackform(Request $request)
+    {
+       // $pk_product =  request()->pk_product ;
+       // $title =  request()->title ;
+      //  $digital_receipt = request()->digital_receipt ;
+     //   return view('auth.callbackpayment',compact('pk_product','title','digital_receipt'));
+        return view('auth.callbackpayment');
+    }
+
+    
 
 
     public function validation(Request $request)

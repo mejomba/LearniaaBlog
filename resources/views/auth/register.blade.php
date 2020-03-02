@@ -17,10 +17,27 @@
     <div class="card-body px-lg-5 py-lg-5">
 
             <form class="form" method="POST" action="{{route('register')}}">
-            <input type="hidden" name="LocationUser" value="{{ $_GET['LocationUser'] }}">
-            <input type="hidden" name="Product" value="{{ $_GET['Product'] }}">
-            <input type="hidden" name="NameProduct" value="{{ $_GET['NameProduct'] }}">
-              @csrf
+            @csrf
+
+            @if(isset($_GET['pk_product']))
+            <input type="hidden" name="pk_product" value="{{ $_GET['pk_product'] }}">
+            @else
+            <input type="hidden" name="pk_product" value="null">
+            @endif
+
+            @if(isset($_GET['title']))
+            <input type="hidden" name="title" value="{{ $_GET['title'] }}">
+            @else
+            <input type="hidden" name="title" value="null">
+            @endif
+
+            @if(isset($_GET['digital_receipt']))
+            <input type="hidden" name="digital_receipt" value="{{ $_GET['digital_receipt'] }}">
+            @else
+            <input type="hidden" name="digital_receipt" value="null">
+            @endif
+           
+              
 
               <div class="form-group">
                     <div class="input-group input-group-alternative">
@@ -28,7 +45,7 @@
                       <img class="img-raised rounded-circle img-fluid" 
                       src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
-                      <input name="name" id="name" type="text" class="form-control" placeholder="نام ">
+                      <input name="name" id="name" type="text" class="form-control" placeholder="نام و نام خانوادگی ">
                     </div>
                   </div>
 
@@ -50,7 +67,7 @@
                       <img class="img-raised rounded-circle img-fluid" 
                       src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
-                      <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور دلخواه">
+                      <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور دلخواه شما">
                     </div>
                   </div>
 
@@ -63,24 +80,23 @@
                       </div>
 
                          <select name="attract" class="form-control">
-                         <option class="" value="Instagram"  >آشنایی با لرنیا: اینستاگرام</option>
-                          <option class="" value="PhysicalAdvertise"  >آشنایی با لرنیا: تراکت،بروشور،پوستر</option>
-                          <option class="" value="ClickOnAds"  >آشنایی با لرنیا: تبلیغات کلیکی</option>
-                          <option class="" value="InviteFriends"  >آشنایی با لرنیا: معرفی دوستان شما</option>
-                          <option class="" value="Facebook"  >آشنایی با لرنیا: فیس بوک</option>
-                          <option class="" value="Twitter"  >آشنایی با لرنیا: توئیتر</option>
-                          <option class="" value="Linkden"  >آشنایی با لرنیا: لینکدین</option>
-                          <option class="" value="SMS"  >آشنایی با لرنیا: پیامک</option>
-                          <option class="" value="Telegram"  >آشنایی با لرنیا: تلگرام</option>
+                         <option class="" value="Instagram"  >راه آشنایی با لرنیا: اینستاگرام</option>
+                          <option class="" value="PhysicalAdvertise"  >راه آشنایی با لرنیا: تراکت،بروشور،پوستر</option>
+                          <option class="" value="ClickOnAds"  >راه آشنایی با لرنیا: تبلیغات کلیکی</option>
+                          <option class="" value="InviteFriends"  >راه آشنایی با لرنیا: معرفی دوستان شما</option>
+                          <option class="" value="Facebook"  >راه آشنایی با لرنیا: فیس بوک</option>
+                          <option class="" value="Twitter"  >راه آشنایی با لرنیا: توئیتر</option>
+                          <option class="" value="Linkden"  >راه آشنایی با لرنیا: لینکدین</option>
+                          <option class="" value="SMS"  >راه آشنایی با لرنیا: پیامک</option>
+                          <option class="" value="Telegram"  >راه آشنایی با لرنیا: تلگرام</option>
                           </select>
           
                     </div>
                   </div>
 
                   <div class="text-center" style="padding-top:20px">
-                    <button type="submit" class="btn btn-primary">همین حالا ثبت نام کن </button>
-                 <!--   <a href="{{route('login')}}" class="btn btn-warning btn-round">ورود 
-                      </a> -->
+                    <button type="submit" class="btn btn-primary">ثبت نام</button>
+                 
                   </div>
 
                   

@@ -134,8 +134,8 @@ class ProductController extends Controller
 
     public function pay($slug)
     {  
-        $user =  Auth::user() ;
-
+        
+        /*
         if($user == null)
         {
             return redirect(route(
@@ -144,47 +144,64 @@ class ProductController extends Controller
                                   "NameProduct" => request()->NameProduct ])
             )->with('report','  در صورت داشتن حساب کاربری ، ورود و یا برای اولین بار  ثبت نام کنید');
         }
+        */
 
-        $product = Product::where('pk_product', $slug)->first();
-        $profile = Profile::where('pk_users',$user->pk_users)->first();
-        $wallet = $profile->wallet ; 
-        $val_product = (int) $product->price ;
-        $val_wallet =  (int)$wallet  ;
-
-        if($val_wallet >= $val_product)
+        if(Auth::check())
         {
-           $new_wallet = $val_wallet - $val_product ;
-           $id = $profile->pk_profiles ;
-           $p = Profile::find($id);
-           $p->wallet = $new_wallet ;
-           $p->save();
+            $user =  Auth::user() ;
+            $product = Product::where('pk_product', $slug)->first();
+            $profile = Profile::where('pk_users',$user->pk_users)->first();
+            $wallet = $profile->wallet ; 
+            $val_product = (int) $product->price ;
+            $val_wallet =  (int)$wallet  ;
+    
+            if($val_wallet >= $val_product)
+            {
+               $new_wallet = $val_wallet - $val_product ;
+               $id = $profile->pk_profiles ;
+               $p = Profile::find($id);
+               $p->wallet = $new_wallet ;
+               $p->save();
+    
+    
+               $transaction = new Transaction();
+               $transaction->pk_users =  $user->pk_users ;
+               $transaction->price = $product->price;
+               $transaction->type = 'خرید دوره آموزشی';
+               $transaction->digital_receipt =  rand(0,1000000000) ;
+               $transaction->pk_product =  $slug ;
+               $transaction->status = "عملیات موفق";
+                // process extras --> save all option to array And save to $new_instance
+               $data_extras = array();
+               $data_extras["problem"] = 'عملیات موفق';
+               $data_extras["type"] = 'خرید ازموجودی کیف پول';
+              
+               $transaction->extras =  json_encode($data_extras,false) ; 
+    
+               $transaction->save();
+    
+               return redirect()->back()->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+             }
+             else
+             {
+                $product = Product::where('pk_product', $slug)->first();
 
-
-           $transaction = new Transaction();
-           $transaction->pk_users =  $user->pk_users ;
-           $transaction->price = $product->price;
-           $transaction->type = 'خرید دوره آموزشی';
-           $transaction->digital_receipt =  rand(0,1000000000) ;
-           $transaction->pk_product =  $slug ;
-           $transaction->status = "عملیات موفق";
-            // process extras --> save all option to array And save to $new_instance
-           $data_extras = array();
-           $data_extras["problem"] = 'عملیات موفق';
-           $data_extras["type"] = 'خرید ازموجودی کیف پول';
-          
-           $transaction->extras =  json_encode($data_extras,false) ; 
-
-           $transaction->save();
-
-
-
-           return redirect()->back()->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                return redirect()->route('transaction.store',
+                ['price' => $product->price , 'type' => 'خرید دوره آموزشی' , 'slug' => $slug ]);
+             }
 
         }
         else
         {
+            $product = Product::where('pk_product', $slug)->first();
+
+            return redirect()->route('transaction.store',
+            ['price' => $product->price , 'type' => 'خرید دوره آموزشی' , 'slug' => $slug ]);
+
+             /*   
             return redirect()->route('user.transaction.store',
              ['price' => $product->price , 'type' => 'خرید دوره آموزشی' , 'slug' => $slug ]);
+             */
         }
 
 

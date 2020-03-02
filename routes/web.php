@@ -9,6 +9,11 @@ Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
 Route::post('/product/pay/{slug}', 'ProductController@pay')->name('product.pay');
 
+Route::get('/Transaction/store', 'TransactionController@store')->name('transaction.store');
+Route::get('/Transaction/show', 'TransactionController@show')->name('transaction.show');
+Route::get('/Transaction/callback', 'TransactionController@callback')->name('transaction.callback');
+Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackform')->name('transaction.showcallbackform');
+
 Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/post', 'PostController@index')->name('post.index');
@@ -31,6 +36,11 @@ Route::post('/reset/store', 'ResetPasswordController@store')->name('reset.store'
 Route::get('/reset/show/{id}', 'ResetPasswordController@show')->name('reset.show');
 Route::get('/reset/update/{id}', 'ResetPasswordController@update')->name('reset.update');
 Route::post('/reset/delete/{id}', 'ResetPasswordController@destroy')->name('reset.delete');
+Route::post('/reset/callbackpayment', 'ResetPasswordController@callbackpayment')->name('reset.callbackpayment');
+Route::post('/reset/callbacklogin', 'ResetPasswordController@callbacklogin')->name('reset.callbacklogin');
+Route::get('/reset/showcallbackloginform', 'ResetPasswordController@showcallbackloginform')->name('reset.showcallbackloginform');
+
+
 
 Route::post('/message/store', 'MessageController@store')->name('message.store');
 Route::post('/message/newspaper', 'MessageController@newspaper')->name('message.newspaper');

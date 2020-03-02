@@ -234,6 +234,56 @@ class ResetPasswordController extends Controller
         return $validator ;
     }
 
+    public function callbackpayment(Request $request)
+    {
+        $user = User::where('mobile',request()->mobile)->first();
+
+        if($user == null)
+        {
+            return redirect(route('register',
+            ['pk_product' => request()->pk_product ,
+                'title' =>  request()->title ,
+                'digital_receipt'=>  request()->digital_receipt
+                ]))->with('success','برای مشاهده و دریافت دوره آموزشی  فرم ثبت نام  زیر را تکمیل کنید');    
+
+        }
+        else
+        {
+                    return redirect(route('login',
+            ['pk_product' => request()->pk_product ,
+                'title' =>  request()->title ,
+                'digital_receipt'=>  request()->digital_receipt 
+                ]))->with('success','برای مشاهده و دریافت دوره آموزشی  اطلاعات خود را وارد کنید');    
+
+        }
+    }
+
+
+    public function showcallbackloginform(Request $request)
+    {
+        return view('auth.callbacklogin');
+    }
+    
+
+
+    public function callbacklogin(Request $request)
+    {
+        $user = User::where('mobile',request()->mobile)->first();
+
+        if($user == null)
+        {
+            return redirect(route('register'));    
+        }
+        else
+        {
+            return redirect(route('login')); 
+
+        }
+    }
+
+
+
+
   
 
 }

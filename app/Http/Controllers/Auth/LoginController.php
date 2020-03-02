@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Session\Session;
+use App\Transaction;
 
 class LoginController extends Controller
 {
@@ -29,24 +30,56 @@ class LoginController extends Controller
     {
         if ( $user->type == "مدیر" )
         {
+            if( request()->digital_receipt  != "null")
+            {
+                $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
+                $transaction->pk_users = $user->pk_users ;
+                $transaction->save();
+
+                return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
+            }
+            else
+            {
+           
             return redirect('admin/home/index');
+            }
+
+           
         }
         elseif ( $user->type == "نویسنده")
         {
-            return redirect('admin/post/index');     
+            if( request()->digital_receipt != "null")
+            {
+                $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
+                $transaction->pk_users = $user->pk_users ;
+                $transaction->save();
+
+                return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
+            }
+            else
+            {
+           
+              return redirect('admin/post/index');  
+            }
+              
         }
         elseif ($user->type == "کاربر")
          {
-                    if( request()->LocationUser == "Academy_Product")
-                    {
-                        return redirect('/academy/show/'.request()->Product.'/'.request()->NameProduct); 
-                    }
-                    else
-                    {
-                    //  $this->redirectTo = '/';
 
-                        return redirect('/academy/detail'); 
-                    }
+                if( request()->digital_receipt  != "null")
+                {
+                    $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
+                    $transaction->pk_users = $user->pk_users ;
+                    $transaction->save();
+
+                    return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
+                }
+                else
+                {
+                //  $this->redirectTo = '/';
+
+                return redirect('/academy/detail'); 
+                }
 
                
           }
