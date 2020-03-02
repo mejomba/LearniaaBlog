@@ -7,6 +7,7 @@ use Validator;
 use App\Reset;
 use App\User;
 use App\Rules\CustomValue;
+use App\Transaction;
 use Hash;
 use SoapClient;
 
@@ -237,6 +238,10 @@ class ResetPasswordController extends Controller
     public function callbackpayment(Request $request)
     {
         $user = User::where('mobile',request()->mobile)->first();
+
+        $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
+        $transaction->extras = request()->mobile ;
+        $transaction->save();
 
         if($user == null)
         {

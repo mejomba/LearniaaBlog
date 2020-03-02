@@ -4,12 +4,12 @@
 
      <div class="row">
      
-              <div class="col-md-8 col-12" >
+              <div class="col-md-7 col-12" >
               <div class="row">
 
               <a class="nav-link col-md-2 col-3" href="{{route('academy.index')}}"   rel="tooltip" title="" data-placement="bottom">
             <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-            آکادمی آموزش   
+            آکادمی    
             </a>
 
 <!--
@@ -40,6 +40,19 @@
                 
       </div>
 
+      <div class="col-md-1 col-12 text-center" >
+      <div class="row">
+          <div class="col-md-12 col-12" style="font-size:14px" >
+          <img class="img-raised rounded-circle img-fluid" 
+          src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
+          تماس با ما:
+          </div>
+          <div class="col-md-12 col-12" >
+          09901918193
+          </div>
+         
+      </div>
+      </div>
 
       
 

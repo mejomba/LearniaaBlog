@@ -202,12 +202,8 @@
                                         @csrf
                                         <input type="hidden" name="LocationUser" value="Academy_Product">
                                         <input type="hidden" name="NameProduct" value="{{$product['title']}}">
-                                        <button 
-                                        @if(Auth::check())
-                                                            class="btn btn-warning" 
-                                                            @else
-                                                            class="btn btn-round btn-1 btn-title" 
-                                        @endif                    
+                                        <button   class="btn btn-warning" 
+                                                        
                                             type="submit" style="border-radius:10px" >
                                              <h5 style="margin-top:5px;font-size:16px">خرید دوره : 
                                               @php 
