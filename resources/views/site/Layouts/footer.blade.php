@@ -54,7 +54,28 @@
       </div>
       </div>
 
-      
+      <div class="col-md-2 col-12 text-center">
+
+<div class="row">
+<div class="col-md-3 col-4">
+<a href="https://t.me/learniaa"><img src="{{ asset('images/Template/telegram.png') }}"
+  alt="Thumbnail Image" height="38px" width="38px">
+    </div>
+     <div class="col-md-3 col-4"><a href="https://www.instagram.com/learniaa/">
+     <img src="{{ asset('images/Template/instagram.png') }}" 
+     alt="Thumbnail Image" height="38px" width="38px">
+ </a>
+ </div>
+    
+     <div class="col-md-3 col-4">
+<img src="{{ asset('images/Template/linkedin.png') }}" alt="Thumbnail Image" 
+height="38px" width="38px">
+ </div>
+    
+</div>
+</div>
+
+
 
       <div class="col-md-2 col-12 text-center" style="font-size:10px">
 
@@ -64,9 +85,16 @@
 
                       <div class="col-md-12 col-8" id="zarinpal">
                       <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
-                      <img  style="width:150px !important" src="{{ asset('images/Template/Banks.jpg') }}"
+                 
+                 <!--     <img  style="width:150px !important" src="{{ asset('images/Template/Banks.jpg') }}"
                 alt="Thumbnail Image" height="auto"  >
-                      </div>
+                      </div> -->
+
+                      <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:70px !important' 
+                      onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
+                       src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
+
+                    
 
                 </div>
                   
@@ -75,26 +103,8 @@
 
      
 
- <div class="col-md-2 col-12 text-center">
 
-    <div class="row">
-    <div class="col-md-3 col-4">
-    <a href="https://t.me/learniaa"><img src="{{ asset('images/Template/telegram.png') }}"
-      alt="Thumbnail Image" height="38px" width="38px">
-        </div>
-         <div class="col-md-3 col-4"><a href="https://www.instagram.com/learniaa/">
-         <img src="{{ asset('images/Template/instagram.png') }}" 
-         alt="Thumbnail Image" height="38px" width="38px">
-     </a>
-     </div>
-        
-         <div class="col-md-3 col-4">
-    <img src="{{ asset('images/Template/linkedin.png') }}" alt="Thumbnail Image" 
-    height="38px" width="38px">
-     </div>
-        
-    </div>
-   </div>
+
    </div> 
     </div>
 

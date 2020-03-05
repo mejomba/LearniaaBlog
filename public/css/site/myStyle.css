@@ -250,7 +250,7 @@ ul.timeline > li:before {
   margin:25px 0 0;
   background-attachment:scroll,scroll;
   background-clip:border-box,border-box;background-color:rgba(0,0,0,0);
-  background-image:url("http://127.0.0.1:8000/images/template/pattern.png"),linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);
+  background-image:url("https://learniaa.com/images/template/pattern.png"),linear-gradient(to right top, #46d2ad, #3cceb0, #32cbb3, #29c7b6, #20c3b8);
   background-position:center center,0 0;
   background-repeat:repeat,no-repeat}
 
