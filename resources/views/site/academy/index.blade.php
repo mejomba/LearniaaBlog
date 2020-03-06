@@ -13,10 +13,15 @@
  style="float:right">
 
  <div class="col-md-12 text-center">
+<!--
 <a href="#" class="btn btn-warning btn-round" style="margin-top:20px">
  <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
 src="{{  Storage::url('tree/'.'downFlash.png') }}"
-width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a> 
+width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
+-->
+<a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round" style="line-height: 2;font-size:16px;margin-top:20px">
+ مشاهده نقشه راه مبتدیان </a> 
+
 </div>
 
 @endsection
