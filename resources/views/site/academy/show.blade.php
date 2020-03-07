@@ -297,7 +297,7 @@
         <div class="col-md-12">
 
 
-                <div class="container-fluid"  style="margin-top:40px;border-bottom:2px solid #20c3b8;text-align:justify">
+                <div class="container-fluid"  style="margin-top:10px;border-bottom:2px solid #20c3b8;text-align:justify">
                 <h3>درباره دوره</h3>
                 @php echo htmlspecialchars_decode($product['desc']) ; @endphp 
                 </div>
