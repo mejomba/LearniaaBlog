@@ -57,7 +57,7 @@
  </a>
  </div>
     
-     <div class="col-md-3 col-4"><a href="www.linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4"> 
+     <div class="col-md-3 col-4"><a href="https://linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4"> 
 <img src="{{ asset('images/Template/linkedin.png') }}" alt="Thumbnail Image" 
 height="38px" width="38px">
 </a>
