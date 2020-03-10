@@ -234,9 +234,18 @@ class TransactionController extends Controller
                         }
                         else
                         {
-                            $product = Product::find($transaction->pk_product);
-                            return redirect()->route('product.detail',
-                            ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                            $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                            $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
+                            if( $pkProduct_BeginnerTree === $transaction->pk_product )
+                            {
+                                return redirect()->route('academy.detail')->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                            }
+                            else
+                            {
+                                $product = Product::find($transaction->pk_product);
+                                return redirect()->route('product.detail',
+                                ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                             }    
                         }
                     }
 
