@@ -80,7 +80,59 @@
             <div class="row">
             <div class="col-md-3">
             </div>
-            <div class="col-md-6" style="padding-top:30px;text-align: justify;">
+            <div class="col-md-6" style="padding-top:30px;">
+
+            <div style="border-bottom:2px solid #20c3b8;margin-bottom:5px;margin-top:5px">
+            <form action="{{route('product.pay', $pkProduct_BeginnerTree )}}" method="POST">
+            <div class="row">
+            @csrf
+                 <input type="hidden" name="LocationUser" value="Academy_Product">
+                 <input type="hidden" name="NameProduct" value="All_Cource">
+
+            <div class="col-md-5 col-12 text-center">
+              <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:40% !important;margin-bottom:5px"
+                                          src="{{  Storage::url('tree/'.'Profile_AllCource_BeginnerTree.png') }}"
+                                          width="70px" height="70px" alt="Profile_AllCource_BeginnerTree" >
+                  <span style="font-size:16px;"> پکیج کامل آموزش کامپیوتر </span>
+                  </div>
+                  <div class="col-md-3 col-12 text-center">  
+                <img class="img-fluid  rounded-circle " style="border-radius:10% !important;margin-bottom:5px;margin-top:10px"
+                                        src="{{  Storage::url('tree/'.'price_AllCource_BeginnerTree.svg') }}"
+                                        width="200px" height="200px" alt="price_AllCource_BeginnerTree" >
+                                        </div>
+                  @if(Auth::check()) 
+                  @if($payment_status == "Payed" )                  
+                        <div class="col-md-3 col-12 text-center">                           
+                            <button class="btn btn-warning" disabled      
+                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:5px" >
+                            <span style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
+                        </button>
+                      </div>
+                      @else
+                      <div class="col-md-3 col-12 text-center">                           
+                            <button class="btn btn-warning "     
+                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:5px" >
+                            <span style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
+                        </button>
+                      </div>
+                      @endif
+                @else 
+                <div class="col-md-3 col-12 text-center">                           
+                            <button class="btn btn-warning "     
+                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:5px" >
+                            <span style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
+                        </button>
+                      </div>
+                  @endif
+                      </div>
+                  </form>  
+                 
+
+
+               
+              </div>
+
+
             <div class="row" style="font-size:15px">
 
             <p style="font-size:18px;line-height: 26pt;">  </p>
@@ -88,7 +140,11 @@
 
                     <ul class="timeline">
                     @foreach($nodes as $node)
+                    
                           <li>
+                          <div class="row">
+                          <div class="col-md-6 col-12">
+
                             <span class="text-muted float-right" style="display:contents" > 
                             <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"> 
                              <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
@@ -100,7 +156,39 @@
                                 <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"> 
                                   {{$node['name']}}
                                 </a> 
+                          </div>  
+
+                          <div class="col-md-3 col-12">
+                                <img class="img-fluid  rounded-circle " style="border-radius:10% !important;margin-bottom:5px"
+                                        src="{{  Storage::url('tree/'.'price_Product_BeginnerTree_' . $node['pk_product'] .'.svg') }}"
+                                        width="100px" height="100px" alt="price_AllCource_BeginnerTree" >
+                          </div> 
+
+                          <div class="col-md-3 col-12">
+                          @if(Auth::check()) 
+                              @if($payment_status == "Payed" )  
+                              <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"
+                                      class="btn btn-warning btn-round" 
+                                      style="font-size:14px;background-color:#30D533;border-color:#30D533;">
+                                مشاهده </a>  
+                                @else
+                                <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"
+                                      class="btn btn-warning btn-round" 
+                                      style="font-size:14px;">
+                                مشاهده </a>  
+                                @endif 
+                        @else
+                        <a href="{{ route('academy.show', ['id' => $node['pk_product'] , 'desc' =>  $node['name'] ]) }}"
+                                      class="btn btn-warning btn-round" 
+                                      style="font-size:14px;">
+                                مشاهده </a>  
+
+                           @endif
+                          </div> 
+                          </div>
+
                                 </li>
+                                
                               @endforeach      
                           </ul>
 

@@ -179,19 +179,15 @@
 
       </div>
 
-
-
-
-
-                    <!-- Payment -->
+      <!-- Payment -->
 
                     @if($payment_status == "Payed" || $product->price == 0 )
 
-                    <div class="col-md-12 text-center" style="padding-top:35px">
+                    <div class="col-md-12 text-center" style="padding-top:35px;">
                     <a style="padding-bottom : 5px" _target="blank" 
                     href="{{ $product['download_link'] }}"  
-                    class="btn btn-primary btn-video btnblogPost">دریافت فایل</a>
-
+                    class="btn btn-primary btn-video btnblogPost">دانلود آموزش</a>
+                  
                     </div>
                     @else
                                       <div class="col-md-12 text-center" style="padding-top:35px">
@@ -206,6 +202,19 @@
                                                   
                                                                   </button>
                                                                   </form>  
+<!-- All Cource -->
+                                <form style="margin-top:10px" action="{{route('product.pay', $pkProduct_BeginnerTree )}}" method="POST">
+                                              @csrf
+                                              <input type="hidden" name="LocationUser" value="Academy_Product">
+                                              <input type="hidden" name="NameProduct" value="AllCource">
+                                              <button   class="btn btn-warning" 
+                                                              
+                                                  type="submit" style="border-radius:10px;background-color:#F4FF00;border-color:#F4FF00;" >
+                                                  <h5 style="margin-top:5px;font-size:16px;color: #000000;line-height:1;">خرید تمام دوره ها </h5>
+                                                  
+                                                                  </button>
+                                                                  </form>  
+
                                                 </div>
                                 @endif               
 

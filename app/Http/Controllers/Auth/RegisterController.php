@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Profile;
 use App\Transaction;
+use App\Product;
 
 class RegisterController extends Controller
 {
@@ -116,7 +117,17 @@ class RegisterController extends Controller
                 $transaction->pk_users = $new_user->pk_users ;
                 $transaction->save();
 
+                $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
+                if( $pkProduct_BeginnerTree == $transaction->pk_product )
+                {
+                    $this->redirectTo = '/academy/detail/' ;
+                }
+                else
+                {
+
                 $this->redirectTo = '/academy/show/'.$data['pk_product'] . '/'   .$data['title'];
+                }
             }
             else
             {

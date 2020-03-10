@@ -87,13 +87,23 @@ class ProductController extends Controller
             {
               $payment_status ="Payed";
             }
-           // dd($payment_checks);
+            else
+            {
+                $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
+                $payment_checks = Transaction::where('pk_product',$pkProduct_BeginnerTree)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
+                if($payment_checks)
+                {
+                  $payment_status ="Payed";
+                }
+            }
+          
 
         }
         else
-        {
-            $payment_status ="No Pay";
-        }
+        {    
+          $payment_status ="No Pay";
+         }
 
         return view('site.product.detail',compact('product','recent_Products','behavior_product','payment_status','meta_keywords'));
     }

@@ -163,10 +163,20 @@ class TransactionController extends Controller
                     {
                         if(Auth::check())
                         {
-                            $product = Product::find($transaction->pk_product);
-                            return redirect()->route('product.detail',
-                            ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
-    
+                            $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                            $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
+                            if( $pkProduct_BeginnerTree === $transaction->pk_product )
+                            {
+                                return redirect()->route('academy.detail')->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                            }
+                            else
+                            {
+                                $product = Product::find($transaction->pk_product);
+                                return redirect()->route('product.detail',
+                                ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+        
+                            }
+                           
                         }
                         else
                         {
