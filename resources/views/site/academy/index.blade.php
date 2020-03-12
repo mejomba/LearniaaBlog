@@ -20,7 +20,7 @@ src="{{  Storage::url('tree/'.'downFlash.png') }}"
 width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
 -->
 <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round" style="line-height: 2;font-size:16px;margin-top:20px">
- مشاهده نقشه راه مبتدیان </a> 
+ مشاهده آموزش جامع کامپیوتر </a> 
 
 </div>
 
@@ -50,6 +50,7 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
 </button>
 
 
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 <style>
 .videowrapper{
   width: 800px;
@@ -67,7 +68,7 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
  <div class="videowrapper col-md-10 text-center">
 
  <a href="{{ route('academy.detail')}}" class="btn btn-warning btn-round" style="line-height: 2;font-size:16px;">
- مشاهده نقشه راه مبتدیان </a>  
+ مشاهده آموزش جامع کامپیوتر </a>  
  
  </div> 
 
@@ -83,7 +84,7 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
         <div class="videowrapper col-md-10 text-center">
             <video class="afterglow"  id="my-video"  width="500" height="270" 
             data-overscale="false"  poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}"
-            src="{{ Storage::url('Videos_Beginner_Tree/Video_Intro_Academy.mp4') }}">
+            src="{{ Storage::url('Videos_Beginner_Tree/Video_IntroAcademy.mp4') }}">
 
             </video>  
             </div>   

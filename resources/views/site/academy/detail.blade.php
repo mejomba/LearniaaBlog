@@ -42,12 +42,10 @@
                     </div>
 
                     <div class="col-md-6">
-
                     <img class="img-fluid rounded-circle shadow-lg" style="border-radius:20% !important;margin-top:20px;"
                     src="{{ asset('images/Template/RoadMap_BeginnerTree.jpg') }}"
                     width="900px" height="400px" alt="Learniaa" >
 
-                    
                     </div>
                             
                    <!-- 
@@ -95,23 +93,26 @@
                                           width="70px" height="70px" alt="Profile_AllCource_BeginnerTree" >
                   <span style="font-size:16px;"> پکیج کامل آموزش کامپیوتر </span>
                   </div>
-                  <div class="col-md-3 col-12 text-center">  
-                <img class="img-fluid  rounded-circle " style="border-radius:10% !important;margin-bottom:5px;margin-top:10px"
+                  <div class="col-md-3 col-12 text-center" style="margin-bottom:5px;margin-top:20px">  
+                                   <!--   <img class="img-fluid  rounded-circle " style="border-radius:10% !important;margin-bottom:5px;margin-top:10px"
                                         src="{{  Storage::url('tree/'.'price_AllCource_BeginnerTree.svg') }}"
                                         width="200px" height="200px" alt="price_AllCource_BeginnerTree" >
+                                        -->
+                            <span style="color:green" >  99000 </span>
+                            <span style="color:green">   تومان </span>
                                         </div>
                   @if(Auth::check()) 
                   @if($payment_status == "Payed" )                  
                         <div class="col-md-3 col-12 text-center">                           
                             <button class="btn btn-warning" disabled      
-                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:5px" >
+                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px" >
                             <span style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
                         </button>
                       </div>
                       @else
                       <div class="col-md-3 col-12 text-center">                           
                             <button class="btn btn-warning "     
-                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:5px" >
+                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px" >
                             <span style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
                         </button>
                       </div>
@@ -119,7 +120,7 @@
                 @else 
                 <div class="col-md-3 col-12 text-center">                           
                             <button class="btn btn-warning "     
-                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:5px" >
+                            type="submit" style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px" >
                             <span style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
                         </button>
                       </div>
@@ -158,11 +159,17 @@
                                 </a> 
                           </div>  
 
+                          <div class="col-md-3 col-12" style="margin-top:13px">
+                            <span style="color:green" >  {{$node->product['price']}} </span>
+                            <span style="color:green">   تومان </span>
+                          </div>
+                          <!--
                           <div class="col-md-3 col-12">
                                 <img class="img-fluid  rounded-circle " style="border-radius:10% !important;margin-bottom:5px"
                                         src="{{  Storage::url('tree/'.'price_Product_BeginnerTree_' . $node['pk_product'] .'.svg') }}"
                                         width="100px" height="100px" alt="price_AllCource_BeginnerTree" >
                           </div> 
+                          -->
 
                           <div class="col-md-3 col-12">
                           @if(Auth::check()) 

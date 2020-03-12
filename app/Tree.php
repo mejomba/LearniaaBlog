@@ -21,4 +21,10 @@ class Tree extends Model
                  ] ;
     }
 
+    public function product()
+    {
+
+     return $this->hasOne('App\Product', 'pk_product', 'pk_product');
+    }
+
 }
