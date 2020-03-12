@@ -26,7 +26,7 @@
 -->
 
             <button class="btn btn-round btnblogPost btn-title" style="border-radius:10px" >
-<h2 style="color:#FFFFFF" class="text-center"> نقشه راه کامپیوتر برای مبتدیان</h2>  
+<h2 style="color:#FFFFFF" class="text-center"> مسیر گام به گام آموزش جامع کامپیوتر </h2>  
 <h4 style="color:#F9F860" class="text-center"> !! روی آموزش ها بزن و ببین !!</h4>  
 </button>            
 

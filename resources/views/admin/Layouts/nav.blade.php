@@ -41,7 +41,7 @@
 </li>
 
 
-
+<!--
 <li class="nav-item">
   <a class="nav-link" href="{{route('product.index')}}"   rel="tooltip" title="" data-placement="bottom"
   data-original-title="به زودی">
@@ -49,7 +49,7 @@
   لرنیا کوئیک   
   </a>
 </li>
-
+-->
 
 <li class="nav-item">
   <a class="nav-link"  href="{{route('post.index')}}" rel="tooltip" title="" data-placement="bottom"
