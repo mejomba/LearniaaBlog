@@ -17,9 +17,9 @@
             @csrf
             <input name="name" id="name" value="ناشناس" type="hidden" class="form-control"> 
             <input name="message" id="message" value="درخواست خبرنامه" type="hidden" class="form-control">
-                         <div class="form-group focused" style="background: white;height:50px;max-height:50px">
-                        <div class="input-group input-group-alternative" >
-                        <div class="input-group-prepend">
+                         <div class="form-group focused" style="background:white;height:50px;max-height:50px">
+                        <div class="input-group input-group-alternative" style="max-height:50px" >
+                        <div class="input-group-prepend" style="max-height:50px">
                         <img class="img-raised  img-fluid" 
                         src="{{ asset('images/Template/user_email.svg')}}" 
                         alt="Thumbnail Image" height="40px" width="40px">
