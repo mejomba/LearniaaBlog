@@ -17,7 +17,7 @@
  </h1>
 -->
 <button class="btn btn-round btnblogPost btn-title" style="border-radius:10px" >
-<h2 style="color:#FFFFFF" class="text-center"> مسیر گام به گام آموزش جامع کامپیوتر </h2>  
+<h4 style="color:#FFFFFF" class="text-center"> مسیر گام به گام آموزش جامع کامپیوتر </h4>  
 <h4 style="color:#F9F860" class="text-center"> !! روی آموزش ها بزن و ببین !!</h4>  
 </button>            
              <!-- Text -->
@@ -25,11 +25,23 @@
               <div class="row text-center">
                     <div class="col-md-3">
                     </div>
+                    <!--
                     <div class="col-md-6">
                     <img class="img-fluid rounded-circle shadow-lg" style="border-radius:20% !important;margin-top:20px;"
                     src="{{ asset('images/Template/RoadMap_BeginnerTree.jpg') }}"
                     width="900px" height="400px" alt="Learniaa" >
                     </div>          
+                    -->
+                    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+                    <style>.videowrapper{width: 800px;position:relative;height: auto;}</style>
+                    <div class="videowrapper col-md-6 text-center" style="margin-top:10px">
+                    <video class="afterglow"  id="my-video"  width="500" height="270" 
+                    data-overscale="false"  poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}"
+                    src="{{ Storage::url('Videos_Beginner_Tree/Video_IntroAcademy.mp4') }}">
+                    </video>  
+                    </div>   
+
+
                    <!-- 
                     <div class="col-md-3">
                     <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px"

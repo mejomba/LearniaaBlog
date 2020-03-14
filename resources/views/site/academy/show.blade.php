@@ -188,31 +188,15 @@
                         <div class="row" style="padding-top: 9px;">
                         {{$product->learner['job']}}
                         </div>
-                    </div>          
-            </div>
-            <div class="row" >
-            <div class="col-md-1">
-                      </div>            
-                      <div class="col-md-9 text-center" style="font-size:15px">
+                    </div>  
+                    <div class="col-md-12 text-center" style="font-size:15px">
                       <div  class="bordercardinfoLearner aboutAuthor  wi-100 flex-row jus-between al-start">
                       <div class="cardinfoLearner">درباره مدرس</div>
                       <p style="text-align:justify">
                       {{$product->learner['desc']}}
                       </p>
                       </div>                
-                    </div>            
-                    <div class="col-md-1">
-                  </div>
-            </div>
-            <div class="row" style="margin-top:20px">
-      <div class="col-md-1">
-                </div>   
-                <div class="col-md-10 text-center" style="font-size:18px;">
-                <p style="text-align:justify">      
-                </p>
-              </div>     
-              <div class="col-md-1">
-            </div>
+                    </div> 
       </div>
  </div>
       <!-- Section Learner -->
@@ -222,7 +206,7 @@
   <!-- Samte Chap -->
     <!-- post meta section -->
         <div class="row" >
-        <div class="col-md-12">
+        <div class="col-md-8">
         <div class="container-fluid"  style="margin-top:10px;border-bottom:2px solid #20c3b8;text-align:justify">
                 <h3>درباره دوره</h3>
                 @php echo htmlspecialchars_decode($product['desc']) ; @endphp 
