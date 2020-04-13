@@ -165,6 +165,7 @@
                    <button   class="btn btn-warning"             
                    type="submit" style="border-radius:10px;background-color:#F4FF00;border-color:#F4FF00;" >
                    <h5 style="margin-top:5px;font-size:16px;color: #000000;line-height:1;">خرید تمام دوره ها </h5>
+                   
                    </button>
                    </form>  
               </div>

@@ -26,7 +26,7 @@
                     <div class="col-md-3">
                     </div>
                     <!--
-                    <div class="col-md-6">
+                  <div class="col-md-6">
                     <img class="img-fluid rounded-circle shadow-lg" style="border-radius:20% !important;margin-top:20px;"
                     src="{{ asset('images/Template/RoadMap_BeginnerTree.jpg') }}"
                     width="900px" height="400px" alt="Learniaa" >
