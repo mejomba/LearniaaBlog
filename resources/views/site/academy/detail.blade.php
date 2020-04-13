@@ -32,6 +32,7 @@
                     width="900px" height="400px" alt="Learniaa" >
                     </div>          
                     -->
+                     <!--
                     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
                     <style>.videowrapper{width: 800px;position:relative;height: auto;}</style>
                     <div class="videowrapper col-md-6 text-center" style="margin-top:10px">
@@ -40,7 +41,7 @@
                     src="{{ Storage::url('Videos_Beginner_Tree/Video_IntroAcademy.mp4') }}">
                     </video>  
                     </div>   
-
+                    -->
 
                    <!-- 
                     <div class="col-md-3">
