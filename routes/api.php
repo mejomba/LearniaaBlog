@@ -21,6 +21,7 @@ Route::get('postsByCategory/{categoryOfPage}', 'ApiController@postsByCategory');
 
 Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.category.store');
 
-Route::post('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
+Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
 
+Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
 
