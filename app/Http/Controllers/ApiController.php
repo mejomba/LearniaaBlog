@@ -19,7 +19,7 @@ class ApiController extends Controller
 
     public function TelegramSetPublishPost(Request $request)
     {
-        $post = Post::find(request()->id);
+        $post = Post::find($_POST['id']);
         $post->status = "انتشار" ;
         $post->save();
         return response()->json('Successfully Update');
