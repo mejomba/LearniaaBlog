@@ -59,7 +59,7 @@ class DiscountController extends Controller
             $data_owners = json_encode($owners,false); 
             $discount->owners = $data_owners ;
     
-    
+            
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','بن تخفیف با موفقیت ایجاد شد');

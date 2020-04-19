@@ -29,24 +29,19 @@
         @csrf
 
      <div class="row">   
-
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
+                      <div class="input-group-prepend">  
                       </div>
                       <input class="form-control" name="serial" placeholder="سریال کد" type="text">
-                    </div>
-                  </div>
-
+               </div>
+          </div>
         </div>
 
+
+
         <div class="col-md-4">
-
-
-          
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
