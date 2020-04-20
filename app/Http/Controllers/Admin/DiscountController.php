@@ -53,7 +53,6 @@ class DiscountController extends Controller
         else
         {  
             $discount = new Discount();
-<<<<<<< HEAD
             $discount->codetakhfif = request()->codetakhfif ;
             $discount->limit = request()->limit ;
             $discount->Engheza =  request()->Engheza;
@@ -61,15 +60,6 @@ class DiscountController extends Controller
             $discount->persent =  request()->persent ;
             $discount->maxpersent =  request()->maxpersent ;
 
-=======
-            $discount->serial = request()->serial ;
-            $discount->status = request()->status ;
-            $owners =  explode("-",request()->owners);
-            $data_owners = json_encode($owners,false); 
-            $discount->owners = $data_owners ;
-    
-            
->>>>>>> aaeec3903c3b298dd1850bd8b8f809a58ac17dc9
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
