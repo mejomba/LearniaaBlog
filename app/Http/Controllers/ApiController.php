@@ -11,6 +11,20 @@ use App\User;
 
 class ApiController extends Controller
 {
+    public function TelegramGetListDraftPost()
+    {
+        $results = Post::where('status','پیش نویس')->select('pk_post', 'title','status')->get();
+        return $results ;
+    }
+
+    public function TelegramSetPublishPost(Request $request)
+    {
+        $post = Post::find($_POST['id']);
+        $post->status = "انتشار" ;
+        $post->save();
+        return response()->json('Successfully Update');
+    }
+
     public function index()
     {
          $results = Post::where('status','انتشار')->

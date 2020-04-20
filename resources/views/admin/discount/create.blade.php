@@ -29,24 +29,26 @@
         @csrf
 
      <div class="row">   
-
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
+                      <div class="input-group-prepend">  
                       </div>
+<<<<<<< HEAD
                       <input class="form-control" name="codetakhfif" placeholder="کد تخفیف" type="text">
                     </div>
                   </div>
 
+=======
+                      <input class="form-control" name="serial" placeholder="سریال کد" type="text">
+               </div>
+          </div>
+>>>>>>> aaeec3903c3b298dd1850bd8b8f809a58ac17dc9
         </div>
 
+
+
         <div class="col-md-4">
-
-
-          
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
