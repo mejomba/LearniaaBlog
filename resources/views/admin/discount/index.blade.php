@@ -49,17 +49,25 @@
                           {{ $discount['pk_discount'] }} 
                           </td>
                           <td>
-                          {{ $discount['serial'] }} 
+                          {{ $discount['codetakhfif'] }} 
                           </td>
 
                           <td>
-                          {{ $discount['owners'] }} 
+                          {{ $discount['Engheza'] }} 
                           </td>
 
                           <td>
-                          {{ $discount['status'] }} 
+                          {{ $discount['minimom'] }} 
                           </td>
 
+                          <td>
+                          {{ $discount['persent'] }} 
+                          </td>
+                          
+                          <td>
+                          {{ $discount['maxpersent'] }} 
+                          </td>
+                      
                      
                           <td>
 

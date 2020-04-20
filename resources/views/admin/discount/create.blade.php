@@ -29,35 +29,86 @@
         @csrf
 
      <div class="row">   
-
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
+                      <div class="input-group-prepend">  
                       </div>
+<<<<<<< HEAD
+                      <input class="form-control" name="codetakhfif" placeholder="کد تخفیف" type="text">
+                    </div>
+                  </div>
+
+=======
                       <input class="form-control" name="serial" placeholder="سریال کد" type="text">
-                    </div>
-                  </div>
-
+               </div>
+          </div>
+>>>>>>> aaeec3903c3b298dd1850bd8b8f809a58ac17dc9
         </div>
 
+
+
         <div class="col-md-4">
-
-
-          
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input name="owners" class="form-control" placeholder="مالکین" type="text">
+                      <input name="Engheza" class="form-control" placeholder="تاریخ انقضا" type="text">
                     </div>
                   </div>
 
         </div>
 
-          <!-- Select Box -->
+  <div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="minimom" class="form-control" placeholder="حداقل مبلغ خرید" type="text">
+            </div>
+          </div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="persent" class="form-control" placeholder=" درصد تخفیف " type="text">
+            </div>
+          </div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="maxpersent" class="form-control" placeholder=" حداکثر میزان تخفیف " type="text">
+            </div>
+          </div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="limit" class="form-control" placeholder=" محدودیت در تعداد استفاده " type="text">
+            </div>
+          </div>
+
+</div>
+
+          <!-- Select Box 
           <div class="col-md-4">
         <div class="row">
 
@@ -82,7 +133,7 @@
         </div>
         </div>
          <!-- Select Box -->
-
+  
     </div>
 
                 

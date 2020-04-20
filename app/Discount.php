@@ -13,10 +13,12 @@ class Discount extends Model
     public function GetListAllNameColumns_ForTable()
    {
       return  [ 'pk_discount' => 'کلید بن تخفیف',
-                'serial' => 'سریال کد ',
-                'owners'=> 'مالکین',
-                'status' => 'وضعیت',
-               
+                'codetakhfif' => 'کد تخفیف ',
+                'Engheza' => 'تاریخ انقضای کد تخفیف',
+                'minimom' => 'حداقل مبلغ خرید',
+                'persent' => 'درصد کد تخفیف',
+                'maxpersent' => 'سقف مبلغ کد تخفیف',
+
                 ] ;
    }
 }
