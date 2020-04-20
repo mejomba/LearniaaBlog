@@ -21,5 +21,7 @@ Route::get('postsByCategory/{categoryOfPage}', 'ApiController@postsByCategory');
 
 Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.category.store');
 
-
+//Route::get('/mail', 'SendMailController@index');
+Route::post('Telegram/GetList', 'TelegramController@index');
+Route::post('Telegram/set/{id}', 'TelegramController@store');
 

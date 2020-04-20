@@ -41,9 +41,9 @@ class ApiController extends Controller
 
                 if($category->save())
                 {
-                    $response = [
+                    $response = [ 
                         'success' => true,
-                        'data'    => '',
+                        'data'    =>  $category ,
                         'message' => 'success',
                      ];
 
@@ -57,10 +57,17 @@ class ApiController extends Controller
                         'message' => 'Error Insert & Database',
                      ];
 
-                     return $response;
+                     return json_encode($response) ;
                 }
 
     }
        
+ /*  mrREZA   */   
+ public function FunctionName()
+ {
+     # code...
+ }
+
+ /*  mrREZA   */   
 
 }
