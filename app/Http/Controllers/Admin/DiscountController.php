@@ -53,16 +53,16 @@ class DiscountController extends Controller
         else
         {  
             $discount = new Discount();
-            $discount->serial = request()->serial ;
-            $discount->status = request()->status ;
-            $owners =  explode("-",request()->owners);
-            $data_owners = json_encode($owners,false); 
-            $discount->owners = $data_owners ;
-    
-    
+            $discount->codetakhfif = request()->codetakhfif ;
+            $discount->limit = request()->limit ;
+            $discount->Engheza =  request()->Engheza;
+            $discount->minimom = request()->minimom ; 
+            $discount->persent =  request()->persent ;
+            $discount->maxpersent =  request()->maxpersent ;
+
             if($discount->save())
             {
-                    return redirect(route('admin.discount.index'))->with('success','بن تخفیف با موفقیت ایجاد شد');
+                    return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
             }
             else
             {
@@ -159,21 +159,38 @@ class DiscountController extends Controller
     {
 
         $rules =  [
-                    'serial' => 'required|String',  
-                    'status' => 'required|String', 
-                    'owners' => 'required|String', 
-               
+                    'codetakhfif' => 'required|String|min:5|max:5',  
+                    'limit' => 'required|String', 
+                    'Engheza' => 'required|String', 
+                    'minimom' => 'required|String', 
+                    'persent' => 'required|String', 
+                    'maxpersent' => 'required|String', 
+
+                    
                  ];
 
     $messages = [
-                'serial.required' => 'سریال کد وارد نشده است',
-                'serial.String' => 'سریال کد صحیح وارد نشده است',
+                'serial.required' => 'کد تخفیف وارد نشده است',
+                'serial.String' => ' کد صحیح وارد نشده است',
+                'serial.min' => 'کد تخفیف وارد شده کمتر از حد مجاز است',
+                'serial.max' => 'کد تخفیف وارد شده بیش از حد مجاز است است',
 
-                'status.required' => 'وضعیت  وارد نشده است',
-                'status.String' => 'وضعیت  صحیح وارد نشده است',
+                'limit.required' => 'محدودیت در تعداد استفاده وارد نشده است',
+                'limit.String' => 'محدودیت در تعداد استفاده  صحیح وارد نشده است',
 
-                'owners.required' => 'مالکین  وارد نشده است',
-                'owners.String' => 'مالکین  صحیح وارد نشده است',
+                'Engheza.required' => 'تاریخ انقضا وارد نشده است',
+                'Engheza.String' => 'تاریخ انقضا صحیح وارد نشده است',
+
+                'minimom.required' => 'حداقل مبلغ خرید وارد نشده است',
+                'minimom.String' => 'حداقل مبلغ خرید  صحیح وارد نشده است',
+
+                'persent.required' => 'درصد تخفیف  وارد نشده است',
+                'persent.String' => 'درصد تخفیف  صحیح وارد نشده است',
+
+                'maxpersent.required' => 'حداکثر میزان تخفیف وارد نشده است',
+                'maxpersent.String' => 'حداکثر میزان تخفیف  صحیح وارد نشده است',
+
+
 
 
                 ];
