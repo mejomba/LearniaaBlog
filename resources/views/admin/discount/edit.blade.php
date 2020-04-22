@@ -28,16 +28,39 @@
         @csrf
 
     
-        <div class="row">   
+        <div class="row">  
 
-<div class="col-md-4">
+
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="discount_code" class="form-control" value="{{ $discount['discount_code'] }}" placeholder="  کد تخفیف" type="text">
+                    </div>
+                  </div>
+
+        </div>
+
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input name="date_Expire" class="form-control" value="{{ $discount['date_Expire'] }}" placeholder="تاریخ انقضا" type="text">
+                    </div>
+                  </div>
+
+        </div>
+
+
+        <div class="col-md-4">
 
 <div class="form-group">
             <div class="input-group input-group-alternative">
               <div class="input-group-prepend">
-                
               </div>
-              <input class="form-control" value="{{ $discount['serial'] }}" name="serial" placeholder="سریال کد" type="text">
+              <input name="minimum_buy" value="{{ $discount['minimum_buy'] }}" class="form-control" placeholder="حداقل مبلغ خرید" type="text">
             </div>
           </div>
 
@@ -45,19 +68,43 @@
 
 <div class="col-md-4">
 
-  <!--                json process            -->  
-  @php  $json = json_decode($discount->owners,false)  @endphp   
-  @php   $owners =  implode(",",$json);           @endphp 
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="limit" value="{{ $discount['limit'] }}" class="form-control" placeholder=" محدودیت در تعداد استفاده " type="text">
+            </div>
+          </div>
+
+</div>
+
+<div class="col-md-4">
 
 <div class="form-group">
             <div class="input-group input-group-alternative">
               <div class="input-group-prepend">
               </div>
-              <input name="owners" value="{{$owners ?? '' }}"  class="form-control" placeholder="مالکین" type="text">
+              <input name="percent_discount" value="{{ $discount['percent_discount'] }}" class="form-control" placeholder=" درصد تخفیف " type="text">
             </div>
           </div>
 
 </div>
+
+<div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="maxdiscount" value="{{ $discount['maxdiscount'] }}" class="form-control" placeholder=" حداکثر میزان تخفیف " type="text">
+            </div>
+          </div>
+
+</div>
+
+
+
+
 
   <!-- Select Box -->
   <div class="col-md-4">

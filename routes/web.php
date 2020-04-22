@@ -116,7 +116,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
 
     Route::get('/discount/index', 'DiscountController@index')->name('admin.discount.index');
     Route::get('/discount/create', 'DiscountController@create')->name('admin.discount.create');
-    Route::get('/discount/edit/{id}', 'DiscountController@edit')->name('admin.discount.edit');
+    Route::get('/discount/edit/{pk_discount}', 'DiscountController@edit')->name('admin.discount.edit');
     Route::post('/discount/store', 'DiscountController@store')->name('admin.discount.store');
     Route::get('/discount/delete/{id}', 'DiscountController@destroy')->name('admin.discount.delete');
     Route::post('/discount/update/{id}', 'DiscountController@update')->name('admin.discount.update');

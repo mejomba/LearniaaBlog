@@ -53,23 +53,13 @@ class DiscountController extends Controller
         else
         {  
             $discount = new Discount();
-<<<<<<< HEAD
-            $discount->codetakhfif = request()->codetakhfif ;
+            $discount->discount_code = request()->discount_code ;
+            $discount->date_Expire =  request()->date_Expire;
+            $discount->minimum_buy = request()->minimum_buy ; 
             $discount->limit = request()->limit ;
-            $discount->Engheza =  request()->Engheza;
-            $discount->minimom = request()->minimom ; 
-            $discount->persent =  request()->persent ;
-            $discount->maxpersent =  request()->maxpersent ;
-
-=======
-            $discount->serial = request()->serial ;
-            $discount->status = request()->status ;
-            $owners =  explode("-",request()->owners);
-            $data_owners = json_encode($owners,false); 
-            $discount->owners = $data_owners ;
-    
-            
->>>>>>> aaeec3903c3b298dd1850bd8b8f809a58ac17dc9
+            $discount->percent_discount =  request()->percent_discount ;
+            $discount->maxdiscount =  request()->maxdiscount ;
+            $discount->status =  request()->status ;
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
@@ -99,9 +89,9 @@ class DiscountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($pk_discount)
     {
-        $discount = Discount::find($id);
+        $discount = Discount::find($pk_discount);
         return view('admin.discount.edit',compact('discount'));
     }
 
@@ -126,12 +116,15 @@ class DiscountController extends Controller
         else
         {  
             $discount = Discount::find($id);
-            $discount->serial = request()->serial ;
-            $discount->status = request()->status ;
-            $owners =  explode("-",request()->owners);
-            $data_owners = json_encode($owners,false); 
-            $discount->owners = $data_owners ;
     
+            $discount->discount_code = request()->discount_code ;
+            $discount->date_Expire =  request()->date_Expire;
+            $discount->minimum_buy = request()->minimum_buy ; 
+            $discount->limit = request()->limit ;
+            $discount->percent_discount =  request()->percent_discount ;
+            $discount->maxdiscount =  request()->maxdiscount ;
+            $discount->status =  request()->status ;
+
     
             if($discount->save())
             {
@@ -169,36 +162,39 @@ class DiscountController extends Controller
     {
 
         $rules =  [
-                    'codetakhfif' => 'required|String|min:5|max:5',  
+                    'discount_code' => 'required|String',  
+                    'date_Expire' => 'required|String', 
+                    'minimum_buy' => 'required|String', 
                     'limit' => 'required|String', 
-                    'Engheza' => 'required|String', 
-                    'minimom' => 'required|String', 
-                    'persent' => 'required|String', 
-                    'maxpersent' => 'required|String', 
+                    'percent_discount' => 'required|String', 
+                    'maxdiscount' => 'required|String', 
 
                     
                  ];
 
     $messages = [
-                'serial.required' => 'کد تخفیف وارد نشده است',
-                'serial.String' => ' کد صحیح وارد نشده است',
-                'serial.min' => 'کد تخفیف وارد شده کمتر از حد مجاز است',
-                'serial.max' => 'کد تخفیف وارد شده بیش از حد مجاز است است',
+                'discount_code.required' => 'کد تخفیف وارد نشده است',
+                'discount_code.String' => ' کد صحیح وارد نشده است',
+                'discount_code.min' => 'کد تخفیف وارد شده کمتر از حد مجاز است',
+                'discount_code.max' => 'کد تخفیف وارد شده بیش از حد مجاز است است',
+                'discount_code.digits' => 'کد تخفیف وارد شده بیش از حد مجاز است است',
+
+                'date_Expire.required' => 'تاریخ انقضا وارد نشده است',
+                'date_Expire.String' => 'تاریخ انقضا صحیح وارد نشده است',
+
+                
+                'minimum_buy.required' => 'حداقل مبلغ خرید وارد نشده است',
+                'minimum_buy.String' => 'حداقل مبلغ خرید  صحیح وارد نشده است',
 
                 'limit.required' => 'محدودیت در تعداد استفاده وارد نشده است',
                 'limit.String' => 'محدودیت در تعداد استفاده  صحیح وارد نشده است',
+                
+                
+                'percent_discount.required' => 'درصد تخفیف  وارد نشده است',
+                'percent_discount.String' => 'درصد تخفیف  صحیح وارد نشده است',
 
-                'Engheza.required' => 'تاریخ انقضا وارد نشده است',
-                'Engheza.String' => 'تاریخ انقضا صحیح وارد نشده است',
-
-                'minimom.required' => 'حداقل مبلغ خرید وارد نشده است',
-                'minimom.String' => 'حداقل مبلغ خرید  صحیح وارد نشده است',
-
-                'persent.required' => 'درصد تخفیف  وارد نشده است',
-                'persent.String' => 'درصد تخفیف  صحیح وارد نشده است',
-
-                'maxpersent.required' => 'حداکثر میزان تخفیف وارد نشده است',
-                'maxpersent.String' => 'حداکثر میزان تخفیف  صحیح وارد نشده است',
+                'maxdiscount.required' => 'حداکثر میزان تخفیف وارد نشده است',
+                'maxdiscount.String' => 'حداکثر میزان تخفیف  صحیح وارد نشده است',
 
 
 
