@@ -1,7 +1,9 @@
 <?php
 
+
 /*  Landing Original page 
 Route::get('/', 'HomeController@index')->name('index');
+
 */
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
@@ -15,6 +17,14 @@ Route::get('/Transaction/callback', 'TransactionController@callback')->name('tra
 Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackform')->name('transaction.showcallbackform');
 
 Route::get('/', 'HomeController@index')->name('index');
+
+Route::get('/mail', 'MailController@index');
+
+
+Route::get('/telegram/getlist', 'TelegramController@index');
+Route::get('/telegram/set/{id}', 'TelegramController@update');
+
+
 
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
