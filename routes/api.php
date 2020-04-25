@@ -28,8 +28,4 @@ Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost
 Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.now');
 
 
-
-Route::group(['prefix' => 'messenger','namespace' => 'Messenger'], function() 
-{
-    Route::post('/Gap/callback', 'GapController@callback')->name('Gap.callback');
-});
+Route::post('/Gap/callback', 'Messenger\GapController@callback')->name('Gap.callback');

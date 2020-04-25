@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Messenger;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CustomClass\Gap;
-
+use App\Category;
+use App\Post;
+use App\User; 
 
 class GapController extends Controller
 {
@@ -16,17 +18,34 @@ class GapController extends Controller
      */
     public function callback(Request $request)
     {
-      //  $callback_data = json_decode(file_get_contents("php://input"), TRUE);
-
-        $chatId = $_POST["chat_id"];
-        $senderInfoArray = $_POST["from"];
-        $type = $_POST["type"];
-        $message = $_POST["data"];
-
+        $message = $_POST['data'];
+        $chatId =  $_POST['chat_id'];
+        $type = $_POST['type'];
+        
         $token = '9c7aeb7a0c7094473db14efa0acbd684296fa54b4a6ebe41ced70f5c09ed215b';
         $gap = new Gap($token);
-        $gap->sendAction($chatId, 'در حال ارسال پاسخ');
 
+        if ( $type == 'text' && $message == '/getmyinfo' ) 
+        {
+            foreach ($_POST as $param_name => $param_val)
+            {
+               $gap->sendText("+989901918193", $param_name . '-' . $param_val);
+            }
+        }
+
+        if ( $type == 'text' && $message == '/listdraftpost' ) 
+        {
+            $results = Post::where('status','پیش نویس')->select('pk_post', 'title','status')->get();
+          
+            foreach($results as $one_post)
+            { 
+                $gap->sendText("+989901918193", $one_post['pk_post'].' '.$one_post['title']); 
+            }
+          
+        }
+
+        
+        /*
         if ($message == 'join')
          {
            $Info =  implode("__",$str) ;
@@ -55,7 +74,7 @@ class GapController extends Controller
                 fclose($myfile);
                 break;
         }
-
+        */
 
     }
 
