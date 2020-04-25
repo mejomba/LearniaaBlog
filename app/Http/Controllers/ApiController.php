@@ -8,6 +8,8 @@ use Auth;
 use App\Category;
 use App\Post;
 use App\User;
+use App\Discount;
+use App\Product;
 
 class ApiController extends Controller
 {
@@ -29,14 +31,22 @@ class ApiController extends Controller
     {
           $discount_code =  $_POST['discount_code'] ; // BAHAR98 --> discount_code  
           $pk_product = $_POST['pk_product'] ;
-          $pk_user = $_POST['user'] ;
-         $discount_row = discount::where('discount_code', $discount_code)->first();
+        
+          if(isset($_POST['user']) != TRUE )
+          {           
+            return response()->json('login required');
+
+          }
+          $pk_user=$_POST['user'];
+          
+         $discount_row = Discount::where('discount_code', $discount_code)->first();
          $product_row = Product::where('pk_product', $pk_product)->first();
          $product_price =  $product_row->price ;
 
          if($discount_row != null)
         {
-         $checkTarikh =  $this->CheckTarikhIsLastFromNow($discount_row->date_Expire);
+        // $checkTarikh =  $this->CheckTarikhIsLastFromNow($discount_row->date_Expire);
+        $checkTarikh = TRUE ;
 
                 if($discount_row->status =='فعال' && $checkTarikh == TRUE &&   $product_price >= $discount_row->minimum_buy )
                 {
@@ -45,14 +55,14 @@ class ApiController extends Controller
                     if( $discount_row->limit == null)
                     {
                          /////
-                         $price_discount = $product_price % $discount_row->percent ;
-                         if($discount_row->maxperecnt >= $price_discount )
+                         $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                         if($discount_row->maxdiscount >= $price_discount )
                          {
                              $product_priceByDiscount = $product_price - $price_discount ;
                          }
                          else
                          {
-                             $product_priceByDiscount = $product_price -  $discount_row->maxperecnt ;
+                             $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
                          }
 
                          return response()->json($product_priceByDiscount);
@@ -62,13 +72,13 @@ class ApiController extends Controller
                         if($discount_row->limit > 0)
                         {
                             $new_limit = $discount_row->limit - 1 ;
-                            $update_discount = discount::find($discount_row->pk_discount);
+                            $update_discount = Discount::find($discount_row->pk_discount);
                             $update_discount->limit =  $new_limit ;
                             $update_discount->save();
 
                             /////
-                            $price_discount = $product_price % $discount_row->percent ;
-                            if($discount_row->maxperecnt >= $price_discount )
+                            $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                            if($discount_row->maxdiscount >= $price_discount )
                             {
                                 $product_priceByDiscount = $product_price - $price_discount ;
                                
@@ -76,7 +86,7 @@ class ApiController extends Controller
                             }
                             else
                             {
-                                $product_priceByDiscount = $product_price -  $discount_row->maxperecnt ;
+                                $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
                             }
                             return response()->json($product_priceByDiscount);
 
@@ -97,4 +107,5 @@ class ApiController extends Controller
         }
 
     }
+   
 }

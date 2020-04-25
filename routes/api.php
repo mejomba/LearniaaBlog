@@ -25,3 +25,4 @@ Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')-
 
 Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
 
+Route::post('/calculator', 'ApiController@DiscountCalculator');
