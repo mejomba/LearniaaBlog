@@ -9,6 +9,8 @@ use App\Category;
 use App\Post;
 use App\User;
 use Verta;
+use App\CustomClass\SmsSender;
+
 
 class ApiController extends Controller
 {
@@ -79,30 +81,11 @@ class ApiController extends Controller
        
  public function SendSms(Request $request)
  {
-
-
+    $mobile = $_POST['mobile'];
     $message = $_POST['message'];
-    $url = "https://ippanel.com/services.jspd";
-
-            $rcpt_nm = array($_POST['mobile']);
-            $param = array
-                        (
-                            'uname'=>'09901918193',
-                            'pass'=>'0020503679',
-                            'from'=>'500010707',
-                            'message'=> $message ,
-                            'to'=>json_encode($rcpt_nm),
-                            'op'=>'send'
-                        );
-                        
-            $handler = curl_init($url);             
-            curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($handler, CURLOPT_POSTFIELDS, $param);                       
-            curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
-            $response2 = curl_exec($handler);
-            $response2 = json_decode($response2);
-            $res_code = $response2[0];
-            $res_data = $response2[1];
+    $data = new SmsSender();
+    $data->SendSms($mobile,$message);
+    
 }
  /*  Common & INFO API's   */   
  public function DateTimeGetNow()

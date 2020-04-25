@@ -27,6 +27,4 @@ Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost
 
 Route::post('/SendSms','ApiController@SendSms');
 Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.now');
-
-
 Route::post('/Gap/callback', 'Messenger\GapController@callback')->name('Gap.callback');
