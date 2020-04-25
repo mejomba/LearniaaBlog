@@ -8,6 +8,7 @@ use Auth;
 use App\Category;
 use App\Post;
 use App\User;
+use Verta;
 
 class ApiController extends Controller
 {
@@ -76,12 +77,15 @@ class ApiController extends Controller
 
     }
        
- /*  mrREZA   */   
- public function FunctionName()
+ /*  Common & INFO API's   */   
+ public function DateTimeGetNow()
  {
-     # code...
+    $verta = Verta::now();
+    $date =  substr($verta->year,2) . '/' . $verta->month . '/' .    $verta->day ;
+    return response()->json($date);
+  
  }
 
- /*  mrREZA   */   
+ /*  Common & INFO API's   */  
 
 }

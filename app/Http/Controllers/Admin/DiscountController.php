@@ -53,23 +53,16 @@ class DiscountController extends Controller
         else
         {  
             $discount = new Discount();
-<<<<<<< HEAD
             $discount->discount_code = request()->discount_code ;
             $discount->date_Expire =  request()->date_Expire;
             $discount->minimum_buy = request()->minimum_buy ; 
-            $discount->limit = request()->limit ;
+            if(request()->limit)
+            { 
+                $discount->limit = request()->limit ;
+            }
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
-=======
-            $discount->codetakhfif = request()->codetakhfif ;
-            $discount->limit = request()->limit ;
-            $discount->Engheza =  request()->Engheza;
-            $discount->minimom = request()->minimom ; 
-            $discount->persent =  request()->persent ;
-            $discount->maxpersent =  request()->maxpersent ;
-
->>>>>>> e7521e317e15beb3d30ad2e82db288cc5dc80ca5
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
@@ -130,7 +123,12 @@ class DiscountController extends Controller
             $discount->discount_code = request()->discount_code ;
             $discount->date_Expire =  request()->date_Expire;
             $discount->minimum_buy = request()->minimum_buy ; 
-            $discount->limit = request()->limit ;
+          
+            if(request()->limit) 
+            { 
+                $discount->limit = request()->limit ;
+            }
+            
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
@@ -175,7 +173,7 @@ class DiscountController extends Controller
                     'discount_code' => 'required|String',  
                     'date_Expire' => 'required|String', 
                     'minimum_buy' => 'required|String', 
-                    'limit' => 'required|String', 
+                    'limit' => 'String', 
                     'percent_discount' => 'required|String', 
                     'maxdiscount' => 'required|String', 
 
@@ -196,7 +194,7 @@ class DiscountController extends Controller
                 'minimum_buy.required' => 'حداقل مبلغ خرید وارد نشده است',
                 'minimum_buy.String' => 'حداقل مبلغ خرید  صحیح وارد نشده است',
 
-                'limit.required' => 'محدودیت در تعداد استفاده وارد نشده است',
+                
                 'limit.String' => 'محدودیت در تعداد استفاده  صحیح وارد نشده است',
                 
                 

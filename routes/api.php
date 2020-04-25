@@ -14,14 +14,22 @@ use Illuminate\Http\Request;
 */
 
 Route::get('posts', 'ApiController@index');
-
 Route::get('writers/{id}', 'ApiController@writer');
-
 Route::get('postsByCategory/{categoryOfPage}', 'ApiController@postsByCategory');
-
 Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.category.store');
 
-Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
 
+
+/* New API's */
+
+Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
 Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
 
+Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.now');
+
+
+
+Route::group(['prefix' => 'messenger','namespace' => 'Messenger'], function() 
+{
+    Route::post('/Gap/callback', 'GapController@callback')->name('Gap.callback');
+});
