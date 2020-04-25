@@ -60,7 +60,7 @@
                           {{ $discount['minimum_buy'] }} تومان
                           </td>
                           <td>
-                          {{ $discount['limit'] }} نفر
+                          {{ $discount['limit'] }} نفر 
                           </td>
                           <td>
                           {{ $discount['percent_discount'] }}  %

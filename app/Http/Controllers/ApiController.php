@@ -8,6 +8,8 @@ use Auth;
 use App\Category;
 use App\Post;
 use App\User;
+use App\Discount;
+use App\Product;
 use Verta;
 use App\CustomClass\SmsSender;
 
@@ -28,55 +30,84 @@ class ApiController extends Controller
         return response()->json('Successfully Update');
     }
 
-    public function index()
+    public function  DiscountCalculator (Request $request)
     {
-         $results = Post::where('status','انتشار')->
-        paginate(6,['pk_post','pk_categories','title','pk_writers','pic_content','extras']) ;    
-        return  $results ;
-    }
+          $discount_code =  $_POST['discount_code'] ; // BAHAR98 --> discount_code  
+          $pk_product = $_POST['pk_product'] ;
+        
+          if(isset($_POST['user']) != TRUE )
+          {           
+            return response()->json('login required');
 
-    public function postsByCategory($categoryOfPage)
-    {
-        return Post::where('status','انتشار')->where('pk_categories',$categoryOfPage)->
-        paginate(6,['pk_post','pk_categories','title','pk_writers','pic_content','extras']) ;     
-    }
-    
+          }
+          $pk_user=$_POST['user'];
+          
+         $discount_row = Discount::where('discount_code', $discount_code)->first();
+         $product_row = Product::where('pk_product', $pk_product)->first();
+         $product_price =  $product_row->price ;
 
-    public function writer($id)
-    {
-        return json_encode( User::where('pk_users',$id)->first() );
-    }
+         if($discount_row != null)
+        {
+        // $checkTarikh =  $this->CheckTarikhIsLastFromNow($discount_row->date_Expire);
+        $checkTarikh = TRUE ;
 
-
-    public function Category_store(Request $request)
-    {
-            $category = new Category();
-            $category->type = $_POST['type']  ;
-            $category->name = $_POST['name']  ;
-            $category->desc = $_POST['desc']  ;
-           
-
-                if($category->save())
+                if($discount_row->status =='فعال' && $checkTarikh == TRUE &&   $product_price >= $discount_row->minimum_buy )
                 {
-                    $response = [ 
-                        'success' => true,
-                        'data'    =>  $category ,
-                        'message' => 'success',
-                     ];
+                   /// $orderHistoryUserData = "";
 
-                     return $response;
-                }
-                else
-                {
-                    $response = [
-                        'success' => false,
-                        'data'    => '',
-                        'message' => 'Error Insert & Database',
-                     ];
+                    if( $discount_row->limit == null)
+                    {
+                         /////
+                         $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                         if($discount_row->maxdiscount >= $price_discount )
+                         {
+                             $product_priceByDiscount = $product_price - $price_discount ;
+                         }
+                         else
+                         {
+                             $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
+                         }
 
-                     return json_encode($response) ;
-                }
+                         return response()->json($product_priceByDiscount);
+                    }
+                    else
+                    {
+                        if($discount_row->limit > 0)
+                        {
+                            $new_limit = $discount_row->limit - 1 ;
+                            $update_discount = Discount::find($discount_row->pk_discount);
+                            $update_discount->limit =  $new_limit ;
+                            $update_discount->save();
 
+                            /////
+                            $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                            if($discount_row->maxdiscount >= $price_discount )
+                            {
+                                $product_priceByDiscount = $product_price - $price_discount ;
+                               
+            
+                            }
+                            else
+                            {
+                                $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
+                            }
+                            return response()->json($product_priceByDiscount);
+
+                        }
+                        else
+                        {
+                            return response()->json("Not Valid");
+                        }
+
+                      
+                    }
+
+            }
+            else
+            {
+                return response()->json("Not Valid");
+            }
+        }
     }
        
  public function SendSms(Request $request)
@@ -97,5 +128,6 @@ class ApiController extends Controller
  }
 
  /*  Common & INFO API's   */  
-
 }
+   
+
