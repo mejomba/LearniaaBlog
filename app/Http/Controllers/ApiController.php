@@ -8,8 +8,12 @@ use Auth;
 use App\Category;
 use App\Post;
 use App\User;
+<<<<<<< HEAD
 use App\Discount;
 use App\Product;
+=======
+use Verta;
+>>>>>>> a06a9e270b4e5a2945d84e621e4313110b91efaa
 
 class ApiController extends Controller
 {
@@ -96,6 +100,7 @@ class ApiController extends Controller
                             return response()->json("Not Valid");
                         }
 
+<<<<<<< HEAD
                       
                     }
 
@@ -105,6 +110,20 @@ class ApiController extends Controller
                 return response()->json("Not Valid");
             }
         }
+=======
+    }
+       
+ /*  Common & INFO API's   */   
+ public function DateTimeGetNow()
+ {
+    $verta = Verta::now();
+    $date =  substr($verta->year,2) . '/' . $verta->month . '/' .    $verta->day ;
+    return response()->json($date);
+  
+ }
+
+ /*  Common & INFO API's   */  
+>>>>>>> a06a9e270b4e5a2945d84e621e4313110b91efaa
 
     }
    
