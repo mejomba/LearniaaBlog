@@ -12,6 +12,7 @@
         "creativetimofficial/argon-design-system": "^1.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "shetabit/payment": "^1.2",

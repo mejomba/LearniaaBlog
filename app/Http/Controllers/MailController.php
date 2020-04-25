@@ -15,12 +15,12 @@ class MailController extends Controller
     {
         //
         $details = [
-            'title' => request()->,
-            'body' => request()->
+            'title' => request()->title,
+            'body' => request()->body
         ];
 
 
-        \Mail::to(request()->)->send(new SendMail($details));
+        \Mail::to(request()->to)->send(new SendMail($details));
 
         return view('thanks');
     }
