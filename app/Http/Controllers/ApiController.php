@@ -77,7 +77,6 @@ class ApiController extends Controller
 
     }
        
-<<<<<<< HEAD
  public function SendSms(Request $request)
  {
 
@@ -105,7 +104,6 @@ class ApiController extends Controller
             $res_code = $response2[0];
             $res_data = $response2[1];
 }
-=======
  /*  Common & INFO API's   */   
  public function DateTimeGetNow()
  {
@@ -116,6 +114,5 @@ class ApiController extends Controller
  }
 
  /*  Common & INFO API's   */  
->>>>>>> a06a9e270b4e5a2945d84e621e4313110b91efaa
 
 }
