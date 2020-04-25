@@ -190,7 +190,7 @@ class DiscountController extends Controller
                 'date_Expire.required' => 'تاریخ انقضا وارد نشده است',
                 'date_Expire.String' => 'تاریخ انقضا صحیح وارد نشده است',
 
-                
+
                 'minimum_buy.required' => 'حداقل مبلغ خرید وارد نشده است',
                 'minimum_buy.String' => 'حداقل مبلغ خرید  صحیح وارد نشده است',
 

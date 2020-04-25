@@ -43,5 +43,9 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    'google' => [
+        'client_id' => 'xxxx',
+        'client_secret' => 'xxxx',
+        'redirect' => 'http://localhost:8000/callback'],
 
 ];
