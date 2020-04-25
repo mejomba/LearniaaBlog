@@ -49,24 +49,47 @@
                           {{ $discount['pk_discount'] }} 
                           </td>
                           <td>
-                          {{ $discount['codetakhfif'] }} 
+                          {{ $discount['discount_code'] }} 
                           </td>
 
                           <td>
-                          {{ $discount['Engheza'] }} 
+                          {{ $discount['date_Expire'] }} 
                           </td>
 
                           <td>
-                          {{ $discount['minimom'] }} 
+                          {{ $discount['minimum_buy'] }} تومان
                           </td>
-
                           <td>
-                          {{ $discount['persent'] }} 
+                          {{ $discount['limit'] }} نفر
+                          </td>
+                          <td>
+                          {{ $discount['percent_discount'] }}  %
                           </td>
                           
                           <td>
-                          {{ $discount['maxpersent'] }} 
+                          {{ $discount['maxdiscount'] }}  تومان
                           </td>
+
+                          <td>
+
+@if($discount['status'] == 'فعال')
+<span style="font-size: 1.3rem;color:gray">
+ 
+<img src="{{ asset('images/Template/sale_on.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+
+</span>
+
+
+@else
+
+<span style="font-size: 1.3rem;color:gray">
+<img src="{{ asset('images/Template/sale_off.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+
+</span>
+
+@endif
+
+</td>
                       
                      
                           <td>

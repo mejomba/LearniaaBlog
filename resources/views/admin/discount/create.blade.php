@@ -34,16 +34,10 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">  
                       </div>
-<<<<<<< HEAD
-                      <input class="form-control" name="codetakhfif" placeholder="کد تخفیف" type="text">
+                      <input class="form-control" name="discount_code" placeholder="کد تخفیف" type="text">
                     </div>
                   </div>
 
-=======
-                      <input class="form-control" name="serial" placeholder="سریال کد" type="text">
-               </div>
-          </div>
->>>>>>> aaeec3903c3b298dd1850bd8b8f809a58ac17dc9
         </div>
 
 
@@ -53,7 +47,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input name="Engheza" class="form-control" placeholder="تاریخ انقضا" type="text">
+                      <input name="date_Expire" class="form-control" placeholder="تاریخ انقضا" type="text">
                     </div>
                   </div>
 
@@ -65,32 +59,7 @@
             <div class="input-group input-group-alternative">
               <div class="input-group-prepend">
               </div>
-              <input name="minimom" class="form-control" placeholder="حداقل مبلغ خرید" type="text">
-            </div>
-          </div>
-
-</div>
-
-
-<div class="col-md-4">
-
-<div class="form-group">
-            <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">
-              </div>
-              <input name="persent" class="form-control" placeholder=" درصد تخفیف " type="text">
-            </div>
-          </div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="form-group">
-            <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">
-              </div>
-              <input name="maxpersent" class="form-control" placeholder=" حداکثر میزان تخفیف " type="text">
+              <input name="minimum_buy" class="form-control" placeholder="حداقل مبلغ خرید" type="text">
             </div>
           </div>
 
@@ -108,7 +77,34 @@
 
 </div>
 
-          <!-- Select Box 
+
+<div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="percent_discount" class="form-control" placeholder=" درصد تخفیف " type="text">
+            </div>
+          </div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="maxdiscount" class="form-control" placeholder=" حداکثر میزان تخفیف " type="text">
+            </div>
+          </div>
+
+</div>
+
+
+
+          <!-- Select Box-->
           <div class="col-md-4">
         <div class="row">
 

@@ -1,11 +1,12 @@
 <?php
 
-
 /*  Landing Original page 
 Route::get('/', 'HomeController@index')->name('index');
 
 */
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
+
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
@@ -16,15 +17,7 @@ Route::get('/Transaction/show', 'TransactionController@show')->name('transaction
 Route::get('/Transaction/callback', 'TransactionController@callback')->name('transaction.callback');
 Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackform')->name('transaction.showcallbackform');
 
-Route::get('/', 'HomeController@index')->name('index');
-
 Route::get('/mail', 'MailController@index');
-
-
-Route::get('/telegram/getlist', 'TelegramController@index');
-Route::get('/telegram/set/{id}', 'TelegramController@update');
-
-
 
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
@@ -60,7 +53,6 @@ Route::post('/message/newspaperMobile', 'MessageController@newspaperMobile')->na
 Route::get('/academy', 'AcademyController@index')->name('academy.index');
 Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
 Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
-
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {
@@ -126,7 +118,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
 
     Route::get('/discount/index', 'DiscountController@index')->name('admin.discount.index');
     Route::get('/discount/create', 'DiscountController@create')->name('admin.discount.create');
-    Route::get('/discount/edit/{id}', 'DiscountController@edit')->name('admin.discount.edit');
+    Route::get('/discount/edit/{pk_discount}', 'DiscountController@edit')->name('admin.discount.edit');
     Route::post('/discount/store', 'DiscountController@store')->name('admin.discount.store');
     Route::get('/discount/delete/{id}', 'DiscountController@destroy')->name('admin.discount.delete');
     Route::post('/discount/update/{id}', 'DiscountController@update')->name('admin.discount.update');
