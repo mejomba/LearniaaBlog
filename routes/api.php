@@ -25,11 +25,8 @@ Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.
 Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
 Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
 
-<<<<<<< HEAD
 Route::post('/calculator', 'ApiController@DiscountCalculator');
-=======
 Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.now');
 
 
 Route::post('/Gap/callback', 'Messenger\GapController@callback')->name('Gap.callback');
->>>>>>> a06a9e270b4e5a2945d84e621e4313110b91efaa
