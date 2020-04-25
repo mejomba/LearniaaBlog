@@ -118,7 +118,6 @@ class ApiController extends Controller
  }
 
  /*  Common & INFO API's   */  
-
-    }
-   
 }
+   
+
