@@ -25,63 +25,76 @@ class ApiController extends Controller
         return response()->json('Successfully Update');
     }
 
-    public function index()
+    public function  DiscountCalculator (Request $request)
     {
-         $results = Post::where('status','انتشار')->
-        paginate(6,['pk_post','pk_categories','title','pk_writers','pic_content','extras']) ;    
-        return  $results ;
-    }
+          $discount_code =  $_POST['discount_code'] ; // BAHAR98 --> discount_code  
+          $pk_product = $_POST['pk_product'] ;
+          $pk_user = $_POST['user'] ;
+         $discount_row = discount::where('discount_code', $discount_code)->first();
+         $product_row = Product::where('pk_product', $pk_product)->first();
+         $product_price =  $product_row->price ;
 
-    public function postsByCategory($categoryOfPage)
-    {
-        return Post::where('status','انتشار')->where('pk_categories',$categoryOfPage)->
-        paginate(6,['pk_post','pk_categories','title','pk_writers','pic_content','extras']) ;     
-    }
-    
+         if($discount_row != null)
+        {
+         $checkTarikh =  $this->CheckTarikhIsLastFromNow($discount_row->date_Expire);
 
-    public function writer($id)
-    {
-        return json_encode( User::where('pk_users',$id)->first() );
-    }
-
-
-    public function Category_store(Request $request)
-    {
-            $category = new Category();
-            $category->type = $_POST['type']  ;
-            $category->name = $_POST['name']  ;
-            $category->desc = $_POST['desc']  ;
-           
-
-                if($category->save())
+                if($discount_row->status =='فعال' && $checkTarikh == TRUE &&   $product_price >= $discount_row->minimum_buy )
                 {
-                    $response = [ 
-                        'success' => true,
-                        'data'    =>  $category ,
-                        'message' => 'success',
-                     ];
+                   /// $orderHistoryUserData = "";
 
-                     return $response;
-                }
-                else
-                {
-                    $response = [
-                        'success' => false,
-                        'data'    => '',
-                        'message' => 'Error Insert & Database',
-                     ];
+                    if( $discount_row->limit == null)
+                    {
+                         /////
+                         $price_discount = $product_price % $discount_row->percent ;
+                         if($discount_row->maxperecnt >= $price_discount )
+                         {
+                             $product_priceByDiscount = $product_price - $price_discount ;
+                         }
+                         else
+                         {
+                             $product_priceByDiscount = $product_price -  $discount_row->maxperecnt ;
+                         }
 
-                     return json_encode($response) ;
-                }
+                         return response()->json($product_priceByDiscount);
+                    }
+                    else
+                    {
+                        if($discount_row->limit > 0)
+                        {
+                            $new_limit = $discount_row->limit - 1 ;
+                            $update_discount = discount::find($discount_row->pk_discount);
+                            $update_discount->limit =  $new_limit ;
+                            $update_discount->save();
+
+                            /////
+                            $price_discount = $product_price % $discount_row->percent ;
+                            if($discount_row->maxperecnt >= $price_discount )
+                            {
+                                $product_priceByDiscount = $product_price - $price_discount ;
+                               
+            
+                            }
+                            else
+                            {
+                                $product_priceByDiscount = $product_price -  $discount_row->maxperecnt ;
+                            }
+                            return response()->json($product_priceByDiscount);
+
+                        }
+                        else
+                        {
+                            return response()->json("Not Valid");
+                        }
+
+                      
+                    }
+
+            }
+            else
+            {
+                return response()->json("Not Valid");
+            }
+        }
 
     }
-       
- /*  mrREZA   */   
- public function FunctionName()
- {
-     # code...
- }
-
- /*  mrREZA   */   
-
 }

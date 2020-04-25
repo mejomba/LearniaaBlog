@@ -53,7 +53,6 @@ class DiscountController extends Controller
         else
         {  
             $discount = new Discount();
-<<<<<<< HEAD
             $discount->discount_code = request()->discount_code ;
             $discount->date_Expire =  request()->date_Expire;
             $discount->minimum_buy = request()->minimum_buy ; 
@@ -61,15 +60,6 @@ class DiscountController extends Controller
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
-=======
-            $discount->codetakhfif = request()->codetakhfif ;
-            $discount->limit = request()->limit ;
-            $discount->Engheza =  request()->Engheza;
-            $discount->minimom = request()->minimom ; 
-            $discount->persent =  request()->persent ;
-            $discount->maxpersent =  request()->maxpersent ;
-
->>>>>>> e7521e317e15beb3d30ad2e82db288cc5dc80ca5
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
@@ -192,7 +182,7 @@ class DiscountController extends Controller
                 'date_Expire.required' => 'تاریخ انقضا وارد نشده است',
                 'date_Expire.String' => 'تاریخ انقضا صحیح وارد نشده است',
 
-                
+
                 'minimum_buy.required' => 'حداقل مبلغ خرید وارد نشده است',
                 'minimum_buy.String' => 'حداقل مبلغ خرید  صحیح وارد نشده است',
 
