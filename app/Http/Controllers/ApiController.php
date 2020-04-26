@@ -11,6 +11,8 @@ use App\User;
 use App\Discount;
 use App\Product;
 use Verta;
+use App\CustomClass\SmsSender;
+
 
 class ApiController extends Controller
 {
@@ -108,13 +110,70 @@ class ApiController extends Controller
         }
     }
        
+ public function SendSms(Request $request)
+ {
+    $mobile = $_POST['mobile'];
+    $message = $_POST['message'];
+    $data = new SmsSender();
+    $data->SendSms($mobile,$message);
+    
+}
  /*  Common & INFO API's   */   
  public function DateTimeGetNow()
  {
     $verta = Verta::now();
-    $date =  substr($verta->year,2) . '/' . $verta->month . '/' .    $verta->day ;
+    $date =  $verta->year . '/' . $verta->month . '/' .    $verta->day ;
     return response()->json($date);
   
+ }
+
+ public function DateTimeCheckTarikhIsLastFromNow()
+ {
+     $DateRequest = $_POST['DateRequest'];
+     $DateArray = explode('/',$DateRequest);
+
+     $client = new \GuzzleHttp\Client();
+     $response = $client->request('GET', 'https://learniaa.com/api/DateTime/GetNow', [
+         'form_params' => [ ] ]);
+     $response = $response->getBody()->getContents();
+     $response = json_decode( $response);
+     $verta = explode('/',$response);
+     
+    if( $DateArray[0] > $verta[0] )
+    {
+        return response()->json("Valid");
+    }
+    if( $DateArray[0] == $verta[0] )
+    {
+        if($DateArray[1] > $verta[1])
+        {
+            return response()->json("Valid");
+        }
+        if($DateArray[1] == $verta[1])
+        {
+            if($DateArray[2] > $verta[2])
+            {
+                return response()->json("Valid");
+            }
+            if($DateArray[2] == $verta[2])
+            {
+                return response()->json("Valid");
+            }
+            if($DateArray[2] < $verta[2])
+            {
+                return response()->json("Not Valid");
+            }
+        }
+        if($DateArray[1] < $verta[1])
+        {
+            return response()->json("Not Valid");
+        }
+    }
+    if( $DateArray[0] < $verta[0] )
+    {
+        return response()->json("Not Valid");
+    }
+ 
  }
 
  /*  Common & INFO API's   */  
