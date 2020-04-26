@@ -102,7 +102,17 @@
 
 </div>
 
+<div class="col-md-4">
 
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+              </div>
+              <input name="pk_product" class="form-control" placeholder="کد محصول " type="text">
+            </div>
+          </div>
+
+</div>
 
 
 

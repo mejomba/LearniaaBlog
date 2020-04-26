@@ -48,6 +48,7 @@
                           <td>
                           {{ $discount['pk_discount'] }} 
                           </td>
+                         
                           <td>
                           {{ $discount['discount_code'] }} 
                           </td>
@@ -71,7 +72,9 @@
                           </td>
 
                           <td>
-
+                          <td>
+                          {{ $discount['pk_product'] }} 
+                          </td>
 @if($discount['status'] == 'فعال')
 <span style="font-size: 1.3rem;color:gray">
  

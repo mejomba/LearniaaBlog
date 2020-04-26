@@ -20,6 +20,8 @@ class Discount extends Model
                 'percent_discount' => 'درصد کد تخفیف',
                 'maxdiscount' => 'سقف مبلغ کد تخفیف',
                 'status' => 'وضعیت',
+                '$pk_product' => 'کد محصول',
+
 
                 
                 ] ;
