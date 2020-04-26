@@ -48,10 +48,14 @@ class ApiController extends Controller
 
          if($discount_row != null)
         {
-        // $checkTarikh =  $this->CheckTarikhIsLastFromNow($discount_row->date_Expire);
-        $checkTarikh = TRUE ;
-
-                if($discount_row->status =='فعال' && $checkTarikh == TRUE &&   $product_price >= $discount_row->minimum_buy )
+            
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('POST', 'https://learniaa.com/api/DateTime/CheckTarikhIsLastFromNow', [
+                'form_params' => [ 'DateRequest' => $discount_row->date_Expire ] ]);
+            $response = $response->getBody()->getContents();
+            $checkTarikh = json_decode( $response);
+          
+                if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&   $product_price >= $discount_row->minimum_buy )
                 {
                    /// $orderHistoryUserData = "";
 
