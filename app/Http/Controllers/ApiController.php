@@ -97,11 +97,8 @@ class ApiController extends Controller
                         else
                         {
                             return response()->json("Not Valid");
-                        }
-
-                      
+                        } 
                     }
-
             }
             else
             {
