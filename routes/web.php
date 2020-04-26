@@ -147,6 +147,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/Transaction/show', 'TransactionController@show')->name('admin.transaction.show');
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('admin.transaction.productlist');
 
+
+
+    Route::post('/vote/store', 'VoteController@store')->name('admin.vote.store');
+    Route::post('/vote/update', 'VoteController@update')->name('admin.vote.update');
+    Route::get('/vote/index', 'VoteController@index')->name('admin.vote.index');
+
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

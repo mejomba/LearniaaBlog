@@ -11,11 +11,12 @@ class Tag extends Model
 
     public function GetListAllNameColumns_ForTable()
     {
-       return  [ 'pk_tags' => 'کلید تگ ها',
-                 'fa_name' => 'نام فارسی',
-                 'en_name' => 'نام انگلیسی',
-                 'type' => 'نوع ',
-            
+       return  [ 'question' => 'سوال نظرسنجی',
+                 'option1' => 'گزینه1',
+                 'option2' => 'گزینه2 ',
+                 'option3' => 'گزینه3 ',
+                 'option4' => 'گزینه4 ',
+
                  ] ;
     }
 }
