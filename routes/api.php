@@ -21,6 +21,9 @@ Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.
 
 Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
 Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
+
+Route::post('/SendSms','ApiController@SendSms');
+Route::post('/SendEmail','ApiController@SendEmail');
 Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.GetNow');
 Route::post('/DateTime/CheckTarikhIsLastFromNow', 'ApiController@DateTimeCheckTarikhIsLastFromNow')->name('admin.api.datetime.CheckTarikhIsLastFromNow');
 Route::post('/SendSms','ApiController@SendSms');

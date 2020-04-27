@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\SendMail;
 
 class MailController extends Controller
 {
@@ -18,11 +19,11 @@ class MailController extends Controller
             'title' => request()->title,
             'body' => request()->body
         ];
+           // $type = $_POST
 
+        \Mail::to(request()->to)->send(new SendMail($details,$type));
 
-        \Mail::to(request()->to)->send(new SendMail($details));
-
-        return view('thanks');
+       // return view('thanks');
     }
 
     /**

@@ -12,7 +12,7 @@ use App\Discount;
 use App\Product;
 use Verta;
 use App\CustomClass\SmsSender;
-
+use App\Mail\SendMail;
 
 class ApiController extends Controller
 {
@@ -178,6 +178,21 @@ class ApiController extends Controller
  }
 
  /*  Common & INFO API's   */  
+ public function SendEmail(Request $request)
+ {
+     //
+     $details = [
+         'title' => $_POST['title'],
+         'body' => $_POST['message']
+     ];
+         $type = $_POST['type'];
+
+     \Mail::to($_POST['ToAddress'])->send(new SendMail($details,$type));
+
+     return response()->json('ایمیل یا موفقیت ارسال شد');
+ }
+
+
 }
    
 
