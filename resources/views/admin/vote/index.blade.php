@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> نمایش بن تخفیف | لرنیا </title>
-  <meta  name="description" content=" نمایش بن تخفیف | لرنیا">
+<title> نمایش نظرسنجی | لرنیا </title>
+  <meta  name="description" content=" نمایش نظرسنجی | لرنیا">
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول بن تخفیف ها</h1>
-                  <p class="card-discount text-center">
+                <h1 class="card-title text-center">جدول نظرسنجی ها</h1>
+                  <p class="card-category text-center">
                     
-                  <a href="{{route('admin.discount.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد بن تخفیف
+                  <a href="{{route('admin.vote.create')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem;"> ایجاد نظرسنجی
                   </a>                
 
                     </p>
@@ -42,83 +42,48 @@
                     </thead>
 
                       <tbody>
-                      @foreach($discounts as $discount)
+                      @foreach($tags as $tag)
                         <tr>
                           
                           <td>
-                          {{ $discount['pk_discount'] }} 
+                          {{ $tag['pk_tags'] }} 
                           </td>
-                         
                           <td>
-                          {{ $discount['discount_code'] }} 
-                          </td>
-
-                          <td>
-                          {{ $discount['date_Expire'] }} 
+                          {{ $tag['fa_name'] }} 
                           </td>
 
                           <td>
-                          {{ $discount['minimum_buy'] }} تومان
-                          </td>
-                          <td>
-                          {{ $discount['limit'] }} نفر 
-                          </td>
-                          <td>
-                          {{ $discount['percent_discount'] }}  %
-                          </td>
-                          
-                          <td>
-                          {{ $discount['maxdiscount'] }}  تومان
+                          {{ $tag['en_name'] }} 
                           </td>
 
                           <td>
-                          <td>
-                          {{ $discount['pk_product'] }} 
+                          {{ $tag['type'] }} 
                           </td>
-@if($discount['status'] == 'فعال')
-<span style="font-size: 1.3rem;color:gray">
- 
-<img src="{{ asset('images/Template/sale_on.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
 
-</span>
-
-
-@else
-
-<span style="font-size: 1.3rem;color:gray">
-<img src="{{ asset('images/Template/sale_off.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-
-</span>
-
-@endif
-
-</td>
                       
-                     
                           <td>
 
-                            <span style="font-size: 1.3rem;color:black">
-                            <a class="btn" href="{{ route('admin.discount.edit', $discount['pk_discount']) }}"> 
-                            <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                            </a>
-                            </span>
+                        <span style="font-size: 1.3rem;color:black">
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.tag.edit', $tag['pk_tags']) }}"> 
+                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                       </a>
+                        </span>
 
-                         
+                       
 
-                            
-                            <span style="font-size: 1.3rem;color:black;">
+                        <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $discount['pk_discount'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $tag['pk_tags'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
 
-                            </td>
+                        </td>
                           
                         </tr>
                         @endforeach
                         
-                                     
+ 
  <!---- Modal Delete -->                       
  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
@@ -164,11 +129,14 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/discount/delete/"+ id);
+  location.replace( baseUrl + "admin/tag/delete/"+ id);
 }
 </script>
-<!---- Modal Delete -->      
-                                    
+<!---- Modal Delete -->                            
+                        
+                                       
+                        
+                        
                         
                       </tbody>
                     </table>
