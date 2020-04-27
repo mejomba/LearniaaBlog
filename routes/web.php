@@ -148,11 +148,12 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('admin.transaction.productlist');
 
 
-
+    Route::get('/vote/create', 'VoteController@create')->name('admin.vote.create');
     Route::post('/vote/store', 'VoteController@store')->name('admin.vote.store');
     Route::post('/vote/update', 'VoteController@update')->name('admin.vote.update');
     Route::get('/vote/index', 'VoteController@index')->name('admin.vote.index');
-
+    Route::get('/vote/edit/{id}', 'VoteController@edit')->name('admin.vote.edit');
+    Route::get('/vote/delete/{id}', 'VoteController@destroy')->name('admin.vote.delete');
 
 });
 

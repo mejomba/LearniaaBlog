@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vote extends Model
 {
-    protected $table = 'tags';
-    protected $primaryKey = 'pk_tags';
+    protected $table = 'votes';
+    protected $primaryKey = 'pk_vote';
 
     public function GetListAllNameColumns_ForTable()
     {
-       return  [ 'pk_tags' => 'کلید تگ ها',
-                 'fa_name' => 'نام فارسی',
-                 'en_name' => 'نام انگلیسی',
-                 'type' => 'نوع ',
+       return  [ 'pk_vote' => 'کلید نظرسنجی',
+                 'question' => 'سوال نظرسنجی ',
+                 'extras' => 'گزینه ها',
             
                  ] ;
     }

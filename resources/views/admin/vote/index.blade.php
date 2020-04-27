@@ -42,29 +42,28 @@
                     </thead>
 
                       <tbody>
-                      @foreach($tags as $tag)
+                      @foreach($votes as $vote)
                         <tr>
                           
                           <td>
-                          {{ $tag['pk_tags'] }} 
+                          {{ $vote['pk_vote'] }} 
                           </td>
                           <td>
-                          {{ $tag['fa_name'] }} 
+                          {{ $vote['question'] }} 
                           </td>
 
                           <td>
-                          {{ $tag['en_name'] }} 
+                          @php  $json = json_decode($vote['extras'],false)  @endphp 
+                          {{ $json[0]->option1 ?? ''  }} -
+                          {{  $json[0]->option2 ?? ''}}  -
+                          {{ $json[0]->option3 ?? ''}} -
+                          {{  $json[0]->option4 ?? '' }} -
                           </td>
 
-                          <td>
-                          {{ $tag['type'] }} 
-                          </td>
-
-                      
                           <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.tag.edit', $tag['pk_tags']) }}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.edit', $vote['pk_vote']) }}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
@@ -73,7 +72,7 @@
 
                         <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $tag['pk_tags'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $vote['pk_vote'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
@@ -129,7 +128,7 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/tag/delete/"+ id);
+  location.replace( baseUrl + "admin/vote/delete/"+ id);
 }
 </script>
 <!---- Modal Delete -->                            

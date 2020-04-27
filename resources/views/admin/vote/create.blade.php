@@ -98,20 +98,8 @@
           </div>
 
 </div>
+</div>
 
-<div class="col-md-4">
-
-
-          
-
-
-
-        
-
-
-                
-  
-                
                   <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت درخواست</button>
                   </div>
@@ -119,6 +107,7 @@
               </div>
             </div>
           </div>
+
   </div>
 
 
