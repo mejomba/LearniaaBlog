@@ -49,15 +49,18 @@
                           {{ $vote['pk_vote'] }} 
                           </td>
                           <td>
+                          {{ $vote['name'] }} 
+                          </td>
+                          <td>
                           {{ $vote['question'] }} 
                           </td>
 
                           <td>
                           @php  $json = json_decode($vote['extras'],false)  @endphp 
-                          {{ $json[0]->option1 ?? ''  }} -
-                          {{  $json[0]->option2 ?? ''}}  -
-                          {{ $json[0]->option3 ?? ''}} -
-                          {{  $json[0]->option4 ?? '' }} -
+                        گزینه اول :  {{ $json[0]->option1 ?? ''  }}  ------
+                        گزینه دوم :    {{  $json[0]->option2 ?? ''}} <br></br>
+                        گزینه سوم :    {{ $json[0]->option3 ?? ''}}   ------
+                        گزینه چهارم :    {{  $json[0]->option4 ?? '' }} 
                           </td>
 
                           <td>

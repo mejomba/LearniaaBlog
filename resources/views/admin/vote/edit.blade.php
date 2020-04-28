@@ -29,77 +29,77 @@
 
      <div class="row">   
 
-        <div class="col-md-4">
-
+     <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
+                      <div class="input-group-prepend">    
+                      </div>
+                      <input class="form-control" value="{{ $vote['name'] }}" name="name" placeholder=" نام نظرسنجی" type="text">
+                    </div>
+                  </div>
+        </div>
+
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">    
                       </div>
                       <input class="form-control" value="{{ $vote['question'] }}" name="question" placeholder=" سوال نظرسنجی" type="text">
                     </div>
                   </div>
-
         </div>
 
 
  <!--                json process            -->  
- @php  $json = json_decode($votes->extras,false)  @endphp                       
-
+ @php  $json = json_decode($vote['extras'],false)  @endphp                       
  
         <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input name="option1" value="{{$json->option1 ?? '' }}" class="form-control" placeholder="گزینه1 " type="text">
+                      <input name="option1" value="{{$json[0]->option1 ?? '' }}" class="form-control" placeholder="گزینه1 " type="text">
                     </div>
                   </div>
-
         </div>
 
 
         <div class="col-md-4">
-
 <div class="form-group">
             <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">
-                
+              <div class="input-group-prepend">     
               </div>
-              <input class="form-control" value="{{$json->option2 ?? '' }}" name="option2" placeholder=" گزینه2 " type="text">
+              <input class="form-control" value="{{$json[0]->option2 ?? '' }}" name="option2" placeholder=" گزینه2 " type="text">
             </div>
           </div>
-
 </div>
+
+
       
-<div class="col-md-4">
-
-
-          
+<div class="col-md-4">      
 <div class="form-group">
             <div class="input-group input-group-alternative">
               <div class="input-group-prepend">
               </div>
-              <input name="option3" value="{{$json->option3 ?? '' }}" class="form-control" placeholder="گزینه 3 " type="text">
+              <input name="option3" value="{{$json[0]->option3 ?? '' }}" class="form-control" placeholder="گزینه 3 " type="text">
             </div>
           </div>
-
 </div>
 
 
 
-          
+      
+<div class="col-md-4">           
 <div class="form-group">
             <div class="input-group input-group-alternative">
               <div class="input-group-prepend">
               </div>
-              <input name="option4" value="{{$json->option4 ?? '' }}" class="form-control" placeholder=" گزینه 4  " type="text">
+              <input name="option4" value="{{$json[0]->option4 ?? '' }}" class="form-control" placeholder=" گزینه 4  " type="text">
             </div>
           </div>
 
-</div>
-</div>
-  
+          </div>
+          </div>
                 
                   <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت درخواست</button>

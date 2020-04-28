@@ -207,7 +207,7 @@ class ApiController extends Controller
 
      \Mail::to($_POST['ToAddress'])->send(new SendMail($details,$type));
 
-     return response()->json('ایمیل یا موفقیت ارسال شد');
+     return response()->json("ایمیل یا موفقیت ارسال شد");
  }
 
 

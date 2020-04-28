@@ -31,30 +31,33 @@
      <div class="row">   
 
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
-                        
+                      </div>
+                      <input class="form-control" name="name" placeholder="نام نظرسنجی " type="text">
+                    </div>
+                  </div>
+           </div>
+
+           <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
                       </div>
                       <input class="form-control" name="question" placeholder="سوال نظرسنجی " type="text">
                     </div>
                   </div>
-
-        </div>
+           </div>
 
         <div class="col-md-4">
-
-
-          
-        <div class="form-group">
+      <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
                       <input name="option1" class="form-control" placeholder="گزینه 1 " type="text">
                     </div>
                   </div>
-
         </div>
 
         <div class="col-md-4">

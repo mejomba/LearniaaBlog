@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +86,7 @@ return [
 
     'username' => 'maxmoler1376@gmail.com',
 
-    'password' => 'ohsurcloruqmrvdh',
+    'password' => 'scqtnoylmiixurrv',
 
     /*
     |--------------------------------------------------------------------------

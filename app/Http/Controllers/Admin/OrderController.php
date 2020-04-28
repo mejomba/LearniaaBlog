@@ -1,29 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-use App\Mail\SendMail;
+use App\Http\Controllers\Controller;
 
-class MailController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-        $details = [
-            'title' => request()->title,
-            'body' => request()->body
-        ];
-           // $type = $_POST
-
-        \Mail::to(request()->to)->send(new SendMail($details,$type));
-
-       // return view('thanks');
     }
 
     /**
