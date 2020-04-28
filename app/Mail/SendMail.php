@@ -33,6 +33,6 @@ class SendMail extends Mailable
     public function build()
     {
         return $this->subject('Learniaa Team')
-            ->view($this->type);
+            ->view('mail'.$this->type);
     }
 }

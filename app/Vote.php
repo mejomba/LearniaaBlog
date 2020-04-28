@@ -12,6 +12,7 @@ class Vote extends Model
     public function GetListAllNameColumns_ForTable()
     {
        return  [ 'pk_vote' => 'کلید نظرسنجی',
+                 'name' => 'نام نظرسنجی ',
                  'question' => 'سوال نظرسنجی ',
                  'extras' => 'گزینه ها',
             

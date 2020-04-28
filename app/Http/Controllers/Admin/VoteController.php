@@ -88,6 +88,7 @@ class VoteController extends Controller
                                                                                
                          
      $vote = new Vote();
+     $vote->name = request()->name ;
      $vote->question = request()->question ;
      $vote->extras =  json_encode($req) ;
                                        
@@ -178,7 +179,7 @@ class VoteController extends Controller
         "option4" => request()->option4
      ]
     );
-
+    $vote->name = request()->name ; 
     $vote->question = request()->question ;
     $vote->extras =  json_encode($req) ;
               
@@ -223,9 +224,10 @@ class VoteController extends Controller
     {
 
         $rules =  [
+                    'name' => 'required|String',
                     'question' => 'required|String',  
-                    'option1' => 'nullable|String', 
-                    'option2' => 'nullable|String', 
+                    'option1' => 'required|String', 
+                    'option2' => 'required|String', 
                     'option3' => 'nullable|String', 
                     'option4' => 'nullable|String', 
                     //'shortcode' => 'required|String', 
@@ -233,6 +235,9 @@ class VoteController extends Controller
                  ];
 
     $messages = [
+                'name.required' => 'نام نظرسنجی  وارد نشده است',
+                'name.String' => 'نام نظرسنجی صحیح وارد نشده است',
+        
                 'question.required' => 'سوال نظرسنجی  وارد نشده است',
                 'question.String' => 'سوال نظرسنجی صحیح وارد نشده است',
 
