@@ -30,6 +30,24 @@ class ApiController extends Controller
         return response()->json('Successfully Update');
     }
 
+
+
+    public function  vote (Request $request)
+    {
+
+        $name_vote = $_POST['name']
+        $vote_row = Vote::where('name', $name_vote)->first();
+
+        if($vote_row != null)
+        {
+            $vote_data = array () ;
+            array_push($vote_data,$vote_row->question,$vote_row->options);
+            
+            return response()->json_encode($vote_data);
+        }
+    }
+
+
     public function  DiscountCalculator (Request $request)
     {
           $discount_code =  $_POST['discount_code'] ; // BAHAR98 --> discount_code  
