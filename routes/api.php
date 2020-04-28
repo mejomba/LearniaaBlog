@@ -30,3 +30,4 @@ Route::post('/SendSms','ApiController@SendSms');
 Route::post('/calculator', 'ApiController@DiscountCalculator');
 Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.now');
 Route::post('/Gap/callback', 'Messenger\GapController@callback')->name('Gap.callback');
+Route::post('/Vote/GetByName', 'ApiController@GetVoteByName')->name('admin.api.Vote.GetByName');

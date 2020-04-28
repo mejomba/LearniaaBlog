@@ -10,6 +10,7 @@ use App\Post;
 use App\User;
 use App\Discount;
 use App\Product;
+use App\Vote;
 use Verta;
 use App\CustomClass\SmsSender;
 use App\Mail\SendMail;
@@ -32,19 +33,28 @@ class ApiController extends Controller
 
 
 
-    public function  vote (Request $request)
+    public function GetVoteByName(Request $request)
     {
+            $name_vote = $_POST['name'];
+            $vote_row = Vote::where('name', $name_vote)->first();
 
-        $name_vote = $_POST['name']
-        $vote_row = Vote::where('name', $name_vote)->first();
-
-        if($vote_row != null)
-        {
-            $vote_data = array () ;
-            array_push($vote_data,$vote_row->question,$vote_row->options);
+            if($vote_row != null)
+            {
+                $vote_data=array([ 
+                                    "name" => $vote_row->name ,
+                                    "question" => $vote_row->question ,
+                                    "option1" =>$vote_row->option1 ,
+                                    "option2" => $vote_row->option2,
+                                    "option3" => $vote_row->option3,
+                                    "option4" => $vote_row->option4
+                                 ]);
             
-            return response()->json_encode($vote_data);
-        }
+                return response()->json($vote_data);
+            }
+            else
+            {
+                return response()->json("Vote Not Found");
+            }
     }
 
 
