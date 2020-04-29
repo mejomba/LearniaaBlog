@@ -22,6 +22,9 @@ Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.
 Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
 Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
 
+Route::post('/order/add','OrderController@store');
+Route::delete('/order/remove/{pk}/{pk_product}','OrderController@destroy');
+
 Route::post('/SendSms','ApiController@SendSms');
 Route::post('/SendEmail','ApiController@SendEmail');
 Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.datetime.GetNow');
