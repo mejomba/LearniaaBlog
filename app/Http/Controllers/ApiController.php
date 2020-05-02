@@ -37,16 +37,12 @@ class ApiController extends Controller
     {
             $name_vote = $_POST['name'];
             $vote_row = Vote::where('name', $name_vote)->first();
-
+            $options = json_decode( $vote_row->extras,false);
             if($vote_row != null)
             {
                 $vote_data=array([ 
                                     "name" => $vote_row->name ,
-                                    "question" => $vote_row->question ,
-                                    "option1" =>$vote_row->option1 ,
-                                    "option2" => $vote_row->option2,
-                                    "option3" => $vote_row->option3,
-                                    "option4" => $vote_row->option4
+                                    "question" => $options[0] ,
                                  ]);
             
                 return response()->json($vote_data);
