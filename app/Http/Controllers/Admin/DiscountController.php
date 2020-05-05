@@ -63,6 +63,17 @@ class DiscountController extends Controller
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
+         
+            if(request()->pk_product == null)
+            {
+                $discount->type =  'عمومی' ;
+
+            }else{
+                $discount->pk_product =  request()->pk_product ;
+                $discount->type =  'محصول محور' ;
+
+            }
+
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
@@ -132,7 +143,16 @@ class DiscountController extends Controller
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
+            
+            if(request()->pk_product == null)
+            {
+                $discount->type =  'عمومی' ;
 
+            }else{
+                $discount->pk_product =  request()->pk_product ;
+                $discount->type =  'محصول محور' ;
+
+            }
     
             if($discount->save())
             {
