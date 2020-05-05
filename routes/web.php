@@ -175,6 +175,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('user.transaction.productlist');
    
+    Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
 
 });
 

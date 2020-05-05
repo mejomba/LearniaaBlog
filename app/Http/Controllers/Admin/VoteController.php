@@ -257,6 +257,35 @@ class VoteController extends Controller
 
 
 
+    public function report(Request $request)
+    {
+    
+        $name_vote = $_POST['name_vote'];
+        $page = $_POST['page'];
+        $answer = $_POST['answer'];
+        $pk_user = $_POST['pk_user'];
+
+           $reportvotes = new ReportVotes();
+               
+              
+                $reportvotes->name_vote = $name_vote;
+                $reportvotes->page = $page;
+                $reportvotes->answer = $answer;
+                $reportvotes->pk_user = $pk_user;
+
+
+                if($reportvotes->save())
+                {
+                    return response()->json('از مشارکت شما در نظرسنجی بیش از پیش سپاسگزاریم');
+
+                        return redirect()->back();
+                }
+                else
+                {
+                    return response()->json('خطا در عملیات پایگاه داده');
+
+                }
+            }
 
 
 

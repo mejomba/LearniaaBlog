@@ -35,7 +35,7 @@ class ApiController extends Controller
     public function  vote (Request $request)
     {
 
-        $name_vote = $_POST['name']
+        $name_vote = $_POST['name'];
         $vote_row = Vote::where('name', $name_vote)->first();
 
         if($vote_row != null)
