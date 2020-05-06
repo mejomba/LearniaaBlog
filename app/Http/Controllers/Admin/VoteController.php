@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Rules\CheckTagExists;
 use App\Vote;
+use App\ReportVote;
 use Validator;
 use Auth;
 
@@ -88,7 +89,7 @@ class VoteController extends Controller
                                                                                
                          
      $vote = new Vote();
-     $vote->name = request()->name ;
+     $vote->name_vote = request()->name_vote ;
      $vote->question = request()->question ;
      $vote->extras =  json_encode($req) ;
                                        
@@ -179,7 +180,7 @@ class VoteController extends Controller
         "option4" => request()->option4
      ]
     );
-    $vote->name = request()->name ; 
+    $vote->name_vote = request()->name_vote ; 
     $vote->question = request()->question ;
     $vote->extras =  json_encode($req) ;
               
@@ -224,7 +225,7 @@ class VoteController extends Controller
     {
 
         $rules =  [
-                    'name' => 'required|String',
+                    'name_vote' => 'required|String',
                     'question' => 'required|String',  
                     'option1' => 'required|String', 
                     'option2' => 'required|String', 
@@ -235,8 +236,8 @@ class VoteController extends Controller
                  ];
 
     $messages = [
-                'name.required' => 'نام نظرسنجی  وارد نشده است',
-                'name.String' => 'نام نظرسنجی صحیح وارد نشده است',
+                'name_vote.required' => 'نام نظرسنجی  وارد نشده است',
+                'name_vote.String' => 'نام نظرسنجی صحیح وارد نشده است',
         
                 'question.required' => 'سوال نظرسنجی  وارد نشده است',
                 'question.String' => 'سوال نظرسنجی صحیح وارد نشده است',
@@ -256,37 +257,48 @@ class VoteController extends Controller
     }
 
 
+            public function showmore(Request $request,$id)
+            {
 
-    public function report(Request $request)
-    {
-    
-        $name_vote = $_POST['name_vote'];
-        $page = $_POST['page'];
-        $answer = $_POST['answer'];
-        $pk_user = $_POST['pk_user'];
+                $vote_row = Vote::where('pk_vote',$id)->first();
+             
+                $name_vote  = $vote_row->name_vote ;
+                $reportvotes_row = ReportVote::where('name_vote',$name_vote)->get();
 
-           $reportvotes = new ReportVotes();
-               
-              
-                $reportvotes->name_vote = $name_vote;
-                $reportvotes->page = $page;
-                $reportvotes->answer = $answer;
-                $reportvotes->pk_user = $pk_user;
+                $A = 0 ; 
+                $B = 0 ; 
+                $C = 0 ; 
+                $D = 0 ; 
 
+              foreach( $reportvotes_row  as $row)
+              {
 
-                if($reportvotes->save())
+                if($row->answer=='option1')
                 {
-                    return response()->json('از مشارکت شما در نظرسنجی بیش از پیش سپاسگزاریم');
-
-                        return redirect()->back();
+                    $A = $A+1;
                 }
-                else
+                if($row->answer=='option2')
                 {
-                    return response()->json('خطا در عملیات پایگاه داده');
-
+                    $B = $B+1;
+                }
+                if($row->answer=='option3')
+                {
+                    $C = $C+1;
+                }
+                if($row->answer=='option4')
+                {
+                    $D = $D+1;
                 }
             }
+            $ResultOption1 = $A  ; 
+            $ResultOption2 = $B; 
+            $ResultOption3 = $C;
+            $ResultOption4 =$D ; 
 
+              return view('admin.vote.show',compact('ResultOption1','ResultOption2','ResultOption3','ResultOption4'));  
+            
+            
+            }
 
 
 

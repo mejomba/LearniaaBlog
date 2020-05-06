@@ -35,26 +35,6 @@ class ApiController extends Controller
 
 
 
-    public function GetVoteByName(Request $request)
-    {
-            $name_vote = $_POST['name'];
-            $vote_row = Vote::where('name', $name_vote)->first();
-            $options = json_decode( $vote_row->extras,false);
-            if($vote_row != null)
-            {
-                $vote_data=array([ 
-                                    "name" => $vote_row->name ,
-                                    "question" => $options[0] ,
-                                 ]);
-            
-                return response()->json($vote_data);
-            }
-            else
-            {
-                return response()->json("Vote Not Found");
-            }
-    }
-
 
     public function  DiscountCalculator (Request $request)
     {
