@@ -13,6 +13,8 @@ class Discount extends Model
     public function GetListAllNameColumns_ForTable()
    {
       return  [ 'pk_discount' => 'کلید بن تخفیف',
+                 'type' => 'نوع کد تخفیف',
+                 'pk_product' => 'کد محصول',
                 'discount_code' => 'کد تخفیف ',
                 'date_Expire' => 'تاریخ انقضای کد تخفیف',
                 'minimum_buy' => 'حداقل مبلغ خرید',
@@ -20,10 +22,6 @@ class Discount extends Model
                 'percent_discount' => 'درصد کد تخفیف',
                 'maxdiscount' => 'سقف مبلغ کد تخفیف',
                 'status' => 'وضعیت',
-                '$pk_product' => 'کد محصول',
-
-
-                
                 ] ;
    }
 }

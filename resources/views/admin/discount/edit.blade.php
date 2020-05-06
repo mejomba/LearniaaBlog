@@ -39,8 +39,49 @@
                       <input name="discount_code" class="form-control" value="{{ $discount['discount_code'] }}" placeholder="  کد تخفیف" type="text">
                     </div>
                   </div>
+           </div>
 
-        </div>
+
+                    <!-- Select Box -->
+          <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>نوع</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="type" class="form-control">
+                                  <option value="عمومی"
+                                  @if($discount->status == "عمومی" )
+                                          selected="selected"
+                                          @endif>عمومی </option>
+                                  <option value="محصول محور" 
+                                  @if($discount->status == "محصول محور" )
+                                          selected="selected"
+                                          @endif>محصول محور </option>
+                                  </select>
+                                  </div>
+                                </div>
+                          </div>
+                  </div>
+                  </div>
+                  <!-- Select Box -->
+
+                  <div class="col-md-4">
+                      <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                  </div>
+                                  <input name="pk_product" class="form-control" placeholder="کد محصول " type="text">
+                                </div>
+                         </div>
+                 </div>
+
 
         <div class="col-md-4">
         <div class="form-group">
@@ -102,24 +143,11 @@
 
 </div>
 
-<div class="col-md-4">
-
-<div class="form-group">
-            <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">
-              </div>
-              <input name="pk_product" class="form-control" placeholder="کد محصول " type="text">
-            </div>
-          </div>
-
-</div>
-
 
 
   <!-- Select Box -->
   <div class="col-md-4">
 <div class="row">
-
 
                 <div class="col-md-3">
                 <span>وضعیت</span> 
