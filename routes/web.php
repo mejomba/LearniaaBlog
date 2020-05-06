@@ -154,6 +154,12 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/vote/index', 'VoteController@index')->name('admin.vote.index');
     Route::get('/vote/edit/{id}', 'VoteController@edit')->name('admin.vote.edit');
     Route::get('/vote/delete/{id}', 'VoteController@destroy')->name('admin.vote.delete');
+    Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
+
+
+
+
+
 
 });
 
@@ -175,6 +181,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('user.transaction.productlist');
    
+    Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
 
 });
 

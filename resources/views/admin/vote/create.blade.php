@@ -35,7 +35,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input class="form-control" name="name" placeholder="نام نظرسنجی " type="text">
+                      <input class="form-control" name="name_vote" placeholder="نام نظرسنجی " type="text">
                     </div>
                   </div>
            </div>
