@@ -123,6 +123,18 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/discount/delete/{id}', 'DiscountController@destroy')->name('admin.discount.delete');
     Route::post('/discount/update/{id}', 'DiscountController@update')->name('admin.discount.update');
 
+    Route::get('/order/index', 'OrderController@index')->name('admin.order.index');
+    Route::get('/order/create', 'OrderController@create')->name('admin.order.create');
+    Route::get('/order/edit/{id}', 'OrderController@edit')->name('admin.order.edit');
+    Route::post('/order/store', 'OrderController@store')->name('admin.order.store');
+    Route::get('/order/delete/{id}', 'OrderController@destroy')->name('admin.order.delete');
+    Route::post('/order/update/{id}', 'OrderController@update')->name('admin.order.update');
+    Route::get('/order/show/{id}', 'OrderController@show')->name('admin.order.show');
+    
+    Route::get('/order/editproduct/{key}/{id}', 'OrderController@orderproductedit')->name('admin.order.editproduct');
+    Route::post('/order/updateproduct/{key}/{id}', 'OrderController@orderproductupdate')->name('admin.order.updateproduct');
+    Route::get('/order/deleteproduct/{key}/{id}', 'OrderController@orderproductdelete')->name('admin.order.deteleproduct');
+
     Route::get('/learner/index', 'LearnerController@index')->name('admin.learner.index');
     Route::get('/learner/create', 'LearnerController@create')->name('admin.learner.create');
     Route::get('/learner/edit/{id}', 'LearnerController@edit')->name('admin.learner.edit');
