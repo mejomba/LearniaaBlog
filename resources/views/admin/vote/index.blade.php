@@ -49,7 +49,7 @@
                           {{ $vote['pk_vote'] }} 
                           </td>
                           <td>
-                          {{ $vote['name'] }} 
+                          {{ $vote['name_vote'] }} 
                           </td>
                           <td>
                           {{ $vote['question'] }} 
@@ -79,6 +79,14 @@
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
+
+                        
+                        <span style="font-size: 1.3rem;color:black">
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.showmore', $vote['pk_vote']) }}"> 
+                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                       </a>
+                        </span>
+                        
 
                         </td>
                           
