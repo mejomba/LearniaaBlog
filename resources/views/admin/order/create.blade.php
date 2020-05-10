@@ -44,41 +44,6 @@
                   </div>
 
         </div>
-
-        <div class="col-md-4">
-        <div class="row">
-
-
-                        <div class="col-md-3">
-                        <span>دارای کد تحفیف ؟</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                  <select name="Use_DiscountCode" class="form-control">
-                                  <option value="بله">بله </option>
-                                  <option value="خیر">خیر </option>
-                                  </select>
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input name="DiscountCode" class="form-control" placeholder="کد تحفیف " type="text">
-                    </div>
-                  </div>
-
-        </div>
         
         <div class="col-md-4">
         <div class="row">

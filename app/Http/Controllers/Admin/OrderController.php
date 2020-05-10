@@ -48,8 +48,8 @@ class OrderController extends Controller
         //$neworder->pk_address = request()->pk_address;  
         $neworder->status_transaction = request()->status_transaction;
         $neworder->pk_user = request()->pk_user;
-        $neworder->Use_DiscountCode  = request()->Use_DiscountCode;
-        $neworder->DiscountCode  = request()->DiscountCode;
+        //$neworder->Use_DiscountCode  = request()->Use_DiscountCode;
+        //$neworder->DiscountCode  = request()->DiscountCode;
         $neworder->type_Delivery = request()->type_Delivery;
         if($neworder->save())
         {
@@ -70,7 +70,7 @@ class OrderController extends Controller
     public function show($id)
     {   
         $order = order::find($id);
-        $orderproduct = orderproduct::where('pk_order',$order->pk_order)->get();
+        $orderproduct = orderproduct::where('pk_order',$id)->get();
         $instance_Model_order = new orderproduct();
         $names =   $instance_Model_order->GetListAllNameColumns_ForTable();
         return view('admin.order.show',compact('orderproduct','order','names')); 
@@ -152,7 +152,7 @@ class OrderController extends Controller
             'pk_order'=>$order->pk_order,
             'pk_orderproduct'=>$id
             ])->first();
-        $orderproduct ->pk_prdocut  = request()->pk_prdocut ;
+        $orderproduct ->pk_product  = request()->pk_product ;
         $orderproduct ->price    = request()->price ;
         $orderproduct ->count   = request()->count ;
         $orderproduct ->Total_price   = request()->Total_price ;
