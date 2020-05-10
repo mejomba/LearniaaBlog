@@ -192,7 +192,7 @@ class BehaviorController extends Controller
                 $status = 'ثبت شده';
         
 
-                $user = Behavior::where('pk_users', $user->pk_users)->get()->first();
+              //  $user = Behavior::where('pk_users',$pk_user;'type'='like';'pk_entity' , $pk_Entity)->first();
 
                 if($user && $type=='like')
                 {
