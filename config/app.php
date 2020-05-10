@@ -164,10 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
         Hekmatinasser\Verta\VertaServiceProvider::class,
-        ConsoleTVs\Charts\ChartsServiceProvider::class,
-
-       
-
+ 
         /*
          * Package Service Providers...
          */
@@ -232,7 +229,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
-        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
     ],
 
