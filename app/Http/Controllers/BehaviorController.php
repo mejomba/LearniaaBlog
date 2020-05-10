@@ -154,9 +154,9 @@ class BehaviorController extends Controller
         $content = 'like';
         $status = 'NEW';
 
-        $row = Behavior::where(['pk_users'=> $user->pk_users ,
+        $row = Behavior::select('pk_behavior','status')->where(['pk_users'=> $user->pk_users ,
         'type'=> 'disslike' ,
-        'pk_users'=> $pk_Entity ,
+        'pk_Entity'=> $pk_Entity ,
       ])->first();
 
                     if($row != null )
@@ -264,13 +264,102 @@ class BehaviorController extends Controller
                     }
                 }
 
+
+
+
+
+
+
+
+     public  function comment(Request $request)
+    {
+        $pk_Entity = $_POST['pk_Entity'];
+        $pk_user = $_POST['pk_user'];
+        $type = 'comment';
+        $content = $_POST['commentText'];
+        $status = 'NEW';
+
+        $row = Behavior::select('pk_behavior')->where(['pk_users'=> $user->pk_users])->first();
+
+                    if($row != null )
+                    {
+                            $fetch = Behavior::find($row->pk_behavior);
+                            $fetch->type = $type ;
+                            $fetch->content = $content ;
+                            $fetch->status = $status ;
+
+                            if($fetch->save())
+                            {
+                                 return response()->json('OK');
+
+                            }
+                            else
+                            {
+                                 return response()->json('ERROR');
+
+                            }
+
+                    }
+
+                    else
+                    {
+
+                    $behavior = new Behavior();
+
+                    $behavior->pk_entity = $pk_Entity;
+                    $behavior->pk_user = $pk_user;
+                    $behavior->type = $type;
+                    $behavior->content = $content;
+                    $behavior->status = $status;
+                    return response()->json('not valid');
+
+
+                    if($behavior->save())
+                    {
+                         return response()->json('OK');
+
+                    }
+                    else
+                    {
+                         return response()->json('ERROR');
+
+                    }
+            }
+    }
+
+
+
+
 /* -----------------------  END -------------------------------- */
 
   public function ShareContent(Request $request)
    {
-                    
-                     
+    $pk_Entity = $_POST['pk_Entity'];
+    $pk_user = $_POST['pk_user'];
+    $type = 'Share';
+    $content =  $_POST['content'];
+    $status = 'NEW';
+
+    $behavior = new Behavior();
+                       
+    $behavior->pk_entity = $pk_Entity;
+    $behavior->pk_user = $pk_user;
+    $behavior->type = $type;
+    $behavior->content = $content;
+    $behavior->status = $status;
+
+    if($behavior->save())
+    {
+        return response()->json('OK');
+
     }
+    else
+    {
+        return response()->json('ERROR');
+
+    }
+                     
+   }
 
 
 
