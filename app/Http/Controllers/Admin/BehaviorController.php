@@ -154,37 +154,6 @@ class BehaviorController extends Controller
 
 
 
-    public function AddLike(Request $request)
-    {
-    
-        $pk_Entity = $_POST['pk_Entity'];
-        $pk_user = $_POST['pk_user'];
-        $type = ("like");
-        $content = ("لایک");
-        $status = ("ثبت شده");
-
-           $behavior = new Behavior();
-               
-              
-                $behavior->pk_entity = $pk_Entity;
-                $behavior->pk_user = $pk_user;
-                $behavior->type = $type;
-                $behavior->content = $content;
-                $behavior->status = $status;
-
-
-                if($reportvotes->save())
-                {
-                    return response()->json('از مشارکت شما در نظرسنجی بیش از پیش سپاسگزاریم');
-
-                        return redirect()->back();
-                }
-                else
-                {
-                    return response()->json('خطا در عملیات پایگاه داده');
-
-                }
-            }
-
+  
 
 }
