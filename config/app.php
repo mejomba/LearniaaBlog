@@ -164,9 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
         Hekmatinasser\Verta\VertaServiceProvider::class,
-       
-       
-
+ 
         /*
          * Package Service Providers...
          */
