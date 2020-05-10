@@ -341,10 +341,10 @@ class ApiController extends Controller
  }
 
 
- public function selectaddress(Request $request)
+ public function selectaddress(Request $request,$id)
 {
     $user = auth::user();
-    $delivery = delivery::select('pk_address')->where('pk_user',$_POST['pk_user'])->first();
+    $delivery = delivery::find($id)->where(['pk_user',$_POST['pk_user']])->first();
     $order = new order();
     $order->pk_address= $delivery->pk_address;
     $order->save();

@@ -45,12 +45,12 @@ class OrderController extends Controller
         $neworder = new order();
         $new_pk_order = rand(0,999999999);
         $neworder->pk_order = $new_pk_order;
-        $neworder->pk_Transportation = request()->pk_Transportation;  
+        //$neworder->pk_address = request()->pk_address;  
         $neworder->status_transaction = request()->status_transaction;
         $neworder->pk_user = request()->pk_user;
         $neworder->Use_DiscountCode  = request()->Use_DiscountCode;
         $neworder->DiscountCode  = request()->DiscountCode;
-        $neworder->type_Delivery = request()->status_transaction;
+        $neworder->type_Delivery = request()->type_Delivery;
         if($neworder->save())
         {
             return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت ایجاد شد ');
@@ -84,8 +84,8 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        $order = Order::find($id);
-        return view('admin.order.edit',compact('order')); 
+        $orders = Order::find($id);
+        return view('admin.order.edit',compact('orders')); 
         
     }
 
@@ -99,11 +99,11 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
         $order = Order::find($id);
-        $order ->pk_Transportation = request()->pk_Transportation;
-        $order ->status_transaction   = request()->status_transaction;
-        $order ->Use_DiscountCode  = request()->Use_DiscountCode;
-        $order ->DiscountCode  = request()->DiscountCode;
-        $order ->type_deliver = request()->type_deliver;
+        //$order ->pk_address = request()->pk_address;
+        $order->status_transaction  = request()->status_transaction;
+        $order->Use_DiscountCode = request()->Use_DiscountCode;
+        $order->DiscountCode = request()->DiscountCode;
+        $order->type_Delivery= request()->type_Delivery;
         if($order->save())
             {
                 return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت ویرایش شد ');
