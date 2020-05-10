@@ -88,7 +88,7 @@
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
                                     </div>
-                                  <select name="type_Delivery" class="form-control">
+                                  <select name="type_delivery" class="form-control">
                                   <option value="فیزیکی">فیزیکی </option>
                                   <option value="ایمیل">ایمیل </option>
                                   </select>
@@ -100,7 +100,7 @@
         </div>
         </div>
          <!-- Select Box -->
-           
+         </div>
 
                 
   

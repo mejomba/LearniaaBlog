@@ -18,8 +18,6 @@ class OrderProduct extends Model
                  'price '=> 'مبلغ پرداختی محصول',
                  'count '=> 'تعداد محصول درخواستی',
                  'Total_price '=>'جمع مبلغ پرداحتی',
-                 'Use_DiscountCode' => ' از کد تخفیف استفاده شد ؟',
-                 'DiscountCode'=>'کد تخفیف استفاده شده'
-                 ] ;
+            ] ;
     }
 }

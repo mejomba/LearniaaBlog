@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> ساخت سبد  | لرنیا  </title>
-  <meta  name="description" content=" ساخت سبد| لرنیا">
+<title> افزودن ایتم به سفارش | لرنیا  </title>
+  <meta  name="description" content=" افزودن ایتم به سفارش | لرنیا">
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center">
-                <h1>ساخت سبد</h1>
+                <h1>افزودن ایتم به سفارش </h1>
                 </div>
                 
               </div>
@@ -51,23 +51,11 @@
                       <input name="count" class="form-control" placeholder="تعداد " type="text" value="">
                     </div>
                   </div>
-
         </div>
 
 
-
-
-       <!-- input Box -->
-
-      <!-- input Box -->
-      
-       
-       
-        <!-- Select Box -->
-        
-
          <!-- Select Box -->
-           
+         </div>
 
                 
   
