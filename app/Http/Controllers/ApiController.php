@@ -13,6 +13,7 @@ use App\Product;
 use App\Vote;
 use App\OrderProduct;
 use App\Order;
+use App\Delivery;
 use Verta;
 use App\CustomClass\SmsSender;
 use App\Mail\SendMail;
@@ -313,6 +314,43 @@ class ApiController extends Controller
 
      return response()->json("ایمیل یا موفقیت ارسال شد");
  }
+ public function setaddress(Request $request)
+ {
+    $user = auth::user();
+    $newaddress = new delivery();
+    $newaddress->pk_user=$_POST['pk_user'];
+    $newaddress->ostan=$_POST['ostan'];
+    $newaddress->shahr=$_POST['shahr'];
+    $newaddress->address=$_POST['address'];
+    $newaddress->pelak=$_POST['pelak'];
+    $newaddress->vahed=$_POST['vahed'];
+    $newaddress->codeposti=$_POST['codeposti'];
+    $newaddress->reciever_name=$_POST['reciever_name'];
+    $newaddress->reciever_mobile=$_POST['reciever_mobile'];
+    $newaddress->save();
+    return response()->json("آدرس با موفقیت ثبت شد");
+
+
+ }
+ public function showaddress(Request $request)
+ {
+    $user = auth::user();
+    $delivery = delivery::where('pk_user',$_POST['pk_user'])->get();
+    return response()->json($delivery);
+
+ }
+
+
+ public function selectaddress(Request $request)
+{
+    $user = auth::user();
+    $delivery = delivery::select('pk_address')->where('pk_user',$_POST['pk_user'])->first();
+    $order = new order();
+    $order->pk_address= $delivery->pk_address;
+    $order->save();
+}
+
+
 
 
 }
