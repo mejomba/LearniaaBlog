@@ -148,16 +148,14 @@ class BehaviorController extends Controller
 
     public function AddLike(Request $request)
     {
-    
         $pk_Entity = $_POST['pk_Entity'];
         $pk_user = $_POST['pk_user'];
         $type = 'like';
         $content = 'لایک';
         $status = 'ثبت شده';
 
-           $behavior = new Behavior();
-               
-              
+        $behavior = new Behavior();
+                
                 $behavior->pk_entity = $pk_Entity;
                 $behavior->pk_user = $pk_user;
                 $behavior->type = $type;
