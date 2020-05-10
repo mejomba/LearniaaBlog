@@ -266,7 +266,7 @@ class BehaviorController extends Controller
 
 
 
-                public function َAddComment(Request $request)
+                public function AddComment(Request $request)
                 {
                  $pk_Entity = $_POST['pk_Entity'];
                  $pk_user = $_POST['pk_user'];

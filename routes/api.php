@@ -45,3 +45,10 @@ Route::post('/delivery/selectaddress', 'ApiController@selectaddress');
 
 Route::post('/Vote/GetByName', 'VoteController@GetVoteByName')->name('admin.api.Vote.GetByName');
 Route::post('/Vote/AnswerUser', 'VoteController@AnswerUser')->name('admin.api.Vote.AnswerUser');
+
+
+
+Route::post('/Behavior/AddLike', 'BehaviorController@AddLike')->name('Behavior.Vote.AddLike');
+Route::post('/Behavior/AddDisslike', 'BehaviorController@AddDisslike')->name('Behavior.Vote.AddDisslike');
+Route::post('/Behavior/AddComment', 'BehaviorController@AddComment')->name('Behavior.Vote.AddComment');
+Route::post('/Behavior/ShareContent', 'BehaviorController@ShareContent')->name('Behavior.Vote.ShareContent');
