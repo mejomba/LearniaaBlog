@@ -131,6 +131,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/order/update/{id}', 'OrderController@update')->name('admin.order.update');
     Route::get('/order/show/{id}', 'OrderController@show')->name('admin.order.show');
     
+    Route::get('/order/createproduct/{key}', 'OrderController@orderproductcreate')->name('admin.order.createproduct');
+    Route::post('/order/storeproduct/{key}', 'OrderController@orderproductstore')->name('admin.order.storeproduct');
     Route::get('/order/editproduct/{key}/{id}', 'OrderController@orderproductedit')->name('admin.order.editproduct');
     Route::post('/order/updateproduct/{key}/{id}', 'OrderController@orderproductupdate')->name('admin.order.updateproduct');
     Route::get('/order/deleteproduct/{key}/{id}', 'OrderController@orderproductdelete')->name('admin.order.deteleproduct');
