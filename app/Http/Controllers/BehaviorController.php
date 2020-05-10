@@ -178,13 +178,31 @@ class BehaviorController extends Controller
 
             public function AddDislike(Request $request)
             {
+
+
+             
+
             
                 $pk_Entity = $_POST['pk_Entity'];
                 $pk_user = $_POST['pk_user'];
                 $type = 'disslike';
                 $content = 'دیسلایک';
-                $status = 'وضعیت';
+                $status = 'ثبت شده';
         
+
+                $user = Behavior::where('pk_users', $user->pk_users)->get()->first();
+
+                if($user && $type=='like')
+                {
+                    $type = 'disslike';
+
+                
+                    return response()->json($vote_data);
+                }
+                else
+                {
+                    return response()->json("Vote Not Found");
+                }
                    $behavior = new Behavior();
                        
                       
@@ -213,8 +231,8 @@ class BehaviorController extends Controller
                         $pk_Entity = $_POST['pk_Entity'];
                         $pk_user = $_POST['pk_user'];
                         $type = 'disslike';
-                        $content = 'دیسلایک';
-                        $status = 'وضعیت';
+                        $content = 'اشتراک گذاری';
+                        $status = 'ثبت شده';
                 
                            $behavior = new Behavior();
                                
@@ -237,4 +255,17 @@ class BehaviorController extends Controller
                 
                                 }
                             }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
