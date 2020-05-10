@@ -148,66 +148,102 @@ class BehaviorController extends Controller
 
     public function AddLike(Request $request)
     {
-    
         $pk_Entity = $_POST['pk_Entity'];
         $pk_user = $_POST['pk_user'];
         $type = 'like';
-        $content = 'لایک';
-        $status = 'ثبت شده';
+        $content = 'like';
+        $status = 'NEW';
 
-           $behavior = new Behavior();
-               
-              
-                $behavior->pk_entity = $pk_Entity;
-                $behavior->pk_user = $pk_user;
-                $behavior->type = $type;
-                $behavior->content = $content;
-                $behavior->status = $status;
+        $row = Behavior::where(['pk_users'=> $user->pk_users ,
+        'type'=> 'disslike' ,
+        'pk_users'=> $pk_Entity ,
+      ])->first();
+
+                    if($row != null )
+                    {
+                            $fetch = Behavior::find($row->pk_behavior);
+                            $fetch->type = $type ;
+                            $fetch->content = $content ;
+                            $fetch->status = 'change Disslike' ;
+
+                            if($fetch->save())
+                            {
+                                 return response()->json('OK');
+
+                            }
+                            else
+                            {
+                                 return response()->json('ERROR');
+
+                            }
+
+                    }
+
+                    else
+                    {
+
+                    $behavior = new Behavior();
+
+                    $behavior->pk_entity = $pk_Entity;
+                    $behavior->pk_user = $pk_user;
+                    $behavior->type = $type;
+                    $behavior->content = $content;
+                    $behavior->status = $status;
 
 
-                if($behavior->save())
-                {
-                    return response()->json('کاربر لایک کرد');
+                    if($behavior->save())
+                    {
+                         return response()->json('OK');
 
-                }
-                else
-                {
-                    return response()->json('خطا در عملیات پایگاه داده');
+                    }
+                    else
+                    {
+                         return response()->json('ERROR');
 
-                }
+                    }
             }
+    }
 
 
-            public function AddDislike(Request $request)
+            public function AddDisslike(Request $request)
             {
-
-
-             
-
-            
                 $pk_Entity = $_POST['pk_Entity'];
                 $pk_user = $_POST['pk_user'];
                 $type = 'disslike';
-                $content = 'دیسلایک';
-                $status = 'ثبت شده';
+                $content = 'disslike';
+                $status = 'NEW';
         
 
-              //  $user = Behavior::where('pk_users',$pk_user;'type'='like';'pk_entity' , $pk_Entity)->first();
+                $row = Behavior::where(['pk_users'=> $user->pk_users ,
+                                          'type'=> 'like' ,
+                                          'pk_users'=> $pk_Entity ,
+                                        ])->first();
 
-                if($user && $type=='like')
+                if($row != null )
                 {
-                    $type = 'disslike';
+                        $fetch = Behavior::find($row->pk_behavior);
+                        $fetch->type = $type ;
+                        $fetch->content = $content ;
+                        $fetch->status = 'change like' ;
 
-                
-                    return response()->json($vote_data);
+                        if($fetch->save())
+                        {
+                            return response()->json('OK');
+        
+                        }
+                        else
+                        {
+                            return response()->json('ERROR');
+        
+                        }
+                        
                 }
+
                 else
                 {
-                    return response()->json("Vote Not Found");
-                }
+                    
                    $behavior = new Behavior();
                        
-                      
                         $behavior->pk_entity = $pk_Entity;
                         $behavior->pk_user = $pk_user;
                         $behavior->type = $type;
@@ -217,46 +253,24 @@ class BehaviorController extends Controller
         
                         if($behavior->save())
                         {
-                            return response()->json('کاربر دیسلایک کرد');
+                            return response()->json('OK');
         
                         }
                         else
                         {
-                            return response()->json('خطا در عملیات پایگاه داده');
+                            return response()->json('ERROR');
         
                         }
                     }
+                }
 
-                    public function ShareContenet(Request $request)
-                    {
+/* -----------------------  END -------------------------------- */
+
+  public function ShareContent(Request $request)
+   {
                     
-                        $pk_Entity = $_POST['pk_Entity'];
-                        $pk_user = $_POST['pk_user'];
-                        $type = 'disslike';
-                        $content = 'اشتراک گذاری';
-                        $status = 'ثبت شده';
-                
-                           $behavior = new Behavior();
-                               
-                              
-                                $behavior->pk_entity = $pk_Entity;
-                                $behavior->pk_user = $pk_user;
-                                $behavior->type = $type;
-                                $behavior->content = $content;
-                                $behavior->status = $status;
-                
-                
-                                if($behavior->save())
-                                {
-                                    return response()->json('کاربر مطلب را به اشتراک گذاشت ');
-                
-                                }
-                                else
-                                {
-                                    return response()->json('خطا در عملیات پایگاه داده');
-                
-                                }
-                            }
+                     
+    }
 
 
 

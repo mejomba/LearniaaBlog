@@ -42,27 +42,32 @@
                     </thead>
 
                       <tbody>
-                      @foreach($orders as $order)
+                      @foreach($orderproduct as $order)
                         <tr>
                           
                           <td>
+                          {{ $order['pk_orderproduct'] }} 
+                          </td>
+                          <td>
                           {{ $order['pk_order'] }} 
                           </td>
+
                           <td>
-                          {{ $order['pk_transaction'] }} 
+                          {{ $order['pk_product'] }} 
                           </td>
 
                           <td>
-                          {{ $order['pk_Transportation'] }} 
+                          {{ $order['price'] }} 
                           </td>
 
                           <td>
-                          {{ $order['pk_user'] }} 
+                          {{ $order['count'] }} 
                           </td>
 
                           <td>
-                          {{ $order['status_transaction'] }} 
+                          {{ $order['Total_price'] }} 
                           </td>
+                         
 
                           <td>
                           {{ $order['Use_DiscountCode'] }} 
@@ -72,24 +77,14 @@
                           <td>
                           {{ $order['DiscountCode'] }} 
                           </td>
-
-                          <td>
-                          {{ $order['type_delivery'] }} 
-                          </td>
-                         
                          
                           <td>
                             <span style="font-size: 1.3rem;color:black">
-                            <a class="btn"  href="{{ route('admin.order.edit', $order['pk_order']) }}"> 
+                            <a class="btn"  href="{{ route('admin.order.editproduct', [$order['pk_order'],$order['pk_orderproduct']]) }}"> 
                             <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                              </a>
                             </span>
 
-                            <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{route('admin.order.show', $order['pk_order'])}}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
                            
 
                             <span style="font-size: 1.3rem;color:black;">
