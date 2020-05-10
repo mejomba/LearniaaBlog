@@ -151,9 +151,9 @@ class BehaviorController extends Controller
     
         $pk_Entity = $_POST['pk_Entity'];
         $pk_user = $_POST['pk_user'];
-        $type = ("like");
-        $content = ("لایک");
-        $status = ("ثبت شده");
+        $type = 'like';
+        $content = 'لایک';
+        $status = 'ثبت شده';
 
            $behavior = new Behavior();
                
@@ -169,7 +169,6 @@ class BehaviorController extends Controller
                 {
                     return response()->json('کاربر لایک کرد');
 
-                        return redirect()->back();
                 }
                 else
                 {
@@ -184,9 +183,9 @@ class BehaviorController extends Controller
             
                 $pk_Entity = $_POST['pk_Entity'];
                 $pk_user = $_POST['pk_user'];
-                $type = ("dislike");
-                $content = ("دیسلایک");
-                $status = ("ثبت شده");
+                $type = 'disslike';
+                $content = 'دیسلایک';
+                $status = 'وضعیت';
         
                    $behavior = new Behavior();
                        
@@ -202,7 +201,6 @@ class BehaviorController extends Controller
                         {
                             return response()->json('کاربر دیسلایک کرد');
         
-                                return redirect()->back();
                         }
                         else
                         {
@@ -211,4 +209,34 @@ class BehaviorController extends Controller
                         }
                     }
 
+                    public function ShareContenet(Request $request)
+                    {
+                    
+                        $pk_Entity = $_POST['pk_Entity'];
+                        $pk_user = $_POST['pk_user'];
+                        $type = 'disslike';
+                        $content = 'دیسلایک';
+                        $status = 'وضعیت';
+                
+                           $behavior = new Behavior();
+                               
+                              
+                                $behavior->pk_entity = $pk_Entity;
+                                $behavior->pk_user = $pk_user;
+                                $behavior->type = $type;
+                                $behavior->content = $content;
+                                $behavior->status = $status;
+                
+                
+                                if($behavior->save())
+                                {
+                                    return response()->json('کاربر مطلب را به اشتراک گذاشت ');
+                
+                                }
+                                else
+                                {
+                                    return response()->json('خطا در عملیات پایگاه داده');
+                
+                                }
+                            }
 }
