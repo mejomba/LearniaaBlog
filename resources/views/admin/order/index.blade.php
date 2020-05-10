@@ -80,7 +80,7 @@
                          
                           <td>
                             <span style="font-size: 1.3rem;color:black">
-                            <a class="btn"  href="{{ route('admin.order.edit', $order['pk_categories']) }}"> 
+                            <a class="btn"  href="{{ route('admin.order.edit', $order['pk_order']) }}"> 
                             <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                              </a>
                             </span>
@@ -89,7 +89,7 @@
 
                             <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $order['pk_categories'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $order['pk_order'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
