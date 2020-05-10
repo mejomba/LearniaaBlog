@@ -16,8 +16,8 @@
                 <h1 class="card-title text-center">جدول سفارشات </h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.order.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem"> ایجاد سفارش
+                  <a href="{{route('admin.order.createproduct',$order['pk_order'])}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem"> ایجاد کالا
                   </a>                
 
                     </p>

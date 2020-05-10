@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\OrderProduct;
+use App\Product;
 
 
 class OrderController extends Controller
@@ -124,8 +125,8 @@ class OrderController extends Controller
     public function destroy($id)
     {
         $order = Order::find($id);
-        
-            if($order->delete())
+        $orderproduct = orderproduct::where('pk_order',$id);
+            if($order->delete() && $orderproduct->delete())
             {
                 return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت حذف شد ');
             }
@@ -145,6 +146,35 @@ class OrderController extends Controller
             return view('admin.order.orderproductedit',compact('orderproduct','order')); 
     }
 
+
+    public function orderproductcreate($key)
+    {
+        $order = order::find($key);
+
+        return view(('admin.order.orderproductstore'),compact('order'));
+    }
+    public function orderproductstore($key)
+    {
+        $order = order::find($key);
+
+        $neworderproduct = new orderproduct();
+        $neworderproduct->pk_order = $key;
+        $neworderproduct->pk_product = request()->pk_product;
+        $product = Product::select('price')->where('pk_product',request()->pk_product)->first();
+        $neworderproduct->price = $product->price;
+        $neworderproduct->count = request()->count;
+        $total = (int)$product->price * (int)request()->pk_product;
+        $neworderproduct->Total_price = $total;
+        $neworderproduct->save();
+        if($neworderproduct->save())
+        {
+            return redirect(route('admin.order.index'))->with('success','محصول با موفقیت اضافه شد ');
+        }
+        else
+        {
+            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+        }    
+    }
     public function orderproductupdate($key,$id)
     {
         $order = order::find($key);
@@ -153,11 +183,12 @@ class OrderController extends Controller
             'pk_orderproduct'=>$id
             ])->first();
         $orderproduct ->pk_product  = request()->pk_product ;
-        $orderproduct ->price    = request()->price ;
+        //$orderproduct ->price    = $orderproduct ->price ;
         $orderproduct ->count   = request()->count ;
-        $orderproduct ->Total_price   = request()->Total_price ;
-        $orderproduct ->Use_DiscountCode  = request()->Use_DiscountCode ;
-        $orderproduct ->DiscountCode   = request()->DiscountCode ;
+        $total = request()->count * $orderproduct ->price;
+        $orderproduct ->Total_price   = $total ;
+        //$orderproduct ->Use_DiscountCode  = request()->Use_DiscountCode ;
+        //$orderproduct ->DiscountCode   = request()->DiscountCode ;
         if($orderproduct->save())
             {
                 return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت ویرایش شد ');

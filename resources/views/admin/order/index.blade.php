@@ -84,13 +84,7 @@
                             <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                              </a>
                             </span>
-
-                            <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{route('admin.order.show', $order['pk_order'])}}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-                           
+                            <td>
 
                             <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
@@ -100,6 +94,25 @@
                         </span>
 
                             </td>
+                      @if($order['status_transaction'] == 'تکمیل نشده')
+                      <td>
+
+                            <span style="font-size: 1.3rem;color:black">
+                      <a class="btn" style="color:#00bcd4" href="{{route('admin.order.show', $order['pk_order'])}}"> 
+                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                       </a>
+                        </span>
+                        </td>
+
+                      @else
+
+
+                          <td>
+                          <h4 style ="color:green">{{ $order['status_transaction']}}<h4> 
+                          </td>
+
+                      @endif
+                      
                           
                         </tr>
                         @endforeach
