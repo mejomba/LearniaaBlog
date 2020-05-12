@@ -26,7 +26,7 @@
 <input type="hidden" name="digital_receipt" value="{{ $_GET['digital_receipt'] }}">
 @else
 <input type="hidden" name="digital_receipt" value="null">
-@endif          
+@endif     
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
@@ -36,15 +36,9 @@ src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height
 <input name="name" id="name" type="text" class="form-control" placeholder="نام و نام خانوادگی ">
 </div>
 </div>
-<div class="form-group">
-<div class="input-group input-group-alternative">
-<div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
-src="{{ asset('images/Template/phone_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
-</div>
-<input name="mobile" id="mobile" type="text" class="form-control" placeholder="شماره تلفن همراه">
-</div>
-</div>                
+
+<input type="hidden" name="username" value="{{ $_GET['username'] }}">
+
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">

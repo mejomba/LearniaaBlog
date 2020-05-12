@@ -24,6 +24,7 @@ Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost
 Route::post('/order/AddProduct','OrderController@AddProduct');
 Route::delete('/order/RemoveProduct/{pk}/{pk_product}','OrderController@RemoveProduct');
 Route::post('/order/AddPhisicalDelivery','OrderController@AddPhisicalDelivery');
+Route::post('/order/showorder','OrderController@showorder');
 
 
 Route::post('/SendSms','ApiController@SendSms');

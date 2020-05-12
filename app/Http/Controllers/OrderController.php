@@ -104,4 +104,16 @@ class OrderController extends Controller
         ];
         return response()->json($delivery);
     }
+    public function showorder(Request $request)
+    {
+       $user = auth::user();
+       $order = order::where([
+           'pk_user'=>$_POST['pk_user'],
+           'status_transaction'=>'تکمیل نشده'])->first();
+       $orderproduct = orderproduct::where([
+           'pk_order'=>$order->pk_order,
+           ])->get();
+       return response()->json(['products' => $orderproduct,'order'=>$order]);
+   
+    }
 }

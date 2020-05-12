@@ -30,6 +30,8 @@ Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
 
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
 
+
+
 Route::get('/search', 'HomeController@search')->name('search.index');
 
 Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
@@ -130,7 +132,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/order/delete/{id}', 'OrderController@destroy')->name('admin.order.delete');
     Route::post('/order/update/{id}', 'OrderController@update')->name('admin.order.update');
     Route::get('/order/show/{id}', 'OrderController@show')->name('admin.order.show');
-    
+
     Route::get('/order/createproduct/{key}', 'OrderController@orderproductcreate')->name('admin.order.createproduct');
     Route::post('/order/storeproduct/{key}', 'OrderController@orderproductstore')->name('admin.order.storeproduct');
     Route::get('/order/editproduct/{key}/{id}', 'OrderController@orderproductedit')->name('admin.order.editproduct');

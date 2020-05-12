@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Rules\CheckTagExists;
 use App\Tag;
+use App\Rules\validate;
 use Validator;
 use Auth;
 
@@ -219,6 +220,7 @@ class TagController extends Controller
 
     public function CheckTagExists(Request $request)
     {
+        
 
         $rules =  [  'fa_name' => [ new CheckTagExists(request()->type )]  ];
             
@@ -229,6 +231,8 @@ class TagController extends Controller
         $validator = Validator::make($request->all(),$rules,$messages);
 
         return $validator ;
+
+
     }
 
 

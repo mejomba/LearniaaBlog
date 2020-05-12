@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Session\Session;
+
 use App\Transaction;
 use App\Product;
+use App\Rules\validate;
+
 
 class LoginController extends Controller
 {
@@ -138,13 +141,12 @@ class LoginController extends Controller
         else
           {
                     $rules =  [
-                                'mobile' => 'required|numeric', 
+                                'username' => ['required', new validate], 
                                 'password' => 'required|min:3',
                               ];
             
                     $messages = [
-                                'mobile.required' => 'تلفن همراه وارد نشده است',
-                                'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
+                                'username.required' => 'نام کاربری وارد نشده است',
                                 'password.required' => 'رمز عبور وارد نشده است',
                                 'password.min' => 'رمز عبور صحیح وارد نشده است',
                               ];
@@ -162,13 +164,13 @@ class LoginController extends Controller
     public function validation(Request $request)
     {
         $rules =  [
-            'mobile' => 'required|numeric', 
+            'username' => ['required', new validate], 
            'password' => 'required|min:3',
         ];
 
         $messages = [
-        'mobile.required' => 'تلفن همراه وارد نشده است',
-        'mobile.numeric' => 'شماره تلفن همراه صحیح نمی باشد',
+        'username.required' => 'نام کاربری وارد نشده است',
+        'username.validate' => ' نام کاربری صحیح وارد نشده است',
         'password.required' => 'رمز عبور وارد نشده است',
         'password.min' => 'رمز عبور صحیح وارد نشده است',
         ];
@@ -179,10 +181,10 @@ class LoginController extends Controller
         return $validator ;
     }
 
-
     public function username()
     {
-        return 'mobile';
+        return 'username' ;
+        
     }
 
 }
