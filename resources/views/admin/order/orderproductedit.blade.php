@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> تغییر سبد  | لرنیا  </title>
-  <meta  name="description" content=" تغییر سبد| لرنیا">
+<title> ویرایش ایتم به سفارش  | لرنیا  </title>
+  <meta  name="description" content=" ویرایش ایتم به سفارش | لرنیا">
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center">
-                <h1>تغییر سبد</h1>
+                <h1>ویرایش ایتم به سفارش </h1>
                 </div>
                 
               </div>
@@ -32,26 +32,7 @@
 
      <div class="row">   
 
-     <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input name="pk_product" class="form-control" placeholder="کد کالا " type="text" value="{{$orderproduct['pk_product']}}">
-                    </div>
-                  </div>
-
-        </div>
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input name="price" class="form-control" placeholder="قیمت " type="text" value="{{$orderproduct['price']}}">
-                    </div>
-                  </div>
-
-        </div>
+    
         <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
@@ -62,71 +43,9 @@
                   </div>
 
         </div>
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input name="Total_price" class="form-control" placeholder="قیمت کل " type="text" value="{{$orderproduct['Total_price']}}">
-                    </div>
-                  </div>
-
-        </div>
-
-
-
-        <div class="col-md-4">
-        <div class="row">
-                        <div class="col-md-3">
-                        <span>دارای کد تحفیف ؟</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                  <select name="Use_DiscountCode" class="form-control">
-                                  @if($orderproduct['Use_DiscountCode']=='بله')
-                                  <option value="بله">بله </option>
-                                  <option value="خیر">خیر </option>
-                                  @else
-                                  <option value="خیر">خیر </option>
-                                  <option value="بله">بله </option>
-                                  @endif
-                                  </select>
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input name="DiscountCode" class="form-control" placeholder="کد تحفیف " type="text" value="{{$orderproduct['DiscountCode']}}">
-                    </div>
-                  </div>
-
-        </div>
-
-
-       <!-- input Box -->
-
       <!-- input Box -->
-      
-       
-       
-        <!-- Select Box -->
-        
-
-         <!-- Select Box -->
-           
-
-                
+     
+      </div>
   
                   <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت تغییرات کالا</button>

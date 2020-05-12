@@ -97,18 +97,20 @@
                       @if($order['status_transaction'] == 'تکمیل نشده')
                       <td>
 
-                            <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{route('admin.order.show', $order['pk_order'])}}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                      <a class="btn btn-warning btn-round" style="font-size:0.75rem"
+                       href="{{route('admin.order.show', $order['pk_order'])}}"> 
+                     مشاهده جزئیات
                        </a>
-                        </span>
+                       
                         </td>
 
                       @else
 
 
                           <td>
-                          <h4 style ="color:green">{{ $order['status_transaction']}}<h4> 
+                          <a href="#" class="btn btn-primary btn-round" 
+                  style="font-size:0.75rem"> تکمیل سفارش
+                  </a>  
                           </td>
 
                       @endif

@@ -46,10 +46,10 @@
                         <tr>
                           
                           <td>
-                          {{ $order['pk_orderproduct'] }} 
+                          {{ $order['pk_order'] }}    
                           </td>
                           <td>
-                          {{ $order['pk_order'] }} 
+                          {{ $order['pk_orderproduct'] }} 
                           </td>
 
                           <td>
@@ -67,16 +67,7 @@
                           <td>
                           {{ $order['Total_price'] }} 
                           </td>
-                         
-
-                          <td>
-                          {{ $order['Use_DiscountCode'] }} 
-                          </td>
-                         
-
-                          <td>
-                          {{ $order['DiscountCode'] }} 
-                          </td>
+                 
                          
                           <td>
                             <span style="font-size: 1.3rem;color:black">
@@ -89,7 +80,7 @@
 
                             <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $order['pk_order'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $order['pk_order'] }} , {{ $order['pk_orderproduct'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
@@ -135,8 +126,10 @@
 
 <script>
 var id = 0 ;
-function Modal_Delete(row)
+var key_order = 0 ;
+function Modal_Delete(row,key)
 {
+  key_order = key ;
   id = row ;
   $("#exampleModal").show();
 }
@@ -145,7 +138,7 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/order/delete/"+ id);
+  location.replace( baseUrl + "admin/order/deleteproduct/" + id  + "/" + key_order );
 }
 </script>
 <!---- Modal Delete -->      
