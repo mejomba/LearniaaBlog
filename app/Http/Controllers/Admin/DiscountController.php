@@ -54,6 +54,17 @@ class DiscountController extends Controller
         {  
             $discount = new Discount();
             $discount->discount_code = request()->discount_code ;
+            $discount->type = request()->type ;
+
+            if(request()->type == 'عمومی')
+            {
+                $discount->pk_product = 0 ;
+            }
+            else
+            {
+                $discount->pk_product = request()->pk_product ;
+            }
+
             $discount->date_Expire =  request()->date_Expire;
             $discount->minimum_buy = request()->minimum_buy ; 
             if(request()->limit)
@@ -63,6 +74,17 @@ class DiscountController extends Controller
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
+         
+            if(request()->pk_product == null)
+            {
+                $discount->type =  'عمومی' ;
+
+            }else{
+                $discount->pk_product =  request()->pk_product ;
+                $discount->type =  'محصول محور' ;
+
+            }
+
             if($discount->save())
             {
                     return redirect(route('admin.discount.index'))->with('success','کد تخفیف با موفقیت ایجاد شد');
@@ -121,6 +143,17 @@ class DiscountController extends Controller
             $discount = Discount::find($id);
     
             $discount->discount_code = request()->discount_code ;
+            $discount->type = request()->type ;
+            
+            if(request()->type == 'عمومی')
+            {
+                $discount->pk_product = 0 ;
+            }
+            else
+            {
+                $discount->pk_product = request()->pk_product ;
+            }
+
             $discount->date_Expire =  request()->date_Expire;
             $discount->minimum_buy = request()->minimum_buy ; 
           
@@ -132,7 +165,16 @@ class DiscountController extends Controller
             $discount->percent_discount =  request()->percent_discount ;
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
+            
+            if(request()->pk_product == null)
+            {
+                $discount->type =  'عمومی' ;
 
+            }else{
+                $discount->pk_product =  request()->pk_product ;
+                $discount->type =  'محصول محور' ;
+
+            }
     
             if($discount->save())
             {
@@ -171,6 +213,7 @@ class DiscountController extends Controller
 
         $rules =  [
                     'discount_code' => 'required|String',  
+                    
                     'date_Expire' => 'required|String', 
                     'minimum_buy' => 'required|String', 
                     'limit' => 'String', 

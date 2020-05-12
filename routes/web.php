@@ -30,6 +30,8 @@ Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
 
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
 
+
+
 Route::get('/search', 'HomeController@search')->name('search.index');
 
 Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
@@ -123,6 +125,20 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/discount/delete/{id}', 'DiscountController@destroy')->name('admin.discount.delete');
     Route::post('/discount/update/{id}', 'DiscountController@update')->name('admin.discount.update');
 
+    Route::get('/order/index', 'OrderController@index')->name('admin.order.index');
+    Route::get('/order/create', 'OrderController@create')->name('admin.order.create');
+    Route::get('/order/edit/{id}', 'OrderController@edit')->name('admin.order.edit');
+    Route::post('/order/store', 'OrderController@store')->name('admin.order.store');
+    Route::get('/order/delete/{id}', 'OrderController@destroy')->name('admin.order.delete');
+    Route::post('/order/update/{id}', 'OrderController@update')->name('admin.order.update');
+    Route::get('/order/show/{id}', 'OrderController@show')->name('admin.order.show');
+
+    Route::get('/order/createproduct/{key}', 'OrderController@orderproductcreate')->name('admin.order.createproduct');
+    Route::post('/order/storeproduct/{key}', 'OrderController@orderproductstore')->name('admin.order.storeproduct');
+    Route::get('/order/editproduct/{key}/{id}', 'OrderController@orderproductedit')->name('admin.order.editproduct');
+    Route::post('/order/updateproduct/{key}/{id}', 'OrderController@orderproductupdate')->name('admin.order.updateproduct');
+    Route::get('/order/deleteproduct/{key}/{id}', 'OrderController@orderproductdelete')->name('admin.order.deteleproduct');
+
     Route::get('/learner/index', 'LearnerController@index')->name('admin.learner.index');
     Route::get('/learner/create', 'LearnerController@create')->name('admin.learner.create');
     Route::get('/learner/edit/{id}', 'LearnerController@edit')->name('admin.learner.edit');
@@ -148,10 +164,17 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('admin.transaction.productlist');
 
 
-
+    Route::get('/vote/create', 'VoteController@create')->name('admin.vote.create');
     Route::post('/vote/store', 'VoteController@store')->name('admin.vote.store');
-    Route::post('/vote/update', 'VoteController@update')->name('admin.vote.update');
+    Route::post('/vote/update/{id}', 'VoteController@update')->name('admin.vote.update');
     Route::get('/vote/index', 'VoteController@index')->name('admin.vote.index');
+    Route::get('/vote/edit/{id}', 'VoteController@edit')->name('admin.vote.edit');
+    Route::get('/vote/delete/{id}', 'VoteController@destroy')->name('admin.vote.delete');
+    Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
+
+
+
+
 
 
 });
@@ -174,6 +197,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('user.transaction.productlist');
    
+    Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
 
 });
 

@@ -32,17 +32,10 @@
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
 <img class="img-raised rounded-circle img-fluid" 
-src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
-</div>
-<input name="mobile" id="mobile" type="text" class="form-control" placeholder="شماره تلفن همراه">
-</div>
-</div>
-<div class="form-group">
-<div class="input-group input-group-alternative">
-<div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+
 src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
+<input type="hidden" name="username" value="{{ $_GET['username'] }}">
 <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور">
 </div>
 </div>

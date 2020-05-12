@@ -48,6 +48,14 @@
                           <td>
                           {{ $discount['pk_discount'] }} 
                           </td>
+
+                          <td>
+                          {{ $discount['type'] }} 
+                          </td>
+
+                          <td>
+                          {{ $discount['pk_product'] }} 
+                          </td>
                          
                           <td>
                           {{ $discount['discount_code'] }} 
@@ -70,50 +78,35 @@
                           <td>
                           {{ $discount['maxdiscount'] }}  تومان
                           </td>
+     
+                          <td>
+                          @if($discount['status'] == 'فعال')
+                          <span style="font-size: 1.3rem;color:gray">
+                          <img src="{{ asset('images/Template/sale_on.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                          </span>
 
-                          <td>
-                          <td>
-                          {{ $discount['pk_product'] }} 
+                          @else
+                          <span style="font-size: 1.3rem;color:gray">
+                          <img src="{{ asset('images/Template/sale_off.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+                          </span>
+                          @endif
                           </td>
-@if($discount['status'] == 'فعال')
-<span style="font-size: 1.3rem;color:gray">
- 
-<img src="{{ asset('images/Template/sale_on.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-
-</span>
-
-
-@else
-
-<span style="font-size: 1.3rem;color:gray">
-<img src="{{ asset('images/Template/sale_off.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-
-</span>
-
-@endif
-
-</td>
                       
                      
                           <td>
-
                             <span style="font-size: 1.3rem;color:black">
                             <a class="btn" href="{{ route('admin.discount.edit', $discount['pk_discount']) }}"> 
                             <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                             </a>
                             </span>
 
-                         
-
-                            
                             <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
                          onclick="Modal_Delete( {{ $discount['pk_discount'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
-
-                            </td>
+                      </td>
                           
                         </tr>
                         @endforeach

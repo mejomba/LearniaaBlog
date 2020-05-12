@@ -27,6 +27,8 @@ class Behavior extends Model
                 'pk_users' => 'کلید کاربر',
                 'type' => 'نوع',
                 'content'=> 'محتوا',
+                'status'=> 'وضعیت',
+
                 ] ;
    }
 

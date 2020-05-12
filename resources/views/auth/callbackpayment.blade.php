@@ -27,7 +27,7 @@
                       <img class="img-raised rounded-circle img-fluid" 
                       src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
                       </div>
-                      <input name="mobile" id="mobile" type="text" class="form-control" placeholder="تلفن همراه">
+                      <input name="username" id="username" type="text" class="form-control" placeholder="تلفن همراه یا پست الکترونیکی">
                     </div>
                   </div>
             

@@ -146,4 +146,198 @@ class BehaviorController extends Controller
     }
 
 
+    public function AddLike(Request $request)
+    {
+        $pk_Entity = $_POST['pk_Entity'];
+        $pk_user = $_POST['pk_user'];
+        $type = 'like';
+        $content = 'like';
+        $status = 'NEW';
+
+        $row = Behavior::select('pk_behavior','status')->where(['pk_users'=> $user->pk_users ,
+        'type'=> 'disslike' ,
+        'pk_Entity'=> $pk_Entity ,
+      ])->first();
+
+                    if($row != null )
+                    {
+                            $fetch = Behavior::find($row->pk_behavior);
+                            $fetch->type = $type ;
+                            $fetch->content = $content ;
+                            $fetch->status = 'change Disslike' ;
+
+                            if($fetch->save())
+                            {
+                                 return response()->json('OK');
+
+                            }
+                            else
+                            {
+                                 return response()->json('ERROR');
+
+                            }
+
+                    }
+
+                    else
+                    {
+
+                    $behavior = new Behavior();
+
+                    $behavior->pk_entity = $pk_Entity;
+                    $behavior->pk_user = $pk_user;
+                    $behavior->type = $type;
+                    $behavior->content = $content;
+                    $behavior->status = $status;
+
+
+                    if($behavior->save())
+                    {
+                         return response()->json('OK');
+
+                    }
+                    else
+                    {
+                         return response()->json('ERROR');
+
+                    }
+            }
+    }
+
+
+            public function AddDisslike(Request $request)
+            {
+                $pk_Entity = $_POST['pk_Entity'];
+                $pk_user = $_POST['pk_user'];
+                $type = 'disslike';
+                $content = 'disslike';
+                $status = 'NEW';
+        
+
+                $row = Behavior::where(['pk_users'=> $user->pk_users ,
+                                          'type'=> 'like' ,
+                                          'pk_users'=> $pk_Entity ,
+                                        ])->first();
+
+                if($row != null )
+                {
+                        $fetch = Behavior::find($row->pk_behavior);
+                        $fetch->type = $type ;
+                        $fetch->content = $content ;
+                        $fetch->status = 'change like' ;
+
+                        if($fetch->save())
+                        {
+                            return response()->json('OK');
+        
+                        }
+                        else
+                        {
+                            return response()->json('ERROR');
+        
+                        }
+                        
+                }
+
+                else
+                {
+                    
+                   $behavior = new Behavior();
+                       
+                        $behavior->pk_entity = $pk_Entity;
+                        $behavior->pk_user = $pk_user;
+                        $behavior->type = $type;
+                        $behavior->content = $content;
+                        $behavior->status = $status;
+        
+        
+                        if($behavior->save())
+                        {
+                            return response()->json('OK');
+        
+                        }
+                        else
+                        {
+                            return response()->json('ERROR');
+        
+                        }
+                    }
+                }
+
+
+
+                public function AddComment(Request $request)
+                {
+                 $pk_Entity = $_POST['pk_Entity'];
+                 $pk_user = $_POST['pk_user'];
+                 $type = 'Comment';
+                 $content =  $_POST['content'];
+                 $status = 'NEW';
+             
+                 $behavior = new Behavior();
+                                    
+                 $behavior->pk_entity = $pk_Entity;
+                 $behavior->pk_user = $pk_user;
+                 $behavior->type = $type;
+                 $behavior->content = $content;
+                 $behavior->status = $status;
+             
+                 if($behavior->save())
+                 {
+                     return response()->json('OK');
+             
+                 }
+                 else
+                 {
+                     return response()->json('ERROR');
+             
+                 }
+                                  
+                }
+
+
+
+/* -----------------------  END -------------------------------- */
+
+  public function ShareContent(Request $request)
+   {
+    $pk_Entity = $_POST['pk_Entity'];
+    $pk_user = $_POST['pk_user'];
+    $type = 'Share';
+    $content =  $_POST['content'];
+    $status = 'NEW';
+
+    $behavior = new Behavior();
+                       
+    $behavior->pk_entity = $pk_Entity;
+    $behavior->pk_user = $pk_user;
+    $behavior->type = $type;
+    $behavior->content = $content;
+    $behavior->status = $status;
+
+    if($behavior->save())
+    {
+        return response()->json('OK');
+
+    }
+    else
+    {
+        return response()->json('ERROR');
+
+    }
+                     
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

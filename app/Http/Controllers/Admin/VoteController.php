@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Rules\CheckTagExists;
 use App\Vote;
+use App\ReportVote;
 use Validator;
 use Auth;
 
@@ -19,21 +20,15 @@ class VoteController extends Controller
      */
     public function index()
     {
-        $user =  Auth::user() ;
 
-        if($user->type == 'مدیر')
-        {
-            $vote_data = Vote::orderBy('question', 'option1','option2','option3','option4')->get();
-        }
-        else
-        {
-          //$tags = Tag::where('pk_users',$user->pk_users)->orderBy('pk_tags', 'desc')->get();
-        }
 
+        $instance_Model_vote = new Vote();
+        $names =   $instance_Model_vote->GetListAllNameColumns_ForTable();
+        $votes = Vote::orderBy('pk_vote', 'desc')->get();
+        return view('admin.vote.index',compact('votes','names'));
         
-        $instance_Model_tag =new Tag();
-        $names = $instance_Model_tag->GetListAllNameColumns_ForTable();
-        return view('admin.tag.index', compact('names','vote_data'));
+           
+        
     }
 
     /**
@@ -55,6 +50,8 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
+        $validator =  $this->validation($request);
+
         if ($validator->fails())
            {
                 return redirect()->back()
@@ -64,24 +61,37 @@ class VoteController extends Controller
     
         else
           {  
-                   $validator =  $this->validation($request);
+              $option1= "-";
+              $option2= "-";
+              $option3= "-";
+              $option4= "-";
 
-                                    if ($validator->fails())
-                                    {
-                                            return redirect()->back()
-                                                        ->withErrors($validator)
-                                                        ->withInput();
-                                    }
-                                
-                                    else
-                                    {  
-                                        $vote = new Vote();
-                                        $vote->question = request()->question ;
-                                        $vote->option1 = request()->option1 ;
-                                        $vote->option2 = request()->option2 ;
-                                        $vote->option3 = request()->option3 ;
-                                        $vote->option4 = request()->option4 ;
+      if(request()->option1 != null){  $option1= request()->option1 ; }
 
+
+      if(request()->option2 != null){ $option2= request()->option2 ;}
+
+
+      if(request()->option3 != null){$option3= request()->option3 ;}
+
+      
+      if(request()->option4 != null){ $option4= request()->option4 ;}
+
+      $req=array(
+        [
+          "option1" => request()->option1 ,
+          "option2" => request()->option2,
+          "option3" => request()->option3,
+          "option4" => request()->option4
+       ]
+
+    );
+                                                                               
+                         
+     $vote = new Vote();
+     $vote->name_vote = request()->name_vote ;
+     $vote->question = request()->question ;
+     $vote->extras =  json_encode($req) ;
                                        
                                 
                                         if($vote->save())
@@ -93,7 +103,7 @@ class VoteController extends Controller
                                             return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
                                         }
 
-                                    }
+                                    
              }
 
         }
@@ -132,6 +142,8 @@ class VoteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $vote = Vote::find($id);
+
         $validator =  $this->validation($request);
 
         if ($validator->fails())
@@ -143,13 +155,35 @@ class VoteController extends Controller
     
         else
           {  
-            $vote = Vote::find($id);
-            $vote->question = request()->question ;
-            $vote->option1 = request()->option1 ;
-            $vote->option2 = request()->option2 ;
-            $vote->option3 = request()->option3 ;         
-            $vote->option4 = request()->option4 ;
+
+            $option1= "-";
+            $option2= "-";
+            $option3= "-";
+            $option4= "-";
+
+    if(request()->option1 != null){  $option1= request()->option1 ; }
+
+
+    if(request()->option2 != null){ $option2= request()->option2 ;}
+
+
+    if(request()->option3 != null){$option3= request()->option3 ;}
+
     
+    if(request()->option4 != null){ $option4= request()->option4 ;}
+
+    $req=array(
+      [
+        "option1" => request()->option1 ,
+        "option2" => request()->option2,
+        "option3" => request()->option3,
+        "option4" => request()->option4
+     ]
+    );
+    $vote->name_vote = request()->name_vote ; 
+    $vote->question = request()->question ;
+    $vote->extras =  json_encode($req) ;
+              
             if($vote->save())
             {
                     return redirect(route('admin.vote.index'))->with('success','نظرسنجی با موفقیت ویرایش شد');
@@ -172,7 +206,7 @@ class VoteController extends Controller
     {
         $vote = Vote::find($id);
     
-        if($Vote->delete())
+        if($vote->delete())
         {
             return redirect(route('admin.vote.index'))->with('success','نظرسنجی با موفقیت حذف شد ');
         }
@@ -191,16 +225,20 @@ class VoteController extends Controller
     {
 
         $rules =  [
+                    'name_vote' => 'required|String',
                     'question' => 'required|String',  
                     'option1' => 'required|String', 
                     'option2' => 'required|String', 
-                    'option3' => 'required|String', 
-                    'option4' => 'required|String', 
+                    'option3' => 'nullable|String', 
+                    'option4' => 'nullable|String', 
                     //'shortcode' => 'required|String', 
 
                  ];
 
     $messages = [
+                'name_vote.required' => 'نام نظرسنجی  وارد نشده است',
+                'name_vote.String' => 'نام نظرسنجی صحیح وارد نشده است',
+        
                 'question.required' => 'سوال نظرسنجی  وارد نشده است',
                 'question.String' => 'سوال نظرسنجی صحیح وارد نشده است',
 
@@ -219,8 +257,48 @@ class VoteController extends Controller
     }
 
 
+            public function showmore(Request $request,$id)
+            {
 
+                $vote_row = Vote::where('pk_vote',$id)->first();
+             
+                $name_vote  = $vote_row->name_vote ;
+                $reportvotes_row = ReportVote::where('name_vote',$name_vote)->get();
 
+                $A = 0 ; 
+                $B = 0 ; 
+                $C = 0 ; 
+                $D = 0 ; 
+
+              foreach( $reportvotes_row  as $row)
+              {
+
+                if($row->answer=='option1')
+                {
+                    $A = $A+1;
+                }
+                if($row->answer=='option2')
+                {
+                    $B = $B+1;
+                }
+                if($row->answer=='option3')
+                {
+                    $C = $C+1;
+                }
+                if($row->answer=='option4')
+                {
+                    $D = $D+1;
+                }
+            }
+            $ResultOption1 = $A  ; 
+            $ResultOption2 = $B; 
+            $ResultOption3 = $C;
+            $ResultOption4 =$D ; 
+
+              return view('admin.vote.show',compact('ResultOption1','ResultOption2','ResultOption3','ResultOption4'));  
+            
+            
+            }
 
 
 

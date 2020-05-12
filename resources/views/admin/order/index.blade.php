@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> نمایش نظرسنجی | لرنیا </title>
-  <meta  name="description" content=" نمایش نظرسنجی | لرنیا">
+<title> نمایش سفارشات | لرنیا  </title>
+  <meta  name="description" content=" نمایش سفارشات| لرنیا">
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول نظرسنجی ها</h1>
+                <h1 class="card-title text-center">جدول سفارشات </h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.vote.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد نظرسنجی
+                  <a href="{{route('admin.order.create')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem"> ایجاد سفارش
                   </a>                
 
                     </p>
@@ -42,58 +42,84 @@
                     </thead>
 
                       <tbody>
-                      @foreach($votes as $vote)
+                      @foreach($orders as $order)
                         <tr>
                           
                           <td>
-                          {{ $vote['pk_vote'] }} 
+                          {{ $order['pk_order'] }} 
                           </td>
                           <td>
-                          {{ $vote['name_vote'] }} 
-                          </td>
-                          <td>
-                          {{ $vote['question'] }} 
+                          {{ $order['pk_transaction'] }} 
                           </td>
 
                           <td>
-                          @php  $json = json_decode($vote['extras'],false)  @endphp 
-                        گزینه اول :  {{ $json[0]->option1 ?? ''  }}  ------
-                        گزینه دوم :    {{  $json[0]->option2 ?? ''}} <br></br>
-                        گزینه سوم :    {{ $json[0]->option3 ?? ''}}   ------
-                        گزینه چهارم :    {{  $json[0]->option4 ?? '' }} 
+                          {{ $order['pk_Transportation'] }} 
                           </td>
 
                           <td>
+                          {{ $order['pk_user'] }} 
+                          </td>
 
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.edit', $vote['pk_vote']) }}"> 
-                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
+                          <td>
+                          {{ $order['status_transaction'] }} 
+                          </td>
 
-                       
+                          <td>
+                          {{ $order['Use_DiscountCode'] }} 
+                          </td>
+                         
 
-                        <span style="font-size: 1.3rem;color:black;">
+                          <td>
+                          {{ $order['DiscountCode'] }} 
+                          </td>
+
+                          <td>
+                          {{ $order['type_delivery'] }} 
+                          </td>
+                         
+                         
+                          <td>
+                            <span style="font-size: 1.3rem;color:black">
+                            <a class="btn"  href="{{ route('admin.order.edit', $order['pk_order']) }}"> 
+                            <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                             </a>
+                            </span>
+                            <td>
+
+                            <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $vote['pk_vote'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $order['pk_order'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
 
-                        
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.showmore', $vote['pk_vote']) }}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-                        
+                            </td>
+                      @if($order['status_transaction'] == 'تکمیل نشده')
+                      <td>
 
+                      <a class="btn btn-warning btn-round" style="font-size:0.75rem"
+                       href="{{route('admin.order.show', $order['pk_order'])}}"> 
+                     مشاهده جزئیات
+                       </a>
+                       
                         </td>
+
+                      @else
+
+
+                          <td>
+                          <a href="#" class="btn btn-primary btn-round" 
+                  style="font-size:0.75rem"> تکمیل سفارش
+                  </a>  
+                          </td>
+
+                      @endif
+                      
                           
                         </tr>
                         @endforeach
-                        
- 
+
+                                           
  <!---- Modal Delete -->                       
  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
@@ -139,12 +165,12 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/vote/delete/"+ id);
+  location.replace( baseUrl + "admin/order/delete/"+ id);
 }
 </script>
-<!---- Modal Delete -->                            
+<!---- Modal Delete -->      
+                                    
                         
-                                       
                         
                         
                         
