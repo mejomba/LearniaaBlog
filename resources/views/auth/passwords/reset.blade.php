@@ -1,4 +1,4 @@
-@extends('site.Layouts.layout_auth')
+@extends('site.Layouts.layout_main')
 
 @section('Head')
 <title> فراموشی رمز  | لرنیا  </title>

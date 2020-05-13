@@ -1,12 +1,12 @@
 <!-- Footer -->
-<footer id="footer" class="footer-area pt-120 mt-5 ">
-    <div class="container mt-5">
+<footer id="footer" class="footer-area pt-120 mt-5 " style="margin-top: 16.0rem !important">
+<div class="container mt-5">
         <div class="subscribe-area wow fadeIn">
             <div class="row">
             <div class="col-lg-6">
                     <div class="subscribe-form mt-50">
                         <form action="#">
-                            <input type="text" placeholder="Enter eamil">
+                            <input type="text" placeholder="ایمیل خود را وارد نمایید">
                             <button class="main-btn">ثبت نام</button>
                         </form>
                     </div>
@@ -22,7 +22,7 @@
           
         </div> 
         <!-- End subscribe area -->
-        
+
         <div class="float-left" style="margin-top: 400px; margin-left: -150px">
             <img class="position-absolute" style="height: 200px; width: 200px; color: white"
                  src="{{asset('images/nemad.png')}}" alt="">

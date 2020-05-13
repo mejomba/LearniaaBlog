@@ -11,6 +11,19 @@
 
 @include('site.Layouts.nav')
 
+<div style="direction: rtl" class="d-flex justify-content-around">
+
+<div class="learn-style mt-5">
+    <h1 class="mt-5"></h1>
+    @yield('text_landing')
+</div>
+
+<div class="learn-style">
+    @yield('pic_landing')
+</div>
+
+</div>
+
 @yield('content')
 
 @include('site.Layouts.footer')

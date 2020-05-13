@@ -21,7 +21,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="section-title text-center pb-40">
-                        <div class="line m-auto"></div>
+                       
 
                     </div> <!-- section title -->
                 </div>
@@ -37,8 +37,8 @@
                             <i class="lni-baloon"></i>
                         </div>
                         <div class="services-content">
-                            <h6 class=""><a href="#" style="color: #D6DBDF;">طراحی وب</a></h6>
-                            <span style="margin-top: 10px; color: aqua">(HTML-5 and CSS-3)</span>
+                            <h6 class=""><a href="#" >طراحی وب</a></h6>
+                            <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>
                             <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
                         </div>
@@ -46,15 +46,15 @@
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                         data-wow-delay="0.5s" style="border: 2px solid #E74C3C; border-radius: 10px; height: 450px">
+                         data-wow-delay="0.5s" style="border: 2px solid #20c5ba; border-radius: 10px; height: 450px">
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-cog"></i>
                         </div>
                         <div class="services-content">
-                            <h6 class="text-black-50"><a style="color: black;" href="#">دوره آموزش کامپیوتر مبتدیان</a></h6>
-                            <span style="margin-top: 10px; color: aqua">(ICDL)</span>
+                            <h6 class="text-black-50"><a  href="#">دوره آموزش کامپیوتر مبتدیان</a></h6>
+                            <span style="margin-top: 10px;">(ICDL)</span>
                             <p class="mt-3">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
                             <button class="btn-style fourth mt-4 d-inline">شروع دوره</button>
@@ -71,8 +71,8 @@
                             <i class="lni-bolt-alt"></i>
                         </div>
                         <div class="services-content mt-30">
-                            <h6 class=""><a href="#" style="color: #D6DBDF;">دوره اموزش اصول برنامه نویسی</a></h6>
-                            <span style="margin-top: 10px; color: aqua">(یادگیری برنامه نویسی)</span>
+                            <h6 class=""><a href="#" style="">دوره اموزش اصول برنامه نویسی</a></h6>
+                            <span style="margin-top: 10px;">(یادگیری برنامه نویسی)</span>
                             <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
                         </div>

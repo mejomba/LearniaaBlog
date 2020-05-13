@@ -89,16 +89,6 @@ class ResetPasswordController extends Controller
                         }
                 return redirect(route('reset.show',compact('pk_user')));
         
-                /*
-                if( $res_data )
-                {    
-                           
-                }
-                else
-                {
-                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-                }
-                */
                   
            }
     }
@@ -278,21 +268,41 @@ class ResetPasswordController extends Controller
 
     public function callbacklogin(Request $request)
     {
-        $user = User::where('username',request()->username)->first();
-        //session()->flash('data',request()->username);
 
-        if($user == null)
-        {
-            return redirect(route('register',[
-                'username' =>request()->username
-            ]));    
-        }
+        $rules =  [ 'username' => ['required',new validate] ];
+           
+            $messages = [   'username.required' => 'نام کاربری وارد نشده است',                      
+                             'username.validate' => ' نام کاربری صحیح وارد نشده است', 
+                       ];    
+         
+           $validator = Validator::make($request->all(),$rules,$messages);
+
+
+        if ($validator->fails())
+           {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+          }
+    
         else
-        {
-            return redirect(route('login',[
-                'username' =>request()->username
-            ]));    
-        }
+          {  
+                $user = User::where('username',request()->username)->first();
+               
+                if($user == null)
+                {
+                    return redirect(route('register',[
+                        'username' =>request()->username
+                    ]));    
+                }
+                else
+                {
+                    return redirect(route('login',[
+                        'username' =>request()->username
+                    ]));    
+                }
+         }
+
     }
 
 
