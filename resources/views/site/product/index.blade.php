@@ -304,7 +304,7 @@ width="40px" height="40px" alt="Profile_BeginnerTree" >  برو پایین  </a>
  </div>
 
 
-             @include('site.Layouts.newspaper')
+          
     </div>
 
 

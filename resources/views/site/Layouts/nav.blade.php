@@ -19,10 +19,10 @@
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            {{--                        <a href="{{route('index')}}">--}}
-                            {{--                            <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" height="75px"--}}
-                            {{--                                 width="100px">--}}
-                            {{--                        </a>--}}
+                     <!--<a href="{{route('index')}}">
+                         <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" height="75px" width="100px">
+                         </a> 
+                    -->
                         </div>
                         <div class="col-6 collapse-close">
                             <button type="button" class="navbar-toggler" data-toggle="collapse"
@@ -100,10 +100,12 @@
 
         <div class="learn-style mt-5">
             <h1 class="mt-5"></h1>
-            <img style="width: 380px; height: 250px" src="{{asset('images/Header_Academy.png')}}" alt="">
+            @yield('text_landing')
         </div>
+
         <div class="learn-style">
-            <img class="learn-bg mt-5" src="{{asset('images/header-teamwork.svg')}}" alt="">
+            @yield('pic_landing')
         </div>
+        
     </div>
 </div>

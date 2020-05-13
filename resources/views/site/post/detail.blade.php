@@ -129,30 +129,17 @@
                             class="btn btn-primary btn-disabled btnblogPost ">دریافت فایل  (PDF) </a>
                            @endif
                         
-
-                         
-
-
-                          
                           </div>
-
-                          
-                          @include('site.Layouts.newspapermobile')
-                          
+     
                   </div>
-
-                  
+ 
                  <!-- <div style="border-bottom:2px solid #20c3b8;margin-top:10px">
-                                       
-                                       </div>  -->
+                   </div>  -->
 
             </div>
            
         </div>
-        
- 
-
-
+     
     </div>
 </div>
 

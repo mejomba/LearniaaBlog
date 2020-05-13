@@ -1,34 +1,28 @@
-{{--footer--}}
+<!-- Footer -->
 <footer id="footer" class="footer-area pt-120 mt-5 ">
     <div class="container mt-5">
         <div class="subscribe-area wow fadeIn">
             <div class="row">
+            <div class="col-lg-6">
+                    <div class="subscribe-form mt-50">
+                        <form action="#">
+                            <input type="text" placeholder="Enter eamil">
+                            <button class="main-btn">ثبت نام</button>
+                        </form>
+                    </div>
+                </div>
+                
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
                         <h6 class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="subscribe-form mt-50">
-                        <form action="#">
-                            <input type="text" placeholder="Enter eamil">
-                            <button class="main-btn">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
-            {{--            <div class="row mt-5">--}}
-            {{--                <div class="col-sm">--}}
-            {{--                    <button class="main-btn">ثبت</button>--}}
-            {{--                </div>--}}
-            {{--                <div class="col-sm-4">--}}
-            {{--                    <input type="text" class="form-control" placeholder="پست الکترونیکی" style="direction: rtl">--}}
-            {{--                </div>--}}
-            {{--                <div class="col-sm-6">--}}
-            {{--                    <h6>برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-        </div> <!-- subscribe area -->
+          
+        </div> 
+        <!-- End subscribe area -->
+        
         <div class="float-left" style="margin-top: 400px; margin-left: -150px">
             <img class="position-absolute" style="height: 200px; width: 200px; color: white"
                  src="{{asset('images/nemad.png')}}" alt="">
@@ -147,3 +141,4 @@
     <hr class="mt-5 bg-white container">
     <div style="height: 100px;"></div>
 </footer>
+<!--End Footer -->

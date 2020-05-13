@@ -209,7 +209,7 @@
 
 
 </div>
-@include('site.Layouts.newspaper')
+
 </div>
 </div>
 
