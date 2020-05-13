@@ -237,15 +237,36 @@
          <div class="container mt-5 ">
         <div class="row d-flex justify-content-around">
 
+        @foreach($last_posts as $one_post)
+            @php  $json = json_decode($one_post['extras'],false) @endphp
+
                     <div class="card p-3 hover-style ml-2" style="width: 20rem;">
-                        <img class="card-img-top img-border" src="{{asset('images/learnia-image.jpg')}}" alt="Card image cap">
+                    <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}">
+                        <img class="card-img-top img-border" src="{{ Storage::url('post/'.$one_post['pic_content'])}}" alt="Card image cap">
+                        </a>
+
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}">
+                            <h5 class="card-title">{{$one_post['title']}}</h5></a>
+                            <p class="card-text">
+                            @php $text =  substr($json->desc_short,0,380);
+                                        $char = substr($text,strlen($text)-1,1);
+                                        if($char != "." | $char != " ")
+                                        {
+                                         echo  substr($text,0,378) . " ...";
+                                        }
+                                        else
+                                        {
+                                          echo $text ;
+                                        }                                  
+                                      @endphp 
+                            </p>
                         </div>
                     </div>
 
+        @endforeach
+
+                <!--
                     <div class="card p-3 hover-style ml-2" style="width: 20rem; border: 2px solid #F1948A">
                         <img class="card-img-top img-border" src="{{asset('images/learnia-image.jpg')}}" alt="Card image cap">
                         <div class="card-body" style="height: 200px">
@@ -263,6 +284,8 @@
                             card's content.</p>
                         </div>
                     </div>
+
+                    -->
 
             </div>
         </div>

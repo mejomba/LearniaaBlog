@@ -39,13 +39,13 @@
                     </div>
                     <div class="mt-5">
                         <img class="ml-3" style="height: 35px; width: 35px; color: white"
-                             src="{{asset('images/telegram.png')}}" alt="">
+                             src="{{asset('images/footer_telegram.svg')}}" alt="">
+                        <img class="ml-3" style="height: 35px; width: 35px; "
+                             src="{{asset('images/footer_instagram.svg')}}" alt="">
                         <img class="ml-3" style="height: 35px; width: 35px; color: white"
-                             src="{{asset('images/instgram.png')}}" alt="">
+                             src="{{asset('images/footer_linkden.svg')}}" alt="">
                         <img class="ml-3" style="height: 35px; width: 35px; color: white"
-                             src="{{asset('images/facbook.png')}}" alt="">
-                        <img class="ml-3" style="height: 35px; width: 35px; color: white"
-                             src="{{asset('images/twitter.png')}}" alt="">
+                             src="{{asset('images/footer_twitter.svg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-2 mx-auto">
@@ -69,7 +69,7 @@
                                 <span class="d-flex">
                                      learniaa_support@
                                     <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white"
-                                         src="{{asset('images/telegram.png')}}" alt="">
+                                         src="{{asset('images/footer_telegram.svg')}}" alt="">
                                 </span>
                             </a>
                         </li>

@@ -19,7 +19,8 @@ class AcademyController extends Controller
      */
     public function index()
     {
-        return view('site.academy.index');
+        $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','ASC')->take(3)->get();
+        return view('site.academy.index',compact('last_posts'));
     }
 
     public function detail()

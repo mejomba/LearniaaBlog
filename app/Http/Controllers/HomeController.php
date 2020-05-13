@@ -24,21 +24,8 @@ class HomeController extends Controller
      
         public function index()
         {
-            /// Not Redirect
-
-           // return redirect(route('post.index'));
-
-
-          // Make Your Data Page & Select Your View For Show Landing Page
-          // Copy & Paste All of Code PostController.Index into Method
-
-            // 
-           /* $recent_Products = Product::where('status', 'انتشار')->get()->take(9);
-            $categories = Category::where('type','محصول')->get();
-            return view('site.product.index',compact('categories','recent_Products'));
-            */
-            return view('site.academy.index');
-        
+           $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','ASC')->take(3)->get();
+          return view('site.academy.index',compact('last_posts'));
         }
 
         public function show_contactus()
