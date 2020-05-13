@@ -6,7 +6,7 @@
 @endsection
 
 @section('text_landing')
-<img style="width: 380px; height: 250px" src="{{asset('images/Header_Academy.png')}}" alt="">
+<img style="width: 480px; height: 350px" src="{{asset('images/Header_Academy.png')}}" alt="">
 @endsection
 
 @section('pic_landing')
@@ -39,8 +39,7 @@
                         <div class="services-content">
                             <h6 class=""><a href="#" >طراحی وب</a></h6>
                             <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>
-                            <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                                tempor invidunt labore.</p>
+                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -55,8 +54,8 @@
                         <div class="services-content">
                             <h6 class="text-black-50"><a  href="#">دوره آموزش کامپیوتر مبتدیان</a></h6>
                             <span style="margin-top: 10px;">(ICDL)</span>
-                            <p class="mt-3">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                                tempor invidunt labore.</p>
+                            <p class="mt-3">
+                            در این دوره توانایی کار با رایانه و ویندوز ، اینترنت و نرم افزارهای کاربردی آموزش داده شده است</p>
                             <button class="btn-style fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
@@ -73,8 +72,7 @@
                         <div class="services-content mt-30">
                             <h6 class=""><a href="#" style="">دوره اموزش اصول برنامه نویسی</a></h6>
                             <span style="margin-top: 10px;">(یادگیری برنامه نویسی)</span>
-                            <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                                tempor invidunt labore.</p>
+                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>
                         </div>
                     </div> <!-- single services -->
                 </div>

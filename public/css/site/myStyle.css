@@ -2004,9 +2004,9 @@ p {
     border-bottom-right-radius: 5px;
     height: 65px;
     line-height: 65px;
-    background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-    background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-    background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+    background: -webkit-linear-gradient(to right, #2bc49c 0%, #20c5ba 50%, #20c5ba 100%);
+    background: -o-linear-gradient(to right, #2bc49c 0%, #20c5ba 50%, #20c5ba 100%);
+    background: linear-gradient(to right, #2bc49c 0%, #20c5ba 50%, #20c5ba 100%);
     background-size: 200%;
 }
 

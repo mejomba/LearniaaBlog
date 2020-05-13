@@ -9,6 +9,7 @@ use App\Product;
 use App\Behavior;
 use App\Transaction;
 use App\Search;
+use App\Post;
 
 class AcademyController extends Controller
 {
@@ -19,7 +20,7 @@ class AcademyController extends Controller
      */
     public function index()
     {
-        $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','ASC')->take(3)->get();
+        $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
         return view('site.academy.index',compact('last_posts'));
     }
 
