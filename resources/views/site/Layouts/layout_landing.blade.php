@@ -20,18 +20,18 @@
             <div class="row justify-content-center" style="margin-top: 150px">
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                         data-wow-delay="0.2s" style="height: 450px">
+                         data-wow-delay="0.2s" style="height: 450px; background: #F4F6F6">
+                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-baloon"></i>
                         </div>
-                        <div class="services-content" disabled>
-                            <h6 class=""><a href="#" style="color: gray;">طراحی وب</a></h6>
+                        <div class="services-content">
+                            <h6 class=""><a href="#" style="color: #D6DBDF;">طراحی وب</a></h6>
                             <span style="margin-top: 10px; color: aqua">(HTML-5 and CSS-3)</span>
                             <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn btn-outline-warning fourth mt-5 d-inline" disabled>شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -44,10 +44,9 @@
                             <i class="lni-cog"></i>
                         </div>
                         <div class="services-content">
-                            <h6 class="text-black-50"><a style="color: black;" href="#">لرنیا</a></h6>
-                            <p class="text">دوره آموزش کامپیوتر مبتدیان</p>
-                            <p>(ICDL)</p>
-                            <p>Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                            <h6 class="text-black-50"><a style="color: black;" href="#">دوره آموزش کامپیوتر مبتدیان</a></h6>
+                            <span style="margin-top: 10px; color: aqua">(TCDL)</span>
+                            <p class="mt-3">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
                             <button class="btn-style fourth mt-4 d-inline">شروع دوره</button>
                         </div>
@@ -55,18 +54,18 @@
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                         data-wow-delay="0.8s" style="height: 450px">
+                         data-wow-delay="0.8s" style=";height: 450px; background: #F4F6F6">
+                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-bolt-alt"></i>
                         </div>
                         <div class="services-content mt-30">
-                            <h6 class=""><a href="#" style="color: gray;">دوره اموزش اصول برنامه نویسی</a></h6>
+                            <h6 class=""><a href="#" style="color: #D6DBDF;">دوره اموزش اصول برنامه نویسی</a></h6>
                             <span style="margin-top: 10px; color: aqua">(یادگیری برنامه نویسی)</span>
                             <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn btn-outline-warning fourth mt-5 d-inline" disabled>شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
