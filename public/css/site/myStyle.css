@@ -17,7 +17,9 @@ body {
     height: 800px;
 
 }
-
+.dsble:disabled{
+    opacity: 0.1%;
+}
 .nav-navbar-style {
     margin-right: -85px;
 }
@@ -1828,11 +1830,11 @@ p {
 }
 
 .slick-center .single-testimonial {
-    border-color: #FE7A7B;
+    /*border-color: #FE7A7B;*/
 }
 
 .slick-center .single-testimonial .testimonial-review .quota i {
-    color: #FE7A7B;
+    /*color: #FE7A7B;*/
 }
 
 .testimonial-active .slick-dots {

@@ -13,12 +13,11 @@
                 <div class="col-lg-10">
                     <div class="section-title text-center pb-40">
                         <div class="line m-auto"></div>
-                        <h3 class="title">Clean and simple design,
-                            <span> Comes with everything you need to get started!</span></h3>
+
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center" style="margin-top: 150px">
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
                          data-wow-delay="0.2s" style="height: 450px">
@@ -27,11 +26,15 @@
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-baloon"></i>
                         </div>
-                        <div class="services-content">
-                            <h4 class="services-title"><a href="#">Clean</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                        <div class="position-relative">
+                            <img style="width: 80px; height: 80px; margin-top: -350px" src="{{asset('images/soon.png')}}" alt="">
+                        </div>
+                        <div class="services-content" disabled>
+                            <h6 class=""><a href="#" style="color: gray;">طراحی وب</a></h6>
+                            <span style="margin-top: 10px; color: aqua">(HTML-5 and CSS-3)</span>
+                            <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn-style fourth mt-5 d-inline">شروع دوره</button>
+                            <button class="btn-style fourth mt-5 d-inline" disabled>شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -44,8 +47,9 @@
                             <i class="lni-cog"></i>
                         </div>
                         <div class="services-content">
-                            <h4 class="services-title mt-5"><a href="#">لرنیا</a></h4>
-                            <p class="text">دوره آموزش کامپیوتر مبتدیان ( ICDL)</p>
+                            <h6 class="text-black-50"><a style="color: black;" href="#">لرنیا</a></h6>
+                            <p class="text">دوره آموزش کامپیوتر مبتدیان</p>
+                            <p>(ICDL)</p>
                             <button class="btn-style fourth mt-5 d-inline">شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
@@ -58,11 +62,15 @@
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-bolt-alt"></i>
                         </div>
+                        <div class="position-relative">
+                            <img style="width: 80px; height: 80px; margin-top: -350px" src="{{asset('images/soon.png')}}" alt="">
+                        </div>
                         <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Powerful</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                            <h6 class=""><a href="#" style="color: gray;">دوره اموزش اصول برنامه نویسی</a></h6>
+                            <span style="margin-top: 10px; color: aqua">(یادگیری برنامه نویسی)</span>
+                            <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn-style fourth mt-5 d-inline">شروع دوره</button>
+                            <button class="btn-style fourth mt-5 d-inline disabled" disabled>شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>

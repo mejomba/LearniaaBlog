@@ -4,11 +4,11 @@
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
                     <div class="line m-auto"></div>
-                    <h3 class="title">Users sharing<span> their experience</span></h3>
+                    <h3 class="title mt-5">اخرین مطالب</h3>
                 </div> <!-- section title -->
             </div>
         </div> <!-- row -->
-        <div class="row testimonial-active wow fadeInUpBig mt-5" data-wow-duration="1s" data-wow-delay="0.8s">
+        <div class="row testimonial-active wow fadeInUpBig mt-5 dsble" data-wow-duration="1s" data-wow-delay="0.8s">
             <div class="col-lg-4">
                 <div class="single-testimonial">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                             tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
                             nonu.</p>
                     </div>
@@ -36,15 +36,15 @@
                             <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">
                         </div>
                         <div class="author-content media-body">
-                            <h6 class="holder-name">Jenny Deo</h6>
-                            <p class="text">CEO, SpaceX</p>
+                            <h6 class="holder-name" style="color: darkgray">Jenny Deo</h6>
+                            <p class="text" style="color: darkgray">CEO, SpaceX</p>
                         </div>
                     </div>
                 </div> <!-- single testimonial -->
             </div>
 
             <div class="col-lg-4">
-                <div class="single-testimonial" style="border: 2px solid #F1948A">
+                <div class="single-testimonial">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
                             <i class="lni-quotation"></i>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                             tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
                             nonu.</p>
                     </div>
@@ -70,8 +70,8 @@
                             <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="">
                         </div>
                         <div class="author-content media-body">
-                            <h6 class="holder-name">Marjin Otte</h6>
-                            <p class="text">UX Specialist, Yoast</p>
+                            <h6 class="holder-name" style="color: darkgray">Marjin Otte</h6>
+                            <p class="text" style="color: darkgray">UX Specialist, Yoast</p>
                         </div>
                     </div>
                 </div> <!-- single testimonial -->
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                             tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
                             nonu.</p>
                     </div>
@@ -103,19 +103,15 @@
                             <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">
                         </div>
                         <div class="author-content media-body">
-                            <h6 class="holder-name">David Smith</h6>
-                            <p class="text">CTO, Alphabet</p>
+                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>
+                            <p class="text" style="color: darkgray">CTO, Alphabet</p>
                         </div>
                     </div>
                 </div> <!-- single testimonial -->
             </div>
-
         </div> <!-- row -->
     </div> <!-- container -->
 </section>
-
-
-<div class="text-center"><h1>اخرین مطالب</h1></div>
 <div class="container mt-5 ">
     <div class="row d-flex justify-content-around">
         <div class="card p-3 hover-style ml-2" style="width: 20rem;">

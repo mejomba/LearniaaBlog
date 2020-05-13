@@ -9,9 +9,9 @@
 @section('pic_landing')
 @endsection
 @section('content')
-    <div class="container mt-5">
+    <div class="container" style="margin-top: 100px">
         <div class="text-center">
-            <h1 class="font-weight-bold">Check Out The Video</h1>
+            <h3 class="font-weight-bold">فیلم اموزش کار با سایت</h3>
         </div>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
         <div class="row mt-5">
