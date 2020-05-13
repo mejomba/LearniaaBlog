@@ -186,7 +186,7 @@ body {
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "shabnam", sans-serif;
     font-weight: 700;
     margin-bottom: 0;
 }
@@ -222,7 +222,7 @@ body {
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "shabnam", sans-serif;
     font-weight: normal;
     font-style: normal;
     color: #6A6972;
@@ -275,7 +275,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "shabnam", sans-serif;
     font-weight: 700;
     color: #2E2E2E;
     margin: 0px;
@@ -927,15 +927,15 @@ p {
 .navbar-nav .nav-item a {
     font-size: 16px;
     font-weight: 400;
-    color: #fff;
+   /* color: #fff; */  
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
     -ms-transition: all 0.3s ease-out 0s;
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
-    padding: 10px 0;
+  /*  padding: 10px 0; */ padding: 10px 9px;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: "shabnam", sans-serif;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1992,7 +1992,7 @@ p {
 }
 
 .subscribe-form input:focus {
-    border-color: #361CC1;
+    border-color: #20c5ba;
 }
 
 .subscribe-form button {

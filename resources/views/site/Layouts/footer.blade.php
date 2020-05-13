@@ -1,9 +1,9 @@
 <!-- Footer -->
-<footer id="footer" class="footer-area pt-120 mt-5 " style="margin-top: 16.0rem !important">
+<footer id="footer" class="footer-area pt-120 mt-5 " style="margin-top: 12.0rem !important">
 <div class="container mt-5">
         <div class="subscribe-area wow fadeIn">
             <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="margin-top:20px">
                     <div class="subscribe-form mt-50">
                         <form action="#">
                             <input type="text" placeholder="ایمیل خود را وارد نمایید">
@@ -14,7 +14,7 @@
                 
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
-                        <h6 class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
+                        <h6 style="font-size:24px;text-align:center" class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
                     </div>
                 </div>
 
@@ -23,10 +23,7 @@
         </div> 
         <!-- End subscribe area -->
 
-        <div class="float-left" style="margin-top: 400px; margin-left: -150px">
-            <img class="position-absolute" style="height: 200px; width: 200px; color: white"
-                 src="{{asset('images/nemad.png')}}" alt="">
-        </div>
+       
         <div class="container" style="margin-top: 350px; direction: rtl">
             <div class="row ml-4">
                 <div class="col-md-4 mx-auto" style="margin-top: -55px">
@@ -36,7 +33,7 @@
                              style="height: 100px; width: 100px; margin: 10px 35px">
                     </a>
                     <div class="mt-5">
-                        <p class="text text-white">این متن یک خطی راجب هدف لرنیا است که به شما داده
+                        <p class="text text-white" style="text-align:justify">این متن یک خطی راجب هدف لرنیا است که به شما داده
                             میشود و شما ان را اینجا
                             میتوانید صحبت و ظبط نمایید با تشکر</p>
                     </div>
@@ -71,7 +68,7 @@
                             <a href="#!" style="text-decoration: none; color:white">
                                 <span class="d-flex">
                                      learniaa_support@
-                                    <img class="ml-3 mr-1" style="height: 25px; width: 25px; color: white"
+                                    <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white"
                                          src="{{asset('images/telegram.png')}}" alt="">
                                 </span>
                             </a>
@@ -135,6 +132,14 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="col-md-2 mx-auto ml-5">
+                        <div class="float-left" >
+                    <img class="position-absolute" style="height: 200px; width: 200px; color: white"
+                        src="{{asset('images/nemad.png')}}" alt="">
+                        </div>
+                  </div>
+
             </div>
         </div>
     </div>

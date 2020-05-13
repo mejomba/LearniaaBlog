@@ -33,7 +33,7 @@
                         <h3 style="color: gray; margin-top: -30px">بزودی</h3>
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
+                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">
                             <i class="lni-baloon"></i>
                         </div>
                         <div class="services-content">
@@ -49,7 +49,7 @@
                          data-wow-delay="0.5s" style="border: 2px solid #20c5ba; border-radius: 10px; height: 450px">
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
+                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">
                             <i class="lni-cog"></i>
                         </div>
                         <div class="services-content">
@@ -57,7 +57,7 @@
                             <span style="margin-top: 10px;">(ICDL)</span>
                             <p class="mt-3">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn-style fourth mt-4 d-inline">شروع دوره</button>
+                            <button class="btn-style fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -67,7 +67,7 @@
                         <h3 style="color: gray; margin-top: -30px">بزودی</h3>
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
+                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">
                             <i class="lni-bolt-alt"></i>
                         </div>
                         <div class="services-content mt-30">
@@ -91,7 +91,7 @@
         <div class="text-center">
             <h3 class="font-weight-bold">فیلم اموزش کار با سایت</h3>
         </div>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+       
         <div class="row mt-5">
             <div class="col-lg-12">
                 <video class="afterglow" id="my-video" width="500" height="270"

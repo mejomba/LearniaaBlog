@@ -81,7 +81,7 @@
                                     <input type="hidden" name="type_search" value="{{Request::segment(1)}}"
                                            class="form-control search-box" placeholder="جستجو...">
                                     <div class="input-group">
-                                        <input type="text" name="content_search"
+                                        <input type="text" name="content_search" style="border-radius:0"
                                                class="form-control form-control-alternative" placeholder="جستجو...">
                                         <button class="input-group-text" type="submit"
                                                 style="font-size:0.8rem !important">
@@ -94,17 +94,17 @@
                     </form>
                 </ul>
 <!-- USER PANEL -->
-
+<ul class="navbar-nav col-md-1"> </ul>
 <ul class="navbar-nav col-md-1" dir="rtl">
 @guest
-  <li class="nav-item">
-   <!--  <a class="nav-link" target="_parent" href="{{ route('register') }}">
-      ثبت نام</a> -->
-     </li>
+  <!-- <li class="nav-item">
+   <a class="nav-link" target="_parent" href="{{ route('register') }}">
+      ثبت نام</a> 
+     </li> -->
    
      @if (Route::has('register'))
           <li class="nav-item">
-            <a class="nav-link" target="_parent"  rel="tooltip" title="" 
+            <a class="nav-link" target="_parent" style="color:white"  rel="tooltip" title="" 
             data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
             > ورود
             <div class="ripple-container"></div>
@@ -113,8 +113,9 @@
                     @endif
                 @else
                     <li class="nav-item dropdown" style="border-radius:1.2rem;">
-
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" href="#" role="button" 
+                        <!--   <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" -->
+                        <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button" 
+                        style=" border-radius: 50%; width: 50px; height: 50px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image" height="35px" width="35px">
                          <span class="caret"></span>
