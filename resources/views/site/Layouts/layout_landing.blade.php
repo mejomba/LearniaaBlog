@@ -26,15 +26,12 @@
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-baloon"></i>
                         </div>
-                        <div class="position-relative">
-                            <img style="width: 80px; height: 80px; margin-top: -350px" src="{{asset('images/soon.png')}}" alt="">
-                        </div>
                         <div class="services-content" disabled>
                             <h6 class=""><a href="#" style="color: gray;">طراحی وب</a></h6>
                             <span style="margin-top: 10px; color: aqua">(HTML-5 and CSS-3)</span>
                             <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn-style fourth mt-5 d-inline" disabled>شروع دوره</button>
+                            <button class="btn btn-outline-warning fourth mt-5 d-inline" disabled>شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -50,7 +47,9 @@
                             <h6 class="text-black-50"><a style="color: black;" href="#">لرنیا</a></h6>
                             <p class="text">دوره آموزش کامپیوتر مبتدیان</p>
                             <p>(ICDL)</p>
-                            <button class="btn-style fourth mt-5 d-inline">شروع دوره</button>
+                            <p>Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
+                                tempor invidunt labore.</p>
+                            <button class="btn-style fourth mt-4 d-inline">شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -62,15 +61,12 @@
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" alt="shape-1">
                             <i class="lni-bolt-alt"></i>
                         </div>
-                        <div class="position-relative">
-                            <img style="width: 80px; height: 80px; margin-top: -350px" src="{{asset('images/soon.png')}}" alt="">
-                        </div>
                         <div class="services-content mt-30">
                             <h6 class=""><a href="#" style="color: gray;">دوره اموزش اصول برنامه نویسی</a></h6>
                             <span style="margin-top: 10px; color: aqua">(یادگیری برنامه نویسی)</span>
                             <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
                                 tempor invidunt labore.</p>
-                            <button class="btn-style fourth mt-5 d-inline disabled" disabled>شروع دوره</button>
+                            <button class="btn btn-outline-warning fourth mt-5 d-inline" disabled>شروع دوره</button>
                         </div>
                     </div> <!-- single services -->
                 </div>
