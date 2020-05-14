@@ -32,17 +32,6 @@
                     width="900px" height="400px" alt="Learniaa" >
                     </div>
 
-
-                    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
-                    <style>.videowrapper{width: 800px;position:relative;height: auto;}</style>
-                    <div class="videowrapper col-md-6 text-center container-fluid" style="margin-top:10px">
-                    <video class="afterglow"  id="my-video"  width="500" height="270"
-                    data-overscale="false"  poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}"
-                    src="{{ Storage::url('Videos_Beginner_Tree/Video_IntroAcademy.mp4') }}">
-                    </video>
-                    </div>
-
-
                 <!--
                     <div class="col-md-3">
                     <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px"

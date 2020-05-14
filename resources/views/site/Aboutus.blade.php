@@ -15,13 +15,11 @@
 
              <!-- Text -->
 
-            <div class="container-fluid" style="margin-top:15px">
+            <div class="container-fluid" >
             <div class="row text-center">
             <div class="col-md-12">  
 
-            <h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">
-                        ما دقیقا چکار می کنیم
-                        </h1>
+        
 
              <!-- Text -->
 
@@ -35,12 +33,14 @@
 
                     <div class="col-md-6">
 
-                    <img class="img-fluid rounded-circle shadow-lg" style="padding-top:40px;border-radius:20% !important;"
-                    src="{{ asset('images/Template/sss.svg') }}"
-                    width="300px" height="100px" alt="Learniaa" >
+                    <img class="img-fluid rounded-circle " style="padding-top:40px;border-radius:20% !important;"
+                    src="{{ asset('images/Template/contactus.svg') }}"
+                    width="600px" height="200px" alt="Learniaa" >
 
                     
                     </div>
+
+                   
                             
                    <!-- 
                     <div class="col-md-3">
@@ -56,9 +56,12 @@
 
                     </div>
 
+                   
                 </div>
 
-
+                <h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">
+                      معرفی لرنیایی ها
+                        </h1>
             </div>
             </div>
             </div>  
@@ -100,27 +103,18 @@
             </div>
             <!-- Text Content -->
 
-            <div class="col-md-12 col-12 text-center" style="font-size:10px">
+<!--
+  <div class="col-md-12 col-12 text-center" style="font-size:10px">
 
-<div class="row" style="padding-bottom:10px">
-
-    <style>#zarinpal{margin:auto} #zarinpal img {width:90px; height:90px}</style>
-
+      <div class="row" style="padding-bottom:10px">
+       <style>#zarinpal{margin:auto} #zarinpal img {width:90px; height:90px}</style>
        <div class="col-md-12 col-8" id="zarinpal">
        <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
-  
-  <!--     <img  style="width:150px !important" src="{{ asset('images/Template/Banks.jpg') }}"
- alt="Thumbnail Image" height="auto"  >
-       </div> -->
-
        <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:120px !important' 
        onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
         src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
-
-     
-
- </div>
-   
+    </div>
+   -->
 
 </div>
 

@@ -48,36 +48,7 @@
                              src="{{asset('images/footer_twitter.svg')}}" alt="">
                     </div>
                 </div>
-                <div class="col-md-2 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">ارتباط‌ با ما
-                    </h5>
-                    <ul class="list-unstyled mt-5">
-                        <li class="">
-                            <a href="#!" style="text-decoration: none; color:white">learniaa@gmail.com</a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
-                        <li>
-                            <a href="#!" style="text-decoration: none; color:white">021-33195733</a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
-                        <li>
-                            <a href="#!" style="text-decoration: none; color:white">
-                                <span class="d-flex">
-                                     learniaa_support@
-                                    <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white"
-                                         src="{{asset('images/footer_telegram.svg')}}" alt="">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
-                    </ul>
-                </div>
+               
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-2 mx-auto">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">دسترسی سریع</h5>
@@ -132,12 +103,54 @@
                         </li>
                     </ul>
                 </div>
-
+                <div class="col-md-2 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">ارتباط‌ با ما
+                    </h5>
+                    <ul class="list-unstyled mt-5">
+                        <li class="">
+                            <a href="#!" style="text-decoration: none; color:white">learniaa@gmail.com</a>
+                        </li>
+                        <li class="">
+                            <a href="#!"></a>
+                        </li>
+                        <li>
+                            <a href="#!" style="text-decoration: none; color:white">021-33195733</a>
+                        </li>
+                        <li class="">
+                            <a href="#!"></a>
+                        </li>
+                        <li>
+                            <a href="#!" style="text-decoration: none; color:white">
+                                <span class="d-flex">
+                                     learniaa_support@
+                                    <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white"
+                                         src="{{asset('images/footer_telegram.svg')}}" alt="">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#!"></a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="col-md-2 mx-auto ml-5">
-                        <div class="float-left" >
-                    <img class="position-absolute" style="height: 200px; width: 200px; color: white"
-                        src="{{asset('images/nemad.png')}}" alt="">
+                  <div class="float-left" >
+                  <!--  <img class="position-absolute" style="height: 200px; width: 200px; color: white"
+                        src="{{asset('images/nemad.png')}}" alt="">  -->
+
+                        <div class="row" style="padding-bottom:10px">
+
+                                <style>#zarinpal{margin:auto} #zarinpal img {width:90px; height:90px}</style>
+
+                                <div class="col-md-12 col-8" id="zarinpal">
+                                <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
+
+                                <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:120px !important' 
+                                onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
+                                    src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
                         </div>
+
+                     </div>
                   </div>
 
             </div>

@@ -52,11 +52,13 @@
                             <i class="lni-cog"></i>
                         </div>
                         <div class="services-content">
-                            <h6 class="text-black-50"><a  href="#">دوره آموزش کامپیوتر مبتدیان</a></h6>
+                            <h6 class="text-black-50"><a href="{{route('academy.detail')}}">دوره آموزش کامپیوتر مبتدیان</a></h6>
                             <span style="margin-top: 10px;">(ICDL)</span>
                             <p class="mt-3">
                             در این دوره توانایی کار با رایانه و ویندوز ، اینترنت و نرم افزارهای کاربردی آموزش داده شده است</p>
+                            <a href="{{route('academy.detail')}}"> 
                             <button class="btn-style fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
+                            </a>
                         </div>
                     </div> <!-- single services -->
                 </div>

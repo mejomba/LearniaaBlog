@@ -12,53 +12,9 @@
     <div class="row">
 
           <!-- Text -->
-            <div class="col-md-7 text-center" dir="rtl">
-
-            <h1 class="title" style="font-size:30px;color: #303030">
-                   با ما در ارتباط باشید 
-          <p>
-          </p>
-          <img  
-             src="{{ asset('images/Template/customer_service.svg') }}" style=""
-             width="50%" height="50%" alt="Learniaa">
-
-          <p>
-       تلفن 1: 33195733-021
-          </p>
-
-          <p>
-          تلفن 2: 09901918193
-          </p>
-
-          <p>
-پست الکترونیکی : Learniaa@gmail.com
-          </p>
-
-          <p>
-          آدرس : تهران - اتوبان امام علی - اتوبام محلاتی - خ عبدالمحمدی پ 31
-          </p>
-
-          <p>
-          پشتیبانی (تلگرام) : @Learniaa_Support
-          </p>
-
-          <p>
-          </p>
-          
-
-                  </h1>
-
-            <!-- Text -->
-
-             <!-- Image -->
-           
-              <!-- Image -->     
             
-            </div>
-             
-
            <!-- Form -->
-           <div class="col-md-5">
+           <div class="col-md-5 ml-auto mr-auto">
               
 
               <div class="col-md-12">
@@ -108,19 +64,25 @@
           </div>
   </div>
 
-
-
-
-
-
-
-
-
-
             </div>
            <!-- Form -->
 
+           <div class="col-md-12 text-center" dir="rtl" style="margin-top:15px">
 
+<p>
+</p>
+<img  
+ src="{{ asset('images/Template/customer_service.svg') }}" style=""
+ width="50%" height="50%" alt="Learniaa">
+
+
+<!-- Text -->
+
+ <!-- Image -->
+
+  <!-- Image -->     
+
+</div>
 
 
 
@@ -135,10 +97,6 @@
        <div class="col-md-12 col-8" id="zarinpal">
        <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
   
-  <!--     <img  style="width:150px !important" src="{{ asset('images/Template/Banks.jpg') }}"
- alt="Thumbnail Image" height="auto"  >
-       </div> -->
-
        <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:120px !important' 
        onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
         src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
