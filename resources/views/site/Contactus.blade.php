@@ -7,27 +7,19 @@
 @endsection
 
 @section('content')
-
  <!-- Section -->
     <div class="row">
 
-          <!-- Text -->
-            
-           <!-- Form -->
-           <div class="col-md-5 ml-auto mr-auto">
-              
-
+           <div class="col-md-5 ml-auto mr-auto">    
               <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center"><h4>ارتباط با ما</h4></div>
                 
               </div>
-              <div class="card-body px-lg-5 py-lg-5">
-                
+              <div class="card-body px-lg-5 py-lg-5"> 
                 <form role="form" method="POST" action="{{route('message.store')}}" style="height: 270px; ">
                 @csrf
-
                   <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -37,7 +29,7 @@
                     </div>
                   </div>
   
-  <div class="form-group">
+                 <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         
@@ -46,7 +38,7 @@
                     </div>
                   </div>
   
-  <div class="form-group">
+              <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         
@@ -63,54 +55,26 @@
             </div>
           </div>
   </div>
-
             </div>
            <!-- Form -->
-
            <div class="col-md-12 text-center" dir="rtl" style="margin-top:15px">
-
 <p>
 </p>
-<img  
- src="{{ asset('images/Template/customer_service.svg') }}" style=""
- width="50%" height="50%" alt="Learniaa">
-
-
-<!-- Text -->
-
- <!-- Image -->
-
-  <!-- Image -->     
-
+<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="50%" height="50%" alt="Learniaa">
+ 
 </div>
-
-
-
-<div class="col-md-12 col-12 text-center" style="font-size:10px">
-
-<h2> مجوزها و نماد </h2>
-
-<div class="row" style="padding-bottom:10px">
-
-    <style>#zarinpal{margin:auto} #zarinpal img {width:90px; height:90px}</style>
-
-       <div class="col-md-12 col-8" id="zarinpal">
-       <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
-  
-       <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:120px !important' 
-       onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
-        src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
-
- </div>
- </div>
-
-
-
-
-
-
+    <div class="col-md-12 col-12 text-center" style="font-size:10px">
+    <h2> مجوزها و نماد </h2>
+    <div class="row" style="padding-bottom:10px">
+        <style>#zarinpal{margin:auto} #zarinpal img {width:90px; height:90px}</style>
+          <div class="col-md-12 col-8" id="zarinpal">
+          <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
+          <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:120px !important' 
+          onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
+            src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
+    </div>
+    </div>
 
   </div>
  <!-- Section -->
-
 @endsection
