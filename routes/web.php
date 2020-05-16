@@ -21,6 +21,8 @@ Route::get('/mail', 'MailController@index');
 
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
+Route::get('/PrivacyPolicy', 'HomeController@show_PrivacyPolicy')->name('PrivacyPolicy');
+Route::get('/TermsOfService', 'HomeController@show_TermsOfService')->name('TermsOfService');
 Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 

@@ -39,6 +39,18 @@ class HomeController extends Controller
         
         }
 
+        public function show_TermsOfService()
+        {
+          return view('site.TermsOfService');
+        
+        }
+
+        public function show_PrivacyPolicy()
+        {
+          return view('site.PrivacyPolicy');
+        
+        }
+
         public function Page500()
         {
           return view('error.500');

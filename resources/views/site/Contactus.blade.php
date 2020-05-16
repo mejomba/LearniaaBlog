@@ -10,7 +10,9 @@
  <!-- Section -->
     <div class="row">
 
-           <div class="col-md-5 ml-auto mr-auto">    
+    <div class="col-md-2">
+</div>
+<div class="col-md-4" >   
               <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
@@ -55,13 +57,20 @@
             </div>
           </div>
   </div>
+
+<div class="col-md-4">
+<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="500px" height="600px" alt="Learniaa">
+ 
+</div>
+
+
             </div>
+
            <!-- Form -->
            <div class="col-md-12 text-center" dir="rtl" style="margin-top:15px">
 <p>
 </p>
-<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="50%" height="50%" alt="Learniaa">
- 
+
 </div>
     <div class="col-md-12 col-12 text-center" style="font-size:10px">
     <h2> مجوزها و نماد </h2>

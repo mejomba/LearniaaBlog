@@ -57,7 +57,7 @@
                             <p class="mt-3">
                             در این دوره توانایی کار با رایانه و ویندوز ، اینترنت و نرم افزارهای کاربردی آموزش داده شده است</p>
                             <a href="{{route('academy.detail')}}"> 
-                            <button class="btn-style fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
+                            <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
                             </a>
                         </div>
                     </div> <!-- single services -->

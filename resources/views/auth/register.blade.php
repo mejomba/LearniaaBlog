@@ -5,7 +5,9 @@
 @endsection
 @section('content')
 <div class="row">
-<div class="col-lg-4 col-md-6 ml-auto mr-auto">
+<div class="col-md-2">
+</div>
+<div class="col-md-4" >
 <div class="card shadow border-0">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h1>ثبت نام کاربران</h1></div>
