@@ -62,7 +62,7 @@ class ResetPasswordController extends Controller
                 $reset_new->save();
             
                 // Send data
-                $check = substr($data['username'],'0','2');
+                $check = substr(request()->username,'0','2');
                 if ($check=='09')
                 {
                 $url = "https://ippanel.com/services.jspd";
@@ -214,7 +214,7 @@ class ResetPasswordController extends Controller
 
         $rules =  [
             
-                     'username' => ['required|exists:users',new validate]
+                     'username' => ['required',new validate]
                  ];
 
             $messages = [                      

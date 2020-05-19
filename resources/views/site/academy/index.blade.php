@@ -229,7 +229,7 @@
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
                    
-                    <h3 class="title mt-5">آخرین مطالب</h3>
+                  <!--  <h3 class="title mt-5">آخرین مطالب</h3>  -->
                 </div> <!-- section title -->
             </div>
         </div> 

@@ -6,37 +6,36 @@
 @endsection
 
 @section('content')
-
 <div class="row" >
-        <div class="col-lg-4 col-md-6 ml-auto mr-auto" >
-          <div class="card card-login">
+<div class="col-md-2">
+</div>
+<div class="col-md-4" style="padding: 0px 28px;" >
+<div class="card shadow border-0" style="border-radius: 30%;">
+<div class="card shadow border-0" style="border-radius: 30%;">
+<div class="card-header" style="background-color:#20C5BA ">
+                <div class="text-center"><h1>تغییر رمز عبور</h1></div>
+              </div>
+   <div class="card-body px-lg-5 py-lg-5">          
           <form class="form" method="POST" action="{{route('reset.delete',$pk_user)}}">
               @csrf
-              <div class="card-header card-header-primary text-center">
-                <h1 class="card-title"> تغییر رمز عبور</h1>
-               
-              </div>
-              <p class="description text-center"></p>
-              <div class="card-body">
-                <span class="bmd-form-group"><div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
+             
+              <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
                       <img class="img-raised rounded-circle img-fluid" 
                       src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
-                    </span>
+                      </div>
+                      <input name="newpassword" id="newpassword" type="text" class="form-control" placeholder="رمز عبور جدید">
+                    </div>
                   </div>
-                  <input name="newpassword" id="newpassword" type="text" class="form-control" placeholder="رمز عبور جدید">
-                </div>
-                </span>
-               
-                
-              </div>
-              <div class="footer text-center">
-              <button type="submit" class="btn btn-primary btn-round">  تایید
-                <div class="ripple-container"></div> </button>
-              
+
+                  <div class="text-center" style="padding-top:40px">
+                    <button type="submit" class="btn btn-primary">تایید  </button>
+                  </div>
+
               </div>
             </form>
+
           </div>
         </div>
 

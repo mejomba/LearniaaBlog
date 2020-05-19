@@ -21,6 +21,10 @@ class AcademyController extends Controller
     public function index()
     {
         $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
+       
+        /* Empty From data base */
+        $last_posts = array();
+
         return view('site.academy.index',compact('last_posts'));
     }
 

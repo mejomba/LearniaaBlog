@@ -31,10 +31,10 @@
         <div class="container" style="margin-top: 350px; direction: rtl">
             <div class="row ml-4">
                 <div class="col-md-4 mx-auto" style="margin-top: -55px">
-                    <a class="bg-white" style=" border-radius: 50%; width: 150px; height: 150px;"
+                    <a class="" style=""
                        href="{{route('index')}}">
-                        <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image"
-                             style="height: 100px; width: 100px; margin: 10px 35px">
+                        <img src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image"
+                             style="height: 200px;width: 150px;margin: 10px 35px;">
                     </a>
                     <div class="mt-5">
                         <p class="text text-white" style="text-align:justify">در لرنیا جمع شده ایم تا مسیر یادگیری شما را هر چه راحت تر و سریع تر مشخص کرده و با کمک شما پیش بریم</p>
@@ -161,7 +161,7 @@
                                 <div class="col-md-12 col-8" id="zarinpal">
                                 <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
 
-                                <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:120px !important' 
+                                <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:90px !important' 
                                 onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
                                     src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
                         </div>

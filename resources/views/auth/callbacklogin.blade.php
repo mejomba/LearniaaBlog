@@ -7,8 +7,8 @@
 <div class="row" >
 <div class="col-md-2">
 </div>
-<div class="col-md-4" >
-<div class="card shadow border-0">
+<div class="col-md-4" style="padding: 0px 28px;" >
+<div class="card shadow border-0" style="border-radius: 30%;">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h1>ثبت نام / ورود</h1></div>
 </div>
