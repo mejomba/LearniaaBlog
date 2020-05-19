@@ -87,20 +87,20 @@
 
 
 <!-- Video LEARN -->
-    <div class="container" style="margin-top: 100px">
-        <div class="text-center">
-            <h3 class="font-weight-bold">فیلم اموزش کار با سایت</h3>
-        </div>
+{{--   <div class="container" style="margin-top: 100px"> --}}
+    {{--  <div class="text-center"> --}}
+        {{--  <h3 class="font-weight-bold">فیلم اموزش کار با سایت</h3> --}}
+            {{--  </div> --}}
        
-        <div class="row mt-5">
-            <div class="col-lg-12">
-                <video class="afterglow" id="my-video" width="500" height="270"
-                       data-overscale="false" poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}"
-                       src="{{ Storage::url('Videos_Beginner_Tree/Video_IntroAcademy.mp4') }}">
-                </video>
-            </div>
-        </div>
-    </div>
+                {{-- <div class="row mt-5"> --}}
+                    {{--  <div class="col-lg-12"> --}}
+                        {{--  <video class="afterglow" id="my-video" width="500" height="270" --}}
+                            {{--   data-overscale="false" poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}" --}}
+   {{--                    src="{{ Storage::url('Videos_Beginner_Tree/Video_IntroAcademy.mp4') }}"> --}}
+   {{--            </video> --}}
+    {{--          </div> --}}
+        {{--      </div> --}}
+            {{--   </div> --}}
 <!-- END Video LEARN -->
 
 <!-- Customer Say -->
@@ -228,7 +228,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
-                    <div class="line m-auto"></div>
+                   
                     <h3 class="title mt-5">آخرین مطالب</h3>
                 </div> <!-- section title -->
             </div>

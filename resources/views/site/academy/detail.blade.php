@@ -60,7 +60,7 @@
                         @if(Auth::check())
                             @if($payment_status == "Payed" )
                             <div class="col-md-3 col-12 text-center" style="margin-top:15px">
-                            <span style="color:green">  99000 </span>
+                            <span style="color:green"> 200,000 </span>
                             <span style="color:green">   تومان </span>
                             </div>
                             <div class="col-md-3 col-12 text-center">
@@ -73,7 +73,7 @@
                                 </div>
                             @else
                             <div class="col-md-3 col-12 text-center" style="margin-top:15px">
-                            <span style="color:green">  99000 </span>
+                            <span style="color:green"> 200,000 </span>
                             <span style="color:green">   تومان </span>
                             </div>
                             <div class="col-md-3 col-12 text-center">
@@ -86,8 +86,8 @@
                                 </div>
                             @endif
                         @else
-                        <div class="col-md-3 col-12 text-center" style="margin-top:15px">
-                            <span style="color:green">  99000 </span>
+                        <div class="col-md-3 col-12 text-center" style="margin-top:25px">
+                            <span style="color:green"> 200,000 </span>
                             <span style="color:green">   تومان </span>
                             </div>
                             <div class="col-md-3 col-12 text-center">
@@ -133,7 +133,8 @@
                                             </div> 
 
                                             <div class="col-md-4 col-12 text-center">        
-                                            <a class="mb-0"><button class="btn btn-link dropdown-toggle" data-toggle="collapse" data-target="#{{'collapse'.$node['pk_product']}}" aria-expanded="false" aria-controls="{{'collapse'.$node['pk_product']}}">
+                                            <a class="mb-0">
+                                                <button class="btn btn-link dropdown-toggle" data-toggle="collapse" data-target="#{{'collapse'.$node['pk_product']}}" aria-expanded="false" aria-controls="{{'collapse'.$node['pk_product']}}">
                                                 {{$node['name']}}
                                                 </button></a>
                                                 </div>
@@ -173,7 +174,7 @@
 
                                 <div id="{{'collapse'.$node['pk_product']}}" class="collapse" aria-labelledby="{{'id'.$node['pk_product']}}" data-parent="#row">
                                 <div class="card-text">
-                                {{$node['name']}} 
+                                @php echo $node['description'] ; @endphp 
                              </div>
                                 </div>
                             </div>

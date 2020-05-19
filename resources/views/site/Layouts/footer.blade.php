@@ -5,8 +5,12 @@
             <div class="row">
             <div class="col-lg-6" style="margin-top:20px">
                     <div class="subscribe-form mt-50">
-                        <form action="#">
-                            <input type="text" placeholder="ایمیل خود را وارد نمایید">
+                        <form method="POST" action="{{route('message.newspaper')}}">
+                            @csrf
+                            <input  type="hidden" name="name" id="name" value="ناشناس"class="form-control">
+                            <input type="hidden" name="message" id="message" value="درخواست خبرنامه"  class="form-control">
+
+                            <input type="text" name="email" placeholder="ایمیل خود را وارد نمایید">
                             <button class="main-btn">ثبت نام</button>
                         </form>
                     </div>
@@ -33,19 +37,30 @@
                              style="height: 100px; width: 100px; margin: 10px 35px">
                     </a>
                     <div class="mt-5">
-                        <p class="text text-white" style="text-align:justify">این متن یک خطی راجب هدف لرنیا است که به شما داده
-                            میشود و شما ان را اینجا
-                            میتوانید صحبت و ظبط نمایید با تشکر</p>
+                        <p class="text text-white" style="text-align:justify">در لرنیا جمع شده ایم تا مسیر یادگیری شما را هر چه راحت تر و سریع تر مشخص کرده و با کمک شما پیش بریم</p>
                     </div>
                     <div class="mt-5">
-                        <img class="ml-3" style="height: 35px; width: 35px; color: white"
-                             src="{{asset('images/footer_telegram.svg')}}" alt="">
-                        <img class="ml-3" style="height: 35px; width: 35px; "
+
+                      <a href="https://t.me/learniaa">
+                      <img class="ml-3" style="height: 35px; width: 35px; color: white"
+                      src="{{asset('images/footer_telegram.svg')}}" alt="">
+                    </a>
+
+                             <a href="https://www.instagram.com/learniaa/">
+                             <img class="ml-3" style="height: 35px; width: 35px; "
                              src="{{asset('images/footer_instagram.svg')}}" alt="">
-                        <img class="ml-3" style="height: 35px; width: 35px; color: white"
+                             </a>
+
+                             
+                              <a href="https://linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4">
+                              <img class="ml-3" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_linkden.svg')}}" alt="">
-                        <img class="ml-3" style="height: 35px; width: 35px; color: white"
+                             </a>
+
+                             <a href="https://twitter.com/pfima8t3lU7P28a">
+                             <img class="ml-3" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_twitter.svg')}}" alt="">
+                             </a>
                     </div>
                 </div>
                
@@ -54,53 +69,54 @@
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">دسترسی سریع</h5>
                     <ul class="list-unstyled mt-5">
                         <li>
-                            <a href="#" style="text-decoration: none; color: white">صفحه اصلی</a>
+                            <a href="{{route('academy.index')}}" style="text-decoration: none; color: white">صفحه اصلی</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="#" style="text-decoration: none; color:white">دوره اموزشی مبتدیان</a>
+                            <a href="{{route('academy.detail')}}" style="text-decoration: none; color:white">آکادمی آموزش</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="#" style="text-decoration: none; color: white">درباره ما</a>
+                            <a href="{{route('Aboutus')}}" style="text-decoration: none; color: white">درباره ما</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="#" style="text-decoration: none; color: white">تماس با ما</a>
+                            <a href="{{route('Contactus')}}" style="text-decoration: none; color: white">تماس با ما</a>
                         </li>
                     </ul>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-2 mx-auto ml-5">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">صفحات متداول</h5>
-                    <ul class="list-unstyled mt-5">
+                   <!-- <ul class="list-unstyled mt-5" > --> 
+                   <ul class="list-unstyled " >
+                        <li class="">
+                            <a href="#!"></a>
+                        </li>
                         <li>
-                            <a href="#!" style="text-decoration: none; color: white">هیات علمی</a>
+                            <a href="{{route('TermsOfService')}}" style="text-decoration: none; color: white">قوانین استفاده</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="#!" style="text-decoration: none; color: white">قوانین استفاده</a>
+                            <a href="{{route('PrivacyPolicy')}}" style="text-decoration: none; color: white">حریم خصوصی</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
-                        <li>
-                            <a href="#!" style="text-decoration: none; color: white">حریم خصوصی</a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
-                        <li>
-                            <a href="#!" style="text-decoration: none; color: white">همکاری با ما</a>
-                        </li>
+                        {{--  <li> --}}
+                        {{--  <a href="#!" style="text-decoration: none; color: white">همکاری با ما</a> --}}
+                         {{--   </li>  --}}
+                        {{--  <li> --}}
+                         {{--  <a href="#!" style="text-decoration: none; color: white">هیات علمی</a> --}}
+                         {{--</li> --}}
                     </ul>
                 </div>
                 <div class="col-md-2 mx-auto">

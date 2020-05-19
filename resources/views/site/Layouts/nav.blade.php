@@ -4,12 +4,12 @@
          class="navbar navbar-horizontal navbar-expand-lg container-fluid">
         <div class="container-fluid">
             <div class="navbar-brand">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                <button class="navbar-toggler" style="margin-right:10px" type="button" data-toggle="collapse"
                         data-target="#navbar-default"
                         aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="{{ asset('images/Template/menu.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                </button>
-                <a href="{{route('index')}}">
+                منو</button>
+                <a href="{{route('index')}}" style="margin-right:20px">
                     <img class="d-flex" src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image"
                          style="height:60px !important"
                          height="100px !important" width="100px">
@@ -35,27 +35,28 @@
                     </div>
                 </div>
                 <ul class="navbar-nav col-md-7 d-inline-flex">
+                <li class="nav-item">
+                        <a class="nav-link" style="color: black" href="{{route('academy.index')}}" rel="tooltip" title=""
+                           data-placement="bottom">
+                           {{--  <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="50px"
+                                 width="50px"> --}}
+                            صفحه اصلی
+                        </a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
+                        <a class="nav-link" style="color: black" href="{{route('academy.detail')}}" rel="tooltip"
                            title="" data-placement="bottom"
                            data-original-title="به زودی">
-                            <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px"
-                                 width="50px">
+                           {{--       <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px"
+                                 width="50px"> --}}
                             آکادمی آموزش
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: black" href="{{route('post.index')}}" rel="tooltip" title=""
-                           data-placement="bottom">
-                            <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="50px"
-                                 width="50px">
-                            وبلاگ
-                        </a>
-                    </li>
+                  
                     <li class="nav-item">
                         <a class="nav-link" style="color: black" href="{{route('Contactus')}}">
-                            <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image"
-                                 height="50px" width="50px">
+                        {{--  <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image"
+                                 height="50px" width="50px"> --}}
                             تماس با ما
                             <div class="ripple-container">
                             </div>
@@ -64,8 +65,8 @@
                     <li class="nav-item">
                         <a class="nav-link" style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
                            data-placement="bottom">
-                            <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image"
-                                 height="50px" width="50px">
+                           {{--   <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image"
+                                 height="50px" width="50px"> --}}
                             درباره ما
                             <div class="ripple-container">
                             </div>
@@ -94,23 +95,24 @@
                     </form>
                 </ul>
 <!-- USER PANEL -->
-<ul class="navbar-nav col-md-1"> </ul>
-<ul class="navbar-nav col-md-1" dir="rtl">
+
+<ul class="navbar-nav col-md-2 col-2" dir="ltr">
 @guest
-  <!-- <li class="nav-item">
-   <a class="nav-link" target="_parent" href="{{ route('register') }}">
-      ثبت نام</a> 
-     </li> -->
+ <!-- <li class="nav-item">
+            <a class="nav-link" target="_parent" style="color:white"  rel="tooltip" title="" 
+            data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
+            > ورود/ثبت نام
+          </a>
+          </li>   --> 
    
      @if (Route::has('register'))
           <li class="nav-item">
-            <a class="nav-link" target="_parent" style="color:white"  rel="tooltip" title="" 
+            <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent" style="color:black;padding-left:5px;padding-right:5px"  rel="tooltip" title="" 
             data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
-            > ورود
-            <div class="ripple-container"></div>
+            >ثبت نام / ورود
           </a>
           </li>  
-                    @endif
+     @endif
                 @else
                     <li class="nav-item dropdown" style="border-radius:1.2rem;">
                         <!--   <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" -->
@@ -126,17 +128,9 @@
                             @if(Auth::user()->type == "مدیر")
                             <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
                                 <a class="dropdown-item" href="{{route('admin.post.index')}}" > پست</a>
-                                <a class="dropdown-item" href="{{route('admin.tag.index')}}"> تگ</a>
                                 <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
                                 <a class="dropdown-item" href="{{route('admin.product.index')}}"> محصول</a>
                                 <a class="dropdown-item" href="{{route('admin.product.index')}}"> درخت</a>
-                                <a class="dropdown-item" href="{{route('admin.user.index')}}"> کاربر</a>
-                                <a class="dropdown-item" href="{{route('admin.behavior.index')}}"> رفتار</a>
-                                <a class="dropdown-item"  href="{{route('admin.discount.index')}}"> بن تخفیف</a>
-                                <a class="dropdown-item"  href="{{route('admin.discount.index')}}">  مدرس</a>
-                                <a class="dropdown-item"  href="{{route('admin.profile.edit')}}">  پروفایل</a>
-                                <a class="dropdown-item"  href="{{route('admin.transaction.create')}}">کیف پول</a>
-                                <a class="dropdown-item"   href="{{route('admin.transaction.index')}}">  تراکنش</a>
                                 <a class="dropdown-item"  href="{{route('admin.transaction.productlist')}}"> خریداری شده</a>
                             @endif
 
@@ -145,11 +139,11 @@
                             @endif
 
                             @if(Auth::user()->type == "کاربر")
-                            <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
-                                <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
-                                <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">  خریداری شده</a>
-                                <a class="dropdown-item" href="{{route('user.transaction.create')}}">   کیف پول</a>
-                                <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a>
+                            {{--    <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a> --}}
+                            {{--     <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a> --}}
+                            {{--    <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">  خریداری شده</a> --}}
+                            {{--    <a class="dropdown-item" href="{{route('user.transaction.create')}}">   کیف پول</a> --}}
+                            {{--    <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a> --}}
 
                             @endif
 

@@ -174,11 +174,6 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/vote/delete/{id}', 'VoteController@destroy')->name('admin.vote.delete');
     Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
 
-
-
-
-
-
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

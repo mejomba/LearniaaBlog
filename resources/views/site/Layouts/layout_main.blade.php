@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<div class="container" style="">
+<div class="container-fluid" style="padding-left:0px;padding-right:0px">
 @include('site.Layouts.error')
 </div>
 

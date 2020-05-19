@@ -13,7 +13,7 @@
 <div class="col-md-4" >
         <div class="card shadow border-0">
     <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h1>ورود کاربران</h1></div>
+                <div class="text-center"><h1>ثبت نام / ورود</h1></div>
               </div>
 
     <div class="card-body px-lg-5 py-lg-5">
