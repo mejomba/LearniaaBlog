@@ -39,7 +39,7 @@
                     </div>
                     <ul class="navbar-nav col-md-7 d-inline-flex">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
+                            <a class="nav-link text" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
                                title=""
                                data-placement="bottom">
                                 {{--                                          <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="50px"--}}
@@ -48,7 +48,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: black" href="{{route('academy.detail')}}" rel="tooltip"
+                            <a class="nav-link text" style="color: black" href="{{route('academy.detail')}}" rel="tooltip"
                                title="" data-placement="bottom"
                                data-original-title="به زودی">
                                 {{--                                               <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px"--}}
@@ -58,7 +58,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" style="color: black" href="{{route('Contactus')}}">
+                            <a class="nav-link text" style="color: black" href="{{route('Contactus')}}">
                                 {{--                                          <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image"--}}
                                 {{--                                                 height="50px" width="50px">--}}
                                 تماس با ما
@@ -67,7 +67,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
+                            <a class="nav-link text" style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
                                data-placement="bottom">
                                 {{--                                           <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image"--}}
                                 {{--                                              height="50px" width="50px">--}}
@@ -185,12 +185,25 @@
     $(document).ready(function(){
         $(window).scroll(function(){
             var scroll = $(window).scrollTop();
-            if (scroll > 300) {
-                $(".black").css("background" , "#F2F4F4");
+            if (scroll > 50) {
+                $(".black").css("background" , "#20c5ba");
             }
 
             else{
                 $(".black").css("background" , "transparent");
+            }
+        })
+    })
+    //text color
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            if (scroll > 50) {
+                $(".text").css("color" , "white");
+            }
+
+            else{
+                $(".text").css("color" , "black");
             }
         })
     })
