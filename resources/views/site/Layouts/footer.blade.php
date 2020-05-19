@@ -41,23 +41,23 @@
                     </div>
                     <div class="mt-5">
 
-                      <a href="https://t.me/learniaa">
+                      <a href="https://t.me/learniaa_group" target="_blank">
                       <img class="ml-3" style="height: 35px; width: 35px; color: white"
                       src="{{asset('images/footer_telegram.svg')}}" alt="">
                     </a>
 
-                             <a href="https://www.instagram.com/learniaa/">
+                             <a href="https://www.instagram.com/learniaa/" target="_blank">
                              <img class="ml-3" style="height: 35px; width: 35px; "
                              src="{{asset('images/footer_instagram.svg')}}" alt="">
                              </a>
 
                              
-                              <a href="https://linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4">
+                              <a href="https://linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4" target="_blank">
                               <img class="ml-3" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_linkden.svg')}}" alt="">
                              </a>
 
-                             <a href="https://twitter.com/pfima8t3lU7P28a">
+                             <a href="https://twitter.com/pfima8t3lU7P28a" target="_blank">
                              <img class="ml-3" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_twitter.svg')}}" alt="">
                              </a>
@@ -136,7 +136,7 @@
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="#!" style="text-decoration: none; color:white">
+                            <a href="https://t.me/learniaa_support" target="_blank" style="text-decoration: none; color:white">
                                 <span class="d-flex">
                                      learniaa_support@
                                     <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white"

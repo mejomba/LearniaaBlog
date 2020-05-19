@@ -3,7 +3,7 @@
     <div class="fixed-top" id="nav">
         <nav id="nav" class="black navbar navbar-horizontal navbar-expand-lg fixed-top navbar-custom">
             <div class="container-fluid">
-                <div class="navbar-brand">
+                <div class="navbar-brand" style="padding-top:10px;">
                     <button class="navbar-toggler" style="margin-right:10px" type="button" data-toggle="collapse"
                             data-target="#navbar-default"
                             aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,12 +12,12 @@
                         منو
                     </button>
                     <a href="{{route('index')}}" style="margin-right:20px">
-                        <img class="d-flex" src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image"
+                        <img class="d-flex" src="{{ asset('images/product/logo.svg') }}" alt="Thumbnail Image"
                              style="height:60px !important"
                              height="100px !important" width="100px">
                     </a>
                 </div>
-                <div class="collapse navbar-collapse nav-navbar-style" id="navbar-default">
+                <div class="collapse navbar-collapse nav-navbar-style"  id="navbar-default">
                     <div class="navbar-collapse-header">
                         <div class="row">
                             <div class="col-6 collapse-brand">
@@ -79,7 +79,7 @@
                     </ul>
                     <ul class="navbar-nav col-md-3 col-10 " dir="ltr" style="margin-top:15px">
                         <!-- serach box site -->
-                        <form class="navbar-form" style="margin-bottom:0px" dir="rtl"
+                   <!--     <form class="navbar-form" style="margin-bottom:0px" dir="rtl"
                               action="{{route('search.index')}}">
                             <div class="row">
                                 <div class="col-md-12 col-11" style="padding-left:0px;padding-right:0px">
@@ -90,18 +90,18 @@
                                             <input type="text" name="content_search" style="border-radius:0"
                                                    class="form-control form-control-alternative" placeholder="جستجو...">
                                             <button class="input-group-text" type="submit"
-                                                    style="font-size:0.8rem !important">
+                                                    style="font-size:0.8rem !important;background-color:#f1c40f;color:#000">
                                                 بگرد
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </form> -->
                     </ul>
                     <!-- USER PANEL -->
 
-                    <ul class="navbar-nav col-md-2 col-2" dir="ltr">
+                    <ul class="navbar-nav col-md-2 col-10" dir="ltr">
                     @guest
                         <!-- <li class="nav-item">
                     <a class="nav-link" target="_parent" style="color:white"  rel="tooltip" title=""
@@ -187,10 +187,12 @@
             var scroll = $(window).scrollTop();
             if (scroll > 50) {
                 $(".black").css("background" , "#20c5ba");
+             
             }
 
             else{
                 $(".black").css("background" , "transparent");
+             
             }
         })
     })
@@ -199,7 +201,7 @@
         $(window).scroll(function(){
             var scroll = $(window).scrollTop();
             if (scroll > 50) {
-                $(".text").css("color" , "white");
+               // $(".text").css("color" , "white");
             }
 
             else{
