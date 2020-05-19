@@ -134,7 +134,7 @@
 
                                             <div class="col-md-4 col-12 text-center">        
                                             <a class="mb-0">
-                                                <button class="btn btn-link dropdown-toggle" data-toggle="collapse" data-target="#{{'collapse'.$node['pk_product']}}" aria-expanded="false" aria-controls="{{'collapse'.$node['pk_product']}}">
+                                                <button class="btn btn-link dropdown-toggle" style="white-space:normal; " data-toggle="collapse" data-target="#{{'collapse'.$node['pk_product']}}" aria-expanded="false" aria-controls="{{'collapse'.$node['pk_product']}}">
                                                 {{$node['name']}}
                                                 </button></a>
                                                 </div>
