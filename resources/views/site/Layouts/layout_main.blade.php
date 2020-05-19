@@ -11,7 +11,8 @@
 
 @include('site.Layouts.nav')
 
-<div style="direction: rtl;margin-top:3.0rem">
+
+<div style="direction: rtl;padding-top:7.0rem" >
 @yield('content')
 </div>
 

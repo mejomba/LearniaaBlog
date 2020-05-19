@@ -12,7 +12,7 @@
                         منو
                     </button>
                     <a href="{{route('index')}}" style="margin-right:20px">
-                        <img class="d-flex" src="{{ asset('images/product/logo.svg') }}" alt="Thumbnail Image"
+                        <img class="d-flex" src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image"
                              style="height:60px !important"
                              height="100px !important" width="100px">
                     </a>

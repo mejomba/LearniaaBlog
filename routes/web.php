@@ -6,7 +6,7 @@ Route::get('/', 'HomeController@index')->name('index');
 */
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'AcademyController@index')->name('index');
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
