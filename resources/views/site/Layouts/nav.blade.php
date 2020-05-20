@@ -58,6 +58,7 @@
   </div>
 </a>
 </li>
+
 <li class="nav-item">
   <a class="nav-link" href="{{route('Aboutus')}}" rel="tooltip" title="" data-placement="bottom">
  <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
@@ -66,6 +67,18 @@
   </div>
 </a>
 </li>
+
+
+<li class="nav-item">
+  <a class="nav-link" href="{{route('assist')}}" rel="tooltip" title="" data-placement="bottom">
+ <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image" height="50px" width="50px">
+ همکاری با ما
+  <div class="ripple-container">
+  </div>
+</a>
+</li>
+
+
 </ul>
  <ul class="navbar-nav col-md-3 col-10 "  dir="ltr" style="margin-top:15px" >
 <!-- serach box site -->

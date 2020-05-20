@@ -17,8 +17,10 @@ Route::get('/Transaction/show', 'TransactionController@show')->name('transaction
 Route::get('/Transaction/callback', 'TransactionController@callback')->name('transaction.callback');
 Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackform')->name('transaction.showcallbackform');
 
-Route::get('/mail', 'MailController@index');
+Route::get('/mail', 'MailController@store');
 
+
+Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
 Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
@@ -56,6 +58,8 @@ Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('acade
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {
+    Route::get('/assist/index', 'HomeController@index_assist')->name('admin.assist.index');
+
 
     Route::get('/home', 'HomeController@index')->name('admin.home');
     Route::get('/home/index', 'HomeController@index')->name('admin.home');
@@ -169,10 +173,6 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
 
 
-
-
-
-
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 
@@ -194,6 +194,8 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('user.transaction.productlist');
    
     Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
+
+   
 
 });
 
