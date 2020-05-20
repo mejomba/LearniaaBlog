@@ -1,8 +1,8 @@
 @extends('site.Layouts.layout_main')
 
 @section('Head')
-<title> ارتباط با ما | لرنیا  </title>
-  <meta  name="description" content="ارتباط با ما | لرنیا ">
+<title> تماس با ما | لرنیا  </title>
+  <meta  name="description" content="تماس با ما | لرنیا ">
   <meta  name="keywords"    content="تماس با ما,ارتباط با ما,لرنیا" > 
 @endsection
 
@@ -16,7 +16,7 @@
               <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h4>ارتباط با ما</h4></div>
+                <div class="text-center"><h4>تماس با ما</h4></div>
                 
               </div>
               <div class="card-body px-lg-5 py-lg-5"> 

@@ -29,7 +29,7 @@
 
                  <div class="card shadow border-0 " >
                     <div class="card-header" style="background-color:#20C5BA ">
-                            <div class="text-center"><h2>مسیر آموزش کامپیوتر مبتدیان</h2>
+                            <div class="text-center"><h2 style="font-size:35px">مسیر آموزش کامپیوتر مبتدیان</h2>
                         </div>
                     </div>
                     <img class="card-img-top img-border" 

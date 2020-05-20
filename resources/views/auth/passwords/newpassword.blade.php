@@ -13,7 +13,7 @@
 <div class="card shadow border-0" style="border-radius: 30%;">
 <div class="card shadow border-0" style="border-radius: 30%;">
 <div class="card-header" style="background-color:#20C5BA ">
-                <div class="text-center"><h1>تغییر رمز عبور</h1></div>
+                <div class="text-center"><h1 style="font-size:35px">تغییر رمز عبور</h1></div>
               </div>
    <div class="card-body px-lg-5 py-lg-5">          
           <form class="form" method="POST" action="{{route('reset.delete',$pk_user)}}">
