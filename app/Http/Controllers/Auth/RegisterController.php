@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Profile;
 use App\Transaction;
 use App\Product;
+use App\Rules\validate;
 
 class RegisterController extends Controller
 {
@@ -54,18 +55,16 @@ class RegisterController extends Controller
         $messages = [
             'name.required' => 'نام  وارد نشده است',
             'name.min' => 'نام صحیح نمی باشد',
-            'mobile.required' => 'شماره تلفن وارد نشده است',
-            'mobile.max' => 'شماره تلفن صحیح وارد نشده است',
-            'mobile.numeric' => 'شماره تلفن صحیح وارد نشده است',
-            'mobile.digits' => 'شماره تلفن همراه صحیح نمی باشد',
-            'mobile.unique' => 'شماره تلفن همراه قبلا ثبت نام شده است',
+            'username.required' => 'نام کاربری وارد نشده است',
+            'username.validate' => ' نام کاربری صحیح وارد نشده است',
+            'username.unique' => 'شماره تلفن همراه قبلا ثبت نام شده است',
             'password.required' => 'رمز عبور وارد نشده است',
             'password.min' => 'رمز عبور صحیح وارد نشده است',
         ];
 
         return Validator::make($data, [
             'name' => ['required', 'string', 'min:5'],
-            'mobile' => ['required', 'numeric', 'unique:users','digits:11'],
+            'username' =>  ['required', new validate],
             'password' => ['required', 'string', 'min:3'],
         ], $messages);
     }
@@ -80,25 +79,28 @@ class RegisterController extends Controller
     {
         $user =  User::create([
             'name' => $data['name'],
-            'mobile' => $data['mobile'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
             'type' => 'کاربر',
             'attract' => $data['attract']
          ]);
 
-         $new_user = User::where('mobile',$data['mobile'])->first();
+         $new_user = User::where('username',$data['username'])->first();
             
             $profile = new Profile();
             $profile->pk_users = $new_user->pk_users ;
             $profile->save();
 
             /* add contact to sms panel */
+            $check = substr($data['username'],'0','2');
+            if ($check=='09')
+            {
             $url = 'https://ippanel.com/api/select';
             $param = array(
                 "op" => "phoneBookAdd",
                 "uname" => "09901918193",
                 "pass" => "0020503679",
-                "number" => $data['mobile'],
+                "number" => $data['username'],
                 "phoneBookId" => "399808",
             );
             $handler = curl_init($url);
@@ -106,7 +108,7 @@ class RegisterController extends Controller
             curl_setopt($handler, CURLOPT_POSTFIELDS, json_encode($param));
             curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($handler);
-            
+        }
             /* add contact to sms panel */
            
 

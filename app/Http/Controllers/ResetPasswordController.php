@@ -10,6 +10,7 @@ use App\Rules\CustomValue;
 use App\Transaction;
 use Hash;
 use SoapClient;
+use App\Rules\validate;
 
 class ResetPasswordController extends Controller
 {
@@ -53,7 +54,7 @@ class ResetPasswordController extends Controller
         else
           {  
                 $Random_Generate = rand(0,9999);
-                $user = User::where('mobile',request()->mobile)->first();
+                $user = User::where('username',request()->username)->first();
                 $reset_new = new Reset();
                 $reset_new->pk_user = $user['pk_users'] ;
                 $pk_user = $user['pk_users'] ;
@@ -61,8 +62,11 @@ class ResetPasswordController extends Controller
                 $reset_new->save();
             
                 // Send data
+                $check = substr(request()->username,'0','2');
+                if ($check=='09')
+                {
                 $url = "https://ippanel.com/services.jspd";
-                $rcpt_nm = array(request()->mobile);
+                $rcpt_nm = array(request()->username);
                 $param = array
                             (
                                 'uname'=>'09901918193',
@@ -82,19 +86,9 @@ class ResetPasswordController extends Controller
                 $res_code = $response2[0];
                 $res_data = $response2[1];
                 //  echo $res_data;
-
+                        }
                 return redirect(route('reset.show',compact('pk_user')));
         
-                /*
-                if( $res_data )
-                {    
-                           
-                }
-                else
-                {
-                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-                }
-                */
                   
            }
     }
@@ -220,14 +214,13 @@ class ResetPasswordController extends Controller
 
         $rules =  [
             
-                     'mobile' => 'required|numeric|min:3|exists:users'
+                     'username' => ['required',new validate]
                  ];
 
             $messages = [                      
-                            'mobile.required' => 'شماره تلفن همراه  وارد نشده است',
-                            'mobile.min' => ' شماره تلفن همراه  کوتاه تر از حد مجاز است',
-                            'mobile.numeric' => ' شماره تلفن همراه صحیح وارد نشده است ',
-                            'mobile.exists' => ' شماره تلفن همراه شما ثبت نام نشده است ',    
+                            'username.required' => 'نام کاربری وارد نشده است',
+                            'username.validate' => ' نام کاربری صحیح وارد نشده است',
+                            'useranme.exists' => ' شماره تلفن همراه شما ثبت نام نشده است ',    
                        ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
@@ -237,16 +230,17 @@ class ResetPasswordController extends Controller
 
     public function callbackpayment(Request $request)
     {
-        $user = User::where('mobile',request()->mobile)->first();
+        $user = User::where('username',request()->username)->first();
 
         $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
-        $transaction->extras = request()->mobile ;
+        $transaction->extras = request()->username ;
         $transaction->save();
 
         if($user == null)
         {
             return redirect(route('register',
             ['pk_product' => request()->pk_product ,
+                'username' =>request()->username,
                 'title' =>  request()->title ,
                 'digital_receipt'=>  request()->digital_receipt
                 ]))->with('success','برای مشاهده و دریافت دوره آموزشی  فرم ثبت نام  زیر را تکمیل کنید');    
@@ -256,6 +250,7 @@ class ResetPasswordController extends Controller
         {
                     return redirect(route('login',
             ['pk_product' => request()->pk_product ,
+                'username' =>request()->username,
                 'title' =>  request()->title ,
                 'digital_receipt'=>  request()->digital_receipt 
                 ]))->with('success','برای مشاهده و دریافت دوره آموزشی  اطلاعات خود را وارد کنید');    
@@ -273,17 +268,41 @@ class ResetPasswordController extends Controller
 
     public function callbacklogin(Request $request)
     {
-        $user = User::where('mobile',request()->mobile)->first();
 
-        if($user == null)
-        {
-            return redirect(route('register'));    
-        }
+        $rules =  [ 'username' => ['required',new validate] ];
+           
+            $messages = [   'username.required' => 'نام کاربری وارد نشده است',                      
+                             'username.validate' => ' نام کاربری صحیح وارد نشده است', 
+                       ];    
+         
+           $validator = Validator::make($request->all(),$rules,$messages);
+
+
+        if ($validator->fails())
+           {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+          }
+    
         else
-        {
-            return redirect(route('login')); 
+          {  
+                $user = User::where('username',request()->username)->first();
+               
+                if($user == null)
+                {
+                    return redirect(route('register',[
+                        'username' =>request()->username
+                    ]));    
+                }
+                else
+                {
+                    return redirect(route('login',[
+                        'username' =>request()->username
+                    ]));    
+                }
+         }
 
-        }
     }
 
 

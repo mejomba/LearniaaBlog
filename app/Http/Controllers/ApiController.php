@@ -300,6 +300,8 @@ class ApiController extends Controller
  
  }
 
+
+
  /*  Common & INFO API's   */  
  public function SendEmail(Request $request)
  {
@@ -314,6 +316,10 @@ class ApiController extends Controller
 
      return response()->json("ایمیل یا موفقیت ارسال شد");
  }
+
+
+
+
  public function setaddress(Request $request)
  {
     $user = auth::user();

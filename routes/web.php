@@ -6,7 +6,7 @@ Route::get('/', 'HomeController@index')->name('index');
 */
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'AcademyController@index')->name('index');
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
@@ -23,6 +23,8 @@ Route::get('/mail', 'MailController@store');
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
+Route::get('/PrivacyPolicy', 'HomeController@show_PrivacyPolicy')->name('PrivacyPolicy');
+Route::get('/TermsOfService', 'HomeController@show_TermsOfService')->name('TermsOfService');
 Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
@@ -31,6 +33,8 @@ Route::get('/post/category/{slug}', 'PostController@postByCategory')->name('post
 Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
 
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
+
+
 
 Route::get('/search', 'HomeController@search')->name('search.index');
 
@@ -134,7 +138,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/order/delete/{id}', 'OrderController@destroy')->name('admin.order.delete');
     Route::post('/order/update/{id}', 'OrderController@update')->name('admin.order.update');
     Route::get('/order/show/{id}', 'OrderController@show')->name('admin.order.show');
-    
+
+    Route::get('/order/createproduct/{key}', 'OrderController@orderproductcreate')->name('admin.order.createproduct');
+    Route::post('/order/storeproduct/{key}', 'OrderController@orderproductstore')->name('admin.order.storeproduct');
     Route::get('/order/editproduct/{key}/{id}', 'OrderController@orderproductedit')->name('admin.order.editproduct');
     Route::post('/order/updateproduct/{key}/{id}', 'OrderController@orderproductupdate')->name('admin.order.updateproduct');
     Route::get('/order/deleteproduct/{key}/{id}', 'OrderController@orderproductdelete')->name('admin.order.deteleproduct');
@@ -172,7 +178,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/vote/delete/{id}', 'VoteController@destroy')->name('admin.vote.delete');
     Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3cef4a6fceb1c0d9ecc309e95e6edf13598d951c
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

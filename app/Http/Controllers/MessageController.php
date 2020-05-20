@@ -222,6 +222,7 @@ class MessageController extends Controller
                  'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
                  'email.required' => 'پست الکترونیکی وارد نشده است',
                  'email.max' => 'پست الکترونیکی طولانی وارد شده است',
+                 'email.unique' => 'پست الکترونیکی قبلا وارد شده است',
               
                 'name.required' => 'نام  وارد نشده است',
                 'name.String' => 'نام  صحیح وارد نشده است',

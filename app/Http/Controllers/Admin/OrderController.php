@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\OrderProduct;
+use App\Product;
 
 
 class OrderController extends Controller
@@ -45,12 +46,9 @@ class OrderController extends Controller
         $neworder = new order();
         $new_pk_order = rand(0,999999999);
         $neworder->pk_order = $new_pk_order;
-        //$neworder->pk_address = request()->pk_address;  
         $neworder->status_transaction = request()->status_transaction;
         $neworder->pk_user = request()->pk_user;
-        //$neworder->Use_DiscountCode  = request()->Use_DiscountCode;
-        //$neworder->DiscountCode  = request()->DiscountCode;
-        $neworder->type_Delivery = request()->type_Delivery;
+        $neworder->type_delivery = request()->type_delivery;
         if($neworder->save())
         {
             return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت ایجاد شد ');
@@ -101,9 +99,7 @@ class OrderController extends Controller
         $order = Order::find($id);
         //$order ->pk_address = request()->pk_address;
         $order->status_transaction  = request()->status_transaction;
-        $order->Use_DiscountCode = request()->Use_DiscountCode;
-        $order->DiscountCode = request()->DiscountCode;
-        $order->type_Delivery= request()->type_Delivery;
+        $order->type_delivery= request()->type_delivery;
         if($order->save())
             {
                 return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت ویرایش شد ');
@@ -124,9 +120,20 @@ class OrderController extends Controller
     public function destroy($id)
     {
         $order = Order::find($id);
-        
+       
+        $orderproduct_count = orderproduct::where('pk_order',$id)->count();
+
             if($order->delete())
             {
+                if($orderproduct_count != 0)
+                {
+                    $orderproducts = orderproduct::where('pk_order',$id)->get();
+                    foreach($orderproducts  as $row)
+                    {
+                        $row->delete();
+                    }
+                }
+               
                 return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت حذف شد ');
             }
             else
@@ -145,6 +152,36 @@ class OrderController extends Controller
             return view('admin.order.orderproductedit',compact('orderproduct','order')); 
     }
 
+
+    public function orderproductcreate($key)
+    {
+        $order = order::find($key);
+
+        return view(('admin.order.orderproductstore'),compact('order'));
+    }
+
+    public function orderproductstore($key)
+    {
+        $order = order::find($key);
+
+        $neworderproduct = new orderproduct();
+        $neworderproduct->pk_order = $key;
+        $neworderproduct->pk_product = request()->pk_product;
+        $product = Product::select('price')->where('pk_product',request()->pk_product)->first();
+        $neworderproduct->price = $product->price;
+        $neworderproduct->count = request()->count;
+        $total = (int)$product->price * (int)request()->count;
+        $neworderproduct->Total_price = $total;
+        $neworderproduct->save();
+        if($neworderproduct->save())
+        {
+            return redirect(route('admin.order.show'))->with('success','محصول با موفقیت اضافه شد ');
+        }
+        else
+        {
+            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+        }    
+    }
     public function orderproductupdate($key,$id)
     {
         $order = order::find($key);
@@ -152,15 +189,14 @@ class OrderController extends Controller
             'pk_order'=>$order->pk_order,
             'pk_orderproduct'=>$id
             ])->first();
-        $orderproduct ->pk_product  = request()->pk_product ;
-        $orderproduct ->price    = request()->price ;
+      
         $orderproduct ->count   = request()->count ;
-        $orderproduct ->Total_price   = request()->Total_price ;
-        $orderproduct ->Use_DiscountCode  = request()->Use_DiscountCode ;
-        $orderproduct ->DiscountCode   = request()->DiscountCode ;
+        $total = request()->count * $orderproduct ->price;
+        $orderproduct ->Total_price   = $total ;
+     
         if($orderproduct->save())
             {
-                return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت ویرایش شد ');
+                return redirect(route('admin.order.show'))->with('success','ُسبد با موفقیت ویرایش شد ');
             }
             else
             {
@@ -176,7 +212,7 @@ class OrderController extends Controller
             ])->first();
             if($orderproduct->delete())
             {
-                return redirect(route('admin.order.index'))->with('success','ُسبد با موفقیت حذف شد ');
+                return redirect(route('admin.order.show'))->with('success','ُسبد با موفقیت حذف شد ');
             }
             else
             {

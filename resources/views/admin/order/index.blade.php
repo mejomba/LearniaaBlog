@@ -84,13 +84,7 @@
                             <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                              </a>
                             </span>
-
-                            <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{route('admin.order.show', $order['pk_order'])}}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-                           
+                            <td>
 
                             <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
@@ -100,6 +94,27 @@
                         </span>
 
                             </td>
+                      @if($order['status_transaction'] == 'تکمیل نشده')
+                      <td>
+
+                      <a class="btn btn-warning btn-round" style="font-size:0.75rem"
+                       href="{{route('admin.order.show', $order['pk_order'])}}"> 
+                     مشاهده جزئیات
+                       </a>
+                       
+                        </td>
+
+                      @else
+
+
+                          <td>
+                          <a href="#" class="btn btn-primary btn-round" 
+                  style="font-size:0.75rem"> تکمیل سفارش
+                  </a>  
+                          </td>
+
+                      @endif
+                      
                           
                         </tr>
                         @endforeach
