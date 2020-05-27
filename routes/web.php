@@ -56,6 +56,9 @@ Route::post('/message/newspaper', 'MessageController@newspaper')->name('message.
 Route::post('/message/newspaperMobile', 'MessageController@newspaperMobile')->name('message.newspaperMobile');
 
 
+Route::post('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback')->name('login.google.callback');
+
 Route::get('/academy', 'AcademyController@index')->name('academy.index');
 Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
 Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
@@ -178,10 +181,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/vote/delete/{id}', 'VoteController@destroy')->name('admin.vote.delete');
     Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3cef4a6fceb1c0d9ecc309e95e6edf13598d951c
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

@@ -14,6 +14,9 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use App\Transaction;
 use App\Product;
 use App\Rules\validate;
+use App\User;
+
+use Socialite;
 
 
 class LoginController extends Controller
@@ -185,6 +188,48 @@ class LoginController extends Controller
     {
         return 'username' ;
         
+    }
+    public function redirectToProvider()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleProviderCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+        } catch (\Exception $e) {
+            return redirect()->route('reset.callbacklogin');
+        }
+    
+        $existingUser = User::where('username', $user->getEmail())->first();
+    
+        if ($existingUser) {
+            auth()->login($existingUser, true);
+        } 
+        else {
+            $email = $user->getEmail();
+            $len = strlen($email);
+            $email = substr($email,4,$len);
+        return view('auth.register',compact('email'));
+            /*
+            $newUser                    = new User;
+            $newUser->provider_name     = $driver;
+            $newUser->provider_id       = $user->getId();
+            $newUser->name              = $user->getName();
+            $newUser->email             = $user->getEmail();
+            //$newUser->email_verified_at = now();
+            //$newUser->avatar            = $user->getAvatar();
+            $newUser->save();
+    
+            auth()->login($newUser, true);
+            */
+        }
+    
+        return redirect($this->redirectPath());
+    
+
+        // $user->token;
     }
 
 }

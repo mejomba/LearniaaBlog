@@ -27,8 +27,19 @@ src="{{ asset('images/Template/phone_login.svg') }}" style="max-width:none !impo
 <div class="text-center" style="padding-top:40px">
 <button type="submit" class="btn btn-primary">تایید  </button>
 </div>
+
+
+
+
+
 </div>
 </form>
+<!--
+<form class="form" method="POST" action="{{route('login.google')}}">
+@csrf
+<button type="submit" class="btn btn-primary">google  </button>
+</form>
+-->
 </div>
 </div>
 </div>  

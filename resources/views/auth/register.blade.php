@@ -38,8 +38,11 @@ src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height
 <input name="name" id="name" type="text" class="form-control" placeholder="نام و نام خانوادگی ">
 </div>
 </div>
-
+@if(isset($_GET['username']))
 <input type="hidden" name="username" value="{{ $_GET['username'] }}">
+@else
+<input type="hidden" name="username" value="{{ $email }}">
+@endif
 
 <div class="form-group">
 <div class="input-group input-group-alternative">
@@ -70,7 +73,7 @@ src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" heigh
 </div>
 </div>
 <div class="text-center" style="padding-top:20px">
-<button type="submit" class="btn btn-primary">ثبت نام</button>    
+<button type="submit" class="btn btn-primary">ثبت نام</button>  
 </div>
 </div>
 </form>
