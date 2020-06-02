@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Tree;
 use App\Product;
 use Validator;
+use Illuminate\Support\Facades\Storage;
 
 class TreeController extends Controller
 {
@@ -53,15 +54,14 @@ class TreeController extends Controller
 
         else
         {
-            
                 $tree = new Tree();
                 $tree->pk_parent = 0 ;
                 $tree->level = 0 ;
                 $tree->sort =  request()->sort ;
-                $tree->has_children = "Yes" ;
+                $tree->has_children = request()->has_children ;
                 $tree->name = request()->name ;
                 $tree->description = request()->description ;
-                $tree->pk_product = 0 ;
+              
 
                     if($tree->save())
                     {
@@ -118,12 +118,11 @@ class TreeController extends Controller
 
         else
         {
-            
                 $tree = Tree::find($id);
                 $tree->sort =  request()->sort ;
                 $tree->name = request()->name ;
                 $tree->description = request()->description ;
-                $tree->pk_product = 0 ;
+                $tree->has_children =  request()->has_children ;
 
                     if($tree->save())
                     {
@@ -244,15 +243,6 @@ class TreeController extends Controller
                 $tree->pic = $pic_name ;
               }
              
-              if(request()->pk_product != null)
-              {
-                $tree->pk_product = request()->pk_product;
-              }
-              else
-              {
-                $tree->pk_product = 0 ;
-              }
-
                   if($tree->save())
                   {
                           return redirect(route('admin.tree.index'))->with('success','گره با موفقیت ایجاد شد');
@@ -290,7 +280,6 @@ class TreeController extends Controller
 
       else
       {
-          
               $tree = Tree::find($id);
               $tree->sort =  request()->sort ;
               $tree->name = request()->name ;
@@ -303,15 +292,6 @@ class TreeController extends Controller
                 $pic_name = $pic->getClientOriginalName();
                 $path = Storage::putFileAs( 'tree', $pic, $pic_name);
                 $tree->pic = $pic_name ;
-              }
-
-              if(request()->pk_product != null)
-              {
-                $tree->pk_product = request()->pk_product;
-              }
-              else
-              {
-                $tree->pk_product = 0 ;
               }
 
                   if($tree->save())
