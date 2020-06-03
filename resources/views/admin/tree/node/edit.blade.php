@@ -33,6 +33,19 @@
                   
 
      <div class="row">   
+
+     <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control" name="name" value="{{ $tree['name'] }}" placeholder="نام " type="text">
+                    </div>
+                  </div>
+        </div>
+
+
      <div class="col-md-4">
      <div class="form-group">
                 <div class="input-group input-group-alternative">
@@ -79,36 +92,7 @@
         </div>
          <!-- Select Box -->
 
-      <!-- Select Box -->
-        <div class="col-md-4">
-        <div class="row">
-
-
-                        <div class="col-md-3">
-                        <span>محصول</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                  <select name="pk_product" id="pk_product" class="form-control">
-                                  @foreach($products as $product)
-                                  <option value="{{  $product['pk_product'] }}"
-                                  @if($product->pk_product == $tree->pk_product )
-                                  selected="selected"
-                                  @endif>{{  $product['title'] }}</option>
-                                  @endforeach 
-                                  </select>
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-         <!-- Select Box -->
-
+    
   <!-- Select Box -->
   <div class="col-md-4">
         <div class="row">
@@ -132,18 +116,6 @@
         </div>
          <!-- Select Box -->
          
-
-
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
-                      </div>
-                      <input class="form-control" name="name" value="{{ $tree['name'] }}" placeholder="نام " type="text">
-                    </div>
-                  </div>
-        </div>
 
      <!-- Content Box -->
 
