@@ -11,7 +11,7 @@ class Profile extends Model
 
 
     protected $fillable = [
-      'pk_users', 'birthday', 'email', 'state' , 'area','address'
+      'pk_users', 'birthday', 'email', 'state' ,'address','job','favourite','amounttime','area'
   ];
 
 
@@ -23,13 +23,13 @@ class Profile extends Model
     public function GetListAllNameColumns_ForTable()
     {
        return  [ 'birthday' => 'تاریخ تولد',
-                 'first_name' => 'نام ',
-                 'last_name' => 'نام خانوادگی',
                  'email' => 'ایمیل',
                  'state' => 'استان',
-                 'area' => 'منطقه',
                  'address' => 'آدرس',
-
+                 'job' => 'شغل',
+                 'favourite' => 'علاقه',
+                 'amounttime' => 'میزان زمان',
+                 'area' => 'منطقه',
                  ] ;
     }
 

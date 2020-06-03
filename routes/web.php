@@ -204,7 +204,11 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
    
     Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
 
-   
+    Route::post('/Notification/create/{id}', 'NotificationController@create')->name('user.Notification.create');
+    Route::post('/Notification/store/{id}', 'NotificationController@store')->name('user.Notification.store');
+    Route::post('/Notification/edit/{id}', 'NotificationController@edit')->name('user.Notification.edit');
+    Route::post('/Notification/update/{id}', 'NotificationController@update')->name('user.Notification.update');
+
 
 });
 
