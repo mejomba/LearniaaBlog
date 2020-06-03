@@ -34,6 +34,9 @@ Route::get('/DateTime/GetNow', 'ApiController@DateTimeGetNow')->name('admin.api.
 Route::post('/DateTime/CheckTarikhIsLastFromNow', 'ApiController@DateTimeCheckTarikhIsLastFromNow')->name('admin.api.datetime.CheckTarikhIsLastFromNow');
 Route::post('/calculator', 'ApiController@DiscountCalculator');
 
+Route::post('/downloadcount/{id}', 'ApiController@downloadcounter');
+
+
 Route::post('/Gap/callback', 'Messenger\GapController@callback')->name('Gap.callback');
 
 Route::post('/delivery/setaddress', 'ApiController@setaddress');

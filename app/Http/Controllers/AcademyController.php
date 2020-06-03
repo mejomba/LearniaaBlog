@@ -92,7 +92,7 @@ class AcademyController extends Controller
 
 
             $product = Product::find($id);
-            $behavior_product= Behavior::where('pk_entity', $product['pk_product'])->where('status','تایید شده')->get();
+           // $behavior_product= Behavior::where('pk_entity', $product['pk_product'])->where('status','تایید شده')->get();
     
               /* Meta Keyword */
             $data_search = Search::where('pk_search',$product['pk_search'])->get();

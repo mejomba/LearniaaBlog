@@ -182,6 +182,15 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/vote/showmore/{id}', 'VoteController@showmore')->name('admin.vote.showmore');
 
 
+
+    Route::get('/course/index', 'CourseController@index')->name('admin.course.index');
+    Route::get('/course/create', 'CourseController@create')->name('admin.course.create');
+    Route::post('/course/store', 'CourseController@store')->name('admin.course.store');
+    Route::get('/course/edit/{id}', 'CourseController@edit')->name('admin.course.edit');
+    Route::post('/course/update/{id}', 'CourseController@update')->name('admin.course.update');
+    Route::get('/course/delete/{id}', 'CourseController@destroy')->name('admin.course.delete');
+
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

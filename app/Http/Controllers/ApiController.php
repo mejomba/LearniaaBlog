@@ -356,6 +356,14 @@ class ApiController extends Controller
     $order->save();
 }
 
+public function downloadcounter($id)
+{
+    $product= product::find($id);
+    $count = $product->download_count + 1;
+    $product->download_count = $count;
+    $product->save();
+
+}
 
 
 
