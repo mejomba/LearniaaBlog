@@ -33,6 +33,18 @@
      <div class="row">   
 
      <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control" name="name" placeholder="نام " type="text">
+                    </div>
+                  </div>
+        </div>
+
+
+        <div class="col-md-4">
      <div class="form-group">
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
@@ -43,18 +55,32 @@
               </div>
      </div>
 
+   <!-- Select Box -->
+   <div class="col-md-4">
+      <div class="row">
 
 
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
-                      </div>
-                      <input class="form-control" name="name" placeholder="نام " type="text">
-                    </div>
-                  </div>
+                        <div class="col-md-3">
+                        <span>فرزند</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="has_children" id="has_children" class="form-control">
+                                  <option value="Yes">دارد</option>
+                                  <option value="No">ندارد</option>
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
         </div>
+        </div>
+         <!-- Select Box -->
+
 
        <!-- Content Box -->
 

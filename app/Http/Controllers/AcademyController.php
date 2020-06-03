@@ -104,7 +104,7 @@ class AcademyController extends Controller
              /* Meta Keyword */
     
             $payment_status ="";
-    
+
             $user =  Auth::user() ;
             
             if($user != null)

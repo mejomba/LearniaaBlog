@@ -39,20 +39,19 @@
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control" value="{{ $tree['sort'] }}" name="sort" placeholder="ترتیب " type="text">
+                      <input class="form-control" value="{{ $tree['name'] }}" name="name" placeholder="نام " type="text">
                     </div>
                   </div>
         </div>
 
 
-
-        <div class="col-md-4">
+     <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control" value="{{ $tree['name'] }}" name="name" placeholder="نام " type="text">
+                      <input class="form-control" value="{{ $tree['sort'] }}" name="sort" placeholder="ترتیب " type="text">
                     </div>
                   </div>
         </div>
