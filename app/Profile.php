@@ -24,7 +24,6 @@ class Profile extends Model
                  'job' => 'شغل',
                  'favourite' => 'علاقه',
                  'amount_time' => 'میزان زمان',
-                 'area' => 'منطقه',
                  'pic' => 'تصویر',
                  'wallet' => 'کیف پول',
                  'complete' => 'وضعیت تکمیل',

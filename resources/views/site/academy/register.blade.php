@@ -21,7 +21,7 @@
               </div>
               <div class="card-body px-lg-5 py-lg-5"> 
               <form method="POST" action="{{ route('user.profile.update',$profile['pk_profiles']) }}"
-                    enctype="multipart/form-data" style="height: 270px; ">
+                    enctype="multipart/form-data" >
                @csrf
 
                       @php $month_birthday =  substr($profile->birthday,5,2)  @endphp
@@ -41,7 +41,7 @@
                     
 
    <!-- Select Box -->
-   <div class="col-md-4">
+   <div class="col-md-12">
         <div class="row">
 
 
@@ -152,7 +152,7 @@
                   
 
        <!-- Select Box -->
-   <div class="col-md-4">
+   <div class="col-md-12">
         <div class="row">
 
 
@@ -332,7 +332,97 @@
          <!-- Select Box -->
 
 
-         
+         <div class="col-md-12">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <textarea  name="address" class="form-control" placeholder="آدرس" type="text">{{ $profile['address'] }}</textarea> 
+                    </div>
+  
+         </div>
+        </div>
+
+     
+                <!-- Picture Box -->
+                <div class="col-md-12">
+                <div class="row">
+
+
+                  <div class="col-md-3">
+                  <span>تصویر </span> 
+                  </div>
+                  <div class="col-md-9">
+                <div class="form-group focused">
+                            <div class="input-group input-group-alternative">
+                              <div class="input-group-prepend">  
+                              </div>
+                              <input  type="file" id="pic" name="pic">
+                            </div>
+                          </div>
+                </div>
+
+
+                </div>
+            </div>
+            <!-- Picture Box -->
+
+
+       <div class="col-md-12">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $profile['job'] }}" name="job" class="form-control" placeholder=" شغل" type="text">
+                    </div>
+                  </div>
+             </div>
+
+
+
+
+             
+       <!-- Select Box -->
+   <div class="col-md-12">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>علاقه مندی</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="favourite" class="form-control">
+                                 
+                                  <option class="" value="ورزش" 
+                                  @if($profile->favourite == "ورزش" )
+                                  selected="selected"
+                                  @endif >ورزش </option>
+    
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+
+
+         <div class="col-md-12">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $profile['amount_time'] }}" name="amount_time" class="form-control" placeholder="چند ساعت در روز میخوای وقت بزاری" type="text">
+                    </div>
+                  </div>
+           </div>
+
                 
                   <div class="text-center" >
                     <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
@@ -343,21 +433,12 @@
           </div>
   </div>
 
-<div class="col-md-4">
-<!--
-<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="500px" height="600px" alt="Learniaa">
- -->
-</div>
 
 
-            </div>
+ </div>
 
-           <!-- Form -->
-           <div class="col-md-12 text-center" dir="rtl" style="margin-top:15px">
-<p>
-</p>
+ <!-- Form -->
 
-</div>
  
  <!-- Section -->
 @endsection

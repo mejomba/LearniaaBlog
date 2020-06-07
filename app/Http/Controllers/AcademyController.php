@@ -10,6 +10,7 @@ use App\Behavior;
 use App\Transaction;
 use App\Search;
 use App\Post;
+use App\Profile;
 
 class AcademyController extends Controller
 {
