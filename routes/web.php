@@ -7,6 +7,10 @@ Route::get('/', 'HomeController@index')->name('index');
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
 Route::get('/', 'AcademyController@index')->name('index');
+Route::get('/academy', 'AcademyController@index')->name('academy.index');
+Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
+Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
+Route::get('/academy/register', 'AcademyController@register')->name('academy.register');
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
@@ -19,25 +23,19 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 
 Route::get('/mail', 'MailController@store');
 
-
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
-Route::get('/post', 'PostController@index')->name('post.index');
+Route::get('/search', 'HomeController@search')->name('search.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
 Route::get('/PrivacyPolicy', 'HomeController@show_PrivacyPolicy')->name('PrivacyPolicy');
 Route::get('/TermsOfService', 'HomeController@show_TermsOfService')->name('TermsOfService');
 Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
+Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/post/{slug}/{desc}', 'PostController@detail')->name('post.detail');
 Route::get('/post/category/{slug}', 'PostController@postByCategory')->name('post.category');
 Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
-
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
-
-
-
-Route::get('/search', 'HomeController@search')->name('search.index');
-
 Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
 
 Route::get('/resetpassword', 'ResetPasswordController@index')->name('reset.index');
@@ -49,19 +47,13 @@ Route::post('/reset/callbackpayment', 'ResetPasswordController@callbackpayment')
 Route::post('/reset/callbacklogin', 'ResetPasswordController@callbacklogin')->name('reset.callbacklogin');
 Route::get('/reset/showcallbackloginform', 'ResetPasswordController@showcallbackloginform')->name('reset.showcallbackloginform');
 
-
-
 Route::post('/message/store', 'MessageController@store')->name('message.store');
 Route::post('/message/newspaper', 'MessageController@newspaper')->name('message.newspaper');
 Route::post('/message/newspaperMobile', 'MessageController@newspaperMobile')->name('message.newspaperMobile');
 
-
 Route::post('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback')->name('login.google.callback');
 
-Route::get('/academy', 'AcademyController@index')->name('academy.index');
-Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
-Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {

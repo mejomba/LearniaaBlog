@@ -166,16 +166,12 @@ class ProfileController extends Controller
                 {
                     $profile->pic = 'profile_default.jpg' ;
                 }
+
+                
     
                 if($profile->save())
                 {
-                    if(request()->password)
-                    {
-                      $user = User::where('pk_users',$user->pk_users)->first();
-                      $user->password =  Hash::make(request()->password)   ; 
-                      $user->save();
-  
-                    }  
+                    
 
                     $is_Learner = Learner::where('pk_user',$user->pk_users)->first();
                     if($is_Learner != null)

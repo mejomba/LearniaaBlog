@@ -30,6 +30,8 @@ class AcademyController extends Controller
 
     public function detail()
     {
+        
+
         $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
         $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
         /* Check Payment */
@@ -175,4 +177,14 @@ class AcademyController extends Controller
     {
         //
     }
+
+   
+    public function register()
+    {
+        $user =  Auth::user() ; 
+        $profile = Profile::where('pk_users',$user->pk_users)->first();
+
+        return view('site.academy.register',compact('profile'));
+    }
+
 }
