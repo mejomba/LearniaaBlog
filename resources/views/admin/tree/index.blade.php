@@ -78,16 +78,6 @@
                           {{ $node['name'] }} 
                           </td>
 
-                          <td>
-                          @if( $node['pk_product'] != 0)
-                          <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{ route('admin.product.show',$node['pk_product']) }}"> 
-                            <img src="{{ asset('images/Template/product.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                            </a>
-                            </span>
-                         @endif
-                       
-                          </td>
                          
 
                           <td>
@@ -203,7 +193,7 @@ function del()
                                     </div>
                                   <select name="tree_parent" id="tree_parent" class="form-control">
                                   @foreach($nodes as $node)
-                                  <option value="{{  $node['pk_parent'] }}">{{  $node['name'] }}</option>
+                                  <option value="{{  $node['pk_tree'] }}">{{  $node['name'] }}</option>
                                   @endforeach 
                                   </select>
                                   </div>
@@ -245,7 +235,7 @@ function create()
 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/node/create/"+ tree_parent);
+  location.replace( baseUrl + "admin/node/create/" + tree_parent);
 }
 </script>
 <!---- Modal CreateNode -->  

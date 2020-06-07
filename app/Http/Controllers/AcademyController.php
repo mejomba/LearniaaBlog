@@ -31,10 +31,8 @@ class AcademyController extends Controller
     }
 
     public function detail()
-    {
-        $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
-        $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-        /* Check Payment */
+    {/*
+      
         $payment_status ="";
     
         $user =  Auth::user() ;
@@ -54,11 +52,11 @@ class AcademyController extends Controller
         {
             $payment_status ="No Pay";
         }
-        /* Check Payment */
 
        $nodes = Tree::where('level','1')->get();
         return view('site.academy.detail',compact('nodes','payment_status','pkProduct_BeginnerTree'));
-    }
+    }*/
+    
 
     /**
      * Show the form for creating a new resource.

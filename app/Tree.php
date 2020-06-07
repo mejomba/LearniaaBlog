@@ -17,14 +17,7 @@ class Tree extends Model
                  'sort' => 'ترتیب ',
                  'has_children' => 'دارای فرزند ',
                  'name' => 'نام گره ',  
-                 'pk_product' => 'کلید محصول ',
                  ] ;
-    }
-
-    public function product()
-    {
-
-     return $this->hasOne('App\Product', 'pk_product', 'pk_product');
     }
 
 }
