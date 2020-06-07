@@ -14,6 +14,11 @@
 </div>
 <div class="card-body px-lg-5 py-lg-5">
 <form class="form" method="POST" action="{{route('reset.callbacklogin')}}">
+
+@if($redirectFromURL)
+<input type="hidden" name="redirectFromURL" value="{{$redirectFromURL}}">  
+@endif
+
 @csrf
 <div class="form-group">
 <div class="input-group input-group-alternative">

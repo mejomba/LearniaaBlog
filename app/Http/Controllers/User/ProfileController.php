@@ -170,14 +170,14 @@ class ProfileController extends Controller
                 
     
 
-                if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null && $profile->area != null && $profile->pk_users != null)
+                if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null)
                 {
-                    $profile->complete =  'yes'   ;
+                    $profile->complete =  'YES'   ;
 
                 }  
                 else
                 {
-                    $profile->complete =  'no'  ;
+                    $profile->complete =  'NO'  ;
                 }   
 
 

@@ -37,6 +37,7 @@ class LoginController extends Controller
     {
         if ( $user->type == "مدیر" )
         {
+          
             if( request()->digital_receipt  != "null")
             {
                 $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
@@ -54,6 +55,8 @@ class LoginController extends Controller
                 return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
                 }
             }
+
+
             else
             {
            
@@ -100,11 +103,10 @@ class LoginController extends Controller
                       return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
                     }
                 }
+
                 else
                 {
-                //  $this->redirectTo = '/';
-
-                return redirect('/academy/detail'); 
+                return redirect(request()->redirectFromURL); 
                 }
 
                

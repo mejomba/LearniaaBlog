@@ -292,13 +292,15 @@ class ResetPasswordController extends Controller
                 if($user == null)
                 {
                     return redirect(route('register',[
-                        'username' =>request()->username
+                        'username' =>request()->username ,
+                        'redirectFromURL' => request()->redirectFromURL
                     ]));    
                 }
                 else
                 {
                     return redirect(route('login',[
-                        'username' =>request()->username
+                        'username' =>request()->username ,
+                        'redirectFromURL' => request()->redirectFromURL
                     ]));    
                 }
          }

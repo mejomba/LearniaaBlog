@@ -14,6 +14,12 @@
 </div>
 <div class="card-body px-lg-5 py-lg-5">
 <form class="form" method="POST" action="{{route('login')}}">
+
+@if($_GET['redirectFromURL'])
+<input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">   
+@endif
+
+
 @csrf
 @if(isset($_GET['pk_product']))
 <input type="hidden" name="pk_product" value="{{ $_GET['pk_product'] }}">
