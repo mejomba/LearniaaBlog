@@ -55,7 +55,7 @@ class AcademyController extends Controller
 
        $nodes = Tree::where('level','1')->get();
         return view('site.academy.detail',compact('nodes','payment_status','pkProduct_BeginnerTree'));
-    }*/
+    */ }
     
 
     /**
@@ -63,10 +63,7 @@ class AcademyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+   
 
     /**
      * Store a newly created resource in storage.
