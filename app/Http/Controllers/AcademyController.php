@@ -19,11 +19,6 @@ class AcademyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
-  
-
-
     public function index()
     {
         $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
@@ -171,17 +166,20 @@ class AcademyController extends Controller
         //
     }
 
-
-
-
-
-
-
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
     public function SaveProfile(Request $request, $id)
     {
-        $validator =  $this->validation($request);
+        $validator =  $this->validation_SaveProfile($request);
 
     if ($validator->fails())
        {
@@ -219,18 +217,7 @@ class AcademyController extends Controller
             }
 
             
-
-
-            if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null)
-            {
-                $profile->complete =  'YES'   ;
-
-            }  
-            else
-            {
-                $profile->complete =  'NO'  ;
-            }   
-
+            $profile->complete =  'YES' ;
 
             if($profile->save())
             {
@@ -247,43 +234,51 @@ class AcademyController extends Controller
             }
            
         }
-}
-
     }
 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function validation_SaveProfile(Request $request)
     {
-        //
+
+        $rules =  [
+                    'month_birthday' => 'nullable|numeric', 
+                    'year_birthday' => 'nullable|numeric|digits:4', 
+                    'day_birthday' => 'nullable|numeric', 
+                    'email' => 'nullable|email',
+                    'state' => 'nullable|String', 
+                    'address' => 'nullable|String',
+                    'job' => 'nullable|String',
+                    'favourite' => 'nullable|String',
+                    'area' => 'nullable|String',
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
+                    'password' => 'nullable|min:6'  ,
+         ];
+
+     
+$messages = [
+                'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
+                'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
+                'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
+                'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
+                
+                'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
+
+                'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
+                'state.String' => 'استان صحیح وارد نشده است',
+            
+                'address.String' => 'آدرس  صحیح وارد نشده است ',
+
+                'password.required' => 'رمز عبور وارد نشده است',
+                'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
+        ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
     }
 
-   
+
+
     public function register()
     {
         $user =  Auth::user() ; 
@@ -320,6 +315,11 @@ class AcademyController extends Controller
             $redirectFromURL = "/academy/start";
             return view('auth.callbacklogin',compact('redirectFromURL'));
         }
+
+
+
+
+        
 
 
     }
