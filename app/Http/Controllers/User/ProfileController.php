@@ -151,6 +151,7 @@ class ProfileController extends Controller
                 $profile->address =  request()->address   ;
                 $profile->job =  request()->job   ;
                 $profile->favourite =  request()->favourite   ;
+                $profile->amounttime =  request()->amounttime   ;
                 $profile->area =  request()->area   ;
                 $profile->pk_users =  $user->pk_users ;
 

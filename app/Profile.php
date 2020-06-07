@@ -30,6 +30,9 @@ class Profile extends Model
                  'favourite' => 'علاقه',
                  'amounttime' => 'میزان زمان',
                  'area' => 'منطقه',
+                 'pic' => 'تصویر',
+                 'wallet' => 'کیف پول',
+                 'complete' => 'کامل است',
                  ] ;
     }
 
