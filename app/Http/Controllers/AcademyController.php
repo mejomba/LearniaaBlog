@@ -216,7 +216,7 @@ class AcademyController extends Controller
                 $profile->pic = 'profile_default.jpg' ;
             }
 
-            
+
             $profile->complete =  'YES' ;
 
             if($profile->save())
@@ -297,7 +297,7 @@ $messages = [
             // check completer profile 
            $pk_user =  $user->pk_users ;
           $row =  Profile::where('pk_users',$pk_user)->first();
-          
+         
             if($row->complete == 'YES')
             {
                 return view('site.academy.detail');

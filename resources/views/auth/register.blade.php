@@ -15,7 +15,7 @@
 <div class="card-body px-lg-5 py-lg-5">
 <form class="form" method="POST" action="{{route('register')}}">
 
-@if($_GET['redirectFromURL'])
+@if(isset($_GET['redirectFromURL']))
 <input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">  
 @endif
 

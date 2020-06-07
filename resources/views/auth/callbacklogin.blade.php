@@ -15,7 +15,7 @@
 <div class="card-body px-lg-5 py-lg-5">
 <form class="form" method="POST" action="{{route('reset.callbacklogin')}}">
 
-@if($redirectFromURL)
+@if(isset($redirectFromURL))
 <input type="hidden" name="redirectFromURL" value="{{$redirectFromURL}}">  
 @endif
 
