@@ -40,6 +40,9 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    /*
+
     public function store(Request $request)
     {
       
@@ -55,10 +58,7 @@ class ProfileController extends Controller
         else
           {
              $new_instance = new Profile();
-    
-           
- 
-             }
+         }
 
              $new_instance->birthday = request()->birthday ;
              $new_instance->email = request()->email;
@@ -87,7 +87,7 @@ class ProfileController extends Controller
                 }
           }
     
-    
+    /*
         
         
 
