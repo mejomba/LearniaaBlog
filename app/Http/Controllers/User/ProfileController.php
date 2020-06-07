@@ -165,7 +165,7 @@ class ProfileController extends Controller
                 else
                 {
                     $profile->pic = 'profile_default.jpg' ;
-                }
+                }                                   
     
 
                 if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null && $profile->area != null && $profile->pk_users != null)

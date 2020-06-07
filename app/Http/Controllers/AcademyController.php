@@ -30,6 +30,35 @@ class AcademyController extends Controller
 
     public function detail()
     {
+        $user =  Auth::user() ;
+
+
+        if($user != null)
+        {
+            // check completer profile 
+           $pk_user =  $user->pk_users ;
+          $row =  Profile::where('pk_users',$pk_user)->first();
+          
+            if($row->complete == 'YES')
+            {
+                return view('site.academy.detail',compact('');
+
+            }
+            else
+            {
+                return view('site.academy.detail',compact('');
+
+            }
+        }
+        else
+        {
+
+            return view('auth.callbacklogin');
+        }
+
+
+
+        /******************* */
         $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
         $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
         /* Check Payment */
