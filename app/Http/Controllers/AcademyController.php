@@ -41,12 +41,12 @@ class AcademyController extends Controller
           
             if($row->complete == 'YES')
             {
-                return view('site.academy.detail',compact('');
+                return view('site.academy.detail');
 
             }
             else
             {
-                return view('site.academy.detail',compact('');
+                return view('site.academy.detail');
 
             }
         }
