@@ -240,33 +240,57 @@ class AcademyController extends Controller
     {
 
         $rules =  [
-                    'month_birthday' => 'nullable|numeric', 
-                    'year_birthday' => 'nullable|numeric|digits:4', 
-                    'day_birthday' => 'nullable|numeric', 
-                    'email' => 'nullable|email',
-                    'state' => 'nullable|String', 
-                    'address' => 'nullable|String',
-                    'job' => 'nullable|String',
-                    'favourite' => 'nullable|String',
-                    'area' => 'nullable|String',
-                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
-                    'password' => 'nullable|min:6'  ,
+                    'month_birthday' => 'required|numeric', 
+                    'year_birthday' => 'required|numeric|digits:4', 
+                    'day_birthday' => 'required|numeric', 
+                    'email' => 'required|email',
+                    'state' => 'required|String', 
+                    'address' => 'required|String',
+                    'job' => 'required|String',
+                    'favourite' => 'required|String',
+                    'area' => 'required|String',
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|required',
+                    'password' => 'required|min:6'  ,
          ];
 
      
 $messages = [
                 'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
+                'month_birthday.required' => ' ماه تاریخ تولد  وارد نشده است',
+
                 'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
+                'day_birthday.required' => ' روز تاریخ تولد صحیح وارد نشده است',
+
+
                 'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
                 'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
-                
+                'year_birthday.required' => 'سال تاریخ تولد وارد نشده است',
+
+
                 'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
                 'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
+                'pic.required' => 'تصویر شاخص  وارد نشده است',
 
                 'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
                 'state.String' => 'استان صحیح وارد نشده است',
-            
+                'email.required' => 'پست الکترونیکی  وارد نشده است ',
+
                 'address.String' => 'آدرس  صحیح وارد نشده است ',
+                'address.required' => 'آدرس  وارد نشده است ',
+
+
+                'job.String' => 'شغل  صحیح وارد نشده است ',
+                'job.required' => 'شغل وارد نشده است ',
+
+
+                'favourite.String' => 'علاقه مندی  صحیح وارد نشده است ',
+                'favourite.required' => 'علاقه مندی  وارد نشده است ',
+
+
+                'area.String' => 'علاقه مندی  صحیح وارد نشده است ',
+                'area.required' => 'علاقه مندی  وارد نشده است ',
+
+
 
                 'password.required' => 'رمز عبور وارد نشده است',
                 'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
@@ -278,6 +302,12 @@ $messages = [
     }
 
 
+
+
+
+
+
+    
 
     public function register()
     {
@@ -321,9 +351,9 @@ $messages = [
 
         
 
-
+    }
     }
 
 
 
-}
+
