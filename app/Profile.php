@@ -10,11 +10,6 @@ class Profile extends Model
     protected $primaryKey = 'pk_profiles';
 
 
-    protected $fillable = [
-      'pk_users', 'birthday', 'email', 'state' ,'address','job','favourite','amounttime','area'
-  ];
-
-
     public function user()
     {
        return $this->hasOne(User::class,'pk_users');
@@ -28,14 +23,12 @@ class Profile extends Model
                  'address' => 'آدرس',
                  'job' => 'شغل',
                  'favourite' => 'علاقه',
-                 'amounttime' => 'میزان زمان',
+                 'amount_time' => 'میزان زمان',
                  'area' => 'منطقه',
                  'pic' => 'تصویر',
                  'wallet' => 'کیف پول',
-                 'complete' => 'کامل است',
+                 'complete' => 'وضعیت تکمیل',
                  ] ;
     }
-
-    
 
 }
