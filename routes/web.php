@@ -12,6 +12,12 @@ Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail'
 Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
 Route::get('/academy/register', 'AcademyController@register')->name('academy.register');
 Route::get('/academy/start', 'AcademyController@start')->name('academy.start');
+Route::get('/academy/saveprofile', 'AcademyController@saveprofile')->name('academy.saveprofile');
+
+
+
+
+
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');

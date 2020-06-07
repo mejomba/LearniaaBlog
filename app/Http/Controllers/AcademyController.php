@@ -19,6 +19,11 @@ class AcademyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+  
+
+
     public function index()
     {
         $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
@@ -165,6 +170,107 @@ class AcademyController extends Controller
     {
         //
     }
+
+
+
+
+
+
+
+
+
+    public function SaveProfile(Request $request, $id)
+    {
+        $validator =  $this->validation($request);
+
+    if ($validator->fails())
+       {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+      }
+
+        else
+        {
+              // process User --> Get info Writer And Save $new_instance
+              $user =  Auth::user() ;
+             
+            $profile = Profile::find($id);
+            $profile->birthday =  request()->year_birthday . '-'. request()->month_birthday . '-'. request()->day_birthday   ;
+            $profile->email =  request()->email   ;
+            $profile->state = request()->state    ;
+            $profile->address =  request()->address   ;
+            $profile->job =  request()->job   ;
+            $profile->favourite =  request()->favourite   ;
+            $profile->amount_time =  request()->amount_time   ;
+            $profile->area =  request()->area   ;
+            $profile->pk_users =  $user->pk_users ;
+
+            if(request()->pic)
+            {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $path = Storage::putFileAs( 'profile', $pic, $pic_name);
+                $profile->pic = $pic_name ;
+            } 
+            else
+            {
+                $profile->pic = 'profile_default.jpg' ;
+            }
+
+            
+
+
+            if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null)
+            {
+                $profile->complete =  'YES'   ;
+
+            }  
+            else
+            {
+                $profile->complete =  'NO'  ;
+            }   
+
+
+            if($profile->save())
+            {
+                
+
+              echo 'ok';
+
+
+            }
+            else
+            {
+                echo 'not ok';
+
+            }
+           
+        }
+}
+
+    }
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
