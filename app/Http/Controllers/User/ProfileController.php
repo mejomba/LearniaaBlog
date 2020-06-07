@@ -169,6 +169,18 @@ class ProfileController extends Controller
 
                 
     
+
+                if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null && $profile->area != null && $profile->pk_users != null)
+                {
+                    $profile->complete =  'yes'   ;
+
+                }  
+                else
+                {
+                    $profile->complete =  'no'  ;
+                }   
+
+
                 if($profile->save())
                 {
                     
