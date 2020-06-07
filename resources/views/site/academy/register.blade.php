@@ -20,7 +20,7 @@
                 
               </div>
               <div class="card-body px-lg-5 py-lg-5"> 
-              <form method="POST" action="{{ route('user.profile.update',$profile['pk_profiles']) }}"
+              <form method="POST" action="{{ route('academy.saveprofile',$profile['pk_profiles']) }}"
                     enctype="multipart/form-data" >
                @csrf
 

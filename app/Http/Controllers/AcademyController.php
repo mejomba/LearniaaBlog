@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Validator;
 use App\Tree;
 use App\Product;
 use App\Behavior;
@@ -201,7 +202,6 @@ class AcademyController extends Controller
             $profile->job =  request()->job   ;
             $profile->favourite =  request()->favourite   ;
             $profile->amount_time =  request()->amount_time   ;
-            $profile->area =  request()->area   ;
             $profile->pk_users =  $user->pk_users ;
 
             if(request()->pic)
@@ -216,21 +216,15 @@ class AcademyController extends Controller
                 $profile->pic = 'profile_default.jpg' ;
             }
 
-
             $profile->complete =  'YES' ;
 
             if($profile->save())
             {
-                
-
               echo 'ok';
-
-
             }
             else
             {
                 echo 'not ok';
-
             }
            
         }
@@ -238,7 +232,6 @@ class AcademyController extends Controller
 
     public function validation_SaveProfile(Request $request)
     {
-
         $rules =  [
                     'month_birthday' => 'required|numeric', 
                     'year_birthday' => 'required|numeric|digits:4', 
@@ -248,9 +241,7 @@ class AcademyController extends Controller
                     'address' => 'required|String',
                     'job' => 'required|String',
                     'favourite' => 'required|String',
-                    'area' => 'required|String',
-                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|required',
-                    'password' => 'required|min:6'  ,
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg',
          ];
 
      
@@ -269,7 +260,6 @@ $messages = [
 
                 'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
                 'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
-                'pic.required' => 'تصویر شاخص  وارد نشده است',
 
                 'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
                 'state.String' => 'استان صحیح وارد نشده است',
@@ -286,28 +276,12 @@ $messages = [
                 'favourite.String' => 'علاقه مندی  صحیح وارد نشده است ',
                 'favourite.required' => 'علاقه مندی  وارد نشده است ',
 
-
-                'area.String' => 'علاقه مندی  صحیح وارد نشده است ',
-                'area.required' => 'علاقه مندی  وارد نشده است ',
-
-
-
-                'password.required' => 'رمز عبور وارد نشده است',
-                'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
         ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
 
         return $validator ;
     }
-
-
-
-
-
-
-
-    
 
     public function register()
     {
