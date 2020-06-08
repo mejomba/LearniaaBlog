@@ -44,7 +44,7 @@
                                     </div>
                                   <select name="product" class="form-control">
                                  @foreach($products as $pro)
-                                  <option value="{{$pro['title']}}">{{$pro['title']}} </option>
+                                  <option value="{{$pro['pk_product']}}">{{$pro['title']}} </option>
                                  @endforeach
                                   </select>
                                   </div>
@@ -76,7 +76,7 @@
                                     </div>
                                     <select name="tree" class="form-control">
                                      @foreach($trees as $tre)
-                                  <option value="{{$tre['name']}} ">{{$tre['name']}} </option>
+                                  <option value="{{$tre['pk_tree']}} ">{{$tre['name']}} </option>
                                     @endforeach
  
                                   </select>
@@ -87,13 +87,15 @@
             
         </div>
         </div>    
+                 <!-- Select Box -->
+
         <div class="col-md-4">
           <div class="form-group">
                       <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
                           
                         </div>
-                        <input class="form-control" name="sort"  placeholder=" قسمت" type="text" >
+                        <input class="form-control" name="sort"  placeholder=" ترتیب" type="text" >
                       </div>
                     </div>
           </div>
@@ -120,20 +122,31 @@
                     </div>
           </div>
 
-          <div class="col-md-4">
-          <div class="form-group">
-                      <div class="input-group input-group-alternative">
-                        <div class="input-group-prepend">
-                          
-                        </div>
-                        <input class="form-control" name="pic"  placeholder=" لینک عکس" type="text" >
-                      </div>
-                    </div>
-          </div>
-         <!-- Select Box -->
-         </div> 
+        
+        
+           <!-- Picture Box -->
+        <div class="col-md-4">
+        <div class="row">
 
-                
+
+                        <div class="col-md-3">
+                        <span>تصویر </span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="pic" name="pic">
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Picture Box -->
+         </div>         
   
                   <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت درس</button>

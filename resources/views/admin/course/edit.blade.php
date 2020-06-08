@@ -44,7 +44,10 @@
                                     </div>
                                   <select name="product" class="form-control">
                                  @foreach($products as $pro)
-                                  <option value="{{$product->title}}">{{$pro['title']}} </option>
+                                 <option value="{{ $pro['pk_product'] }}" 
+                                  @if($pro->pk_product == $course->pk_product )
+                                  selected="selected"
+                                  @endif>{{ $pro['title'] }}</option>
                                  @endforeach
                                   </select>
                                   </div>
@@ -75,25 +78,30 @@
                                     <div class="input-group-prepend">  
                                     </div>
                                     <select name="tree" class="form-control">
-                                     @foreach($trees as $tre)
-                                  <option value="{{$tree->name}}">{{$tre['name']}} </option>
-                                    @endforeach
+                                    @foreach($trees as $tre)
+                                 <option value="{{ $tre['pk_tree'] }}" 
+                                  @if($tre->pk_tree == $course->pk_tree )
+                                  selected="selected"
+                                  @endif>{{ $tre['name'] }}</option>
+                                 @endforeach
  
                                   </select>
 
                                   </div>
                                 </div>
                      </div>
-            
+
         </div>
         </div>    
+                         <!-- Select Box -->
+
         <div class="col-md-4">
           <div class="form-group">
                       <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
                           
                         </div>
-                        <input class="form-control" name="sort"  placeholder=" قسمت" type="text" value="{{$course->sort}}">
+                        <input class="form-control" name="sort"  placeholder=" ترتیب" type="text" value="{{$course->sort}}">
                       </div>
                     </div>
           </div>
@@ -120,17 +128,30 @@
                     </div>
           </div>
 
-          <div class="col-md-4">
-          <div class="form-group">
-                      <div class="input-group input-group-alternative">
-                        <div class="input-group-prepend">
-                          
+        
+         
+          <!-- Picture Box -->
+        <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>تصویر </span> 
                         </div>
-                        <input class="form-control" name="pic"  placeholder=" لینک عکس" type="text" value="{{$course->pic}}">
-                      </div>
-                    </div>
-          </div>
-         <!-- Select Box -->
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="pic" name="pic">
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Picture Box -->
          </div> 
 
                 

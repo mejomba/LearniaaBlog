@@ -311,8 +311,8 @@ class ApiController extends Controller
          'body' => $_POST['message']
      ];
          $type = $_POST['type'];
-
-     \Mail::to($_POST['ToAddress'])->send(new SendMail($details,$type));
+        $address = 'www.'.$_POST['ToAddress'];
+     \Mail::to($address)->send(new SendMail($details,$type));
 
      return response()->json("ایمیل یا موفقیت ارسال شد");
  }

@@ -53,6 +53,17 @@
     درخت</a>
   </li>
 
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.course.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/tree.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    درس</a>
+  </li>
+
+
+
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"   href="{{route('admin.user.index')}}" 
      role="tab" aria-controls="tabs-text-2" aria-selected="false">

@@ -48,17 +48,14 @@
                           <td>
                           {{ $course['pk_course'] }} 
                           </td>
-                          @foreach($products as $product)
+                          
                           <td>
-                          {{ $product['title'] }} 
+                          {{ $course->product->title }} 
                           </td>
-                          @endforeach
-
-                           @foreach($trees as $tree)
+                      
                           <td>
-                          {{ $tree['name'] }} 
+                          {{ $course->tree->name }} 
                           </td>
-                          @endforeach
                           <td>
                           {{ $course['sort'] }} 
                           </td>
