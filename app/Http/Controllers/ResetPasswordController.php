@@ -288,17 +288,25 @@ class ResetPasswordController extends Controller
         else
           {  
                 $user = User::where('username',request()->username)->first();
-               
+                $redirect = "/academy";
+                if(request()->redirectFromURL != null )
+                {
+                  $redirect = request()->redirectFromURL;
+                }
+
                 if($user == null)
                 {
+                   
                     return redirect(route('register',[
-                        'username' =>request()->username
+                        'username' =>request()->username ,
+                        'redirectFromURL' => $redirect
                     ]));    
                 }
                 else
                 {
                     return redirect(route('login',[
-                        'username' =>request()->username
+                        'username' =>request()->username ,
+                        'redirectFromURL' => $redirect
                     ]));    
                 }
          }

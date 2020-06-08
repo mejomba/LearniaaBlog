@@ -10,12 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 @yield('Head')
 
-{{--  <link href="{{ asset('css/site/argon.css') }}" rel="stylesheet">--}}
 
 <link href="{{ asset('css/site/bootstrap/bootstrap.css') }}" rel="stylesheet">
-{{-- <link href="{{ asset('css/site/bootstrap/bootstrap.min.css') }}" rel="stylesheet"> --}}
 <link href="{{ asset('css/site/bootstrap/bootstrap-reboot.css') }}" rel="stylesheet">
 <link href="{{ asset('css/site/myStyle.css') }}" rel="stylesheet">
-
-{{--  <link href="{{ asset('css/site/nucleo.css') }}" rel="stylesheet">--}}
-{{--<link href="{{ asset('css/unused/style.css') }}" rel="stylesheet">--}}

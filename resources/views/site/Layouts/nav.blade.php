@@ -48,7 +48,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('academy.detail')}}" rel="tooltip"
+                            <a class="nav-link text" style="color: black" href="{{route('academy.start')}}" rel="tooltip"
                                title="" data-placement="bottom"
                                data-original-title="به زودی">
                                 {{--                                               <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px"--}}

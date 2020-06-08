@@ -226,10 +226,11 @@ class TreeController extends Controller
 
       else
       {
-          
+             $row = Tree::where('pk_tree',request()->tree_parent)->first();
+           
               $tree = new Tree();
-              $tree->pk_parent = request()->tree_parent ;
-              $tree->level = 1 ;
+              $tree->pk_parent = $row->pk_tree  ;
+              $tree->level = $row->level + 1 ;
               $tree->sort =  request()->sort ;
               $tree->has_children = request()->has_children ;
               $tree->name = request()->name ;

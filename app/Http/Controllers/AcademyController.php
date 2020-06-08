@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Validator;
 use App\Tree;
 use App\Product;
 use App\Behavior;
 use App\Transaction;
 use App\Search;
 use App\Post;
+use App\Profile;
 
 class AcademyController extends Controller
 {
@@ -29,10 +31,8 @@ class AcademyController extends Controller
     }
 
     public function detail()
-    {
-        $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
-        $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-        /* Check Payment */
+    {/*
+      
         $payment_status ="";
     
         $user =  Auth::user() ;
@@ -52,21 +52,18 @@ class AcademyController extends Controller
         {
             $payment_status ="No Pay";
         }
-        /* Check Payment */
 
        $nodes = Tree::where('level','1')->get();
         return view('site.academy.detail',compact('nodes','payment_status','pkProduct_BeginnerTree'));
-    }
+    */ }
+    
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -175,4 +172,157 @@ class AcademyController extends Controller
     {
         //
     }
-}
+
+    public function SaveProfile(Request $request, $id)
+    {
+        $validator =  $this->validation_SaveProfile($request);
+
+    if ($validator->fails())
+       {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+      }
+
+        else
+        {
+              // process User --> Get info Writer And Save $new_instance
+              $user =  Auth::user() ;
+             
+            $profile = Profile::find($id);
+            $profile->birthday =  request()->year_birthday . '-'. request()->month_birthday . '-'. request()->day_birthday   ;
+            $profile->email =  request()->email   ;
+            $profile->state = request()->state    ;
+            $profile->address =  request()->address   ;
+            $profile->job =  request()->job   ;
+            $profile->favourite =  request()->favourite   ;
+            $profile->amount_time =  request()->amount_time   ;
+            $profile->pk_users =  $user->pk_users ;
+
+            if(request()->pic)
+            {
+                $pic = request()->file('pic');
+                $pic_name = $pic->getClientOriginalName();
+                $path = Storage::putFileAs( 'profile', $pic, $pic_name);
+                $profile->pic = $pic_name ;
+            } 
+            else
+            {
+                $profile->pic = 'profile_default.jpg' ;
+            }
+
+            $profile->complete =  'YES' ;
+
+            if($profile->save())
+            {
+              echo 'ok';
+            }
+            else
+            {
+                echo 'not ok';
+            }
+           
+        }
+    }
+
+    public function validation_SaveProfile(Request $request)
+    {
+        $rules =  [
+                    'month_birthday' => 'required|numeric', 
+                    'year_birthday' => 'required|numeric|digits:4', 
+                    'day_birthday' => 'required|numeric', 
+                    'email' => 'required|email',
+                    'state' => 'required|String', 
+                    'address' => 'required|String',
+                    'job' => 'required|String',
+                    'favourite' => 'required|String',
+                    'pic' => 'image|mimes:jpeg,png,jpg,gif,svg',
+         ];
+
+     
+$messages = [
+                'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
+                'month_birthday.required' => ' ماه تاریخ تولد  وارد نشده است',
+
+                'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
+                'day_birthday.required' => ' روز تاریخ تولد صحیح وارد نشده است',
+
+
+                'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
+                'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
+                'year_birthday.required' => 'سال تاریخ تولد وارد نشده است',
+
+
+                'pic.image' => 'تصویر شاخص  صحیح وارد نشده است',
+                'pic.mimes' => 'فرمت تصویر شاخص  صحیح وارد نشده است',
+
+                'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
+                'state.String' => 'استان صحیح وارد نشده است',
+                'email.required' => 'پست الکترونیکی  وارد نشده است ',
+
+                'address.String' => 'آدرس  صحیح وارد نشده است ',
+                'address.required' => 'آدرس  وارد نشده است ',
+
+
+                'job.String' => 'شغل  صحیح وارد نشده است ',
+                'job.required' => 'شغل وارد نشده است ',
+
+
+                'favourite.String' => 'علاقه مندی  صحیح وارد نشده است ',
+                'favourite.required' => 'علاقه مندی  وارد نشده است ',
+
+        ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
+    public function register()
+    {
+        $user =  Auth::user() ; 
+        $profile = Profile::where('pk_users',$user->pk_users)->first();
+
+        return view('site.academy.register',compact('profile'));
+    }
+
+
+    public function start()
+    {
+        $user =  Auth::user() ;
+
+        if($user != null)
+        {
+            // check completer profile 
+           $pk_user =  $user->pk_users ;
+          $row =  Profile::where('pk_users',$pk_user)->first();
+         
+            if($row->complete == 'YES')
+            {
+                return view('site.academy.detail');
+
+            }
+            else
+            {
+              $profile  =  $row ;
+                return view('site.academy.register',compact('profile'));
+
+            }
+        }
+        else
+        {
+            $redirectFromURL = "/academy/start";
+            return view('auth.callbacklogin',compact('redirectFromURL'));
+        }
+
+
+
+
+        
+
+    }
+    }
+
+
+
+

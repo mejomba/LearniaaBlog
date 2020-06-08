@@ -40,6 +40,9 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    /*
+
     public function store(Request $request)
     {
       
@@ -55,10 +58,7 @@ class ProfileController extends Controller
         else
           {
              $new_instance = new Profile();
-    
-           
- 
-             }
+         }
 
              $new_instance->birthday = request()->birthday ;
              $new_instance->email = request()->email;
@@ -87,7 +87,7 @@ class ProfileController extends Controller
                 }
           }
     
-    
+    /*
         
         
 
@@ -151,6 +151,7 @@ class ProfileController extends Controller
                 $profile->address =  request()->address   ;
                 $profile->job =  request()->job   ;
                 $profile->favourite =  request()->favourite   ;
+                $profile->amount_time =  request()->amount_time   ;
                 $profile->area =  request()->area   ;
                 $profile->pk_users =  $user->pk_users ;
 
@@ -165,16 +166,24 @@ class ProfileController extends Controller
                 {
                     $profile->pic = 'profile_default.jpg' ;
                 }
+
+                
     
+
+                if($profile->birthday != null && $profile->email != null && $profile->state != null  &&  $profile->address != null  &&  $profile->job != null  &&  $profile->favourite != null  &&  $profile->amount_time != null)
+                {
+                    $profile->complete =  'YES'   ;
+
+                }  
+                else
+                {
+                    $profile->complete =  'NO'  ;
+                }   
+
+
                 if($profile->save())
                 {
-                    if(request()->password)
-                    {
-                      $user = User::where('pk_users',$user->pk_users)->first();
-                      $user->password =  Hash::make(request()->password)   ; 
-                      $user->save();
-  
-                    }  
+                    
 
                     $is_Learner = Learner::where('pk_user',$user->pk_users)->first();
                     if($is_Learner != null)
