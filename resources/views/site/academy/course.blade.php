@@ -121,7 +121,7 @@
                                             <div class="col-md-1 col-12 text-center">
                                     <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}">
                                         <img class="img-fluid  rounded-circle shadow-sm" style="border-radius:30% !important;"
-                                            src="{{  Storage::url('product/'.$course->product['pic']) }}"
+                                            src="{{  Storage::url('tree/'.$course->product['pic']) }}"
                                             width="50px" height="50px" alt="{{$course['name']}}"></a>
 
                                             
