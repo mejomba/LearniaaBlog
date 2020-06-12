@@ -20,10 +20,6 @@
                     <div class="navbar-collapse-header">
                         <div class="row">
                             <div class="col-6 collapse-brand">
-                            <!--<a href="{{route('index')}}">
-                                 <img src="{{ asset('images/Template/logo.svg') }}" alt="Thumbnail Image" height="75px" width="100px">
-                                 </a>
-                            -->
                             </div>
                             <div class="col-6 collapse-close">
                                 <button type="button" class="navbar-toggler" data-toggle="collapse"
@@ -40,43 +36,28 @@
                         <li class="nav-item">
                             <a class="nav-link text" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
                                title=""
-                               data-placement="bottom">
-                                {{--                                          <img src="{{ asset('images/Template/blog.svg') }}" alt="Thumbnail Image" height="50px"--}}
-                                {{--                                              width="50px">--}}
-                                صفحه اصلی
-                            </a>
+                               data-placement="bottom">صفحه اصلی</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text" style="color: black" href="{{route('academy.start')}}" rel="tooltip"
                                title="" data-placement="bottom"
-                               data-original-title="به زودی">
-                                {{--                                               <img src="{{ asset('images/Template/learn.svg') }}" alt="Thumbnail Image" height="50px"--}}
-                                {{--                                              width="50px">--}}
-                                آکادمی آموزش
-                            </a>
+                               data-original-title="به زودی">آکادمی آموزش </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('Contactus')}}">
-                                {{--                                          <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image"--}}
-                                {{--                                                 height="50px" width="50px">--}}
-                                تماس با ما
-
-                            </a>
+                            <a class="nav-link text" style="color: black"
+                             href="{{route('Contactus')}}">تماس با ما</a>    
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text" style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
-                               data-placement="bottom">
-                                {{--                                           <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image"--}}
-                                {{--                                              height="50px" width="50px">--}}
-                                درباره ما
-
-                            </a>
+                               data-placement="bottom"> درباره ما</a>
+                               
+                            
                         </li>
                     </ul>
-                    <ul class="navbar-nav col-md-3 col-10 " dir="ltr" style="margin-top:15px">
-                        <!-- serach box site -->
-                   <!--     <form class="navbar-form" style="margin-bottom:0px" dir="rtl"
+        <!-- Search Box -->
+            <ul class="navbar-nav col-md-3 col-10 " dir="ltr" style="margin-top:15px">
+            <!--    <form class="navbar-form" style="margin-bottom:0px" dir="rtl"
                               action="{{route('search.index')}}">
                             <div class="row">
                                 <div class="col-md-12 col-11" style="padding-left:0px;padding-right:0px">
@@ -95,18 +76,12 @@
                                 </div>
                             </div>
                         </form> -->
-                    </ul>
-                    <!-- USER PANEL -->
+            </ul>
+            <!-- Search Box -->
 
+                    <!-- USER PANEL -->
                     <ul class="navbar-nav col-md-2 col-10" dir="ltr">
                     @guest
-                        <!-- <li class="nav-item">
-                    <a class="nav-link" target="_parent" style="color:white"  rel="tooltip" title=""
-                    data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
-                    > ورود/ثبت نام
-                  </a>
-                  </li>   -->
-
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
@@ -118,7 +93,6 @@
                             @endif
                         @else
                             <li class="nav-item dropdown" style="border-radius:1.2rem;">
-                                <!--   <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" -->
                                 <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button"
                                    style=" border-radius: 50%; width: 50px; height: 50px;"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -176,34 +150,14 @@
 
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-
     $(document).ready(function(){
         $(window).scroll(function(){
             var scroll = $(window).scrollTop();
-            if (scroll > 50) {
-                $(".black").css("background" , "#20c5ba");
-
-            }
-
-            else{
-                $(".black").css("background" , "transparent");
-
-            }
-        })
-    })
+            if (scroll > 50) { $(".black").css("background" , "#20c5ba"); }else{ $(".black").css("background" , "transparent");}})})
     //text color
     $(document).ready(function(){
         $(window).scroll(function(){
             var scroll = $(window).scrollTop();
-            if (scroll > 50) {
-               // $(".text").css("color" , "white");
-            }
-
-            else{
-                $(".text").css("color" , "black");
-            }
-        })
-    })
+            if (scroll > 50){}else{ $(".text").css("color" , "black");}})})
 </script>
