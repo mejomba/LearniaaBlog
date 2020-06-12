@@ -8,8 +8,7 @@
                             data-target="#navbar-default"
                             aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
                         <img src="{{ asset('images/Template/menu.svg') }}" alt="Thumbnail Image" height="20px"
-                             width="20px">
-                        منو
+                             width="20px" style="margin-top: -40px!important">
                     </button>
                     <a href="{{route('index')}}" style="margin-right:20px">
                         <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image"
@@ -37,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="navbar-nav col-md-7 d-inline-flex">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
                                title=""
@@ -62,8 +61,7 @@
                                 {{--                                          <img src="{{ asset('images/Template/nav/nav_contactUs.svg') }}" alt="Thumbnail Image"--}}
                                 {{--                                                 height="50px" width="50px">--}}
                                 تماس با ما
-                                <div class="ripple-container">
-                                </div>
+
                             </a>
                         </li>
                         <li class="nav-item">
@@ -72,8 +70,7 @@
                                 {{--                                           <img src="{{ asset('images/Template/nav/nav_aboutUs.svg') }}" alt="Thumbnail Image"--}}
                                 {{--                                              height="50px" width="50px">--}}
                                 درباره ما
-                                <div class="ripple-container">
-                                </div>
+
                             </a>
                         </li>
                     </ul>
@@ -114,8 +111,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
                                        style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
-                                       data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
-                                    >ثبت نام / ورود
+                                       data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
+                                    <span>ثبت نام / ورود</span>
                                     </a>
                                 </li>
                             @endif
@@ -187,12 +184,12 @@
             var scroll = $(window).scrollTop();
             if (scroll > 50) {
                 $(".black").css("background" , "#20c5ba");
-             
+
             }
 
             else{
                 $(".black").css("background" , "transparent");
-             
+
             }
         })
     })
