@@ -1024,8 +1024,8 @@ p {
 }
 
 .navbar-nav .nav-item a {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight:800;
     /* color: #fff; */
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
@@ -1041,7 +1041,7 @@ p {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .navbar-nav .nav-item a {
         display: block;
-        padding: 4px 0;
+        padding: 2px 0;
         color: #2E2E2E;
     }
 }
@@ -1049,7 +1049,7 @@ p {
 @media (max-width: 767px) {
     .navbar-nav .nav-item a {
         display: block;
-        padding: 4px 0;
+        padding: 2px 0;
         color: #2E2E2E;
     }
 }

@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer id="footer" class="footer-area pt-120 mt-5 " style="margin-top: 12.0rem !important">
 <div class="container-fluid mt-5">
-        <div class="subscribe-area wow fadeIn">
+        <div class="subscribe-area wow fadeIn container mx-auto">
             <div class="row">
             <div class="col-lg-6" style="margin-top:20px">
                     <div class="subscribe-form mt-50">
