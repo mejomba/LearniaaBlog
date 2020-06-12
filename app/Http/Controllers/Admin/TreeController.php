@@ -62,6 +62,7 @@ class TreeController extends Controller
                 $tree->name = request()->name ;
                 $tree->description = request()->description ;
               
+                if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
 
                     if($tree->save())
                     {
@@ -123,6 +124,9 @@ class TreeController extends Controller
                 $tree->name = request()->name ;
                 $tree->description = request()->description ;
                 $tree->has_children =  request()->has_children ;
+
+                if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
+
 
                     if($tree->save())
                     {
@@ -236,6 +240,9 @@ class TreeController extends Controller
               $tree->name = request()->name ;
               $tree->description = request()->description ;
 
+              if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
+
+
               if(request()->pic)
               {
                 $pic = request()->file('pic');
@@ -286,6 +293,9 @@ class TreeController extends Controller
               $tree->name = request()->name ;
               $tree->description = request()->description ;
               $tree->has_children = request()->has_children ;
+
+              if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
+
 
               if(request()->pic)
               {
