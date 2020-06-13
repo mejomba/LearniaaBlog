@@ -2,22 +2,8 @@
 <html lang="fa">
 <head>
  @include('site.Layouts.head')
-</head>
 
-<body>
-<div class="container-fluid" style="padding-left:0px;padding-right:0px">
-@include('site.Layouts.error')
-</div>
-
-@include('site.Layouts.nav')
-
-
-<div style="direction: rtl;padding-top:7.0rem" >
-@yield('content')
-</div>
-
-@include('site.Layouts.footer')
-
+ 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
@@ -55,6 +41,23 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 }(window, document, "yektanet");
 </script>
 <!-- Yektanet CODE-->
+
+
+</head>
+
+<body>
+<div class="container-fluid" style="padding-left:0px;padding-right:0px">
+@include('site.Layouts.error')
+</div>
+
+@include('site.Layouts.nav')
+
+
+<div style="direction: rtl;padding-top:7.0rem" >
+@yield('content')
+</div>
+
+@include('site.Layouts.footer')
 
 </body>
 </html>
