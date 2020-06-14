@@ -4,13 +4,13 @@
 <meta  name="description" content="حساب کاربری| لرنیا">
 @endsection
 @section('content')
-<div class="row" style="margin-top: 120px" >
-<div class="col-lg-5 col-md-7 col-sm-8 col-11 offset-1" style="padding: 0px 28px;" >
+<div class="row" >
+<div class="col-lg-4 col-md-6 col-sm-9 col-10 offset-lg-2 offset-md-1 offset-sm-1" style="padding: 0px 28px;" >
 <div class="card shadow border-0" style="border-bottom-left-radius: 50px ; border-bottom-right-radius: 50px">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h1 style="font-size:30px">ثبت نام / ورود</h1></div>
 </div>
-<div class="card-body">
+<div class="card-body px-3 py-5">
 <form class="form" method="POST" action="{{route('reset.callbacklogin')}}">
 
 @if(isset($redirectFromURL))
@@ -19,7 +19,7 @@
 
 @csrf
 
-    <div class="form-group" style="margin-top: 70px;">
+    <div class="form-group" >
         <div class="col-12 d-flex justify-content-around">
             <img class="rounded-circle"
             src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" width="40px">
