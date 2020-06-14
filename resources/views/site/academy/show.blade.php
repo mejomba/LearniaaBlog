@@ -5,8 +5,9 @@
     <meta name="keywords" content="@php echo implode(',',$meta_keywords); @endphp">
 @endsection
 @section('content')
-    <!---- RoadMap Help Section --->
-    <div class="row" style="margin-right: 20px;">
+
+        <!---- RoadMap Help Section --->
+<div class="row" style="padding-left: 10px!important">
      <div class="col-md-2 col-12" style="padding-top:15px">
             @if(isset($nodes_previous['pk_product']))
                 <a href="{{ route('academy.show', ['id' => $nodes_previous['pk_product'] , 'desc' =>  $nodes_previous['name'] ]) }}"
@@ -16,14 +17,14 @@
                          width="40px" height="40px" alt="{{$nodes_previous['name']}}"> گام قبلی </a>
             @endif
         </div>
-      
-        <div class="col-md-2 col-12" style="padding-top:15px">
-            <a href="{{ route('academy.detail')}}" class="btn learniaaColor mt-4 d-inline"  style="font-size:19px">
+
+        <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:100px!important">
+            <a href="{{ route('academy.detail')}}" class="btn learniaaColor mt-4 d-inline"  style="font-size:19px; ">
                 <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
                      src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
                      width="40px" height="40px" alt="{{$nodes_previous['name']}}"> نقشه راه </a>
         </div>
-       
+
         <div class="col-md-2 col-12" style="padding-top:15px">
             @if(isset($nodes_next['pk_product']))
                 <a href="{{ route('academy.show', ['id' => $nodes_next['pk_product'] , 'desc' =>  $nodes_next['name'] ]) }}"
@@ -37,16 +38,16 @@
  <!---- RoadMap Help Section --->
 
   <!-- Title --->
-<div class="row" style="padding-top:30px">
-        <div class="col-md-7 text-center" style="padding-top: 5px;padding-left:15px;padding-right:15px">
+<div class="row" style="padding-top:30px;">
+        <div class="col-md-7 text-center" style="padding-top: 5px;">
                 <button class="btn mt-4 d-inline BtnLearniaaColor" >
                     <h2 style="color:#FFFFFF" class="text-center">{{$product['title']}}</h2>
                 </button>
-          
+
       </div>
       </div>
- <!-- Title --->     
-   
+ <!-- Title --->
+
   <!-- Information -->
   <div class="row">
         <div class="col-md-7 text-center">
@@ -58,8 +59,8 @@
                 <div class="container-fluid">
                     <div class="row text-center" style="padding-top:25px;padding-bottom:15px;">
 
-             <div class="col-md-9">  
-                 <div class="row">      
+             <div class="col-md-9">
+                 <div class="row">
                         <div class="col-4 col-md-4" style="font-size:13px">
                                 <img src="{{ asset('images/Template/price-tag.svg') }}"
                                     alt="Learniaa" height="42px" width="62px">
@@ -170,16 +171,16 @@
                     @endif
             <!-- Payment -->
             </div>
-           
+
                 </div>
             </div>
         </div>
   <!-- Information -->
 
 
-   
+
    <!-- JW Player Video  -->
-   
+
                 <div class="row">
                     <div class="col-12 col-md-7">
                     <div class="container-fluid"
@@ -201,11 +202,11 @@
                     </div>
                     </div>
      <!-- JW Player Video  -->
-             
-            
+
+
           <!-- Section Learner -->
           <div class="col-12 col-md-5">
-            <div class="container-fluid" style="padding-bottom:15px;;font-size:15px;margin-right:10px">
+            <div class="container-fluid" style="padding-bottom:15px;;font-size:15px;">
                 <h3> اطلاعات مدرس <h3>
             </div>
             <div class="container-fluid" style="padding-bottom:15px;;font-size:15px">
@@ -232,16 +233,16 @@
                             </p>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
-      </div>   
+      </div>
             <!-- Section Learner -->
-       
-    
-    
+
+
+
     <!-- Samte Chap -->
     <!-- post meta section -->
     <div class="row">
