@@ -1,61 +1,17 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
+<html lang="fa">
 <head>
-
-@include('admin.Layouts.head')
-
-</head>
+ @include('admin.Layouts.head')
 
 
-<body class="landing-page sidebar-collapse">
-
-@include('admin.Layouts.nav')
-
-
-  <div class="card shadow border-21" 
-  style="margin-left:15px;margin-right: 15px;margin-top:110px;padding-bottom: 60px;margin-bottom: 15px;">
-  
-              
-              <div class="container-fluid" style="margin-top:15px">
-
-                @include('admin.Layouts.error')
-                
-              </div>
-
-              <!-- Full Container Page Content -->
-
-            <div class="container-fluid" style="margin-top:15px">
-
-                  <div class="row">
-                  <div class="col-md-12">
-                  @include('admin.Layouts.sidebar_horizontal')
-                  </div>
-                  </div>
-
-                  <div class="row" style="padding-top:15px">
-                  <div class="col-md-12" style="min-height:285px">  
-
-                      @yield('content')
-
-                  </div>
-                  </div>
-            </div>
-
-            <!-- Full Container Page Content -->
-
-
-  </div>
-
-
-@include('admin.Layouts.footer')
- 
 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
 
+
+@include('admin.Layouts.preloader')
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}
@@ -88,6 +44,47 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 }(window, document, "yektanet");
 </script>
 <!-- Yektanet CODE-->
+
+
+</head>
+
+
+<body class="landing-page sidebar-collapse">
+
+@include('admin.Layouts.nav')
+
+
+  <div class="card shadow border-21" 
+  style="direction: rtl;margin-left:15px;margin-right: 15px;margin-top:110px;padding-bottom: 60px;margin-bottom: 15px;">
+  
+              
+              <div class="container-fluid" style="margin-top:15px">
+
+                @include('admin.Layouts.error')
+                
+              </div>
+
+              <!-- Full Container Page Content -->
+
+            <div class="container-fluid" style="margin-top:15px">
+
+                  <div class="row">
+                  <div class="col-md-12">
+                  @include('admin.Layouts.sidebar_horizontal')
+                  </div>
+                  </div>
+
+                  <div class="row" style="padding-top:15px">
+                  <div class="col-md-12" style="min-height:285px">  
+
+                      @yield('content')
+
+                  </div>
+                  </div>
+            </div>
+
+            <!-- Full Container Page Content -->
+  </div>
 
 </body>
 </html>

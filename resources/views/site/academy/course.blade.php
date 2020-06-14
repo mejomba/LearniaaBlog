@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <img class="card-img-top img-border" 
-                    src="{{  Storage::url('tree/'.$tree['pic'])  }}"
+                    src="{{  Storage::url('tree/'.$tree->course['pic'])  }}"
                       width="900px" height="330px" alt="Card image cap">
                       <div class="card-body text-center ">
                             <h5 class="card-title "></h5>
@@ -50,8 +50,8 @@
                         <div class="col-md-6 col-12">
                             <img class="img-fluid  rounded-circle shadow-sm"
                                  style="border-radius:40% !important;margin-bottom:5px"
-                                 src="{{  Storage::url('tree/'.'Profile_AllCource_BeginnerTree.png') }}"
-                                 width="70px" height="70px" alt="Profile_AllCource_BeginnerTree">
+                                 src="{{  Storage::url('tree/'.$tree['pic']) }}"
+                                 width="70px" height="70px" alt="{{$tree->name}}">
                             <span style="font-size:16px;">پکیج کامل {{$tree->name}} </span>
                         </div>
                        

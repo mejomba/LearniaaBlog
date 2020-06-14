@@ -22,33 +22,34 @@
               <div class="card-body px-lg-5 py-lg-5"> 
               <form method="POST" action="{{ route('academy.saveprofile',$profile['pk_profiles']) }}"
                     enctype="multipart/form-data" >
+                    
                @csrf
 
                       @php $month_birthday =  substr($profile->birthday,5,2)  @endphp
                       @php $year_birthday =  substr($profile->birthday,0,4)  @endphp
                       @php $day_birthday =  substr($profile->birthday,8,2)  @endphp
+       <div class="row">
 
-                  <div class="form-group">
+       <div class="col-md-6">           
+          <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control"  value="{{$day_birthday}}" name="day_birthday" placeholder="روز تولد " type="text">
+                      <input value="{{$year_birthday}}" name="year_birthday" class="form-control" placeholder="سال تولد" type="text">
                     </div>
                   </div>
-
-
-                    
+        </div>
 
    <!-- Select Box -->
-   <div class="col-md-12">
+   <div class="col-md-6">
         <div class="row">
 
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                         <span>ماه</span> 
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-10">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
@@ -130,29 +131,21 @@
         </div>
          <!-- Select Box -->
   
-                 <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
-                      </div>
-                      <input value="{{$year_birthday}}" name="year_birthday" class="form-control" placeholder="سال تولد" type="text">
-                    </div>
-                  </div>
-  
+         <div class="col-md-6">
                   <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input value="{{ $profile['email'] }}" name="email" class="form-control" placeholder="پست الکترونیکی" type="text">
+                      <input class="form-control"  value="{{$day_birthday}}" name="day_birthday" placeholder="روز تولد " type="text">
                     </div>
                   </div>
+              </div>
 
-
-                  
+    
 
        <!-- Select Box -->
-   <div class="col-md-12">
+       <div class="col-md-6">
         <div class="row">
 
 
@@ -332,6 +325,30 @@
          <!-- Select Box -->
 
 
+              
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input value="{{ $profile['email'] }}" name="email" class="form-control" placeholder="پست الکترونیکی" type="text">
+                    </div>
+                  </div>
+          </div>
+
+          
+       <div class="col-md-6">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $profile['job'] }}" name="job" class="form-control" placeholder=" شغل" type="text">
+                    </div>
+                  </div>
+             </div>
+
+              
          <div class="col-md-12">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
@@ -343,54 +360,17 @@
          </div>
         </div>
 
-     
-                <!-- Picture Box -->
-                <div class="col-md-12">
-                <div class="row">
-
-
-                  <div class="col-md-3">
-                  <span>تصویر </span> 
-                  </div>
-                  <div class="col-md-9">
-                <div class="form-group focused">
-                            <div class="input-group input-group-alternative">
-                              <div class="input-group-prepend">  
-                              </div>
-                              <input  type="file" id="pic" name="pic">
-                            </div>
-                          </div>
-                </div>
-
-
-                </div>
-            </div>
-            <!-- Picture Box -->
-
-
-       <div class="col-md-12">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input value="{{ $profile['job'] }}" name="job" class="form-control" placeholder=" شغل" type="text">
-                    </div>
-                  </div>
-             </div>
-
-
-
-
              
        <!-- Select Box -->
+
    <div class="col-md-12">
         <div class="row">
 
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                         <span>علاقه مندی</span> 
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
@@ -413,16 +393,115 @@
          <!-- Select Box -->
 
 
-         <div class="col-md-12">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input value="{{ $profile['amount_time'] }}" name="amount_time" class="form-control" placeholder="چند ساعت در روز میخوای وقت بزاری" type="text">
-                    </div>
-                  </div>
-           </div>
 
+
+  <!-- Select Box -->
+
+  <div class="col-md-12">
+        <div class="row">
+
+
+                        <div class="col-md-7">
+                        <span>چقدر در روز میخوای وقت بزاری</span> 
+                        </div>
+                        <div class="col-md-5">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="favourite" class="form-control">
+                                 
+                                  <option class="" value="0.5" 
+                                  @if( $profile->amount_time == "0.5" )
+                                  selected="selected"
+                                  @endif >نیم ساعت</option>
+                                  <option class="" value="1"
+                                  @if($profile->amount_time == "1" )
+                                  selected="selected"
+                                  @endif >یک ساعت</option>
+                                  <option class="" value="2" 
+                                  @if($profile->amount_time == "2" )
+                                  selected="selected"
+                                  @endif >دو ساعت</option>
+                                  <option class="" value="3" 
+                                  @if($profile->amount_time == "3" )
+                                  selected="selected"
+                                  @endif >سه ساعت</option>
+                                  <option class="" value="4" 
+                                  @if($profile->amount_time == "4")
+                                  selected="selected"
+                                  @endif >چهار ساعت</option>
+                                  <option class="" value="5" 
+                                  @if($profile->amount_time == "5" )
+                                  selected="selected"
+                                  @endif >پنج ساعت</option>
+                                  <option class="" value="6" 
+                                  @if($profile->amount_time == "6" )
+                                  selected="selected"
+                                  @endif >شش ساعت</option>
+                                  <option class="" value="7" 
+                                  @if($profile->amount_time == "7" )
+                                  selected="selected"
+                                  @endif >هفت ساعت</option>
+                                  <option class="" value="8" 
+                                  @if($profile->amount_time == "8" )
+                                  selected="selected"
+                                  @endif >هشت ساعت</option>
+                                  <option class="" value="9" 
+                                  @if($profile->amount_time == "9" )
+                                  selected="selected"
+                                  @endif >نه ساعت</option>
+                                  <option class="" value="10" 
+                                  @if($profile->amount_time == "10" )
+                                  selected="selected"
+                                  @endif >ده ساعت</option>
+
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+
+
+
+    <!-- Picture Box -->
+    <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                  <span  style="font-size:15px">وارد کردن تصویر الزامی نمی باشد  </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                  <span>  </span> 
+                  </div>
+                  <div class="col-md-9">
+                <div class="form-group focused">
+                            <div class="input-group input-group-alternative">
+                              <div class="input-group-prepend">  
+                              </div>
+                              <input  type="file" id="pic" name="pic">
+                            </div>
+                          </div>
+                </div>
+
+
+                </div>
+            </div>
+            <!-- Picture Box -->
+
+
+
+
+
+
+
+
+    </div>
                 
                   <div class="text-center" >
                     <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>

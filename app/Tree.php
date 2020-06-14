@@ -26,4 +26,10 @@ class Tree extends Model
      return $this->hasOne('App\Product', 'pk_product', 'pk_AllCourse_product');
     }
 
+    public function course()
+    {
+
+     return $this->hasOne('App\Course', 'pk_tree', 'pk_tree');
+    }
+
 }

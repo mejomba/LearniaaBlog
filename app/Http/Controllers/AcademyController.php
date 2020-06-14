@@ -13,6 +13,7 @@ use App\Search;
 use App\Post;
 use App\Profile;
 use App\Course;
+use App\History;
 
 class AcademyController extends Controller
 {
@@ -54,6 +55,27 @@ class AcademyController extends Controller
             $payment_status ="No Pay";
         }
         /* Payments */
+
+        /* Update User History */
+        $is_history_save = History::where(['pk_users' => $user->pk_users , 'pk_tree' => $pk_tree])->first();
+        if($is_history_save == null)
+        {
+           
+            $new_history = new History();
+            $new_history->pk_users = $user->pk_users ;
+            $profile =  Profile::where('pk_users', $user->pk_users)->first() ;
+            $new_history->pk_profile = $profile['pk_profiles'] ;
+            $new_history->pk_tree = $pk_tree ;
+            $new_history->description = 'شروع دوره' ;
+            if($new_history->save())
+            {}  
+            else
+            {
+               return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+            }
+        }
+       /* Update User History */
+
     
         return view('site.academy.course',compact('courses','tree','payment_status'));
     
@@ -154,12 +176,12 @@ class AcademyController extends Controller
             }
 
             /* Tree */
-            $current_node = Tree::where('pk_product',$id)->first();
+            $current_node = Course::where('pk_product',$id)->first();
             $nodes_previous = Tree::where('sort',$current_node->sort - 1)->where('level','1')->first();
             $nodes_next  = Tree::where('sort',$current_node->sort + 1)->where('level','1')->first();
             /* Tree */
 
-            return view('site.academy.show',compact('product','behavior_product','payment_status','meta_keywords','nodes_previous','nodes_next','pkProduct_BeginnerTree'));
+            return view('site.academy.show',compact('product','payment_status','meta_keywords','nodes_previous','nodes_next','pkProduct_BeginnerTree'));
 
     }
 
@@ -239,7 +261,8 @@ class AcademyController extends Controller
 
             if($profile->save())
             {
-                return redirect()->route('site.academy.detail');
+            
+                return redirect()->route('academy.detail');
             }
             else
             {
@@ -323,7 +346,7 @@ $messages = [
          
             if($row->complete == 'YES')
             {
-                return view('site.academy.detail');
+                return redirect()->route('academy.detail');
 
             }
             else
