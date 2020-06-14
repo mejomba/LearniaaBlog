@@ -56,6 +56,54 @@
                   </div>
         </div>
 
+
+  <!-- Select Box -->
+  <div class="col-md-4">
+      <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>فرزند</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="has_children" id="has_children" class="form-control">
+                                  <option value="Yes"
+                                  @if($tree->has_children == "Yes" )
+                                  selected="selected"
+                                  @endif>دارد</option>
+
+                                  <option value="No"
+                                  @if($tree->has_children == "No" )
+                                  selected="selected"
+                                  @endif>ندارد</option>
+
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+
+
+       
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">         
+                      </div>
+                      <input class="form-control" value="{{ $tree['pk_AllCourse_product'] }}" name="pk_AllCourse_product" placeholder="کلید محصول پکیج جامع دوره " type="text">
+                    </div>
+                  </div>
+           </div>
+
+
       <!-- Content Box -->
 
       <div class="col-md-12">

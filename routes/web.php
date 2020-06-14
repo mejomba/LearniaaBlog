@@ -12,6 +12,7 @@ Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail'
 Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
 Route::get('/academy/register', 'AcademyController@register')->name('academy.register');
 Route::get('/academy/start', 'AcademyController@start')->name('academy.start');
+Route::get('/academy/course', 'AcademyController@start_course')->name('academy.course');
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 
 

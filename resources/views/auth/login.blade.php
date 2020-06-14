@@ -40,7 +40,6 @@
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
 <img class="img-raised rounded-circle img-fluid" 
-
 src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input type="hidden" name="username" value="{{ $_GET['username'] }}">

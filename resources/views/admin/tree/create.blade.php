@@ -82,6 +82,16 @@
          <!-- Select Box -->
 
 
+         <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">         
+                      </div>
+                      <input class="form-control" name="pk_AllCourse_product" placeholder="کلید محصول پکیج جامع دوره " type="text">
+                    </div>
+                  </div>
+           </div>
+
        <!-- Content Box -->
 
       <div class="col-md-12">

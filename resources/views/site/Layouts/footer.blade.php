@@ -1,13 +1,13 @@
 <!-- Footer -->
 <footer id="footer" class="footer-area pt-120 mt-5 " style="margin-top: 12.0rem !important">
-<div class="container mt-5">
-        <div class="subscribe-area wow fadeIn">
+<div class="container-fluid mt-5">
+        <div class="subscribe-area wow fadeIn container mx-auto">
             <div class="row">
             <div class="col-lg-6" style="margin-top:20px">
                     <div class="subscribe-form mt-50">
                         <form method="POST" action="{{route('message.newspaper')}}">
                             @csrf
-                            <input  type="hidden" name="name" id="name" value="ناشناس"class="form-control">
+                            <input  type="hidden" name="name" id="name" value="ناشناس" class="form-control">
                             <input type="hidden" name="message" id="message" value="درخواست خبرنامه"  class="form-control">
 
                             <input type="text" name="email" placeholder="ایمیل خود را وارد نمایید">
@@ -15,7 +15,7 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
                         <h6 style="font-size:24px;text-align:center" class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
@@ -23,26 +23,25 @@
                 </div>
 
             </div>
-          
-        </div> 
+
+        </div>
         <!-- End subscribe area -->
 
-       
-        <div class="container" style="margin-top: 350px; direction: rtl">
-            <div class="row ml-4">
-                <div class="col-md-4 mx-auto" style="margin-top: -55px">
-                    <a class="" style=""
-                       href="{{route('index')}}">
-                        <img src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image"
-                             style="height: 200px;width: 150px;margin: 10px 35px;">
+
+{{--  =================================================================  Footer Starts----------------------------------------------------------------------------}}
+        <div class="container-fluid" style="margin-top: 350px; direction: rtl">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <a class="d-flex justify-content-center" href="{{route('index')}}">
+                        <img src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Logo_Of_Learniaa" width="120px" height="120px">
                     </a>
-                    <div class="mt-5">
-                        <p class="text text-white" style="text-align:justify">در لرنیا جمع شده ایم تا مسیر یادگیری شما را هر چه راحت تر و سریع تر مشخص کرده و با کمک شما پیش بریم</p>
+                    <div class="mt-3">
+                        <span class="text-center offset-1 text-white text-justify w-75">در لرنیا جمع شده ایم تا مسیر یادگیری شما را هر چه راحت تر و سریع تر مشخص کرده و با کمک شما پیش بریم</span>
                     </div>
-                    <div class="mt-5">
+                    <div class="mt-3 d-flex justify-content-center">
 
                       <a href="https://t.me/learniaa_group" target="_blank">
-                      <img class="ml-3" style="height: 35px; width: 35px; color: white"
+                      <img class="" style="height: 35px; width: 35px; color: white"
                       src="{{asset('images/footer_telegram.svg')}}" alt="">
                     </a>
 
@@ -51,7 +50,7 @@
                              src="{{asset('images/footer_instagram.svg')}}" alt="">
                              </a>
 
-                             
+
                               <a href="https://linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4" target="_blank">
                               <img class="ml-3" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_linkden.svg')}}" alt="">
@@ -63,9 +62,10 @@
                              </a>
                     </div>
                 </div>
-               
+
                 <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-2 mx-auto">
+
+                <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">دسترسی سریع</h5>
                     <ul class="list-unstyled mt-5">
                         <li>
@@ -92,9 +92,9 @@
                     </ul>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-2 mx-auto ml-5">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto ml-5">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">صفحات متداول</h5>
-                   <!-- <ul class="list-unstyled mt-5" > --> 
+                   <!-- <ul class="list-unstyled mt-5" > -->
                    <ul class="list-unstyled " >
                         <li class="">
                             <a href="#!"></a>
@@ -111,15 +111,15 @@
                         <li class="">
                             <a href="#!"></a>
                         </li>
-                        {{--  <li> --}}
-                        {{--  <a href="#!" style="text-decoration: none; color: white">همکاری با ما</a> --}}
-                         {{--   </li>  --}}
-                        {{--  <li> --}}
-                         {{--  <a href="#!" style="text-decoration: none; color: white">هیات علمی</a> --}}
-                         {{--</li> --}}
+                          <li>
+                          <a href="#!" style="text-decoration: none; color: white">همکاری با ما</a>
+                            </li>
+                          <li>
+                           <a href="#!" style="text-decoration: none; color: white">هیات علمی</a>
+                         </li>
                     </ul>
                 </div>
-                <div class="col-md-2 mx-auto">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">ارتباط‌ با ما
                     </h5>
                     <ul class="list-unstyled mt-5">
@@ -149,7 +149,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-2 mx-auto ml-5">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto mt-md-4 mt-sm-4 mt-4">
                   <div class="float-left" >
                   <!--  <img class="position-absolute" style="height: 200px; width: 200px; color: white"
                         src="{{asset('images/nemad.png')}}" alt="">  -->
@@ -161,7 +161,7 @@
                                 <div class="col-md-12 col-8" id="zarinpal">
                                 <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
 
-                                <img id = 'jxlzfukzjzpeesgtesgtapfu' style = 'cursor:pointer;width:90px !important' 
+                                <img id = 'jxlzfukzjzpeesgtesgtapfu' style = ' cursor:pointer;width:90px !important ; display: block!important;'
                                 onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
                                     src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
                         </div>
@@ -174,5 +174,5 @@
     </div>
     <hr class="mt-5 bg-white container">
     <div style="height: 100px;"></div>
-</footer>
+ </footer>
 <!--End Footer -->

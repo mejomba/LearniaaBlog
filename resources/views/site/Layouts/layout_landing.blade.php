@@ -2,32 +2,6 @@
 <html lang="fa">
 <head>
  @include('site.Layouts.head')
-</head>
-
-<body>
-<div class="container-fluid" style="padding-left:0px;padding-right:0px">
-@include('site.Layouts.error')
-</div>
-
-@include('site.Layouts.nav')
-
-<div style="direction: rtl" class="d-flex justify-content-around">
-
-<div class="learn-style mt-5">
-    <h1 class="mt-5"></h1>
-    @yield('text_landing')
-</div>
-
-<div class="learn-style">
-    @yield('pic_landing')
-</div>
-
-</div>
-
-@yield('content')
-
-@include('site.Layouts.footer')
-
 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
@@ -69,6 +43,32 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 
 <!-- Video Player -->
 <script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div class="container-fluid" style="padding-left:0px;padding-right:0px">
+@include('site.Layouts.error')
+</div>
+
+@include('site.Layouts.nav')
+
+<div style="direction: rtl" class="d-flex justify-content-around">
+
+<div class="learn-style mt-5">
+    <h1 class="mt-5"></h1>
+    @yield('text_landing')
+</div>
+
+<div class="learn-style">
+    @yield('pic_landing')
+</div>
+
+</div>
+
+@yield('content')
+
+@include('site.Layouts.footer')
 
 </body>
 </html>

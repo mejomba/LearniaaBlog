@@ -12,6 +12,7 @@ use App\Transaction;
 use App\Search;
 use App\Post;
 use App\Profile;
+use App\Course;
 
 class AcademyController extends Controller
 {
@@ -30,32 +31,55 @@ class AcademyController extends Controller
         return view('site.academy.index',compact('last_posts'));
     }
 
-    public function detail()
-    {/*
-      
+    public function start_course(Request $request)
+    {
+        $pk_tree = $_GET['pk_tree'] ;
+        $courses = Course::where('pk_tree',$pk_tree)->get();
+        $tree = Tree::where('pk_tree',$pk_tree)->first();
+        $pk_AllCourse_product = $tree->pk_AllCourse_product;
+
+        /* Payments */
         $payment_status ="";
-    
         $user =  Auth::user() ;
-        
         if($user != null)
         {
-          $payment_checks = Transaction::where('pk_product',$pkProduct_BeginnerTree)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
-         
+          $payment_checks = Transaction::where('pk_product',$pk_AllCourse_product)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
           if($payment_checks)
           {
             $payment_status ="Payed";
           }
-
         }
-
         if($user == null)
         {
             $payment_status ="No Pay";
         }
+        /* Payments */
+    
+        return view('site.academy.course',compact('courses','tree','payment_status'));
+    
+    }
 
-       $nodes = Tree::where('level','1')->get();
-        return view('site.academy.detail',compact('nodes','payment_status','pkProduct_BeginnerTree'));
-    */ }
+    public function detail(Request $request)
+    {
+        $pk_parent = "";
+        $level = "";
+        $nodes = "" ;
+        if(isset($_GET['pk_parent']))
+        {
+            $pk_parent =  $_GET['pk_parent'];
+            $level = $_GET['level'];
+            
+            $nodes = Tree::where( ['pk_parent' => $pk_parent , 'level' => $level ] )->get();
+            
+        }
+        else
+        {
+            $nodes = Tree::where( ['level' => '0' ] )->get();
+        }
+        
+        return view('site.academy.detail',compact('nodes'));
+
+    }
     
 
     /**
@@ -215,11 +239,11 @@ class AcademyController extends Controller
 
             if($profile->save())
             {
-              echo 'ok';
+                return redirect()->route('site.academy.detail');
             }
             else
             {
-                echo 'not ok';
+                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
             }
            
         }
