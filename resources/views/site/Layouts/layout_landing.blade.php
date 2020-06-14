@@ -8,6 +8,7 @@
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
 
+@include('site.Layouts.preloader')
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}
@@ -47,7 +48,7 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 </head>
 
 <body>
-<div class="container-fluid" style="padding-left:0px;padding-right:0px">
+<div class="container-fluid" style="z-index: 10001">
 @include('site.Layouts.error')
 </div>
 

@@ -3,7 +3,7 @@
     <div class="fixed-top" id="nav">
         <nav id="nav" class="black navbar navbar-horizontal navbar-expand-lg fixed-top navbar-custom">
             <div class="container-fluid">
-                <div class="navbar-brand" style="padding-top:10px;">
+                <div class="navbar-brand" style="">
                     <button class="navbar-toggler" style="margin-right:10px" type="button" data-toggle="collapse"
                             data-target="#navbar-default"
                             aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
                              width="20px" style="margin-top: -40px!important">
                     </button>
                     <a href="{{route('index')}}" style="margin-right:20px">
-                        <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image"
+                        <img class="d-flex pt-2" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image"
                              style="height:60px !important"
                              height="100px !important" width="100px">
                     </a>
@@ -46,13 +46,13 @@
 
                         <li class="nav-item">
                             <a class="nav-link text" style="color: black"
-                             href="{{route('Contactus')}}">تماس با ما</a>    
+                             href="{{route('Contactus')}}">تماس با ما</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text" style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
                                data-placement="bottom"> درباره ما</a>
-                               
-                            
+
+
                         </li>
                     </ul>
         <!-- Search Box -->
@@ -83,7 +83,7 @@
                     <ul class="navbar-nav col-md-2 col-10" dir="ltr">
                     @guest
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item float-md-left float-sm-left" style="float:left!important">
                                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
                                        style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
                                        data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
@@ -160,4 +160,10 @@
         $(window).scroll(function(){
             var scroll = $(window).scrollTop();
             if (scroll > 50){}else{ $(".text").css("color" , "black");}})})
+    $(document).ready(function(){
+        if($(".alert").css("display","block") === true)
+        {
+            $('.nav').css('margin-top',"30px");
+        }
+    })
 </script>

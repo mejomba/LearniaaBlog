@@ -4,41 +4,39 @@
 <meta  name="description" content="حساب کاربری| لرنیا">
 @endsection
 @section('content')
-<div class="row" >
-<div class="col-md-2">
-</div>
-<div class="col-md-4" style="padding: 0px 28px;" >
-<div class="card shadow border-0" style="border-radius: 30%;">
+<div class="row" style="margin-top: 120px" >
+<div class="col-lg-5 col-md-7 col-sm-8 col-11 offset-1" style="padding: 0px 28px;" >
+<div class="card shadow border-0" style="">
 <div class="card-header" style="background-color:#20C5BA ">
-<div class="text-center"><h1 style="font-size:35px">ثبت نام / ورود</h1></div>
+<div class="text-center"><h1 style="font-size:30px">ثبت نام / ورود</h1></div>
 </div>
-<div class="card-body px-lg-5 py-lg-5">
+<div class="card-body">
 <form class="form" method="POST" action="{{route('reset.callbacklogin')}}">
 
 @if(isset($redirectFromURL))
-<input type="hidden" name="redirectFromURL" value="{{$redirectFromURL}}">  
+<input type="hidden" name="redirectFromURL" value="{{$redirectFromURL}}">
 @endif
 
 @csrf
-<div class="form-group">
-<div class="input-group input-group-alternative">
-<div class="input-group-prepend">
-<img class="img-raised rounded-circle" 
-src="{{ asset('images/Template/phone_login.svg') }}" style="max-width:none !important" alt="Thumbnail Image" height="45px" width="45px">
-</div>
-<input name="username" id="username" type="text" class="form-control" placeholder=" تلفن همراه یا پست الکترونیکی">
-</div>
-</div>
+
+    <div class="form-group" style="margin-top: 70px;">
+        <div class="col-12 d-flex justify-content-around">
+            <img class="rounded-circle"
+            src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" width="40px">
+            <input name="username" id="username" type="text" class="form-control w-75" placeholder=" تلفن همراه یا پست الکترونیکی">
+        </div>
+    </div>
 <div class="text-center" style="padding-top:40px">
 <button type="submit" class="btn btn-primary">تایید  </button>
 </div>
+    <br>
 
 
-
+</form>
 
 
 </div>
-</form>
+
 <!--
 <form class="form" method="POST" action="{{route('login.google')}}">
 @csrf
@@ -47,6 +45,6 @@ src="{{ asset('images/Template/phone_login.svg') }}" style="max-width:none !impo
 -->
 </div>
 </div>
-</div>  
+</div>
 </div>
 @endsection

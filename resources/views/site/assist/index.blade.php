@@ -17,7 +17,7 @@
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="pk_assist" id="mobile" type="hidden"  >
@@ -25,7 +25,7 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="name" id="name" type="text" class="form-control" placeholder=" نام ">
@@ -34,7 +34,7 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="lastname" id="lastname" type="text" class="form-control" placeholder=" نام خانوادگی ">
@@ -43,7 +43,7 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="coursename" id="coursename" type="text" class="form-control" placeholder=" نام دوره ">
@@ -53,7 +53,7 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="expertise" id="expertise" type="text" class="form-control" placeholder=" تخصص  ">
@@ -61,7 +61,7 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="phonenumber" id="phonenumber" type="text" class="form-control" placeholder=" شماره تلفن  ">
@@ -69,7 +69,7 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="email" id="email" type="text" class="form-control" placeholder=" ایمیل   ">
@@ -89,16 +89,16 @@ src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" heigh
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور">
 </div>
 </div>
-<div class="text-center" style="padding-top:20px">
+<div class="text-center" style="">
 <button type="submit" class="btn btn-primary" style="width:200px">ورود</button>
 <a href="{{route('reset.index')}}" class="btn btn-round" style="margin-top:10px" >فراموشی رمز عبور
-</a> 
+</a>
 </div>
 </div>
 </form>
