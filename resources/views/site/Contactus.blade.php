@@ -10,9 +10,9 @@
  <!-- Section -->
     <div class="row">
 
-<div class="col-lg-4 col-md-7 col-sm-8 col-11 mt-5 pt-5 offset-1" >
-              <div class="col-12">
-            <div class="card shadow border-0">
+<div class="col-lg-4 col-md-7 col-sm-8 col-11 mt-5 pt-5 offset-1"  >
+              <div class="col-12" >
+            <div class="card shadow border-0" style="border-bottom-right-radius:60px ;border-bottom-left-radius:60px; ">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center"><h4>تماس با ما</h4></div>
 

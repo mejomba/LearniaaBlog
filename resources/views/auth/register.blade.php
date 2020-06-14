@@ -5,18 +5,17 @@
 @endsection
 @section('content')
 <div class="row">
-<div class="col-md-2">
-</div>
-<div class="col-md-4" style="padding: 0px 28px;"  >
-<div class="card shadow border-0" style="border-radius: 30%;">
+
+<div class="col-lg-4 col-md-7 col-sm-8 col-9 offset-1" style="padding: 0px 28px;margin-top:141px!important"  >
+<div class="card shadow border-0" style="border-bottom-right-radius:80px; border-bottom-left-radius:80px">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h1 style="font-size:35px">ثبت نام کاربران</h1></div>
 </div>
-<div class="card-body px-lg-5 py-lg-5">
+<div class="card-body px-4 py-4">
 <form class="form" method="POST" action="{{route('register')}}">
 
 @if(isset($_GET['redirectFromURL']))
-<input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">  
+<input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">
 @endif
 
 
@@ -34,11 +33,11 @@
 <input type="hidden" name="digital_receipt" value="{{ $_GET['digital_receipt'] }}">
 @else
 <input type="hidden" name="digital_receipt" value="null">
-@endif     
+@endif
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="name" id="name" type="text" class="form-control" placeholder="نام و نام خانوادگی ">
@@ -53,7 +52,7 @@ src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور دلخواه شما">
@@ -62,7 +61,7 @@ src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" hei
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">
-<img class="img-raised rounded-circle img-fluid" 
+<img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
 <select name="attract" class="form-control">
@@ -75,11 +74,11 @@ src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" heigh
 <option class="" value="Linkden"  >راه آشنایی با لرنیا: لینکدین</option>
 <option class="" value="SMS"  >راه آشنایی با لرنیا: پیامک</option>
 <option class="" value="Telegram"  >راه آشنایی با لرنیا: تلگرام</option>
-</select>       
+</select>
 </div>
 </div>
 <div class="text-center" style="padding-top:20px">
-<button type="submit" class="btn btn-primary">ثبت نام</button>  
+<button type="submit" class="btn btn-primary">ثبت نام</button>
 </div>
 </div>
 </form>
