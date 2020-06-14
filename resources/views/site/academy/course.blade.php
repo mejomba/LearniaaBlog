@@ -48,11 +48,8 @@
                         <input type="hidden" name="LocationUser" value="Academy_Product">
                         <input type="hidden" name="NameProduct" value="All_Cource">
                         <div class="col-md-6 col-12">
-                            <img class="img-fluid  rounded-circle shadow-sm"
-                                 style="border-radius:40% !important;margin-bottom:5px"
-                                 src="{{  Storage::url('tree/'.$tree['pic']) }}"
-                                 width="70px" height="70px" alt="{{$tree->name}}">
-                            <span style="font-size:16px;">پکیج کامل {{$tree->name}} </span>
+                            
+                            <span style="font-size:18px;text-align:center;color:black">پکیج کامل {{$tree->name}} </span>
                         </div>
                        
                         @if(Auth::check())
@@ -119,10 +116,10 @@
                                 <div class="card-title" id="{{'id'.$course['pk_product']}}">
                                         <div class="row">
                                             <div class="col-md-1 col-12 text-center">
-                                    <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}">
-                                        <img class="img-fluid  rounded-circle shadow-sm" style="border-radius:30% !important;"
-                                            src="{{  Storage::url('tree/'.$course->product['pic']) }}"
-                                            width="50px" height="50px" alt="{{$course['name']}}"></a>
+                                <!--    <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}">
+                                        <img class="card-img-top img-border" style="border-radius:30% !important;"
+                                            src="{{  Storage::url('tree/'.$course->pic) }}"
+                                            width="70px" height="50px" alt="{{$course['name']}}"></a>  -->
 
                                             
                                             </div> 
