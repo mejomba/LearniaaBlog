@@ -2,7 +2,7 @@
 @foreach ($errors->all() as $error)
 <div class="alert alert-danger text-center">
 <div class="container-fluid">
- <b style="color:red;">پیام خطا: </b>{{ $error }}
+    <b style="color:red;">پیام خطا: </b>{{ $error }}
 </div>
 </div>
 @endforeach
@@ -17,7 +17,7 @@
 @if(Session::has('report'))
 <div class="alert alert-danger text-center">
 <div class="container-fluid">
-<b style="color:red">پیام خطا: </b>{{ Session::get('report') }}
+    <b style="color:red;">پیام خطا: </b>{{ Session::get('report') }}
 </div>
 </div>
 @endif
