@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 use Validator;
 use App\Tree;
@@ -14,6 +15,7 @@ use App\Post;
 use App\Profile;
 use App\Course;
 use App\History;
+
 
 class AcademyController extends Controller
 {
