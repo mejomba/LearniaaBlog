@@ -32,12 +32,11 @@
           <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
-
                       </div>
                       <input value="{{$year_birthday}}" name="year_birthday" class="form-control" placeholder="سال تولد" type="text">
                     </div>
                   </div>
-
+              </div>
 
 
 
@@ -49,7 +48,7 @@
                         <div class="col-md-3">
                         <span>ماه</span>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                       <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
@@ -130,17 +129,10 @@
         </div>
         </div>
          <!-- Select Box -->
+         
 
-                 <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-
-                      </div>
-                      <input value="{{$year_birthday}}" name="year_birthday" class="form-control" placeholder="سال تولد" type="text">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
+              <div class="col-md-6">           
+          <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
 
@@ -148,8 +140,7 @@
                       <input class="form-control"  value="{{$day_birthday}}" name="day_birthday" placeholder="روز تولد " type="text">
                     </div>
                   </div>
-              </div>
-
+                  </div>
 
 
 
@@ -334,51 +325,23 @@
          <!-- Select Box -->
 
 
-              
-              <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
-                      </div>
-                      <textarea  name="address" class="form-control" placeholder="آدرس" type="text">{{ $profile['address'] }}</textarea>
-                    </div>
-
-         </div>
-        </div>
-
-
-                <!-- Picture Box -->
-                <div class="col-md-12">
-                <div class="row">
-
-
-                  <div class="col-md-3">
-                  <span>تصویر </span>
-                  </div>
-                  <div class="col-md-9">
-                <div class="form-group focused">
-                            <div class="input-group input-group-alternative">
-                              <div class="input-group-prepend">
-                              </div>
-                              <input  type="file" id="pic" name="pic">
-                            </div>
-                          </div>
-                </div>
-
-
-                </div>
-            </div>
-            <!-- Picture Box -->
-
-
-          
        <div class="col-md-6">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
                       <input value="{{ $profile['job'] }}" name="job" class="form-control" placeholder=" شغل" type="text">
+                    </div>
+                  </div>
+             </div>
+
+
+             <div class="col-md-6">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input value="{{ $profile['email'] }}" name="email" class="form-control" placeholder=" پست الکترونیکی" type="text">
                     </div>
                   </div>
              </div>
@@ -536,7 +499,7 @@
 
 
 
-                  <div class="text-center" >
+                  <div class="col-md-12 text-center" >
                     <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
                   </div>
                 </form>
