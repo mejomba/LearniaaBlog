@@ -17,73 +17,41 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse nav-navbar-style"  id="navbar-default">
-                    <div class="navbar-collapse-header">
-                        <div class="row">
-                            <div class="col-6 collapse-brand">
-                            </div>
-                            <div class="col-6 collapse-close">
-                                <button type="button" class="navbar-toggler" data-toggle="collapse"
-                                        data-target="#navbar-default" aria-controls="navbar-default"
-                                        aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                    <span></span>
-                                    <span></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="navbar-nav">
+{{--                    <div class="navbar-collapse-header">--}}
+{{--                                <button type="button" class="navbar-toggler" data-toggle="collapse"--}}
+{{--                                        data-target="#navbar-default" aria-controls="navbar-default"--}}
+{{--                                        aria-expanded="false"--}}
+{{--                                        aria-label="Toggle navigation">--}}
+{{--                                </button>--}}
+{{--                    </div>--}}
+                    <ul class="navbar-nav col-lg-8">
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
+                            <a class="nav-link" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
                                title=""
                                data-placement="bottom">صفحه اصلی</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('academy.start')}}" rel="tooltip"
+                            <a class="nav-link " style="color: black" href="{{route('academy.start')}}" rel="tooltip"
                                title="" data-placement="bottom"
                                data-original-title="به زودی">آکادمی آموزش </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black"
+                            <a class="nav-link " style="color: black"
                              href="{{route('Contactus')}}">تماس با ما</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
+                            <a class="nav-link " style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
                                data-placement="bottom"> درباره ما</a>
-
-
                         </li>
                     </ul>
-        <!-- Search Box -->
-            <ul class="navbar-nav col-md-3 col-10 " dir="ltr" style="margin-top:15px">
-            <!--    <form class="navbar-form" style="margin-bottom:0px" dir="rtl"
-                              action="{{route('search.index')}}">
-                            <div class="row">
-                                <div class="col-md-12 col-11" style="padding-left:0px;padding-right:0px">
-                                    <div class="form-group">
-                                        <input type="hidden" name="type_search" value="{{Request::segment(1)}}"
-                                               class="form-control search-box" placeholder="جستجو...">
-                                        <div class="input-group">
-                                            <input type="text" name="content_search" style="border-radius:0"
-                                                   class="form-control form-control-alternative" placeholder="جستجو...">
-                                            <button class="input-group-text" type="submit"
-                                                    style="font-size:0.8rem !important;background-color:#f1c40f;color:#000">
-                                                بگرد
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> -->
-            </ul>
-            <!-- Search Box -->
+
 
                     <!-- USER PANEL -->
-                    <ul class="navbar-nav col-md-2 col-10" dir="ltr">
+                    <ul class="navbar-nav col-md-2 col-8 offset-lg-2" dir="ltr">
                     @guest
                             @if (Route::has('register'))
-                                <li class="nav-item float-md-left float-sm-left" style="float:left!important">
+                                <li class="nav-item">
                                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
                                        style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
                                        data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
