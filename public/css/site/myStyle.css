@@ -154,6 +154,7 @@ body {
 #nav {
     margin-top: -5px!important;
    padding:3px 0px 0px 0px;
+    margin-bottom: 130px!important;
 
 }
 
@@ -679,6 +680,13 @@ p {
     overflow: hidden;
     right: 50%;
 }
+
+.card
+{
+    margin-top:150px!important;
+}
+
+
 
 .preloader .loader .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator .ytp-spinner-right {
     position: absolute;
