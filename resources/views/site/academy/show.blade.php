@@ -227,7 +227,7 @@
                     <div class="col-md-12 text-center" style="font-size:15px">
                         <div class="bordercardinfoLearner aboutAuthor  wi-100 flex-row jus-between al-start">
                             <div class="cardinfoLearner">درباره مدرس</div></div>
-                           <div class="card p-3 hover-style  container"
+                           <div class="p-3 hover-style  container"
                             style="margin-top:10px;border :2px solid #20c5ba"> <p style="text-align:justify">
                                 {{$product->learner['desc']}}
                             </p>
@@ -247,7 +247,7 @@
     <!-- post meta section -->
     <div class="row">
         <div class="col-md-7 col-12">
-            <div class="card p-3 hover-style  container-fluid"
+            <div class=" p-3 hover-style  container-fluid"
              style="margin-top:10px;text-align:justify;border :2px solid #20c5ba">
                 <h3>درباره دوره</h3>
                 @php echo htmlspecialchars_decode($product['desc']) ; @endphp
