@@ -8,30 +8,22 @@
 
         <!---- RoadMap Help Section --->
 <div class="row" style="padding-left: 10px!important">
-     <div class="col-md-2 col-12" style="padding-top:15px">
+     <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:145px!important">
             @if(isset($nodes_previous['pk_product']))
                 <a href="{{ route('academy.show', ['id' => $nodes_previous['pk_product'] , 'desc' =>  $nodes_previous['name'] ]) }}"
-                   class="btn fourth mt-4 d-inline" style="font-size:19px" >
-                    <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
-                         src="{{  Storage::url('tree/'.$nodes_previous['pic']) }}"
-                         width="40px" height="40px" alt="{{$nodes_previous['name']}}"> گام قبلی </a>
+                   class="btn fourth mt-4 d-inline" style="font-size:19px" >قسمت قبلی </a>      
             @endif
         </div>
 
-        <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:100px!important">
-            <a href="{{ route('academy.detail')}}" class="btn learniaaColor mt-4 d-inline"  style="font-size:19px; ">
-                <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
-                     src="{{  Storage::url('tree/'.'Profile_BeginnerTree.png') }}"
-                     width="40px" height="40px" alt="{{$nodes_previous['name']}}"> نقشه راه </a>
+        <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:145px!important">
+            <a href="{{ route('academy.detail')}}" class="btn btnLearniaa mt-4 d-inline"
+             style="font-size:19px; "> لیست پخش  </a>     
         </div>
 
-        <div class="col-md-2 col-12" style="padding-top:15px">
+        <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:145px!important">
             @if(isset($nodes_next['pk_product']))
                 <a href="{{ route('academy.show', ['id' => $nodes_next['pk_product'] , 'desc' =>  $nodes_next['name'] ]) }}"
-                   class="btn fourth mt-4 d-inline"  style="font-size:19px">
-                    <img class="img-fluid  rounded-circle shadow-lg" style="border-radius:30% !important;"
-                         src="{{  Storage::url('tree/'.$nodes_next['pic']) }}"
-                         width="40px" height="40px" alt="{{$nodes_next['name']}}"> گام بعدی </a>
+                   class="btn fourth mt-4 d-inline"  style="font-size:19px"> قسمت بعدی </a>
             @endif
         </div>
 </div>
@@ -136,7 +128,7 @@
                         <div class="col-md-12 text-center" >
                             <a style="padding-bottom : 5px" _target="blank"
                                href="{{ $product['download_link'] }}"
-                               class="btn btn-primary btn-video btnblogPost">دانلود آموزش</a>
+                               class="btn fourth btn-video btnblogPost">دانلود آموزش</a>
                         </div>
                         </div>
                     @else
@@ -145,28 +137,11 @@
                                 @csrf
                                 <input type="hidden" name="LocationUser" value="Academy_Product">
                                 <input type="hidden" name="NameProduct" value="{{$product['title']}}">
-                                <button class="btn btn-warning"
-                                        type="submit"
-                                        style="border-radius:10px;background-color:#30D533;border-color:#30D533;">
-                                    <h5 style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:1;">خرید
-                                        دوره </h5>
-                                </button>
+                                <button class="btn btnGreen"  type="submit">خرید دوره</button>
+                                   
                             </form>
                         </div>
                          <!-- All Cource -->
-                         <form style="margin-top:10px" action="{{route('product.pay', $pkProduct_BeginnerTree )}}"
-                                  method="POST">
-                                @csrf
-                                <input type="hidden" name="LocationUser" value="Academy_Product">
-                                <input type="hidden" name="NameProduct" value="AllCource">
-                                <button class="btn btn-warning"
-                                        type="submit"
-                                        style="border-radius:10px;background-color:#F4FF00;border-color:#F4FF00;">
-                                    <h5 style="margin-top:5px;font-size:16px;color: #000000;line-height:1;">خرید تمام
-                                        دوره ها </h5>
-
-                                </button>
-                            </form>
                         </div>
                     @endif
             <!-- Payment -->

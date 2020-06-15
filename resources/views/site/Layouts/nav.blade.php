@@ -86,6 +86,7 @@
                                     @endif
 
                                     @if(Auth::user()->type == "کاربر")
+                                    <!--
                                         <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
                                         <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
                                         <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">
@@ -93,7 +94,7 @@
                                         <a class="dropdown-item" href="{{route('user.transaction.create')}}"> کیف
                                             پول</a>
                                         <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a>
-
+                                    -->
                                     @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

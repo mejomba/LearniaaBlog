@@ -132,12 +132,18 @@ class AcademyController extends Controller
      */
     public function show($id)
     {
-        $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
-        $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-
+         /* Tree */
+         $current_node = Course::where('pk_product',$id)->first();
+         $current_pk_tree = $current_node->pk_tree ;
+         $nodes_previous = Course::where('sort',$current_node->sort - 1)->where('pk_tree',$current_pk_tree)->first();
+         $nodes_next  = Course::where('sort',$current_node->sort + 1)->where('pk_tree',$current_pk_tree)->first();
+         /* Tree */
+          $tree = Tree::where('pk_tree',$current_node->pk_tree)->first(); 
+          $pk_AllCourse_product =  $tree->pk_AllCourse_product ;
 
             $product = Product::find($id);
-           // $behavior_product= Behavior::where('pk_entity', $product['pk_product'])->where('status','تایید شده')->get();
+          
+            // $behavior_product= Behavior::where('pk_entity', $product['pk_product'])->where('status','تایید شده')->get();
     
               /* Meta Keyword */
             $data_search = Search::where('pk_search',$product['pk_search'])->get();
@@ -162,28 +168,21 @@ class AcademyController extends Controller
                 }
                 else
                 {
-                        $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
-                        $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-                        $payment_checks = Transaction::where('pk_product',$pkProduct_BeginnerTree)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
-                        if($payment_checks)
-                        {
-                        $payment_status ="Payed";
-                        }
+                   $payment_checks = Transaction::where('pk_product',$pk_AllCourse_product)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
+                    if($payment_checks)
+                     {
+                       $payment_status ="Payed";
+                     }
                 }
             }
-    
             if($user == null)
             {
                 $payment_status ="No Pay";
             }
 
-            /* Tree */
-            $current_node = Course::where('pk_product',$id)->first();
-            $nodes_previous = Tree::where('sort',$current_node->sort - 1)->where('level','1')->first();
-            $nodes_next  = Tree::where('sort',$current_node->sort + 1)->where('level','1')->first();
-            /* Tree */
+           
 
-            return view('site.academy.show',compact('product','payment_status','meta_keywords','nodes_previous','nodes_next','pkProduct_BeginnerTree'));
+            return view('site.academy.show',compact('product','payment_status','meta_keywords','nodes_previous','nodes_next'));
 
     }
 

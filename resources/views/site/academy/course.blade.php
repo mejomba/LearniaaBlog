@@ -59,12 +59,9 @@
                             <span style="color:green">   تومان </span>
                             </div>
                             <div class="col-md-3 col-12 text-center">
-                                    <button class="btn btn-warning" disabled
-                                            type="submit"
-                                            style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
-                                        <span
-                                            style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
-                                    </button>
+                            <button class="btn btnGreen" type="submit">
+                                <span>خرید</span>     
+                                </button>
                                 </div>
                             @else
                             <div class="col-md-3 col-12 text-center" style="margin-top:15px">
@@ -72,12 +69,9 @@
                             <span style="color:green">   تومان </span>
                             </div>
                             <div class="col-md-3 col-12 text-center">
-                                    <button class="btn btn-warning "
-                                            type="submit"
-                                            style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
-                                        <span
-                                            style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
-                                    </button>
+                            <button class="btn btnGreen" type="submit">
+                                <span>خرید</span>     
+                                </button>
                                 </div>
                             @endif
                         @else
@@ -86,11 +80,8 @@
                             <span style="color:green">   تومان </span>
                             </div>
                             <div class="col-md-3 col-12 text-center">
-                                <button class="btn btn-warning "
-                                        type="submit"
-                                        style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
-                                    <span
-                                        style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
+                                <button class="btn btnGreen" type="submit">
+                                <span>خرید</span>     
                                 </button>
                             </div>
                         @endif
@@ -104,7 +95,7 @@
                 </div>
 
                 <div class="row " style="margin-top:15px">
-                    <div class="col-md-8 card p-3 hover-style ml-auto mr-auto"  >
+                    <div class="col-md-8 card p-3  ml-auto mr-auto"  >
                     <ul class="timeline">
                     @foreach($courses as $course)
                         <li>
@@ -140,20 +131,20 @@
                                             @if(Auth::check())
                                         @if($payment_status == "Payed" )
                                             <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}"
-                                               class="btn btn-warning btn-round"
-                                               style="font-size:14px;background-color:#30D533;border-color:#30D533;">
-                                                مشاهده </a>
+                                               class="btn fourth btn-round">مشاهده </a>
+                                              
+                                                
                                         @else
                                             <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}"
-                                               class="btn btn-warning btn-round"
-                                               style="font-size:14px;">
-                                                مشاهده </a>
+                                               class="btn fourth btn-round">مشاهده </a>
+                                               
+                                                
                                         @endif
                                     @else
                                         <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}"
-                                           class="btn btn-warning btn-round"
-                                           style="font-size:14px;">
-                                            مشاهده </a>
+                                           class="btn fourth btn-round">  مشاهده </a>
+                                          
+                                          
 
                                     @endif
                                             </div>

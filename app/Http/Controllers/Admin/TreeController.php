@@ -64,6 +64,14 @@ class TreeController extends Controller
               
                 if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
 
+                if(request()->pic)
+                {
+                  $pic = request()->file('pic');
+                  $pic_name = $pic->getClientOriginalName();
+                  $path = Storage::putFileAs( 'tree', $pic, $pic_name);
+                  $tree->pic = $pic_name ;
+                }
+                
                     if($tree->save())
                     {
                             return redirect(route('admin.tree.index'))->with('success','درخت با موفقیت ایجاد شد');
@@ -127,6 +135,13 @@ class TreeController extends Controller
 
                 if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
 
+                if(request()->pic)
+                {
+                  $pic = request()->file('pic');
+                  $pic_name = $pic->getClientOriginalName();
+                  $path = Storage::putFileAs( 'tree', $pic, $pic_name);
+                  $tree->pic = $pic_name ;
+                }
 
                     if($tree->save())
                     {

@@ -10,7 +10,7 @@
 @endsection
 
 @section('pic_landing')
-<img class="learn-bg mt-5" src="{{asset('images/header-teamwork.svg')}}" alt="">
+<img class="learn-bg mt-5" src="{{asset('images/Academy/Academy_index.svg')}}" alt="">
 @endsection
 
 @section('content')
@@ -29,33 +29,37 @@
             <div class="row justify-content-center" style="margin-top: 150px">
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                         data-wow-delay="0.2s" style="height: 450px; background: #F4F6F6">
-                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>
+                         data-wow-delay="0.2s" style="border: 2px solid #20c5ba; border-radius: 10px; height: 450px">
                         <div class="services-icon">
                             <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">
+                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="90px" alt="shape-1">
+                            <img class="shape-1" style="top:52%;left:45%"src="{{asset('images/Academy/icon_Design_WebDesign.svg')}}" width="50px" alt="shape-1">
                             <i class="lni-baloon"></i>
                         </div>
                         <div class="services-content">
-                            <h6 class=""><a href="#" >طراحی وب</a></h6>
-                            <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>
-                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>
-                        </div>
+                            <h6 class=""><a href="#" >دوره های اموزش  طراحی وب</a></h6>
+                            <span style="margin-top: 10px;">(شامل اصول طراحی - طراحی وب)</span>
+                            <p class="mt-3">
+                          در این دوره ها به یادگیری مفاهیم طراحی در حوزه های مختلف به همراه آموزش های متنوع ارائه می شود</p>
+                            <a href="{{route('academy.start')}}"> 
+                            <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
+                            </a>                        </div>
                     </div> <!-- single services -->
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
                          data-wow-delay="0.5s" style="border: 2px solid #20c5ba; border-radius: 10px; height: 450px">
                         <div class="services-icon">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">
+                        <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
+                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="90px" alt="shape-1">
+                            <img class="shape-1" style="top:52%;left:45%"src="{{asset('images/Academy/icon_Beginner_Tree.svg')}}" width="50px" alt="shape-1">
                             <i class="lni-cog"></i>
                         </div>
                         <div class="services-content">
-                            <h6 class="text-black-50"><a href="{{route('academy.start')}}">دوره آموزش کامپیوتر مبتدیان</a></h6>
-                            <span style="margin-top: 10px;">(ICDL)</span>
+                            <h6 class="text-black-50"><a href="{{route('academy.start')}}">دوره های آموزش کامپیوتر مبتدیان</a></h6>
+                            <span style="margin-top: 10px;">(ICDL شامل سطح ابتدایی و )</span>
                             <p class="mt-3">
-                            در این دوره توانایی کار با رایانه و ویندوز ، اینترنت و نرم افزارهای کاربردی آموزش داده شده است</p>
+                            در این دوره ها توانایی کار با رایانه و ویندوز ، اینترنت و نرم افزارهای کاربردی آموزش داده شده است</p>
                             <a href="{{route('academy.start')}}"> 
                             <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
                             </a>
@@ -64,18 +68,21 @@
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                         data-wow-delay="0.8s" style=";height: 450px; background: #F4F6F6">
-                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>
+                         data-wow-delay="0.8s" style="border: 2px solid #20c5ba; border-radius: 10px; height: 450px">
                         <div class="services-icon">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">
+                        <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
+                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="90px" alt="shape-1">
+                            <img class="shape-1" style="top:52%;left:45%"src="{{asset('images/Academy/icon_Beginner_Programing.svg')}}" width="50px" alt="shape-1">
                             <i class="lni-bolt-alt"></i>
                         </div>
                         <div class="services-content mt-30">
-                            <h6 class=""><a href="#" style="">دوره اموزش اصول برنامه نویسی</a></h6>
-                            <span style="margin-top: 10px;">(یادگیری برنامه نویسی)</span>
-                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>
-                        </div>
+                            <h6 class=""><a href="#" style="">دوره های اموزش  برنامه نویسی</a></h6>
+                            <span style="margin-top: 10px;">(شامل اصول برنامه نویسی)</span>
+                            <p class="mt-3">
+                           در این دوره ها به یادگیری مفاهیم اولیه برنامه نویسی به همراه آموزش های اختصاصی انواع زبان های مختلف ارائه می شود</p>
+                            <a href="{{route('academy.start')}}"> 
+                            <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>
+                            </a>                        </div>
                     </div> <!-- single services -->
                 </div>
             </div> <!-- row -->

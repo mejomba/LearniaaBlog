@@ -48,11 +48,11 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 </head>
 
 <body>
-<div class="container-fluid" style="z-index: 10001">
+@include('site.Layouts.nav')
+
+<div class="container-fluid">
 @include('site.Layouts.error')
 </div>
-
-@include('site.Layouts.nav')
 
 <div style="direction: rtl" class="d-flex justify-content-around">
 

@@ -3,8 +3,6 @@
 <head>
  @include('site.Layouts.head')
 
-
-
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
@@ -49,12 +47,11 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 </head>
 
 <body>
-<div class="container-fluid" style="z-index: 10001">
-@include('site.Layouts.error')
-</div>
-
 @include('site.Layouts.nav')
 
+<div class="container-fluid">
+@include('site.Layouts.error')
+</div>
 
 <div style="direction: rtl;" >
 @yield('content')

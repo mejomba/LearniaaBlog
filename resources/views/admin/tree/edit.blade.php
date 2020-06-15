@@ -92,6 +92,29 @@
          <!-- Select Box -->
 
 
+          <!-- Select Box -->
+  <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>تصویر </span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="pic" name="pic">
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- Select Box -->
+
        
         <div class="col-md-4">
         <div class="form-group">
