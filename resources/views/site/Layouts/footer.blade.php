@@ -111,12 +111,8 @@
                         <li class="">
                             <a href="#!"></a>
                         </li>
-                          <li>
-                          <a href="#!" style="text-decoration: none; color: white">همکاری با ما</a>
-                            </li>
-                          <li>
-                           <a href="#!" style="text-decoration: none; color: white">هیات علمی</a>
-                         </li>
+                         
+                         
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto">

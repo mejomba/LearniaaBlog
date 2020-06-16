@@ -7,32 +7,29 @@
                                 role="document" style="max-width:400px">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="ModalLabelError">پیغام</h5>
-                                        
+                                        <h5 class="modal-title" id="ModalLabelError">پیغام</h5>    
                                     </div>
 
                                     <div class="modal-body">
                                     <!-- Form &  Body -->
-                                    
                                         <div class="card-body px-lg-1 py-lg-1">
                                             <div class="row">   
                                             @if ($errors->any())
                                                 @foreach ($errors->all() as $error)
                                                 <input type="hidden" name="errors[]" value ="{{ $error }}" id="errors">
-                                                <b style="color:red;">پیام خطا: </b>{{ $error }}
+                                                <br></br>
+                                                <b style="color:red;">پیام خطا: {{ $error }} </b>  
                                                 @endforeach
                                             @endif
 
                                             @if(Session::has('success'))
                                             <input type="hidden" name="errors[]" value ="{{ $error }}" id="errors">
-                                            <b style="color:green">پیام موفقیت: </b>{{ Session::get('success') }}
-
+                                            <b style="color:green">پیام موفقیت: {{ Session::get('success') }} </b>
                                             @endif
 
                                             @if(Session::has('report'))
                                             <input type="hidden" name="errors[]" value ="{{ $error }}" id="errors">
-                                            <b style="color:red">پیام خطا: </b>{{ Session::get('report') }}
-
+                                            <b style="color:red">پیام خطا: {{ Session::get('report') }} </b>
                                             @endif
                                             </div>
                                             </div>

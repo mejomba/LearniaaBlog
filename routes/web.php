@@ -31,7 +31,6 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 
 Route::get('/mail', 'MailController@store');
 
-Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
 Route::get('/search', 'HomeController@search')->name('search.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
 Route::get('/PrivacyPolicy', 'HomeController@show_PrivacyPolicy')->name('PrivacyPolicy');
