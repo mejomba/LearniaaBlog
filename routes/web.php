@@ -163,7 +163,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/product/update/{id}', 'ProductController@update')->name('admin.product.update');
     Route::post('/product/upload', 'ProductController@upload')->name('admin.product.upload');
     Route::get('/product/show/{slug}', 'ProductController@show')->name('admin.product.show');
-  
+      Route::get('/product/duplicate/{id}', 'ProductController@duplicate')->name('admin.product.duplicate');
+
 
 
     Route::get('/Transaction/index', 'TransactionController@index')->name('admin.transaction.index');
@@ -189,6 +190,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/course/edit/{id}', 'CourseController@edit')->name('admin.course.edit');
     Route::post('/course/update/{id}', 'CourseController@update')->name('admin.course.update');
     Route::get('/course/delete/{id}', 'CourseController@destroy')->name('admin.course.delete');
+    Route::get('/course/duplicate/{id}', 'CourseController@duplicate')->name('admin.course.duplicate');
 
 
 });

@@ -340,6 +340,37 @@ class ProductController extends Controller
              "error" => $msg
              ];
           }
+
+    }
+    public function duplicate($id,Request $request)
+    {
+        $product = product::find($id);
+        $new_instance = new product();
+        $new_instance->pk_search =  $product->pk_search ;
+        $new_instance->pk_category = $product->pk_category ;
+        $new_instance->pk_learner = $product->pk_learner;
+        $new_instance->title = $product->title;
+        $new_instance->pic = $product->pic_name ;
+        $new_instance->price = $product->price;
+        $new_instance->time = $product->time;
+        $new_instance->desc = $product->desc;
+        $new_instance->count = $product->count;
+        $new_instance->language = $product->language;
+        $new_instance->subtitle = $product->subtitle;
+        $new_instance->status = $product->status;
+        $new_instance->file = $product->file;
+        $new_instance->preview = $product->preview;
+        $new_instance->download_link = $product->download_link;
+            
+            if(  $new_instance->save())
+            {
+                return redirect(route('admin.product.edit' , ['id' => $id]))->with('success','محصول با موفقیت ایجاد شد ');
+            }
+            else
+            {
+                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+            }
+
     }
 
 
