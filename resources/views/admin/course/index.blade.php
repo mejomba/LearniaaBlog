@@ -84,6 +84,11 @@
                        </a>
                         </span>
 
+                        <span style="font-size: 1.3rem;color:black">
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.course.duplicate', $course['pk_course']) }}"> 
+                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                       </a>
+                        </span>
                        
 
                         <span style="font-size: 1.3rem;color:black;">

@@ -132,6 +132,13 @@
                        </a>
                         </span>
 
+                        <span style="font-size: 1.3rem;color:black">
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.product.duplicate', $product['pk_product']) }}"> 
+                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                       </a>
+                        </span>
+
+
                        
 
                         <span style="font-size: 1.3rem;color:black;">

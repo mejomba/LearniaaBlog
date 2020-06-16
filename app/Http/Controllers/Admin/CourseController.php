@@ -163,4 +163,23 @@ class CourseController extends Controller
             return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
         }
     }
+    public function duplicate($id,Request $request)
+    {
+        $course = Course::find($id);
+        $newcourse = new Course();
+        $newcourse->pk_tree = $course->pk_tree;
+        $newcourse->pk_product = $course->pk_product;
+        $newcourse->sort = $course->sort;
+        $newcourse->name = $course->name;
+        $newcourse->description = $course->description;
+        $newcourse->pic = $course->pic_name ;
+        if($newcourse->save())
+        {
+            return redirect(route('admin.course.edit',['id'=>$id]))->with('success','درس با موفقیت ایجاد شد ');
+        }
+        else
+        {
+            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+        }
+    }
 }
