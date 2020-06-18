@@ -168,6 +168,14 @@
   </li>
 
 
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.errors.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/politics.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+     اررور ها</a>
+  </li>
+
 
 
 
