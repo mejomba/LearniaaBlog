@@ -44,6 +44,11 @@
                             <a class="nav-link " style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
                                data-placement="bottom"> درباره ما</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: black" href="{{route('post.index')}}" rel="tooltip"
+                               title=""
+                               data-placement="bottom">بلاگ</a>
+                        </li>
                     </ul>
 
 
