@@ -22,31 +22,32 @@
 
 @section('content')
 
+
 <div class="container-fluid">
-  <div class="row mx-auto text-center" style="padding-top:8px!important;padding-bottom:8px!important">
+  <div class="row text-center mx-auto" id="topics_Of_novels">
      <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-     <a style="margin-bottom: 15px;"  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
+     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px"  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
        توسعه مهارت های شخصی
         </a>
      </div>
 
      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','دنیای دیجیتال')}}" class="btn  btn-round btnblog btn-6"   > دنیای دیجیتال </a>
+     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','دنیای دیجیتال')}}" class="btn  btn-round btnblog btn-6"   > دنیای دیجیتال </a>
 
      </div>
 
      <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
+     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
      </div>
 
      <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
+     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
 
      </div>
 
 
      <div class="col-lg-3 col-md-3 col-sm-4 col-4">
-     <a style="margin-bottom: 15px;" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>
+     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>
 
      </div>
 
@@ -56,37 +57,20 @@
 
 <div class="container-fluid">
 
-   <div class="row" style="padding-top:10px;padding-bottom:10px">
+   <div class="row mt-5" style="padding-top:10px;">
 
-                <div class="col-md-4">
+                <div class="col-12 mx-auto" style="text-align:center">
 
-                </div>
-
-                <div class="col-md-4" style="text-align:center">
-
-
-                  <h3 style="font-size:20px" > <span>
-                  <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
+                  <h3 style="font-size:20px" >
+                      <span>
+                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
                     بخوانید ، بدانید ، لذت ببرید
                     <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
                     </span></h3>
 
-
-
-
                 </div>
-
-                <div class="col-md-4">
-
-                </div>
-
 
    </div>
-
-<div style="border-bottom:2px solid #20c3b8;margin-bottom:10px">
-<h1> آخرین نوشته ها<h1>
-</div>
-
 
      <div class="row" id="ListOfData" style="padding-top:15px;padding-bottom:15px;;font-size:15px">
 
@@ -150,39 +134,16 @@
 
 
    <!-- Show More -->
-   <div class="row">
-            <div class="col-md-5 col-4">
-
-                </div>
-
-
-                <div class="col-md-2 col-4">
+   <div class="d-flex justify-content-center">
                 <button style="margin-bottom: 35px;font-size:12px" id="btn_more"   onclick="loading( '{{ $categoryOfPage }}' )" class="btn btn-primary  btn-round  ">
      مشاهده بیشتر
         </button>
-                </div>
-
-                <div class="col-md-4 col-4">
-
-                </div>
-
-
-
         </div>
 <!-- Show More -->
 
 <!-- Animation -->
-                <div class="row">
-
-                            <div class="col-md-2 col-2">
-
-                                </div>
-
-                                <div class="col-md-2 col-2">
-
-                              </div>
-
-                            <div class="col-md-4 col-4">
+                <div class="d-flex justify-content-center">
+                            <div class="">
 
                                 <div class="text-center" id="loading" style="display:none">
 
@@ -190,15 +151,6 @@
 
                                 </div>
                         </div>
-
-                        <div class="col-md-2 col-2">
-
-                        </div>
-
-                        <div class="col-md-2 col-2">
-
-                        </div>
-
 
                   </div>
   <!-- Animation -->
