@@ -66,8 +66,8 @@
                 <hr class="clearfix w-100 d-md-none">
 
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">دسترسی سریع</h5>
-                    <ul class="list-unstyled mt-5">
+                    <h5 class="font-weight-bold text-uppercase mt-5 mb-3" style="color: white">دسترسی سریع</h5>
+                    <ul class="list-unstyled">
                         <li>
                             <a href="{{route('academy.index')}}" style="text-decoration: none; color: white">صفحه اصلی</a>
                         </li>
@@ -94,7 +94,6 @@
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
                     <h5 class="font-weight-bold text-uppercase mt-5 text-white text-center">صفحات متداول</h5>
-                   <!-- <ul class="list-unstyled mt-5" > -->
                    <ul class="list-unstyled " >
                         <li class="">
                             <a href="#!"></a>
@@ -126,7 +125,7 @@
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
                     <h5 class="font-weight-bold text-uppercase mt-5 text-center text-white">ارتباط‌ با ما
                     </h5>
-                    <ul class="list-unstyled mt-5">
+                    <ul class="list-unstyled mt-2">
                         <li class="">
                             <a href="#!" style="text-decoration: none; color:white">learniaa@gmail.com</a>
                         </li>
