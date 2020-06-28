@@ -10,10 +10,10 @@
     </a>
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex justify-content-center" style="font-size:15px; font-weight:500;">
-            <li class="nav-item "> <a class="nav-link" href="#">خانه</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="#">آکادمی آموزش</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="#">درباره ی ما</a> </li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="#">تماس با ما</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5"> <a class="nav-link" href="{{route('academy.index')}}">خانه</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
         </ul>
     </div>
     <div class="search">

@@ -3,6 +3,8 @@
     <title> لرنیا | وب سایت آموزش آنلاین </title>
     <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
     <meta name="keywords" content="آموزش آنلاین,آموزش مبتدی کامپیوتر,یادگیری,لرنیا">
+    <link rel="stylesheet" href="{{asset('css/site/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('css/site/slick-theme.css')}}">
 @endsection
 
 
@@ -66,20 +68,22 @@
   </div>
   </div>
  <!-- row -->
-        <div class="row testimonial-active wow fadeInUpBig mt-5 dsble" data-wow-duration="1s" data-wow-delay="0.8s">
+
+{{--      =========================================================================================================================================--}}
+        <div class="row testimonial-active mt-5 slide">
             <div class="col-lg-4">
-                <div class="single-testimonial">
+                <div class="single-testimonial shadow-lg">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
-                            <i class="lni-quotation"></i>
+                            <i class="fa fa-quote-right"></i>
                         </div>
                         <div class="star">
                             <ul>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
                             </ul>
                         </div>
                     </div>
@@ -102,18 +106,18 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="single-testimonial">
+                <div class="single-testimonial shadow-lg">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
-                            <i class="lni-quotation"></i>
+                            <i class="fa fa-quote-right"></i>
                         </div>
                         <div class="star">
                             <ul>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
                             </ul>
                         </div>
                     </div>
@@ -135,18 +139,18 @@
                 </div> <!-- single testimonial -->
             </div>
             <div class="col-lg-4">
-                <div class="single-testimonial">
+                <div class="single-testimonial shadow-lg">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
-                            <i class="lni-quotation"></i>
+                            <i class="fa fa-quote-right"></i>
                         </div>
                         <div class="star">
                             <ul>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
-                                <li><i class="lni-star-filled"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
                             </ul>
                         </div>
                     </div>
@@ -245,5 +249,94 @@
 </section>
 <!-- End BLog Posts -->
 
+<section id="testimonial" class="testimonial-area pt-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="section-title text-center pb-40">
+                    <div class="line mt-5 mx-auto rounded-lg"></div>
+                    <h3 class="title mt-5">اساتید و مدرسین</h3>
+                </div> <!-- section title -->
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row testimonial-active mt-2 ">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="single-testimonial">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                        </span>
+
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">حسین حسینی</h4>
+                        <p class="">Business Developer</p>
+                        <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>
+                    </div>
+
+                </div> <!-- single testimonial -->
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="single-testimonial">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                        </span>
+
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">حسین حسینی</h4>
+                        <p class="">Business Developer</p>
+                        <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>
+                    </div>
+
+                </div> <!-- single testimonial -->
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="single-testimonial">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                        </span>
+
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">حسین حسینی</h4>
+                        <p class="">Business Developer</p>
+                        <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>
+                    </div>
+
+                </div> <!-- single testimonial -->
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="single-testimonial">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                        </span>
+
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">حسین حسینی</h4>
+                        <p class="">Business Developer</p>
+                        <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>
+                    </div>
+
+                </div> <!-- single testimonial -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+<!-- END Customer Say -->
+
 
 @endsection
+
