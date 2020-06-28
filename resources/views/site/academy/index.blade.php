@@ -24,148 +24,34 @@
 
 @section('content')
 
-{{--    <section class="cards">--}}
-{{--        <div class="container-fluid">--}}
-{{--            <div class="row bg-warning d-flex justify-content-center">--}}
-{{--                <div class="col-lg-3 col-md-4 col-sm-6 col-12">--}}
-{{--                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"--}}
-{{--                         data-wow-delay="0.2s" style="height: 450px; background: #F4F6F6">--}}
-{{--                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>--}}
-{{--                        <div class="services-icon">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">--}}
-{{--                            <i class="lni-baloon"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="services-content">--}}
-{{--                            <h6 class=""><a href="#" >طراحی وب</a></h6>--}}
-{{--                            <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>--}}
-{{--                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-4 col-sm-6 col-12">--}}
-{{--                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"--}}
-{{--                         data-wow-delay="0.2s" style="height: 450px; background: #F4F6F6">--}}
-{{--                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>--}}
-{{--                        <div class="services-icon">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">--}}
-{{--                            <i class="lni-baloon"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="services-content">--}}
-{{--                            <h6 class=""><a href="#" >طراحی وب</a></h6>--}}
-{{--                            <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>--}}
-{{--                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-4 col-sm-6 col-12">--}}
-{{--                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"--}}
-{{--                         data-wow-delay="0.2s" style="height: 450px; background: #F4F6F6">--}}
-{{--                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>--}}
-{{--                        <div class="services-icon">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">--}}
-{{--                            <i class="lni-baloon"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="services-content">--}}
-{{--                            <h6 class=""><a href="#" >طراحی وب</a></h6>--}}
-{{--                            <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>--}}
-{{--                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-
-<!-- Services -->
-{{--<div id="header" class="page-header container-fluid" data-parallax="true">--}}
-{{--    <section id="features" class="services-area">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row justify-content-center">--}}
-{{--                <div class="col-lg-10">--}}
-{{--                    <div class="section-title text-center pb-40">--}}
-
-
-{{--                    </div> <!-- section title -->--}}
-{{--                </div>--}}
-{{--            </div> <!-- row -->--}}
-{{--            <div class="row justify-content-center" style="margin-top:50px">--}}
-{{--                <div class="col-lg-4 col-md-7 col-sm-8">--}}
-{{--                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"--}}
-{{--                         data-wow-delay="0.2s" style="height: 450px; background: #F4F6F6">--}}
-{{--                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>--}}
-{{--                        <div class="services-icon">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">--}}
-{{--                            <i class="lni-baloon"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="services-content">--}}
-{{--                            <h6 class=""><a href="#" >طراحی وب</a></h6>--}}
-{{--                            <span style="margin-top: 10px;">(HTML-5 and CSS-3)</span>--}}
-{{--                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>--}}
-{{--                        </div>--}}
-{{--                    </div> <!-- single services -->--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-4 col-md-7 col-sm-8">--}}
-{{--                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"--}}
-{{--                         data-wow-delay="0.5s" style="border: 2px solid #20c5ba; border-radius: 10px; height: 450px">--}}
-{{--                        <div class="services-icon">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">--}}
-{{--                            <i class="lni-cog"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="services-content">--}}
-{{--                            <h6 class="text-black-50"><a href="{{route('academy.start')}}">دوره آموزش کامپیوتر مبتدیان</a></h6>--}}
-{{--                            <span style="margin-top: 10px;">(ICDL)</span>--}}
-{{--                            <p class="mt-3">--}}
-{{--                            در این دوره توانایی کار با رایانه و ویندوز ، اینترنت و نرم افزارهای کاربردی آموزش داده شده است</p>--}}
-{{--                            <a href="{{route('academy.start')}}">--}}
-{{--                            <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع دوره</button>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div> <!-- single services -->--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-4 col-md-7 col-sm-8">--}}
-{{--                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"--}}
-{{--                         data-wow-delay="0.8s" style=";height: 450px; background: #F4F6F6">--}}
-{{--                        <h3 style="color: gray; margin-top: -30px">بزودی</h3>--}}
-{{--                        <div class="services-icon">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="70px" alt="shape-1">--}}
-{{--                            <i class="lni-bolt-alt"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="services-content mt-30">--}}
-{{--                            <h6 class=""><a href="#" style="">دوره اموزش اصول برنامه نویسی</a></h6>--}}
-{{--                            <span style="margin-top: 10px;">(یادگیری برنامه نویسی)</span>--}}
-{{--                            <p class="text" style="color: darkgray">پس از انتشار دوره در لرنیا توضیحات آن برای کاربران عزیز قرار خواهد گرفت</p>--}}
-{{--                        </div>--}}
-{{--                    </div> <!-- single services -->--}}
-{{--                </div>--}}
-{{--            </div> <!-- row -->--}}
-{{--        </div> <!-- container -->--}}
-{{--    </section>--}}
-{{--</div>--}}
-
-<!-- END OF Services -->
-
 
 <!-- Video LEARN -->
-   <div class="container" style="margin-top: 100px">
-      <div class="text-center">
-          <h3 class="font-weight-bold">فیلم اموزش کار با سایت</h3>
-              </div>
 
-                 <div class="row mt-5">
-                      <div class="col-lg-12">
-                          <video class="afterglow" id="my-video" width="500" height="270"
-                               data-overscale="false" poster="{{ Storage::url('tree/Poster_Intro_Academy.jpg') }}"
-                       src="{{ Storage::url('https://www.youtube.com/watch?v=7-sE2-ZIz44') }}">
-               </video>
-              </div>
-              </div>
-               </div>
+<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">
+    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
+    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
+                <span></span>
+            </span>
+</section>
+
+<!-- Modal -->
+<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none!important ; background-color: transparent;">
+            <div class="model-header">
+                <button type="button" class="close float-left" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times text-danger m-2"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" height="100%" autoplay controls>
+                    <source src="https://www.aparat.com/v/N1890" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- END Video LEARN -->
 
 <!-- Customer Say -->
@@ -174,7 +60,7 @@
    <div class="row justify-content-center">
     <div class="col-lg-5">
       <div class="section-title text-center pb-40">
-    <div class="line m-auto"></div>
+    <div class="line mt-5 mx-auto rounded-lg"></div>
          <h3 class="title mt-5">نظرات مشتریان</h3>
      </div> <!-- section title -->
   </div>
