@@ -29,30 +29,43 @@
 
 <!-- Video LEARN -->
 
-<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">
-    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
-    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
-                <span></span>
-            </span>
-</section>
+{{--<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">--}}
+{{--    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >--}}
+{{--    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">--}}
+{{--                <span></span>--}}
+{{--            </span>--}}
+{{--</section>--}}
 
-<!-- Modal -->
-<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" style="border: none!important ; background-color: transparent;">
-            <div class="model-header">
-                <button type="button" class="close float-left" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times text-danger m-2"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" height="100%" autoplay controls>
-                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
-                </video>
-            </div>
+{{--<!-- Modal -->--}}
+{{--<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--        <div class="modal-content" style="border: none!important ; background-color: transparent;">--}}
+{{--            <div class="model-header">--}}
+{{--                <button type="button" class="close float-left" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <i class="fa fa-times text-danger m-2"></i>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body position-relative">--}}
+{{--                <video width="800vw" class="main-video" autoplay controls>--}}
+{{--                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">--}}
+{{--                </video>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+
+<section class="main-video mt-5">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center border-0 rounded-lg">
+            <video  class="main-video rounded-lg w-75 shadow-lg" autoplay controls>
+                <source src="{{ asset('https://www.aparat.com/v/R8SOM/%D9%81%DB%8C%D9%84%D9%85_%DA%A9%D9%88%D8%AA%D8%A7%D9%87_-_%D9%85%D9%86_%D8%AE%D9%88%D8%B4%DA%AF%D9%84%D9%85') }}">
+            </video>
         </div>
     </div>
-</div>
+</section>
+
+
+
 
 <!-- END Video LEARN -->
 
