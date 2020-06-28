@@ -45,7 +45,7 @@
             </div>
             <div class="modal-body">
                 <video width="100%" height="100%" autoplay controls>
-                    <source src="https://www.aparat.com/v/N1890" type="video/mp4">
+                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
                 </video>
             </div>
         </div>

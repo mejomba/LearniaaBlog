@@ -37,7 +37,8 @@
     }
 
     $("button").on("click",function () {
-        if($('button').attr('aria-expanded')===false)
+
+        if($('.navbar-collapse').hasClass('show'))
         {
             $('ul').css("backgroundColor","transparent")
         }
@@ -49,8 +50,8 @@
 
     let status = 0 ;
 
-    $('button').on('click',function () {
-        var icon = $('button i') ;
+    $('.navbar-toggler').on('click',function () {
+        var icon = $('.navbar-toggler i') ;
         if(status===0)
         {
             icon.removeClass('fa-bars');
