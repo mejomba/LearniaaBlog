@@ -126,11 +126,12 @@ class PostController extends Controller
          $new_instance->status = request()->status ;
 
          /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
+         $new_instance->alt = request()->alt ;
 
          $pic = request()->file('pic_content');
          $pic_name = $pic->getClientOriginalName();
-         $path = Storage::putFileAs( 'post', $pic, $pic_name);
-         $new_instance->pic_content = $pic_name ;
+         $path = Storage::putFileAs( 'post', $pic, request()->title);
+         $new_instance->pic_content = request()->title ;
 
          if(request()->pdf_content)
          {
@@ -168,6 +169,29 @@ class PostController extends Controller
 
            // Save To database 
 
+           $htmlmeta=array(
+            "keywords" => request()->keywords,
+            "description" => request()->description,
+            "author" => request()->author,
+            "refresh" => request()->refresh,
+            "viewport" => request()->viewport
+
+            );
+            $openg=array(
+                "og_title" => request()->og_title,
+                "og_image" => request()->og_image,
+                "og_description" => request()->og_description,
+                "og_type" => request()->og_type,
+                "og_article" => request()->og_article
+            );
+            $twitter=array(
+                "twitter_card" => request()->twitter_card,
+                "twitter_site" => request()->twitter_site,
+                "twitter_description" => request()->twitter_description,
+                "twitter_title" => request()->twitter_title,
+            );
+            $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
+            $new_instance->metatag=json_encode($metatags);
             if(  $new_instance->save())
             {
                 return redirect(route('admin.post.index'))->with('success','پست با موفقیت ایجاد شد ');
@@ -203,7 +227,7 @@ class PostController extends Controller
         $user =  Auth::user() ;
         $post = Post::find($id);
         $categories = Category::where('type','پست')->get();
-
+        $meta=json_decode($post->metatag);
         $row_Search = Search::where('pk_search', $post->pk_search)->select('pk_tag')->get();
         $Search =array();
         foreach ($row_Search as $search)
@@ -224,7 +248,7 @@ class PostController extends Controller
              // list writers User For Admin
              $users = User::get();
 
-        return view('admin.post.edit',compact('categories','tags','post','users','Search'));
+        return view('admin.post.edit',compact('categories','tags','post','users','Search','meta'));
         
         
     }
@@ -251,7 +275,26 @@ class PostController extends Controller
           {
             // Get Selected Item From DB  
             $post = Post::find($id);
+            $meta=json_decode($post->metatag);
 
+            $meta->htmlmeta->keywords = request()->keywords;
+            $meta->htmlmeta->description = request()->description;
+            $meta->htmlmeta->author = request()->author;
+            $meta->htmlmeta->refresh = request()->refresh;
+            $meta->htmlmeta->viewport = request()->viewport;
+
+            $meta->opengraph->og_title = request()->og_title;
+            $meta->opengraph->og_image = request()->og_image;
+            $meta->opengraph->og_description = request()->og_description;
+            $meta->opengraph->og_type = request()->og_type;
+            $meta->opengraph->og_article = request()->og_article;
+
+            $meta->twitter->twitter_card = request()->twitter_card;
+            $meta->twitter->twitter_site = request()->twitter_site;
+            $meta->twitter->twitter_description = request()->twitter_description;
+            $meta->twitter->twitter_title = request()->twitter_title;
+            
+            $post->metatag=json_encode($meta);
             //process
             if(request()->pk_tags != null)
             {    

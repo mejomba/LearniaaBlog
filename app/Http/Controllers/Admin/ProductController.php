@@ -81,14 +81,38 @@ class ProductController extends Controller
              $new_instance->pk_category = request()->pk_category ;
              $new_instance->pk_learner = request()->pk_learner;
              $new_instance->title = request()->title;
-            
+             $new_instance->alt = request()->alt ;
+
              if(request()->pic)
              {
                 $pic = request()->file('pic');
                 $pic_name = $pic->getClientOriginalName();
-                $path = Storage::putFileAs( 'product', $pic, $pic_name);
-                $new_instance->pic = $pic_name ;
+                $path = Storage::putFileAs( 'product', $pic, request()->title);
+                $new_instance->pic = request()->title ;
             } 
+            
+            $htmlmeta=array(
+                "keywords" => request()->keywords,
+                "description" => request()->description,
+                "author" => request()->author,
+                "refresh" => request()->refresh,
+                "viewport" => request()->viewport
+    
+            );
+            $openg=array(
+                "og_title" => request()->og_title,
+                "og_image" => request()->og_image,
+                "og_description" => request()->og_description,
+                "og_type" => request()->og_type,
+                "og_article" => request()->og_article
+            );
+            $twitter=array(
+                "twitter_card" => request()->twitter_card,
+                "twitter_site" => request()->twitter_site,
+                "twitter_description" => request()->twitter_description,
+                "twitter_title" => request()->twitter_title,
+            );
+            $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
 
              $new_instance->price = request()->price;
              $new_instance->time = request()->time;
@@ -100,7 +124,9 @@ class ProductController extends Controller
              $new_instance->file = request()->file;
              $new_instance->preview = request()->preview;
              $new_instance->download_link = request()->download_link;
-                 
+            
+             $new_instance->metatag=json_encode($metatags);
+
                 if(  $new_instance->save())
                 {
                     return redirect(route('admin.product.index'))->with('success','محصول با موفقیت ایجاد شد ');
@@ -140,6 +166,7 @@ class ProductController extends Controller
         $tags = Tag::where('type','محصول')->get();
         $learners = Learner::get();
 
+        $meta=json_decode($product->metatag);
 
         $row_Search = Search::where('pk_search', $product->pk_search)->select('pk_tag')->get();
         $Search =array();
@@ -149,7 +176,7 @@ class ProductController extends Controller
           array_push($Search,$search->pk_tag);
         }
 
-        return view('admin.product.edit',compact('product','categories','tags','learners','Search'));  
+        return view('admin.product.edit',compact('product','categories','tags','learners','Search','meta'));  
     }
 
     /**
@@ -202,6 +229,29 @@ class ProductController extends Controller
                 $path = Storage::putFileAs( 'product', $pic, $pic_name);
                 $product->pic = $pic_name ;
             } 
+
+            $meta=json_decode($product->metatag);
+
+            $meta->htmlmeta->keywords = request()->keywords;
+            $meta->htmlmeta->description = request()->description;
+            $meta->htmlmeta->author = request()->author;
+            $meta->htmlmeta->refresh = request()->refresh;
+            $meta->htmlmeta->viewport = request()->viewport;
+    
+            $meta->opengraph->og_title = request()->og_title;
+            $meta->opengraph->og_image = request()->og_image;
+            $meta->opengraph->og_description = request()->og_description;
+            $meta->opengraph->og_type = request()->og_type;
+            $meta->opengraph->og_article = request()->og_article;
+    
+            $meta->twitter->twitter_card = request()->twitter_card;
+            $meta->twitter->twitter_site = request()->twitter_site;
+            $meta->twitter->twitter_description = request()->twitter_description;
+            $meta->twitter->twitter_title = request()->twitter_title;
+            
+            $product->metatag=json_encode($meta);
+
+
 
              $product->price = request()->price;
              $product->time = request()->time;

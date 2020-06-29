@@ -45,6 +45,7 @@ Route::post('/delivery/selectaddress', 'ApiController@selectaddress');
 
 
 
+Route::get('/Vote/filter', 'ApiController@filter')->name('admin.api.Vote.filter');
 
 
 Route::post('/Vote/GetByName', 'VoteController@GetVoteByName')->name('admin.api.Vote.GetByName');

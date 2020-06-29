@@ -31,6 +31,9 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 
 Route::get('/mail', 'MailController@store');
 
+Route::get('/test', 'ApiController@test');
+
+
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
 Route::get('/search', 'HomeController@search')->name('search.index');
 Route::get('/Contactus', 'HomeController@show_Contactus')->name('Contactus');
@@ -163,7 +166,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/product/update/{id}', 'ProductController@update')->name('admin.product.update');
     Route::post('/product/upload', 'ProductController@upload')->name('admin.product.upload');
     Route::get('/product/show/{slug}', 'ProductController@show')->name('admin.product.show');
-      Route::get('/product/duplicate/{id}', 'ProductController@duplicate')->name('admin.product.duplicate');
+    Route::get('/product/duplicate/{id}', 'ProductController@duplicate')->name('admin.product.duplicate');
 
 
 
@@ -195,6 +198,14 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/error/index', 'ErrorController@index')->name('admin.errors.index');
     Route::get('/error/show', 'ErrorController@show')->name('admin.errors.show');
     Route::get('/error/delete', 'ErrorController@destroy')->name('admin.errors.delete');
+
+    Route::get('/pages/index', 'PagesController@index')->name('admin.pages.index');
+    Route::get('/pages/create', 'PagesController@create')->name('admin.pages.create');
+    Route::post('/pages/store', 'PagesController@store')->name('admin.pages.store');
+    Route::get('/pages/edit/{id}', 'PagesController@edit')->name('admin.pages.edit');
+    Route::post('/pages/update/{id}', 'PagesController@update')->name('admin.pages.update');
+    Route::get('/pages/delete/{id}', 'PagesController@destroy')->name('admin.pages.delete');
+    Route::post('/pages/upload', 'PagesController@upload')->name('admin.pages.upload');
 
 });
 
