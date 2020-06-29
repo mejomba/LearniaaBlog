@@ -57,8 +57,8 @@
 <section class="main-video mt-5">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center border-0 rounded-lg">
-            <video  class="main-video rounded-lg w-75 shadow-lg" autoplay controls>
-                <source src="{{ asset('https://www.aparat.com/v/R8SOM/%D9%81%DB%8C%D9%84%D9%85_%DA%A9%D9%88%D8%AA%D8%A7%D9%87_-_%D9%85%D9%86_%D8%AE%D9%88%D8%B4%DA%AF%D9%84%D9%85') }}">
+            <video  class="main-video rounded-lg w-75" autoplay controls>
+                <source src="{{ asset('') }}">
             </video>
         </div>
     </div>
@@ -81,17 +81,15 @@
   </div>
   </div>
  <!-- row -->
-
-{{--      =========================================================================================================================================--}}
-        <div class="row testimonial-active mt-5 slide">
-            <div class="col-lg-4">
+        <div class="row testimonial-active mt-5">
+            <div class="">
                 <div class="single-testimonial shadow-lg">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
                             <i class="fa fa-quote-right"></i>
                         </div>
                         <div class="star">
-                            <ul>
+                            <ul class="">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -118,7 +116,7 @@
                 </div> <!-- single testimonial -->
             </div>
 
-            <div class="col-lg-4">
+            <div class="">
                 <div class="single-testimonial shadow-lg">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
@@ -151,7 +149,7 @@
                     </div>
                 </div> <!-- single testimonial -->
             </div>
-            <div class="col-lg-4">
+            <div class="">
                 <div class="single-testimonial shadow-lg">
                     <div class="testimonial-review d-flex align-items-center justify-content-between">
                         <div class="quota">
@@ -262,7 +260,7 @@
 </section>
 <!-- End BLog Posts -->
 
-<section id="testimonial" class="testimonial-area pt-120">
+<section id="masters" class="pt-120">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -273,9 +271,9 @@
             </div>
         </div>
         <!-- row -->
-        <div class="row testimonial-active mt-2 ">
+        <div class="row mt-2">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="single-testimonial">
+                <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
                              <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
@@ -293,7 +291,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="single-testimonial">
+                <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
                              <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
@@ -311,7 +309,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="single-testimonial">
+                <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
                              <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
@@ -329,7 +327,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="single-testimonial">
+                <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
                              <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
@@ -349,7 +347,17 @@
     </div> <!-- container -->
 </section>
 <!-- END Customer Say -->
+<script>
+    $('.slide').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1 ,
+        autoplay : true ,
+        arrows : false ,
+        dots:true ,
 
+    }) ;
+</script>
 
 @endsection
 

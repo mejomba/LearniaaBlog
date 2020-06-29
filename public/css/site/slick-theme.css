@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+
 /* Slider */
 .slick-loading .slick-list
 {
@@ -83,11 +83,11 @@
 }
 .slick-prev:before
 {
-    content: '?';
+    content: 'o';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '?';
+    content: 'o';
 }
 
 .slick-next
@@ -101,11 +101,11 @@
 }
 .slick-next:before
 {
-    content: '?';
+    content: 'o';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '?';
+    content: 'o';
 }
 
 /* Dots */
@@ -183,7 +183,7 @@
     width: 20px;
     height: 20px;
 
-    content: '•';
+    content: 'o';
     text-align: center;
 
     opacity: .25;

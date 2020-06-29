@@ -1665,11 +1665,6 @@ p {
     transition: all 0.3s ease-out 0s;
 }
 
-@media (max-width: 767px) {
-    .single-testimonial {
-        padding: 20px 20px 5px;
-    }
-}
 
 .single-testimonial .testimonial-review .quota i {
     font-size: 36px;
@@ -1718,7 +1713,7 @@ p {
 }
 
 .single-testimonial:hover {
-    /*border-color: #FE7A7B;*/
+    border-color: #FE7A7B;
 }
 
 .single-testimonial:hover .testimonial-review .quota i {
@@ -1726,42 +1721,13 @@ p {
 }
 
 .slick-center .single-testimonial {
-    /*border-color: #FE7A7B;*/
+    border-color: #FE7A7B;
 }
 
 .slick-center .single-testimonial .testimonial-review .quota i {
-    /*color: #FE7A7B;*/
+    color: #FE7A7B;
 }
 
-.testimonial-active .slick-dots {
-    margin: 0 auto;
-}
-
-.testimonial-active .slick-dots li {
-    display: inline-block;
-    margin: 0 4px;
-}
-
-.testimonial-active .slick-dots li button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #fe8464 0%, #fe6e9a 100%);
-    border: 0;
-    font-size: 0;
-    opacity: 0.5;
-    -webkit-transition: all 0.3s ease-out 0s;
-    -moz-transition: all 0.3s ease-out 0s;
-    -ms-transition: all 0.3s ease-out 0s;
-    -o-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
-}
-
-.testimonial-active .slick-dots li.slick-active button {
-    opacity: 1;
-    width: 15px;
-    height: 15px;
-}
 
 .description h4 , p
 {
@@ -2140,9 +2106,10 @@ color: white;
 
 .slick-dots li button::before
 {
-    font-size: 20px;
+    font-size:40px;
     color:#fe6e9a ;
     transition: 400ms;
+    font-weight: 900;
 }
 
 

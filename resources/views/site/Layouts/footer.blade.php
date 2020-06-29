@@ -102,6 +102,15 @@
                           <li>
                            <a href="#!" class="text-center">هیات علمی</a>
                          </li>
+                       <li class="">
+                           <a href="#!">همکاری با ما</a>
+                       </li>
+                       <li class="">
+                           <a href="#!">هیئت علمی</a>
+                       </li>
+                       <li class="">
+                           <a href="#!">اساتید و مدرسین</a>
+                       </li>
                     </ul>
                 </div>
 
@@ -128,15 +137,6 @@
                                          src="{{asset('images/footer_telegram.svg')}}" alt="">
                                 </span>
                             </a>
-                        </li>
-                        <li class="">
-                            <a href="#!">همکاری با ما</a>
-                        </li>
-                        <li class="">
-                            <a href="#!">هیئت علمی</a>
-                        </li>
-                        <li class="">
-                            <a href="#!">اساتید و مدرسین</a>
                         </li>
 
                     </ul>

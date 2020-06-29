@@ -10,7 +10,7 @@
  <!-- Section -->
     <div class="row">
 
-<div class="col-lg-4 col-md-7 col-sm-8 col-11 mt-5 pt-5 offset-1"  >
+<div class="col-lg-4 col-md-7 col-sm-8 col-11 offset-1"  >
               <div class="col-12" >
             <div class="card shadow border-0" style="border-bottom-right-radius:60px ;border-bottom-left-radius:60px; ">
               <div class="card-header" style="background-color:#20C5BA ">
@@ -22,27 +22,19 @@
                 @csrf
                   <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-
-                      </div>
                       <input name="name" id="name" class="form-control" placeholder="نام و نام خانوادگی" type="text">
                     </div>
                   </div>
 
-                 <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-
-                      </div>
-                      <input name="email" id="email" class="form-control" placeholder="ایمیل" type="text">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                            <input name="email" id="email" class="form-control" placeholder="ایمیل" type="text">
+                        </div>
                     </div>
-                  </div>
+
 
               <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-
-                      </div>
                       <textarea name="message" style="height:80px;resize: none;" id="message" type="text" class="form-control" placeholder="متن پیام"></textarea>
                     </div>
                   </div>
@@ -57,11 +49,11 @@
           </div>
   </div>
 
-<div class="col-md-4">
-<!--
-<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="500px" height="600px" alt="Learniaa">
- -->
-</div>
+{{--<div class="col-md-4">--}}
+{{--<!----}}
+{{--<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="500px" height="600px" alt="Learniaa">--}}
+{{-- -->--}}
+{{--</div>--}}
 
 
             </div>
