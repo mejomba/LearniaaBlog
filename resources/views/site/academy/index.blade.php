@@ -12,9 +12,9 @@
 
             @section('text_landing')
 {{--                <img class="" src="{{asset('images/Header_Academy.png')}}" alt="">--}}
-                <h1 class="font-weight-bolder text-center" style="font-size:80px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
-                <h3 class="text-justify p-1 mr-5 ml-1 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
-                <h6 class="d-flex justify-content-center mt-5">
+                <h1 class="font-weight-bolder text-center font-weight-bolder h1" style="font-size:9vw"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
+                <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
+                <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
                     <button class="btn fourth text-center">شروع کن</button>
                 </h6>
             @endsection
@@ -29,40 +29,41 @@
 
 <!-- Video LEARN -->
 
-{{--<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">--}}
-{{--    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >--}}
-{{--    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">--}}
-{{--                <span></span>--}}
-{{--            </span>--}}
-{{--</section>--}}
+<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">
+    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
+    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
+                <span></span>
+            </span>
+</section>
 
-{{--<!-- Modal -->--}}
-{{--<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
-{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
-{{--        <div class="modal-content" style="border: none!important ; background-color: transparent;">--}}
-{{--            <div class="model-header">--}}
-{{--                <button type="button" class="close float-left" data-dismiss="modal" aria-label="Close">--}}
-{{--                    <i class="fa fa-times text-danger m-2"></i>--}}
-{{--                </button>--}}
-{{--            </div>--}}
-{{--            <div class="modal-body position-relative">--}}
-{{--                <video width="800vw" class="main-video" autoplay controls>--}}
-{{--                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">--}}
-{{--                </video>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+<!-- Modal -->
+<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none!important ; background-color: transparent;">
+            <div class="model-header">
 
-<section class="main-video mt-5">
-    <div class="container-fluid">
-        <div class="row d-flex justify-content-center border-0 rounded-lg">
-            <video  class="main-video rounded-lg w-75" autoplay controls>
-                <source src="{{ asset('') }}">
-            </video>
+            </div>
+            <div class="modal-body d-flex justify-content-center" style="position: relative">
+                <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+                <video class="main-video" autoplay controls style="width:70vw!important;">
+                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
+                </video>
+            </div>
         </div>
     </div>
-</section>
+</div>
+
+{{--<section class="main-video mt-5">--}}
+{{--    <div class="container-fluid">--}}
+{{--        <div class="row d-flex justify-content-center border-0 rounded-lg">--}}
+{{--            <video  class="main-video rounded-lg w-75" autoplay controls>--}}
+{{--                <source src="{{ asset('') }}">--}}
+{{--            </video>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 
 
 
