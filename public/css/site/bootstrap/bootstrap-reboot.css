@@ -57,7 +57,7 @@ body
 
 hr
 {
-    overflow: visible; 
+    overflow: visible;
 
     box-sizing: content-box;
     height: 0;
@@ -96,7 +96,7 @@ abbr[data-original-title]
 address
 {
     font-style: normal;
-    line-height: inherit; 
+    line-height: inherit;
 
     margin-bottom: 1rem;
 }
@@ -168,27 +168,25 @@ sup
 a
 {
     text-decoration: none;
-
-    color: #007bff;
     background-color: transparent;
 }
 a:hover
 {
-    text-decoration: underline; 
+    text-decoration: underline;
 
     color: #0056b3;
 }
 
 a:not([href]):not([tabindex])
 {
-    text-decoration: none; 
+    text-decoration: none;
 
     color: inherit;
 }
 a:not([href]):not([tabindex]):hover,
 a:not([href]):not([tabindex]):focus
 {
-    text-decoration: none; 
+    text-decoration: none;
 
     color: inherit;
 }
@@ -208,7 +206,7 @@ samp
 
 pre
 {
-    overflow: auto; 
+    overflow: auto;
 
     margin-top: 0;
     margin-bottom: 1rem;
@@ -243,7 +241,7 @@ caption
     padding-top: .75rem;
     padding-bottom: .75rem;
 
-    caption-side: bottom; 
+    caption-side: bottom;
 
     text-align: right;
 
@@ -281,7 +279,7 @@ textarea
 {
     font-family: inherit;
     font-size: inherit;
-    line-height: inherit; 
+    line-height: inherit;
 
     margin: 0;
 }
@@ -372,7 +370,7 @@ legend
     margin-bottom: .5rem;
     padding: 0;
 
-    white-space: normal; 
+    white-space: normal;
 
     color: inherit;
 }
