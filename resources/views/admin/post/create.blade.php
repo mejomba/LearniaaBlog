@@ -210,7 +210,18 @@
         </div>
         </div>
          <!-- Picture Box -->
-           
+         <div class="col-md-4">
+
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control" name="alt" placeholder="alt pic " type="text">
+                    </div>
+                  </div>
+
+        </div>  
            
 
 
@@ -326,7 +337,185 @@
 
 } );
                             </script> 
-                            <!-- ckeditor -->                         
+
+                     <!-- ckeditor -->                         
+
+                    <h2 class="text-center">meta tags</h2>
+
+                      <div class="row">   
+                                                                
+                        <div class="col-md-4">
+                      <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      
+                                    </div>
+                                    <input class="form-control" name="keywords"  placeholder=" keywords" type="text" >
+                                  </div>
+                                </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      
+                                    </div>
+                                    <input class="form-control" name="description"  placeholder=" description" type="text" >
+                                  </div>
+                                </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      
+                                    </div>
+                                    <input class="form-control" name="author"  placeholder=" author" type="text" >
+                                  </div>
+                                </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      
+                                    </div>
+                                    <input class="form-control" name="refresh"  placeholder=" refresh" type="text" >
+                                  </div>
+                                </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      
+                                    </div>
+                                    <input class="form-control" name="viewport"  placeholder=" viewport" type="text" >
+                                  </div>
+                                </div>
+                      </div>
+
+                      </div>
+
+
+
+
+                      <h2 class="text-center">Open Graph tags</h2>
+
+                      <div class="row">   
+                                                      
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="og_title "  placeholder=" og:title " type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="og_image"  placeholder=" og:image" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="og_description"  placeholder=" og:description" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="og_type"  placeholder=" og:type" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="og_article"  placeholder=" og:article" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+
+
+                      <h2 class="text-center">twitter tags</h2>
+
+                      <div class="row">   
+                                                      
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="twitter_card"  placeholder=" twitter:card " type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="twitter_site"  placeholder=" twitter:site" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="twitter_description"  placeholder=" twitter:description" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input class="form-control" name="twitter_title"  placeholder="twitter:title" type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+
                      </div>
                  </div>
                     

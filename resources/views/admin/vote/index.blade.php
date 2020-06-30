@@ -3,11 +3,13 @@
 @section('Head')
 <title> نمایش نظرسنجی | لرنیا </title>
   <meta  name="description" content=" نمایش نظرسنجی | لرنیا">
+    
+  
 @endsection
 
 @section('content')
 
-
+<!--#########-->
 <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
