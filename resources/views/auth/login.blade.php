@@ -6,7 +6,7 @@
 @section('content')
 <div class="row" >
 
-<div class="col-lg-4 col-md-6 col-sm-9 col-10 offset-lg-1 offset-md-1 offset-sm-1 offset-1" >
+<div class="col-lg-4 col-md-5 col-sm-7 col-8 offset-lg-1 offset-md-1 offset-sm-1 offset-2" style="margin-top: -70px" >
 <div class="card shadow border-0" style="border-radius:50px;">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h3>ورود کاربران</h3></div>

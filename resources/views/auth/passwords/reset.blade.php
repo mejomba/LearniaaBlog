@@ -7,8 +7,8 @@
 
 @section('content')
 <div class="row" >
-<div class="col-lg-4 col-md-6 col-sm-7 col-9 offset-lg-1 offset-md-1 offset-sm-1 offset-1" style="padding: 0px 28px; margin-top: -40px"  >
-<div class="card shadow border-0" style="border-radius:50px;">
+<div class="col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 offset-sm-1 offset-2" style="margin-top: -55px"  >
+<div class="card shadow border-0" style="border-radius:30px;">
     <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center"><h3 style="font-size: 22px">فراموشی رمز عبور</h3></div>
               </div>

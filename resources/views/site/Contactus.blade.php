@@ -10,8 +10,8 @@
  <!-- Section -->
     <div class="row" style="margin-top: -70px">
 
-<div class="col-lg-4 col-md-7 col-sm-8 col-11 offset-1">
-              <div class="col-12" >
+<div class="col-lg-4 col-md-6 col-sm-7 col-9 offset-1">
+              <div class="col-12" style="margin-top: -20px">
             <div class="card shadow border-0" style="border-bottom-right-radius:60px ;border-bottom-left-radius:60px; ">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center"><h4>تماس با ما</h4></div>

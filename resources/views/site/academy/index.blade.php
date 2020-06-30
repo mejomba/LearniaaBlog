@@ -11,7 +11,7 @@
 
             @section('text_landing')
 {{--                <img class="" src="{{asset('images/Header_Academy.png')}}" alt="">--}}
-                <h1 class="font-weight-bolder text-center font-weight-bolder h1" style="font-size:9vw"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
+                <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
                 <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
                 <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
                     <button class="btn fourth text-center">شروع کن</button>
@@ -19,7 +19,7 @@
             @endsection
 
             @section('pic_landing')
-                <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/header-teamwork.svg')}}" alt="">
+                <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/header-teamwork.svg')}}" alt="" style="margin-top: -15px">
             @endsection
 
 
@@ -28,7 +28,7 @@
 
 <!-- Video LEARN -->
 
-<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">
+<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100% ; height: auto">
     <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
     <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
                 <span></span>

@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div class="row" >
-<div class="col-lg-4 col-md-6 col-sm-9 col-10 offset-lg-1 offset-md-1 offset-sm-2 offset-1" style="" >
+<div class="col-lg-4 col-md-6 col-sm-9 col-10 offset-lg-1 offset-md-1 offset-sm-2 offset-1" style="margin-top: -80px" >
 <div class="card shadow border-0" style="border-bottom-left-radius: 50px ; border-bottom-right-radius: 50px">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h3>ثبت نام / ورود</h3></div>
