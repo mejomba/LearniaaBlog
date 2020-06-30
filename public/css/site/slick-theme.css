@@ -1,4 +1,4 @@
-
+@charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list
 {
@@ -21,16 +21,21 @@
 {
     font-size: 0;
     line-height: 0;
+
     position: absolute;
     top: 50%;
+
     display: block;
+
     width: 20px;
     height: 20px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+
     cursor: pointer;
+
     color: transparent;
     border: none;
     outline: none;
@@ -83,11 +88,11 @@
 }
 .slick-prev:before
 {
-    content: 'o';
+    content: '←';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: 'o';
+    content: '→';
 }
 
 .slick-next
@@ -101,11 +106,11 @@
 }
 .slick-next:before
 {
-    content: 'o';
+    content: '→';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: 'o';
+    content: '←';
 }
 
 /* Dots */
@@ -118,47 +123,38 @@
 {
     position: absolute;
     bottom: -25px;
-
     display: block;
-
     width: 100%;
     padding: 0;
     margin: 0;
-
     list-style: none;
-
     text-align: center;
+
 }
 .slick-dots li
 {
     position: relative;
-
     display: inline-block;
-
     width: 20px;
     height: 20px;
     margin: 0 5px;
     padding: 0;
-
     cursor: pointer;
 }
 .slick-dots li button
 {
     font-size: 0;
     line-height: 0;
-
     display: block;
-
     width: 20px;
     height: 20px;
     padding: 5px;
-
     cursor: pointer;
-
     color: transparent;
     border: 0;
     outline: none;
     background: transparent;
+
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus
@@ -173,27 +169,28 @@
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 6px;
+    font-size:60px;
     line-height: 20px;
-
     position: absolute;
     top: 0;
     left: 0;
-
     width: 20px;
     height: 20px;
-
-    content: 'o';
+    content: '•';
     text-align: center;
-
     opacity: .25;
-
-
+    color:red;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: 0.5s;
+    transform: scale(1);
 }
+
+
+
 .slick-dots li.slick-active button:before
 {
     opacity: .75;
-    color:rgba(230,47,61,0.87);
+    color: red;
+    transform: scale(1.2);
 }

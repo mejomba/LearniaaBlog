@@ -99,15 +99,15 @@
             navbar.style.backgroundColor = "transparent";
     }
 
-    $("button").on("click",function () {
+    $(".navbar-toggler").on("click",function () {
 
         if($('.navbar-collapse').hasClass('show'))
         {
-            $('ul').css("backgroundColor","transparent")
+            $('.navbar-nav').css("backgroundColor","transparent")
         }
         else
         {
-            $('ul').css("backgroundColor","white")
+            $('.navbar-nav').css("backgroundColor","white")
         }
     });
 

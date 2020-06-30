@@ -3,8 +3,7 @@
     <title> لرنیا | وب سایت آموزش آنلاین </title>
     <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
     <meta name="keywords" content="آموزش آنلاین,آموزش مبتدی کامپیوتر,یادگیری,لرنیا">
-    <link rel="stylesheet" href="{{asset('css/site/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('css/site/slick-theme.css')}}">
+
 @endsection
 
 
@@ -43,11 +42,11 @@
             <div class="model-header">
 
             </div>
-            <div class="modal-body d-flex justify-content-center" style="position: relative">
+            <div class="modal-body d-flex justify-content-center position-relative">
                 <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times"></i>
                 </button>
-                <video class="main-video" autoplay controls style="width:70vw!important;">
+                <video class="main-video" autoplay controls >
                     <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
                 </video>
             </div>
@@ -55,139 +54,245 @@
     </div>
 </div>
 
-{{--<section class="main-video mt-5">--}}
-{{--    <div class="container-fluid">--}}
-{{--        <div class="row d-flex justify-content-center border-0 rounded-lg">--}}
-{{--            <video  class="main-video rounded-lg w-75" autoplay controls>--}}
-{{--                <source src="{{ asset('') }}">--}}
-{{--            </video>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-
-
-
 
 <!-- END Video LEARN -->
 
 <!-- Customer Say -->
- <section id="testimonial" class="testimonial-area pt-120">
-  <div class="container">
-   <div class="row justify-content-center">
-    <div class="col-lg-5">
-      <div class="section-title text-center pb-40">
-    <div class="line mt-5 mx-auto rounded-lg"></div>
-         <h3 class="title mt-5">نظرات مشتریان</h3>
-     </div> <!-- section title -->
-  </div>
-  </div>
- <!-- row -->
-        <div class="row testimonial-active mt-5">
-            <div class="">
-                <div class="single-testimonial shadow-lg">
-                    <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="star">
-                            <ul class="">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
-                            nonu.</p>
-                    </div>
-                    <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">
-                        </div>
-                        <div class="author-content media-body">
-                            <h6 class="holder-name" style="color: darkgray">Jenny Deo</h6>
-                            <p class="text" style="color: darkgray">CEO, SpaceX</p>
-                        </div>
-                    </div>
-                </div> <!-- single testimonial -->
-            </div>
+{{-- <section id="testimonial" class="testimonial-area pt-120">--}}
+{{--  <div class="container-fluid">--}}
+{{--   <div class="row justify-content-center">--}}
+{{--    <div class="col-lg-5">--}}
+{{--      <div class="section-title text-center pb-40">--}}
+{{--    <div class="line mt-5 mx-auto rounded-lg"></div>--}}
+{{--         <h3 class="title mt-5">نظرات مشتریان</h3>--}}
+{{--     </div> <!-- section title -->--}}
+{{--  </div>--}}
+{{--  </div>--}}
+{{-- <!-- row -->--}}
+{{--        <div class="row testimonial-active mt-5 slide">--}}
+{{--            <div class="">--}}
+{{--                <div class="single-testimonial ">--}}
+{{--                    <div class="testimonial-review ">--}}
+{{--                        <div class="quota">--}}
+{{--                            <i class="fa fa-quote-right"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="star">--}}
+{{--                            <ul class="">--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-text">--}}
+{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
+{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
+{{--                            nonu.</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-author ">--}}
+{{--                        <div class="author-image">--}}
+{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
+{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">--}}
+{{--                        </div>--}}
+{{--                        <div class="author-content media-body">--}}
+{{--                            <h6 class="holder-name" style="color: darkgray">Jenny Deo</h6>--}}
+{{--                            <p class="text" style="color: darkgray">CEO, SpaceX</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div> <!-- single testimonial -->--}}
+{{--            </div>--}}
+{{--            <div class="">--}}
+{{--                <div class="single-testimonial">--}}
+{{--                    <div class="testimonial-review ">--}}
+{{--                        <div class="quota">--}}
+{{--                            <i class="fa fa-quote-right"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="star">--}}
+{{--                            <ul>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-text">--}}
+{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
+{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
+{{--                            nonu.</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-author ">--}}
+{{--                        <div class="author-image">--}}
+{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="">--}}
+{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="author-content media-body">--}}
+{{--                            <h6 class="holder-name" style="color: darkgray">Marjin Otte</h6>--}}
+{{--                            <p class="text" style="color: darkgray">UX Specialist, Yoast</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div> <!-- single testimonial -->--}}
+{{--            </div>--}}
+{{--            <div class="">--}}
+{{--                <div class="single-testimonial">--}}
+{{--                    <div class="testimonial-review ">--}}
+{{--                        <div class="quota">--}}
+{{--                            <i class="fa fa-quote-right"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="star">--}}
+{{--                            <ul>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-text">--}}
+{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
+{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
+{{--                            nonu.</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-author ">--}}
+{{--                        <div class="author-image">--}}
+{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
+{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">--}}
+{{--                        </div>--}}
+{{--                        <div class="author-content media-body">--}}
+{{--                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>--}}
+{{--                            <p class="text" style="color: darkgray">CTO, Alphabet</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div> <!-- single testimonial -->--}}
+{{--            </div>--}}
+{{--            <div class="">--}}
+{{--                <div class="single-testimonial">--}}
+{{--                    <div class="testimonial-review ">--}}
+{{--                        <div class="quota">--}}
+{{--                            <i class="fa fa-quote-right"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="star">--}}
+{{--                            <ul>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                                <li><i class="fa fa-star"></i></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-text">--}}
+{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
+{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
+{{--                            nonu.</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-author ">--}}
+{{--                        <div class="author-image">--}}
+{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
+{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">--}}
+{{--                        </div>--}}
+{{--                        <div class="author-content media-body">--}}
+{{--                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>--}}
+{{--                            <p class="text" style="color: darkgray">CTO, Alphabet</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div> <!-- single testimonial -->--}}
+{{--            </div>--}}
 
-            <div class="">
-                <div class="single-testimonial shadow-lg">
-                    <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="star">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
-                            nonu.</p>
-                    </div>
-                    <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="">
-                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="">
-                        </div>
-                        <div class="author-content media-body">
-                            <h6 class="holder-name" style="color: darkgray">Marjin Otte</h6>
-                            <p class="text" style="color: darkgray">UX Specialist, Yoast</p>
-                        </div>
-                    </div>
-                </div> <!-- single testimonial -->
-            </div>
-            <div class="">
-                <div class="single-testimonial shadow-lg">
-                    <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="star">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
-                            nonu.</p>
-                    </div>
-                    <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">
-                        </div>
-                        <div class="author-content media-body">
-                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>
-                            <p class="text" style="color: darkgray">CTO, Alphabet</p>
-                        </div>
-                    </div>
-                </div> <!-- single testimonial -->
-            </div>
-        </div> <!-- row -->
-    </div> <!-- container -->
-</section>
+{{--        </div> <!-- row -->--}}
+{{--    </div> <!-- container -->--}}
+{{--</section>--}}
 <!-- END Customer Say -->
+<section class="slider">
 
+    <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <i class="fa fa-quote-right float-right"></i>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+    </div>
+
+    <div class="single-comment text-center pb-3 pt-3 px-3  m-5" style="height: auto ; width:300px">
+        <i class="fa fa-quote-right float-right"></i>
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+    </div>
+
+    <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
+        <i class="fa fa-quote-right float-right"></i>
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+    </div>
+    <div class="single-comment text-center pb-3 pt-3 px-3 m-5" style="height: auto ; width:300px">
+        <i class="fa fa-quote-right float-right"></i>
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+    </div>
+
+</section>
 
 <!-- Blog Posts -->
 <section id="testimonial" class="testimonial-area pt-120">
@@ -348,14 +453,50 @@
     </div> <!-- container -->
 </section>
 <!-- END Customer Say -->
+
+
+
+
 <script>
-    $('.slide').slick({
+    $('.slider').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1 ,
         autoplay : true ,
         arrows : false ,
         dots:true ,
+        draggable:true,
+        autoplaySpeed: 3000 ,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint:980,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll:1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint:730,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll:1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+
+        ]
 
     }) ;
 </script>
