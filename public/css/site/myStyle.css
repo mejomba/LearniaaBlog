@@ -1389,9 +1389,16 @@ p {
 
 .main-video
 {
-    width:80vw!important;
+    width:80vw;
+    align-items: center!important;
+    align-content: center!important;
 }
+.Video
+{
+    width:70vw ; height:55vh;
+    align-self: center;
 
+}
 /*.video-content {*/
 /*    position: relative;*/
 /*    padding-bottom: 30px;*/
@@ -2158,10 +2165,16 @@ color: white;
     font-weight: 900;
 }
 
+.modal-body
+{
+    position: relative;
+}
+
+
 .close
 {
     position:absolute;
-    top:-30px ;
+    top: -20px;
 }
 .close i
 {

@@ -28,7 +28,7 @@
 
 <!-- Video LEARN -->
 
-<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100% ; height: auto">
+<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100%">
     <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
     <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
                 <span></span>
@@ -42,12 +42,12 @@
             <div class="model-header">
 
             </div>
-            <div class="modal-body d-flex justify-content-center position-relative">
+            <div class="modal-body d-flex justify-content-center align-items-center align-content-center">
                 <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times"></i>
                 </button>
                 <video class="main-video" autoplay controls >
-                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
+                    <source class="Video" src="{{ asset('images/video.mp4') }}" type="video/mp4">
                 </video>
             </div>
         </div>
@@ -227,7 +227,7 @@
         <p class="float-right">
             <span class="">CEO</span>
         </p>
-        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
     </div>
 
     <div class="single-comment text-center pb-3 pt-3 px-3  m-5" style="height: auto ; width:300px">
@@ -248,7 +248,7 @@
         <p class="float-right">
             <span class="">CEO</span>
         </p>
-        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
     </div>
 
     <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
@@ -269,7 +269,7 @@
         <p class="float-right">
             <span class="">CEO</span>
         </p>
-        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
     </div>
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5" style="height: auto ; width:300px">
         <i class="fa fa-quote-right float-right"></i>
@@ -289,7 +289,7 @@
         <p class="float-right">
             <span class="">CEO</span>
         </p>
-        <img src="img/logo.png" alt="userImg" class="float-left" width="40px">
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
     </div>
 
 </section>
@@ -418,7 +418,7 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                             <img src="{{ asset('images/Template/user_login.svg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
