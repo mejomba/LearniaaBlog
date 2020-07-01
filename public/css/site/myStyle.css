@@ -388,9 +388,7 @@ body {
     box-sizing: border-box;
 }
 
-img {
-    max-width: 100%;
-}
+
 
 a:focus,
 input:focus,
@@ -676,7 +674,7 @@ p {
 
 .card
 {
-    margin-top:150px!important;
+    margin-top:60px!important;
 }
 
 

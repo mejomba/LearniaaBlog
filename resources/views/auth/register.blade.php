@@ -6,7 +6,7 @@
 @section('content')
 <div class="row">
 
-<div class="col-lg-4 col-md-7 col-sm-8 col-9 offset-1" style="padding: 0px 28px;margin-top: -60px"  >
+<div class="col-lg-4 col-md-7 col-sm-8 col-9 offset-1" >
 <div class="card shadow border-0" style="border-bottom-right-radius:60px; border-bottom-left-radius:60px">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h3>ثبت نام کاربران</h3></div>
