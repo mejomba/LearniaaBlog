@@ -1,7 +1,7 @@
 <div class="banner-bg" style="direction: rtl">
     <img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
 {{--    <img src="{{asset('images/header-teamwork.svg')}}" class="learn-bg" alt="">--}}
-<nav class="navbar navbar-expand-md mx-auto text-center fixed-top" style="z-index: 100000">
+<nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
     </button>
@@ -89,15 +89,27 @@
 </div>
 
 <script>
+    var navbar = document.getElementById('navbar');
     window.onscroll = function() {scrollFunction()};
-    var navbar = document.querySelector('.navbar');
-    // console.log(navbar);
     function scrollFunction() {
         if ( document.documentElement.scrollTop > 20)
             navbar.style.backgroundColor = "#20c5ba";
         else
             navbar.style.backgroundColor = "transparent";
     }
+
+
+    // $(document).ready(function(){
+    //     $(window).scroll(function(){
+    //         var scroll = $(window).scrollTop();
+    //         if (scroll > 50){}else{ $(".text").css("color" , "black");}}))
+    // $(document).ready(function(){
+    //     if($(".alert").css("display","block") === true)
+    //     {
+    //         $('.nav').css('margin-top',"30px");
+    //     }
+    // })
+
 
     $(".navbar-toggler").on("click",function () {
 

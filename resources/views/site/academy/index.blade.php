@@ -28,185 +28,45 @@
 
 <!-- Video LEARN -->
 
-<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100%">
-    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
-    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
-                <span></span>
-            </span>
-</section>
+{{--<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100%">--}}
+{{--    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >--}}
+{{--    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">--}}
+{{--                <span></span>--}}
+{{--            </span>--}}
+{{--</section>--}}
 
-<!-- Modal -->
-<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" style="border: none!important ; background-color: transparent;">
-            <div class="model-header">
+{{--<!-- Modal -->--}}
+{{--<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--        <div class="modal-content" style="border: none!important ; background-color: transparent;">--}}
+{{--            <div class="model-header">--}}
 
-            </div>
-            <div class="modal-body d-flex justify-content-center align-items-center align-content-center">
-                <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times"></i>
-                </button>
-                <video class="main-video" autoplay controls >
-                    <source class="Video" src="{{ asset('images/video.mp4') }}" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
+{{--            </div>--}}
+{{--            <div class="modal-body d-flex justify-content-center align-items-center align-content-center">--}}
+{{--                <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <i class="fa fa-times"></i>--}}
+{{--                </button>--}}
+{{--                <video class="main-video" autoplay controls >--}}
+{{--                    <source class="Video" src="{{ asset('images/video.mp4') }}" type="video/mp4">--}}
+{{--                </video>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 
 <!-- END Video LEARN -->
 
-<!-- Customer Say -->
-{{-- <section id="testimonial" class="testimonial-area pt-120">--}}
-{{--  <div class="container-fluid">--}}
-{{--   <div class="row justify-content-center">--}}
-{{--    <div class="col-lg-5">--}}
-{{--      <div class="section-title text-center pb-40">--}}
-{{--    <div class="line mt-5 mx-auto rounded-lg"></div>--}}
-{{--         <h3 class="title mt-5">نظرات مشتریان</h3>--}}
-{{--     </div> <!-- section title -->--}}
-{{--  </div>--}}
-{{--  </div>--}}
-{{-- <!-- row -->--}}
-{{--        <div class="row testimonial-active mt-5 slide">--}}
-{{--            <div class="">--}}
-{{--                <div class="single-testimonial ">--}}
-{{--                    <div class="testimonial-review ">--}}
-{{--                        <div class="quota">--}}
-{{--                            <i class="fa fa-quote-right"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="star">--}}
-{{--                            <ul class="">--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-text">--}}
-{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
-{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
-{{--                            nonu.</p>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-author ">--}}
-{{--                        <div class="author-image">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">--}}
-{{--                        </div>--}}
-{{--                        <div class="author-content media-body">--}}
-{{--                            <h6 class="holder-name" style="color: darkgray">Jenny Deo</h6>--}}
-{{--                            <p class="text" style="color: darkgray">CEO, SpaceX</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div> <!-- single testimonial -->--}}
-{{--            </div>--}}
-{{--            <div class="">--}}
-{{--                <div class="single-testimonial">--}}
-{{--                    <div class="testimonial-review ">--}}
-{{--                        <div class="quota">--}}
-{{--                            <i class="fa fa-quote-right"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="star">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-text">--}}
-{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
-{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
-{{--                            nonu.</p>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-author ">--}}
-{{--                        <div class="author-image">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="">--}}
-{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="">--}}
-{{--                        </div>--}}
-{{--                        <div class="author-content media-body">--}}
-{{--                            <h6 class="holder-name" style="color: darkgray">Marjin Otte</h6>--}}
-{{--                            <p class="text" style="color: darkgray">UX Specialist, Yoast</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div> <!-- single testimonial -->--}}
-{{--            </div>--}}
-{{--            <div class="">--}}
-{{--                <div class="single-testimonial">--}}
-{{--                    <div class="testimonial-review ">--}}
-{{--                        <div class="quota">--}}
-{{--                            <i class="fa fa-quote-right"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="star">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-text">--}}
-{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
-{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
-{{--                            nonu.</p>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-author ">--}}
-{{--                        <div class="author-image">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">--}}
-{{--                        </div>--}}
-{{--                        <div class="author-content media-body">--}}
-{{--                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>--}}
-{{--                            <p class="text" style="color: darkgray">CTO, Alphabet</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div> <!-- single testimonial -->--}}
-{{--            </div>--}}
-{{--            <div class="">--}}
-{{--                <div class="single-testimonial">--}}
-{{--                    <div class="testimonial-review ">--}}
-{{--                        <div class="quota">--}}
-{{--                            <i class="fa fa-quote-right"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="star">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                                <li><i class="fa fa-star"></i></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-text">--}}
-{{--                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod--}}
-{{--                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam--}}
-{{--                            nonu.</p>--}}
-{{--                    </div>--}}
-{{--                    <div class="testimonial-author ">--}}
-{{--                        <div class="author-image">--}}
-{{--                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">--}}
-{{--                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">--}}
-{{--                        </div>--}}
-{{--                        <div class="author-content media-body">--}}
-{{--                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>--}}
-{{--                            <p class="text" style="color: darkgray">CTO, Alphabet</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div> <!-- single testimonial -->--}}
-{{--            </div>--}}
+<section class="main-video d-flex justify-content-center">
+    <img src="{{ asset('images/video-frame.svg') }}" alt="" class="" width="1300vw" height="600vh">
+    <a href="#video3" class="afterglow text-center"><i class="fa fa-play fa-4x"></i></a>
+    <video id="video3" controls autoplay width="640" height="360" preload="none">
+        <source src="{{ asset('images/video.mp4') }}" type="video/mp4" />
+    </video>
+</section>
 
-{{--        </div> <!-- row -->--}}
-{{--    </div> <!-- container -->--}}
-{{--</section>--}}
-<!-- END Customer Say -->
+
+<!-- Customer Say -->
 <section class="slider">
 
     <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
@@ -361,6 +221,8 @@
 
             </div>
         </div>
+        <!-- Customer Say ends-->
+
 
 </div> <!-- container -->
 </section>

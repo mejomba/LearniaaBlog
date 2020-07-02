@@ -10,6 +10,7 @@
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/core/afterglow.min.js') }}"></script>
 
 
 @yield('site.academy.index')
