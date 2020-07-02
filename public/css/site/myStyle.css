@@ -63,6 +63,10 @@ body {
     opacity: 0.1%;
 }
 
+img
+{
+    max-width: 100%;
+}
 /*----------Preloader starts-----------------*/
 
 #Pre-loader
@@ -178,8 +182,9 @@ btn-loginSign:focus
 .learn-bg {
     position: relative;
     left:20px;
-    height: 500px;
-    width: 500px;
+    /*height: 500px;*/
+    width:500px;
+
 }
 
 .learn-style {
@@ -1404,27 +1409,40 @@ p {
 .main-video
 {
     position: relative;
+    z-index: 500;
 }
 
 .main-video a {
     position: absolute;
-    top:35vh;
+    top:40%;
+    margin: 0 auto!important;
     color: yellow;
     transition:300ms;
     animation: infinite animation 1000ms;
+    -webkit-animation:infinite animation 1000ms ;
+    -moz-animation:infinite animation 1000ms ;
 
 }
 
 @keyframes animation {
-    50%{ transform: scale(1.4); color: #ffa600 }
-    100%{transform: scale(1); color: yellow;}
+    50%{
+        transform: scale(1.4);
+        -webkit-transform: scale(1.4);
+        -moz-transform: scale(1.4);
+        color: #ffa600 ;
+    }
+    100%{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        color: yellow;
+    }
 }
 
 .vjs-afterglow-skin .vjs-control:before
 {
     color: red;
 }
-
 
 
 

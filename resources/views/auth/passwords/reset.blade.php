@@ -36,7 +36,7 @@
                 <h3 class="p-2" style="background-color:#20C5BA">فراموشی رمز عبور</h3>
             </div>
         </div>
-        <form class="form px-3 py-5" method="POST" action="{{route('reset.store')}}">
+        <form class="form px-1 py-5" method="POST" action="{{route('reset.store')}}">
             @csrf
             <div class="form-group d-flex mt-2">
                 <img class="rounded-circle mr-1"
@@ -44,7 +44,7 @@
                 <input name="username" id="username" type="text" class="form-control" placeholder=" تلفن همراه">
 
             </div>
-            <input type="submit" class="btn btn-primary text-white text-center mt-2" value="تایید">
+            <input type="submit" class="btn btn-primary text-white text-center mt-3" value="تایید">
         </form>
 
     </div>
