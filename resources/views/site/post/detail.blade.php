@@ -9,7 +9,7 @@
       <meta  name="description" content="{{$json->desc_short}}">
       @endforeach
 
-      <meta  name="keywords" content="@php echo implode(',',$meta_keywords); @endphp" > 
+      <meta  name="keywords" content="@php echo implode(',',$meta_keywords); @endphp" >
 
 @endsection
 
@@ -29,7 +29,7 @@
         <button class="btn   btn-round btnblogPost btn-title" style="border-radius:10px" >
 
             <h2 style="color:#FFFFFF" class="">{{$one_post['title']}}</h2>
-        
+
 
 
     <div class="post-meta" >
@@ -44,29 +44,29 @@
 <div  class="col-10" style="padding-top:15px">
 <span class="post-auhor-date">
             <span class="" style="color:#000">
-          
+
             @if($one_post->profile['pic'])
-            <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
+            <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"
             alt="{{$one_post->writer['name']}}" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
-            @else         
+            @else
             <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
             @endif
             &nbsp;{{$one_post->writer['name']}}</span>
             |
 
-            <span  class="" style="color:#000" >  
+            <span  class="" style="color:#000" >
             <img src="{{ asset('images/Template/calendar.svg') }}" alt="Learniaa" height="40px" width="40px">
               {{ $json->create_at }}
             </span>
-        
+
             </span>
 
             |
 
-            <span class="" style="color:#000" >  
+            <span class="" style="color:#000" >
           <img src="{{ asset('images/Template/clock.svg') }}" alt="Learniaa" height="40px" width="40px">
          {{ $json->readtime }}:00
-            </span>  
+            </span>
 
       <div class="post-content">
             <p> </p>
@@ -78,11 +78,11 @@
 
   <div class="col-1">
 </div>
-      
+
 </div>
 
 </div>
-</div>   
+</div>
 
 </div>
 @endforeach
@@ -103,43 +103,43 @@
 
                     <img class="img-raised rounded img-fluid" src="{{   Storage::url('post/'.$one_post['pic_content'])   }}"
                     alt="{{ $one_post['title'] }}"   height="450px" width="100%" >
-                    
+
                 </div>
 
 
                 <div class="container-fluid" style="margin-top:40px">
-                @php echo htmlspecialchars_decode($one_post['content']) ; @endphp 
+                @php echo htmlspecialchars_decode($one_post['content']) ; @endphp
                 </div>
-                
+
 
                 <p></p>
                 <p></p>
                 <p></p>
 
                 <div style="border-top:2px solid #20c3b8;margin-bottom:10px"> </div>
-                
+
                     <div class="row">
-                           
+
                           <div class="col-md-3 col-4 center">
                             @if($one_post['pdf_content'])
-                          <a style="padding-bottom : 5px" _target="blank" href="{{Storage::url('pdf/'.$one_post['pdf_content'])}}"  
+                          <a style="padding-bottom : 5px" _target="blank" href="{{Storage::url('pdf/'.$one_post['pdf_content'])}}"
                           class="btn btn-primary btn-download btnblogPost">دریافت فایل  (PDF) </a>
                            @else
                            <a style="padding-bottom : 5px"
                             class="btn btn-primary btn-disabled btnblogPost ">دریافت فایل  (PDF) </a>
                            @endif
-                        
+
                           </div>
-     
+
                   </div>
- 
+
                  <!-- <div style="border-bottom:2px solid #20c3b8;margin-top:10px">
                    </div>  -->
 
             </div>
-           
+
         </div>
-     
+
     </div>
 </div>
 
@@ -148,19 +148,19 @@
 
           <div class="container-fluid">
           <div class="row" style="padding-top:10px;padding-bottom:15px;">
-                            
+
                         <div class="col-md-1">
                         </div>
 
                         <div class="col-md-5">
-                        <a style="margin-bottom: 15px;width:90%" 
+                        <a style="margin-bottom: 15px;width:90%"
                         href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblogPost btn-1">
-                          توسعه مهارت   
+                          توسعه مهارت
                             </a>
                         </div>
 
                         <div class="col-md-5">
-                        <a style="margin-bottom: 15px;width:90%" 
+                        <a style="margin-bottom: 15px;width:90%"
                         href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblogPost btn-2">    برنامه نویسی   </a>
                         </div>
 
@@ -171,12 +171,12 @@
                         </div>
 
                         <div class="col-md-5">
-                        <a style="margin-bottom: 15px;width:90%" 
+                        <a style="margin-bottom: 15px;width:90%"
                         href="{{route('category.show','وب')}}" class="btn  btn-round btnblogPost btn-3"> وب </a>
                         </div>
 
                         <div class="col-md-5">
-                        <a style="margin-bottom: 15px;width:90%" 
+                        <a style="margin-bottom: 15px;width:90%"
                         href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblogPost btn-4">   هک و امنیت </a>
                         </div>
 
@@ -188,9 +188,9 @@
         </div>
             <!-- Section -->
 
-            
+
 <div style="border-bottom:2px solid #20c3b8;margin-bottom:10px">
-<h3> آخرین نوشته ها<h3>
+<h3> آخرین نوشته ها</h3>
 </div>
 
 
@@ -201,22 +201,22 @@
             @php  $json = json_decode($one_post['extras'],false) @endphp
 
        <div class="row div-transition" style="margin-top:10px">
-       
+
                 <div class="col-md-3">
 
-                        <a href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}"> 
-                           <img src="{{ Storage::url('post/'.$one_post['pic_content'])  }}"  
+                        <a href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}">
+                           <img src="{{ Storage::url('post/'.$one_post['pic_content'])  }}"
                            alt="{{ $one_post['title'] }}"  class="img-raised rounded img-fluid" style="width: 200px;height: 100px;" ></a>
                 </div>
-               
-                <div class="col-md-9"> 
-                      
+
+                <div class="col-md-9">
+
                 <div class="row">
 
-                        <a class="text-muted" href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}"> 
+                        <a class="text-muted" href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ] )}}">
                             <h4 style="font-size: 20px;margin-bottom:0px" >{{$one_post['title']}}</h4>
                             </a>
-                 </div>           
+                 </div>
 
 
                    <div class="row">
@@ -231,15 +231,15 @@
                                         else
                                         {
                                           echo $text ;
-                                        }                                  
+                                        }
                                       @endphp  </p>
                             </div>
 
-                   </div>   
+                   </div>
 
 
                 </div>
-          
+
        </div>
 
         @endforeach
@@ -258,73 +258,73 @@
 <div class="col-md-12" >
 
 @php $user =  Auth::user();  @endphp
-@if($user['pk_users'] != null) 
+@if($user['pk_users'] != null)
 
 <h3 class="title ">نظرات و پیشنهادات</h3>
 
-@endif    
+@endif
 
 	<div class="row">
 		<div class="col-md-6 ">
-			
-     
-        @if($user['pk_users'] != null)                                
+
+
+        @if($user['pk_users'] != null)
 
       <form action="{{ route('behavior.store') }}" method="POST">
       @csrf
 
       <input type="hidden" name="pk_post" value="{{$detail_post[0]->pk_post}}">
       <input type="hidden" name="type" value="comment">
-                                      
+
              <div class="row" style="padding-right:10px">
                       <div class="col-md-9">
                           <div class="form-group bmd-form-group">
-                           
+
                             <input type="text" name="content" class="form-control" placeholder="نظر خود را بنویسید">
-                          
+
                            </div>
                       </div>
 
                       <div class="col-md-3">
                           <div class="form-group bmd-form-group">
                           <button type="submit" style="width:100px;font-size:12px;" class="btn btn-primary btn-title btnblogPost">ثبت </button>
-                          
+
                            </div>
-                      </div>                   
+                      </div>
 
-                </div>                       
-      </form> 
+                </div>
+      </form>
 
-       @endif                                 
+       @endif
 
       <p></p>
 			<ul class="timeline">
 
       @foreach($behavior_post as $one_behavior)
       @php  $json = json_decode($one_behavior['extras'],false) @endphp
-                                        
+
 
             <li>
-              <span class="text-muted float-right" style="display:contents" > 
+              <span class="text-muted float-right" style="display:contents" >
                               <i class="fas fa-user"></i>
-                             
+
                             {{$one_behavior->user->name }}
               </span>
-              <span class="text-muted float-left" > 
+              <span class="text-muted float-left" >
                              <i class="fas fa-calendar-alt"></i>
                              1398/08/09
                </span>
-                  <p>{{ $one_behavior['content']  }} </p> 
+                  <p>{{ $one_behavior['content']  }} </p>
 
-               @if(isset($json->reply))                         
+               @if(isset($json->reply))
                <!-- Reply box -->
                <div class="col-md-12" >
                   <div class=" card-login" style="margin-top:5px">
                    <div class="card-body card-header-primary"
                        style="border-radius:15px; background: rgba(30, 183, 173, 0.7);">
-                     <div class="row">  
+                     <div class="row">
 
-                              <div class="col-md-3" style="padding-right:1.0rem">             
+                              <div class="col-md-3" style="padding-right:1.0rem">
                                 <div>
                                     <h5>پاسخ مدیر سایت:</h5>
                                 </div>
@@ -338,29 +338,29 @@
                             </div>
 
 
-                      <div class="col-md-12" >             
-                              <div  style="padding-right:9px;padding-left:9px;">         
-                              <p style="color:#FFF;padding-top:0.2rem; text-align: justify;"> {{$json->reply}} </p>   
-                              </div>  
-                      </div>  
+                      <div class="col-md-12" >
+                              <div  style="padding-right:9px;padding-left:9px;">
+                              <p style="color:#FFF;padding-top:0.2rem; text-align: justify;"> {{$json->reply}} </p>
+                              </div>
+                      </div>
 
 
-                    </div> 
+                    </div>
                   </div>
-                  </div>              
-              <!-- Reply box -->  
-              @endif    
+                  </div>
+              <!-- Reply box -->
+              @endif
 
           </li>
-          @endforeach      
-
-			
+          @endforeach
 
 
 
 
 
-				
+
+
+
 			</ul>
 		</div>
 	</div>
@@ -369,11 +369,11 @@
 
 
 
-       
+
       </div>
-         
+
    <!-- end media-post -->
-        
+
           </div>
           </div>
         </div>

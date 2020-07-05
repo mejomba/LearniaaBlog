@@ -1,6 +1,6 @@
 <!-- Footer -->
-<footer id="footer" class="footer-area pt-120 " style="margin-top:8rem !important">
-<div class="container-fluid mt-5">
+<footer id="footer" class="footer-area pt-120 " style="margin-top:180px">
+<div class="container-fluid">
         <div class="subscribe-area wow fadeIn container mx-auto">
             <div class="row">
 

@@ -10,7 +10,7 @@
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/core/afterglow.min.js') }}"></script>
+<script src="{{ asset('js/core/afterglow.min.js') }}"></script>
 
 
 @yield('site.academy.index')
@@ -55,7 +55,7 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 </head>
 
 <body>
-<div class="container-fluid" style="z-index: 10001">
+<div class="container-fluid" style="z-index:10001">
 @include('site.Layouts.error')
 </div>
 

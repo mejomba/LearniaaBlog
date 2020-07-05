@@ -14,6 +14,9 @@
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >blog</a></li>
+{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.show')}}" >show</a></li>--}}
+{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.detail')}}" >detail</a></li>--}}
         </ul>
     </div>
     <div class="search">
@@ -89,14 +92,25 @@
 </div>
 
 <script>
-    var navbar = document.getElementById('navbar');
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
-        if ( document.documentElement.scrollTop > 20)
-            navbar.style.backgroundColor = "#20c5ba";
-        else
-            navbar.style.backgroundColor = "transparent";
-    }
+    // var navbar = document.getElementById('navbar');
+    // window.onscroll = function() {scrollFunction()};
+    // function scrollFunction() {
+    //     if ( document.documentElement.scrollTop > 20)
+    //         navbar.style.backgroundColor = "#20c5ba";
+    //     else
+    //         navbar.style.backgroundColor = "transparent";
+    // }
+
+
+    $(document).ready(function(){
+        $(window).scroll(function() { // check if scroll event happened
+            if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+                $(".navbar").css("background-color", "#20c5ba"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+            } else {
+                $(".navbar").css("background-color", "transparent"); // if not, change it back to transparent
+            }
+        });
+    });
 
 
     // $(document).ready(function(){

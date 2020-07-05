@@ -30,7 +30,7 @@
 {{--    </div>--}}
 
 
-    <div class="col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 offset-sm-2 offset-2 text-center bg-white mt-5 shadow-lg" style="border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;">
+    <div class="col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 offset-sm-2 offset-2 text-center bg-white shadow-lg userBoxes">
         <div class="row">
             <div class="col-12 p-0">
                 <h3 class="p-2" style="background-color:#20C5BA">فراموشی رمز عبور</h3>

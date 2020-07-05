@@ -57,9 +57,12 @@
 
 <!-- END Video LEARN -->
 
-<section class="main-video d-flex justify-content-center">
-    <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
-    <a href="#video3" class="afterglow text-center"><i class="fa fa-play fa-4x"></i></a>
+<section class="row main-video d-flex justify-content-center mb-5">
+
+    <a href="#video3" class="afterglow text-center">
+        <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
+        <i class="fa fa-play fa-4x text-center"></i>
+    </a>
     <video id="video3" controls autoplay width="640" height="360" preload="none">
         <source src="{{ asset('images/video.mp4') }}" type="video/mp4" />
     </video>
@@ -67,6 +70,14 @@
 
 
 <!-- Customer Say -->
+<div class="row justify-content-center">
+    <div class="col-lg-5">
+        <div class="section-title text-center pb-40">
+            <div class="line mt-5 mx-auto rounded-lg"></div>
+            <h3 class="title mt-5">نظرات مشتریان</h3>
+        </div> <!-- section title -->
+    </div>
+</div>
 <section class="slider">
 
     <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
@@ -317,9 +328,8 @@
 <!-- END Customer Say -->
 
 
-
-
 <script>
+
     $('.slider').slick({
         infinite: true,
         slidesToShow: 3,
@@ -361,6 +371,7 @@
         ]
 
     }) ;
+
 </script>
 
 @endsection

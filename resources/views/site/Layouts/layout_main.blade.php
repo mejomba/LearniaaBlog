@@ -15,7 +15,6 @@
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/core/afterglow.min.js') }}"></script>
 
-
 @include('site.Layouts.preloader')
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
