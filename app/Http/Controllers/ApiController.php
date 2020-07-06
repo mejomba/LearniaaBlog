@@ -428,6 +428,12 @@ public function downloadcounter($id)
 
 }
 
+public function filter()
+{
+    $data = vote::get();
+    return response()->json($data);
+
+}
 
 
 }

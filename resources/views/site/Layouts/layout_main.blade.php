@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
  @include('site.Layouts.head')
 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
+<script src="{{asset('js/core/slick.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
-
+    <script src="{{ asset('js/core/afterglow.min.js') }}"></script>
 
 @include('site.Layouts.preloader')
 <!-- Global site tag (gtag.js) - Google Analytics -->

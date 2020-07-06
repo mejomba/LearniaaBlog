@@ -9,22 +9,24 @@
 @section('text_landing')
 
 {{--<img src="{{ asset('images/Template/text_blog2.png') }}" alt="Learniaa" class="" width="100%" style="float:left">--}}
-
+<h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
+<h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
+<h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
+    <button class="btn fourth text-center">شروع کن</button>
+</h6>
 @endsection
 
 
 @section('pic_landing')
-
-
-<img src="{{ asset('images/Template/teacher.svg') }}" alt="Learniaa" class="" width="65%" style="float:left">
-
+    <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/teacher.svg')}}" alt="" style="margin-top: -15px">
+{{--<img src="{{ asset('images/Template/teacher.svg') }}" alt="Learniaa">--}}
 @endsection
 
 @section('content')
 
 
 <div class="container-fluid">
-  <div class="row text-center mx-auto" id="topics_Of_novels">
+  <div class="row text-center mx-auto mt-5" id="topics_Of_novels">
      <div class="col-lg-3 col-md-3 col-sm-6 col-6">
      <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px"  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
        توسعه مهارت های شخصی
@@ -57,32 +59,34 @@
 
 <div class="container-fluid">
 
-   <div class="row mt-5" style="padding-top:10px;">
+   <div class="row mt-5 mb-4" style="padding-top:20px;">
 
-                <div class="col-12 mx-auto" style="text-align:center">
+                <div class="col-12 mx-auto text-center">
 
-                  <h3 style="font-size:20px" >
-                      <span>
+                  <h3 style="font-size:25px" >
+                        <span>
                     <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
                     بخوانید ، بدانید ، لذت ببرید
                     <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
-                    </span></h3>
+                        </span>
+                  </h3>
 
                 </div>
 
    </div>
 
-     <div class="row" id="ListOfData" style="padding-top:15px;padding-bottom:15px;;font-size:15px">
+     <div class="row p-5" id="ListOfData" style="font-size:15px">
 
 
             @foreach($recent_post as $one_post)
             @php  $json = json_decode($one_post['extras'],false) @endphp
 
-            <div class="col-md-4 div-transition">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 p-3 div-transition mt-sm-2 mt-2">
 
-                    <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}">
+                    <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}" style="overflow:hidden!important;" class="rounded">
                        <img  src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
-                      class="img-raised rounded img-fluid" style="width: 703px;height: 250px;" ></a>
+                      class="img-raised rounded img-fluid imageBlog" style="width:720px;height:230px;" >
+                    </a>
 
                       <a class="text-muted" href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}">
                         <h4 style="font-size: 20px;margin-bottom:0px" >{{$one_post['title']}}</h4>
@@ -157,12 +161,6 @@
 
 </div>
 
-
-
-</div>
-
-</div>
-</div>
 
 @endsection
 

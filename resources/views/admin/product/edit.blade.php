@@ -215,7 +215,19 @@
         </div>
         </div>
          <!-- Picture Box -->
+        <div class="col-md-4">
 
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control" name="alt" placeholder="alt pic " type="text" value="{{ $product['alt'] }}">
+                    </div>
+                  </div>
+
+        </div>  
+                          
 
          
 
@@ -358,7 +370,184 @@
 
 } );
                             </script> 
-                            <!-- ckeditor -->                         
+                            <!-- ckeditor -->   
+
+                            <h2 class="text-center">meta tags</h2>
+
+<div class="row">   
+                                          
+  <div class="col-md-4">
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                
+              </div>
+              <input class="form-control" name="keywords"  placeholder=" keywords" type="text" value ="{{ $meta->htmlmeta->keywords  ?? '' }}" >
+            </div>
+          </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                
+              </div>
+              <input class="form-control" name="description"  placeholder=" description" type="text" value ="{{$meta->htmlmeta->description  ?? ''}}">
+            </div>
+          </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                
+              </div>
+              <input class="form-control" name="author"  placeholder=" author" type="text" value ="{{$meta->htmlmeta->author  ?? ''}}">
+            </div>
+          </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                
+              </div>
+              <input class="form-control" name="refresh"  placeholder=" refresh" type="text" value ="{{$meta->htmlmeta->refresh  ?? ''}}">
+            </div>
+          </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                
+              </div>
+              <input class="form-control" name="viewport"  placeholder=" viewport" type="text" value ="{{$meta->htmlmeta->viewport  ?? ''}}">
+            </div>
+          </div>
+</div>
+
+</div>
+
+
+
+
+<h2 class="text-center">Open Graph tags</h2>
+
+<div class="row">   
+                                
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="og_title "  placeholder=" og:title " type="text" value ="{{$meta->opengraph->og_title  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="og_image"  placeholder=" og:image" type="text" value ="{{$meta->opengraph->og_image  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="og_description"  placeholder=" og:description" type="text" value ="{{$meta->opengraph->og_description  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="og_type"  placeholder=" og:type" type="text" value ="{{$meta->opengraph->og_type  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="og_article"  placeholder=" og:article" type="text" value ="{{$meta->opengraph->og_article  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<h2 class="text-center">twitter tags</h2>
+
+<div class="row">   
+                                
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="twitter_card"  placeholder=" twitter:card " type="text" value ="{{$meta->twitter->twitter_card  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="twitter_site"  placeholder=" twitter:site" type="text" value ="{{$meta->twitter->twitter_site  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="twitter_description"  placeholder=" twitter:description" type="text" value ="{{$meta->twitter->twitter_description  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        
+      </div>
+      <input class="form-control" name="twitter_title"  placeholder="twitter:title" type="text" value ="{{$meta->twitter->twitter_title  ?? ''}}">
+    </div>
+  </div>
+</div>
+
+</div>
+
                             </div>
                      </div>
 

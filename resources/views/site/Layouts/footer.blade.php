@@ -1,8 +1,14 @@
 <!-- Footer -->
-<footer id="footer" class="footer-area pt-120 mt-5 " style="margin-top: 12.0rem !important">
-<div class="container-fluid mt-5">
+<footer id="footer" class="footer-area pt-120 " style="margin-top:180px">
+<div class="container-fluid">
         <div class="subscribe-area wow fadeIn container mx-auto">
             <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="subscribe-content mt-3">
+                        <h6 style="font-size:24px;text-align:center" class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
+                    </div>
+                </div>
             <div class="col-lg-6" style="margin-top:20px">
                     <div class="subscribe-form mt-50">
                         <form method="POST" action="{{route('message.newspaper')}}">
@@ -10,17 +16,13 @@
                             <input  type="hidden" name="name" id="name" value="ناشناس" class="form-control">
                             <input type="hidden" name="message" id="message" value="درخواست خبرنامه"  class="form-control">
 
-                            <input type="text" name="email" placeholder="ایمیل خود را وارد نمایید">
+                            <input type="text" class="ml-lg-5 ml-md-5 text-sm-center text-center" name="email" placeholder="ایمیل خود را وارد نمایید">
                             <button class="main-btn">ثبت نام</button>
                         </form>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="subscribe-content mt-3">
-                        <h6 style="font-size:24px;text-align:center" class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
-                    </div>
-                </div>
+
 
             </div>
 
@@ -29,9 +31,9 @@
 
 
 {{--  =================================================================  Footer Starts----------------------------------------------------------------------------}}
-        <div class="container-fluid" style="margin-top: 350px; direction: rtl">
+        <div class="container-fluid footer-List" style="margin-top: 350px; direction: rtl">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-4">
                     <a class="d-flex justify-content-center" href="{{route('index')}}">
                         <img src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Logo_Of_Learniaa" width="120px" height="120px">
                     </a>
@@ -66,56 +68,49 @@
                 <hr class="clearfix w-100 d-md-none">
 
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-5 mb-3" style="color: white">دسترسی سریع</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-md-4 mb-3 text-white">دسترسی سریع</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{route('academy.index')}}" style="text-decoration: none; color: white">صفحه اصلی</a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
+                            <a href="{{route('academy.index')}}" >صفحه اصلی</a>
                         </li>
                         <li>
-                            <a href="{{route('academy.detail')}}" style="text-decoration: none; color:white">آکادمی آموزش</a>
+                            <a href="{{route('academy.detail')}}" >آکادمی آموزش</a>
                         </li>
-                        <li class="">
-                            <a href="#!"></a>
+
+                        <li>
+                            <a href="{{route('Aboutus')}}" >درباره ما</a>
                         </li>
                         <li>
-                            <a href="{{route('Aboutus')}}" style="text-decoration: none; color: white">درباره ما</a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
-                        <li>
-                            <a href="{{route('Contactus')}}" style="text-decoration: none; color: white">تماس با ما</a>
+                            <a href="{{route('Contactus')}}" >تماس با ما</a>
                         </li>
                     </ul>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-5 text-white text-center">صفحات متداول</h5>
-                   <ul class="list-unstyled " >
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
+                    <h5 class="font-weight-bold text-uppercase mt-md-4 text-white text-center">صفحات متداول</h5>
+                   <ul class="list-unstyled mt-2" >
                         <li>
-                            <a href="{{route('TermsOfService')}}" class="text-center" style="text-decoration: none; color: white">قوانین استفاده</a>
+                            <a href="{{route('TermsOfService')}}" class="text-center">قوانین استفاده</a>
                         </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
+
                         <li>
-                            <a href="{{route('PrivacyPolicy')}}" class="text-center" style="text-decoration: none; color: white">حریم خصوصی</a>
-                        </li>
-                        <li class="">
-                            <a href="#!"></a>
+                            <a href="{{route('PrivacyPolicy')}}" class="text-center">حریم خصوصی</a>
                         </li>
                           <li>
-                          <a href="#!" class="text-center" style="text-decoration: none; color: white">همکاری با ما</a>
+                          <a href="#!" class="text-center">همکاری با ما</a>
                             </li>
                           <li>
-                           <a href="#!" class="text-center" style="text-decoration: none; color: white">هیات علمی</a>
+                           <a href="#!" class="text-center">هیات علمی</a>
                          </li>
+                       <li class="">
+                           <a href="#!">همکاری با ما</a>
+                       </li>
+                       <li class="">
+                           <a href="#!">هیئت علمی</a>
+                       </li>
+                       <li class="">
+                           <a href="#!">اساتید و مدرسین</a>
+                       </li>
                     </ul>
                 </div>
 
@@ -123,23 +118,19 @@
 
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-5 text-center text-white">ارتباط‌ با ما
+                    <h5 class="font-weight-bold text-uppercase mt-md-3 text-center text-white">ارتباط‌ با ما
                     </h5>
                     <ul class="list-unstyled mt-2">
                         <li class="">
-                            <a href="#!" style="text-decoration: none; color:white">learniaa@gmail.com</a>
+                            <a href="#!">learniaa@gmail.com</a>
                         </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
+
                         <li>
-                            <a href="#!" style="text-decoration: none; color:white">021-33195733</a>
+                            <a href="#!">021-33195733</a>
                         </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
+
                         <li>
-                            <a href="https://t.me/learniaa_support" target="_blank" style="text-decoration: none; color:white">
+                            <a href="https://t.me/learniaa_support" target="_blank">
                                 <span class="d-flex">
                                      learniaa_support@
                                     <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white"
@@ -147,14 +138,12 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="#!"></a>
-                        </li>
+
                     </ul>
                 </div>
 
                 <hr class="clearfix w-100 d-md-none">
-                <div class="col-lg-2 col-md-4 col-sm-4 col-12 text-center mt-md-4 mt-sm-4 mt-4 mx-sm-auto mx-auto">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-12 text-center mt-md-4 mt-sm-4 mx-sm-auto mx-auto">
                   <div class="" >
                   <!--  <img class="position-absolute" style="height: 200px; width: 200px; color: white"
                         src="{{asset('images/nemad.png')}}" alt="">  -->
@@ -177,7 +166,8 @@
             </div>
         </div>
     </div>
-    <hr class="mt-5 bg-white container">
-    <div style="height: 100px;"></div>
+    <hr class="mt-sm-1 mt-md-1 mt-lg-5 mt-1 bg-white container mx-auto">
+    <div style="height:50px;"></div>
+</div>
  </footer>
 <!--End Footer -->
