@@ -191,6 +191,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/course/delete/{id}', 'CourseController@destroy')->name('admin.course.delete');
     Route::get('/course/duplicate/{id}', 'CourseController@duplicate')->name('admin.course.duplicate');
 
+    Route::get('/error/index', 'ErrorController@index')->name('admin.errors.index');
+    Route::get('/error/show', 'ErrorController@show')->name('admin.errors.show');
+    Route::get('/error/delete', 'ErrorController@destroy')->name('admin.errors.delete');
 
 });
 
@@ -218,6 +221,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::post('/Notification/store/{id}', 'NotificationController@store')->name('user.Notification.store');
     Route::post('/Notification/edit/{id}', 'NotificationController@edit')->name('user.Notification.edit');
     Route::post('/Notification/update/{id}', 'NotificationController@update')->name('user.Notification.update');
+
 
 
 });

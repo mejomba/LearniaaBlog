@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('insertDataProductAdobeXD', 'ApiController@insertDataProduct_AdobeXD');
+Route::post('insertDataCourseAdobeXD', 'ApiController@insertDataCourse_AdobeXD');
+
 Route::get('posts', 'ApiController@index');
 Route::get('writers/{id}', 'ApiController@writer');
 Route::get('postsByCategory/{categoryOfPage}', 'ApiController@postsByCategory');

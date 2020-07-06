@@ -65,7 +65,7 @@
                         @if(isset($node->pic))
                         <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
                             <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="90px" alt="shape-1">
-                            <img class="shape-1" style="top:52%;left:45%"src="{{  Storage::url('tree/'.$node->pic) }}" width="50px" alt="{{ $node->name }}">
+                            <img class="shape-1" style="top:52%;left:45%"src="{{  Storage::url('tree/'.$node->icon) }}" width="50px" alt="{{ $node->name }}">
                             <i class="lni-cog"></i>
                         @else
                         <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">

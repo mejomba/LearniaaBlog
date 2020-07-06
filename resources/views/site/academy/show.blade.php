@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:145px!important">
-            <a href="{{ route('academy.detail')}}" class="btn btnLearniaa mt-4 d-inline"
+            <a href="{{ route('academy.course',['pk_tree' => $current_pk_tree])}}" class="btn btnLearniaa mt-4 d-inline"
              style="font-size:19px; "> لیست پخش  </a>     
         </div>
 
@@ -71,9 +71,9 @@
                             <div class="row text-center">
                                 <div class="col-12 col-md-12">
                     <span style="padding-right:5px"> @php
-                            if($product->price != 0)
+                            if($product['price'] != 0)
                             {
-                              echo '  '.number_format($product->price) ;
+                              echo '  '.number_format($product['price']) ;
 
                             }
                             else
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-12 col-md-12">
                                     @php
-                                        if($product->price != 0)
+                                        if($product['price'] != 0)
                                         {
                                           echo 'تومان';
                                         }
@@ -124,7 +124,7 @@
 
                  <div class="col-md-3 col-12" style="font-size:13px">
                    <!-- Payment -->
-                    @if($payment_status == "Payed" || $product->price == 0 )
+                    @if($payment_status == "Payed" || $product['price'] == 0 )
                         <div class="col-md-12 text-center" >
                             <a style="padding-bottom : 5px" _target="blank"
                                href="{{ $product['download_link'] }}"
@@ -164,7 +164,7 @@
                             style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
                             <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
                             @php
-                                if($payment_status == "Payed" || $product->price == 0 )
+                                if($payment_status == "Payed" || $product['price'] == 0 )
                             {
                                 echo $product['file'] ;
                             }
@@ -225,7 +225,12 @@
             <div class=" p-3 hover-style  container-fluid"
              style="margin-top:10px;text-align:justify;border :2px solid #20c5ba">
                 <h3>درباره دوره</h3>
+                @if($product['desc'] == null)
+                @php echo htmlspecialchars_decode($tree['description']) ; @endphp
+                @endif
+                @if($product['desc'] != null)
                 @php echo htmlspecialchars_decode($product['desc']) ; @endphp
+                @endif
             </div>
             <p></p>
             <p></p>

@@ -48,14 +48,15 @@
                           <td>
                           {{ $course['pk_course'] }} 
                           </td>
+
+                          <td>
+                          {{ $course->tree->name }} 
+                          </td>
                           
                           <td>
                           {{ $course->product->title }} 
                           </td>
                       
-                          <td>
-                          {{ $course->tree->name }} 
-                          </td>
                           <td>
                           {{ $course['sort'] }} 
                           </td>
@@ -69,10 +70,7 @@
                           </td>
 
 
-                          <td>
-                          <img src="{{  Storage::url('course/'.$course['pic']) }}" width="100px" height="60px" alt=" {{ $course['title'] }}" class="">
-                      
-                          </td>
+                          
 
                          
                          
@@ -86,7 +84,7 @@
 
                         <span style="font-size: 1.3rem;color:black">
                       <a class="btn" style="color:#00bcd4" href="{{ route('admin.course.duplicate', $course['pk_course']) }}"> 
-                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                      <img src="{{ asset('images/Template/duplicate.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
                        

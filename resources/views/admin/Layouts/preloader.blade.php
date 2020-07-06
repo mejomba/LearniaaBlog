@@ -11,7 +11,7 @@
         <span class="text-warning">a</span>
         <span class="text-warning">a</span>
     </p>
-</div><br>
+</div>
 <!--Preloader ends-->
 
 <script>

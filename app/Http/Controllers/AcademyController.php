@@ -37,7 +37,7 @@ class AcademyController extends Controller
     public function start_course(Request $request)
     {
         $pk_tree = $_GET['pk_tree'] ;
-        $courses = Course::where('pk_tree',$pk_tree)->get();
+        $courses = Course::where('pk_tree',$pk_tree)->orderby('sort','ASC')->get();
         $tree = Tree::where('pk_tree',$pk_tree)->first();
         $pk_AllCourse_product = $tree->pk_AllCourse_product;
 
@@ -59,7 +59,7 @@ class AcademyController extends Controller
         /* Payments */
 
         /* Update User History */
-        $is_history_save = History::where(['pk_users' => $user->pk_users , 'pk_tree' => $pk_tree])->first();
+      /*  $is_history_save = History::where(['pk_users' => $user->pk_users , 'pk_tree' => $pk_tree])->first();
         if($is_history_save == null)
         {
            
@@ -76,6 +76,7 @@ class AcademyController extends Controller
                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
             }
         }
+        */
        /* Update User History */
 
     
@@ -182,7 +183,7 @@ class AcademyController extends Controller
 
            
 
-            return view('site.academy.show',compact('product','payment_status','meta_keywords','nodes_previous','nodes_next'));
+            return view('site.academy.show',compact('tree','product','payment_status','meta_keywords','nodes_previous','nodes_next','current_pk_tree'));
 
     }
 

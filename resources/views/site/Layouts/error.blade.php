@@ -23,12 +23,12 @@
                                             @endif
 
                                             @if(Session::has('success'))
-                                            <input type="hidden" name="errors[]" value ="{{ $error }}" id="errors">
+                                            <input type="hidden" name="errors[]" value ="{{ Session::get('success')  }}" id="errors">
                                             <b style="color:green">پیام موفقیت: {{ Session::get('success') }} </b>
                                             @endif
 
                                             @if(Session::has('report'))
-                                            <input type="hidden" name="errors[]" value ="{{ $error }}" id="errors">
+                                            <input type="hidden" name="errors[]" value ="{{ Session::get('report') }}" id="errors">
                                             <b style="color:red">پیام خطا: {{ Session::get('report') }} </b>
                                             @endif
                                             </div>

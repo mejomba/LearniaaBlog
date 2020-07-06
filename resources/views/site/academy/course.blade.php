@@ -26,13 +26,13 @@
 <div class="col-md-5 col-sm-12" >
 
                  <div class="card shadow border-0 " >
-                    <div class="card-header" style="background-color:#20C5BA ">
-                            <div class="text-center">
-                            <h2 style="font-size:35px"> {{$tree->name}}</h2>
-                        </div>
-                    </div>
+                 {{--  <div class="card-header" style="background-color:#20C5BA "> --}}
+                    {{--  <div class="text-center"> --}}
+                        {{--    <h2 style="font-size:35px"> {{$tree->name}}</h2> --}}
+                        {{--  </div> --}}
+                            {{--  </div> --}}
                     <img class="card-img-top img-border"
-                    src="{{  Storage::url('tree/'.$tree->course['pic'])  }}"
+                    src="{{  Storage::url('tree/'.$tree->pic)  }}"
                       width="900px" height="330px" alt="Card image cap">
                       <div class="card-body text-center ">
                             <h5 class="card-title "></h5>
@@ -123,8 +123,13 @@
                                                 </div>
 
                                             <div class="col-md-4 col-12 text-center" style="margin-top:13px">
+                                            @if($course->product['price'] != 0)
                                             <span style="color:green">  {{$course->product['price']}} </span>
                                             <span style="color:green">   تومان </span>
+                                            @endif
+                                            @if($course->product['price'] == 0)
+                                            <span style="color:green">   رایگان </span>
+                                            @endif
                                             </div>
 
                                             <div class="col-md-2 col-12 text-center">

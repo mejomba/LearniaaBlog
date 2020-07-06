@@ -66,8 +66,8 @@
                 <hr class="clearfix w-100 d-md-none">
 
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">دسترسی سریع</h5>
-                    <ul class="list-unstyled mt-5">
+                    <h5 class="font-weight-bold text-uppercase mt-5 mb-3" style="color: white">دسترسی سریع</h5>
+                    <ul class="list-unstyled">
                         <li>
                             <a href="{{route('academy.index')}}" style="text-decoration: none; color: white">صفحه اصلی</a>
                         </li>
@@ -92,33 +92,40 @@
                     </ul>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
-                <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto ml-5">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">صفحات متداول</h5>
-                   <!-- <ul class="list-unstyled mt-5" > -->
+                <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
+                    <h5 class="font-weight-bold text-uppercase mt-5 text-white text-center">صفحات متداول</h5>
                    <ul class="list-unstyled " >
                         <li class="">
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="{{route('TermsOfService')}}" style="text-decoration: none; color: white">قوانین استفاده</a>
+                            <a href="{{route('TermsOfService')}}" class="text-center" style="text-decoration: none; color: white">قوانین استفاده</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
                         <li>
-                            <a href="{{route('PrivacyPolicy')}}" style="text-decoration: none; color: white">حریم خصوصی</a>
+                            <a href="{{route('PrivacyPolicy')}}" class="text-center" style="text-decoration: none; color: white">حریم خصوصی</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>
                         </li>
-                         
-                         
+                          <li>
+                          <a href="#!" class="text-center" style="text-decoration: none; color: white">همکاری با ما</a>
+                            </li>
+                          <li>
+                           <a href="#!" class="text-center" style="text-decoration: none; color: white">هیات علمی</a>
+                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">ارتباط‌ با ما
+
+
+
+                <hr class="clearfix w-100 d-md-none">
+                <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
+                    <h5 class="font-weight-bold text-uppercase mt-5 text-center text-white">ارتباط‌ با ما
                     </h5>
-                    <ul class="list-unstyled mt-5">
+                    <ul class="list-unstyled mt-2">
                         <li class="">
                             <a href="#!" style="text-decoration: none; color:white">learniaa@gmail.com</a>
                         </li>
@@ -145,8 +152,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 col-4 mx-auto mt-md-4 mt-sm-4 mt-4">
-                  <div class="float-left" >
+
+                <hr class="clearfix w-100 d-md-none">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-12 text-center mt-md-4 mt-sm-4 mt-4 mx-sm-auto mx-auto">
+                  <div class="" >
                   <!--  <img class="position-absolute" style="height: 200px; width: 200px; color: white"
                         src="{{asset('images/nemad.png')}}" alt="">  -->
 
@@ -154,10 +163,10 @@
 
                                 <style>#zarinpal{margin:auto} #zarinpal img {width:90px; height:90px}</style>
 
-                                <div class="col-md-12 col-8" id="zarinpal">
+                                <div class="col-md-12 col-12" id="zarinpal">
                                 <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
 
-                                <img id = 'jxlzfukzjzpeesgtesgtapfu' style = ' cursor:pointer;width:90px !important ; display: block!important;'
+                                <img id = 'jxlzfukzjzpeesgtesgtapfu' class="text-center mx-auto mt-4" style = ' cursor:pointer;width:90px !important ; display: block!important;'
                                 onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
                                     src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
                         </div>
