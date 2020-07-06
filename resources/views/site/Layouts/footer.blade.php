@@ -1,6 +1,6 @@
 <!-- Footer -->
-<footer id="footer" class="footer-area pt-120 " style="margin-top:8rem !important">
-<div class="container-fluid mt-5">
+<footer id="footer" class="footer-area pt-120 " style="margin-top:180px">
+<div class="container-fluid">
         <div class="subscribe-area wow fadeIn container mx-auto">
             <div class="row">
 
@@ -16,7 +16,7 @@
                             <input  type="hidden" name="name" id="name" value="ناشناس" class="form-control">
                             <input type="hidden" name="message" id="message" value="درخواست خبرنامه"  class="form-control">
 
-                            <input type="text" name="email" placeholder="ایمیل خود را وارد نمایید" style="direction: rtl!important;padding-right: 115px">
+                            <input type="text" class="ml-lg-5 ml-md-5 text-sm-center text-center" name="email" placeholder="ایمیل خود را وارد نمایید">
                             <button class="main-btn">ثبت نام</button>
                         </form>
                     </div>

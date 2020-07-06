@@ -3,8 +3,7 @@
     <title> لرنیا | وب سایت آموزش آنلاین </title>
     <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
     <meta name="keywords" content="آموزش آنلاین,آموزش مبتدی کامپیوتر,یادگیری,لرنیا">
-    <link rel="stylesheet" href="{{asset('css/site/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('css/site/slick-theme.css')}}">
+
 @endsection
 
 
@@ -12,7 +11,7 @@
 
             @section('text_landing')
 {{--                <img class="" src="{{asset('images/Header_Academy.png')}}" alt="">--}}
-                <h1 class="font-weight-bolder text-center font-weight-bolder h1" style="font-size:9vw"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
+                <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
                 <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
                 <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
                     <button class="btn fourth text-center">شروع کن</button>
@@ -20,7 +19,7 @@
             @endsection
 
             @section('pic_landing')
-                <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/header-teamwork.svg')}}" alt="">
+                <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/header-teamwork.svg')}}" alt="" style="margin-top: -15px">
             @endsection
 
 
@@ -29,165 +28,142 @@
 
 <!-- Video LEARN -->
 
-<section class="video d-flex justify-content-center mt-4" style="position: relative ; width: 100% ; height: auto">
-    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >
-    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">
-                <span></span>
-            </span>
-</section>
-
-<!-- Modal -->
-<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" style="border: none!important ; background-color: transparent;">
-            <div class="model-header">
-
-            </div>
-            <div class="modal-body d-flex justify-content-center" style="position: relative">
-                <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times"></i>
-                </button>
-                <video class="main-video" autoplay controls style="width:70vw!important;">
-                    <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-{{--<section class="main-video mt-5">--}}
-{{--    <div class="container-fluid">--}}
-{{--        <div class="row d-flex justify-content-center border-0 rounded-lg">--}}
-{{--            <video  class="main-video rounded-lg w-75" autoplay controls>--}}
-{{--                <source src="{{ asset('') }}">--}}
-{{--            </video>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+{{--<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100%">--}}
+{{--    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >--}}
+{{--    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">--}}
+{{--                <span></span>--}}
+{{--            </span>--}}
 {{--</section>--}}
 
+{{--<!-- Modal -->--}}
+{{--<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--        <div class="modal-content" style="border: none!important ; background-color: transparent;">--}}
+{{--            <div class="model-header">--}}
 
+{{--            </div>--}}
+{{--            <div class="modal-body d-flex justify-content-center align-items-center align-content-center">--}}
+{{--                <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <i class="fa fa-times"></i>--}}
+{{--                </button>--}}
+{{--                <video class="main-video" autoplay controls >--}}
+{{--                    <source class="Video" src="{{ asset('images/video.mp4') }}" type="video/mp4">--}}
+{{--                </video>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 
 <!-- END Video LEARN -->
 
-<!-- Customer Say -->
- <section id="testimonial" class="testimonial-area pt-120">
-  <div class="container">
-   <div class="row justify-content-center">
-    <div class="col-lg-5">
-      <div class="section-title text-center pb-40">
-    <div class="line mt-5 mx-auto rounded-lg"></div>
-         <h3 class="title mt-5">نظرات مشتریان</h3>
-     </div> <!-- section title -->
-  </div>
-  </div>
- <!-- row -->
-        <div class="row testimonial-active mt-5">
-            <div class="">
-                <div class="single-testimonial shadow-lg">
-                    <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="star">
-                            <ul class="">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
-                            nonu.</p>
-                    </div>
-                    <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">
-                        </div>
-                        <div class="author-content media-body">
-                            <h6 class="holder-name" style="color: darkgray">Jenny Deo</h6>
-                            <p class="text" style="color: darkgray">CEO, SpaceX</p>
-                        </div>
-                    </div>
-                </div> <!-- single testimonial -->
-            </div>
+<section class="row main-video d-flex justify-content-center mb-5">
 
-            <div class="">
-                <div class="single-testimonial shadow-lg">
-                    <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="star">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
-                            nonu.</p>
-                    </div>
-                    <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="">
-                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="">
-                        </div>
-                        <div class="author-content media-body">
-                            <h6 class="holder-name" style="color: darkgray">Marjin Otte</h6>
-                            <p class="text" style="color: darkgray">UX Specialist, Yoast</p>
-                        </div>
-                    </div>
-                </div> <!-- single testimonial -->
-            </div>
-            <div class="">
-                <div class="single-testimonial shadow-lg">
-                    <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="star">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        <p class="text" style="color: darkgray">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod
-                            tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam
-                            nonu.</p>
-                    </div>
-                    <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="author" src="{{asset('images/services-shape-3.svg')}}" alt="author">
-                        </div>
-                        <div class="author-content media-body">
-                            <h6 class="holder-name" style="color: darkgray">David Smith</h6>
-                            <p class="text" style="color: darkgray">CTO, Alphabet</p>
-                        </div>
-                    </div>
-                </div> <!-- single testimonial -->
-            </div>
-        </div> <!-- row -->
-    </div> <!-- container -->
+    <a href="#video3" class="afterglow text-center">
+        <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
+        <i class="fa fa-play fa-4x text-center"></i>
+    </a>
+    <video id="video3" controls autoplay width="640" height="360" preload="none">
+        <source src="{{ asset('images/video.mp4') }}" type="video/mp4" />
+    </video>
 </section>
-<!-- END Customer Say -->
 
+
+<!-- Customer Say -->
+<div class="row justify-content-center">
+    <div class="col-lg-5">
+        <div class="section-title text-center pb-40">
+            <div class="line mt-5 mx-auto rounded-lg"></div>
+            <h3 class="title mt-5">نظرات مشتریان</h3>
+        </div> <!-- section title -->
+    </div>
+</div>
+<section class="slider">
+
+    <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <i class="fa fa-quote-right float-right"></i>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+    </div>
+
+    <div class="single-comment text-center pb-3 pt-3 px-3  m-5" style="height: auto ; width:300px">
+        <i class="fa fa-quote-right float-right"></i>
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+    </div>
+
+    <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
+        <i class="fa fa-quote-right float-right"></i>
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+    </div>
+    <div class="single-comment text-center pb-3 pt-3 px-3 m-5" style="height: auto ; width:300px">
+        <i class="fa fa-quote-right float-right"></i>
+        <span class="float-left">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </span>
+        <p class="comments mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+        </p>
+        <p class="float-right">
+            <span class="username">Jenny Doe</span>
+        </p>
+        <p class="float-right">
+            <span class="">CEO</span>
+        </p>
+        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+    </div>
+
+</section>
 
 <!-- Blog Posts -->
 <section id="testimonial" class="testimonial-area pt-120">
@@ -256,6 +232,8 @@
 
             </div>
         </div>
+        <!-- Customer Say ends-->
+
 
 </div> <!-- container -->
 </section>
@@ -313,7 +291,7 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                             <img src="{{ asset('images/Template/user_login.svg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
@@ -348,16 +326,52 @@
     </div> <!-- container -->
 </section>
 <!-- END Customer Say -->
+
+
 <script>
-    $('.slide').slick({
+
+    $('.slider').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1 ,
         autoplay : true ,
         arrows : false ,
         dots:true ,
+        draggable:true,
+        autoplaySpeed: 3000 ,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint:980,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll:1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint:730,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll:1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+
+        ]
 
     }) ;
+
 </script>
 
 @endsection

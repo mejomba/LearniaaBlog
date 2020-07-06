@@ -7,103 +7,129 @@
 @section('content')
 
 <!-- Blog Posts -->
-<section id="testimonial" class="testimonial-area pt-120">
-    <div class="container-fluid">
+<section class="container-fluid">
 
-    {{--    <div class="row justify-content-center"> --}}
-        {{--     <div class="col-lg-5"> --}}
-            {{--      <div class="section-title text-center pb-40"> --}}
-                {{--       <h3 class="title mt-5">آخرین مطالب</h3> --}}
-                    {{--     </div> <!-- section title --> --}}
-                {{--     </div> --}}
-            {{--  </div>  --}}
+{{--        <div class="row justify-content-center">--}}
+{{--             <div class="col-lg-5">--}}
+{{--                  <div class="section-title text-center pb-40">--}}
+{{--                       <h3 class="title mt-5">آخرین مطالب</h3>--}}
+{{--                         </div> <!-- section title -->--}}
+{{--                     </div>--}}
+{{--              </div>--}}
 
 
-         <div class="container-fluid">
-        <div class="row d-flex ">
-        <div class="col-md-1">
-</div>
-<div class="col-md-5 col-sm-12" >
 
-                 <div class="card shadow border-0 " >
-                    <div class="card-header" style="background-color:#20C5BA ">
-                            <div class="text-center">
-                            <h2 style="font-size:35px"> {{$tree->name}}</h2>
-                        </div>
+{{--   <div class="row" style="margin-top:80px">--}}
+{{--       <div class="col-lg-8 col-md-10 col-sm-10 col-10 offset-lg-0 offset-md-0 offset-sm-1 offset-1">--}}
+{{--           <div class="col-12 p-0">--}}
+{{--               <h3 class="text-center" style="background-color:#20C5BA ">{{$tree->name}}</h3>--}}
+{{--           </div>--}}
+{{--           <div class="col-12 p-0">--}}
+{{--               <img src="{{asset('images/testimonials-background.jpg')}}" alt="" class="w-100 p-0 d-block">--}}
+{{--           </div>--}}
+{{--           <div class="row bg-white pt-3 mx-auto">--}}
+{{--               <div class="col-11 mx-auto border rounded mb-3">--}}
+{{--                   <div class="row">--}}
+{{--                       <div class="col-lg-7 col-md-9 col-sm-12 col-12">--}}
+{{--                           <span class="mt-4">پکیج کامل نقشه راه کامپیوتر برای مبتدیان</span>--}}
+{{--                       </div>--}}
+{{--                       <div class="col-lg-2 col-md-3 col-sm-6 col-6">--}}
+{{--                           <span class="mt-4">2500</span>--}}
+{{--                       </div>--}}
+{{--                       <div class="col-lg-3 col-md-12 col-sm-6 col-6">--}}
+{{--                           <input type="button" class="btn btn-info rounded-lg mx-md-auto float-right m-3" value="خرید">--}}
+{{--                       </div>--}}
+{{--                   </div>--}}
+{{--               </div>--}}
+{{--           </div>--}}
+
+{{--       </div>--}}
+
+
+{{--   </div>--}}
+
+    <div class="row">
+        <div class="col-lg-6 col-md-10 col-sm-12 col-12" >
+            <div class="card shadow border-0" style="margin-top: 90px" >
+                <div class="card-header" style="background-color:#20C5BA ">
+                    <div class="text-center">
+                        <h2 style="font-size:30px"> {{$tree->name}}</h2>
                     </div>
-                    <img class="card-img-top img-border"
-                    src="{{  Storage::url('tree/'.$tree->course['pic'])  }}"
-                      width="900px" height="330px" alt="Card image cap">
-                      <div class="card-body text-center ">
-                            <h5 class="card-title "></h5>
-                            <p class="card-text">
-                            </p>
-                <!-- Full Pack Sale -->
+                </div>
+                <img class="card-img-top img-border"
+                     src="{{  Storage::url('tree/'.$tree->course['pic'])  }}"
+                     width="900px" height="330px" alt="Card image cap">
+                <div class="card-body text-center ">
+                    <h5 class="card-title "></h5>
+                    <p class="card-text">
+                    </p>
+                    <!-- Full Pack Sale -->
                 </div>
 
                 <div class="border p-3 hover-style ml-2 mr-2 mb-3" style="margin-bottom:5px;border: solid 1px grey">
-                <form action="{{route('product.pay', $tree->pk_AllCourse_product )}}" method="POST">
-                    <div class="row">
-                        @csrf
-                        <input type="hidden" name="LocationUser" value="Academy_Product">
-                        <input type="hidden" name="NameProduct" value="All_Cource">
-                        <div class="col-md-6 col-12">
-
-                            <span style="font-size:18px;text-align:center;color:black">پکیج کامل {{$tree->name}} </span>
-                        </div>
-
-                        @if(Auth::check())
-                            @if($payment_status == "Payed" )
-                            <div class="col-md-3 col-12 text-center" style="margin-top:15px ; border-radius: 5px">
-                            <span style="color:green"> {{$tree->product->price}} </span>
-                            <span style="color:green">   تومان </span>
+                    <form action="{{route('product.pay', $tree->pk_AllCourse_product )}}" method="POST">
+                        <div class="row">
+                            @csrf
+                            <input type="hidden" name="LocationUser" value="Academy_Product">
+                            <input type="hidden" name="NameProduct" value="All_Cource">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12 ">
+                                <span class="text-center" style="font-size:18px;text-align:center;color:black">پکیج کامل {{$tree->name}} </span>
                             </div>
-                            <div class="col-md-3 col-12 text-center">
-                                    <button class="btn btn-warning" disabled
-                                            type="submit"
-                                            style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
+
+                            @if(Auth::check())
+                                @if($payment_status == "Payed" )
+                                    <div class="col-md-3 col-12 text-center" style="margin-top:15px ; border-radius: 5px">
+                                        <span style="color:green"> {{$tree->product->price}} </span>
+                                        <span style="color:green">   تومان </span>
+                                    </div>
+                                    <div class="col-md-3 col-12 text-center">
+                                        <button class="btn btn-warning" disabled
+                                                type="submit"
+                                                style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
                                         <span
                                             style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
-                                    </button>
-                                </div>
+                                        </button>
+                                    </div>
+                                @else
+                                    <div class="col-md-3 col-12 text-center" style="margin-top:15px">
+                                        <span style="color:green">{{$tree->product->price}} </span>
+                                        <span style="color:green">   تومان </span>
+                                    </div>
+                                    <div class="col-md-3 col-12 text-center">
+                                        <button class="btn btn-warning "
+                                                type="submit"
+                                                style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
+                                        <span
+                                            style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
+                                        </button>
+                                    </div>
+                                @endif
                             @else
-                            <div class="col-md-3 col-12 text-center" style="margin-top:15px">
-                            <span style="color:green">{{$tree->product->price}} </span>
-                            <span style="color:green">   تومان </span>
-                            </div>
-                            <div class="col-md-3 col-12 text-center">
+                                <div class="col-md-3 col-12 text-center" style="margin-top:25px">
+                                    <span style="color:green">{{$tree->product->price}} </span>
+                                    <span style="color:green">   تومان </span>
+                                </div>
+                                <div class="col-md-3 col-12 text-center">
                                     <button class="btn btn-warning "
                                             type="submit"
                                             style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
-                                        <span
-                                            style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
+                                    <span
+                                        style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
                                     </button>
                                 </div>
                             @endif
-                        @else
-                        <div class="col-md-3 col-12 text-center" style="margin-top:25px">
-                            <span style="color:green">{{$tree->product->price}} </span>
-                            <span style="color:green">   تومان </span>
-                            </div>
-                            <div class="col-md-3 col-12 text-center">
-                                <button class="btn btn-warning "
-                                        type="submit"
-                                        style="border-radius:20px;background-color:#30D533;border-color:#30D533;margin-bottom:5px;margin-top:10px">
-                                    <span
-                                        style="margin-top:5px;font-size:16px;color: #FFFFFF;line-height:0;">خرید</span>
-                                </button>
-                            </div>
-                        @endif
-                    </div>
-                </form>
-            </div>
-      <!-- End OF Full Pack Sale -->
-
                         </div>
-                    </div>
+                    </form>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="row " style="margin-top:15px">
+
+
+{{--================================TimeLine starts===========================--}}
+
+                <div class="row " style="margin-top:60px">
                     <div class="col-md-8 card p-3 hover-style ml-auto mr-auto"  >
                     <ul class="timeline">
                     @foreach($courses as $course)
@@ -171,17 +197,18 @@
                                 </div>
                             </div>
                         <!-- Data -->
+                            </div>
                        </li>
+
                     @endforeach
                 </ul>
 
                </div>
              </div>
+{{--======================timeLine ends===================--}}
 
-            </div>
-        </div>
 
-</div> <!-- container -->
+ <!-- container -->
 </section>
 <!-- End BLog Posts -->
 

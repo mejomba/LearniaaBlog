@@ -1,7 +1,7 @@
 <div class="banner-bg" style="direction: rtl">
     <img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
 {{--    <img src="{{asset('images/header-teamwork.svg')}}" class="learn-bg" alt="">--}}
-<nav class="navbar navbar-expand-md mx-auto text-center fixed-top" style="z-index: 100000">
+<nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
     </button>
@@ -14,6 +14,9 @@
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >blog</a></li>
+{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.show')}}" >show</a></li>--}}
+{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.detail')}}" >detail</a></li>--}}
         </ul>
     </div>
     <div class="search">
@@ -89,25 +92,48 @@
 </div>
 
 <script>
-    window.onscroll = function() {scrollFunction()};
-    var navbar = document.querySelector('.navbar');
-    // console.log(navbar);
-    function scrollFunction() {
-        if ( document.documentElement.scrollTop > 20)
-            navbar.style.backgroundColor = "#20c5ba";
-        else
-            navbar.style.backgroundColor = "transparent";
-    }
+    // var navbar = document.getElementById('navbar');
+    // window.onscroll = function() {scrollFunction()};
+    // function scrollFunction() {
+    //     if ( document.documentElement.scrollTop > 20)
+    //         navbar.style.backgroundColor = "#20c5ba";
+    //     else
+    //         navbar.style.backgroundColor = "transparent";
+    // }
 
-    $("button").on("click",function () {
+
+    $(document).ready(function(){
+        $(window).scroll(function() { // check if scroll event happened
+            if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+                $(".navbar").css("background-color", "#20c5ba"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+            } else {
+                $(".navbar").css("background-color", "transparent"); // if not, change it back to transparent
+            }
+        });
+    });
+
+
+    // $(document).ready(function(){
+    //     $(window).scroll(function(){
+    //         var scroll = $(window).scrollTop();
+    //         if (scroll > 50){}else{ $(".text").css("color" , "black");}}))
+    // $(document).ready(function(){
+    //     if($(".alert").css("display","block") === true)
+    //     {
+    //         $('.nav').css('margin-top',"30px");
+    //     }
+    // })
+
+
+    $(".navbar-toggler").on("click",function () {
 
         if($('.navbar-collapse').hasClass('show'))
         {
-            $('ul').css("backgroundColor","transparent")
+            $('.navbar-nav').css("backgroundColor","transparent")
         }
         else
         {
-            $('ul').css("backgroundColor","white")
+            $('.navbar-nav').css("backgroundColor","white")
         }
     });
 
