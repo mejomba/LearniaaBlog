@@ -12,6 +12,7 @@ use Validator;
 use App\User;
 use App\Search;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Http\File;
 
 
@@ -130,8 +131,17 @@ class PostController extends Controller
 
          $pic = request()->file('pic_content');
          $pic_name = $pic->getClientOriginalName();
-         $path = Storage::putFileAs( 'post', $pic, request()->title);
-         $new_instance->pic_content = request()->title ;
+         $mimeType = $pic->getMimeType();
+          if($mimeType == 'image/jpeg')
+          {
+            $path = Storage::putFileAs( 'post', $pic, request()->title.'.jpg');
+            $new_instance->pic_content = request()->title.'.jpg' ;
+          }  
+          elseif($mimeType == 'image/png')
+          {
+            $path = Storage::putFileAs( 'post', $pic, request()->title.'.png');
+            $new_instance->pic_content = request()->title.'.png' ;
+          }
 
          if(request()->pdf_content)
          {
@@ -192,6 +202,55 @@ class PostController extends Controller
             );
             $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
             $new_instance->metatag=json_encode($metatags);
+
+            $author = User::select('name')->where('pk_users',request()->pk_users)->first();
+            $now = Carbon::now();
+            
+            $schema = [
+              "@context"=> "https://schema.org",
+              "@type"=> "BlogPosting",
+              "headline" => request()->title,
+              "image_url" => Storage::url('post/'.$pic_name),
+              "description" => request()->desc_short,
+              "author_type" => "person",
+              "author" => $author->name,
+              "publisher_type" => "Organization",
+              "publisher_name" => "learnia",
+              "logo_type" =>"ImageObject",
+              "logo_url" => "https://learniaa.com/images/Template/Circlelogo.svg",
+              "datePublished" => $now->toDateString(),
+              "dateModified" =>$now->toDateString()
+          ];
+
+            $new_instance->schema_markup = json_encode($schema);
+
+
+            if(request()->videocheck == 'yes')
+            {
+              $video = 'yes';
+              $new_instance->video = 'yes';
+              $new_instance->address_video = request()->address_video;
+              $videoschema=[
+                "@context"=> "https://schema.org",
+                "@type"=> "VideoObject",
+                "name"=>  request()->title,
+                "description"=>request()->desc_short,
+                "thumbnailUrl"=> Storage::url('post/'.$pic_name),
+                "uploadDate" => $now->toDateString()
+
+              ];
+
+              $new_instance->video_schema = json_encode($videoschema);
+
+            }else{
+
+              $video = 'no';
+              $new_instance->video = 'no';
+
+            };
+
+
+
             if(  $new_instance->save())
             {
                 return redirect(route('admin.post.index'))->with('success','پست با موفقیت ایجاد شد ');
@@ -344,10 +403,20 @@ class PostController extends Controller
 
              if(request()->pic_content)
              {
-                    $pic = request()->file('pic_content');
-                    $pic_name = $pic->getClientOriginalName();
-                    $path = Storage::putFileAs( 'post', $pic, $pic_name);
-                    $post->pic_content = $pic_name ;
+                $pic = request()->file('pic_content');
+                $pic_name = $pic->getClientOriginalName();
+                $mimeType = $pic->getMimeType();
+               if($mimeType == 'image/jpeg')
+               {
+                 $path = Storage::putFileAs( 'post', $pic, request()->title.'.jpg');
+                 $post->pic_content = request()->title.'.jpg' ;
+               }  
+               elseif($mimeType == 'image/png')
+               {
+                 $path = Storage::putFileAs( 'post', $pic, request()->title.'.png');
+                 $post->pic_content = request()->title.'.png' ;
+               }
+                   
              }
 
              if(request()->pdf_content)
@@ -381,6 +450,49 @@ class PostController extends Controller
               {
                 $post->extras =  json_encode($data_extras,false) ;
               }
+
+
+              $author = User::select('name')->where('pk_users',request()->pk_users)->first();
+              $now = Carbon::now();
+              $schema = [
+                  "@context"=> "https://schema.org",
+                  "@type"=> "BlogPosting",
+                  "headline" => request()->title,
+                  "image_url" => Storage::url('post/'.$pic_name),
+                  "description" => request()->desc_short,
+                  "author_type" => "person",
+                  "author" => $author->name,
+                  "publisher_type" => "Organization",
+                  "publisher_name" => "learnia",
+                  "logo_type" =>"ImageObject",
+                  "logo_url" => "https://learniaa.com/images/Template/Circlelogo.svg",
+                  "datePublished" => request()->create_at,
+                  "dateModified" =>$now->toDateString()
+              ];
+
+              if(request()->videocheck == 'yes')
+              {
+                $post->video = 'yes';
+                $post->address_video = request()->address_video;
+                $videoschema=[
+                  "@context"=> "https://schema.org",
+                  "@type"=> "VideoObject",
+                  "name"=>  request()->title,
+                  "description"=>request()->desc_short,
+                  "thumbnailUrl"=> Storage::url('post/'.$pic_name),
+                  "uploadDate" => $now->toDateString()
+  
+                ];
+  
+                $post->video_schema = json_encode($videoschema);
+  
+
+              }else{
+
+                  $post->video = 'no';
+  
+              };
+  
 
                // Save To database 
 
