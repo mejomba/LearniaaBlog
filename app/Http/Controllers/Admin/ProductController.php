@@ -11,6 +11,7 @@ use App\Learner;
 use App\Category;
 use App\User;
 use App\Search;
+use Carbon\Carbon;
 use Validator;
 use Illuminate\Http\File;
 
@@ -126,6 +127,24 @@ class ProductController extends Controller
              $new_instance->download_link = request()->download_link;
             
              $new_instance->metatag=json_encode($metatags);
+            
+             $now = Carbon::now();
+            
+             $schema = [
+               "@context"=> "https://schema.org",
+               "@type"=> "Product",
+               "name" => request()->title,
+               "image" => Storage::url('product/'.$pic_name),
+               "description" => request()->desc,
+               "offer_type" => "Offer",
+               "priceCurrency" => "IRR",
+               "price" => request()->price,
+               "itemCondition" =>"https://schema.org/NewCondition",
+               "datePublished" => $now->toDateString(),
+               "dateModified" =>$now->toDateString()
+           ];
+ 
+             $new_instance->schema_markup = json_encode($schema);
 
                 if(  $new_instance->save())
                 {
@@ -263,6 +282,24 @@ class ProductController extends Controller
              $product->file = request()->file;
              $product->preview = request()->preview;
              $product->download_link = request()->download_link;
+
+             $now = Carbon::now();
+            
+             $schema = [
+               "@context"=> "https://schema.org",
+               "@type"=> "Product",
+               "name" => request()->title,
+               "image" => Storage::url('product/'.$pic_name),
+               "description" => request()->desc,
+               "offer_type" => "Offer",
+               "priceCurrency" => "IRR",
+               "price" => request()->price,
+               "itemCondition" =>"https://schema.org/NewCondition",
+               "datePublished" => $product->created_at,
+               "dateModified" =>$now->toDateString()
+           ];
+           $new_instance->schema_markup = json_encode($schema);
+
              
                 if($product->save())
                 {
