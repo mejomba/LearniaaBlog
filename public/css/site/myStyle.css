@@ -177,6 +177,36 @@ btn-loginSign:focus
 {
     outline: none!important;
 }
+
+
+/*#search-page*/
+/*{*/
+/*    background-color: #282829;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0!important;*/
+/*    bottom: 0;*/
+/*    z-index: 9999999998;*/
+/*    opacity: 0;*/
+/*}*/
+
+
+.search
+{
+    position: fixed;
+    left: 160px;
+    top:20px;
+    cursor: pointer;
+    transition: 200ms;
+    color: blue;
+}
+.search:hover
+{
+    color: lightgrey;
+}
+
+
 /*================navbar ends===========================*/
 
 .learn-bg {
@@ -677,12 +707,12 @@ p {
     right: 50%;
 }
 
-.userBoxes
-{
-    margin-top: 100px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-}
+/*.auth-card*/
+/*{*/
+/*    margin-top: 100px!important;*/
+/*    border-bottom-right-radius: 50px!important;*/
+/*    border-bottom-left-radius: 50px!important;*/
+/*}*/
 
 
 .preloader .loader .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator .ytp-spinner-right {

@@ -63,11 +63,11 @@
 
                 <div class="col-12 mx-auto text-center">
 
-                  <h3 style="font-size:25px" >
-                        <span>
-                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
+                  <h3>
+                        <span style="font-size: 20px ; font-weight: 900">
+                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
                     بخوانید ، بدانید ، لذت ببرید
-                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="30px" width="30px">
+                    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
                         </span>
                   </h3>
 

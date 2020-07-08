@@ -8,7 +8,9 @@
 
         <!---- RoadMap Help Section --->
 <div class="row" style="padding-left: 10px!important">
-     <div class="col-md-2 col-12" style="padding-top:15px">
+     <div class="col-md-2 col-12" style="padding-top:15px; margin-top: 100px!important;
+    border-bottom-right-radius: 50px!important;
+    border-bottom-left-radius: 50px!important;">
             @if(isset($nodes_previous['pk_product']))
                 <a href="{{ route('academy.show', ['id' => $nodes_previous['pk_product'] , 'desc' =>  $nodes_previous['name'] ]) }}"
                    class="btn fourth mt-4 d-inline" style="font-size:19px" >

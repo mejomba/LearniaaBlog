@@ -9,7 +9,9 @@
 @section('content')
  <!-- Section -->
  <div class="row">
-<div class="col-lg-4 col-md-6 col-sm-7 col-9 offset-1">
+<div class="col-lg-4 col-md-6 col-sm-7 col-9 offset-1" style=" margin-top: 100px!important;
+    border-bottom-right-radius: 50px!important;
+    border-bottom-left-radius: 50px!important;">
               <div class="col-12">
             <div class="card shadow border-0" style="border-bottom-right-radius:60px ;border-bottom-left-radius:60px; ">
               <div class="card-header" style="background-color:#20C5BA ">

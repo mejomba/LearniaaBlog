@@ -6,7 +6,9 @@
 @section('content')
 <div class="row ">
 
-<div class="col-lg-4 col-md-7 col-sm-8 col-9 offset-1 userBoxes" >
+<div class="auth-card col-lg-4 col-md-7 col-sm-8 col-9 offset-1 " style=" margin-top: 100px!important;
+    border-bottom-right-radius: 50px!important;
+    border-bottom-left-radius: 50px!important;" >
 <div class="card shadow border-0">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h3>ثبت نام کاربران</h3></div>

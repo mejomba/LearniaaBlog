@@ -49,7 +49,9 @@
 {{--   </div>--}}
 
     <div class="row">
-        <div class="col-lg-6 col-md-10 col-sm-12 col-12" >
+        <div class="col-lg-6 col-md-10 col-sm-12 col-12" style=" margin-top: 100px!important;
+    border-bottom-right-radius: 50px!important;
+    border-bottom-left-radius: 50px!important;">
             <div class="card shadow border-0" style="margin-top: 90px" >
                 <div class="card-header" style="background-color:#20C5BA ">
                     <div class="text-center">

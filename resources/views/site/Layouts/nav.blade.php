@@ -14,19 +14,13 @@
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >blog</a></li>
-{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.show')}}" >show</a></li>--}}
-{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.detail')}}" >detail</a></li>--}}
+{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >blog</a></li>--}}
         </ul>
     </div>
-    <div class="search">
-        <div class="search">
-{{--            <i class="fa fa-search fa-2x"></i>--}}
-        </div>
-    </div>
-{{--             <a href="{{route('reset.showcallbackloginform')}}">--}}
-{{--                <input type="button" class="btn-loginSign" value="ورود/ثبت نام" />--}}
-{{--             </a>--}}
+{{--    <div class="search">--}}
+{{--            <i class="fa fa-search"><span class="ml-1">جستجو کنید</span></i>--}}
+{{--    </div>--}}
+
     <ul class="">
         @guest
             @if (Route::has('register'))
@@ -91,6 +85,16 @@
 </nav>
 </div>
 
+{{--<section id="search-page">--}}
+{{--    <div class="d-flex justify-content-center">--}}
+{{--        <input type="text" class="form-group w-50 mt-3">--}}
+{{--        <i class="fa fa-search"></i>--}}
+{{--        <i class="fa fa-times times-icon"></i>--}}
+{{--    </div>--}}
+
+{{--</section>--}}
+
+
 <script>
     // var navbar = document.getElementById('navbar');
     // window.onscroll = function() {scrollFunction()};
@@ -100,7 +104,6 @@
     //     else
     //         navbar.style.backgroundColor = "transparent";
     // }
-
 
     $(document).ready(function(){
         $(window).scroll(function() { // check if scroll event happened
@@ -153,5 +156,6 @@
             icon.addClass('fa-bars');
             status = 0 ;
         }
-    })
+    });
+
 </script>
