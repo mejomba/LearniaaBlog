@@ -8,8 +8,17 @@
 
     <div class="row">
         <div class="col-lg-6 col-md-10 col-sm-12 col-12"
-         style=" margin-top: 100px!important; border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
+         style=" margin-top: 35px!important; border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
         
+         <div class="row" >
+                <div class="col-md-12  ml-auto mr-auto text-center"   >
+                    
+                <a href="{{route('academy.detail')}}">
+                  <button class="btn btn-secondary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
+                </a>
+              </div>
+          </div>    
+
             <div class="card shadow border-0"  >
                 <div class="card-header" style="background-color:#20C5BA ">
                     <div class="text-center">
@@ -43,10 +52,6 @@
             <div class="row" >
                     <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:10px"  >
                     
-                <a href="{{route('academy.detail')}}">
-                  <button class="btn btn-secondary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
-                </a>
-              
                     <a href="{{route('academy.course',['pk_tree'=>$tree->pk_tree])}}"> 
                             <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع یادگیری</button>
                             </a> 
@@ -64,7 +69,7 @@
 
   <!-- Card -->
   @foreach($nodes as $node)
-                <div class="col-lg-4 col-md-6 col-sm-8 col-11">
+                <div class="col-lg-4 col-md-6 col-sm-8 col-11 ml-auto mr-auto">
                     <div class="single-services text-center mt-3 wow fadeIn" data-wow-duration="1s"
                          data-wow-delay="0.5s"
                          style="border: 2px solid #20c5ba; border-radius: 10px;">
@@ -91,7 +96,7 @@
                             <div class="col-12 col-md-12">
                            
                             <a href="{{route('academy.road',['pk_tree'=>$node->pk_tree])}}"> 
-                            <button class="btn fourth mt-4 d-inline" style="font-size:15px">!آره همین</button>
+                            <button class="btn fourth mt-4 d-inline" style="font-size:15px">آره همین!</button>
                             </a>
 
                             </div>

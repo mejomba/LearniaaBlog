@@ -25,18 +25,7 @@ style="margin-top: -15px" style="width:500px;height:469px">
 @endsection
 
 
-
-
-
-
-
-
-
-
-
-
 @section('content')
-
 
 
 <!-- Blog Posts -->

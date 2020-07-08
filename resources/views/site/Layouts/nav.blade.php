@@ -15,7 +15,7 @@
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >بلاگ</a></li>
+         <!--   <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >بلاگ</a></li> -->
 
         </ul>
     </div>
@@ -58,7 +58,6 @@
                         </li>
                      
                     </ul>
-
 
                     <!-- USER PANEL -->
                     <ul class="navbar-nav col-md-2 col-8 offset-lg-2" dir="ltr">
@@ -109,7 +108,8 @@
             @endif
         @else
             <li class="nav-item dropdown" style="border-radius:1.2rem; position:absolute;top: 5px ; left: 6px">
-                <a id="navbarDropdown" class="nav-link d-flex justify-content-center profileMenu bg-white" href="#" role="button"
+                <a id="navbarDropdown" class="nav-link d-flex justify-content-center profileMenu bg-white"
+                 href="#" role="button"
                    style=" border-radius: 50%; width: 50px; height: 50px;"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <i class="fa fa-user fa-2x text-info"></i>
@@ -158,18 +158,7 @@
 </nav>
 </div>
 
-{{--<section id="search-page">--}}
-{{--    <div class="d-flex justify-content-center">--}}
-{{--        <input type="text" class="form-group w-50 mt-3">--}}
-{{--        <i class="fa fa-search"></i>--}}
-{{--        <i class="fa fa-times times-icon"></i>--}}
-{{--    </div>--}}
-
-{{--</section>--}}
-
-
 <script>
-   
     $(document).ready(function(){
         $(window).scroll(function() { 
             if ($(document).scrollTop() > 50) { 
@@ -209,5 +198,4 @@
             status = 0 ;
         }
     });
-
 </script>
