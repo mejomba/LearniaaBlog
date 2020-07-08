@@ -285,6 +285,59 @@
 
 
           <!-- Picture Box -->
+         
+         <!-- Picture Box -->
+
+
+
+        <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>ویدئو دارد ؟</span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                  <select name="videocheck" class="form-control">
+                                  @if($post['video'] == 'yes')
+                                  <option value="{{ 'yes' }}">بله</option>
+                                  <option value="{{ 'no' }}"> خیر</option>
+                                  @else
+                                  <option value="{{ 'no' }}"> خیر</option>
+                                  <option value="{{ 'yes' }}">بله</option>
+                                  @endif
+                                  </select>
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                  
+            <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <textarea name="address_video" id="video" type="text" class="form-control" placeholder="ادرس ویدئو">{{$post['address_video']}}</textarea>
+                        </div>
+           
+
+            </div>
+        </div>
+
+
+      
+
+
+
+
+          <!-- Picture Box -->
           <div class="col-md-4">
         <div class="row">
 
@@ -304,9 +357,7 @@
             
    
         </div>
-        </div>
-         <!-- Picture Box -->
-
+        </div>                        
 
        
 
