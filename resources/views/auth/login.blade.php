@@ -7,7 +7,9 @@
     <section class="login-users">
         <div class="row" >
 
-            <div class="col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 offset-sm-2 offset-2 text-center bg-white shadow-lg userBoxes">
+            <div class="auth-card col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 offset-sm-2 offset-2 text-center bg-white shadow-lg" style=" margin-top: 100px!important;
+    border-bottom-right-radius: 50px!important;
+    border-bottom-left-radius: 50px!important;">
                 <div class="row">
                     <div class="col-12 p-0">
                         <h3 class="p-2" style="background-color:#20C5BA">ورود کاربران</h3>

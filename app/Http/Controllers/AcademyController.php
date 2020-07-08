@@ -107,6 +107,17 @@ class AcademyController extends Controller
     }
     
 
+    public function road(Request $request)
+    {
+        $pk_tree = $_GET['pk_tree'] ;
+        $tree = Tree::where('pk_tree',$pk_tree)->first();
+
+        $nodes = Tree::where( ['pk_parent' => $pk_tree , 'level' => $tree->level + 1 ] )->get();
+
+        return view('site.academy.road',compact('tree','nodes'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -158,6 +158,16 @@
 </nav>
 </div>
 
+{{--<section id="search-page">--}}
+{{--    <div class="d-flex justify-content-center">--}}
+{{--        <input type="text" class="form-group w-50 mt-3">--}}
+{{--        <i class="fa fa-search"></i>--}}
+{{--        <i class="fa fa-times times-icon"></i>--}}
+{{--    </div>--}}
+
+{{--</section>--}}
+
+
 <script>
    
     $(document).ready(function(){
@@ -198,5 +208,6 @@
             icon.addClass('fa-bars');
             status = 0 ;
         }
-    })
+    });
+
 </script>
