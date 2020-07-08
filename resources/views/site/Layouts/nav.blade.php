@@ -1,3 +1,4 @@
+ 
 <div class="banner-bg" style="direction: rtl">
     <img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
 {{--    <img src="{{asset('images/header-teamwork.svg')}}" class="learn-bg" alt="">--}}
@@ -14,36 +15,27 @@
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >blog</a></li>
-{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.show')}}" >show</a></li>--}}
-{{--            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.detail')}}" >detail</a></li>--}}
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >بلاگ</a></li>
+
         </ul>
     </div>
     <div class="search">
         <div class="search">
-{{--            <i class="fa fa-search fa-2x"></i>--}}
+
         </div>
     </div>
-{{--             <a href="{{route('reset.showcallbackloginform')}}">--}}
-{{--                <input type="button" class="btn-loginSign" value="ورود/ثبت نام" />--}}
-{{--             </a>--}}
+
     <ul class="">
         @guest
             @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link btn btn-loginSign" target="_parent" rel="tooltip" title=""
+                    <a class="nav-link btn fourth" target="_parent" rel="tooltip" title=""
                        data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
-                        <span>ثبت نام / ورود</span>
+                        <span>شروع کن</span>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse nav-navbar-style"  id="navbar-default">
-{{--                    <div class="navbar-collapse-header">--}}
-{{--                                <button type="button" class="navbar-toggler" data-toggle="collapse"--}}
-{{--                                        data-target="#navbar-default" aria-controls="navbar-default"--}}
-{{--                                        aria-expanded="false"--}}
-{{--                                        aria-label="Toggle navigation">--}}
-{{--                                </button>--}}
-{{--                    </div>--}}
+
                     <ul class="navbar-nav col-lg-8">
                         <li class="nav-item">
                             <a class="nav-link" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
@@ -64,11 +56,7 @@
                             <a class="nav-link " style="color: black" href="{{route('Aboutus')}}" rel="tooltip" title=""
                                data-placement="bottom"> درباره ما</a>
                         </li>
-                     <!--   <li class="nav-item">
-                            <a class="nav-link" style="color: black" href="{{route('post.index')}}" rel="tooltip"
-                               title=""
-                               data-placement="bottom">بلاگ</a>
-                        </li>  -->
+                     
                     </ul>
 
 
@@ -111,15 +99,7 @@
                                     @endif
 
                                     @if(Auth::user()->type == "کاربر")
-                                    <!--
-                                        <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
-                                        <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
-                                        <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">
-                                            خریداری شده</a>
-                                        <a class="dropdown-item" href="{{route('user.transaction.create')}}"> کیف
-                                            پول</a>
-                                        <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a>
-                                    -->
+                                   
                                     @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -148,10 +128,7 @@
                             خریداری شده</a>
                     @endif
 
-                    @if(Auth::user()->type == "نویسنده")
-                        <a class="dropdown-item" href="{{ route('writer.home') }}">سامانه نویسندگان</a>
-                    @endif
-
+                  
                     @if(Auth::user()->type == "کاربر")
                         <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
                         <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
@@ -177,43 +154,21 @@
             </li>
         @endguest
     </ul>
-
+    @endif
 </nav>
 </div>
 
 <script>
-    // var navbar = document.getElementById('navbar');
-    // window.onscroll = function() {scrollFunction()};
-    // function scrollFunction() {
-    //     if ( document.documentElement.scrollTop > 20)
-    //         navbar.style.backgroundColor = "#20c5ba";
-    //     else
-    //         navbar.style.backgroundColor = "transparent";
-    // }
-
-
+   
     $(document).ready(function(){
-        $(window).scroll(function() { // check if scroll event happened
-            if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
-                $(".navbar").css("background-color", "#20c5ba"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+        $(window).scroll(function() { 
+            if ($(document).scrollTop() > 50) { 
+                $(".navbar").css("background-color", "#20c5ba"); 
             } else {
-                $(".navbar").css("background-color", "transparent"); // if not, change it back to transparent
+                $(".navbar").css("background-color", "transparent"); 
             }
         });
     });
-
-
-    // $(document).ready(function(){
-    //     $(window).scroll(function(){
-    //         var scroll = $(window).scrollTop();
-    //         if (scroll > 50){}else{ $(".text").css("color" , "black");}}))
-    // $(document).ready(function(){
-    //     if($(".alert").css("display","block") === true)
-    //     {
-    //         $('.nav').css('margin-top',"30px");
-    //     }
-    // })
-
 
     $(".navbar-toggler").on("click",function () {
 

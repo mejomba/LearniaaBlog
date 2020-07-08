@@ -6,14 +6,17 @@
 
  @include('site.Layouts.head')
 
-<script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
+ <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{asset('js/core/slick.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/core/afterglow.min.js') }}"></script>
+<!-- Video Player -->
+<script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
+
 
 @include('site.Layouts.preloader')
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}

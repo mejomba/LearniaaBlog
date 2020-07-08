@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
  @include('site.Layouts.head')
 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
@@ -10,10 +10,9 @@
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/core/afterglow.min.js') }}"></script>
+<!-- Video Player -->
+<script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
 
-
-@yield('site.academy.index')
 
 @include('site.Layouts.preloader')
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,12 +48,13 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 </script>
 <!-- Yektanet CODE-->
 
-<!-- Video Player -->
-<script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
+
 
 </head>
 
 <body>
+@include('site.Layouts.nav')
+
 <div class="container-fluid" style="z-index:10001">
 @include('site.Layouts.error')
 </div>

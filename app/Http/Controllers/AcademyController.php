@@ -338,6 +338,8 @@ $messages = [
 
     public function start()
     {
+        /* start login process & give information */
+        /*
         $user =  Auth::user() ;
 
         if($user != null)
@@ -363,8 +365,8 @@ $messages = [
             $redirectFromURL = "/academy/start";
             return view('auth.callbacklogin',compact('redirectFromURL'));
         }
-
-
+        */
+        return redirect()->route('academy.detail');
 
 
         
