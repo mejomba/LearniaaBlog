@@ -1,4 +1,5 @@
 @extends('site.Layouts.layout_landing')
+
 @section('Head')
     <title> لرنیا | وب سایت آموزش آنلاین </title>
     <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
@@ -6,6 +7,7 @@
 
 @endsection
 
+<<<<<<< HEAD
             @section('text_landing')
 {{--                <img class="" src="{{asset('images/Header_Academy.png')}}" alt="">--}}
                 <h1 class="font-weight-bolder text-center font-weight-bolder wow fadeIn" data-wow-delay="2s" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
@@ -18,10 +20,33 @@
             @section('pic_landing')
                 <img  class="learn-bg mt-4 d-lg-block d-md-block d-sm-none d-none wow fadeIn" data-wow-delay="2s" src="{{asset('images/header-teamwork.svg')}}" alt="" style="margin-top: -15px">
             @endsection
+=======
+
+
+@section('text_landing')
+<h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px">
+<span class="text-warning mr-3">لرنیا</span>
+<span class="text-info"></span>
+</h1>
+     <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">
+     لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد
+     </h3>
+     <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
+     <button class="btn fourth text-center">شروع کن</button>
+     </h6>
+@endsection
+
+@section('pic_landing')
+<img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" 
+src="{{asset('images/Academy/Academy_index.svg')}}" alt="" 
+style="margin-top: -15px">
+@endsection
+>>>>>>> 30f4994b56fb535dc6883102bbabc8b330891212
 
 
 @section('content')
 
+<<<<<<< HEAD
 
     <!--Preloader starts-->
     <div id="Pre-loader">
@@ -41,6 +66,11 @@
 
 {{--Main Video starts--}}
 <section class="row main-video d-flex justify-content-center mb-5 wow fadeIn" data-wow-delay="2s">
+=======
+<!-- Video LEARN -->
+
+<section class="row main-video d-flex justify-content-center mb-5">
+>>>>>>> 30f4994b56fb535dc6883102bbabc8b330891212
 
     <a href="#video3" class="afterglow text-center">
         <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
@@ -51,7 +81,11 @@
     </video>
 </section>
 
+<<<<<<< HEAD
 {{--Main video ends--}}
+=======
+<!-- END Video LEARN -->
+>>>>>>> 30f4994b56fb535dc6883102bbabc8b330891212
 
 
 <!-- Customer Say -->
@@ -75,15 +109,17 @@
          </span>
         <i class="fa fa-quote-right float-right"></i>
         <p class="comments mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur 
+            eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus 
+            quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
         </p>
         <p class="float-right">
-            <span class="username">Jenny Doe</span>
+            <span class="">مشاور - </span>
         </p>
         <p class="float-right">
-            <span class="">CEO</span>
+            <span class="username"> علی قیومی</span>
         </p>
-        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+        <img src="{{ asset('images/Template/user_login.svg') }}" alt="userImg" class="float-left" width="40px">
     </div>
 
     <div class="single-comment text-center pb-3 pt-3 px-3  m-5" style="height: auto ; width:300px">
@@ -96,15 +132,18 @@
             <i class="fa fa-star"></i>
          </span>
         <p class="comments mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Ad consequuntur eligendi expedita facere illo libero nesciunt nulla 
+            odio pariatur possimus quis repellat repellendus totam ut, vero voluptas 
+            voluptatem voluptates! Commodi!
         </p>
         <p class="float-right">
-            <span class="username">Jenny Doe</span>
+            <span class="">مشاور - </span>
         </p>
         <p class="float-right">
-            <span class="">CEO</span>
+            <span class="username"> علی قیومی</span>
         </p>
-        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+        <img src="{{ asset('images/Template/user_login.svg') }}" alt="userImg" class="float-left" width="40px">
     </div>
 
     <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
@@ -117,15 +156,18 @@
             <i class="fa fa-star"></i>
          </span>
         <p class="comments mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus
+             quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
         </p>
         <p class="float-right">
-            <span class="username">Jenny Doe</span>
+            <span class="">مشاور - </span>
         </p>
         <p class="float-right">
-            <span class="">CEO</span>
+            <span class="username"> علی قیومی</span>
         </p>
-        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+        
+        <img src="{{ asset('images/Template/user_login.svg') }}" alt="userImg" class="float-left" width="40px">
     </div>
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5" style="height: auto ; width:300px">
         <i class="fa fa-quote-right float-right"></i>
@@ -137,15 +179,17 @@
             <i class="fa fa-star"></i>
          </span>
         <p class="comments mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus totam ut, vero voluptas voluptatem voluptates! Commodi!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur eligendi 
+            expedita facere illo libero nesciunt nulla odio pariatur possimus quis repellat repellendus
+             totam ut, vero voluptas voluptatem voluptates! Commodi!
         </p>
         <p class="float-right">
-            <span class="username">Jenny Doe</span>
+            <span class="username">علیرضا خوند</span>
         </p>
         <p class="float-right">
-            <span class="">CEO</span>
+            <span class="">عکاس و طراح</span>
         </p>
-        <img src={{ asset('images/Template/user_login.svg') }} alt="userImg" class="float-left" width="40px">
+        <img src="{{ asset('images/Template/user_login.svg') }}" alt="userImg" class="float-left" width="40px">
     </div>
 
 </section>
@@ -191,29 +235,7 @@
                             </p>
                         </div>
                     </div>
-
         @endforeach
-
-                <!--
-                    <div class="card p-3 hover-style ml-2" style="width: 20rem; border: 2px solid #F1948A">
-                        <img class="card-img-top img-border" src="{{asset('images/learnia-image.jpg')}}" alt="Card image cap">
-                        <div class="card-body" style="height: 200px">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                             card's content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card p-3 hover-style ml-2" style="width: 20rem;">
-                        <img class="card-img-top img-border" src="{{asset('images/learnia-image.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        </div>
-                    </div>
-
-                    -->
 
             </div>
         </div>

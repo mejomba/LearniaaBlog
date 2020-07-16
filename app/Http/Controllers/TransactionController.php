@@ -11,6 +11,7 @@ use Shetabit\Payment\Exceptions\InvalidPaymentException;
 use App\Transaction;
 use App\Profile;
 use App\Product;
+use App\Course;
 use Auth;
 use Validator;
 
@@ -163,18 +164,23 @@ class TransactionController extends Controller
                     {
                         if(Auth::check())
                         {
-                            $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                            $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
                             $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
                             if( $pkProduct_BeginnerTree === $transaction->pk_product )
                             {
-                                return redirect()->route('academy.detail')->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                                return redirect()->route('academy.course',['pk_tree' => 18 ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                             }
                             else
                             {
                                 $product = Product::find($transaction->pk_product);
-                                return redirect()->route('product.detail',
-                                ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
-        
+                                $course = Course::where('pk_product',$transaction->pk_product)->first();
+
+                                return redirect()->route('academy.show',
+                                ['id' => $transaction->pk_product , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                           
+
+
+
                             }
                            
                         }
@@ -230,21 +236,23 @@ class TransactionController extends Controller
                     {
                         if($transaction->pk_product == 0)
                         {
-                            return redirect()->route('product.index')->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                            return redirect()->route('academy.detail')->with('report','خطا : مشکل در انجام عملیات بانکی');    
                         }
                         else
                         {
-                            $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                            $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
                             $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
                             if( $pkProduct_BeginnerTree === $transaction->pk_product )
                             {
-                                return redirect()->route('academy.detail')->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                                return redirect()->route('academy.course',['pk_tree' => 18 ])->with('report','مشکل در انجام عملیات بانکی');    
                             }
                             else
                             {
                                 $product = Product::find($transaction->pk_product);
-                                return redirect()->route('product.detail',
-                                ['slug' => $transaction->pk_product , 'desc' =>  $product['title'] ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                                $course = Course::where('pk_product',$transaction->pk_product)->first();
+
+                                return redirect()->route('academy.show',
+                                ['id' => $transaction->pk_product , 'desc' =>  $course['name'] ])->with('report','  مشکل در انجام عملیات بانکی');    
                              }    
                         }
                     }

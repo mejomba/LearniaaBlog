@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
  @include('site.Layouts.head')
 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
@@ -12,10 +12,9 @@
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/core/afterglow.min.js') }}"></script>
+<!-- Video Player -->
+<script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
 
-
-@yield('site.academy.index')
 
 {{--@include('site.Layouts.preloader')--}}
 
@@ -26,7 +25,7 @@ gtag('js', new Date());gtag('config', 'UA-155041698-1');
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <!--BEGIN RAYCHAT CODE-->
-
+<!--
 <script type="text/javascript">!function () {function t() {
 var t = document.createElement("script");
 t.type = "text/javascript", t.async = !0, localStorage.getItem("rayToken") ? t.src = "https://app.raychat.io/scripts/js/" + o + "?rid=" + localStorage.getItem("rayToken") + "&href=" + window.location.href : t.src = "https://app.raychat.io/scripts/js/" + o;
@@ -35,9 +34,10 @@ e.parentNode.insertBefore(t, e)}
 var e = document, a = window, o = "06120c99-d579-4a39-b5c6-b0044acc0b01";
 "complete" == e.readyState ? t() : a.attachEvent ? a.attachEvent("onload", t) : a.addEventListener("load", t, !1)
 }();</script>
-
+-->
 <!--END RAYCHAT CODE-->
 <!-- Yektanet CODE-->
+<!--
 <script>!function (t, e, n) {t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
 t[n].q.push(arguments)}, t[n].q = t[n].q || [];
 var a = new Date,
@@ -50,19 +50,19 @@ s.type = "text/javascript";
 s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
 }(window, document, "yektanet");
 </script>
+-->
 <!-- Yektanet CODE-->
 
-<!-- Video Player -->
-<script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
+
 
 </head>
 
 <body>
+@include('site.Layouts.nav')
+
 <div class="container-fluid" style="z-index:10001">
 @include('site.Layouts.error')
 </div>
-
-@include('site.Layouts.nav')
 
 <div style="direction: rtl" class="d-flex justify-content-around">
 

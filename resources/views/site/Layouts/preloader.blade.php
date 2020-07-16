@@ -11,12 +11,13 @@
         <span class="text-warning">a</span>
         <span class="text-warning">a</span>
     </p>
-</div>
+</div><br>
 <!--Preloader ends-->
 
 <script>
     window.addEventListener('load', (event) => {
-        $("#Pre-loader").delay(200).fadeOut();
+        $("#Pre-loader").delay(1500).fadeOut();
         $("body").show();
+       
     });
 </script>

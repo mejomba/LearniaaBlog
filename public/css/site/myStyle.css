@@ -426,9 +426,9 @@ btn-loginSign:focus
 
 .fourth {
 
-    border-color: #f1c40f;
+    border-color: #ffe735;
     color: #000000;
-    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%);
     background-position: 0;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;
@@ -438,6 +438,41 @@ btn-loginSign:focus
 .fourth:hover {
     background-position: 100%;
 }
+
+.btnGreen {
+
+    border-color: #30d533;
+    color: #000000;
+    background-image: linear-gradient(45deg, #30d533 50%, transparent 50%);
+    background-position: 0;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.btnGreen:hover {
+    background-position: 100%;
+}
+
+
+.btnLearniaa {
+
+    border-color: #20c5ba;
+    color: #000000;
+    background-image: linear-gradient(45deg, #20c5ba 50%, transparent 50%);
+    background-position: 0;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.btnLearniaa:hover {
+    background-position: 100%;
+}
+
+
+
+
 
 .learniaaColor {
     padding-top: 10px;

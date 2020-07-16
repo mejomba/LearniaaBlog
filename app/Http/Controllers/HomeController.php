@@ -108,10 +108,10 @@ class HomeController extends Controller
         }
 
 
-        public function ShowAssist()
+        public function Show_AssistUs()
         {
            
-            return view ('site.assist.index');
+            return view ('site.AssistUs');
         
         }
 

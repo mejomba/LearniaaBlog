@@ -380,7 +380,33 @@
                                   <option class="" value="ورزش"
                                   @if($profile->favourite == "ورزش" )
                                   selected="selected"
-                                  @endif >ورزش </option>
+                                  @endif >ورزش</option>
+
+                                  <option class="" value="طراحی و هنر"
+                                  @if($profile->favourite == "طراحی و هنر" )
+                                  selected="selected"
+                                  @endif >طراحی و هنر</option>
+
+                                  <option class="" value="برنامه نویسی موبایل"
+                                  @if($profile->favourite == "برنامه نویسی موبایل" )
+                                  selected="selected"
+                                  @endif >برنامه نویسی موبایل</option>
+
+                                  <option class="" value="وب"
+                                  @if($profile->favourite == "وب" )
+                                  selected="selected"
+                                  @endif >وب</option>
+
+                                  <option class="" value="سخت افزار"
+                                  @if($profile->favourite == "سخت افزار" )
+                                  selected="selected"
+                                  @endif >سخت افزار</option>
+
+                                  <option class="" value="تحقیق و توسعه"
+                                  @if($profile->favourite == "تحقیق و توسعه" )
+                                  selected="selected"
+                                  @endif >تحقیق و توسعه</option>
+
 
                                   </select>
                                   </div>
