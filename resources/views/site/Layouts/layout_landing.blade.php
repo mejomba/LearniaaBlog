@@ -7,6 +7,8 @@
 
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{asset('js/core/slick.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/core/wow.js')}}"></script>
+    <script src="{{asset('js/core/wow.animate.js')}}"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
@@ -15,7 +17,7 @@
 
 @yield('site.academy.index')
 
-@include('site.Layouts.preloader')
+{{--@include('site.Layouts.preloader')--}}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>

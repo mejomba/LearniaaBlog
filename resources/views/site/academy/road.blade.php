@@ -11,7 +11,7 @@
 <!-- Blog Posts -->
 <section id="testimonial" class="testimonial-area pt-120">
     <div class="container-fluid">
-       
+
     {{--    <div class="row justify-content-center"> --}}
         {{--     <div class="col-lg-5"> --}}
             {{--      <div class="section-title text-center pb-40"> --}}
@@ -25,14 +25,14 @@
         <div class="row d-flex ">
         <div class="col-md-1">
 </div>
-<div class="col-md-5 col-sm-12" > 
+<div class="col-md-5 col-sm-12" >
 
                  <div class="card shadow border-0 " >
                     <div class="card-header" style="background-color:#20C5BA ">
                             <div class="text-center"><h2 style="font-size:35px">مسیر آموزش کامپیوتر مبتدیان</h2>
                         </div>
                     </div>
-                    <img class="card-img-top img-border" 
+                    <img class="card-img-top img-border"
                     src="{{ asset('images/Template/RoadMap_BeginnerTree.jpg') }}"
                       width="900px" height="330px" alt="Card image cap">
                       <div class="card-body text-center ">
@@ -42,7 +42,7 @@
                             </p>
                 <!-- Full Pack Sale -->
                 </div>
-            
+
                 <div class="card p-3 hover-style ml-2 mr-2" style="margin-bottom:5px;">
                 <form action="{{route('product.pay', $pkProduct_BeginnerTree )}}" method="POST">
                     <div class="row">
@@ -56,7 +56,7 @@
                                  width="70px" height="70px" alt="Profile_AllCource_BeginnerTree">
                             <span style="font-size:16px;"> پکیج کامل آموزش کامپیوتر </span>
                         </div>
-                       
+
                         @if(Auth::check())
                             @if($payment_status == "Payed" )
                             <div class="col-md-3 col-12 text-center" style="margin-top:15px">
@@ -118,7 +118,7 @@
                         <li>
                          <!-- Data -->
                             <div class="row" id="row">
-                          
+
                             <div class="col-md-11 card p-3 ml-3" >
 
                                 <div class="card-title" id="{{'id'.$node['pk_product']}}">
@@ -129,10 +129,10 @@
                                             src="{{  Storage::url('tree/'.$node['pic']) }}"
                                             width="50px" height="50px" alt="{{$node['name']}}"></a>
 
-                                            
-                                            </div> 
 
-                                            <div class="col-md-4 col-12 text-center">        
+                                            </div>
+
+                                            <div class="col-md-4 col-12 text-center">
                                             <a class="mb-0">
                                                 <button class="btn btn-link dropdown-toggle" style="white-space:normal; " data-toggle="collapse" data-target="#{{'collapse'.$node['pk_product']}}" aria-expanded="false" aria-controls="{{'collapse'.$node['pk_product']}}">
                                                 {{$node['name']}}
@@ -174,9 +174,10 @@
 
                                 <div id="{{'collapse'.$node['pk_product']}}" class="collapse" aria-labelledby="{{'id'.$node['pk_product']}}" data-parent="#row">
                                 <div class="card-text">
-                                @php echo $node['description'] ; @endphp 
+                                @php echo $node['description'] ; @endphp
                              </div>
                                 </div>
+                            </div>
                             </div>
                         <!-- Data -->
                        </li>
@@ -184,12 +185,11 @@
                 </ul>
 
                </div>
-             </div> 
+             </div>
 
             </div>
         </div>
-
-</div> <!-- container -->
+ <!-- container -->
 </section>
 <!-- End BLog Posts -->
 

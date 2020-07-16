@@ -6,58 +6,41 @@
 
 @endsection
 
-
-
-
             @section('text_landing')
 {{--                <img class="" src="{{asset('images/Header_Academy.png')}}" alt="">--}}
-                <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
-                <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
+                <h1 class="font-weight-bolder text-center font-weight-bolder wow fadeIn" data-wow-delay="2s" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
+                <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center wow fadeIn" data-wow-delay="2s">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
                 <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
-                    <button class="btn fourth text-center">شروع کن</button>
+                    <button class="btn fourth text-center wow fadeIn" data-wow-delay="2s">شروع کن</button>
                 </h6>
             @endsection
 
             @section('pic_landing')
-                <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/header-teamwork.svg')}}" alt="" style="margin-top: -15px">
+                <img  class="learn-bg mt-4 d-lg-block d-md-block d-sm-none d-none wow fadeIn" data-wow-delay="2s" src="{{asset('images/header-teamwork.svg')}}" alt="" style="margin-top: -15px">
             @endsection
 
 
 @section('content')
 
 
-<!-- Video LEARN -->
-
-{{--<section class="video d-flex justify-content-center mt-5" style="position: relative ; width: 100%">--}}
-{{--    <img class="img-fluid rounded-lg shadow" width="80%" src="{{ asset('images/video-frame.svg') }}" alt="" >--}}
-{{--    <span class="video-play-button" data-toggle="modal" data-target="#LearniaaVideo">--}}
-{{--                <span></span>--}}
-{{--            </span>--}}
-{{--</section>--}}
-
-{{--<!-- Modal -->--}}
-{{--<div class="modal fade"  id="LearniaaVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
-{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
-{{--        <div class="modal-content" style="border: none!important ; background-color: transparent;">--}}
-{{--            <div class="model-header">--}}
-
-{{--            </div>--}}
-{{--            <div class="modal-body d-flex justify-content-center align-items-center align-content-center">--}}
-{{--                <button type="button" class="close d-block" data-dismiss="modal" aria-label="Close">--}}
-{{--                    <i class="fa fa-times"></i>--}}
-{{--                </button>--}}
-{{--                <video class="main-video" autoplay controls >--}}
-{{--                    <source class="Video" src="{{ asset('images/video.mp4') }}" type="video/mp4">--}}
-{{--                </video>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+    <!--Preloader starts-->
+    <div id="Pre-loader">
+        <p id="preloader" class="d-flex justify-content-center" >
+            <span class="text-warning">L</span>
+            <span class="text-warning">e</span>
+            <span class="text-warning">a</span>
+            <span class="text-warning">r</span>
+            <span class="text-warning">n</span>
+            <span class="text-warning">i</span>
+            <span class="text-warning">a</span>
+            <span class="text-warning">a</span>
+        </p>
+    </div><br>
+    <!--Preloader ends-->
 
 
-<!-- END Video LEARN -->
-
-<section class="row main-video d-flex justify-content-center mb-5">
+{{--Main Video starts--}}
+<section class="row main-video d-flex justify-content-center mb-5 wow fadeIn" data-wow-delay="2s">
 
     <a href="#video3" class="afterglow text-center">
         <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
@@ -68,17 +51,19 @@
     </video>
 </section>
 
+{{--Main video ends--}}
+
 
 <!-- Customer Say -->
 <div class="row justify-content-center">
-    <div class="col-lg-5">
+    <div class="col-lg-5  wow fadeIn" data-wow-delay="1s">
         <div class="section-title text-center pb-40">
             <div class="line mt-5 mx-auto rounded-lg"></div>
             <h3 class="title mt-5">نظرات مشتریان</h3>
         </div> <!-- section title -->
     </div>
 </div>
-<section class="slider">
+<section class="slider wow fadeIn" data-wow-delay="1s">
 
     <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
         <span class="float-left">
@@ -240,7 +225,7 @@
 <!-- End BLog Posts -->
 
 <section id="masters" class="pt-120">
-    <div class="container">
+    <div class="container wow fadeIn" data-wow-delay="1s">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
@@ -251,7 +236,7 @@
         </div>
         <!-- row -->
         <div class="row mt-2">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeIn">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -269,7 +254,7 @@
                 </div> <!-- single testimonial -->
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -287,7 +272,7 @@
                 </div> <!-- single testimonial -->
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -305,7 +290,7 @@
                 </div> <!-- single testimonial -->
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -373,6 +358,14 @@
     }) ;
 
 </script>
+
+
+    <script>
+        window.addEventListener('load', (event) => {
+            $("#Pre-loader").delay(500).fadeOut();
+        });
+    </script>
+
 
 @endsection
 

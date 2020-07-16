@@ -49,7 +49,7 @@
 {{--   </div>--}}
 
     <div class="row">
-        <div class="col-lg-6 col-md-10 col-sm-12 col-12" style=" margin-top: 100px!important;
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 offset-lg-1 offset-md-1 offset-sm-1 offset-0" style="
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;">
             <div class="card shadow border-0" style="margin-top: 90px" >
@@ -132,14 +132,14 @@
 {{--================================TimeLine starts===========================--}}
 
                 <div class="row " style="margin-top:60px">
-                    <div class="col-md-8 card p-3 hover-style ml-auto mr-auto"  >
+                    <div class="col-lg-8 col-md-10 col-sm-11 col-11 border rounded-lg m-2 p-2 mx-auto"  >
                     <ul class="timeline">
                     @foreach($courses as $course)
                         <li>
                          <!-- Data -->
                             <div class="row" id="row">
 
-                            <div class="col-md-11 p-3 ml-3" style="border: solid 1px #20C5BA ; border-radius: 5px">
+                            <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3 hover-style k-cursor-pointer" style="border: solid 1px #20C5BA ; border-radius: 5px">
 
                                 <div class="card-title" id="{{'id'.$course['pk_product']}}">
                                         <div class="row">
@@ -164,7 +164,7 @@
                                             <span style="color:green">   تومان </span>
                                             </div>
 
-                                            <div class="col-md-2 col-12 text-center">
+                                            <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
                                             @if(Auth::check())
                                         @if($payment_status == "Payed" )
                                             <a href="{{ route('academy.show', ['id' => $course['pk_product'] , 'desc' =>  $course['name'] ]) }}"

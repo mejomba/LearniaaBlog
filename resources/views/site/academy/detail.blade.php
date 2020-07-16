@@ -47,9 +47,9 @@
 
                <!-- Card -->
              @foreach($nodes as $node)
-                <div class="col-lg-4 col-md-6 col-sm-8 col-11">
-                    <div class="single-services text-center mt-3 wow fadeIn" data-wow-duration="1s"
-                         data-wow-delay="0.5s"
+                <div class="col-lg-4 col-md-6 col-sm-8 col-11 wow fadeIn" data-wow-duration="1s"
+                     data-wow-delay="0.5s">
+                    <div class="single-services text-center mt-3"
                          style="border: 2px solid #f1c40f; border-radius: 10px;">
                         <div class="services-icon">
                         @if(isset($node->pic))
