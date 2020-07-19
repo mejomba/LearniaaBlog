@@ -54,6 +54,7 @@ class ResetPasswordController extends Controller
           }
     
         else
+<<<<<<< HEAD
           {     
 
                         $Random_Generate = rand(0,9999);
@@ -108,6 +109,33 @@ class ResetPasswordController extends Controller
 
                         return redirect(route('reset.show',compact('pk_user')));
                     
+=======
+          {  
+                $Random_Generate = rand(0,9999);
+                $user = User::where('username',request()->username)->first();
+                $reset_new = new Reset();
+                $reset_new->pk_user = $user['pk_users'] ;
+                $pk_user = $user['pk_users'] ;
+                $reset_new->token = $Random_Generate;
+                $reset_new->save();
+            
+                // Send data
+                $check = substr(request()->username,'0','2');
+                if ($check=='09')
+                {
+                        $client = new \IPPanel\Client('ai8RCfgBRB4EMq_WdlVq36Pw7DbmqyBQQRMsYBxh8wc=');
+                        $client->send(
+                            "+9850009589",          // originator
+                            [request()->username],    // recipients
+                           "لرنیا - کد شما برابر با  $Random_Generate"// message
+                        );              
+
+
+                   }
+
+                return redirect(route('reset.show',compact('pk_user')));
+        
+>>>>>>> 09670972de12e89a298eef85199bbfa030ffe7ef
                   
            }
     }

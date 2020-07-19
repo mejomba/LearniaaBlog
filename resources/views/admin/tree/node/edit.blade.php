@@ -115,6 +115,30 @@
         </div>
         </div>
          <!-- Select Box -->
+
+
+            <!-- icon Box -->
+            <div class="col-md-4">
+        <div class="row">
+
+
+                        <div class="col-md-3">
+                        <span>ایکون </span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="icon" name="icon">
+                                  </div>
+                                </div>
+                     </div>
+            
+   
+        </div>
+        </div>
+         <!-- icon Box -->
          
          <div class="col-md-4">
         <div class="form-group">
@@ -125,6 +149,16 @@
                     </div>
                   </div>
            </div>
+
+           <div class="col-md-4">
+             <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend"> 
+                      </div>
+                      <input class="form-control" name="short_description" value="{{ $tree['short_description'] }}" placeholder="توضیح کوتاه " type="text">
+                    </div>
+                  </div>
+            </div>
 
 
      <!-- Content Box -->

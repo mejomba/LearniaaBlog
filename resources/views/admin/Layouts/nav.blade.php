@@ -39,7 +39,7 @@
                                data-placement="bottom">صفحه اصلی</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('academy.start')}}" rel="tooltip"
+                            <a class="nav-link text" style="color: black" href="{{route('academy.detail')}}" rel="tooltip"
                                title="" data-placement="bottom"
                                data-original-title="به زودی">آکادمی آموزش </a>
                         </li>

@@ -61,9 +61,26 @@ class TreeController extends Controller
                 $tree->has_children = request()->has_children ;
                 $tree->name = request()->name ;
                 $tree->description = request()->description ;
+                $tree->short_description = request()->short_description ;
               
                 if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
 
+                if(request()->pic)
+                {
+                  $pic = request()->file('pic');
+                  $pic_name = $pic->getClientOriginalName();
+                  $path = Storage::putFileAs( 'tree', $pic, $pic_name);
+                  $tree->pic = $pic_name ;
+                }
+
+                if(request()->icon)
+                {
+                  $icon = request()->file('icon');
+                  $icon_name = $pic->getClientOriginalName();
+                  $path = Storage::putFileAs( 'tree', $icon, $icon_name);
+                  $tree->icon = $icon_name ;
+                }
+                
                     if($tree->save())
                     {
                             return redirect(route('admin.tree.index'))->with('success','درخت با موفقیت ایجاد شد');
@@ -124,9 +141,25 @@ class TreeController extends Controller
                 $tree->name = request()->name ;
                 $tree->description = request()->description ;
                 $tree->has_children =  request()->has_children ;
+                $tree->short_description = request()->short_description ;
 
                 if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
 
+                if(request()->pic)
+                {
+                  $pic = request()->file('pic');
+                  $pic_name = $pic->getClientOriginalName();
+                  $path = Storage::putFileAs( 'tree', $pic, $pic_name);
+                  $tree->pic = $pic_name ;
+                }
+
+                if(request()->icon)
+                {
+                  $icon = request()->file('icon');
+                  $icon_name = $pic->getClientOriginalName();
+                  $path = Storage::putFileAs( 'tree', $icon, $icon_name);
+                  $tree->icon = $icon_name ;
+                }
 
                     if($tree->save())
                     {
@@ -239,6 +272,7 @@ class TreeController extends Controller
               $tree->has_children = request()->has_children ;
               $tree->name = request()->name ;
               $tree->description = request()->description ;
+              $tree->short_description = request()->short_description ;
 
               if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
 
@@ -249,6 +283,14 @@ class TreeController extends Controller
                 $pic_name = $pic->getClientOriginalName();
                 $path = Storage::putFileAs( 'tree', $pic, $pic_name);
                 $tree->pic = $pic_name ;
+              }
+
+              if(request()->icon)
+              {
+                $icon = request()->file('icon');
+                $icon_name = $pic->getClientOriginalName();
+                $path = Storage::putFileAs( 'tree', $icon, $icon_name);
+                $tree->icon = $icon_name ;
               }
              
                   if($tree->save())
@@ -292,6 +334,7 @@ class TreeController extends Controller
               $tree->sort =  request()->sort ;
               $tree->name = request()->name ;
               $tree->description = request()->description ;
+              $tree->short_description = request()->short_description ;
               $tree->has_children = request()->has_children ;
 
               if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
@@ -303,6 +346,14 @@ class TreeController extends Controller
                 $pic_name = $pic->getClientOriginalName();
                 $path = Storage::putFileAs( 'tree', $pic, $pic_name);
                 $tree->pic = $pic_name ;
+              }
+
+              if(request()->icon)
+              {
+                $icon = request()->file('icon');
+                $icon_name = $pic->getClientOriginalName();
+                $path = Storage::putFileAs( 'tree', $icon, $icon_name);
+                $tree->icon = $icon_name ;
               }
 
                   if($tree->save())

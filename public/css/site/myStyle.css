@@ -18,7 +18,7 @@ ul.timeline:before {
 
 ul.timeline > li {
     margin: 20px 0;
-    padding-right: 45px
+    padding-right: 45px;
 }
 
 ul.timeline > li:before {
@@ -29,6 +29,7 @@ ul.timeline > li:before {
     border-radius: 50%;
     border: 3px solid #22c0e8;
     right: 20px;
+    top:10px;
     width: 20px;
     height: 20px;
     z-index: 400;
@@ -47,7 +48,6 @@ html {
 
 body {
     font-family: "shabnam", 'Open Sans', sans-serif !important;
-    display: none;
 }
 
 .header-bg {
@@ -67,6 +67,19 @@ img
 {
     max-width: 100%;
 }
+
+/*Pagination starts*/
+
+
+.pagination li a
+{
+    border-radius: 10px;
+
+}
+
+
+/*Pagination ends*/
+
 /*----------Preloader starts-----------------*/
 
 #Pre-loader
@@ -156,6 +169,87 @@ img
 }
 
 
+.btnblog
+{
+    position: relative;
+    border-radius:50px;
+    margin-top: 8px;
+    width: 200px;
+    color: white;
+    font-size: 12px;
+    transition: 400ms;
+}
+
+.btnblog:after
+{
+    content: '';
+    width:194px;
+    height: 90%;
+    border-radius: 50px;
+    border:1px white solid;
+    position: absolute;
+    right:2px;
+    top: 2px;
+
+}
+
+
+.btnblog:hover
+{
+    color: white;
+}
+
+.btn-1
+{
+    background-image: linear-gradient(to right,yellow,lightyellow);
+    transition: 400ms;
+}
+.btn-1:hover
+{
+    background-image: linear-gradient(to right,lightyellow,yellow);
+}
+
+.btn-2
+{
+    background-image: linear-gradient(to right,red,palevioletred);
+}
+.btn-2:hover
+{
+    background-image: linear-gradient(to right,palevioletred,red);
+}
+
+
+.btn-3
+{
+    background-image: linear-gradient(to right,blue,deepskyblue);
+}
+.btn-3:hover
+{
+    background-image: linear-gradient(to right,deepskyblue,blue);
+}
+
+.btn-4
+{
+    background-image: linear-gradient(to right,orangered,orange);
+}
+.btn-4:hover
+{
+    background-image: linear-gradient(to right,orange,orangered);
+}
+
+.btn-5
+{
+    background-image: linear-gradient(to right,purple,hotpink);
+
+}
+.btn-5:hover
+{
+    background-image: linear-gradient(to right,hotpink,purple);
+}
+
+
+
+
 .btn-loginSign
 {
     padding: 8px!important;
@@ -177,6 +271,36 @@ btn-loginSign:focus
 {
     outline: none!important;
 }
+
+
+/*#search-page*/
+/*{*/
+/*    background-color: #282829;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0!important;*/
+/*    bottom: 0;*/
+/*    z-index: 9999999998;*/
+/*    opacity: 0;*/
+/*}*/
+
+
+.search
+{
+    position: fixed;
+    left: 160px;
+    top:20px;
+    cursor: pointer;
+    transition: 200ms;
+    color: blue;
+}
+.search:hover
+{
+    color: lightgrey;
+}
+
+
 /*================navbar ends===========================*/
 
 .learn-bg {
@@ -302,9 +426,9 @@ btn-loginSign:focus
 
 .fourth {
 
-    border-color: #f1c40f;
+    border-color: #ffe735;
     color: #000000;
-    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%);
     background-position: 0;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;
@@ -314,6 +438,41 @@ btn-loginSign:focus
 .fourth:hover {
     background-position: 100%;
 }
+
+.btnGreen {
+
+    border-color: #30d533;
+    color: #000000;
+    background-image: linear-gradient(45deg, #30d533 50%, transparent 50%);
+    background-position: 0;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.btnGreen:hover {
+    background-position: 100%;
+}
+
+
+.btnLearniaa {
+
+    border-color: #20c5ba;
+    color: #000000;
+    background-image: linear-gradient(45deg, #20c5ba 50%, transparent 50%);
+    background-position: 0;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.btnLearniaa:hover {
+    background-position: 100%;
+}
+
+
+
+
 
 .learniaaColor {
     padding-top: 10px;
@@ -677,12 +836,12 @@ p {
     right: 50%;
 }
 
-.userBoxes
-{
-    margin-top: 100px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-}
+/*.auth-card*/
+/*{*/
+/*    margin-top: 100px!important;*/
+/*    border-bottom-right-radius: 50px!important;*/
+/*    border-bottom-left-radius: 50px!important;*/
+/*}*/
 
 
 .preloader .loader .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator .ytp-spinner-right {

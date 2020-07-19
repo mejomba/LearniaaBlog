@@ -11,6 +11,7 @@ use App\User;
 use App\Discount;
 use App\Product;
 use App\Vote;
+use App\Course;
 use App\OrderProduct;
 use App\Order;
 use App\Delivery;
@@ -20,6 +21,68 @@ use App\Mail\SendMail;
 
 class ApiController extends Controller
 {
+    public function insertDataProduct_AdobeXD()
+    {   
+        for ($row = 1; $row <= 129; $row++)
+        {
+                if($row == 56)
+                {
+                    continue ; 
+                }
+                else
+                {
+                    $new_instance = new product();
+                
+                    $new_instance->pk_category = "1013" ;
+                    $new_instance->pk_search =  "5ee92a660c122" ;
+                    $new_instance->pk_learner = "8" ;
+                    $new_instance->title = "آموزش رسم پروتوتایپ با ادوب ایکس دی - قسمت $row" ;
+                    $new_instance->pic = "Tree_Design_AdobeXD.jpg" ;
+                    $new_instance->price = "2700";
+                    $new_instance->time = "10:00";
+                    $new_instance->desc = "آموزش رسم پروتوتایپ با ادوب ایکس دی" ;
+                    $new_instance->count = 128 ;
+                    $new_instance->language = "فارسی";
+                    $new_instance->subtitle = "ندارد";
+                    $new_instance->status = "انتشار";
+                    $new_instance->file = "<video class='afterglow' id='my-video' width='1920' height='1080' src='https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Design_AdobeXD/Design_AdobeXD$row.mp4'></video>";
+                    $new_instance->preview = "<video class='afterglow' id='my-video' width='1920' height='1080' src='https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Design_AdobeXD/Design_AdobeXD_Preview.mp4'></video>";
+                    $new_instance->download_link = "https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Design_AdobeXD/Design_AdobeXD$row.mp4";
+
+                    $new_instance->save();
+                }
+        }
+    }
+
+    public function insertDataCourse_AdobeXD(Request $request)
+    {   
+        $row_pk_pdroduct = 115 ;
+        $sort = 2 ;
+        for ($row = 1; $row <= 129; $row++)
+        { 
+            if($row == 56)
+            {
+                continue ; 
+            }
+            else
+            {
+            
+                $newcourse = new Course();
+                $newcourse->pk_tree = 20;
+                $newcourse->pk_product = $row_pk_pdroduct ;
+                $newcourse->sort = $sort ;
+                $newcourse->name = "قسمت $row - آموزش رسم پروتوتایپ با ادوب ایکس دی";
+                $row_pk_pdroduct = $row_pk_pdroduct + 1 ;
+                $sort = $sort + 1 ;
+                $newcourse->save();
+            }
+
+        }
+    }
+
+
+
+
     public function TelegramGetListDraftPost()
     {
         $results = Post::where('status','پیش نویس')->select('pk_post', 'title','status')->get();

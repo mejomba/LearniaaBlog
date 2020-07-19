@@ -11,9 +11,10 @@
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
 
 
-@include('admin.Layouts.preloader')
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1">
+</script>
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}
 gtag('js', new Date());gtag('config', 'UA-155041698-1');
 </script>
@@ -27,7 +28,8 @@ var e = document.getElementsByTagName("script")[0];
 e.parentNode.insertBefore(t, e)}
 var e = document, a = window, o = "06120c99-d579-4a39-b5c6-b0044acc0b01";
 "complete" == e.readyState ? t() : a.attachEvent ? a.attachEvent("onload", t) : a.addEventListener("load", t, !1)
-}();</script>
+}();
+</script>
 
 <!--END RAYCHAT CODE-->
 <!-- Yektanet CODE-->

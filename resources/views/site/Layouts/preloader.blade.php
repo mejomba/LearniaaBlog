@@ -16,7 +16,8 @@
 
 <script>
     window.addEventListener('load', (event) => {
-        $("#Pre-loader").delay(100).fadeOut();
+        $("#Pre-loader").delay(1500).fadeOut();
         $("body").show();
+       
     });
 </script>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Session\Session;
-
+use App\Course;
 use App\Transaction;
 use App\Product;
 use App\Rules\validate;
@@ -91,16 +91,19 @@ class LoginController extends Controller
                     $transaction->pk_users = $user->pk_users ;
                     $transaction->save();
 
-                    $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                    $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
                     $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
                     if( $pkProduct_BeginnerTree == $transaction->pk_product )
                     {
-                        return redirect()->route('academy.detail')->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                        return redirect()->route('academy.course',['pk_tree' => 18 ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                     }
                     else
                     {
+                        $product = Product::find(request()->pk_product);
+                                $course = Course::where('pk_product',request()->pk_product)->first();
 
-                      return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
+                                return redirect()->route('academy.show',
+                                ['id' => request()->pk_product , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                     }
                 }
 

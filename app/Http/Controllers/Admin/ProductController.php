@@ -314,14 +314,6 @@ class ProductController extends Controller
     
     }
 
-
-
-
-
-
-
-   
-
     /**
      * Remove the specified resource from storage.
      *
@@ -437,7 +429,7 @@ class ProductController extends Controller
         $new_instance->pk_category = $product->pk_category ;
         $new_instance->pk_learner = $product->pk_learner;
         $new_instance->title = $product->title;
-        $new_instance->pic = $product->pic_name ;
+        $new_instance->pic = $product->pic ;
         $new_instance->price = $product->price;
         $new_instance->time = $product->time;
         $new_instance->desc = $product->desc;

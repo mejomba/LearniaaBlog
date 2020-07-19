@@ -21,7 +21,7 @@ class CourseController extends Controller
         //
         $instance_Model_course = new Course();
         $names =   $instance_Model_course->GetListAllNameColumns_ForTable();
-        $courses = Course::orderBy('pk_course')->get();
+        $courses = Course::orderBy('pk_course','ASC')->get();
         /*foreach ($courses as $course) {
             $products = product::where('pk_product',json_decode($course['pk_product']))->get();
             $trees = tree::select('name')->where('pk_tree',json_decode($course['pk_tree']))->get();
@@ -172,7 +172,7 @@ class CourseController extends Controller
         $newcourse->sort = $course->sort;
         $newcourse->name = $course->name;
         $newcourse->description = $course->description;
-        $newcourse->pic = $course->pic_name ;
+        $newcourse->pic = $course->pic ;
         if($newcourse->save())
         {
             return redirect(route('admin.course.edit',['id'=>$id]))->with('success','درس با موفقیت ایجاد شد ');

@@ -11,6 +11,7 @@ use App\Profile;
 use App\Transaction;
 use App\Product;
 use App\Rules\validate;
+use App\Course;
 
 class RegisterController extends Controller
 {
@@ -95,7 +96,7 @@ class RegisterController extends Controller
             $check = substr($data['username'],'0','2');
             if ($check=='09')
             {
-            $url = 'https://ippanel.com/api/select';
+          /*  $url = 'https://ippanel.com/api/select';
             $param = array(
                 "op" => "phoneBookAdd",
                 "uname" => "09901918193",
@@ -107,7 +108,7 @@ class RegisterController extends Controller
             curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($handler, CURLOPT_POSTFIELDS, json_encode($param));
             curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($handler);
+            $response = curl_exec($handler); */
         }
             /* add contact to sms panel */
            
@@ -119,16 +120,18 @@ class RegisterController extends Controller
                 $transaction->pk_users = $new_user->pk_users ;
                 $transaction->save();
 
-                $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
                 $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
                 if( $pkProduct_BeginnerTree == $transaction->pk_product )
                 {
-                    $this->redirectTo = '/academy/detail/' ;
+                    $this->redirectTo = '/academy/course?pk_tree=18' ;
                 }
                 else
                 {
 
-                $this->redirectTo = '/academy/show/'.$data['pk_product'] . '/'   .$data['title'];
+                    $course = Course::where('pk_product',$data['pk_product'])->first();
+                    $this->redirectTo = '/academy/show/'.$data['pk_product'] . '/'   .$course['name'];
+                    
                 }
             }
             else
