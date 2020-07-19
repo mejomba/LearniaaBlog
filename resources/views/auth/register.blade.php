@@ -6,7 +6,7 @@
 @section('content')
 <div class="row ">
 
-<div class="auth-card col-lg-4 col-md-7 col-sm-8 col-9 offset-1 " style=" margin-top: 100px!important;
+<div class="auth-card col-lg-4 col-md-7 col-sm-8 col-9 offset-1 wow fadeInUp" data-wow-delay="2s" style=" margin-top: 100px!important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;" >
 <div class="card shadow border-0">

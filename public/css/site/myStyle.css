@@ -18,7 +18,7 @@ ul.timeline:before {
 
 ul.timeline > li {
     margin: 20px 0;
-    padding-right: 45px
+    padding-right: 45px;
 }
 
 ul.timeline > li:before {
@@ -29,6 +29,7 @@ ul.timeline > li:before {
     border-radius: 50%;
     border: 3px solid #22c0e8;
     right: 20px;
+    top:10px;
     width: 20px;
     height: 20px;
     z-index: 400;
@@ -47,7 +48,6 @@ html {
 
 body {
     font-family: "shabnam", 'Open Sans', sans-serif !important;
-    display: none;
 }
 
 .header-bg {
@@ -67,6 +67,19 @@ img
 {
     max-width: 100%;
 }
+
+/*Pagination starts*/
+
+
+.pagination li a
+{
+    border-radius: 10px;
+
+}
+
+
+/*Pagination ends*/
+
 /*----------Preloader starts-----------------*/
 
 #Pre-loader
@@ -154,6 +167,87 @@ img
     transition:.7s;
     z-index: 1000!important;
 }
+
+
+.btnblog
+{
+    position: relative;
+    border-radius:50px;
+    margin-top: 8px;
+    width: 200px;
+    color: white;
+    font-size: 12px;
+    transition: 400ms;
+}
+
+.btnblog:after
+{
+    content: '';
+    width:194px;
+    height: 90%;
+    border-radius: 50px;
+    border:1px white solid;
+    position: absolute;
+    right:2px;
+    top: 2px;
+
+}
+
+
+.btnblog:hover
+{
+    color: white;
+}
+
+.btn-1
+{
+    background-image: linear-gradient(to right,yellow,lightyellow);
+    transition: 400ms;
+}
+.btn-1:hover
+{
+    background-image: linear-gradient(to right,lightyellow,yellow);
+}
+
+.btn-2
+{
+    background-image: linear-gradient(to right,red,palevioletred);
+}
+.btn-2:hover
+{
+    background-image: linear-gradient(to right,palevioletred,red);
+}
+
+
+.btn-3
+{
+    background-image: linear-gradient(to right,blue,deepskyblue);
+}
+.btn-3:hover
+{
+    background-image: linear-gradient(to right,deepskyblue,blue);
+}
+
+.btn-4
+{
+    background-image: linear-gradient(to right,orangered,orange);
+}
+.btn-4:hover
+{
+    background-image: linear-gradient(to right,orange,orangered);
+}
+
+.btn-5
+{
+    background-image: linear-gradient(to right,purple,hotpink);
+
+}
+.btn-5:hover
+{
+    background-image: linear-gradient(to right,hotpink,purple);
+}
+
+
 
 
 .btn-loginSign

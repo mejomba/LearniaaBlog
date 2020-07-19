@@ -21,4 +21,4 @@
 <link rel="stylesheet" href="{{asset('css/site/font-awesome.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/site/slick.css')}}">
 <link rel="stylesheet" href="{{asset('css/site/slick-theme.css')}}">
-
+<link rel="stylesheet" href="{{asset('css/site/animate.css')}}">

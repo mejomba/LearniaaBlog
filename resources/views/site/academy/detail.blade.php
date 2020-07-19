@@ -67,10 +67,17 @@ style="margin-top: -15px" style="width:500px;height:469px">
 
                <!-- Card -->
              @foreach($nodes as $node)
+<<<<<<< HEAD
+                <div class="col-lg-4 col-md-6 col-sm-8 col-11 wow fadeIn" data-wow-duration="1s"
+                     data-wow-delay="0.5s">
+                    <div class="single-services text-center mt-3"
+                         style="border: 2px solid #f1c40f; border-radius: 10px;">
+=======
                 <div class="col-lg-4 col-md-6 col-sm-8 col-11">
                     <div class="single-services text-center mt-3 wow fadeIn" data-wow-duration="1s"
                          data-wow-delay="0.5s"
                          style="border: 2px solid #20c5ba; border-radius: 10px;">
+>>>>>>> 30f4994b56fb535dc6883102bbabc8b330891212
                         <div class="services-icon">
                         @if(isset($node->icon))
                         <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">

@@ -10,10 +10,10 @@
  <!-- Section -->
     <div class="row">
 
-<div class="col-lg-8 col-md-7 col-sm-9 col-10 offset-1" style=" margin-top: 100px!important;
+<div class="col-lg-9 col-md-7 col-sm-9 col-10 offset-1" style="margin-top: 100px!important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;" >
-              <div class="col-lg-7" style="margin-top: 120px!important">
+              <div class="col-lg-7">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center"><h4>تکمیل پروفایل</h4></div>
@@ -530,6 +530,7 @@
                   <div class="col-md-12 text-center" >
                     <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
                   </div>
+       </div>
                 </form>
               </div>
             </div>

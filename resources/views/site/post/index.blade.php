@@ -1,165 +1,158 @@
+
 @extends('site.Layouts.layout_landing')
 
 @section('Head')
-<title> بلاگ | لرنیا  </title>
-  <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
-  <meta  name="keywords"    content="اخبار,مقالات,بلاگ,لرنیا" >
+    <title> بلاگ | لرنیا  </title>
+    <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+    <meta  name="keywords"    content="اخبار,مقالات,بلاگ,لرنیا" >
 @endsection
 
 @section('text_landing')
 
-{{--<img src="{{ asset('images/Template/text_blog2.png') }}" alt="Learniaa" class="" width="100%" style="float:left">--}}
-<h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">آکادمی</span></h1>
-<h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
-<h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
-    <button class="btn fourth text-center">شروع کن</button>
-</h6>
+    {{--<img src="{{ asset('images/Template/text_blog2.png') }}" alt="Learniaa" class="" width="100%" style="float:left">--}}
+    <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">بلاگ</span></h1>
+    <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
+    <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
+        <button class="btn fourth text-center">شروع کن</button>
+    </h6>
 @endsection
 
 
 @section('pic_landing')
     <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/teacher.svg')}}" alt="" style="margin-top: -15px">
-{{--<img src="{{ asset('images/Template/teacher.svg') }}" alt="Learniaa">--}}
+    {{--<img src="{{ asset('images/Template/teacher.svg') }}" alt="Learniaa">--}}
 @endsection
 
 @section('content')
 
+    <section class="MainTopics">
+        <div class="d-flex justify-content-around flex-wrap mt-5" id="topics_Of_novels">
 
-<div class="container-fluid">
-  <div class="row text-center mx-auto mt-5" id="topics_Of_novels">
-     <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px"  href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">
-       توسعه مهارت های شخصی
-        </a>
-     </div>
+            <div class="m-2">
+                <a href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1"   > توسعه مهارت های شخصی </a>
 
-     <div class="col-lg-2 col-md-2 col-sm-6 col-6">
-     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','دنیای دیجیتال')}}" class="btn  btn-round btnblog btn-6"   > دنیای دیجیتال </a>
+            </div>
 
-     </div>
+            <div class="m-2">
+                <a href="{{route('category.show','دنیای دیجیتال')}}" class="btn  btn-round btnblog btn-2"   > دنیای دیجیتال </a>
+            </div>
 
-     <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-2"     >    برنامه نویسی   </a>
-     </div>
+            <div class="m-2">
+                <a href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-3"     >    برنامه نویسی   </a>
+            </div>
 
-     <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-3"   > وب </a>
+            <div class="m-2">
+                <a href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-4"   > وب </a>
 
-     </div>
+            </div>
 
-
-     <div class="col-lg-3 col-md-3 col-sm-4 col-4">
-     <a style="padding: 11px;border-radius:50px;background-color: #20C5BA;margin-top: 8px" href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-4"    >   هک و امنیت </a>
-
-     </div>
-
- </div>
-</div>
+            <div class="m-2">
+                <a href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-5"   > هک و امنیت </a>
+            </div>
 
 
-<div class="container-fluid">
+        </div>
+    </section>
 
-   <div class="row mt-5 mb-4" style="padding-top:20px;">
 
-                <div class="col-12 mx-auto text-center">
 
-                  <h3>
+
+    <div class="container-fluid">
+
+        <div class="row mt-5 mb-4" style="padding-top:20px;">
+
+            <div class="col-12 mx-auto text-center">
+
+                <h3>
                         <span style="font-size: 20px ; font-weight: 900">
                     <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
                     بخوانید ، بدانید ، لذت ببرید
                     <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
                         </span>
-                  </h3>
+                </h3>
 
-                </div>
+            </div>
 
-   </div>
+        </div>
 
-     <div class="row p-5" id="ListOfData" style="font-size:15px">
+        <div class="row p-2 m-5" id="ListOfData" style="font-size:15px">
 
 
             @foreach($recent_post as $one_post)
-            @php  $json = json_decode($one_post['extras'],false) @endphp
+                @php  $json = json_decode($one_post['extras'],false) @endphp
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12 p-3 div-transition mt-sm-2 mt-2">
+                <div class="col-lg-4 col-md-6 col-sm-11 col-12 mx-auto mt-3">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none">
+                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
+                            <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}" class="">
+                                <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:30vh">
+                            </a>
+                        </div>
 
-                    <a href="{{route('post.detail', ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}" style="overflow:hidden!important;" class="rounded">
-                       <img  src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
-                      class="img-raised rounded img-fluid imageBlog" style="width:720px;height:230px;" >
-                    </a>
+                        <div class="card-body px-4">
+                            <span class="d-block text-secondary">برنامه نویسی</span>
+                            <a href="" class="">
+                                <h6 class="mt-2">کلاس PHP + آموزش رایگان شی گرایی در PHP</h6>
+                            </a>
 
-                      <a class="text-muted" href="{{route('post.detail',  ['slug' => $one_post['pk_post'] , 'desc' =>  $one_post['title'] ]  )}}">
-                        <h4 style="font-size: 20px;margin-bottom:0px" >{{$one_post['title']}}</h4>
-                        </a>
 
-                          <div class="post-meta" >
+                            <p class="mt-2 text-secondary">fefwefgnnkgnerogjkbmijgtenbjgnbjnjkfnjkfb.bfgfbf....</p>
+                        </div>
+                        <div class="card-end px-4 mt-3 py-2">
+                            <span class="mt-1">vmdfmvkjdfnbkjgnknf</span><i class="fa fa-circle mr-2 text-info  "></i>
+                            <input type="button" class="btn btn-primary float-right px-4 py-2" value="مشاهده">
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="post-meta-content" class="meta_title_post text-muted">
 
-                                  <span class="post-auhor-date">
-                                  <span class="text-muted">
-                                  <img src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="20px" width="20px">
-                                   {{$one_post->writer['name']}} </span>
-                                  <span  class="text-muted"> |
-                                  <img src="{{ asset('images/Template/calendar.svg') }}" alt="Learniaa" height="20px" width="20px">
+            @endforeach
 
-                                    {{ $json->create_at }}
-                                  </span>
+        </div>
 
-                                  </span>
 
-                                 <span class="text-muted" > |
-                                 <img src="{{ asset('images/Template/clock.svg') }}" alt="Learniaa" height="20px" width="20px">
+        {{--    Pagination starts--}}
+        <section class="Pagination">
+            <div class="row mx-auto">
+                <div class="col-12">
+                    <ul class="pagination px-1 py-1 text-secondary" style="background-color: rgba(248,244,244,0.65)">
 
-                                    {{ $json->readtime }} دقیقه
-                                   </span>
+                        <li class="border-secondary m-2">
+                            <a class="page-link shadow-lg" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
 
-                            <div class="post-content">
-                                  <p> @php $text =  substr($json->desc_short,0,380);
-                                        $char = substr($text,strlen($text)-1,1);
-                                        if($char != "." | $char != " ")
-                                        {
-                                         echo  substr($text,0,378) . " ...";
-                                        }
-                                        else
-                                        {
-                                          echo $text ;
-                                        }
-                                      @endphp  </p>
-                            </div>
+                        <li class="page-item active border-secondary m-2"><a class="page-link shadow-lg" href="#">1</a></li>
 
-                      </div>
-                      </div>
+                        <li class="border-secondary m-2"><a class="page-link shadow-lg" href="#">2</a></li>
+
+                        <li class="border-secondary m-2"><a class="page-link shadow-lg" href="#">3</a></li>
+
+                        <li class="border-secondary m-2 rounded">
+                            <a class="page-link shadow-lg" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
-          @endforeach
+
+        </section>
+        {{--    Pagination ends--}}
 
     </div>
 
+{{--===================================================================--}}
 
-   <!-- Show More -->
-   <div class="d-flex justify-content-center">
-                <button style="margin-bottom: 35px;font-size:12px" id="btn_more"   onclick="loading( '{{ $categoryOfPage }}' )" class="btn btn-primary  btn-round  ">
-     مشاهده بیشتر
-        </button>
-        </div>
-<!-- Show More -->
 
-<!-- Animation -->
-                <div class="d-flex justify-content-center">
-                            <div class="">
+{{--===========================================================================================--}}
 
-                                <div class="text-center" id="loading" style="display:none">
 
-                                @php echo file_get_contents('images/Template/loading.svg'); @endphp
 
-                                </div>
-                        </div>
-
-                  </div>
-  <!-- Animation -->
-
-</div>
 
 
 @endsection
@@ -169,22 +162,22 @@
 
 <script>
 
-  var getUrl = window.location;
-  var baseUrl = "https:" + "//" + getUrl.host  ;
-  var page_url = "";
-  var first_run = 0 ;
-  var writer = "";
-  var writers = [];
+    var getUrl = window.location;
+    var baseUrl = "https:" + "//" + getUrl.host  ;
+    var page_url = "";
+    var first_run = 0 ;
+    var writer = "";
+    var writers = [];
 
-  function SetData(json,writer)
-   {
-    var Data = document.getElementById('ListOfData');
+    function SetData(json,writer)
+    {
+        var Data = document.getElementById('ListOfData');
 
- //   json.data[0].extras = JSON.stringify(json.data[0].extras);
-    json.extras =  JSON.parse(json.extras);
+        //   json.data[0].extras = JSON.stringify(json.data[0].extras);
+        json.extras =  JSON.parse(json.extras);
 
 
-    Data.insertAdjacentHTML('beforeend',`<div class="col-md-4 div-transition">
+        Data.insertAdjacentHTML('beforeend',`<div class="col-md-4 div-transition">
    <a href="${baseUrl+"/post/" +json.pk_post  + "/" + json.title }">
    <img src="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/post/${json.pic_content}" class="img-raised rounded img-fluid" alt="${json.title}" style="width: 703px;height: 250px;"></a>
   <a class="text-muted" href="${baseUrl+"/post/" +json.pk_post + "/" + json.title }">
@@ -222,139 +215,140 @@
 </div>`);
 
 
-   }
+    }
 
- function loading(categoryOfPage)
- {
+    function loading(categoryOfPage)
+    {
 
-  if(categoryOfPage == "All")
-  {
+        if(categoryOfPage == "All")
+        {
 
-          if(first_run == 0)
-          {
-                 fetch(baseUrl + '/api/posts')
-                 .then( response =>    response.json())
+            if(first_run == 0)
+            {
+                fetch(baseUrl + '/api/posts')
+                    .then( response =>    response.json())
                     .then((json) => {
 
-                                              page = 1 ;
-                                              json = JSON.stringify(json);
-                                              json = JSON.parse(json);
+                        page = 1 ;
+                        json = JSON.stringify(json);
+                        json = JSON.parse(json);
 
-                                              if(json.first_page_url != null)
-                                                {
-                                                  page_url =  json.first_page_url;
-                                                }
-                                                else
-                                                {
-                                                  page_url =  null ;
-                                                  $("#btn_more").css("display","none");
-                                                       return 0;
-                                                }
+                        if(json.first_page_url != null)
+                        {
+                            page_url =  json.first_page_url;
+                        }
+                        else
+                        {
+                            page_url =  null ;
+                            $("#btn_more").css("display","none");
+                            return 0;
+                        }
 
 
-                                            })
+                    })
 
-                                            first_run = 1 ;
-              }
+                first_run = 1 ;
+            }
 
-  }
+        }
 
-  else
-  {
-    if(first_run == 0)
-          {
-              fetch(baseUrl + '/api/postsByCategory/'+categoryOfPage)
+        else
+        {
+            if(first_run == 0)
+            {
+                fetch(baseUrl + '/api/postsByCategory/'+categoryOfPage)
                     .then(response =>   response.json())
                     .then((json) => {
 
-                                           // console.log(json);
-                                              page = 1 ;
-                                              json = JSON.stringify(json);
+                        // console.log(json);
+                        page = 1 ;
+                        json = JSON.stringify(json);
 
-                                              json = JSON.parse(json);
+                        json = JSON.parse(json);
 
-                                              if(json.first_page_url != null)
-                                                {
-                                                  page_url =  json.first_page_url;
-                                                }
-                                                else
-                                                {
-                                                  page_url =  null ;
-                                                  $("#btn_more").css("display","none");
-                                                    return 0;
-                                                }
-
-
-                                            })
-
-                                            first_run = 1 ;
-              }
-  }
+                        if(json.first_page_url != null)
+                        {
+                            page_url =  json.first_page_url;
+                        }
+                        else
+                        {
+                            page_url =  null ;
+                            $("#btn_more").css("display","none");
+                            return 0;
+                        }
 
 
+                    })
+
+                first_run = 1 ;
+            }
+        }
 
 
-            $("#loading").css("display","block");
-            setTimeout(prepare, 2000);
-            console.log('start');
- }
 
 
-  function prepare()
-   {
-      $("#loading").css("display","none");
+        $("#loading").css("display","block");
+        setTimeout(prepare, 2000);
+        console.log('start');
+    }
 
-         var res = page_url.replace("http", "https");
 
-             fetch(res)
+    function prepare()
+    {
+        $("#loading").css("display","none");
+
+        var res = page_url.replace("http", "https");
+
+        fetch(res)
             .then(response => response.json())
             .then((json) => {
-                                  console.log(json);
-                                      json = JSON.stringify(json);
-                                      json = JSON.parse(json);
+                console.log(json);
+                json = JSON.stringify(json);
+                json = JSON.parse(json);
 
-                                   if(json.next_page_url != null)
-                                   {
-                                    page_url =  json.next_page_url;
-                                    this.SetWriter(json);
-                                   }
-                                   else
-                                   {
-                                    this.SetWriter(json);
-                                    page_url =  null ;
-                                    $("#btn_more").css("display","none");
-                                    return 0;
-                                   }
+                if(json.next_page_url != null)
+                {
+                    page_url =  json.next_page_url;
+                    this.SetWriter(json);
+                }
+                else
+                {
+                    this.SetWriter(json);
+                    page_url =  null ;
+                    $("#btn_more").css("display","none");
+                    return 0;
+                }
 
-                                    })
+            })
 
-  }
-
-
+    }
 
 
-   function SetWriter(json)
-   {
 
-     Object.entries(json.data).forEach(([index, item]) =>
+
+    function SetWriter(json)
     {
 
-
-      fetch(baseUrl + '/api/writers/'+item.pk_writers)
-              .then(response =>   response.json())
-              .then((json) => {
-
-                                      json = JSON.stringify(json);
-                                      var writer = JSON.parse(json);
-                                      this.SetData(item,writer);
-
-                                      })
+        Object.entries(json.data).forEach(([index, item]) =>
+        {
 
 
-    });
+            fetch(baseUrl + '/api/writers/'+item.pk_writers)
+                .then(response =>   response.json())
+                .then((json) => {
 
-     ////////////////////////////////////////////////////////////
-  }
+                    json = JSON.stringify(json);
+                    var writer = JSON.parse(json);
+                    this.SetData(item,writer);
+
+                })
+
+
+        });
+
+        ////////////////////////////////////////////////////////////
+    }
 
 
 </script>
+
