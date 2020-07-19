@@ -10,10 +10,8 @@ Route::get('/', 'AcademyController@index')->name('index');
 Route::get('/academy', 'AcademyController@index')->name('academy.index');
 Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
 Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
-Route::get('/academy/register', 'AcademyController@register')->name('academy.register');
-Route::get('/academy/start', 'AcademyController@start')->name('academy.start');
 Route::get('/academy/road', 'AcademyController@road')->name('academy.road');
-Route::get('/academy/course', 'AcademyController@start_course')->name('academy.course');
+Route::get('/academy/mylearn', 'AcademyController@start_mylearn')->name('academy.mylearn');
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 
 

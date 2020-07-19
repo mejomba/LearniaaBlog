@@ -34,7 +34,7 @@ class AcademyController extends Controller
         return view('site.academy.index',compact('last_posts'));
     }
 
-    public function start_course(Request $request)
+    public function start_mylearn(Request $request)
     {
         $pk_tree = $_GET['pk_tree'] ;
         $courses = Course::where('pk_tree',$pk_tree)->orderby('sort','ASC')->get();
@@ -80,30 +80,14 @@ class AcademyController extends Controller
        /* Update User History */
 
     
-        return view('site.academy.course',compact('courses','tree','payment_status'));
+        return view('site.academy.mylearn',compact('courses','tree','payment_status'));
     
     }
 
     public function detail(Request $request)
     {
-        $pk_parent = "";
-        $level = "";
-        $nodes = "" ;
-        if(isset($_GET['pk_parent']))
-        {
-            $pk_parent =  $_GET['pk_parent'];
-            $level = $_GET['level'];
-            
-            $nodes = Tree::where( ['pk_parent' => $pk_parent , 'level' => $level ] )->get();
-            
-        }
-        else
-        {
-            $nodes = Tree::where( ['level' => '0' ] )->get();
-        }
-        
-        return view('site.academy.detail',compact('nodes'));
-
+         $nodes = Tree::where( ['level' => '0' ] )->get();
+         return view('site.academy.detail',compact('nodes'));
     }
     
 
@@ -338,52 +322,8 @@ $messages = [
         return $validator ;
     }
 
-    public function register()
-    {
-        $user =  Auth::user() ; 
-        $profile = Profile::where('pk_users',$user->pk_users)->first();
 
-        return view('site.academy.register',compact('profile'));
-    }
-
-
-    public function start()
-    {
-        /* start login process & give information */
-        /*
-        $user =  Auth::user() ;
-
-        if($user != null)
-        {
-            // check completer profile 
-           $pk_user =  $user->pk_users ;
-          $row =  Profile::where('pk_users',$pk_user)->first();
-         
-            if($row->complete == 'YES')
-            {
-                return redirect()->route('academy.detail');
-
-            }
-            else
-            {
-              $profile  =  $row ;
-                return view('site.academy.register',compact('profile'));
-
-            }
-        }
-        else
-        {
-            $redirectFromURL = "/academy/start";
-            return view('auth.callbacklogin',compact('redirectFromURL'));
-        }
-        */
-        return redirect()->route('academy.detail');
-
-
-        
-
-    }
-    }
+ }
 
 
 

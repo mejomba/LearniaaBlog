@@ -13,10 +13,6 @@
 <link href="{{ asset('css/site/bootstrap/bootstrap-reboot.css') }}" rel="stylesheet">
 <link href="{{ asset('css/site/myStyle.css') }}" rel="stylesheet">
 
-<!-- Minify Dirty
-<link href="{{ asset('css/site/bootstrap/Bootstrap-minified.css') }}" rel="stylesheet">
-<link href="{{ asset('css/site/style-minified.css') }}" rel="stylesheet">
--->
 
 <link rel="stylesheet" href="{{asset('css/site/font-awesome.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/site/slick.css')}}">

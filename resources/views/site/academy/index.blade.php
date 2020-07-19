@@ -8,7 +8,6 @@
 @endsection
 
 
-
 @section('text_landing')
 <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px">
 <span class="text-warning mr-3">لرنیا</span>
@@ -18,7 +17,7 @@
      لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد
      </h3>
      <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
-     <button class="btn fourth text-center">شروع کن</button>
+     <a class="btn fourth text-center" href="{{route('academy.detail')}}">شروع کن</a>
      </h6>
 @endsection
 
@@ -32,9 +31,8 @@ style="margin-top: -15px">
 @section('content')
 
 <!-- Video LEARN -->
-
+<!--
 <section class="row main-video d-flex justify-content-center mb-5">
-
     <a href="#video3" class="afterglow text-center">
         <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
         <i class="fa fa-play fa-4x text-center"></i>
@@ -43,21 +41,21 @@ style="margin-top: -15px">
         <source src="{{ asset('images/video.mp4') }}" type="video/mp4" />
     </video>
 </section>
-
+-->
 <!-- END Video LEARN -->
 
 
 <!-- Customer Say -->
+<!--
 <div class="row justify-content-center">
     <div class="col-lg-5  wow fadeIn" data-wow-delay="1s">
         <div class="section-title text-center pb-40">
             <div class="line mt-5 mx-auto rounded-lg"></div>
             <h3 class="title mt-5">نظرات مشتریان</h3>
-        </div> <!-- section title -->
+        </div>
     </div>
 </div>
 <section class="slider wow fadeIn" data-wow-delay="1s">
-
     <div class="single-comment  text-center pb-3 pt-3 px-3 m-5 " style="height: auto ; width:300px">
         <span class="float-left">
             <i class="fa fa-star"></i>
@@ -150,18 +148,19 @@ style="margin-top: -15px">
         </p>
         <img src="{{ asset('images/Template/user_login.svg') }}" alt="userImg" class="float-left" width="40px">
     </div>
-
 </section>
+-->
+
 
 <!-- Blog Posts -->
+<!--
 <section id="testimonial" class="testimonial-area pt-120">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
-
-                  <!--  <h3 class="title mt-5">آخرین مطالب</h3>  -->
-                </div> <!-- section title -->
+                 <h3 class="title mt-5">آخرین مطالب</h3> 
+                </div>
             </div>
         </div>
 
@@ -197,13 +196,12 @@ style="margin-top: -15px">
         @endforeach
 
             </div>
-        </div>
-        <!-- Customer Say ends-->
-
-
-</div> <!-- container -->
+        </div>    
+</div>
 </section>
-<!-- End BLog Posts -->
+ -->
+
+
 
 <section id="masters" class="pt-120">
     <div class="container wow fadeIn" data-wow-delay="1s">
@@ -221,81 +219,84 @@ style="margin-top: -15px">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                             <img src="{{asset('images/Template/user_login.svg')}}" alt=""
+                              width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">حسین حسینی</h4>
-                        <p class="">Business Developer</p>
-                        <i class="fa fa-instagram text-danger ml-3"></i>
-                        <i class="fa fa-telegram text-info"></i>
+                        <h4 class="">مهندس ملک</h4>
+                        <p class="">اصول برنامه نویسی</p>
+                       <!-- <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i> -->
                     </div>
 
-                </div> <!-- single testimonial -->
+                </div> 
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                             <img src="{{asset('images/Template/user_login.svg')}}" alt=""
+                              width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">حسین حسینی</h4>
-                        <p class="">Business Developer</p>
-                        <i class="fa fa-instagram text-danger ml-3"></i>
-                        <i class="fa fa-telegram text-info"></i>
+                        <h4 class="">دکتر اسماعیلی</h4>
+                        <p class="">اصول برنامه نویسی</p>
+                     <!--   <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i> -->
                     </div>
 
-                </div> <!-- single testimonial -->
+                </div> 
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/Template/user_login.svg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
+                             <img src="{{ asset('images/Template/user_login.svg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">حسین حسینی</h4>
-                        <p class="">Business Developer</p>
-                        <i class="fa fa-instagram text-danger ml-3"></i>
-                        <i class="fa fa-telegram text-info"></i>
+                        <h4 class="">مهندس موسی آبادی</h4>
+                        <p class="">برنامه نویسی پایتون</p>
+                       <!-- <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>  -->
                     </div>
 
-                </div> <!-- single testimonial -->
+                </div> 
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/testimonials-background.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
+                             <img src="{{asset('images/Template/user_login.svg')}}" 
+                             alt="" width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">حسین حسینی</h4>
-                        <p class="">Business Developer</p>
-                        <i class="fa fa-instagram text-danger ml-3"></i>
-                        <i class="fa fa-telegram text-info"></i>
+                        <h4 class="">مهندس لاغری</h4>
+                        <p class="">دوره طراحی وب</p>
+                      <!--  <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i> -->
                     </div>
 
-                </div> <!-- single testimonial -->
+                </div> 
             </div>
-        </div> <!-- row -->
-    </div> <!-- container -->
+        </div> 
+    </div>
 </section>
 <!-- END Customer Say -->
 
 
 <script>
-
     $('.slider').slick({
         infinite: true,
         slidesToShow: 3,
@@ -337,7 +338,6 @@ style="margin-top: -15px">
         ]
 
     }) ;
-
 </script>
 
 
@@ -346,7 +346,6 @@ style="margin-top: -15px">
             $("#Pre-loader").delay(500).fadeOut();
         });
     </script>
-
 
 @endsection
 

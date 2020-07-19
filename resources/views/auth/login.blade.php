@@ -7,7 +7,8 @@
     <section class="login-users">
         <div class="row" >
 
-            <div class="auth-card col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 offset-sm-2 offset-2 text-center bg-white shadow-lg wow fadeInUp" data-wow-delay="2s" style=" margin-top: 100px!important;
+            <div class="auth-card col-lg-4 col-md-5 col-sm-6 col-8 offset-lg-1 offset-md-1 
+            offset-sm-2 offset-2 text-center bg-white shadow-lg wow fadeInUp" data-wow-delay="0.5s" style=" margin-top: 100px!important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;">
                 <div class="row">

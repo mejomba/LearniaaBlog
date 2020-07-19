@@ -157,7 +157,6 @@
 
 
    <!-- JW Player Video  -->
-
                 <div class="row">
                     <div class="col-12 col-md-7">
                     <div class="container-fluid"
@@ -178,10 +177,10 @@
                         </div>
                     </div>
                     </div>
-     <!-- JW Player Video  -->
+<!-- JW Player Video  -->
 
 
-          <!-- Section Learner -->
+     <!-- Section Learner -->
           <div class="col-12 col-md-5">
             <div class="container-fluid" style="padding-bottom:15px;;font-size:15px;">
                 <h3> اطلاعات مدرس <h3>
@@ -216,7 +215,7 @@
             </div>
         </div>
       </div>
-            <!-- Section Learner -->
+   <!-- Section Learner -->
 
 
 

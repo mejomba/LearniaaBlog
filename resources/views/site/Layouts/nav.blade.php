@@ -12,10 +12,11 @@
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex justify-content-center" style="font-size:15px; font-weight:500;">
             <li class="nav-item mr-lg-5 ml-lg-5"> <a class="nav-link" href="{{route('academy.index')}}">خانه</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.start')}}">آکادمی آموزش</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-         <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >بلاگ</a></li>
+
+            {{--  <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >بلاگ</a></li> --}}
 
         </ul>
     </div>
@@ -31,7 +32,7 @@
                 <li class="nav-item">
                     <a class="nav-link btn fourth" target="_parent" rel="tooltip" title=""
                        data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
-                        <span>شروع کن</span>
+                        <span>ثبت نام/ ورود</span>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse nav-navbar-style"  id="navbar-default">
@@ -43,7 +44,7 @@
                                data-placement="bottom">صفحه اصلی</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " style="color: black" href="{{route('academy.start')}}" rel="tooltip"
+                            <a class="nav-link " style="color: black" href="{{route('academy.detail')}}" rel="tooltip"
                                title="" data-placement="bottom"
                                data-original-title="به زودی">آکادمی آموزش </a>
                         </li>

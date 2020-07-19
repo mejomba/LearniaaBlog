@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <img class="card-img-top img-border"
-                     src="{{  Storage::url('tree/'.$tree->course['pic'])  }}"
+                     src="{{  Storage::url('tree/'.$tree->pic)  }}"
                      width="900px" height="270px" alt="Card image cap">
                 <div class="card-body text-center ">
                     <h5 class="card-title "></h5>
@@ -52,7 +52,7 @@
             <div class="row" >
                     <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:10px"  >
                     
-                    <a href="{{route('academy.course',['pk_tree'=>$tree->pk_tree])}}"> 
+                    <a href="{{route('academy.mylearn',['pk_tree'=>$tree->pk_tree])}}"> 
                             <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع یادگیری</button>
                             </a> 
                      </div>

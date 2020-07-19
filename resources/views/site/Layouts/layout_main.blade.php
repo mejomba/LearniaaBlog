@@ -8,18 +8,14 @@
 
  <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{asset('js/core/slick.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/core/wow.js')}}"></script>
-    <script src="{{asset('js/core/wow.animate.js')}}"></script>
+ <script src="{{asset('js/core/wow.js')}}"></script>
+ <script src="{{asset('js/core/wow.animate.js')}}"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
-<<<<<<< HEAD
-<script src="{{ asset('js/core/afterglow.min.js') }}"></script>
-=======
 <!-- Video Player -->
 <script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
 
->>>>>>> 30f4994b56fb535dc6883102bbabc8b330891212
 
 {{--@include('site.Layouts.preloader')--}}
 
@@ -42,6 +38,7 @@ var e = document, a = window, o = "06120c99-d579-4a39-b5c6-b0044acc0b01";
 }();</script>
 -->
 <!--END RAYCHAT CODE-->
+
 <!-- Yektanet CODE-->
 <!--
 <script>!function (t, e, n) {t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {

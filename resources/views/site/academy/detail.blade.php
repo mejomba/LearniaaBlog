@@ -37,31 +37,26 @@ style="margin-top: -15px" style="width:500px;height:469px">
 <div id="header" class="page-header container-fluid" data-parallax="true">
     <section id="features" class="services-area pt-120">
         <div class="container-fluid">
-{{--            <div class="row justify-content-center">--}}
-{{--                <div class="col-lg-10">--}}
-{{--                    <div class="section-title text-center pb-40">--}}
 
-
-{{--                    </div> <!-- section title -->--}}
-{{--                </div>--}}
-{{--            </div>--}}
           <!-- row -->
             <div class="row justify-content-center" style="margin-top:120px">
             <!-- Back Tree Button -->
             @if(isset($_GET['pk_parent']))
-            @if($_GET['level'] - 1 != 0)
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                <a href="{{route('academy.detail',['pk_parent'=>$_GET['pk_parent'],'level'=> $_GET['level'] - 1])}}">
-                  <button class="btn btn-primary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
-                </a>
-                </div>
-            @else
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                <a href="{{route('academy.detail')}}">
-                  <button class="btn btn-secondary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
-                </a>
-                </div>
-            @endif
+                @if($_GET['level'] - 1 != 0)
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <a href="{{route('academy.detail',['pk_parent'=>$_GET['pk_parent'],'level'=> $_GET['level'] - 1])}}">
+                    <button class="btn btn-primary mt-4 d-inline" 
+                    style="font-size:15px;margin-bottom:10px">بازگشت</button>
+                    </a>
+                    </div>
+                @else
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <a href="{{route('academy.detail')}}">
+                    <button class="btn btn-secondary mt-4 d-inline" 
+                    style="font-size:15px;margin-bottom:10px">بازگشت</button>
+                    </a>
+                    </div>
+                @endif
             @endif
             <!-- Back Tree Button -->
 
@@ -72,17 +67,17 @@ style="margin-top: -15px" style="width:500px;height:469px">
                          data-wow-delay="0.5s"
                          style="border: 2px solid #20c5ba; border-radius: 10px;">
                         <div class="services-icon">
-                        @if(isset($node->icon))
-                        <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="90px" alt="shape-1">
-                            <img class="shape-1" style="top:52%;left:45%"src="{{  Storage::url('tree/'.$node->icon) }}" width="50px" alt="{{ $node->name }}">
-                            <i class="lni-cog"></i>
-                        @else
-                        <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
-                            <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}"
-                             width="90px" alt="shape-1">
-                            <i class="lni-cog"></i>
-                        @endif
+                            @if(isset($node->icon))
+                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
+                                <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}" width="90px" alt="shape-1">
+                                <img class="shape-1" style="top:52%;left:45%"src="{{  Storage::url('tree/'.$node->icon) }}" width="50px" alt="{{ $node->name }}">
+                                <i class="lni-cog"></i>
+                            @else
+                            <img class="shape" src="{{asset('images/services-shape.svg')}}" alt="shape">
+                                <img class="shape-1" src="{{asset('images/services-shape-1.svg')}}"
+                                width="90px" alt="shape-1">
+                                <i class="lni-cog"></i>
+                            @endif
                         </div>
                         <div class="services-content text-center">
                             <h6 class="text-black-100">{{ $node->name }}</h6>
@@ -100,8 +95,6 @@ style="margin-top: -15px" style="width:500px;height:469px">
                             </div>
                             </div>
                             
-                          
-                           
                         </div>
                     </div>
                 </div>
