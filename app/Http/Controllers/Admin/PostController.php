@@ -400,7 +400,7 @@ class PostController extends Controller
 
 
              // process pic
-
+             $pic_name =  "";
              if(request()->pic_content)
              {
                 $pic = request()->file('pic_content');

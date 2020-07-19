@@ -6,10 +6,14 @@
       @php  $json = json_decode($one_post['extras'],false) @endphp
 
       <title> لرنیا | {{$one_post['title']}} </title>
+      
       <meta  name="description" content="{{$json->desc_short}}">
       @endforeach
 
       <meta  name="keywords" content="@php echo implode(',',$meta_keywords); @endphp" >
+
+
+
 
 @endsection
 
