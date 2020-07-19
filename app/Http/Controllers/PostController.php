@@ -21,8 +21,8 @@ class PostController extends Controller
     {  
         $detail_post = Post::where('pk_post', $slug)->get();
         $recent_post = Post::where('status', 'انتشار')->orderBy('pk_post', 'desc')->get()->take(6);
-        $behavior_post = Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
-       
+        //$behavior_post = Behavior::where('pk_entity', $slug)->where('status','تایید شده')->get();
+
         /* Meta Keyword */
         $data_search = Search::where('pk_search',$detail_post[0]['pk_search'])->get();
         $meta_keywords = array();
@@ -32,7 +32,7 @@ class PostController extends Controller
         }
          /* Meta Keyword */
         
-        return view('site.post.detail',compact('detail_post','recent_post','behavior_post','meta_keywords'));
+        return view('site.post.detail',compact('detail_post','recent_post','behavior_post','meta_keywords','meta'));
     }
     /*
     public function postByTag($slug)

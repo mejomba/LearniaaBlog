@@ -6,10 +6,62 @@
       @php  $json = json_decode($one_post['extras'],false) @endphp
 
       <title> لرنیا | {{$one_post['title']}} </title>
-      <meta  name="description" content="{{$json->desc_short}}">
       @endforeach
 
-      <meta  name="keywords" content="@php echo implode(',',$meta_keywords); @endphp" >
+      @foreach($detail_post as $one_post)
+
+      @php $meta=json_decode($one_post['metatag'],true) @endphp
+
+      <!-- HTML Meta -->
+
+      @foreach($meta['htmlmeta'] as $key => $value)
+      
+      <meta  name="{{$key}}" content="{{$value}}" >
+
+      @endforeach
+      <!-- OpenGraph Meta -->
+      @foreach($meta['opengraph'] as $key => $value)
+
+      <meta  name="{{$key}}" content="{{$value}}" >
+
+      @endforeach
+      <!-- Twitter Meta -->
+
+      @foreach($meta['twitter'] as $key => $value)
+
+      <meta  name="{{$key}}" content="{{$value}}" >
+
+      @endforeach
+
+
+      <!-- Schema Meta -->
+
+      @php $meta=json_decode($one_post['schema_markup'],true) @endphp
+
+        @foreach($meta as $key => $value)
+
+        <meta  name="{{$key}}" content="{{$value}}" >
+
+        @endforeach
+
+      @if($one_post['video'] == 'yes')
+      @php $videometa=json_decode($one_post['video_schema'],true) @endphp
+
+      <!-- Video meta -->
+     
+
+      <script type="application/ld+json">
+      {
+        @foreach($videometa as $key => $value)
+        "{{$key}}" {{':'}} "{{$value}}",
+        @endforeach
+
+      }
+      </script>
+      @endif
+
+    @endforeach
+
 
 @endsection
 
@@ -252,109 +304,7 @@
 
 
 
-<!-- Comment -->
-<div class="row" style="padding-bottom:45px;padding-top:35px">
-
-<div class="col-md-12" >
-
-@php $user =  Auth::user();  @endphp
-@if($user['pk_users'] != null)
-
-<h3 class="title ">نظرات و پیشنهادات</h3>
-
-@endif
-
-	<div class="row">
-		<div class="col-md-6 ">
-
-
-        @if($user['pk_users'] != null)
-
-      <form action="{{ route('behavior.store') }}" method="POST">
-      @csrf
-
-      <input type="hidden" name="pk_post" value="{{$detail_post[0]->pk_post}}">
-      <input type="hidden" name="type" value="comment">
-
-             <div class="row" style="padding-right:10px">
-                      <div class="col-md-9">
-                          <div class="form-group bmd-form-group">
-
-                            <input type="text" name="content" class="form-control" placeholder="نظر خود را بنویسید">
-
-                           </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="form-group bmd-form-group">
-                          <button type="submit" style="width:100px;font-size:12px;" class="btn btn-primary btn-title btnblogPost">ثبت </button>
-
-                           </div>
-                      </div>
-
-                </div>
-      </form>
-
-       @endif
-
-      <p></p>
-			<ul class="timeline">
-
-      @foreach($behavior_post as $one_behavior)
-      @php  $json = json_decode($one_behavior['extras'],false) @endphp
-
-
-            <li>
-              <span class="text-muted float-right" style="display:contents" >
-                              <i class="fas fa-user"></i>
-
-                            {{$one_behavior->user->name }}
-              </span>
-              <span class="text-muted float-left" >
-                             <i class="fas fa-calendar-alt"></i>
-                             1398/08/09
-               </span>
-                  <p>{{ $one_behavior['content']  }} </p>
-
-               @if(isset($json->reply))
-               <!-- Reply box -->
-               <div class="col-md-12" >
-                  <div class=" card-login" style="margin-top:5px">
-                   <div class="card-body card-header-primary"
-                       style="border-radius:15px; background: rgba(30, 183, 173, 0.7);">
-                     <div class="row">
-
-                              <div class="col-md-3" style="padding-right:1.0rem">
-                                <div>
-                                    <h5>پاسخ مدیر سایت:</h5>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3" >
-                            </div>
-                            <div class="col-md-3" >
-                            </div>
-                            <div class="col-md-3" >
-                            </div>
-
-
-                      <div class="col-md-12" >
-                              <div  style="padding-right:9px;padding-left:9px;">
-                              <p style="color:#FFF;padding-top:0.2rem; text-align: justify;"> {{$json->reply}} </p>
-                              </div>
-                      </div>
-
-
-                    </div>
-                  </div>
-                  </div>
-              <!-- Reply box -->
-              @endif
-
-          </li>
-          @endforeach
-
-
+<!-- Comment--> 
 
 
 

@@ -20,7 +20,7 @@
 {{--            <div class="form-group d-flex mt-3 pr-3 py-2">--}}
 {{--                <img class="rounded-circle mr-1"--}}
 {{--                     src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">--}}
-{{--                <input name="username" id="username" type="text" class="form-control" placeholder=" تلفن همراه">--}}
+{{--                <input name="username" id="username" type="text" class="form-control" placeholder="تلفن همراه یا ایمیل">--}}
 
 {{--            </div>--}}
 

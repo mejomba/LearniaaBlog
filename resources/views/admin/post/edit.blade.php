@@ -478,7 +478,7 @@
       <div class="input-group-prepend">
         
       </div>
-      <input class="form-control" name="og_title "  placeholder=" og:title " type="text" value ="{{$meta->opengraph->og_title  ?? ''}}">
+      <input class="form-control" name="og_title"  placeholder=" og:title " type="text" value ="{{$meta->opengraph->og_title  ?? ''}}">
     </div>
   </div>
 </div>

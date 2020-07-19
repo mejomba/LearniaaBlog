@@ -77,7 +77,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
       $validator =  $this->validation($request);
 
     if ($validator->fails())

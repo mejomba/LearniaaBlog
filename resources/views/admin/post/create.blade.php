@@ -443,7 +443,7 @@
                             <div class="input-group-prepend">
                               
                             </div>
-                            <input class="form-control" name="og_title "  placeholder=" og:title " type="text" >
+                            <input class="form-control" name="og_title"  placeholder=" og:title " type="text" >
                           </div>
                         </div>
                       </div>
