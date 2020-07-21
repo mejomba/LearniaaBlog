@@ -10,7 +10,7 @@
                             <input  type="hidden" name="name" id="name" value="ناشناس" class="form-control">
                             <input type="hidden" name="message" id="message" value="درخواست خبرنامه"  class="form-control">
 
-                            <input type="text" name="email" placeholder="ایمیل خود را وارد نمایید">
+                            <input type="text" name="email" placeholder="ایمیل یا شماره موبایل خود را وارد نمایید">
                             <button class="main-btn">ثبت نام</button>
                         </form>
                     </div>

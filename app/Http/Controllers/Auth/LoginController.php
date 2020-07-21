@@ -106,8 +106,12 @@ class LoginController extends Controller
                                 ['id' => request()->pk_product , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                     }
                 }
-
-                else
+                
+                if(request()->redirectFromURL == 'http://127.0.0.1:8000/reset/showcallbackloginform')
+                {
+                    return redirect(route('index'));
+                }
+                else 
                 {
                 return redirect(request()->redirectFromURL); 
                 }

@@ -54,7 +54,6 @@ class ResetPasswordController extends Controller
           }
     
         else
-<<<<<<< HEAD
           {     
 
                         $Random_Generate = rand(0,9999);
@@ -109,7 +108,6 @@ class ResetPasswordController extends Controller
 
                         return redirect(route('reset.show',compact('pk_user')));
                     
-=======
           {  
                 $Random_Generate = rand(0,9999);
                 $user = User::where('username',request()->username)->first();
@@ -135,10 +133,10 @@ class ResetPasswordController extends Controller
 
                 return redirect(route('reset.show',compact('pk_user')));
         
->>>>>>> 09670972de12e89a298eef85199bbfa030ffe7ef
                   
            }
     }
+}
 
     /**
      * Display the specified resource.
@@ -308,7 +306,8 @@ class ResetPasswordController extends Controller
 
     public function showcallbackloginform(Request $request)
     {
-        return view('auth.callbacklogin');
+        $redirectFromURL = url()->previous();
+        return view('auth.callbacklogin',compact('redirectFromURL'));
     }
     
 
