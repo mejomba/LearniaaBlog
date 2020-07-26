@@ -9,6 +9,65 @@
 
 @section('text_landing')
 
+<<<<<<< HEAD
+      <title> لرنیا | {{$one_post['title']}} </title>
+      @endforeach
+
+      @foreach($detail_post as $one_post)
+
+      @php $meta=json_decode($one_post['metatag'],true) @endphp
+
+      <!-- HTML Meta -->
+
+      @foreach($meta['htmlmeta'] as $key => $value)
+      
+      <meta  name="{{$key}}" content="{{$value}}" >
+
+      @endforeach
+      <!-- OpenGraph Meta -->
+      @foreach($meta['opengraph'] as $key => $value)
+
+      <meta  name="{{$key}}" content="{{$value}}" >
+
+      @endforeach
+      <!-- Twitter Meta -->
+
+      @foreach($meta['twitter'] as $key => $value)
+
+      <meta  name="{{$key}}" content="{{$value}}" >
+
+      @endforeach
+
+
+      <!-- Schema Meta -->
+
+      @php $meta=json_decode($one_post['schema_markup'],true) @endphp
+
+        @foreach($meta as $key => $value)
+
+        <meta  name="{{$key}}" content="{{$value}}" >
+
+        @endforeach
+
+      @if($one_post['video'] == 'yes')
+      @php $videometa=json_decode($one_post['video_schema'],true) @endphp
+
+      <!-- Video meta -->
+     
+
+      <script type="application/ld+json">
+      {
+        @foreach($videometa as $key => $value)
+        "{{$key}}" {{':'}} "{{$value}}",
+        @endforeach
+
+      }
+      </script>
+      @endif
+
+    @endforeach
+
+=======
     {{--<img src="{{ asset('images/Template/text_blog2.png') }}" alt="Learniaa" class="" width="100%" style="float:left">--}}
     <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">بلاگ</span></h1>
     <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
@@ -17,6 +76,7 @@
     </h6>
 @endsection
 
+>>>>>>> 09670972de12e89a298eef85199bbfa030ffe7ef
 
 @section('pic_landing')
     <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/teacher.svg')}}" alt="" style="margin-top: -15px">
@@ -117,6 +177,9 @@
     {{--===================================================================--}}
 
 
+<<<<<<< HEAD
+<!-- Comment--> 
+=======
     {{--===========================================================================================--}}
 
 
@@ -214,6 +277,7 @@
 
 
                     })
+>>>>>>> 09670972de12e89a298eef85199bbfa030ffe7ef
 
                 first_run = 1 ;
             }

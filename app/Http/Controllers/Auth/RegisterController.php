@@ -78,6 +78,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         $user =  User::create([
             'name' => $data['name'],
             'username' => $data['username'],
@@ -123,7 +124,7 @@ class RegisterController extends Controller
             {
               //  $this->redirectTo = '/';
 
-                $this->redirectTo = '/academy/detail';
+                $this->redirectTo = $data['redirectFromURL'];
             }
              /* Check Register User For Learniaa Academy */
 

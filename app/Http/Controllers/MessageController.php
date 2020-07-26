@@ -7,6 +7,7 @@ use App\Message;
 use Validator;
 use Auth;
 use App\Profile;
+use App\Rules\validate;
 
 class MessageController extends Controller
 {
@@ -81,19 +82,40 @@ class MessageController extends Controller
     
         else
         {  
+
+            $check = substr(request()->email,0,2);
+
             $Message = new Message(); 
             $user =  Auth::user() ;
+
             if(isset($user->pk_users))
             {
-                $profile = Profile::where('pk_users',$user->pk_users)->first();
-                $profile->email = request()->email ; 
-                if($profile->save())
+                if($check != '09')
                 {
-                    return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
+                    $profile = Profile::where('pk_users',$user->pk_users)->first();
+                    $profile->email = request()->email ; 
+                    if($profile->save())
+                    {
+                        return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
+                    }
+                    else
+                    {
+                        return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                    }
                 }
                 else
                 {
-                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                    $profile = Profile::where('pk_users',$user->pk_users)->first();
+                    $profile->email = request()->email ; 
+                    if($profile->save())
+                    {
+                        return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
+                    }
+                    else
+                    {
+                        return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                    }
+
                 }
             }
              
@@ -212,36 +234,22 @@ class MessageController extends Controller
     {
 
         $rules =  [
-                    'name' => 'required|String|max:50',  
-                    'email' => 'required|unique:messages|email|max:70',
-                    'message' => 'required|String|max:500', 
-               
-                 ];
+            'email' => ['required', new validate], 
+            'name' => ['required | min:2']
+        ];
 
-    $messages = [
-                 'email.email' => 'پست الکترونیکی  صحیح وارد نشده است ',
-                 'email.required' => 'پست الکترونیکی وارد نشده است',
-                 'email.max' => 'پست الکترونیکی طولانی وارد شده است',
-                 'email.unique' => 'پست الکترونیکی قبلا وارد شده است',
-              
-                'name.required' => 'نام  وارد نشده است',
-                'name.String' => 'نام  صحیح وارد نشده است',
-                'name.max' => 'نام  طولانی وارد شده است',
+        $messages = [
+        'email.required' => 'ایمیل یا شماره موبایل وارد نشده است',
+        'email.validate' => ' ایمیل یا شماره موبایل صحیح وارد نشده است',
 
-                'message.required' => 'پیام  وارد نشده است',
-                'message.String' => 'پیام  صحیح وارد نشده است',
-                'message.max' => 'پیام  طولانی وارد شده است',
+        ];
 
-
-                ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
 
         return $validator ;
-    }
-
-
-
+ 
+ }
 
 
     public function validationByMobile(Request $request)

@@ -9,12 +9,12 @@ class Behavior extends Model
     protected $table = 'behaviors';
     protected $primaryKey = 'pk_behavior';
 
-    public function user ()
+    public function user()
     {
        return $this->belongsTo(User::class,'pk_users','pk_users');
     }
 
-    public function post ()
+    public function post()
     {
        return $this->hasOne(Post::class,'pk_posts');
     }
