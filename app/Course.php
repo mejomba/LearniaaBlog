@@ -13,23 +13,26 @@ class Course extends Model
 
     public function GetListAllNameColumns_ForTable()
     {
-    return  [ 'pk_course' => 'کلید درس',
-                'pk_tree' => 'درخت',
-                'pk_product' => ' محصول',
-                'sort'=> 'ترتیب',
-                'name'=> 'نام',
-                'description'=> 'توضیحات',
 
+    return  [   'pk_course' => 'کلید درس',
+                'pk_package' => 'کلید پکیج',
+                'pk_learner' => 'کلید مدرس',
+                'name'=> 'عنوان درس',
+                'sort'=> ' شماره قسمت',
             ] ;
     }
-    public function product()
+    public function package()
     {
-
-     return $this->hasOne('App\Product', 'pk_product', 'pk_product');
+     return $this->hasOne('App\Package', 'pk_package', 'pk_package');
     }
+
+    public function learner()
+    {
+     return $this->hasOne('App\Learner', 'pk_learner', 'pk_learner');
+    }
+
     public function tree()
     {
-
      return $this->hasOne('App\Tree', 'pk_tree', 'pk_tree');
     }
 

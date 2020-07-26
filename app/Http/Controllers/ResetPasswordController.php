@@ -227,7 +227,7 @@ class ResetPasswordController extends Controller
         if($user == null)
         {
             return redirect(route('register',
-            ['pk_product' => request()->pk_product ,
+            ['pk_package' => request()->pk_package ,
                 'username' =>request()->username,
                 'title' =>  request()->title ,
                 'digital_receipt'=>  request()->digital_receipt
@@ -237,7 +237,7 @@ class ResetPasswordController extends Controller
         else
         {
                     return redirect(route('login',
-            ['pk_product' => request()->pk_product ,
+            ['pk_package' => request()->pk_package ,
                 'username' =>request()->username,
                 'title' =>  request()->title ,
                 'digital_receipt'=>  request()->digital_receipt 

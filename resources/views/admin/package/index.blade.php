@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> نمایش محصول | لرنیا </title>
-  <meta  name="description" content=" نمایش محصول | لرنیا">
+<title> نمایش پکیج | لرنیا </title>
+  <meta  name="description" content=" نمایش پکیج | لرنیا">
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول محصول</h1>
+                <h1 class="card-title text-center">جدول پکیج</h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.product.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد محصول
+                  <a href="{{route('admin.package.create')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem;"> ایجاد پکیج
                   </a>                
 
                     </p>
@@ -42,38 +42,37 @@
                     </thead>
 
                       <tbody>
-                      @foreach($products as $product)
+                      @foreach($packages as $package)
                         <tr>
                           
                           <td>
-                          {{ $product['pk_product'] }} 
+                          {{ $package['pk_package'] }} 
                           </td>
                           <td>
-                          {{ $product['pk_category'] }} 
+                          {{ $package['pk_tree'] }} 
+                          </td>
+                          
+                          <td>
+                          {{ $package['pk_category'] }} 
                           </td>
 
                           <td>
-                          {{ $product['pk_tag'] }} 
+                          {{ $package['fa_name'] }} 
+                          </td>
+                          <td>
+                          {{ $package['en_name'] }} 
+                          </td>
+                          <td>
+                          {{ $package['sort_tree'] }} 
                           </td>
 
-                          <td>
-                          {{ $product['pk_learner'] }} 
-                          </td>
-
-                          <td>
-                          {{ $product['title'] }} 
-                          </td>
-
-                          <td>
-                          <img src="{{  Storage::url('product/'.$product['pic']) }}" width="100px" height="60px" alt=" {{ $product['title'] }}" class="">
-                      
-                          </td>
+                        
 
                           <td>
                                 @php 
-                                if($product->price != 0)
+                                if($package->price != 0)
                                 {
-                                  echo number_format($product->price) ;
+                                  echo number_format($package->price) ;
                                 }
                                 else
                                   {
@@ -84,56 +83,43 @@
                           </td>
 
                           <td>
-                          {{ $product['time'] }} 
+                          {{ $package['time'] }} 
                           </td>
 
                          
                           <td>
-                          {{ $product['count'] }} 
+                          {{ $package['count'] }} 
                           </td>
 
                           <td>
-                          {{ $product['language'] }} 
-                          </td>
-                      
-                          <td>
-                          {{ $product['subtitle'] }} 
+                          {{ $package['download_count'] }} 
                           </td>
 
                           <td>
-
-
-                          @if($product['status'] == 'انتشار')
+                          @if($package['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('product.detail',  ['slug' => $product['pk_product'] , 'desc' =>  $product['title'] ] )}}"> 
+                            <a target="_blank" href="{{route('package.detail',  ['slug' => $package['pk_package'] , 'desc' =>  $package['title'] ] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                             </a>
                             </span>
-                            
-
                             @else
-
                             <span style="font-size: 1.3rem;color:gray">
                             <img src="{{ asset('images/Template/draft.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-
                             </span>
-
                             @endif
-
-                       
                           </td>
-
-
+                          
+                         
                        <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.product.edit', $product['pk_product']) }}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.package.edit', $package['pk_package']) }}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.product.duplicate', $product['pk_product']) }}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.package.duplicate', $package['pk_package']) }}"> 
                       <img src="{{ asset('images/Template/duplicate.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
@@ -143,7 +129,7 @@
 
                         <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $product['pk_product'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $package['pk_package'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
@@ -199,7 +185,7 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/product/delete/"+ id);
+  location.replace( baseUrl + "admin/package/delete/"+ id);
 }
 </script>
 <!---- Modal Delete -->                            

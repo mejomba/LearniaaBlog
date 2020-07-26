@@ -10,7 +10,7 @@ use Shetabit\Payment\Facade\Payment;
 use Shetabit\Payment\Exceptions\InvalidPaymentException;
 use App\Transaction;
 use App\Profile;
-use App\Product;
+use App\Package;
 use App\Course;
 use Auth;
 use Validator;
@@ -96,11 +96,11 @@ class TransactionController extends Controller
 
                             if(request()->slug == null)
                             {
-                                $transaction->pk_product = 0;
+                                $transaction->pk_package = 0;
                             }
                             else
                             {
-                                $transaction->pk_product = request()->slug ;
+                                $transaction->pk_package = request()->slug ;
                             }
 
                             $transaction->status = 'در انتظار تایید';
@@ -164,19 +164,19 @@ class TransactionController extends Controller
                     {
                         if(Auth::check())
                         {
-                            $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
-                            $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-                            if( $pkProduct_BeginnerTree === $transaction->pk_product )
+                            $BeginnerTree = Package::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
+                            $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
+                            if( $pkPackage_BeginnerTree === $transaction->pk_package )
                             {
                                 return redirect()->route('academy.course',['pk_tree' => 18 ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                             }
                             else
                             {
-                                $product = Product::find($transaction->pk_product);
-                                $course = Course::where('pk_product',$transaction->pk_product)->first();
+                                $package = Package::find($transaction->pk_package);
+                                $course = Course::where('pk_package',$transaction->pk_package)->first();
 
                                 return redirect()->route('academy.show',
-                                ['id' => $transaction->pk_product , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                                ['id' => $transaction->pk_package , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                            
 
 
@@ -185,29 +185,18 @@ class TransactionController extends Controller
                            
                         }
                         else
-                        {
-                            /*
-                            return redirect()->route('reset.callbacklogin',
-                            ['slug' => $transaction->pk_product ,
-                             'desc' =>  $product['title'] ,
-                             'LocationUser' => 'BankPayment' ])->with('success','برای مشاهده و دریافت دوره آموزشی  فرم ثبت نام را تکمیل نمایید');    
-                            */
-                            $product = Product::find($transaction->pk_product);
+                        {  
+                            $package = Package::find($transaction->pk_package);
 
                              return redirect()->route('transaction.callback',
-                             ['pk_product' => $transaction->pk_product ,
-                              'title' =>  $product['title'] ,
+                             ['pk_package' => $transaction->pk_package ,
+                              'title' =>  $package['title'] ,
                               'LocationUser' => 'BankPayment', 
                               'digital_receipt'=> $_GET['Authority'] ]);    
-                     
-
                         }
+                    }    
+                }
 
-
-
-                    }
-                    
-           }
             catch (InvalidPaymentException $exception)
              {
                 $transaction = "";
@@ -234,25 +223,25 @@ class TransactionController extends Controller
                     }
                     if($transaction->type == 'خرید دوره آموزشی')
                     {
-                        if($transaction->pk_product == 0)
+                        if($transaction->pk_package == 0)
                         {
                             return redirect()->route('academy.detail')->with('report','خطا : مشکل در انجام عملیات بانکی');    
                         }
                         else
                         {
-                            $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
-                            $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-                            if( $pkProduct_BeginnerTree === $transaction->pk_product )
+                            $BeginnerTree = Package::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
+                            $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
+                            if( $pkPackage_BeginnerTree === $transaction->pk_package )
                             {
                                 return redirect()->route('academy.course',['pk_tree' => 18 ])->with('report','مشکل در انجام عملیات بانکی');    
                             }
                             else
                             {
-                                $product = Product::find($transaction->pk_product);
-                                $course = Course::where('pk_product',$transaction->pk_product)->first();
+                                $package = Package::find($transaction->pk_package);
+                                $course = Course::where('pk_package',$transaction->pk_package)->first();
 
                                 return redirect()->route('academy.show',
-                                ['id' => $transaction->pk_product , 'desc' =>  $course['name'] ])->with('report','  مشکل در انجام عملیات بانکی');    
+                                ['id' => $transaction->pk_package , 'desc' =>  $course['name'] ])->with('report','  مشکل در انجام عملیات بانکی');    
                              }    
                         }
                     }
@@ -298,7 +287,7 @@ class TransactionController extends Controller
     {
          
        return redirect(route('transaction.showcallbackform',
-       ['pk_product' => request()->pk_product ,
+       ['pk_package' => request()->pk_package ,
         'title' =>  request()->title ,
         'digital_receipt'=>  request()->digital_receipt
         ]))->with('success','برای مشاهده و دریافت دوره آموزشی  تلفن همراه را وارد نمایید');    
@@ -308,23 +297,13 @@ class TransactionController extends Controller
 
     public function showcallbackform(Request $request)
     {
-       // $pk_product =  request()->pk_product ;
-       // $title =  request()->title ;
-      //  $digital_receipt = request()->digital_receipt ;
-     //   return view('auth.callbackpayment',compact('pk_product','title','digital_receipt'));
         return view('auth.callbackpayment');
     }
 
-    
-
-
     public function validation(Request $request)
     {
-
         $rules =  [
-                    'price' => 'required|numeric|min:500|max:1000000',  
-                   
-               
+                    'price' => 'required|numeric|min:500|max:10000000',  
                  ];
 
     $messages = [
@@ -339,22 +318,16 @@ class TransactionController extends Controller
         return $validator ;
     }
 
-
-
-
-    public function productlist()
+    public function packagelist()
     {
         $user =  Auth::user() ;
-
         $names = [ 
             'شماره محصول' ,
             'نام محصول',
             'قیمت',
             'مشاهده',
         ];
-        
         $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
-
-        return view('user.transaction.productlist',compact('names','transactions'));
+        return view('user.transaction.packagelist',compact('names','transactions'));
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Profile;
 use App\Transaction;
-use App\Product;
+use App\Package;
 use App\Rules\validate;
 use App\Course;
 
@@ -96,23 +96,8 @@ class RegisterController extends Controller
             $check = substr($data['username'],'0','2');
             if ($check=='09')
             {
-          /*  $url = 'https://ippanel.com/api/select';
-            $param = array(
-                "op" => "phoneBookAdd",
-                "uname" => "09901918193",
-                "pass" => "0020503679",
-                "number" => $data['username'],
-                "phoneBookId" => "399808",
-            );
-            $handler = curl_init($url);
-            curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($handler, CURLOPT_POSTFIELDS, json_encode($param));
-            curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($handler); */
         }
             /* add contact to sms panel */
-           
-
              /* Check Register User For Learniaa Academy */
             if( $data['digital_receipt'] != "null")
             {
@@ -120,17 +105,17 @@ class RegisterController extends Controller
                 $transaction->pk_users = $new_user->pk_users ;
                 $transaction->save();
 
-                $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
-                $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-                if( $pkProduct_BeginnerTree == $transaction->pk_product )
+                $BeginnerTree = Package::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
+                $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
+                if( $pkPackage_BeginnerTree == $transaction->pk_package )
                 {
                     $this->redirectTo = '/academy/course?pk_tree=18' ;
                 }
                 else
                 {
 
-                    $course = Course::where('pk_product',$data['pk_product'])->first();
-                    $this->redirectTo = '/academy/show/'.$data['pk_product'] . '/'   .$course['name'];
+                    $course = Course::where('pk_package',$data['pk_package'])->first();
+                    $this->redirectTo = '/academy/show/'.$data['pk_package'] . '/'   .$course['name'];
                     
                 }
             }

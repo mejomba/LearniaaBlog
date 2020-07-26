@@ -27,7 +27,8 @@ class ProductController extends Controller
         $instance_Model_product = new Product();
         $names =   $instance_Model_product->GetListAllNameColumns_ForTable();
         $products = Product::orderBy('pk_product', 'desc')->get();
-        return view('admin.product.index',compact('products','names'));    }
+        return view('admin.product.index',compact('products','names'));
+     }
 
     /**a
      * Show the form for creating a new resource.
@@ -389,15 +390,6 @@ class ProductController extends Controller
     {
             if($request->hasFile('upload')) 
             {
-                /*
-              $originName = $request->file('upload')->getClientOriginalName();
-              $fileName = pathinfo($originName, PATHINFO_FILENAME);
-              $extension = $request->file('upload')->getClientOriginalExtension();
-              $fileName = $fileName.'_'.time().'.'.$extension;
-              $request->file('upload')->move(public_path('images/product'), $fileName);
-
-              */
-
               $pic = request()->file('upload');
               $pic_name = $pic->getClientOriginalName();
               $path = Storage::putFileAs( 'product', $pic, $pic_name);
@@ -405,11 +397,10 @@ class ProductController extends Controller
 
 
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            //  $url = asset('images/product'.$fileName);
+           
             $url =   $url2 ;   
               $msg = 'اپلود تصویر با موفقیت انجام شد'; 
-           //   $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
-                
+          
            @header('Content-type: text/html; charset=utf-8');
 
            return   $response = [

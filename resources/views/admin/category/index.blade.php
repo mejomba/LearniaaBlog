@@ -46,7 +46,7 @@
                         <tr>
                           
                           <td>
-                          {{ $category['pk_categories'] }} 
+                          {{ $category['pk_category'] }} 
                           </td>
                           <td>
                           {{ $category['name'] }} 

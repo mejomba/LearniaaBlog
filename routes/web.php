@@ -7,21 +7,17 @@ Route::get('/', 'HomeController@index')->name('index');
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
 Route::get('/', 'AcademyController@index')->name('index');
-Route::get('/academy', 'AcademyController@index')->name('academy.index');
 Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
-Route::get('/academy/show/{slug}/{desc}', 'AcademyController@show')->name('academy.show');
+Route::get('/academy/show/{pk_course}/{desc}/{sort}/{pk_package}', 'AcademyController@show')->name('academy.show');
 Route::get('/academy/road', 'AcademyController@road')->name('academy.road');
 Route::get('/academy/mylearn', 'AcademyController@start_mylearn')->name('academy.mylearn');
+Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')->name('academy.course');
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 
 
-
-
-
-
-Route::get('/product', 'ProductController@index')->name('product.index');
-Route::get('/product/{slug}/{desc}', 'ProductController@detail')->name('product.detail');
-Route::post('/product/pay/{slug}', 'ProductController@pay')->name('product.pay');
+Route::get('/package', 'PackageController@index')->name('package.index');
+Route::get('/package/{slug}/{desc}', 'PackageController@detail')->name('package.detail');
+Route::post('/package/pay/{slug}', 'PackageController@pay')->name('package.pay');
 
 Route::get('/Transaction/store', 'TransactionController@store')->name('transaction.store');
 Route::get('/Transaction/show', 'TransactionController@show')->name('transaction.show');
@@ -41,12 +37,12 @@ Route::get('/TermsOfService', 'HomeController@show_TermsOfService')->name('Terms
 Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
-Route::get('/post', 'PostController@index')->name('post.index');
-Route::get('/post/{slug}/{desc}', 'PostController@detail')->name('post.detail');
-Route::get('/post/category/{slug}', 'PostController@postByCategory')->name('post.category');
-Route::get('/post/tag/{slug}', 'PostController@postByTag')->name('post.tag');
+Route::get('/blog', 'BlogController@index')->name('blog.index');
+Route::get('/blog/{slug}/{desc}', 'BlogController@detail')->name('blog.detail');
+Route::get('/blog/category/{slug}', 'BlogController@postByCategory')->name('blog.category');
+Route::get('/blog/tag/{slug}', 'BlogController@postByTag')->name('blog.tag');
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
-Route::get('/category/show/{name}', 'PostController@postByCategory')->name('category.show');
+Route::get('/category/show/{name}', 'BlogController@postByCategory')->name('category.show');
 
 Route::get('/resetpassword', 'ResetPasswordController@index')->name('reset.index');
 Route::post('/reset/store', 'ResetPasswordController@store')->name('reset.store');
@@ -73,13 +69,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/home', 'HomeController@index')->name('admin.home');
     Route::get('/home/index', 'HomeController@index')->name('admin.home');
 
-    Route::get('/post/index', 'PostController@index')->name('admin.post.index');
-    Route::get('/post/create', 'PostController@create')->name('admin.post.create');
-    Route::post('/post/store', 'PostController@store')->name('admin.post.store');
-    Route::get('/post/edit/{id}', 'PostController@edit')->name('admin.post.edit');
-    Route::post('/post/update/{id}', 'PostController@update')->name('admin.post.update');
-    Route::get('/post/delete/{id}', 'PostController@destroy')->name('admin.post.delete');
-    Route::post('/post/upload', 'PostController@upload')->name('admin.post.upload');
+    Route::get('/blog/index', 'BlogController@index')->name('admin.blog.index');
+    Route::get('/blog/create', 'BlogController@create')->name('admin.blog.create');
+    Route::post('/blog/store', 'BlogController@store')->name('admin.blog.store');
+    Route::get('/blog/edit/{id}', 'BlogController@edit')->name('admin.blog.edit');
+    Route::post('/blog/update/{id}', 'BlogController@update')->name('admin.blog.update');
+    Route::get('/blog/delete/{id}', 'BlogController@destroy')->name('admin.blog.delete');
+    Route::post('/blog/upload', 'BlogController@upload')->name('admin.blog.upload');
 
     Route::get('/category/index', 'CategoryController@index')->name('admin.category.index');
     Route::get('/category/create', 'CategoryController@create')->name('admin.category.create');
@@ -144,11 +140,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/order/update/{id}', 'OrderController@update')->name('admin.order.update');
     Route::get('/order/show/{id}', 'OrderController@show')->name('admin.order.show');
 
-    Route::get('/order/createproduct/{key}', 'OrderController@orderproductcreate')->name('admin.order.createproduct');
-    Route::post('/order/storeproduct/{key}', 'OrderController@orderproductstore')->name('admin.order.storeproduct');
-    Route::get('/order/editproduct/{key}/{id}', 'OrderController@orderproductedit')->name('admin.order.editproduct');
-    Route::post('/order/updateproduct/{key}/{id}', 'OrderController@orderproductupdate')->name('admin.order.updateproduct');
-    Route::get('/order/deleteproduct/{key}/{id}', 'OrderController@orderproductdelete')->name('admin.order.deteleproduct');
+    Route::get('/order/createpackage/{key}', 'OrderController@orderpackagecreate')->name('admin.order.createpackage');
+    Route::post('/order/storepackage/{key}', 'OrderController@orderpackagestore')->name('admin.order.storepackage');
+    Route::get('/order/editpackage/{key}/{id}', 'OrderController@orderpackageedit')->name('admin.order.editpackage');
+    Route::post('/order/updatepackage/{key}/{id}', 'OrderController@orderpackageupdate')->name('admin.order.updatepackage');
+    Route::get('/order/deletepackage/{key}/{id}', 'OrderController@orderpackagedelete')->name('admin.order.detelepackage');
 
     Route::get('/learner/index', 'LearnerController@index')->name('admin.learner.index');
     Route::get('/learner/create', 'LearnerController@create')->name('admin.learner.create');
@@ -157,15 +153,15 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/learner/delete/{id}', 'LearnerController@destroy')->name('admin.learner.delete');
     Route::post('/learner/update/{id}', 'LearnerController@update')->name('admin.learner.update');
 
-    Route::get('/product/index', 'ProductController@index')->name('admin.product.index');
-    Route::get('/product/create', 'ProductController@create')->name('admin.product.create');
-    Route::get('/product/edit/{id}', 'ProductController@edit')->name('admin.product.edit');
-    Route::post('/product/store', 'ProductController@store')->name('admin.product.store');
-    Route::get('/product/delete/{id}', 'ProductController@destroy')->name('admin.product.delete');
-    Route::post('/product/update/{id}', 'ProductController@update')->name('admin.product.update');
-    Route::post('/product/upload', 'ProductController@upload')->name('admin.product.upload');
-    Route::get('/product/show/{slug}', 'ProductController@show')->name('admin.product.show');
-    Route::get('/product/duplicate/{id}', 'ProductController@duplicate')->name('admin.product.duplicate');
+    Route::get('/package/index', 'PackageController@index')->name('admin.package.index');
+    Route::get('/package/create', 'PackageController@create')->name('admin.package.create');
+    Route::get('/package/edit/{id}', 'PackageController@edit')->name('admin.package.edit');
+    Route::post('/package/store', 'PackageController@store')->name('admin.package.store');
+    Route::get('/package/delete/{id}', 'PackageController@destroy')->name('admin.package.delete');
+    Route::post('/package/update/{id}', 'PackageController@update')->name('admin.package.update');
+    Route::post('/package/upload', 'PackageController@upload')->name('admin.package.upload');
+    Route::get('/package/show/{slug}', 'PackageController@show')->name('admin.package.show');
+    Route::get('/package/duplicate/{id}', 'PackageController@duplicate')->name('admin.package.duplicate');
 
 
 
@@ -173,7 +169,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/Transaction/create', 'TransactionController@create')->name('admin.transaction.create');
     Route::get('/Transaction/store', 'TransactionController@store')->name('admin.transaction.store');
     Route::get('/Transaction/show', 'TransactionController@show')->name('admin.transaction.show');
-    Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('admin.transaction.productlist');
+    Route::get('/Transaction/packagelist', 'TransactionController@packagelist')->name('admin.transaction.packagelist');
 
 
     Route::get('/vote/create', 'VoteController@create')->name('admin.vote.create');
@@ -224,7 +220,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Transaction/create', 'TransactionController@create')->name('user.transaction.create');
     Route::get('/Transaction/store', 'TransactionController@store')->name('user.transaction.store');
     Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
-    Route::get('/Transaction/productlist', 'TransactionController@productlist')->name('user.transaction.productlist');
+    Route::get('/Transaction/packagelist', 'TransactionController@packagelist')->name('user.transaction.packagelist');
    
     Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
 

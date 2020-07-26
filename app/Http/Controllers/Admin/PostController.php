@@ -120,7 +120,7 @@ class PostController extends Controller
              }
 
         
-         $new_instance->pk_categories = request()->pk_categories ;
+         $new_instance->pk_category = request()->pk_category ;
          $new_instance->title = request()->title ;
         
          $new_instance->content = request()->content ;
@@ -242,12 +242,12 @@ class PostController extends Controller
 
               $new_instance->video_schema = json_encode($videoschema);
 
-            }else{
-
+            }
+            else
+            {
               $video = 'no';
               $new_instance->video = 'no';
-
-            };
+            }
 
 
 
@@ -392,7 +392,7 @@ class PostController extends Controller
 
 
             
-             $post->pk_categories = request()->pk_categories ;
+             $post->pk_category = request()->pk_category ;
              $post->title = request()->title ;
             
              $post->content = request()->content ;
@@ -494,7 +494,7 @@ class PostController extends Controller
               };
   
 
-               // Save To database 
+         // Save To database 
 
             if(  $post->save())
             {

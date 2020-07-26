@@ -1,3 +1,8 @@
+p 
+{
+    line-height: 1.5cm !important;
+}
+
 /* Timeline */
 
 ul.timeline {
@@ -29,12 +34,12 @@ ul.timeline > li:before {
     border-radius: 50%;
     border: 3px solid #22c0e8;
     right: 20px;
-    top:10px;
     width: 20px;
     height: 20px;
     z-index: 400;
     margin-top: 15px
 }
+
 
 /* End of Timeline */
 

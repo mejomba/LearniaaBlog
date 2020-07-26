@@ -44,36 +44,23 @@
                       <tbody>
                       @foreach($courses as $course)
                         <tr>
-                          
                           <td>
                           {{ $course['pk_course'] }} 
                           </td>
-
                           <td>
-                          {{ $course->tree->name }} 
+                          {{ $course['pk_package'] }} 
                           </td>
-                          
                           <td>
-                          {{ $course->product->title }} 
+                          {{ $course['pk_learner'] }} 
                           </td>
-                      
-                          <td>
-                          {{ $course['sort'] }} 
-                          </td>
-
                           <td>
                           {{ $course['name'] }} 
                           </td>
-
                           <td>
-                          {{ $course['description'] }} 
+                          {{ $course['sort'] }} 
                           </td>
-
-
+                         
                           
-
-                         
-                         
                        <td>
 
                         <span style="font-size: 1.3rem;color:black">

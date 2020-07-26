@@ -20,15 +20,13 @@ class Tree extends Model
                  ] ;
     }
 
-    public function product()
+    public function package()
     {
-
-     return $this->hasOne('App\Product', 'pk_product', 'pk_AllCourse_product');
+     return $this->hasOne('App\Package', 'pk_tree', 'pk_tree');
     }
 
     public function course()
     {
-
      return $this->hasOne('App\Course', 'pk_tree', 'pk_tree');
     }
 

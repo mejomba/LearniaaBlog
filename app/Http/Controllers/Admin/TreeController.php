@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Tree;
-use App\Product;
+use App\Package;
 use Validator;
 use Illuminate\Support\Facades\Storage;
 
@@ -63,7 +63,7 @@ class TreeController extends Controller
                 $tree->description = request()->description ;
                 $tree->short_description = request()->short_description ;
               
-                if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
+                if(request()->pk_AllCourse_package) {$tree->pk_AllCourse_package = request()->pk_AllCourse_package ;}
 
                 if(request()->pic)
                 {
@@ -143,7 +143,8 @@ class TreeController extends Controller
                 $tree->has_children =  request()->has_children ;
                 $tree->short_description = request()->short_description ;
 
-                if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
+                if(request()->pk_AllCourse_package)
+                 {$tree->pk_AllCourse_package = request()->pk_AllCourse_package ;}
 
                 if(request()->pic)
                 {
@@ -245,8 +246,8 @@ class TreeController extends Controller
 
   public function create_Node($tree_parent)
   {
-     $products = Product::get();
-     return view('admin.tree.node.create',compact('products','tree_parent'));
+     $packages = Package::get();
+     return view('admin.tree.node.create',compact('packages','tree_parent'));
   }
 
   
@@ -274,8 +275,7 @@ class TreeController extends Controller
               $tree->description = request()->description ;
               $tree->short_description = request()->short_description ;
 
-              if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
-
+             
 
               if(request()->pic)
               {
@@ -310,8 +310,8 @@ class TreeController extends Controller
   public function edit_Node($id)
   {
       $tree = Tree::find($id);
-      $products = Product::get();
-      return view('admin.tree.node.edit',compact('tree','products'));
+      $packages = Package::get();
+      return view('admin.tree.node.edit',compact('tree','packages'));
   }
 
 
@@ -337,8 +337,7 @@ class TreeController extends Controller
               $tree->short_description = request()->short_description ;
               $tree->has_children = request()->has_children ;
 
-              if(request()->pk_AllCourse_product) {$tree->pk_AllCourse_product = request()->pk_AllCourse_product ;}
-
+             
 
               if(request()->pic)
               {

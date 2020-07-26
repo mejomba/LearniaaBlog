@@ -6,12 +6,12 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
     </button>
-    <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="#">
+    <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="{{route('index')}}">
         <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image" width="60px">
     </a>
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex justify-content-center" style="font-size:15px; font-weight:500;">
-            <li class="nav-item mr-lg-5 ml-lg-5"> <a class="nav-link" href="{{route('academy.index')}}">خانه</a></li>
+            <li class="nav-item mr-lg-5 ml-lg-5"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
@@ -39,7 +39,7 @@
 
                     <ul class="navbar-nav col-lg-8">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
+                            <a class="nav-link" style="color: black" href="{{route('index')}}" rel="tooltip"
                                title=""
                                data-placement="bottom">صفحه اصلی</a>
                         </li>
@@ -86,16 +86,12 @@
 
                                     @if(Auth::user()->type == "مدیر")
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
-                                        <a class="dropdown-item" href="{{route('admin.post.index')}}"> پست</a>
+                                        <a class="dropdown-item" href="{{route('admin.blog.index')}}"> بلاگ</a>
                                         <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
-                                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> محصول</a>
-                                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> درخت</a>
-                                        <a class="dropdown-item" href="{{route('admin.transaction.productlist')}}">
-                                            خریداری شده</a>
-                                    @endif
-
-                                    @if(Auth::user()->type == "نویسنده")
-                                        <a class="dropdown-item" href="{{ route('writer.home') }}">سامانه نویسندگان</a>
+                                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> محصول</a>
+                                        <a class="dropdown-item" href="{{route('admin.tree.index')}}"> درخت</a>
+                                        <a class="dropdown-item" href="{{route('admin.transaction.packagelist')}}">خریداری شده</a>
+                                            
                                     @endif
 
                                     @if(Auth::user()->type == "کاربر")
@@ -123,9 +119,9 @@
                         <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
                         <a class="dropdown-item" href="{{route('admin.post.index')}}"> پست</a>
                         <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
-                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> محصول</a>
-                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> درخت</a>
-                        <a class="dropdown-item" href="{{route('admin.transaction.productlist')}}">
+                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> محصول</a>
+                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> درخت</a>
+                        <a class="dropdown-item" href="{{route('admin.transaction.packagelist')}}">
                             خریداری شده</a>
                     @endif
 
@@ -133,7 +129,7 @@
                     @if(Auth::user()->type == "کاربر")
                         <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
                         <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
-                        <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">
+                        <a class="dropdown-item" href="{{route('user.transaction.packagelist')}}">
                             خریداری شده</a>
                         <a class="dropdown-item" href="{{route('user.transaction.create')}}"> کیف
                             پول</a>

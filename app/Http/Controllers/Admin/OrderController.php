@@ -5,8 +5,8 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
-use App\OrderProduct;
-use App\Product;
+use App\OrderPackage;
+use App\Package;
 
 
 class OrderController extends Controller
@@ -68,10 +68,10 @@ class OrderController extends Controller
     public function show($id)
     {   
         $order = order::find($id);
-        $orderproduct = orderproduct::where('pk_order',$id)->get();
-        $instance_Model_order = new orderproduct();
+        $orderpackage = orderpackage::where('pk_order',$id)->get();
+        $instance_Model_order = new orderpackage();
         $names =   $instance_Model_order->GetListAllNameColumns_ForTable();
-        return view('admin.order.show',compact('orderproduct','order','names')); 
+        return view('admin.order.show',compact('orderpackage','order','names')); 
     }
 
     /**
@@ -121,14 +121,14 @@ class OrderController extends Controller
     {
         $order = Order::find($id);
        
-        $orderproduct_count = orderproduct::where('pk_order',$id)->count();
+        $orderpackage_count = orderpackage::where('pk_order',$id)->count();
 
             if($order->delete())
             {
-                if($orderproduct_count != 0)
+                if($orderpackage_count != 0)
                 {
-                    $orderproducts = orderproduct::where('pk_order',$id)->get();
-                    foreach($orderproducts  as $row)
+                    $orderpackages = orderpackage::where('pk_order',$id)->get();
+                    foreach($orderpackages  as $row)
                     {
                         $row->delete();
                     }
@@ -141,39 +141,39 @@ class OrderController extends Controller
                 return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
             }
     }
-    public function orderproductedit($key,$id)
+    public function orderpackageedit($key,$id)
     {
         $order = order::find($key);
-        $orderproduct = orderproduct::where([
+        $orderpackage = orderpackage::where([
             'pk_order'=>$order->pk_order,
-            'pk_orderproduct'=>$id
+            'pk_orderpackage'=>$id
             ])->first();
 
-            return view('admin.order.orderproductedit',compact('orderproduct','order')); 
+            return view('admin.order.orderpackageedit',compact('orderpackage','order')); 
     }
 
 
-    public function orderproductcreate($key)
+    public function orderpackagecreate($key)
     {
         $order = order::find($key);
 
-        return view(('admin.order.orderproductstore'),compact('order'));
+        return view(('admin.order.orderpackagestore'),compact('order'));
     }
 
-    public function orderproductstore($key)
+    public function orderpackagestore($key)
     {
         $order = order::find($key);
 
-        $neworderproduct = new orderproduct();
-        $neworderproduct->pk_order = $key;
-        $neworderproduct->pk_product = request()->pk_product;
-        $product = Product::select('price')->where('pk_product',request()->pk_product)->first();
-        $neworderproduct->price = $product->price;
-        $neworderproduct->count = request()->count;
-        $total = (int)$product->price * (int)request()->count;
-        $neworderproduct->Total_price = $total;
-        $neworderproduct->save();
-        if($neworderproduct->save())
+        $neworderpackage = new orderpackage();
+        $neworderpackage->pk_order = $key;
+        $neworderpackage->pk_package = request()->pk_package;
+        $package = Package::select('price')->where('pk_package',request()->pk_package)->first();
+        $neworderpackage->price = $package->price;
+        $neworderpackage->count = request()->count;
+        $total = (int)$package->price * (int)request()->count;
+        $neworderpackage->Total_price = $total;
+        $neworderpackage->save();
+        if($neworderpackage->save())
         {
             return redirect(route('admin.order.show'))->with('success','محصول با موفقیت اضافه شد ');
         }
@@ -182,19 +182,19 @@ class OrderController extends Controller
             return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
         }    
     }
-    public function orderproductupdate($key,$id)
+    public function orderpackageupdate($key,$id)
     {
         $order = order::find($key);
-        $orderproduct = orderproduct::where([
+        $orderpackage = orderpackage::where([
             'pk_order'=>$order->pk_order,
-            'pk_orderproduct'=>$id
+            'pk_orderpackage'=>$id
             ])->first();
       
-        $orderproduct ->count   = request()->count ;
-        $total = request()->count * $orderproduct ->price;
-        $orderproduct ->Total_price   = $total ;
+        $orderpackage ->count   = request()->count ;
+        $total = request()->count * $orderpackage ->price;
+        $orderpackage ->Total_price   = $total ;
      
-        if($orderproduct->save())
+        if($orderpackage->save())
             {
                 return redirect(route('admin.order.show'))->with('success','ُسبد با موفقیت ویرایش شد ');
             }
@@ -203,14 +203,14 @@ class OrderController extends Controller
                     return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
             }
     }
-    public function orderproductdelete($key,$id)
+    public function orderpackagedelete($key,$id)
     {
         $order = order::find($key);
-        $orderproduct = orderproduct::where([
+        $orderpackage = orderpackage::where([
             'pk_order'=>$order->pk_order,
-            'pk_orderproduct'=>$id
+            'pk_orderpackage'=>$id
             ])->first();
-            if($orderproduct->delete())
+            if($orderpackage->delete())
             {
                 return redirect(route('admin.order.show'))->with('success','ُسبد با موفقیت حذف شد ');
             }

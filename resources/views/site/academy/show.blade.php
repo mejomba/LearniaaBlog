@@ -1,30 +1,38 @@
 @extends('site.Layouts.layout_main')
 @section('Head')
-    <title>لرنیا | {{$product['title']}} </title>
-    <meta name="description" content="{{$product['desc']}}">
+    <title>لرنیا | {{$package['title']}} </title>
+    <meta name="description" content="{{$package['desc']}}">
     <meta name="keywords" content="@php echo implode(',',$meta_keywords); @endphp">
 @endsection
 @section('content')
 
         <!---- RoadMap Help Section --->
 <div class="row" style="padding-left: 10px!important">
-     <div class="col-md-2 col-12" style="padding-top:15px; margin-top: 100px!important;
+     <div class="col-md-2 col-12" style="padding-top:15px; margin-top: 145px!important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;">
-            @if(isset($nodes_previous['pk_product']))
-                <a href="{{ route('academy.show', ['id' => $nodes_previous['pk_product'] , 'desc' =>  $nodes_previous['name'] ]) }}"
+            @if(isset($previous_course['pk_course']))
+                <a href="{{ route('academy.show',
+                    ['pk_course' => $previous_course['pk_course'] ,
+                    'desc' => $previous_course['name'] , 'sort' => $previous_course['sort'] ,
+                    'pk_package' => $package->pk_package  ]) }}"
                    class="btn fourth mt-4 d-inline" style="font-size:19px" >قسمت قبلی </a>      
             @endif
         </div>
 
         <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:145px!important">
-            <a href="{{ route('academy.course',['pk_tree' => $current_pk_tree])}}" class="btn btnLearniaa mt-4 d-inline"
+            <a href="{{ route('academy.course',
+             ['pk_tree' => $tree->pk_tree ,
+             'pk_package' => $package->pk_package ]) }}" class="btn btnLearniaa mt-4 d-inline"
              style="font-size:19px; "> لیست پخش  </a>     
         </div>
 
         <div class="col-md-2 col-12" style="padding-top:15px ; margin-top:145px!important">
-            @if(isset($nodes_next['pk_product']))
-                <a href="{{ route('academy.show', ['id' => $nodes_next['pk_product'] , 'desc' =>  $nodes_next['name'] ]) }}"
+            @if(isset($next_course['pk_course']))
+                <a href="{{ route('academy.show',
+                    ['pk_course' => $next_course['pk_course'] ,
+                    'desc' => $next_course['name'] , 'sort' => $next_course['sort'] ,
+                    'pk_package' => $package->pk_package  ]) }}"
                    class="btn fourth mt-4 d-inline"  style="font-size:19px"> قسمت بعدی </a>
             @endif
         </div>
@@ -35,7 +43,7 @@
 <div class="row" style="padding-top:30px;">
         <div class="col-md-7 text-center" style="padding-top: 5px;">
                 <button class="btn mt-4 d-inline BtnLearniaaColor" >
-                    <h2 style="color:#FFFFFF" class="text-center">{{$product['title']}}</h2>
+                    <h2 style="color:#FFFFFF" class="text-center">{{$current_course['name']}}</h2>
                 </button>
 
       </div>
@@ -49,15 +57,22 @@
                 <div style="border-bottom:2px solid #20c3b8;margin-bottom:5px">
                     <h3> اطلاعات دوره <h3>
                 </div>
-                <!-- Information Product -->
+                <!-- Information package -->
                 <div class="container-fluid">
                     <div class="row text-center" style="padding-top:25px;padding-bottom:15px;">
 
              <div class="col-md-9">
                  <div class="row">
                         <div class="col-4 col-md-4" style="font-size:13px">
-                                <img src="{{ asset('images/Template/price-tag.svg') }}"
-                                    alt="Learniaa" height="42px" width="62px">
+                                        @if($payment_status == 'No')
+                                            <img class=" img-border"
+                                            src="{{ asset('images/Academy/NoPay.svg') }}"
+                                            width="62px" height="42px" alt="Card image cap">
+                                           @else
+                                            <img class=" img-border"
+                                            src="{{ asset('images/Academy/YesPay.svg') }}"
+                                            width="30px" height="30px" alt="Card image cap">
+                                          @endif
                             </div>
                             <div class="col-4 col-md-4" style="font-size:13px">
                                 <img src="{{ asset('images/Template/stopwatch.svg') }}"
@@ -72,47 +87,29 @@
                         <div class="col-4 col-md-4" style="font-size:15px">
                             <div class="row text-center">
                                 <div class="col-12 col-md-12">
-                    <span style="padding-right:5px"> @php
-                            if($product['price'] != 0)
-                            {
-                              echo '  '.number_format($product['price']) ;
-
-                            }
-                            else
-                            {
-
-                            }
-                        @endphp
-                                </span>
+                                          @if($payment_status == 'No')
+                                            <span style="color:gray"> خریداری نشده </span>
+                                           @else
+                                            <span style="color:#20c5ba">  فعال </span>
+                                          @endif
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-4" style="font-size:13px">
+                            <div class="row text-center">
+                                <div class="col-12 col-md-12">
+                                    {{ $package->time }}
                                 </div>
                                 <div class="col-12 col-md-12">
-                                    @php
-                                        if($product['price'] != 0)
-                                        {
-                                          echo 'تومان';
-                                        }
-                                        else
-                                        {
-                                          echo 'رایگان';
-                                        }
-                                    @endphp
+                                    ساعت
                                 </div>
                             </div>
                         </div>
                         <div class="col-4 col-md-4" style="font-size:13px">
                             <div class="row text-center">
                                 <div class="col-12 col-md-12">
-                                    {{ $product->time }}
-                                </div>
-                                <div class="col-12 col-md-12">
-                                    دقیقه
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-4" style="font-size:13px">
-                            <div class="row text-center">
-                                <div class="col-12 col-md-12">
-                                    {{ $product->count }}
+                                    {{ $package->count }}
                                 </div>
                                 <div class="col-12 col-md-12">
                                     درس
@@ -126,22 +123,18 @@
 
                  <div class="col-md-3 col-12" style="font-size:13px">
                    <!-- Payment -->
-                    @if($payment_status == "Payed" || $product['price'] == 0 )
+                   @if($payment_status == 'Yes' || $current_course->isFree == 'Yes' )
                         <div class="col-md-12 text-center" >
                             <a style="padding-bottom : 5px" _target="blank"
-                               href="{{ $product['download_link'] }}"
+                               href="{{ $current_course['download_link'] }}"
                                class="btn fourth btn-video btnblogPost">دانلود آموزش</a>
                         </div>
                         </div>
                     @else
                         <div class="col-md-12 text-center" >
-                            <form action="{{route('product.pay', $product['pk_product'] )}}" method="POST">
-                                @csrf
-                                <input type="hidden" name="LocationUser" value="Academy_Product">
-                                <input type="hidden" name="NameProduct" value="{{$product['title']}}">
-                                <button class="btn btnGreen"  type="submit">خرید دوره</button>
-                                   
-                            </form>
+                        <a href="{{ route('academy.course', ['pk_tree' => $tree->pk_tree ,
+                                'pk_package' =>  $package->pk_package ]) }}"
+                                 class="btn fourth btn-round">خرید دوره {{$package['fa_name']}} </a>
                         </div>
                          <!-- All Cource -->
                         </div>
@@ -156,28 +149,21 @@
 
 
 
-   <!-- JW Player Video  -->
+   <!-- VideoPlayer  -->
                 <div class="row">
                     <div class="col-12 col-md-7">
                     <div class="container-fluid"
                         style="padding-top: 5px;margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
-                        <div class="container-fluid"
-                            style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
-                            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
-                            @php
-                                if($payment_status == "Payed" || $product['price'] == 0 )
-                            {
-                                echo $product['file'] ;
-                            }
-                            else
-                            {
-                                echo $product['preview'] ;
-                            }
-                            @endphp
+                        <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
+
+                            <video class="afterglow" id="my-video" width="1920" height="1080"
+                             src="{{$current_course['download_link']}}">
+                             </video>
+
                         </div>
                     </div>
                     </div>
-<!-- JW Player Video  -->
+   <!-- VideoPlayer  -->
 
 
      <!-- Section Learner -->
@@ -188,16 +174,16 @@
             <div class="container-fluid" style="padding-bottom:15px;;font-size:15px">
                 <div class="row" >
                     <div class="col-md-3 col-3">
-                        <img src="{{  Storage::url('learner/'.$product->learner['pic'])  }}"
-                             alt="{{$product->learner->user['name']}}" class="img-fluid rounded-circle shadow-lg"
+                        <img src="{{  Storage::url('learner/'.$current_course->learner['pic'])  }}"
+                             alt="{{$current_course->learner->user['name']}}" class="img-fluid rounded-circle shadow-lg"
                              style="width: 90px;height:90px">
                     </div>
                     <div class="col-md-9 col-9" style="padding-top: 3px;">
                         <div class="row">
-                            {{$product->learner->user['name']}}
+                            {{$current_course->learner->user['name']}}
                         </div>
                         <div class="row" style="padding-top: 9px;">
-                            {{$product->learner['job']}}
+                            {{$current_course->learner['job']}}
                         </div>
                     </div>
                     <div class="col-md-12 text-center" style="font-size:15px">
@@ -205,7 +191,7 @@
                             <div class="cardinfoLearner">درباره مدرس</div></div>
                            <div class="p-3 hover-style  container"
                             style="margin-top:10px;border :2px solid #20c5ba"> <p style="text-align:justify">
-                                {{$product->learner['desc']}}
+                                {{$current_course->learner['desc']}}
                             </p>
                             </div>
                         </div>
@@ -226,12 +212,7 @@
             <div class=" p-3 hover-style  container-fluid"
              style="margin-top:10px;text-align:justify;border :2px solid #20c5ba">
                 <h3>درباره دوره</h3>
-                @if($product['desc'] == null)
-                @php echo htmlspecialchars_decode($tree['description']) ; @endphp
-                @endif
-                @if($product['desc'] != null)
-                @php echo htmlspecialchars_decode($product['desc']) ; @endphp
-                @endif
+                @php echo htmlspecialchars_decode($package['desc']) ; @endphp
             </div>
             <p></p>
             <p></p>

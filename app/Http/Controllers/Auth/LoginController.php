@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Session\Session;
 use App\Course;
 use App\Transaction;
-use App\Product;
+use App\Package;
 use App\Rules\validate;
 use App\User;
 
@@ -44,15 +44,15 @@ class LoginController extends Controller
                 $transaction->pk_users = $user->pk_users ;
                 $transaction->save();
 
-                $BeginnerTree = Product::where('title','پکیج کامل آموزش کامپیوتر')->first();
-                $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-                if( $pkProduct_BeginnerTree == $transaction->pk_product )
+                $BeginnerTree = Package::where('title','پکیج کامل آموزش کامپیوتر')->first();
+                $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
+                if( $pkPackage_BeginnerTree == $transaction->pk_package )
                 {
                     return redirect()->route('academy.detail')->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                 }
                 else
                 {
-                return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
+                return redirect('/academy/show/'.request()->pk_package.'/'.request()->title); 
                 }
             }
 
@@ -73,7 +73,7 @@ class LoginController extends Controller
                 $transaction->pk_users = $user->pk_users ;
                 $transaction->save();
 
-                return redirect('/academy/show/'.request()->pk_product.'/'.request()->title); 
+                return redirect('/academy/show/'.request()->pk_package.'/'.request()->title); 
             }
             else
             {
@@ -91,19 +91,19 @@ class LoginController extends Controller
                     $transaction->pk_users = $user->pk_users ;
                     $transaction->save();
 
-                    $BeginnerTree = Product::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
-                    $pkProduct_BeginnerTree =  $BeginnerTree['pk_product'];
-                    if( $pkProduct_BeginnerTree == $transaction->pk_product )
+                    $BeginnerTree = Package::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
+                    $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
+                    if( $pkPackage_BeginnerTree == $transaction->pk_package )
                     {
                         return redirect()->route('academy.course',['pk_tree' => 18 ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                     }
                     else
                     {
-                        $product = Product::find(request()->pk_product);
-                                $course = Course::where('pk_product',request()->pk_product)->first();
+                        $package = Package::find(request()->pk_package);
+                                $course = Course::where('pk_package',request()->pk_package)->first();
 
                                 return redirect()->route('academy.show',
-                                ['id' => request()->pk_product , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                                ['id' => request()->pk_package , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
                     }
                 }
 

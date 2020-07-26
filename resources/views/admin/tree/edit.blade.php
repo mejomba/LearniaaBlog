@@ -139,16 +139,6 @@
         </div>
          <!-- icon Box -->
 
-       
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">         
-                      </div>
-                      <input class="form-control" value="{{ $tree['pk_AllCourse_product'] }}" name="pk_AllCourse_product" placeholder="کلید محصول پکیج جامع دوره " type="text">
-                    </div>
-                  </div>
-           </div>
 
            <div class="col-md-4">
              <div class="form-group">

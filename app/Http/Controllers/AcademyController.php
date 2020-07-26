@@ -7,11 +7,10 @@ use Illuminate\Support\Facades\Storage;
 use Auth;
 use Validator;
 use App\Tree;
-use App\Product;
+use App\Package;
 use App\Behavior;
 use App\Transaction;
 use App\Search;
-use App\Post;
 use App\Profile;
 use App\Course;
 use App\History;
@@ -26,62 +25,10 @@ class AcademyController extends Controller
      */
     public function index()
     {
-        $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
-       
-        /* Empty From data base */
+       // $last_posts =  Package::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
         $last_posts = array();
 
         return view('site.academy.index',compact('last_posts'));
-    }
-
-    public function start_mylearn(Request $request)
-    {
-        $pk_tree = $_GET['pk_tree'] ;
-        $courses = Course::where('pk_tree',$pk_tree)->orderby('sort','ASC')->get();
-        $tree = Tree::where('pk_tree',$pk_tree)->first();
-        $pk_AllCourse_product = $tree->pk_AllCourse_product;
-
-        /* Payments */
-        $payment_status ="";
-        $user =  Auth::user() ;
-        if($user != null)
-        {
-          $payment_checks = Transaction::where('pk_product',$pk_AllCourse_product)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
-          if($payment_checks)
-          {
-            $payment_status ="Payed";
-          }
-        }
-        if($user == null)
-        {
-            $payment_status ="No Pay";
-        }
-        /* Payments */
-
-        /* Update User History */
-      /*  $is_history_save = History::where(['pk_users' => $user->pk_users , 'pk_tree' => $pk_tree])->first();
-        if($is_history_save == null)
-        {
-           
-            $new_history = new History();
-            $new_history->pk_users = $user->pk_users ;
-            $profile =  Profile::where('pk_users', $user->pk_users)->first() ;
-            $new_history->pk_profile = $profile['pk_profiles'] ;
-            $new_history->pk_tree = $pk_tree ;
-            $new_history->description = 'شروع دوره' ;
-            if($new_history->save())
-            {}  
-            else
-            {
-               return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-            }
-        }
-        */
-       /* Update User History */
-
-    
-        return view('site.academy.mylearn',compact('courses','tree','payment_status'));
-    
     }
 
     public function detail(Request $request)
@@ -89,7 +36,6 @@ class AcademyController extends Controller
          $nodes = Tree::where( ['level' => '0' ] )->get();
          return view('site.academy.detail',compact('nodes'));
     }
-    
 
     public function road(Request $request)
     {
@@ -102,120 +48,102 @@ class AcademyController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-   
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function start_mylearn(Request $request)
     {
-        //
+        $pk_tree = $_GET['pk_tree'] ;
+        $selected_road = $pk_tree ;
+        $tree = Tree::where('pk_tree',$pk_tree)->first();
+        $road_nodes = array($tree);
+        $packages = Package::where('pk_tree',$pk_tree)->orderby('sort_tree','ASC')->get();
+        $road_packages = array([ 'pk' =>  $pk_tree , 'data' => $packages ]) ;
+        $parent = $tree->pk_parent ;
+        
+        while($parent != 0)
+        { 
+          $row  = Tree::where('pk_tree',$parent)->first();
+          array_unshift($road_nodes , $row );
+
+          $packages = Package::where('pk_tree',$parent)->orderby('sort_tree','ASC')->get();
+          array_unshift($road_packages,[ 'pk' => $parent , 'data' => $packages ]);
+          $parent =  $row->pk_parent ;
+        }
+         return view('site.academy.mylearn',compact('road_nodes','road_packages','selected_road'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+  
+    public function show($pk_course,$desc,$sort,$pk_package)
     {
-         /* Tree */
-         $current_node = Course::where('pk_product',$id)->first();
-         $current_pk_tree = $current_node->pk_tree ;
-         $nodes_previous = Course::where('sort',$current_node->sort - 1)->where('pk_tree',$current_pk_tree)->first();
-         $nodes_next  = Course::where('sort',$current_node->sort + 1)->where('pk_tree',$current_pk_tree)->first();
-         /* Tree */
-          $tree = Tree::where('pk_tree',$current_node->pk_tree)->first(); 
-          $pk_AllCourse_product =  $tree->pk_AllCourse_product ;
+            /* course */
+            $current_course = Course::find($pk_course);
+            
+            $previous_course = Course::where('sort',$current_course->sort - 1)
+            ->where('pk_package',$current_course->pk_package)->first();
+            
+            $next_course  = Course::where('sort',$current_course->sort + 1)
+            ->where('pk_package',$current_course->pk_package)->first();
+            /* course */
 
-            $product = Product::find($id);
-          
-            // $behavior_product= Behavior::where('pk_entity', $product['pk_product'])->where('status','تایید شده')->get();
-    
-              /* Meta Keyword */
-            $data_search = Search::where('pk_search',$product['pk_search'])->get();
+            $package = Package::find($pk_package);
+            $tree = Tree::where('pk_tree',$package->pk_tree)->first();
+
+            /* Meta Keyword */
+            $data_search = Search::where('pk_search',$package['pk_search'])->get();
             $meta_keywords = array();
             foreach($data_search as $keyword)
-            {
-                array_push($meta_keywords,$keyword->tag['fa_name']) ;
-            }
-             /* Meta Keyword */
+            { array_push($meta_keywords,$keyword->tag['fa_name']) ;}
+            /* Meta Keyword */
     
-            $payment_status ="";
-
+            /* Auth */
             $user =  Auth::user() ;
-            
+            $payment_status = "No";
+                
             if($user != null)
             {
-                $payment_checks = Transaction::where('pk_product',$product['pk_product'])->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
+                $payment_checks = Transaction::where('pk_package',$pk_package)
+                ->where('status','عملیات موفق')
+                ->where('pk_users',$user->pk_users)->first();
                 
                 if($payment_checks)
                 {
-                    $payment_status ="Payed";
-                }
-                else
-                {
-                   $payment_checks = Transaction::where('pk_product',$pk_AllCourse_product)->where('status','عملیات موفق')->where('pk_users',$user->pk_users)->first();
-                    if($payment_checks)
-                     {
-                       $payment_status ="Payed";
-                     }
+                    $payment_status ="Yes";
                 }
             }
-            if($user == null)
+            /* Auth */
+
+            return view('site.academy.show',
+            compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
+
+    }
+
+    public function course($pk_tree,$pk_package)
+    {
+        /* Auth */
+        $user =  Auth::user() ;
+        $payment_status = "No";
+            
+        if($user != null)
+        {
+            $payment_checks = Transaction::where('pk_package',$pk_package)
+            ->where('status','عملیات موفق')
+            ->where('pk_users',$user->pk_users)->first();
+            
+            if($payment_checks)
             {
-                $payment_status ="No Pay";
+                $payment_status ="Yes";
             }
+        }
+        /* Auth */
 
-           
-
-            return view('site.academy.show',compact('tree','product','payment_status','meta_keywords','nodes_previous','nodes_next','current_pk_tree'));
-
+        $selected_road = $pk_tree ; 
+        $courses =  Course::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
+        $package = Package::where('pk_package',$pk_package)->first();
+        return view('site.academy.course',compact('courses','selected_road','payment_status','package'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
+   /* ---------------- Deleted Functions ---------------- */ 
     public function SaveProfile(Request $request, $id)
     {
         $validator =  $this->validation_SaveProfile($request);

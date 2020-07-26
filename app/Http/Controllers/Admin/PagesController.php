@@ -234,15 +234,6 @@ class PagesController extends Controller
     {
             if($request->hasFile('upload')) 
             {
-                /*
-              $originName = $request->file('upload')->getClientOriginalName();
-              $fileName = pathinfo($originName, PATHINFO_FILENAME);
-              $extension = $request->file('upload')->getClientOriginalExtension();
-              $fileName = $fileName.'_'.time().'.'.$extension;
-              $request->file('upload')->move(public_path('images/product'), $fileName);
-
-              */
-
               $pic = request()->file('upload');
               $pic_name = $pic->getClientOriginalName();
               $path = Storage::putFileAs( 'page', $pic, $pic_name);
@@ -250,8 +241,7 @@ class PagesController extends Controller
 
 
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            //  $url = asset('images/product'.$fileName);
-            $url =   $url2 ;   
+              $url =   $url2 ;   
               $msg = 'اپلود تصویر با موفقیت انجام شد'; 
            //   $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
                 

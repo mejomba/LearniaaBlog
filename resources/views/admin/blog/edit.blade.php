@@ -60,10 +60,10 @@
                                       <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">  
                                         </div>
-                                      <select name="pk_categories" class="form-control">
+                                      <select name="pk_category" class="form-control">
                                       @foreach ($categories as $category)
-                                      <option value="{{ $category->pk_categories }}"
-                                      @if($post->pk_categories == $category->pk_categories )
+                                      <option value="{{ $category->pk_category }}"
+                                      @if($post->pk_category == $category->pk_category )
                                       selected="selected"
                                       @endif>{{ $category->name }}</option>
                                       @endforeach 

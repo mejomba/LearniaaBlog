@@ -40,10 +40,14 @@ class RenameDirectory_CloudStorage extends Command
     public function handle()
     {
        
-      //  Storage::rename('oldFolder/', 'newFolder/');
+      //  $files =   Storage::allFiles("product");
 
-      Storage::remove('Videos');
-       
+        // Delete Files
+      //  Storage::delete($files);
+       // Storage::rename('product', 'package/');
+
+      Storage::remove('product');
+   //  Storage::move('product/*', 'package/');
         return "Directory Rename Success";
     }
 }

@@ -91,11 +91,11 @@ class TransactionController extends Controller
 
                             if(request()->slug == null)
                             {
-                                $transaction->pk_product = 0;
+                                $transaction->pk_package = 0;
                             }
                             else
                             {
-                                $transaction->pk_product = request()->slug ;
+                                $transaction->pk_package = request()->slug ;
                             }
 
                              $transaction->status = 'در انتظار تایید';
@@ -146,8 +146,8 @@ class TransactionController extends Controller
                     
                     if($transaction->type == 'خرید دوره آموزشی')
                     {
-                        return redirect()->route('product.detail',
-                        ['slug' => $transaction->pk_product ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                        return redirect()->route('package.detail',
+                        ['slug' => $transaction->pk_package ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
              
                     }
            }
@@ -170,14 +170,14 @@ class TransactionController extends Controller
                     }
                     if($transaction->type == 'خرید دوره آموزشی')
                     {
-                        if($transaction->pk_product == 0)
+                        if($transaction->pk_package == 0)
                         {
-                            return redirect()->route('product.index')->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                            return redirect()->route('package.index')->with('report','خطا : مشکل در انجام عملیات بانکی');    
                         }
                         else
                         {
-                            return redirect()->route('product.detail',
-                            ['slug' => $transaction->pk_product ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
+                            return redirect()->route('package.detail',
+                            ['slug' => $transaction->pk_package ])->with('report','خطا : مشکل در انجام عملیات بانکی');    
                         }
                     }
            }
@@ -242,7 +242,7 @@ class TransactionController extends Controller
 
 
 
-    public function productlist()
+    public function packagelist()
     {
 
         $user =  Auth::user() ;
@@ -263,7 +263,7 @@ class TransactionController extends Controller
             $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
         }
 
-        return view('admin.transaction.productlist',compact('names','transactions'));
+        return view('admin.transaction.packagelist',compact('names','transactions'));
     }
 
 }

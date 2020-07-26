@@ -13,19 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('insertDataProductAdobeXD', 'ApiController@insertDataProduct_AdobeXD');
+Route::get('insertDatapackageAdobeXD', 'ApiController@insertDatapackage_AdobeXD');
 Route::post('insertDataCourseAdobeXD', 'ApiController@insertDataCourse_AdobeXD');
 
-Route::get('posts', 'ApiController@index');
+Route::get('blog_posts', 'ApiController@index');
 Route::get('writers/{id}', 'ApiController@writer');
-Route::get('postsByCategory/{categoryOfPage}', 'ApiController@postsByCategory');
+Route::get('blog_postsByCategory/{categoryOfPage}', 'ApiController@blog_postsByCategory');
 Route::post('/category/store', 'ApiController@Category_store')->name('admin.api.category.store');
 
-Route::post('/Telegram/SetPublishPost', 'ApiController@TelegramSetPublishPost')->name('admin.api.telegram.setpublishpost');
-Route::get('/Telegram/GetListDraftPost', 'ApiController@TelegramGetListDraftPost')->name('admin.api.telegram.getlistdraftpost');
+Route::post('/Telegram/SetPublishBlogPost', 'ApiController@TelegramSetPublish_BlogPost')->name('admin.api.telegram.SetPublishBlogPost');
+Route::get('/Telegram/GetListDraftBlogPost', 'ApiController@TelegramGetListDraft_BlogPost')->name('admin.api.telegram.GetListDraftBlogPost');
 
-Route::post('/order/AddProduct','OrderController@AddProduct');
-Route::delete('/order/RemoveProduct/{pk}/{pk_product}','OrderController@RemoveProduct');
+Route::post('/order/Addpackage','OrderController@Addpackage');
+Route::delete('/order/Removepackage/{pk}/{pk_package}','OrderController@Removepackage');
 Route::post('/order/AddPhisicalDelivery','OrderController@AddPhisicalDelivery');
 Route::post('/order/showorder','OrderController@showorder');
 

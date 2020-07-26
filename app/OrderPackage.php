@@ -4,16 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrderProduct extends Model
+class OrderPackage extends Model
 {
-    //
-    protected $table = 'orderproducts';
-    protected $primaryKey = 'pk_orderproduct';
+    protected $table = 'orderpackages';
+    protected $primaryKey = 'pk_orderpackage';
 
     public function GetListAllNameColumns_ForTable()
     {
        return  [ 'pk_order' => 'کلید سبد',
-                 'pk_orderProduct' => 'شماره ایتم های سفارش',
+                 'pk_orderpackage' => 'شماره ایتم های سفارش',
                  'pk_prdocut ' => 'شماره محصول',
                  'price '=> 'مبلغ پرداختی محصول',
                  'count '=> 'تعداد محصول درخواستی',

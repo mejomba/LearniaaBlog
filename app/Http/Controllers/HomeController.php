@@ -13,7 +13,7 @@ use Shetabit\Payment\Exceptions\InvalidPaymentException;
 use Spatie\Sitemap\SitemapGenerator;
 use App\Transaction;
 use App\Tag;
-use App\Product;
+use App\Package;
 use App\Learner;
 use App\Profile;
 use App\Behavior;
@@ -24,7 +24,8 @@ class HomeController extends Controller
      
         public function index()
         {
-           $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
+          // $last_posts =  Post::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
+          $last_posts = array();
           return view('site.academy.index',compact('last_posts'));
         }
 
@@ -85,23 +86,23 @@ class HomeController extends Controller
                 }
     
             }
-            else /* request()->type_search == "product" || request()->type_search == null */
+            else
             {
-                       $result_data =  Product::where('title', 'LIKE', '%'.request()->content_search.'%')->where('status', 'انتشار')->get();
+                       $result_data =  Package::where('title', 'LIKE', '%'.request()->content_search.'%')->where('status', 'انتشار')->get();
     
                         if($result_data->count() == 0)
                         {
-                          $recent_Products = Product::get()->take(6);
+                          $recent_packages = Package::get()->take(6);
                           $categories = Category::where('type','محصول')->get();
                           
-                          return view('site.product.index',compact('recent_Products','categories'));
+                          return view('site.package.index',compact('recent_packages','categories'));
                         }
                         else
                         {
-                          $recent_Products = $result_data ;
+                          $recent_packages = $result_data ;
                           $categories = Category::where('type','محصول')->get();
                           
-                          return view('site.product.index',compact('recent_Products','categories'));   
+                          return view('site.package.index',compact('recent_packages','categories'));   
                         }
             }
             
@@ -144,7 +145,7 @@ class HomeController extends Controller
                      
                     if(  $new_instance->save())
                     {
-                        return redirect(route('admin.product.index'))->with('success','با شما تماس خواهیم گرفت ');
+                        return redirect(route('admin.package.index'))->with('success','با شما تماس خواهیم گرفت ');
                     }
                     else
                     {
@@ -153,14 +154,6 @@ class HomeController extends Controller
     
                 }
             }
-    
-    
-    
-    
-    
-    
-    
-    
                     public function validation(Request $request)
                     {
                 
@@ -176,8 +169,6 @@ class HomeController extends Controller
                                  ];
                 
                     $messages = [
-                      
-                        
                                 'pk_assist.required' => 'کلید همکاری  وارد نشده است',
                                 'name.required' => 'نام وارد نشده است ',
                                 'name.string' => 'نام درست وارد نشده است ',
@@ -196,13 +187,6 @@ class HomeController extends Controller
                         $validator = Validator::make($request->all(),$rules,$messages);
                 
                         return $validator ;
-    
-    
-    
-    
-    
-    
-    
               }
         
 

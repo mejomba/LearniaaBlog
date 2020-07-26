@@ -58,11 +58,11 @@ class DiscountController extends Controller
 
             if(request()->type == 'عمومی')
             {
-                $discount->pk_product = 0 ;
+                $discount->pk_package = 0 ;
             }
             else
             {
-                $discount->pk_product = request()->pk_product ;
+                $discount->pk_package = request()->pk_package ;
             }
 
             $discount->date_Expire =  request()->date_Expire;
@@ -75,12 +75,12 @@ class DiscountController extends Controller
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
          
-            if(request()->pk_product == null)
+            if(request()->pk_package == null)
             {
                 $discount->type =  'عمومی' ;
 
             }else{
-                $discount->pk_product =  request()->pk_product ;
+                $discount->pk_package =  request()->pk_package ;
                 $discount->type =  'محصول محور' ;
 
             }
@@ -147,11 +147,11 @@ class DiscountController extends Controller
             
             if(request()->type == 'عمومی')
             {
-                $discount->pk_product = 0 ;
+                $discount->pk_package = 0 ;
             }
             else
             {
-                $discount->pk_product = request()->pk_product ;
+                $discount->pk_package = request()->pk_package ;
             }
 
             $discount->date_Expire =  request()->date_Expire;
@@ -166,12 +166,12 @@ class DiscountController extends Controller
             $discount->maxdiscount =  request()->maxdiscount ;
             $discount->status =  request()->status ;
             
-            if(request()->pk_product == null)
+            if(request()->pk_package == null)
             {
                 $discount->type =  'عمومی' ;
 
             }else{
-                $discount->pk_product =  request()->pk_product ;
+                $discount->pk_package =  request()->pk_package ;
                 $discount->type =  'محصول محور' ;
 
             }

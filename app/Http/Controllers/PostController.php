@@ -5,7 +5,7 @@ use App\Post;
 use App\Tag;
 use App\Category;
 use App\Behavior;
-use App\Product;
+use App\Package;
 use App\Search;
 
 class PostController extends Controller
@@ -34,15 +34,7 @@ class PostController extends Controller
         
         return view('site.post.detail',compact('detail_post','recent_post','behavior_post','meta_keywords'));
     }
-    /*
-    public function postByTag($slug)
-    {
-           $tag = Tag::where('slug', $slug)->first();
-           $posts = $tag->posts()->get();
-           return view('index',compact('posts')) ; 
-    }
-    */
-
+  
     public function postByCategory($name)
     {
         $category = Category::where('name', $name)->first();
@@ -52,6 +44,5 @@ class PostController extends Controller
        
         return view('site.post.index',compact('recent_post','categoryOfPage'));
     }
-
 
 }

@@ -69,7 +69,7 @@
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">دسترسی سریع</h5>
                     <ul class="list-unstyled mt-5">
                         <li>
-                            <a href="{{route('academy.index')}}" style="text-decoration: none; color: white">صفحه اصلی</a>
+                            <a href="{{route('index')}}" style="text-decoration: none; color: white">صفحه اصلی</a>
                         </li>
                         <li class="">
                             <a href="#!"></a>

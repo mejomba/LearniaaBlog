@@ -9,10 +9,10 @@ use App\Category;
 use App\Post;
 use App\User;
 use App\Discount;
-use App\Product;
+use App\Package;
 use App\Vote;
 use App\Course;
-use App\OrderProduct;
+use App\OrderPackage;
 use App\Order;
 use App\Delivery;
 use Verta;
@@ -21,7 +21,7 @@ use App\Mail\SendMail;
 
 class ApiController extends Controller
 {
-    public function insertDataProduct_AdobeXD()
+    public function insertDataPackage_AdobeXD()
     {   
         for ($row = 1; $row <= 129; $row++)
         {
@@ -31,7 +31,7 @@ class ApiController extends Controller
                 }
                 else
                 {
-                    $new_instance = new product();
+                    $new_instance = new Package();
                 
                     $new_instance->pk_category = "1013" ;
                     $new_instance->pk_search =  "5ee92a660c122" ;
@@ -69,7 +69,7 @@ class ApiController extends Controller
             
                 $newcourse = new Course();
                 $newcourse->pk_tree = 20;
-                $newcourse->pk_product = $row_pk_pdroduct ;
+                $newcourse->pk_package = $row_pk_pdroduct ;
                 $newcourse->sort = $sort ;
                 $newcourse->name = "قسمت $row - آموزش رسم پروتوتایپ با ادوب ایکس دی";
                 $row_pk_pdroduct = $row_pk_pdroduct + 1 ;
@@ -102,8 +102,7 @@ class ApiController extends Controller
 
     public function  DiscountCalculator (Request $request)
     {
-          $discount_code =  $_POST['discount_code'] ; // BAHAR98 --> discount_code  
-         // $pk_product = $_POST['pk_product'] ;
+          $discount_code =  $_POST['discount_code'] ;  
           $discount_type=Discount::select('type')->where('discount_code',$discount_code)->first();
           
           $order = order::select('pk_order')->where(
@@ -113,54 +112,42 @@ class ApiController extends Controller
         
         if ($discount_type->type=='محصول محور')
           {
-          
-        
-            if(isset($_POST['pk_user']) != TRUE )
+             if(isset($_POST['pk_user']) != TRUE )
             {           
                 return response()->json('login required');
-
             }
             $pk_user=$_POST['pk_user'];
             
             $discount_row = Discount::where('discount_code', $discount_code)->first();
-            $product = Discount::select('pk_product')->where('discount_code', $discount_code)->first();
-            $product_row = orderproduct::where([
-            'pk_order' => $order->pk_order,
-            'pk_product'=> $product->pk_product
-            ])->first();
-
-
-            //$product_price =  $product_row->total_price ;
-
+            $package = Discount::select('pk_package')->where('discount_code', $discount_code)->first();
+            $package_row = orderpackage::where(['pk_order' => $order->pk_order, 'pk_package'=> $package->pk_package])->first();
+          
             if($discount_row != null)
             {
-                $product_price =  $product_row->Total_price ;
+                $package_price =  $package_row->Total_price ;
                 $client = new \GuzzleHttp\Client();
                 $response = $client->request('POST', 'https://learniaa.com/api/DateTime/CheckTarikhIsLastFromNow', [
                     'form_params' => [ 'DateRequest' => $discount_row->date_Expire ] ]);
                 $response = $response->getBody()->getContents();
                 $checkTarikh = json_decode( $response);
                     
-                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&   $product_price >= $discount_row->minimum_buy )
+                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&  $package_price >= $discount_row->minimum_buy )
                     {
-                    /// $orderHistoryUserData = "";
-
                         if( $discount_row->limit == null)
                         {
-                            /////
-                            $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                            $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
                             if($discount_row->maxdiscount >= $price_discount )
                             {
-                                $product_priceByDiscount = $product_price - $price_discount ;
+                                $package_priceByDiscount = $package_price - $price_discount ;
                             }
                             else
                             {
-                                $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
+                                $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
                             }
                             $detail=array([
                                 'type'=>'محصول محور',
-                                'pk_product'=>$product->pk_product,
-                                'price'=>$product_priceByDiscount
+                                'pk_package'=>$package->pk_package,
+                                'price'=>$package_priceByDiscount
                             ]);
                             return response()->json($detail);                        }
                         else
@@ -173,21 +160,19 @@ class ApiController extends Controller
                                 $update_discount->save();
 
                                 /////
-                                $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                                $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
                                 if($discount_row->maxdiscount >= $price_discount )
                                 {
-                                    $product_priceByDiscount = $product_price - $price_discount ;
-                                
-                
+                                    $package_priceByDiscount = $package_price - $price_discount ;
                                 }
                                 else
                                 {
-                                    $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
+                                    $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
                                 }
                                 $detail=array([
                                     'type'=>'محصول محور',
-                                    'pk_product'=>$product->pk_product,
-                                    'price'=>$product_priceByDiscount
+                                    'pk_package'=>$package->pk_package,
+                                    'price'=>$package_priceByDiscount
                                 ]);
                                 return response()->json($detail);
 
@@ -214,13 +199,13 @@ class ApiController extends Controller
             $pk_user=$_POST['pk_user'];
             
             $discount_row = Discount::where('discount_code', $discount_code)->first();
-            $product_row = orderproduct::select ('pk_product','total_price')->where('pk_order' , $order->pk_order)->get();
+            $package_row = orderpackage::select ('pk_package','total_price')->where('pk_order' , $order->pk_order)->get();
 
-            foreach($product_row as $price )
+            foreach($package_row as $price )
             {
                 $total += $price->total_price;
             }
-            $product_price =  $total ;
+            $package_price =  $total ;
             if($discount_row != null)
             {
                 
@@ -230,27 +215,24 @@ class ApiController extends Controller
                 $response = $response->getBody()->getContents();
                 $checkTarikh = json_decode( $response);
             
-                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&   $product_price >= $discount_row->minimum_buy )
+                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&   $package_price >= $discount_row->minimum_buy )
                     {
-                    /// $orderHistoryUserData = "";
-
                         if( $discount_row->limit == null)
                         {
-                            /////
-                            $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                            $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
                             if($discount_row->maxdiscount >= $price_discount )
                             {
-                                $product_priceByDiscount = $product_price - $price_discount ;
+                                $package_priceByDiscount = $package_price - $price_discount ;
                             }
                             else
                             {
-                                $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
+                                $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
                             }
 
                             $detail=array([
                                 'type'=>'عمومی',
-                                'pk_product'=>'',
-                                'price'=>$product_priceByDiscount
+                                'pk_package'=>'',
+                                'price'=>$package_priceByDiscount
                             ]);
                             return response()->json($detail);                        }
                         else
@@ -263,21 +245,21 @@ class ApiController extends Controller
                                 $update_discount->save();
 
                                 /////
-                                $price_discount = ( $discount_row->percent_discount / 100) * $product_price;  
+                                $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
                                 if($discount_row->maxdiscount >= $price_discount )
                                 {
-                                    $product_priceByDiscount = $product_price - $price_discount ;
+                                    $package_priceByDiscount = $package_price - $price_discount ;
                                 
                 
                                 }
                                 else
                                 {
-                                    $product_priceByDiscount = $product_price -  $discount_row->maxdiscount ;
+                                    $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
                                 }
                                 $detail=array([
                                     'type'=>'عمومی',
-                                    'pk_product'=>'',
-                                    'price'=>$product_priceByDiscount
+                                    'pk_package'=>'',
+                                    'price'=>$package_priceByDiscount
                                 ]);
                                 return response()->json($detail);
 
@@ -421,11 +403,10 @@ class ApiController extends Controller
 
 public function downloadcounter($id)
 {
-    $product= product::find($id);
-    $count = $product->download_count + 1;
-    $product->download_count = $count;
-    $product->save();
-
+    $package= package::find($id);
+    $count = $package->download_count + 1;
+    $package->download_count = $count;
+    $package->save();
 }
 
 public function filter()

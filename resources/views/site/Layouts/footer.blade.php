@@ -71,7 +71,7 @@
                     <h5 class="font-weight-bold text-uppercase mt-md-4 mb-3 text-white">دسترسی سریع</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{route('academy.index')}}" >صفحه اصلی</a>
+                            <a href="{{route('index')}}" >صفحه اصلی</a>
                         </li>
                         <li>
                             <a href="{{route('academy.detail')}}" >آکادمی آموزش</a>

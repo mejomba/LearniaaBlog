@@ -50,7 +50,7 @@
 {{-- infomation Section starts --}}
 
             <div class="row" >
-                    <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:10px"  >
+                    <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:30px"  >
                     
                     <a href="{{route('academy.mylearn',['pk_tree'=>$tree->pk_tree])}}"> 
                             <button class="btn fourth mt-4 d-inline" style="font-size:15px">شروع یادگیری</button>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="row " style="margin-top:40px">
-                    <div class="col-md-10 card p-3 hover-style ml-auto mr-auto"  >
+                    <div class="col-md-10 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
                     @php echo htmlspecialchars_decode($tree['description']) ; @endphp
                </div>
              </div>

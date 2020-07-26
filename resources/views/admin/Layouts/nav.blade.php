@@ -34,7 +34,7 @@
                     </div>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text" style="color: black" href="{{route('academy.index')}}" rel="tooltip"
+                            <a class="nav-link text" style="color: black" href="{{route('index')}}" rel="tooltip"
                                title=""
                                data-placement="bottom">صفحه اصلی</a>
                         </li>
@@ -57,25 +57,7 @@
                     </ul>
         <!-- Search Box -->
             <ul class="navbar-nav col-md-3 col-10 " dir="ltr" style="margin-top:15px">
-            <!--    <form class="navbar-form" style="margin-bottom:0px" dir="rtl"
-                              action="{{route('search.index')}}">
-                            <div class="row">
-                                <div class="col-md-12 col-11" style="padding-left:0px;padding-right:0px">
-                                    <div class="form-group">
-                                        <input type="hidden" name="type_search" value="{{Request::segment(1)}}"
-                                               class="form-control search-box" placeholder="جستجو...">
-                                        <div class="input-group">
-                                            <input type="text" name="content_search" style="border-radius:0"
-                                                   class="form-control form-control-alternative" placeholder="جستجو...">
-                                            <button class="input-group-text" type="submit"
-                                                    style="font-size:0.8rem !important;background-color:#f1c40f;color:#000">
-                                                بگرد
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> -->
+          
             </ul>
             <!-- Search Box -->
 
@@ -104,17 +86,13 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                     @if(Auth::user()->type == "مدیر")
-                                        <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
-                                        <a class="dropdown-item" href="{{route('admin.post.index')}}"> پست</a>
+                                    <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
+                                        <a class="dropdown-item" href="{{route('admin.blog.index')}}"> بلاگ</a>
                                         <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
-                                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> محصول</a>
-                                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> درخت</a>
-                                        <a class="dropdown-item" href="{{route('admin.transaction.productlist')}}">
-                                            خریداری شده</a>
-                                    @endif
-
-                                    @if(Auth::user()->type == "نویسنده")
-                                        <a class="dropdown-item" href="{{ route('writer.home') }}">سامانه نویسندگان</a>
+                                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> محصول</a>
+                                        <a class="dropdown-item" href="{{route('admin.tree.index')}}"> درخت</a>
+                                        <a class="dropdown-item" href="{{route('admin.transaction.packagelist')}}">خریداری شده</a>
+                                            
                                     @endif
 
                                     @if(Auth::user()->type == "کاربر")

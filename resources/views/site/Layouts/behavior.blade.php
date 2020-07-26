@@ -10,7 +10,7 @@
                     @if($user['pk_users'] != null)
                         <form action="{{ route('behavior.store') }}" method="POST">
                             @csrf
-                            <input type="hidden" name="pk_product" value="{{$product->pk_product}}">
+                            <input type="hidden" name="pk_package" value="{{$package->pk_package}}">
                             <input type="hidden" name="type" value="comment">
                             <div class="row">
                                 <div class="col-md-9">
@@ -31,7 +31,7 @@
                     @endif
                     <p></p>
                     <ul class="timeline">
-                        @foreach($behavior_product as $one_behavior)
+                        @foreach($behavior_package as $one_behavior)
                             @php  $json = json_decode($one_behavior['extras'],false) @endphp
                             <li>
                             <span class="text-muted float-right" style="display:contents">

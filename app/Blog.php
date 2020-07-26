@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Blog extends Model
 {
-    protected $table = 'posts';
+    protected $table = 'Blog';
     protected $primaryKey = 'pk_post';
-
 
    public function GetListAllNameColumns_ForTable()
    {
@@ -45,9 +44,4 @@ class Post extends Model
     }
 
 
-    
-
-    
-
-   
 }

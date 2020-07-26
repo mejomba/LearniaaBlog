@@ -62,9 +62,9 @@
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
                                     </div>
-                                  <select name="pk_categories" class="form-control">
+                                  <select name="pk_category" class="form-control">
                                   @foreach ($categories as $category)
-                                  <option value="{{ $category->pk_categories }}">{{ $category->name }}</option>
+                                  <option value="{{ $category->pk_category }}">{{ $category->name }}</option>
                                   @endforeach 
                                   </select>
                                   </div>

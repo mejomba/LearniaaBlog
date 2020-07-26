@@ -23,7 +23,6 @@ class Learner extends Model
 
     public function user()
     {
-
      return $this->hasOne('App\User', 'pk_users', 'pk_user');
     }
 

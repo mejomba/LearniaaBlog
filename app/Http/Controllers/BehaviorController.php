@@ -58,9 +58,9 @@ class BehaviorController extends Controller
                 {
                     $behavior->pk_entity = request()->pk_post ;
                 }
-                if(request()->pk_product != null)
+                if(request()->pk_package != null)
                 {
-                    $behavior->pk_entity = request()->pk_product ;
+                    $behavior->pk_entity = request()->pk_package ;
                 }
                
                 $behavior->pk_users =  $pk_users ;
