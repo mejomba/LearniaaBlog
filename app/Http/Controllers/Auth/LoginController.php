@@ -37,88 +37,30 @@ class LoginController extends Controller
     {
         if ( $user->type == "مدیر" )
         {
-          
-            if( request()->digital_receipt  != "null")
-            {
-                $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
-                $transaction->pk_users = $user->pk_users ;
-                $transaction->save();
-
-                $BeginnerTree = Package::where('title','پکیج کامل آموزش کامپیوتر')->first();
-                $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
-                if( $pkPackage_BeginnerTree == $transaction->pk_package )
-                {
-                    return redirect()->route('academy.detail')->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
-                }
-                else
-                {
-                return redirect('/academy/show/'.request()->pk_package.'/'.request()->title); 
-                }
-            }
-
-
-            else
-            {
-           
-            return redirect('admin/home/index');
-            }
-
-           
+           return redirect('admin/home/index');
         }
-        elseif ( $user->type == "نویسنده")
-        {
-            if( request()->digital_receipt != "null")
-            {
-                $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
-                $transaction->pk_users = $user->pk_users ;
-                $transaction->save();
-
-                return redirect('/academy/show/'.request()->pk_package.'/'.request()->title); 
-            }
-            else
-            {
-           
-              return redirect('admin/post/index');  
-            }
-              
-        }
+        
         elseif ($user->type == "کاربر")
          {
-
-                if( request()->digital_receipt  != "null")
-                {
-                    $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
-                    $transaction->pk_users = $user->pk_users ;
-                    $transaction->save();
-
-                    $BeginnerTree = Package::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
-                    $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
-                    if( $pkPackage_BeginnerTree == $transaction->pk_package )
+                    if(request()->redirectFromURL == 'http://127.0.0.1:8000/reset/showcallbackloginform' || 
+                       request()->redirectFromURL == 'https://learniaa.com/reset/showcallbackloginform' )
                     {
-                        return redirect()->route('academy.course',['pk_tree' => 18 ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                        return redirect(route('index'));
                     }
-                    else
+                    else 
                     {
-                        $package = Package::find(request()->pk_package);
-                                $course = Course::where('pk_package',request()->pk_package)->first();
-
-                                return redirect()->route('academy.show',
-                                ['id' => request()->pk_package , 'desc' =>  $course['name'] ])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');    
+                        if(isset(request()->pk_package))
+                        {
+                            if(request()->pk_package != 'Null')
+                            {
+                                return redirect(route('package.pay',
+                                ['pk_package' => request()->pk_package ,
+                                'redirectFromURL' => request()->redirectFromURL ]));
+                            }
+                        }
+                        return redirect(request()->redirectFromURL); 
                     }
-                }
-                
-                if(request()->redirectFromURL == 'http://127.0.0.1:8000/reset/showcallbackloginform')
-                {
-                    return redirect(route('index'));
-                }
-                else 
-                {
-                return redirect(request()->redirectFromURL); 
-                }
-
-               
-          }
-
+            }
     }
 
     /**
@@ -140,16 +82,13 @@ class LoginController extends Controller
 
     protected function validateLogin(Request $request)
     {
-
         $validator =  $this->validation($request);
-
         if ($validator->fails())
            {
                 return redirect()->back()
                             ->withErrors($validator)
                             ->withInput();
           }
-    
         else
           {
                     $rules =  [
@@ -164,45 +103,28 @@ class LoginController extends Controller
                               ];
 
                     $this->validate($request,$rules, $messages);
-          }
-
-       
-
-        
-            
+          }      
     }
 
 
     public function validation(Request $request)
     {
-        $rules =  [
-            'username' => ['required', new validate], 
-           'password' => 'required|min:3',
-        ];
-
-        $messages = [
-        'username.required' => 'نام کاربری وارد نشده است',
-        'username.validate' => ' نام کاربری صحیح وارد نشده است',
-        'password.required' => 'رمز عبور وارد نشده است',
-        'password.min' => 'رمز عبور صحیح وارد نشده است',
-        ];
-
-
+        $rules =  [ 'username' => ['required', new validate], 
+                    'password' => 'required|min:3',];
+        $messages = [ 'username.required' => 'نام کاربری وارد نشده است',
+                       'username.validate' => ' نام کاربری صحیح وارد نشده است',
+                       'password.required' => 'رمز عبور وارد نشده است',
+                       'password.min' => 'رمز عبور صحیح وارد نشده است',];
         $validator = Validator::make($request->all(),$rules,$messages);
-
         return $validator ;
     }
 
     public function username()
-    {
-        return 'username' ;
-        
-    }
-    public function redirectToProvider()
-    {
-        return Socialite::driver('google')->redirect();
-    }
+    { return 'username' ; } 
 
+    public function redirectToProvider()
+    { return Socialite::driver('google')->redirect(); }
+        
     public function handleProviderCallback()
     {
         try {
@@ -217,28 +139,12 @@ class LoginController extends Controller
             auth()->login($existingUser, true);
         } 
         else {
-            $email = $user->getEmail();
-            $len = strlen($email);
-            $email = substr($email,4,$len);
-        return view('auth.register',compact('email'));
-            /*
-            $newUser                    = new User;
-            $newUser->provider_name     = $driver;
-            $newUser->provider_id       = $user->getId();
-            $newUser->name              = $user->getName();
-            $newUser->email             = $user->getEmail();
-            //$newUser->email_verified_at = now();
-            //$newUser->avatar            = $user->getAvatar();
-            $newUser->save();
-    
-            auth()->login($newUser, true);
-            */
-        }
-    
+                $email = $user->getEmail();
+                $len = strlen($email);
+                $email = substr($email,4,$len);
+               return view('auth.register',compact('email'));
+           }
         return redirect($this->redirectPath());
-    
-
-        // $user->token;
     }
 
 }

@@ -16,11 +16,17 @@
             </div>
         </div>
 
-        <form class="form" method="POST" action="{{route('reset.callbacklogin')}}">
+           <form class="form" method="POST" action="{{route('reset.callbacklogin')}}">
+            @csrf
+
             @if(isset($redirectFromURL))
                 <input type="hidden" name="redirectFromURL" value="{{$redirectFromURL}}">
             @endif
-            @csrf
+
+            @if(isset($_GET['pk_package']))
+                <input type="hidden" name="pk_package" value="{{$_GET['pk_package']}}">
+            @endif
+           
             <div class="form-group d-flex mt-5 pr-3 py-2">
                 <img class="rounded-circle mr-1"
                    src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">

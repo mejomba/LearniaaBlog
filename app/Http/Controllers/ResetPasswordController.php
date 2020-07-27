@@ -16,32 +16,12 @@ use App\Mail\SendMail;
 
 class ResetPasswordController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
        return view('auth.passwords.reset');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validator =  $this->validation($request);
@@ -150,24 +130,6 @@ class ResetPasswordController extends Controller
         return view('auth.passwords.verify',compact('pk_user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request,$id)
     {
            $pk_user = $id ;
@@ -273,68 +235,35 @@ class ResetPasswordController extends Controller
         return $validator ;
     }
 
-    public function callbackpayment(Request $request)
-    {
-        $user = User::where('username',request()->username)->first();
-
-        $transaction =  Transaction::where('digital_receipt', request()->digital_receipt )->get()->first();
-        $transaction->extras = request()->username ;
-        $transaction->save();
-
-        if($user == null)
-        {
-            return redirect(route('register',
-            ['pk_package' => request()->pk_package ,
-                'username' =>request()->username,
-                'title' =>  request()->title ,
-                'digital_receipt'=>  request()->digital_receipt
-                ]))->with('success','برای مشاهده و دریافت دوره آموزشی  فرم ثبت نام  زیر را تکمیل کنید');    
-
-        }
-        else
-        {
-                    return redirect(route('login',
-            ['pk_package' => request()->pk_package ,
-                'username' =>request()->username,
-                'title' =>  request()->title ,
-                'digital_receipt'=>  request()->digital_receipt 
-                ]))->with('success','برای مشاهده و دریافت دوره آموزشی  اطلاعات خود را وارد کنید');    
-
-        }
-    }
-
-
     public function showcallbackloginform(Request $request)
     {
+        $pk_package = "Null";
+        if(request()->pk_package)
+        {
+            $pk_package = request()->pk_package ;
+        }
         $redirectFromURL = url()->previous();
-        return view('auth.callbacklogin',compact('redirectFromURL'));
+        return view('auth.callbacklogin',compact('redirectFromURL','pk_package'));
     }
     
-
 
     public function callbacklogin(Request $request)
     {
-
         $rules =  [ 'username' => ['required',new validate] ];
-           
-            $messages = [   'username.required' => 'نام کاربری وارد نشده است',                      
-                             'username.validate' => ' نام کاربری صحیح وارد نشده است', 
-                       ];    
-         
-           $validator = Validator::make($request->all(),$rules,$messages);
-
-
+       $messages = ['username.required' => 'نام کاربری وارد نشده است',                      
+                    'username.validate' => ' نام کاربری صحیح وارد نشده است', 
+                   ];    
+        $validator = Validator::make($request->all(),$rules,$messages);
         if ($validator->fails())
-           {
-                return redirect()->back()
+           {return redirect()->back()
                             ->withErrors($validator)
                             ->withInput();
           }
-    
         else
-          {  
-                $user = User::where('username',request()->username)->first();
+          {   $user = User::where('username',request()->username)->first();
                 $redirect = "/academy";
+                $pk_package = "Null";
+                if(isset(request()->pk_package)) {$pk_package = request()->pk_package ; }
                 if(request()->redirectFromURL != null )
                 {
                   $redirect = request()->redirectFromURL;
@@ -342,17 +271,18 @@ class ResetPasswordController extends Controller
 
                 if($user == null)
                 {
-                   
                     return redirect(route('register',[
                         'username' =>request()->username ,
-                        'redirectFromURL' => $redirect
+                        'redirectFromURL' => $redirect ,
+                        'pk_package' => $pk_package
                     ]));    
                 }
                 else
                 {
                     return redirect(route('login',[
                         'username' =>request()->username ,
-                        'redirectFromURL' => $redirect
+                        'redirectFromURL' => $redirect ,
+                        'pk_package' => $pk_package
                     ]));    
                 }
          }

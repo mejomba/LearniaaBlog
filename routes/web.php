@@ -14,10 +14,7 @@ Route::get('/academy/mylearn', 'AcademyController@start_mylearn')->name('academy
 Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')->name('academy.course');
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 
-
-Route::get('/package', 'PackageController@index')->name('package.index');
-Route::get('/package/{slug}/{desc}', 'PackageController@detail')->name('package.detail');
-Route::post('/package/pay/{slug}', 'PackageController@pay')->name('package.pay');
+Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
 
 Route::get('/Transaction/store', 'TransactionController@store')->name('transaction.store');
 Route::get('/Transaction/show', 'TransactionController@show')->name('transaction.show');
@@ -49,7 +46,6 @@ Route::post('/reset/store', 'ResetPasswordController@store')->name('reset.store'
 Route::get('/reset/show/{id}', 'ResetPasswordController@show')->name('reset.show');
 Route::get('/reset/update/{id}', 'ResetPasswordController@update')->name('reset.update');
 Route::post('/reset/delete/{id}', 'ResetPasswordController@destroy')->name('reset.delete');
-Route::post('/reset/callbackpayment', 'ResetPasswordController@callbackpayment')->name('reset.callbackpayment');
 Route::post('/reset/callbacklogin', 'ResetPasswordController@callbacklogin')->name('reset.callbacklogin');
 Route::get('/reset/showcallbackloginform', 'ResetPasswordController@showcallbackloginform')->name('reset.showcallbackloginform');
 

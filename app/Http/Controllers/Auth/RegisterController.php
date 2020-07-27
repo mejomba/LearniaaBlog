@@ -76,62 +76,33 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-        
-        $user =  User::create([
-            'name' => $data['name'],
-            'username' => $data['username'],
-            'password' => Hash::make($data['password']),
-            'type' => 'کاربر',
-            'attract' => $data['attract']
-         ]);
+        protected function create(array $data)
+        { 
+                $user =  User::create(['name' => $data['name'],
+                'username' => $data['username'],
+                'password' => Hash::make($data['password']),
+                'type' => 'کاربر',
+                'attract' => $data['attract']
+                ]);
 
-         $new_user = User::where('username',$data['username'])->first();
-            
-            $profile = new Profile();
-            $profile->pk_users = $new_user->pk_users ;
-            $profile->save();
+                $new_user = User::where('username',$data['username'])->first();
+                $profile = new Profile();
+                $profile->pk_users = $new_user->pk_users ;
+                $profile->save();
 
-            /* add contact to sms panel */
-            $check = substr($data['username'],'0','2');
-            if ($check=='09')
-            {
-        }
-            /* add contact to sms panel */
-             /* Check Register User For Learniaa Academy */
-            if( $data['digital_receipt'] != "null")
-            {
-                $transaction =  Transaction::where('digital_receipt', $data['digital_receipt'] )->get()->first();
-                $transaction->pk_users = $new_user->pk_users ;
-                $transaction->save();
-
-                $BeginnerTree = Package::where('title','پکیج کامل دوره آموزش کامپیوتر مبتدیان')->first();
-                $pkPackage_BeginnerTree =  $BeginnerTree['pk_package'];
-                if( $pkPackage_BeginnerTree == $transaction->pk_package )
-                {
-                    $this->redirectTo = '/academy/course?pk_tree=18' ;
+                $check = substr($data['username'],'0','2');
+                if(isset($data['pk_package']))
+                {   if($data['pk_package'] != 'Null')
+                    {
+                        $this->redirectTo = route('package.pay',['pk_package' => $data['pk_package'] ,
+                        'redirectFromURL' => $data['redirectFromURL'] ]);
+                    }  
                 }
                 else
                 {
-
-                    $course = Course::where('pk_package',$data['pk_package'])->first();
-                    $this->redirectTo = '/academy/show/'.$data['pk_package'] . '/'   .$course['name'];
-                    
+                   $this->redirectTo = $data['redirectFromURL'];
                 }
-            }
-            else
-            {
-              //  $this->redirectTo = '/';
-
-                $this->redirectTo = $data['redirectFromURL'];
-            }
-             /* Check Register User For Learniaa Academy */
-
-
-            // Finaly Process Register //
-            return $user;
-
-          
-    }
-}
+                
+                return $user;
+       }
+} 

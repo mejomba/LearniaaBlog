@@ -16,29 +16,17 @@
                         <h3 class="p-2" style="background-color:#20C5BA">ورود کاربران</h3>
                     </div>
                 </div>
-                <form class="form pr-3 py-5" method="POST" action="{{route('login')}}">
+                <form class="form" method="POST" action="{{route('login')}}">
+                @csrf
 
-                    @if(isset($_GET['redirectFromURL']))
-                        <input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">
-                    @endif
+                @if(isset($_GET['redirectFromURL']))
+                <input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">
+                @endif
 
+                @if(isset($_GET['pk_package']))
+                <input type="hidden" name="pk_package" value="{{$_GET['pk_package']}}">
+                @endif
 
-                    @csrf
-                    @if(isset($_GET['pk_product']))
-                        <input type="hidden" name="pk_product" value="{{ $_GET['pk_product'] }}">
-                    @else
-                        <input type="hidden" name="pk_product" value="null">
-                    @endif
-                    @if(isset($_GET['title']))
-                        <input type="hidden" name="title" value="{{ $_GET['title'] }}">
-                    @else
-                        <input type="hidden" name="title" value="null">
-                    @endif
-                    @if(isset($_GET['digital_receipt']))
-                        <input type="hidden" name="digital_receipt" value="{{ $_GET['digital_receipt'] }}">
-                    @else
-                        <input type="hidden" name="digital_receipt" value="null">
-                    @endif
                         <div class="form-group d-flex mt-2">
                             <img class="rounded-circle mr-1"
                                  src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">

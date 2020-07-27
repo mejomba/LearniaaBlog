@@ -99,29 +99,20 @@
                             </div>
                         </form> -->
                     </ul>
-                    <!-- USER PANEL -->
-
-                    <ul class="navbar-nav col-md-2 col-10" dir="ltr">
+                <!-- ---- User Menu ---- -->
+                <ul class="navbar-nav col-md-4 col-12 offset-lg-2" dir="ltr">
                     @guest
-                        <!-- <li class="nav-item">
-                    <a class="nav-link" target="_parent" style="color:white"  rel="tooltip" title=""
-                    data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
-                    > ورود/ثبت نام
-                  </a>
-                  </li>   -->
-
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
                                        style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
-                                       data-placement="bottom" href="{{route('reset.showcallbackloginform')}}"
-                                    >ثبت نام / ورود
+                                       data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
+                                    <span>ثبت نام / ورود</span>
                                     </a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown" style="border-radius:1.2rem;">
-                                <!--   <a id="navbarDropdown" class="nav-link dropdown-toggle profileMenu" -->
                                 <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button"
                                    style=" border-radius: 50%; width: 50px; height: 50px;"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -129,49 +120,32 @@
                                          height="35px" width="35px">
                                     <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
                                     @if(Auth::user()->type == "مدیر")
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
-                                        <a class="dropdown-item" href="{{route('admin.post.index')}}"> پست</a>
+                                        <a class="dropdown-item" href="{{route('admin.blog.index')}}"> پست</a>
                                         <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
-                                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> محصول</a>
-                                        <a class="dropdown-item" href="{{route('admin.product.index')}}"> درخت</a>
-                                        <a class="dropdown-item" href="{{route('admin.transaction.productlist')}}">
-                                            خریداری شده</a>
-                                    @endif
-
-                                    @if(Auth::user()->type == "نویسنده")
-                                        <a class="dropdown-item" href="{{ route('writer.home') }}">سامانه نویسندگان</a>
+                                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> محصول</a>
+                                        <a class="dropdown-item" href="{{route('admin.tree.index')}}"> درخت</a>
+                                        <a class="dropdown-item" href="{{route('admin.transaction.packagelist')}}">خریداری شده</a>
                                     @endif
 
                                     @if(Auth::user()->type == "کاربر")
-                                        <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
-                                        <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a>
-                                        <a class="dropdown-item" href="{{route('user.transaction.productlist')}}">
-                                            خریداری شده</a>
-                                        <a class="dropdown-item" href="{{route('user.transaction.create')}}"> کیف
-                                            پول</a>
-                                        <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a>
-
+                                    {{-- <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a> --}}
+                                    {{--  <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a> --}}
+                                    {{-- <a class="dropdown-item" href="{{route('user.transaction.packagelist')}}">خریداری شده</a> --}}
+                                    {{-- <a class="dropdown-item" href="{{route('user.transaction.create')}}"> کیف پول</a> --}}
+                                    {{--  <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a> --}}
                                     @endif
-
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">خروج </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        @csrf
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">خروج </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf
                                     </form>
-
                                 </div>
-
                             </li>
                         @endguest
                     </ul>
-                    <!-- USER PANEL -->
+        <!-- ---- User Menu ---- -->
 
                 </div>
             </div>

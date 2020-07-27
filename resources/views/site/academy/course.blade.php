@@ -39,15 +39,39 @@
                     </p>
                     <!-- Full Pack Sale -->
                 </div>
-                <div class=" p-3  ml-2 mr-2 mb-3" style="border-radius: 20px;text-align: center;border:3px solid  #20c5ba;color: white;">
 
-                 <form action="{{route('package.pay', $package['pk_package'] )}}" method="POST">
-                                @csrf
-                                <input type="hidden" name="LocationUser" value="Academy_package">
-                                <input type="hidden" name="NamePackage" value="{{$package['name']}}">
-                                <span>قیمت :</span>
-                                <button class="btn btnGreen"  type="submit">خرید دوره {{$package['fa_name']}} </button>
-                                   
+                <div class=" p-3  ml-2 mr-2 mb-3" style="border-radius: 20px;text-align: center;border:3px solid  #20c5ba;">
+                 <form id="PackagePay" action="{{route('transaction.store',['pk_package' => $package['pk_package']]  )}}" method="GET">
+                   @csrf
+                   <input type="hidden" name="pk_tree"    id="pk_tree"    value="{{$selected_road}}">
+                   <input type="hidden" name="pk_package" id="pk_package" value="{{$package['pk_package']}}">
+                   <input type="hidden" name="UserLogin"  id="UserLogin"  value="{{$pk_user}}">
+                   <input type="hidden" name="price"  id="price"  value="{{$package['price']}}">
+                   <input type="hidden" name="redirectFromURL"  id="redirectFromURL"  value="{{url()->current()}}">
+                   <input type="hidden" name="type"  id="redirectFromURL"  value="خرید دوره آموزشی">
+
+                                
+                               @if($payment_status != 'Yes')
+                               <div class="row"> 
+                                   <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
+                                   <div class="col-md-4" style="margin-top:10px"> 
+                                    <img class=" img-border" src="{{ asset('images/Academy/Money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                                    {{$package['price']}} تومان </div>        
+                                    <div class="col-md-4">  <button class="btn btnGreen" type="button"
+                                     onclick="CheckUserLogin()">خرید دوره  </button>         
+                                    </div>
+                               </div>
+                               @else
+                               <div class="row"> 
+                                   <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
+                                   <div class="col-md-4" style="margin-top:10px"> 
+                                    <img class=" img-border" src="{{ asset('images/Academy/Money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                                    {{$package['price']}} تومان </div>        
+                                    <div class="col-md-4">  <button type="button" class="btn btnGreen" disabled >خرید دوره</button>         
+                                    </div>
+                               </div>
+                               @endif
+
                             </form> 
                
                 </div>
@@ -55,6 +79,64 @@
             </div>
         </div>
     </div>
+
+<!-- JS Function -->
+<script>
+function CheckUserLogin()
+ {
+    $pk_user = document.getElementById("UserLogin").value ;
+    if($pk_user == 'Null')
+    {
+        document.getElementById("ModalConfirmLogin").setAttribute("style","display:block;opacity:100;");
+    }
+    else
+    {
+        document.getElementById("PackagePay").submit();
+    }
+ }
+
+ function ModalConfirmLogin_close()
+ {document.getElementById("ModalConfirmLogin").setAttribute("style","");}
+
+ function RedirectToLogin()
+  {
+   location.replace("{{ route('reset.showcallbackloginform',['pk_package' => $package->pk_package , 'redirectFromURL' => url()->current() ] ) }}");
+  }
+
+</script>
+<!-- JS Function -->
+
+<!-- Modal -->
+<!-- Modal Confirm Login -->                      
+<div class="modal fade" dir="rtl" id="ModalConfirmLogin" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelConfirmLogin" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
+         <div class="modal-content">
+           <div class="modal-header"> 
+           <h5 class="modal-title" id="ModalLabelConfirmLogin">پیغام فرایند خرید</h5> 
+            </div>                              
+            <div class="modal-body">                      
+                                    <!-- Form &  Body -->
+                                        <div class="card-body px-lg-1 py-lg-1">
+                                            <div class="row">   
+                                             <b style="color:red">برای انجام فرایند خرید لازم است ابتدا ثبت نام کنید </b>
+                                            </div>
+                                            </div>
+                                        <!-- Form &  Body -->
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" onclick="RedirectToLogin()"
+                                     class="btn btnGreen">ثبت نام و خرید دوره</button> 
+                                     
+                                     <button type="button" onclick="ModalConfirmLogin_close()"
+                                     class="btn btn-primary"  data-dismiss="modal">بستن</button> 
+                                       
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>                           
+<!-- Modal Confirm Login -->
+<!-- Modal -->
+
 
 
 
@@ -83,25 +165,27 @@
                                                 </div>
 
                                             <div class="col-md-4 col-12 text-center" style="margin-top:13px">
-                                            @if($payment_status == 'No')
-                                            <img class=" img-border"
-                                            src="{{ asset('images/Academy/NoPay.svg') }}"
-                                            width="30px" height="30px" alt="Card image cap">
-                                            <span style="color:gray">  خریداری نشده </span>
-                                            @else
+                                            @if($payment_status == 'Yes' || $course['isFree'] == 'Yes')
                                             <img class=" img-border"
                                             src="{{ asset('images/Academy/YesPay.svg') }}"
                                             width="30px" height="30px" alt="Card image cap">
                                             <span style="color:#20c5ba">  فعال </span>
+                                            @else
+                                            <img class=" img-border"
+                                            src="{{ asset('images/Academy/NoPay.svg') }}"
+                                            width="30px" height="30px" alt="Card image cap">
+                                            <span style="color:gray">  خریداری نشده </span>
                                             @endif
                                             </div>
 
-                                         
                                           <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+                                          @if($payment_status == 'Yes' || $course['isFree'] == 'Yes' )
                                             <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,
                                                  'desc' => $course['name'] , 'sort' => $course['sort'] ,
                                                  'pk_package' => $course['pk_package']  ]) }}"
                                                class="btn fourth btn-round">مشاهده</a>
+                                               @else
+                                               @endif
                                             
                                             </div>
 

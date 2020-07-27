@@ -62,7 +62,7 @@
                         <li>
                          <!-- Data -->
                             <div class="row" id="row">
-                            <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3 hover-style k-cursor-pointer"
+                            <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3  k-cursor-pointer"
                              style="border: solid 1px #20C5BA ; border-radius: 5px">
 
                                 <div class="card-title" 

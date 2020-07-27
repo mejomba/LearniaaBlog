@@ -119,10 +119,12 @@ class AcademyController extends Controller
     {
         /* Auth */
         $user =  Auth::user() ;
+        $pk_user = "Null";
         $payment_status = "No";
             
         if($user != null)
         {
+            $pk_user =  $user->pk_users ;
             $payment_checks = Transaction::where('pk_package',$pk_package)
             ->where('status','عملیات موفق')
             ->where('pk_users',$user->pk_users)->first();
@@ -137,7 +139,7 @@ class AcademyController extends Controller
         $selected_road = $pk_tree ; 
         $courses =  Course::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
         $package = Package::where('pk_package',$pk_package)->first();
-        return view('site.academy.course',compact('courses','selected_road','payment_status','package'));
+        return view('site.academy.course',compact('courses','selected_road','payment_status','package','pk_user'));
     }
 
 

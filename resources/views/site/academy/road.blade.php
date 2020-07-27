@@ -90,8 +90,6 @@
                             <h6 class="text-black-100">{{ $node->name }}</h6>
                             <span style="margin-top: 10px;"></span>
 
-                            <p class="mt-3">{{ $node->short_description }} </p>
-                         
                             <div class="row text-center">
                             <div class="col-12 col-md-12">
                            
