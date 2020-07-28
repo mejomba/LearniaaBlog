@@ -96,20 +96,10 @@
                           </td>
 
                           <td>
-                          @if($package['status'] == 'انتشار')
-                            <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('package.detail',  ['slug' => $package['pk_package'] , 'desc' =>  $package['title'] ] )}}"> 
-                            <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                            </a>
-                            </span>
-                            @else
-                            <span style="font-size: 1.3rem;color:gray">
-                            <img src="{{ asset('images/Template/draft.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                            </span>
-                            @endif
+                          {{ $package['status'] }} 
                           </td>
-                          
-                         
+
+                        
                        <td>
 
                         <span style="font-size: 1.3rem;color:black">

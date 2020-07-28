@@ -15,6 +15,7 @@ Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
+Route::get('/package/insertDataCourseAdobeXD', 'PackageController@insertDataCourseAdobeXD')->name('package.insertDataCourseAdobeXD');
 
 Route::get('/Transaction/store', 'TransactionController@store')->name('transaction.store');
 Route::get('/Transaction/show', 'TransactionController@show')->name('transaction.show');

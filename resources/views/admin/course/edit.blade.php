@@ -86,7 +86,7 @@
                                           <option value="{{ $learner->pk_learner }}"
                                           @if($learner->pk_learner == $course->pk_learner )
                                           selected="selected"
-                                          @endif>{{ $learner->user->name }}</option>
+                                          @endif>{{ $learner->user['name'] }}</option>
                                           @endforeach 
                                           </select>
                                    </div>

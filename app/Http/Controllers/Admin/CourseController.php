@@ -389,7 +389,7 @@ class CourseController extends Controller
         $course->metatag=$current_course->metatag;
         $course->schema_markup=$current_course->schema_markup;
         $course->video_schema = $current_course->video_schema;
-
+        $course->isFree = $current_course->isFree;
 
         if($course->save())
         {

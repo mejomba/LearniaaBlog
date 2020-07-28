@@ -31,17 +31,15 @@ style="margin-top: -15px">
 @section('content')
 
 <!-- Video LEARN -->
-<!--
 <section class="row main-video d-flex justify-content-center mb-5">
     <a href="#video3" class="afterglow text-center">
         <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
         <i class="fa fa-play fa-4x text-center"></i>
     </a>
     <video id="video3" controls autoplay width="640" height="360" preload="none">
-        <source src="{{ asset('images/video.mp4') }}" type="video/mp4" />
+        <source src="{{ asset('images/Academy/LEARNIA-INTRO-1.5.2-C.mp4') }}" type="video/mp4" />
     </video>
 </section>
--->
 <!-- END Video LEARN -->
 
 

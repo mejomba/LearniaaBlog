@@ -157,7 +157,8 @@
                         <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px">
 
                             <video class="afterglow" id="my-video" width="1920" height="1080"
-                             src="{{$current_course['download_link']}}">
+                                    poster="{{Storage::url('course/'. $package['folder'] .'/' .$current_course['pic_cover'])}}"
+                                    src="{{$current_course['download_link']}}">
                              </video>
 
                         </div>

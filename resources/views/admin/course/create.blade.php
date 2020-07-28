@@ -74,7 +74,7 @@
                                             </div>
                                           <select name="pk_learner" class="form-control">
                                           @foreach ($learners as $learner)
-                                          <option value="{{ $learner->pk_learner }}">{{ $learner->user->name }}</option>
+                                          <option value="{{ $learner->pk_learner }}">{{ $learner->user['name'] }}</option>
                                           @endforeach 
                                           </select>
                                    </div>

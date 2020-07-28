@@ -27,7 +27,7 @@
               <div class="card-body px-lg-5 py-lg-5">
                 
               
-   <form method="POST" action="{{route('admin.category.update',$category['pk_categories'])}}" 
+   <form method="POST" action="{{route('admin.category.update',$category['pk_category'])}}" 
    enctype="multipart/form-data" style="min-height:270px;">
         @csrf
 

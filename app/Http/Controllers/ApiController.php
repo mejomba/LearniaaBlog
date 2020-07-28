@@ -56,28 +56,34 @@ class ApiController extends Controller
 
     public function insertDataCourse_AdobeXD(Request $request)
     {   
-        $row_pk_pdroduct = 115 ;
-        $sort = 2 ;
+        $i = 1 ;
         for ($row = 1; $row <= 129; $row++)
-        { 
-            if($row == 56)
-            {
-                continue ; 
-            }
-            else
-            {
-            
-                $newcourse = new Course();
-                $newcourse->pk_tree = 20;
-                $newcourse->pk_package = $row_pk_pdroduct ;
-                $newcourse->sort = $sort ;
-                $newcourse->name = "قسمت $row - آموزش رسم پروتوتایپ با ادوب ایکس دی";
-                $row_pk_pdroduct = $row_pk_pdroduct + 1 ;
-                $sort = $sort + 1 ;
-                $newcourse->save();
+        {
+                if($row == 56)
+                {
+                    continue ; 
+                }
+                else
+                {
+                    $course = new Course();
+
+                    $course->pk_package =  6 ;
+                    $course->pk_learner =  8 ;
+                    $course->name = "پروتوتایپ با ادوب ایکس دی - قسمت $i" ;
+                    $course->sort =  $i ;
+                    $i = $i + 1 ;
+                    $course->pic_cover = "$i.jpg";
+                    $course->Alt_cover = "ادوب ایکس دی $i" ;
+                    $course->download_link ="https://5c76fd66bf6fa1001152cbea.liara.space/learniaa/Videos_Design_AdobeXD/Design_AdobeXD$row.mp4";
+                    $course->schema_markup='{"@context":"https:\/\/schema.org","@type":"Product","name":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","image":"https:\/\/5c76fd66bf6fa1001152cbea.liara.space\/learniaa\/packageTree_Beginner_Design.jpg","description":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","offer_type":"Offer","priceCurrency":"IRR","price":100000,"itemCondition":"https:\/\/schema.org\/NewCondition","datePublished":"2020-07-27","dateModified":"2020-07-27"}';
+                    $course->metatag='{"htmlmeta":{"keywords":"1","description":"1","author":"1","refresh":"1","viewport":"1"},"opengraph":{"og_title":"1","og_image":"1","og_description":"1","og_type":"1","og_article":"1"},"twitter":{"twitter_card":"1","twitter_site":"1","twitter_description":"1","twitter_title":"1"}}';
+                    $course->video_schema = '{"@context":"https:\/\/schema.org","@type":"VideoObject","name":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","description":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","thumbnailUrl":"https:\/\/5c76fd66bf6fa1001152cbea.liara.space\/learniaa\/course\/Images_Beginner_Design1.jpg","uploadDate":"2020-07-27"}';
+                    $course->isFree = "No";
+                }
+                   
             }
 
-        }
+
     }
 
 

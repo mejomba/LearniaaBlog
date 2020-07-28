@@ -106,12 +106,21 @@ class AcademyController extends Controller
                 if($payment_checks)
                 {
                     $payment_status ="Yes";
+
+                    return view('site.academy.show',
+                    compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
+        
                 }
             }
             /* Auth */
+            if($current_course['isFree'] == 'Yes')
+            {
+                return view('site.academy.show',
+                compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
+            }
 
-            return view('site.academy.show',
-            compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
+            return redirect()->back()->with('report',' خطا : به علت پرداخت ننمودن هزینه به این قسمت دسترسی ندارید');
+
 
     }
 
