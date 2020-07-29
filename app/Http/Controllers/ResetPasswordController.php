@@ -46,77 +46,36 @@ class ResetPasswordController extends Controller
                     
                         // Send data
                         $check = substr(request()->username,'0','2');
-                        if ($check=='09')
+                        if($check!=='09')
+                        { 
+                            $Random_Generate = rand(0,999999);
+                            $username = User::select('username')->where('username',request()->username)->first();
+                            if($username->username)
+                            {
+                            $details = [
+                                'title' => 'کد تایید فراموشی رمز   | لرنیا',
+                                'body' => $Random_Generate
+                            ];
+                                $type ='Resetpassword';
+                               $address = 'www.'.$username->username;
+                            \Mail::to($address)->send(new SendMail($details,$type));
+                            }
+                            return redirect(route('reset.show',compact('pk_user')));                                    
+                        }
+                        else
                         {
-                        $url = "https://ippanel.com/services.jspd";
-                        $rcpt_nm = array(request()->username);
-                        $param = array
-                                    (
-                                        'uname'=>'09901918193',
-                                        'pass'=>'0020503679',
-                                        'from'=>'500010707',
-                                        'message'=> $Random_Generate ,
-                                        'to'=>json_encode($rcpt_nm),
-                                        'op'=>'send'
-                                    );
-                                    
-                        $handler = curl_init($url);             
-                        curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "POST");
-                        curl_setopt($handler, CURLOPT_POSTFIELDS, $param);                       
-                        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
-                        $response2 = curl_exec($handler);
-                        $response2 = json_decode($response2);
-                        $res_code = $response2[0];
-                        $res_data = $response2[1];
-                        //  echo $res_data;
-                        }elseif($check!=='09')
-                                {
-                                    $Random_Generate = rand(0,999999);
-                                    $username = User::select('username')->where('username',request()->username)->first();
-                                    if($username->username)
-                                    {
-                                    $details = [
-                                        'title' => 'کد تایید فراموشی رمز   | لرنیا',
-                                        'body' => $Random_Generate
-                                    ];
-                                        $type ='Resetpassword';
-                                       $address = 'www.'.$username->username;
-                                    \Mail::to($address)->send(new SendMail($details,$type));
-                               
-                                    }                                    
-                                }
-
-                        return redirect(route('reset.show',compact('pk_user')));
-                    
-          {  
-                $Random_Generate = rand(0,9999);
-                $user = User::where('username',request()->username)->first();
-                $reset_new = new Reset();
-                $reset_new->pk_user = $user['pk_users'] ;
-                $pk_user = $user['pk_users'] ;
-                $reset_new->token = $Random_Generate;
-                $reset_new->save();
+                            $client = new \IPPanel\Client('ai8RCfgBRB4EMq_WdlVq36Pw7DbmqyBQQRMsYBxh8wc=');
+                            $client->send(
+                                "+9850009589",          // originator
+                                [request()->username],    // recipients
+                               "لرنیا - کد شما برابر با  $Random_Generate"// message
+                            );           
+                            return redirect(route('reset.show',compact('pk_user')));
+                        }
             
-                // Send data
-                $check = substr(request()->username,'0','2');
-                if ($check=='09')
-                {
-                        $client = new \IPPanel\Client('ai8RCfgBRB4EMq_WdlVq36Pw7DbmqyBQQRMsYBxh8wc=');
-                        $client->send(
-                            "+9850009589",          // originator
-                            [request()->username],    // recipients
-                           "لرنیا - کد شما برابر با  $Random_Generate"// message
-                        );              
+         }
 
-
-                   }
-
-                return redirect(route('reset.show',compact('pk_user')));
-        
-                  
-           }
     }
-}
 
     /**
      * Display the specified resource.
