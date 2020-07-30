@@ -223,8 +223,8 @@ style="margin-top: -15px">
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس ملک</h4>
-                        <p class="">اصول برنامه نویسی</p>
+                        <h4 class="">مهندس شمسایی</h4>
+                        <p class="">برنامه نویسی پایتون</p>
                        <!-- <i class="fa fa-instagram text-danger ml-3"></i>
                         <i class="fa fa-telegram text-info"></i> -->
                     </div>
@@ -261,7 +261,7 @@ style="margin-top: -15px">
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس موسی آبادی</h4>
+                        <h4 class="">مهندس امین زاده</h4>
                         <p class="">برنامه نویسی پایتون</p>
                        <!-- <i class="fa fa-instagram text-danger ml-3"></i>
                         <i class="fa fa-telegram text-info"></i>  -->
