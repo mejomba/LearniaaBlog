@@ -13,7 +13,7 @@ class TestController extends Controller
      */
     public function wellcome()
     {
-      return view('site.test.wellcome');
+      return view('site.testing.roadmap');
     }
 
     /**
@@ -23,7 +23,7 @@ class TestController extends Controller
      */
     public function roadmap()
     {
-        return view('site.test.roadmap');
+        return view('site.testing.roadmap');
     }
 
     /**

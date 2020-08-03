@@ -431,6 +431,7 @@ public function GenerateNewUuid()
     $uuid= (string) str::uuid();
     $newlog = new Log();
     $newlog->uuid = $uuid;
+    $newlog->sort = '0';
     $newlog->name = 'guest';
     $newlog->save();
     return response()->json([
@@ -440,10 +441,11 @@ public function GenerateNewUuid()
 
 public function SetFamilyUser(Request $request)
 {
-    $log = Log::where('uuid',$_GET['uuid'])->first();
-    $log->name = $_GET['name'];
-    $newlog->save();
-    if(is_null($_GET['name'])){
+    $log = Log::where('uuid',$_POST['Uuid'])->first();
+    $log->name = $_POST['Name'];
+    $log->sort = '1';
+    $log->save();
+    if(is_null($_POST['Name'])){
     return response()->json([
         'status'=> 'error'
     ]);
@@ -456,11 +458,11 @@ public function SetFamilyUser(Request $request)
 
 }
 
-public function GetPopupData($uuid,$location_user_id)
+public function GetPopupData(Request $request)
 {
-    $log = Log::where('uuid',$uuid)->first();
+    $log = Log::where('uuid',$_POST['Uuid'])->first();
     if($log->uuid){
-        $route = Route::where('location_user_id',$location_user_id)->first();
+        $route = Routing::where('Location_User_Id',$_POST['LocationUserId'])->first();
         $feedback = json_decode($route->feedback);
         return response()->json([
             'content'=> $route->content,
@@ -470,21 +472,25 @@ public function GetPopupData($uuid,$location_user_id)
     }
 }
 
-public function SetAnswerUser($uuid,$location_user_id,Request $request)
+public function  SetAnswerUser(Request $request)
 {
-    $log = Log::where('uuid',$uuid)->first();
-    $log->location_user_id->$location_user_id;
-    $loganswer = json_decode($log->answer);
-    $answer = array_push($loganswer,$_GET['feedback']);
-    $log->answer = json_encode($answer);
-    $route = Routing::where('location_user_id',$location_user_id)->first();
+    $log = Log::where('uuid',$_POST['Uuid'])->orderby('uuid','DESC')->first();
+    $newlog = new Log();
+
+    $newlog->uuid=$log->uuid;
+    $newlog->name=$log->name;
+    $newlog->location_user_id=$_POST['LocationUserId'];
+    $newlog->answer=$_POST['SelectAnswerId'];
+    $newlog->sort = $log->sort+1;
+    $newlog->save();
+    $route = Routing::where('location_user_id',$_POST['LocationUserId'])->first();
     $feedback = json_decode($route->feedback);
     foreach($feedback as $item)
     {
-        if($item == $_GET['feedback'])
+        if($item == $_POST['SelectAnswerId'])
         {
         
-        $nextroute = where('location_user_id',$$item)->first();
+        $nextroute = Routing::where('location_user_id',$item)->first();
 
         }
     }
