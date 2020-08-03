@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    protected $table = 'Blog';
-    protected $primaryKey = 'pk_post';
+    protected $table = 'Blogs';
+    protected $primaryKey = 'pk_blog';
 
    public function GetListAllNameColumns_ForTable()
    {
-      return  [ 'pk_post' => 'کلید پست',
-                'pk_categories' => 'کلید دسته بندی',
+      return  [ 'pk_blog' => 'کلید پست',
+                'pk_category' => 'کلید دسته بندی',
                 'pk_tags' => 'کلید تگ',
                 'title' => 'عنوان',
                 'pk_writers' => 'کلید نویسنده',
@@ -30,12 +30,12 @@ class Blog extends Model
 
     public function category()
     {
-       return $this->hasOne(Category::class,'pk_categoies');
+       return $this->hasOne(Category::class,'pk_category','pk_category');
     }
 
     public function Tag()
     {
-       return $this->hasOne(Tag::class,'pk_tags');
+       return $this->hasOne(Tag::class,'pk_tags','pk_tags');
     }
 
     public function writer()

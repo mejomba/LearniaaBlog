@@ -56,13 +56,13 @@
                         </li>
                     </ul>
         <!-- Search Box -->
-            <ul class="navbar-nav col-md-3 col-10 " dir="ltr" style="margin-top:15px">
+            <ul class="navbar-nav col-md-2 col-10 " dir="ltr" style="margin-top:15px">
           
             </ul>
             <!-- Search Box -->
 
                <!-- ---- User Menu ---- -->
-               <ul class="navbar-nav col-md-4 col-12 offset-lg-2" dir="ltr">
+               <ul class="navbar-nav col-md-3 col-12 offset-lg-2" dir="ltr">
                     @guest
                             @if (Route::has('register'))
                                 <li class="nav-item">
