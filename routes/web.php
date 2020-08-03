@@ -199,6 +199,15 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/pages/delete/{id}', 'PagesController@destroy')->name('admin.pages.delete');
     Route::post('/pages/upload', 'PagesController@upload')->name('admin.pages.upload');
 
+
+    Route::get('/routing/index', 'RoutingController@index')->name('admin.routing.index');
+    Route::get('/routing/create', 'RoutingController@create')->name('admin.routing.create');
+    Route::post('/routing/store', 'RoutingController@store')->name('admin.routing.store');
+    Route::get('/routing/edit/{id}', 'RoutingController@edit')->name('admin.routing.edit');
+    Route::post('/routing/update/{id}', 'RoutingController@update')->name('admin.routing.update');
+    Route::get('/routing/delete/{id}', 'RoutingController@destroy')->name('admin.routing.delete');
+    Route::post('/routing/upload', 'RoutingController@upload')->name('admin.routing.upload');
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 
