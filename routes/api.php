@@ -61,7 +61,7 @@ Route::post('/Behavior/AddDisslike', 'BehaviorController@AddDisslike')->name('Be
 Route::post('/Behavior/AddComment', 'BehaviorController@AddComment')->name('Behavior.Vote.AddComment');
 Route::post('/Behavior/ShareContent', 'BehaviorController@ShareContent')->name('Behavior.Vote.ShareContent');
 
-Route::get('/log', 'ApiController@GenerateNewUuid')->name('api.GenerateNewUuid');
+Route::get('/GenerateNewUuid', 'ApiController@GenerateNewUuid')->name('api.GenerateNewUuid');
 Route::get('/log/{uuid}', 'ApiController@SetFamilyUser')->name('api.log.SetFamilyUser');
 Route::get('/log/{uuid}/{location_user_id}', 'ApiController@GetPopupData')->name('api.routing.GetPopupData');
 Route::get('/log/{uuid}/{location_user_id}/next', 'ApiController@SetAnswerUser')->name('api.routing.SetAnswerUser');
