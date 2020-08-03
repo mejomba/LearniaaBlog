@@ -61,9 +61,16 @@ Route::post('/Behavior/AddDisslike', 'BehaviorController@AddDisslike')->name('Be
 Route::post('/Behavior/AddComment', 'BehaviorController@AddComment')->name('Behavior.Vote.AddComment');
 Route::post('/Behavior/ShareContent', 'BehaviorController@ShareContent')->name('Behavior.Vote.ShareContent');
 
+<<<<<<< HEAD
+Route::post('/GenerateNewUuid', 'ApiController@GenerateNewUuid')->name('api.GenerateNewUuid');
+Route::post('/SetFamilyUser', 'ApiController@SetFamilyUser')->name('api.log.SetFamilyUser');
+Route::post('/GetPopupData', 'ApiController@GetPopupData')->name('api.routing.GetPopupData');
+Route::post('/SetAnswerUser', 'ApiController@SetAnswerUser')->name('api.routing.SetAnswerUser');
+=======
 Route::get('/GenerateNewUuid', 'ApiController@GenerateNewUuid')->name('api.GenerateNewUuid');
 Route::get('/log/{uuid}', 'ApiController@SetFamilyUser')->name('api.log.SetFamilyUser');
 Route::get('/log/{uuid}/{location_user_id}', 'ApiController@GetPopupData')->name('api.routing.GetPopupData');
 Route::get('/log/{uuid}/{location_user_id}/next', 'ApiController@SetAnswerUser')->name('api.routing.SetAnswerUser');
+>>>>>>> 4222ec42b2ec43439ed690732a9a7810d14139f8
 
 
