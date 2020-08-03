@@ -350,7 +350,7 @@
 
             </div>         
                  <div class="text-center" style="padding-top:20px">
-                    <button type="submit" class="btn btn-primary">ثبت تغییرات سبد</button>
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
                   </div>
                 </form>
               </div>

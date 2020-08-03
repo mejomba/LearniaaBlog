@@ -7,53 +7,35 @@
 
 @section('content')
 
-
-
-
 <!-- Body Card ( Main) -->
-
 <div class="container-fluid">
           <div class="row">
-
-
           <div class="col-md-12">
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center">
                 <h1>ایجاد پست</h1>
-                </div>
-                
+                </div>     
               </div>
-
-              <div class="card-body px-lg-5 py-lg-5">
-                
-              
-   <form method="POST" action="{{route('admin.post.store')}}" enctype="multipart/form-data" style="min-height:270px;">
+              <div class="card-body px-lg-5 py-lg-5">  
+   <form method="POST" action="{{route('admin.blog.store')}}" enctype="multipart/form-data" style="min-height:270px;">
         @csrf
-
      <div class="row">   
 
-        <div class="col-md-4">
-
+      <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        
+                      <div class="input-group-prepend">     
                       </div>
                       <input class="form-control" name="title" placeholder="عنوان " type="text">
                     </div>
-                  </div>
-
+              </div>
         </div>
-
-
 
 
           <!-- Select Box -->
           <div class="col-md-4">
         <div class="row">
-
-
                         <div class="col-md-3">
                         <span>دسته بندی</span> 
                         </div>
@@ -68,24 +50,16 @@
                                   @endforeach 
                                   </select>
                                   </div>
-                                </div>
+                           </div>
                      </div>
-            
-   
-        </div>
-        </div>
+             </div>
+             </div>
          <!-- Select Box -->
 
-         @php
-           $user =  Auth::user() ;
-         @endphp  
-
-
-         @if($user->type == 'مدیر')
-            <!-- Select Box -->
-            <div class="col-md-4">
+       
+        <!-- Select Box -->
+        <div class="col-md-4">
         <div class="row">
-
 
                         <div class="col-md-3">
                         <span>نویسنده</span> 
@@ -100,28 +74,18 @@
                                   <option value="{{ $user->pk_users }}">{{ $user->name }}</option>
                                   @endforeach 
                                   </select>
-                                  </div>
-                                </div>
+                                 </div>
+                           </div>
                      </div>
-            
-   
         </div>
         </div>
          <!-- Select Box -->
-         @endif
+         
 
-        
-
-
-
-
-      
         <!-- Check Box -->
         <div class="col-md-12">
         <div class="row">
-
-
-                        <div class="col-md-1">
+                 <div class="col-md-1">
                         <span>تگ ها</span> 
                         </div>
                         <div class="col-md-11">
@@ -131,30 +95,21 @@
                                     </div>
                                     @foreach($tags as $tag)                                
                                 <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
-                              <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
-                              name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" >                            
-                              <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }} |</label>
-                            </div>
+                                <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
+                                name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" >                            
+                                <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }} |</label>
+                               </div>
                             @endforeach 
-                                  
-
-                                  </div>
-                                </div>
-                     </div>
-            
-   
+                       </div>
+                    </div>
+                 </div>
         </div>
         </div>
-         <!-- Check Box -->
-           
-
-          
-
-             <!-- Select Box -->
+      <!-- Check Box -->
+        
+       <!-- Select Box -->
         <div class="col-md-4">
         <div class="row">
-
-
                         <div class="col-md-3">
                         <span>وضعیت</span> 
                         </div>
@@ -164,32 +119,20 @@
                                     <div class="input-group-prepend">  
                                     </div>
                                   <select name="status" class="form-control">
-                                  @php
-                                  $user =  Auth::user() ;
-                                  @endphp  
-
-                                    @if($user->type == 'مدیر')
-                                      <option value="انتشار">انتشار</option>
-                                    @endif
-                                   
-      
+                                  <option value="انتشار">انتشار</option>
                                   <option value="پیش نویس">پیش نویس</option>
                                   </select>
                                   </div>
-                                </div>
+                           </div>
                      </div>
-            
-   
         </div>
         </div>
          <!-- Select Box -->
 
          
-             <!-- Picture Box -->
+      <!-- Picture Box -->
         <div class="col-md-4">
         <div class="row">
-
-
                         <div class="col-md-3">
                         <span>تصویر </span> 
                         </div>
@@ -200,41 +143,32 @@
                                     </div>
                                     <input  type="file" id="pic_content" name="pic_content">
                                   </div>
-                                </div>
+                            </div>
                      </div>
-            
-   
         </div>
         </div>
          <!-- Picture Box -->
-         <div class="col-md-4">
 
+
+         <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
-                        
                       </div>
                       <input class="form-control" name="alt" placeholder="alt pic " type="text">
                     </div>
-                  </div>
-
+               </div>
         </div>  
            
 
-
-
-
-
         <div class="col-md-4">
-
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
                       <input name="readtime" class="form-control" placeholder="مدت زمان مطالعه " type="text">
                     </div>
-                  </div>
-
+              </div>
         </div>
 
      
@@ -244,10 +178,9 @@
                           <div class="input-group-prepend">
                           </div>
                           <input name="create_at" class="form-control" placeholder="تاریخ ایجاد " type="text">
-                        </div>
                       </div>
-
-        </div>
+                </div>
+          </div>
 
 
         <div class="col-md-4">
@@ -257,14 +190,12 @@
                           </div>
                           <input name="desc_short" class="form-control" placeholder="توضیح کوتاه" type="text">
                         </div>
-                      </div>
-
+                  </div>
             </div>
        
-            <div class="col-md-4">
+    <!-- Select Box -->
+      <div class="col-md-4">
         <div class="row">
-
-
                         <div class="col-md-3">
                         <span>ویدئو دارد ؟</span> 
                         </div>
@@ -276,57 +207,46 @@
                                   <select name="videocheck" class="form-control">
                                   <option value="{{ 'yes' }}">بله</option>
                                   <option value="{{ 'no' }}"> خیر</option>
-
                                   </select>
                                   </div>
-                                </div>
+                            </div>
                      </div>
-            
-   
         </div>
         </div>
+     <!-- Select Box -->
+
+
         <div class="col-md-4">
             <div class="form-group">
-                  
             <div class="input-group input-group-alternative">
-                          <div class="input-group-prepend">
-                          </div>
-                          <textarea name="address_video" id="video" type="text" class="form-control" placeholder="ادرس ویدئو"></textarea>
-                        </div>
-           
-
+                  <div class="input-group-prepend">
+                     </div>
+                       <textarea name="address_video" id="video" type="text" class="form-control" placeholder="ادرس ویدئو"></textarea>
+                  </div>
             </div>
         </div>
-
-
 
 
           <!-- Picture Box -->
           <div class="col-md-4">
         <div class="row">
-
-
-                        <div class="col-md-3">
+                <div class="col-md-3">
                         <span>فایل PDF </span> 
                         </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
+                  <div class="col-md-9">
+                   <div class="form-group focused">
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">  
                                     </div>
                                     <input  type="file" id="pdf_content" name="pdf_content">
-                                  </div>
-                                </div>
-                     </div>
-            
-   
+                             </div>
+                       </div>
+                 </div>
         </div>
         </div>
          <!-- Picture Box -->
            
 
-       
-       
 
         <div class="col-md-12" style="min-height:700px">
                <span> محتوا</span>  
@@ -339,11 +259,9 @@
     language:'fa',
    filebrowserUploadMethod: 'form',
     contentsLangDirection: 'rtl',
-    filebrowserUploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}",
-    filebrowserImageUploadUrl: "{{route('admin.post.upload', ['_token' => csrf_token() ])}}",
+    filebrowserUploadUrl: "{{route('admin.blog.upload', ['_token' => csrf_token() ])}}",
+    filebrowserImageUploadUrl: "{{route('admin.blog.upload', ['_token' => csrf_token() ])}}",
    
-
-
     on: {
         instanceReady: function() {
             this.dataProcessor.htmlFilter.addRules( {
@@ -360,196 +278,182 @@
             } );            
         }
     }
-
-
-
-
 } );
-                            </script> 
+        </script> 
+     <!-- ckeditor -->    
 
-                     <!-- ckeditor -->                         
 
-                    <h2 class="text-center">meta tags</h2>
+                <!-- SEO Tools (MetaTag) -->
+               
 
-                      <div class="row">   
-                                                                
-                        <div class="col-md-4">
-                      <div class="form-group">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                      
-                                    </div>
-                                    <input class="form-control" name="keywords"  placeholder=" keywords" type="text" >
+                <h2 class="text-center">تنظیمات متاتگ های سئو تکنیکال</h2>
+
+              <div class="row">                                      
+                <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">   
                                   </div>
+                                  <input class="form-control" name="keywords"  placeholder="keywords کلمات کلیدی" type="text" >
                                 </div>
-                      </div>
+                          </div>
+                    </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                      
-                                    </div>
-                                    <input class="form-control" name="description"  placeholder=" description" type="text" >
+                <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">      
                                   </div>
+                                  <input class="form-control" name="description"  placeholder="description توضیحات" type="text" >
                                 </div>
-                      </div>
+                          </div>
+                    </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                      
-                                    </div>
-                                    <input class="form-control" name="author"  placeholder=" author" type="text" >
+                <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
                                   </div>
+                                  <input class="form-control" name="author"  placeholder="author نویسنده" type="text" >
                                 </div>
-                      </div>
+                        </div>
+                    </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                      
-                                    </div>
-                                    <input class="form-control" name="refresh"  placeholder=" refresh" type="text" >
+                <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend"> 
                                   </div>
+                                  <input class="form-control" name="refresh"  placeholder="refresh رفرش" type="text" >
                                 </div>
-                      </div>
+                          </div>
+                    </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                      
-                                    </div>
-                                    <input class="form-control" name="viewport"  placeholder=" viewport" type="text" >
+                <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">  
                                   </div>
+                                  <input class="form-control" name="viewport"  placeholder="viewport ویو پرت" type="text" >
                                 </div>
-                      </div>
+                        </div>
+                    </div>
 
-                      </div>
+              </div>
+              <!-- SEO Tools (MetaTag) -->
 
+              <!-- SEO Tools (Open Graph) -->
 
+              <h2 class="text-center">تنظیمات اپن گراف سئو تکنیکال</h2>
 
-
-                      <h2 class="text-center">Open Graph tags</h2>
-
-                      <div class="row">   
-                                                      
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="og_title"  placeholder=" og:title " type="text" >
+              <div class="row">   
+                                            
+              <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">    
                           </div>
+                          <input class="form-control" name="og_title"  placeholder="og:title عنوان" type="text" >
+                        </div>
+                  </div>
+              </div>
+
+
+              <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <input class="form-control" name="og_image"  placeholder="og:image تصویر" type="text" >
                         </div>
                       </div>
+                    </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="og_image"  placeholder=" og:image" type="text" >
+              <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">  
                           </div>
+                          <input class="form-control" name="og_description"  placeholder="og:description توضیحات" type="text" >
                         </div>
                       </div>
+                </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="og_description"  placeholder=" og:description" type="text" >
+              <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">  
                           </div>
+                          <input class="form-control" name="og_type"  placeholder="og:type نوع" type="text" >
                         </div>
                       </div>
+                </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="og_type"  placeholder=" og:type" type="text" >
+                    <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">   
                           </div>
+                          <input class="form-control" name="og_article"  placeholder="og:article نویسنده" type="text" >
                         </div>
                       </div>
+                    </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="og_article"  placeholder=" og:article" type="text" >
+              </div>
+              <!-- SEO Tools (Open Graph) -->
+
+              <!-- SEO Tools (Twitter Card) -->
+                    <h2 class="text-center">تنظیمات توئیتر کارت سئو تکنیکال</h2>
+
+              <div class="row">  
+
+              <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">  
                           </div>
+                          <input class="form-control" name="twitter_card"  placeholder="twitter:card کارت" type="text" >
+                        </div>
+                    </div>
+              </div>
+
+              <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">  
+                          </div>
+                          <input class="form-control" name="twitter_site"  placeholder="twitter:site سایت" type="text" >
                         </div>
                       </div>
+                    </div>
 
-                      </div>
-
-
-                      <h2 class="text-center">twitter tags</h2>
-
-                      <div class="row">   
-                                                      
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="twitter_card"  placeholder=" twitter:card " type="text" >
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">    
                           </div>
+                          <input class="form-control" name="twitter_description"  placeholder="twitter:description توضیحات" type="text" >
                         </div>
-                      </div>
+                    </div>
+                </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
+                <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                              <div class="input-group-prepend">
+                              </div>
+                              <input class="form-control" name="twitter_title"  placeholder="twitter:title عنوان" type="text" >
                             </div>
-                            <input class="form-control" name="twitter_site"  placeholder=" twitter:site" type="text" >
-                          </div>
-                        </div>
                       </div>
+                  </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="twitter_description"  placeholder=" twitter:description" type="text" >
-                          </div>
-                        </div>
-                      </div>
+      </div> 
+   </div>
 
-                      <div class="col-md-4">
-                      <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              
-                            </div>
-                            <input class="form-control" name="twitter_title"  placeholder="twitter:title" type="text" >
-                          </div>
-                        </div>
-                      </div>
 
-                      </div>
 
-                     </div>
-                 </div>
-                    
-                
-                  <div class="text-center" style="padding-top:20px">
+           </div>         
+               <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت درخواست</button>
                   </div>
                 </form>
@@ -560,11 +464,7 @@
 
      <!-- Body Card ( Main) -->
      </div>
-
-
-
-
-                 
+ 
 
                 </div>
               </div>

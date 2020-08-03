@@ -14,7 +14,7 @@
                   <h1 class="card-title text-center">جدول پست ها</h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.post.create')}}" class="btn btn-primary btn-round" 
+                  <a href="{{route('admin.blog.create')}}" class="btn btn-primary btn-round" 
                   style="font-size:1.0rem;"> ایجاد پست
                   </a>                
 
@@ -39,37 +39,37 @@
                     </thead>
 
                       <tbody>
-                      @foreach($posts as $post)
+                      @foreach($blogs as $blog)
                         <tr>
                           <td>
-                          {{ $post['pk_post'] }} 
+                          {{ $blog['pk_blog'] }} 
                           </td>
                           <td>
-                          {{ $post['pk_categories'] }} 
+                          {{ $blog['pk_category'] }} 
                           </td>
                           <td>
-                          {{ $post['pk_tags'] }} 
-                          </td>
-
-                          <td>
-                          {{ $post['title'] }} 
+                          {{ $blog['pk_tags'] }} 
                           </td>
 
                           <td>
-                          {{ $post['pk_writers'] }} 
+                          {{ $blog['title'] }} 
+                          </td>
+
+                          <td>
+                          {{ $blog['pk_writers'] }} 
                           </td>
                           
                           <td>
 
-                            <img src="{{  Storage::url('post/'.$post['pic_content'])  }}" width="100px" height="60px" alt=" {{ $post['title'] }}" class="">
+                            <img src="{{  Storage::url('post/'.$blog['pic_content'])  }}" width="100px" height="60px" alt=" {{ $blog['title'] }}" class="">
                       
                           </td>
 
                           <td>
 
-                            @if($post['status'] == 'انتشار')
+                            @if($blog['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('post.detail',  ['slug' => $post['pk_post'] , 'desc' =>  $post['title'] ] )}}"> 
+                            <a target="_blank" href="{{route('blog.detail',  ['slug' => $blog['pk_blog'] , 'desc' =>  $blog['title'] ] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                             </a>
                             </span>
@@ -89,14 +89,14 @@
                        <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{route('admin.post.edit', $post['pk_post'] )}}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{route('admin.blog.edit', $blog['pk_blog'] )}}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
 
                         <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $post['pk_post'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $blog['pk_blog'] }} )" data-toggle="modal" data-target="#exampleModal">
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
@@ -153,7 +153,7 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/post/delete/"+ id);
+  location.replace( baseUrl + "admin/blog/delete/"+ id);
 }
 </script>
 <!---- Modal Delete -->         

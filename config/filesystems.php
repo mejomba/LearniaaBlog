@@ -71,7 +71,7 @@ return [
             'key' => 'ZF9H2EEMVVOAQBSGCAG17',
             'secret' => 'SwiVtMv83KpDY9Sti0Iqf0TaPnnVuwNbdqHikh2Yp',
             'bucket' => 'learniaa',
-            'endpoint' => 'https://5c76fd66bf6fa1001152cbea.liara.space',
+            'endpoint' => 'https://file.learniaa.com',
         ],
 
     ],

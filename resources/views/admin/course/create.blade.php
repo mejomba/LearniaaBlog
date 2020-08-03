@@ -163,6 +163,8 @@
             </div>
 
             </div>
+
+
                 <!-- SEO Tools (MetaTag) -->
                
 
@@ -334,7 +336,7 @@
 
            </div>         
                <div class="text-center" style="padding-top:20px">
-                    <button type="submit" class="btn btn-primary">ثبت درس</button>
+                    <button type="submit" class="btn btn-primary">ثبت درخواست</button>
                   </div>
                 </form>
               </div>
