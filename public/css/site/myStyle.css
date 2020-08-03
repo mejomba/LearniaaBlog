@@ -1,4 +1,4 @@
-p 
+p
 {
     line-height: 1.5cm !important;
 }
@@ -2142,5 +2142,56 @@ color: white;
 }
 
 
+/*==============road map=======================*/
+#start
+{
+    padding: 30px;
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    margin-bottom:50px;
+    -ms-transform:  translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.start_page
+{
+    position: absolute;
+    width: 100%;
+    height:100vh;
+    z-index:10000;
+}
+.startBtn
+{
+    display: none !important;
+}
+.enterName
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+.enterNameContent
+{
+    min-width:300px;
+    height: auto;
+    background-color: grey;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+.startpage
+{
+    display: block!important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
 
 
