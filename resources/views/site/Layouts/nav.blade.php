@@ -15,11 +15,11 @@
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-            {{--  <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('post.index')}}" >بلاگ</a></li> --}}
+           <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
 
         </ul>
       <!-- ---- User Menu ---- -->
-                    <ul class="navbar-nav col-md-4 col-12 offset-lg-2" dir="ltr">
+                    <ul class="navbar-nav col-md-3 col-12 offset-lg-2" dir="ltr">
                     @guest
                             @if (Route::has('register'))
                                 <li class="nav-item">

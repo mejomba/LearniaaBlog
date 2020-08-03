@@ -44,6 +44,7 @@ class BlogController extends Controller
         $tags = Tag::where('type','پست')->get();
         $users = User::get();
         return view('admin.blog.create',compact('categories','tags','users'));
+        
     }
 
     /**
@@ -115,6 +116,13 @@ class BlogController extends Controller
                 $new_instance->readtime = request()->readtime ;
                 $new_instance->create_at = request()->create_at ;
                 $new_instance->desc_short = request()->desc_short ;
+
+                $sort_general = Blog::max('sort_general') + 1 ;
+                $new_instance->sort_general = $sort_general ;
+
+                $last_sort_category = Blog::where('pk_category',request()->pk_category)->orderBy('pk_blog', 'desc')->first();
+                $new_instance->sort_category = $last_sort_category->sort_category + 1 ;
+                
     
                 // SEO Process 
 
@@ -308,7 +316,6 @@ class BlogController extends Controller
              $blog->readtime = request()->readtime ;
              $blog->create_at = request()->create_at ;
              $blog->desc_short = request()->desc_short ;
-
 
 
               $meta=json_decode($blog->metatag);

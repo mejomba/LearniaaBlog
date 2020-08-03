@@ -77,7 +77,7 @@
 
         </div>
 
-        <div class="row p-2 m-5" id="ListOfData" style="font-size:15px">
+        <div class="row p-2" id="ListOfData" style="font-size:15px">
 
 
             @foreach($recent_post as $one_post)
@@ -95,14 +95,14 @@
                         <div class="card-body px-4">
                             <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span>
                             <a href="" class="">
-                                <h6 class="mt-2">{{ $one_post['title'] }}</h6>
+                                <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h6>
                             </a>
 
 
-                            <p class="mt-2 text-secondary">fefwefgnnkgnerogjkbmijgtenbjgnbjnjkfnjkfb.bfgfbf....</p>
+                            <p class="mt-2 text-secondary" style="line-height:25px !important">{{ $one_post['desc_short'] }}</p>
                         </div>
                         <div class="card-end px-4 mt-3 py-2">
-                            <span class="mt-1">vmdfmvkjdfnbkjgnknf</span><i class="fa fa-circle mr-2 text-info  "></i>
+                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span><i class="fa fa-circle mr-2 text-info  "></i>
                             <a class="btn btn-primary float-right px-4 py-2" 
                             href="{{route('blog.detail', ['slug' => $one_post['pk_blog'] , 'desc' =>  $one_post['title'] ]  )}}">
                             مشاهده</a>
@@ -120,15 +120,15 @@
         {{--    Pagination starts--}}
         <section class="Pagination">
             <div class="row mx-auto">
-                <div class="col-12">
-                    <ul class="pagination px-1 py-1 text-secondary" style="background-color: rgba(248,244,244,0.65)">
+                <div class="col-lg-2 col-md-6 col-sm-11 col-6 mx-auto mt-3">
+                    <ul class="pagination px-1 py-1 text-secondary" style="background-color: transparent">
 
-                        <li class="border-secondary m-2">
+                       <!-- <li class="border-secondary m-2">
                             <a class="page-link shadow-lg" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="page-item active border-secondary m-2"><a class="page-link shadow-lg" href="#">1</a></li>
 
@@ -136,10 +136,10 @@
 
                         <li class="border-secondary m-2"><a class="page-link shadow-lg" href="#">3</a></li>
 
-                        <li class="border-secondary m-2 rounded">
+                       <!-- <li class="border-secondary m-2 rounded">
                             <a class="page-link shadow-lg" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
+                                <span class="sr-only">Next</span>  -->
                             </a>
                         </li>
                     </ul>

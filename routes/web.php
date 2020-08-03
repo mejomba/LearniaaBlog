@@ -25,6 +25,8 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 Route::get('/mail', 'MailController@store');
 
 Route::get('/test', 'ApiController@test');
+Route::get('/test/wellcome', 'TestController@wellcome');
+Route::get('/test/roadmap', 'TestController@roadmap');
 
 
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
@@ -36,7 +38,7 @@ Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
-Route::get('/blog/{slug}/{desc}', 'BlogController@detail')->name('blog.detail');
+Route::get('/post/{slug}/{desc}', 'BlogController@detail')->name('blog.detail');
 Route::get('/blog/category/{slug}', 'BlogController@postByCategory')->name('blog.category');
 Route::get('/blog/tag/{slug}', 'BlogController@postByTag')->name('blog.tag');
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');
