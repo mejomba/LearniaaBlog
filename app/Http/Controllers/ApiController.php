@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Validator;
 use Auth;
 use App\Category;
@@ -16,6 +17,9 @@ use App\OrderPackage;
 use App\Order;
 use App\Delivery;
 use Verta;
+use App\Log;
+use App\Routing;
+
 use App\CustomClass\SmsSender;
 use App\Mail\SendMail;
 
@@ -420,6 +424,76 @@ public function filter()
     $data = vote::get();
     return response()->json($data);
 
+}
+
+public function GenerateNewUuid()
+{
+    $uuid= (string) str::uuid();
+    $newlog = new Log();
+    $newlog->uuid = $uuid;
+    $newlog->name = 'guest';
+    $newlog->save();
+    return response()->json([
+        'uuid'=> $uuid
+    ]);
+}
+
+public function SetFamilyUser(Request $request)
+{
+    $log = Log::where('uuid',$_GET['uuid'])->first();
+    $log->name = $_GET['name'];
+    $newlog->save();
+    if(is_null($_GET['name'])){
+    return response()->json([
+        'status'=> 'error'
+    ]);
+    }else{
+        return response()->json([
+            'status'=> 'ok'
+    ]);
+
+    }
+
+}
+
+public function GetPopupData($uuid,$location_user_id)
+{
+    $log = Log::where('uuid',$uuid)->first();
+    if($log->uuid){
+        $route = Route::where('location_user_id',$location_user_id)->first();
+        $feedback = json_decode($route->feedback);
+        return response()->json([
+            'content'=> $route->content,
+            'question' =>$route->question,
+            'feedback'=>$feedback
+        ]);
+    }
+}
+
+public function SetAnswerUser($uuid,$location_user_id,Request $request)
+{
+    $log = Log::where('uuid',$uuid)->first();
+    $log->location_user_id->$location_user_id;
+    $loganswer = json_decode($log->answer);
+    $answer = array_push($loganswer,$_GET['feedback']);
+    $log->answer = json_encode($answer);
+    $route = Routing::where('location_user_id',$location_user_id)->first();
+    $feedback = json_decode($route->feedback);
+    foreach($feedback as $item)
+    {
+        if($item == $_GET['feedback'])
+        {
+        
+        $nextroute = where('location_user_id',$$item)->first();
+
+        }
+    }
+    $feedback = json_decode($nextroute->feedback);
+    return response()->json([
+        'content'=> $nextroute->content,
+        'question' =>$nextroute->question,
+        'feedback'=>$feedback
+    ]);
 }
 
 
