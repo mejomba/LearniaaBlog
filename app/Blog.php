@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    protected $table = 'Blogs';
+    protected $table = 'blogs';
     protected $primaryKey = 'pk_blog';
 
    public function GetListAllNameColumns_ForTable()
