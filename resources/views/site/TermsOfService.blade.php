@@ -3,15 +3,15 @@
 @section('Head')
 <title> قوانین استفاده | لرنیا  </title>
   <meta  name="description" content="قوانین استفاده | لرنیا">
-  <meta  name="keywords"    content="قوانین استفاده" > 
+  <meta  name="keywords"    content="قوانین استفاده" >
 @endsection
 
 @section('content')
 
-  <!-- Section --> 
+  <!-- Section -->
             <div class="container-fluid" >
             <div class="row text-center">
-            <div class="col-md-12">         
+            <div class="col-md-12">
               <div class="row text-center">
                     <div class="col-md-3">
                     </div>
@@ -30,7 +30,7 @@
                 </h1>
             </div>
             </div>
-            </div>  
+            </div>
 
             <div class="row">
             <div class="col-md-3">
@@ -182,19 +182,19 @@
 
                                     <div class="row" style="padding-top:35px">
                                                 <div class="col-md-4">
-                                                </div>  
+                                                </div>
                                                 <div class="col-md-4">
-                                              </div>  
-                                              <div class="col-md-4"> 
-                                              </div>  
+                                              </div>
+                                              <div class="col-md-4">
+                                              </div>
                                 </div>
                                 </div>
                             <div class="col-md-3">
                             </div>
             </div>
-            </div>
-</div>
- 
+          
+
+
  <!-- Section -->
 
 @endsection

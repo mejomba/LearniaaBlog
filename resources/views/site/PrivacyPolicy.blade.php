@@ -8,35 +8,14 @@
 
 @section('content')
 
-    <section class="start_page container-fluid">
-        <div class="row w-100 h-100 startpage">
-            <input type="button" class="btn btn-primary" value="start" id="start" onclick="GoToEnterNamePage()">
-        </div>
-    </section>
-
-
-
-    <section class="enterName">
-        <div class="enterNameContent">
-            <div class="enterNameBody">
-                <div class="inputName m-5">
-                    <input type="text" class="form-control w-100" placeholder="نام خود را وارد کنید..." id="inputName">
-                </div>
-                <div class="row btnStart">
-                    <input type="button" class="btn btn-info col-4 offset-4 mb-4" id="btnStart" onclick="GoToRoadMap()" value="start">
-                </div>
-            </div>
-        </div>
-    </section>
-
 
   <!-- Section -->
-            <!-- <div class="container-fluid" >
+           <div class="container-fluid" >
+          <div class="row text-center">
+          <div class="col-md-12">
             <div class="row text-center">
-            <div class="col-md-12">
-              <div class="row text-center">
-                    <div class="col-md-3">
-                    </div>
+                   <div class="col-md-3">
+                   </div>
 
                     <div class="col-md-6">
                     <img class="img-fluid rounded-circle " style="padding-top:40px;border-radius:20% !important;"
@@ -101,44 +80,11 @@
                             <div class="col-md-3">
                             </div>
             </div>
-            </div>
-</div>
-  -->
-
 
 
 
 
  <!-- Section -->
-
-
-
-<script>
-let id ;
-
-
-function GoToEnterNamePage() {
-    $.ajax({
-        url: 'http://127.0.0.1:8000/api/GenerateNewUuid',
-        data: {},
-        error: function() {
-            console.log('error')
-        },
-        dataType: 'jsonp',
-        success: function(data) {
-            JSON.parse(data);
-           console.log(data)
-        },
-        type: 'POST'
-    });
-    $('.startpage').css('display','none');
-    $('.enterName').css('display','block');
-}
-
-function GoToRoadMap() {
-    window.open("TermsOfService.blade",'_blank');
-}
-</script>
 
 
 
