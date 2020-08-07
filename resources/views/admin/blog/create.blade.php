@@ -119,8 +119,7 @@
                                     <div class="input-group-prepend">  
                                     </div>
                                   <select name="status" class="form-control">
-                                  <option value="انتشار">انتشار</option>
-                                  <option value="پیش نویس">پیش نویس</option>
+                                  <option value="پیش نویس" selected="selected">پیش نویس</option>
                                   </select>
                                   </div>
                            </div>

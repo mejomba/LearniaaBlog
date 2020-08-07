@@ -56,7 +56,7 @@
                           {{ $user['name'] }} 
                           </td>
                           <td>
-                          {{ $user['mobile'] }} 
+                          {{ $user['username'] }} 
                           </td>
 
                          

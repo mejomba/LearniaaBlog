@@ -26,6 +26,7 @@
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend"> 
+                      <span>عنوان</span> 
                       </div>
                       <input class="form-control" value="{{ $blog['title'] }}" name="title" placeholder="عنوان " type="text">
                     </div>
@@ -174,7 +175,8 @@
          <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">   
+                      <div class="input-group-prepend">
+                      <span>alt pic</span>    
                       </div>
                       <input class="form-control" name="alt" placeholder="alt pic " type="text" value="{{ $blog['alt'] }}">
                     </div>
@@ -186,6 +188,7 @@
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
+                      <span>مدت زمان مطالعه</span>  
                       </div>
                       <input name="readtime" value="{{$blog['readtime']}}" class="form-control" placeholder="مدت زمان مطالعه " type="text">
                     </div>
@@ -197,6 +200,7 @@
             <div class="form-group">
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
+                          <span>تاریخ ایجاد</span> 
                           </div>
                           <input name="create_at" value="{{$blog['create_at']}}" class="form-control" placeholder="تاریخ ایجاد " type="text">
                         </div>
@@ -208,6 +212,7 @@
             <div class="form-group">
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
+                          <span>توضیح کوتاه</span> 
                           </div>
                           <input name="desc_short" value="{{$blog['desc_short']}}" class="form-control" placeholder="توضیح کوتاه" type="text">
                         </div>
@@ -245,6 +250,7 @@
             <div class="form-group">    
               <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
+                          <span>ادرس ویدئو</span> 
                           </div>
                           <textarea name="address_video" id="video" type="text" class="form-control" 
                           placeholder="ادرس ویدئو">{{$blog['address_video']}}</textarea>
@@ -315,7 +321,8 @@
              <div class="col-md-4">
                  <div class="form-group">
                              <div class="input-group input-group-alternative">
-                               <div class="input-group-prepend">   
+                               <div class="input-group-prepend"> 
+                               <span>keywords کلمات کلیدی</span>   
                                </div>
                                <input class="form-control" name="keywords" value="{{$metatag->htmlmeta->keywords}}"
                                 placeholder="keywords کلمات کلیدی" type="text" >
@@ -326,9 +333,11 @@
              <div class="col-md-4">
                  <div class="form-group">
                              <div class="input-group input-group-alternative">
-                               <div class="input-group-prepend">      
+                               <div class="input-group-prepend">  
+                               <span>description توضیحات</span>      
                                </div>
-                               <input class="form-control" name="description" value="{{$metatag->htmlmeta->description}}" placeholder="description توضیحات" type="text" >
+                               <input class="form-control" name="description" value="{{$metatag->htmlmeta->description}}" 
+                               placeholder="description توضیحات" type="text" >
                              </div>
                        </div>
                  </div>
@@ -337,8 +346,10 @@
                  <div class="form-group">
                              <div class="input-group input-group-alternative">
                                <div class="input-group-prepend">
+                               <span>author نویسنده</span>  
                                </div>
-                               <input class="form-control" name="author" value="{{$metatag->htmlmeta->author}}"  placeholder="author نویسنده" type="text" >
+                               <input class="form-control" name="author" value="{{$metatag->htmlmeta->author}}"
+                                 placeholder="author نویسنده" type="text" >
                              </div>
                      </div>
                  </div>
@@ -346,9 +357,11 @@
              <div class="col-md-4">
                  <div class="form-group">
                              <div class="input-group input-group-alternative">
-                               <div class="input-group-prepend"> 
+                               <div class="input-group-prepend">
+                               <span>refresh رفرش</span>  
                                </div>
-                               <input class="form-control" name="refresh" value="{{$metatag->htmlmeta->refresh}}"  placeholder="refresh رفرش" type="text" >
+                               <input class="form-control" name="refresh" value="{{$metatag->htmlmeta->refresh}}"
+                                 placeholder="refresh رفرش" type="text" >
                              </div>
                        </div>
                  </div>
@@ -357,8 +370,10 @@
                  <div class="form-group">
                              <div class="input-group input-group-alternative">
                                <div class="input-group-prepend">  
+                               <span>viewport ویو پرت</span>  
                                </div>
-                               <input class="form-control" name="viewport" value="{{$metatag->htmlmeta->viewport}}"  placeholder="viewport ویو پرت" type="text" >
+                               <input class="form-control" name="viewport" value="{{$metatag->htmlmeta->viewport}}"
+                                 placeholder="viewport ویو پرت" type="text" >
                              </div>
                      </div>
                  </div>
@@ -375,9 +390,11 @@
            <div class="col-md-4">
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
-                       <div class="input-group-prepend">    
+                       <div class="input-group-prepend">
+                       <span>og:title عنوان</span>    
                        </div>
-                       <input class="form-control" name="og_title" value="{{$metatag->opengraph->og_title}}"  placeholder="og:title عنوان" type="text" >
+                       <input class="form-control" name="og_title" value="{{$metatag->opengraph->og_title}}"
+                         placeholder="og:title عنوان" type="text" >
                      </div>
                </div>
            </div>
@@ -387,8 +404,10 @@
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
                        <div class="input-group-prepend">
+                       <span>og:image تصویر</span> 
                        </div>
-                       <input class="form-control" name="og_image" value="{{$metatag->opengraph->og_image}}"  placeholder="og:image تصویر" type="text" >
+                       <input class="form-control" name="og_image" value="{{$metatag->opengraph->og_image}}"
+                         placeholder="og:image تصویر" type="text" >
                      </div>
                    </div>
                  </div>
@@ -397,8 +416,10 @@
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
                        <div class="input-group-prepend">  
+                       <span>og:description توضیحات</span> 
                        </div>
-                       <input class="form-control" name="og_description" value="{{$metatag->opengraph->og_description}}"  placeholder="og:description توضیحات" type="text" >
+                       <input class="form-control" name="og_description" value="{{$metatag->opengraph->og_description}}"
+                         placeholder="og:description توضیحات" type="text" >
                      </div>
                    </div>
              </div>
@@ -406,9 +427,11 @@
            <div class="col-md-4">
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
-                       <div class="input-group-prepend">  
+                       <div class="input-group-prepend">
+                       <span>og:type نوع</span>  
                        </div>
-                       <input class="form-control" name="og_type" value="{{$metatag->opengraph->og_type}}"  placeholder="og:type نوع" type="text" >
+                       <input class="form-control" name="og_type" value="{{$metatag->opengraph->og_type}}"
+                         placeholder="og:type نوع" type="text" >
                      </div>
                    </div>
              </div>
@@ -416,9 +439,11 @@
                  <div class="col-md-4">
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
-                       <div class="input-group-prepend">   
+                       <div class="input-group-prepend">  
+                       <span>og:article نویسنده</span>  
                        </div>
-                       <input class="form-control" name="og_article" value="{{$metatag->opengraph->og_article}}"  placeholder="og:article نویسنده" type="text" >
+                       <input class="form-control" name="og_article" value="{{$metatag->opengraph->og_article}}" 
+                        placeholder="og:article نویسنده" type="text" >
                      </div>
                    </div>
                  </div>
@@ -434,9 +459,11 @@
            <div class="col-md-4">
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
-                       <div class="input-group-prepend">  
+                       <div class="input-group-prepend"> 
+                       <span>twitter:card کارت</span>  
                        </div>
-                       <input class="form-control" name="twitter_card"  value="{{$metatag->twitter->twitter_card}}"  placeholder="twitter:card کارت" type="text" >
+                       <input class="form-control" name="twitter_card"  value="{{$metatag->twitter->twitter_card}}"
+                         placeholder="twitter:card کارت" type="text" >
                      </div>
                  </div>
            </div>
@@ -444,9 +471,11 @@
            <div class="col-md-4">
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
-                       <div class="input-group-prepend">  
+                       <div class="input-group-prepend">
+                       <span>twitter:site سایت</span>    
                        </div>
-                       <input class="form-control" name="twitter_site" value="{{$metatag->twitter->twitter_site}}"  placeholder="twitter:site سایت" type="text" >
+                       <input class="form-control" name="twitter_site" value="{{$metatag->twitter->twitter_site}}"
+                         placeholder="twitter:site سایت" type="text" >
                      </div>
                    </div>
                  </div>
@@ -454,9 +483,11 @@
              <div class="col-md-4">
                  <div class="form-group">
                      <div class="input-group input-group-alternative">
-                       <div class="input-group-prepend">    
+                       <div class="input-group-prepend"> 
+                       <span>twitter:description توضیحات</span>       
                        </div>
-                       <input class="form-control" name="twitter_description" value="{{$metatag->twitter->twitter_description}}"  placeholder="twitter:description توضیحات" type="text" >
+                       <input class="form-control" name="twitter_description" value="{{$metatag->twitter->twitter_description}}" 
+                        placeholder="twitter:description توضیحات" type="text" >
                      </div>
                  </div>
              </div>
@@ -465,8 +496,10 @@
                      <div class="form-group">
                          <div class="input-group input-group-alternative">
                            <div class="input-group-prepend">
+                           <span>twitter:title عنوان</span>
                            </div>
-                           <input class="form-control" name="twitter_title" value="{{$metatag->twitter->twitter_title}}"  placeholder="twitter:title عنوان" type="text" >
+                           <input class="form-control" name="twitter_title" value="{{$metatag->twitter->twitter_title}}"
+                             placeholder="twitter:title عنوان" type="text" >
                          </div>
                    </div>
                </div>

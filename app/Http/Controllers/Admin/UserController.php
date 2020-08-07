@@ -45,51 +45,21 @@ class UserController extends Controller
             $user = new User();
             $user->name = request()->name ;
             $user->type = request()->type ;
-            $user->mobile = request()->mobile ;
+            $user->username = request()->username ;
             $user->password = Hash::make(request()->password)   ; 
-           
+            $user->attract = 'ایجاد شده مدیریتی' ;
            
             $profile = new Profile();
           
     
                 if($user->save())
                 {
-                    $id = User::where('mobile',request()->mobile)->first();
+                    $id = User::where('username',request()->username)->first();
                    
                     $profile->pk_users =  $id['pk_users'] ;
                     $profile->save();
 
-                                // add contact to sms panel //
-
-
-           
-            date_default_timezone_set("Asia/Tehran");
-            $APIKey = '9e748ce762b7c17478c4b783';
-            $SecretKey = 'H$c7M~Ax#Z@7Y%3';
-
-              $PayamakSefid = new SendSms($APIKey,$SecretKey);
-              $Groups =  $PayamakSefid->GetContactGroups();
-              $Groups = $Groups->ContactGroups ; 
-
-             $ContactData = array(
-                'ContactsDetails' => array(
-                                            array(
-                                                'Prefix' => ' ',
-                                                'FirstName' => ' ',
-                                                "LastName" => request()->name ,
-                                                'Mobile' =>   request()->mobile,
-                                                'EmojiId' => '1'
-                                            )
-                                         ),
-                'GroupId' =>  $Groups[0]->GroupId
-            );
-
-
-              $PayamakSefid->AddContacts($ContactData);
-           
-            //  End (add contact to sms panel) //
-
-                        return redirect(route('admin.user.index'))->with('success','کاربر با موفقیت ایجاد شد');
+                       return redirect(route('admin.user.index'))->with('success','کاربر با موفقیت ایجاد شد');
                 }
                 else
                 {
@@ -125,7 +95,7 @@ class UserController extends Controller
             $user = User::find($id);
             $user->name = request()->name ;
             $user->type = request()->type ;
-            $user->mobile = request()->mobile ;
+            $user->username = request()->username ;
            
             if( request()->password != null )
             {
@@ -181,7 +151,7 @@ class UserController extends Controller
         $rules =  [
                     'type' => 'required|String', 
                     'name' => 'required|min:3|String', 
-                    'mobile' => 'required|numeric|min:3|unique:users',
+                    'username' => 'required|min:3|unique:users',
                     'password' => 'nullable|min:6'  ,
                     'wallet' => 'nullable|String'  ,
                  ];
@@ -199,10 +169,10 @@ class UserController extends Controller
         'name.min' => ' نام  کوتاه تر از حد مجاز است',
         'name.String' => 'نام صحیح وارد نشده است',
 
-        'mobile.unique' => 'شماره تلفن همراه قبلا ثبت نام شده است',
-        'mobile.required' => 'شماره تلفن همراه  وارد نشده است',
-        'mobile.min' => ' شماره تلفن همراه  کوتاه تر از حد مجاز است',
-        'mobile.numeric' => ' شماره تلفن همراه صحیح وارد نشده است ',
+        'username.unique' => 'مشخصه کاربری  قبلا ثبت نام شده است',
+        'username.required' => 'مشخصه کاربری   وارد نشده است',
+        'username.min' => ' مشخصه کاربری   کوتاه تر از حد مجاز است',
+        
 
         'password.required' => 'رمز عبور وارد نشده است',
         'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
@@ -221,7 +191,7 @@ class UserController extends Controller
         $rules =  [
                     'type' => 'required|String', 
                     'name' => 'required|min:3|String', 
-                    'mobile' => 'required|numeric|min:3',
+                    'username' => 'required|min:3',
                     'password' => 'nullable|min:6'  ,
                   
                  ];
@@ -240,9 +210,9 @@ class UserController extends Controller
         'name.String' => 'نام صحیح وارد نشده است',
 
         
-        'mobile.required' => 'شماره تلفن همراه  وارد نشده است',
-        'mobile.min' => ' شماره تلفن همراه  کوتاه تر از حد مجاز است',
-        'mobile.numeric' => ' شماره تلفن همراه صحیح وارد نشده است ',
+        'username.required' => 'مشخصه کاربری  وارد نشده است',
+        'username.min' => ' مشخصه کاربری   کوتاه تر از حد مجاز است',
+        
 
         'password.required' => 'رمز عبور وارد نشده است',
         'password.min' => 'رمز عبور کوتاه تر از حد مجاز است',
