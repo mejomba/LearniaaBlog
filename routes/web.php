@@ -169,7 +169,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/Transaction/store', 'TransactionController@store')->name('admin.transaction.store');
     Route::get('/Transaction/show', 'TransactionController@show')->name('admin.transaction.show');
     Route::get('/Transaction/packagelist', 'TransactionController@packagelist')->name('admin.transaction.packagelist');
+    Route::get('/Transaction/addwalletmoney', 'TransactionController@AddWalletMoney')->name('admin.transaction.addwalletmoney');
+    Route::get('/Transaction/checkcallbackwalletmoney', 'TransactionController@CheckCallBackWalletMoney')->name('admin.transaction.checkcallbackwalletmoney');
 
+    
 
     Route::get('/vote/create', 'VoteController@create')->name('admin.vote.create');
     Route::post('/vote/store', 'VoteController@store')->name('admin.vote.store');
