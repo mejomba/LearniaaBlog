@@ -1,5 +1,6 @@
 <!-- Modal Error Box -->                      
-<div class="modal fade" dir="rtl" id="ModalError" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalError" aria-hidden="true">  
+<div class="modal fade" dir="rtl" id="ModalError" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalError"
+ aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
          <div class="modal-content">
            <div class="modal-header"> 
@@ -40,6 +41,7 @@
  <script>
  function ModalError_close()
  {document.getElementById("ModalError").setAttribute("style","");}
+
  document.addEventListener('DOMContentLoaded',function(){ if(document.getElementById("errors"))
  {document.getElementById("ModalError").setAttribute("style","display:block;opacity:100;");}}, false);  
  </script>                             

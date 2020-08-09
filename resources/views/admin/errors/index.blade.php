@@ -73,6 +73,7 @@ function Modal_Delete(row)
 {
   id = row ;
   $("#exampleModal").show();
+  document.getElementById("exampleModal").setAttribute("class","modal fade show");
 }
 
 function del()

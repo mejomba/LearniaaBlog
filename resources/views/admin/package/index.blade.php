@@ -119,7 +119,7 @@
 
                         <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $package['pk_package'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $package['pk_package'] }} )" >
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
@@ -131,7 +131,8 @@
                         
           
  <!---- Modal Delete -->                       
- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
     <div class="modal-content">
       <div class="modal-header">
@@ -169,6 +170,8 @@ function Modal_Delete(row)
 {
   id = row ;
   $("#exampleModal").show();
+  document.getElementById("exampleModal").setAttribute("class","modal fade show");
+
 }
 
 function del()
