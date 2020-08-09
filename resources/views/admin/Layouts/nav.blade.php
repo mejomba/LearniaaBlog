@@ -54,6 +54,12 @@
 
 
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text" style="color: black" href="{{route('blog.index')}}" rel="tooltip" title=""
+                               data-placement="bottom">بلاگ</a>
+
+
+                        </li>
                     </ul>
         <!-- Search Box -->
             <ul class="navbar-nav col-md-2 col-10 " dir="ltr" style="margin-top:15px">
