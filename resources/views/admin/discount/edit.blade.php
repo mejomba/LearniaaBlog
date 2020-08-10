@@ -28,10 +28,8 @@
         @csrf
 
     
-        <div class="row">  
-
-
-        <div class="col-md-4">
+     <div class="row">  
+      <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -56,14 +54,10 @@
                                     <div class="input-group-prepend">  
                                     </div>
                                   <select name="type" class="form-control">
-                                  <option value="عمومی"
-                                  @if($discount->status == "عمومی" )
-                                          selected="selected"
-                                          @endif>عمومی </option>
-                                  <option value="محصول محور" 
-                                  @if($discount->status == "محصول محور" )
-                                          selected="selected"
-                                          @endif>محصول محور </option>
+                                  <option value="عمومی" @if($discount->type == "عمومی" ) selected="selected" @endif>
+                                  عمومی </option>  
+                                  <option value="محصول محور" @if($discount->type == "محصول محور" ) selected="selected" @endif>
+                                  محصول محور </option>
                                   </select>
                                   </div>
                                 </div>
@@ -77,7 +71,7 @@
                                   <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
                                   </div>
-                                  <input name="pk_product" class="form-control" placeholder="کد محصول " type="text">
+                                  <input name="pk_package" class="form-control" value="{{ $discount['pk_package'] }}" placeholder="کد محصول " type="text">
                                 </div>
                          </div>
                  </div>
@@ -143,8 +137,6 @@
 
 </div>
 
-
-
   <!-- Select Box -->
   <div class="col-md-4">
 <div class="row">
@@ -170,8 +162,6 @@
                           </div>
                         </div>
              </div>
-    
-
 </div>
 </div>
  <!-- Select Box -->

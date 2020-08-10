@@ -47,7 +47,8 @@
                                   <select name="pk_tree" class="form-control">
                                   @foreach ($trees as $tree)
                                   <option value="{{ $tree->pk_tree }}">{{ $tree->name }}</option>
-                                  @endforeach 
+                                  @endforeach
+                                  <option value="0">دوره های کوئیک لرن</option>
                                   </select>
                                </div>
                          </div>

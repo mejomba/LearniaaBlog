@@ -62,13 +62,23 @@
         <div class="row">
            
 
-            <div class="col-lg-7 col-md-12 order-lg-0 order-md-0 order-sm-0 order-0" style="padding-left:50px;" >
+           <div class="col-lg-7 col-md-12 order-lg-0 order-md-0 order-sm-0 order-0" style="padding-left:50px;">
                 <div class="novel-image">
                     <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" 
                     alt="" class="w-100 m-3 p-3" style="width:820px !important;height:400px;border-radius: 50px;">
                 </div>
-
-                <h1 class="mr-auto mt-1 ml-5" style="font-size:20px">{{$one_post['title']}}</h1>
+                <h1 class="mr-auto mt-1 ml-5" style="font-size:20px">{{$one_post['title']}}
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                نویسنده :
+                @if($one_post->profile['pic'])
+                <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
+                alt="{{$one_post->writer['name']}}" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                @else         
+                <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
+                @endif
+                
+                {{$one_post->writer['name']}}
+                </h1>
                 <hr class="dash mx-auto" style="height: 1px ; width: 90% ; background-color: #a7a5a5 ;"> 
                 <div class="row mt-3 text-center">
                     <span class="col-lg-2 col-md-2 col-sm-8 col-4 order-lg-0 order-md-0 order-sm-2 order-2">100 <i class="fa fa-heart text-danger"></i></span>
@@ -77,19 +87,8 @@
                     <span class="col-lg-3 col-md-3 col-sm-4 col-4 order-lg-3 order-md-3 order-sm-1 order-1" >
                      <span style="color: WHITE;background-color:#20c5ba;border-radius: 5px;padding:3px!important">{{ $one_post->category['name'] }}</span></span>
                 </div>
-           
-                <!--  Desc Short  -->
-              <!--  <div class="col-md-12 text-center" style="font-size:15px;margin-top: 15px;">
-                        <div class="bordercardinfoLearner aboutAuthor  wi-100 flex-row jus-between al-start">
-                            <div class="cardinfoLearner">خلاصه مقاله</div></div>
-                           <div class="p-3 hover-style  container"
-                            style="margin-top:10px;border :2px solid #20c5ba"> <p style="text-align:justify;line-height: 25px !important;">
-                            {{$one_post['desc_short']}}
-                            </p>
-                            </div>
-                        </div> -->
-                 <!--  Desc Short  -->
             </div>
+
        
         </div>
     </div>

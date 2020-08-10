@@ -49,7 +49,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input  name="mobile" value="{{ $user['mobile'] }}"  class="form-control" placeholder="شماره موبایل" type="text">
+                      <input  name="username" value="{{ $user['username'] }}"  class="form-control" placeholder="مشخصه کاربری" type="text">
                     </div>
                   </div>
 

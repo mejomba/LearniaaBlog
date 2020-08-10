@@ -50,7 +50,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input  name="mobile"  class="form-control" placeholder="شماره موبایل" type="text">
+                      <input  name="username"  class="form-control" placeholder="مشخصه کاربری" type="text">
                     </div>
                   </div>
 
@@ -94,6 +94,20 @@
         </div>
          <!-- Select Box -->
 
+
+    <!-- Select Box -->
+    <select name="attract" class="form-control custom-select">
+  <option class="" value="Instagram"  > آشنایی با ما از اینستاگرام </option>
+  <option class="" value="PhysicalAdvertise"  > آشنایی با ما از تراکت،بروشور،پوستر</option>
+  <option class="" value="ClickOnAds"  > آشنایی با ما از تبلیغات کلیکی</option>
+  <option class="" value="InviteFriends"  >آشنایی با ما از معرفی دوستان شما</option>
+  <option class="" value="Facebook"  > آشنایی با ما از فیس بوک</option>
+  <option class="" value="Twitter"  > آشنایی با ما از توئیتر</option>
+  <option class="" value="Linkden"  > آشنایی با ما از لینکدین</option>
+  <option class="" value="SMS"  >آشنایی با ما از پیامک</option>
+  <option class="" value="Telegram"  >آشنایی با ما از تلگرام</option>
+   </select>
+    <!-- Select Box -->
 
 
 

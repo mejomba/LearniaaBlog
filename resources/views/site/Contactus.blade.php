@@ -9,7 +9,7 @@
 @section('content')
  <!-- Section -->
  <div class="row">
-<div class="col-lg-4 col-md-6 col-sm-7 col-9 offset-1" style=" margin-top: 100px!important;
+<div class="col-lg-4 col-md-6 col-sm-7 col-12 " style=" margin-top: 100px!important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;">
               <div class="col-12">
@@ -50,21 +50,27 @@
           </div>
   </div>
 
-{{--<div class="col-md-4">--}}
-{{--<!----}}
-{{--<img src="{{ asset('images/Template/customer_service.svg') }}" style=""  width="500px" height="600px" alt="Learniaa">--}}
-{{-- -->--}}
-{{--</div>--}}
-
-
+            <div class="col-lg-4 col-md-6 col-sm-7 col-9 offset-1"
+            style="border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
+                
+                <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" 
+                style="right:300px;top:50px" src="{{asset('images/Template/AboutUs.svg')}}" alt="">
             </div>
+
+    </div>
+
+
 
            <!-- Form -->
            <div class="col-md-12 text-center" dir="rtl" style="margin-top:15px">
 <p>
 </p>
 
+
+
 </div>
+
+
 
  <!-- Section -->
 @endsection

@@ -11,9 +11,11 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function wellcome()
+    public function wellcome(Request $request)
     {
-      return view('site.test.wellcome');
+        $uuid = request()->uuid ;
+        $name=request()->name ; 
+      return view('site.test.wellcome',compact('name','uuid'));
     }
 
     /**

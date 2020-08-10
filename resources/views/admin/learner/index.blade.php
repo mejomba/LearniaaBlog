@@ -78,7 +78,7 @@
                         
                         <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $learner['pk_learner'] }} )" data-toggle="modal" data-target="#exampleModal">
+                         onclick="Modal_Delete( {{ $learner['pk_learner'] }} )" >
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
@@ -128,6 +128,7 @@ function Modal_Delete(row)
 {
   id = row ;
   $("#exampleModal").show();
+  document.getElementById("exampleModal").setAttribute("class","modal fade show");
 }
 
 function del()

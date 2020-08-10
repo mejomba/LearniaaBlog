@@ -51,7 +51,11 @@
                                   @if($package->pk_tree == $tree->pk_tree )
                                   selected="selected"
                                   @endif>{{ $tree->name }}</option>
-                                  @endforeach 
+                                  @endforeach
+                                  <option value="0"  
+                                  @if($package->pk_tree == "0")
+                                  selected="selected"
+                                  @endif>دوره های کوئیک لرن</option>
                                   </select>
                                </div>
                          </div>

@@ -19,7 +19,7 @@
 
 
 @section('pic_landing')
-    <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/teacher.svg')}}" alt="" style="margin-top: -15px">
+    <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/blogNew.svg')}}" alt="" style="margin-top: -15px">
     {{--<img src="{{ asset('images/Template/teacher.svg') }}" alt="Learniaa">--}}
 @endsection
 
@@ -99,9 +99,14 @@
                             </a>
 
 
-                            <p class="mt-2 text-secondary" style="line-height:25px !important">{{ $one_post['desc_short'] }}</p>
+                            <p class="mt-2 text-secondary" style="line-height:25px !important">
+                            @php echo substr($one_post['desc_short'],0,144) @endphp
+                           
+                            </p>
                         </div>
                         <div class="card-end px-4 mt-3 py-2">
+                        <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span><i class="fa fa-circle mr-2 text-warning  "></i>
+                            <br>
                             <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span><i class="fa fa-circle mr-2 text-info  "></i>
                             <a class="btn btn-primary float-right px-4 py-2" 
                             href="{{route('blog.detail', ['slug' => $one_post['pk_blog'] , 'desc' =>  $one_post['title'] ]  )}}">
