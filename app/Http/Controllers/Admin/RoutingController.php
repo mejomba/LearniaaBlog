@@ -50,14 +50,20 @@ class RoutingController extends Controller
         $new_route->content = request()->content;
         $feedback = [];
         $feedback = array_merge($feedback,request()->feedback);
-        foreach($feedback as $item => $val)
+        $feedkey = [];
+        $feedkey = array_merge($feedkey,request()->feedkey);
+        foreach($feedkey as $item => $value)
+        {
+            $answers[$value] = $feedback[$item];
+        }
+        foreach($answers as $item => $val)
         {
             if(is_null($val))
             {
-                unset($feedback[$item]);
+                unset($answers[$item]);
             } 
         }
-        $feed = json_encode($feedback);
+        $feed = json_encode($answers);
         $new_route->feedback = $feed;   
         if(  $new_route->save())
         {
@@ -115,16 +121,21 @@ class RoutingController extends Controller
         //dd(request()->feedback);
         $feedback = [];
         $feedback = array_merge($feedback,request()->feedback);
-        foreach($feedback as $item => $val)
+        $feedkey = [];
+        $feedkey = array_merge($feedkey,request()->feedkey);
+        foreach($feedkey as $item => $value)
+        {
+            $answers[$value] = $feedback[$item];
+        }
+        foreach($answers as $item => $val)
         {
             if(is_null($val))
             {
-                unset($feedback[$item]);
+                unset($answers[$item]);
             } 
         }
-        $feed = json_encode($feedback);
-        $new_route->feedback = $feed;
-
+        $feed = json_encode($answers);
+        $new_route->feedback = $feed;   
         if(  $new_route->save())
         {
             return redirect(route('admin.routing.index'))->with('success','مسیر با موفقیت بروز رسانی شد ');

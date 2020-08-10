@@ -83,13 +83,25 @@
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
                           </div>
-                          <input name="feedback[]" class="form-control" placeholder="جواب " type="text">
+                          <input name="feedkey[]" class="form-control" placeholder="کلید جواب " type="text">
                         </div>           
                        <span id="fooBar">&nbsp; </span>
                       </div>
                           <INPUT type="button" class="form-control" value="+" onclick="add()"/>
 
         </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          <input name="feedback[]" class="form-control" placeholder="جواب " type="text">
+                        </div>           
+                      </div>
+
+        </div>
+
 
 
        
@@ -189,19 +201,28 @@
 function add() {
 
 	//Create an input type dynamically.
-	var element = document.createElement("input");
+	var key = document.createElement("input");
 
 	//Assign different attributes to the element.
-	element.setAttribute("type", "text");
-	element.setAttribute("name", "feedback[]");
-	element.setAttribute("class", "form-control");
-	element.setAttribute("placeholder", "جواب");
+	key.setAttribute("type", "text");
+	key.setAttribute("name", "feedkey[]");
+	key.setAttribute("class", "form-control");
+	key.setAttribute("placeholder", "کلید جواب");
 
+  var element = document.createElement("input");
+
+//Assign different attributes to the element.
+  element.setAttribute("type", "text");
+  element.setAttribute("name", "feedback[]");
+  element.setAttribute("class", "form-control");
+  element.setAttribute("placeholder", "جواب");
 
 	var foo = document.getElementById("fooBar");
 
 	//Append the element in page (in span).
-	foo.appendChild(element);
+	foo.appendChild(key);
+  foo.appendChild(element);
+
 
 }</script>
 

@@ -28,18 +28,17 @@ class BlogController extends Controller
         {
            // $recent_post = Blog::where('status', 'انتشار')->orderBy('pk_blog', 'desc')->get()->take(6);
 
-            $recent_post = Blog::where('status', 'انتشار')->whereBetween('sort_general', [$offset, $offset * 5])->get();
+            $recent_post = Blog::where('status', 'انتشار')->paginate(1);
            
         }
         else
         {
             $select_category = Category::where('name', $category )->first();
             $recent_post = Blog::where(['status'=> 'انتشار' , 'pk_category' => $select_category->pk_category])
-            ->whereBetween('sort_category', [$offset, $offset * 5])->get();
+            ->whereBetween('sort_category', [$offset, $offset * 5])->paginate(1);
         }
 
 
-        
         return view('site.blog.index',compact('recent_post'));
     }
 

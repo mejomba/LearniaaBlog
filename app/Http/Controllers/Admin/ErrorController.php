@@ -59,7 +59,7 @@ class ErrorController extends Controller
         }
         else
         {
-            return view('admin.errors.index');
+            return redirect(route('admin.errors.index'))->with('message','هیچ ارروری برای تاریخ امروز یافت نشد');
         }
 
 
@@ -102,11 +102,10 @@ class ErrorController extends Controller
         if(file_exists($path))
         {
             unlink($path);
-
-            return view('admin.errors.index');
+            return redirect(route('admin.errors.index'))->with('message','حذف انجام شد');
         }else
         {
-            return view('admin.errors.index');
+            return redirect(route('admin.errors.index'))->with('message','هیچ ارروری برای حذف یافت نشد');
         }
 
     }

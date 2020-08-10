@@ -32,9 +32,14 @@
 
     @php $meta=json_decode($one_post['schema_markup'],true) @endphp
 
+    <script type="application/ld+json">
+    {
     @foreach($meta as $key => $value)
+    "{{$key}}" {{':'}} "{{$value}}",
+    @endforeach
 
-    <meta  name="{{$key}}" content="{{$value}}" >
+    }
+    </script>
 
     @endforeach
 

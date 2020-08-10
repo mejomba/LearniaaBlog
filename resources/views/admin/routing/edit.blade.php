@@ -71,29 +71,45 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                       </div>
-                      <input name="question" class="form-control" placeholder="مدت زمان مطالعه " type="text" value="{{$route->question}}">
+                      <input name="question" class="form-control" placeholder="متن سوال " type="text" value="{{$route->question}}">
                     </div>
                   </div>
 
         </div>
 
 
+
+        </div>
         <div class="col-md-4">
             <div class="form-group">
                         <div class="input-group input-group-alternative">
-
                           <div class="input-group-prepend">
-                          </div>   
-                           @foreach($feedback as $feed)
+                          </div>
+                          @foreach($feedback as $key =>$value )
 
+                          <input name="feedkey[]" class="form-control" placeholder="کلید جواب " type="text" value={{$key}}>
+                          @endforeach
+
+                        </div>           
+                      </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          @foreach($feedback as $feed)
                           <input name="feedback[]" class="form-control" placeholder="جواب " type="text" value="{{$feed}}">
                           @endforeach
 
-                        </div>     
-                         <span id="fooBar">&nbsp; </span>
-                          <INPUT type="button" class="form-control" value="+" onclick="add()"/>
-
+                        </div>   
+                        <span id="fooBar">&nbsp; </span>
+        
                       </div>
+                      <INPUT type="button" class="form-control" value="+" onclick="add()"/>
+
 
         </div>
 
@@ -191,19 +207,28 @@
 function add() {
 
 	//Create an input type dynamically.
-	var element = document.createElement("input");
+	var key = document.createElement("input");
 
 	//Assign different attributes to the element.
-	element.setAttribute("type", "text");
-	element.setAttribute("name", "feedback[]");
-	element.setAttribute("class", "form-control");
-	element.setAttribute("placeholder", "جواب");
+	key.setAttribute("type", "text");
+	key.setAttribute("name", "feedkey[]");
+	key.setAttribute("class", "form-control");
+	key.setAttribute("placeholder", "کلید جواب");
 
+  var element = document.createElement("input");
+
+//Assign different attributes to the element.
+  element.setAttribute("type", "text");
+  element.setAttribute("name", "feedback[]");
+  element.setAttribute("class", "form-control");
+  element.setAttribute("placeholder", "جواب");
 
 	var foo = document.getElementById("fooBar");
 
 	//Append the element in page (in span).
-	foo.appendChild(element);
+	foo.appendChild(key);
+  foo.appendChild(element);
+
 
 }</script>
 

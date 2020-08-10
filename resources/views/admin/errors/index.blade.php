@@ -22,7 +22,15 @@
 
                   <a href="{{route('admin.errors.delete')}}" class="btn btn-primary btn-round" 
                   style="font-size:1.0rem;"> حذف آخرین اررور
-                  </a>                                
+                  </a>       
+                  
+                  @if(session()->has('message'))
+                  <div class="alert alert-success">
+                      {{ session()->get('message') }}
+                  </div>
+                  @endif      
+                    
+                                      
 
                     <p>
                     @if(isset($read))
@@ -30,6 +38,7 @@
                     {{print_r($read)}}
                     }
                     @endif
+                   
                     </p>
 
                         
