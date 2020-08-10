@@ -26,15 +26,30 @@ class BlogController extends Controller
        
         if($category == "عمومی")
         {
+<<<<<<< HEAD
+           // $recent_post = Blog::where('status', 'انتشار')->orderBy('pk_blog', 'desc')->get()->take(6);
+
+            $recent_post = Blog::where('status', 'انتشار')->paginate(1);
+           
+=======
             $recent_post = Blog::where('status', 'انتشار')->get();
+>>>>>>> 911dfa93fed13b3d8369b37a6a83c228e9dc4423
         }
         else
         {
             $select_category = Category::where('name', $category )->first();
+<<<<<<< HEAD
+            $recent_post = Blog::where(['status'=> 'انتشار' , 'pk_category' => $select_category->pk_category])
+            ->whereBetween('sort_category', [$offset, $offset * 5])->paginate(1);
+        }
+
+
+=======
             $recent_post = Blog::where(['status'=> 'انتشار' , 'pk_category' => $select_category->pk_category])->get();
            
         }
  
+>>>>>>> 911dfa93fed13b3d8369b37a6a83c228e9dc4423
         return view('site.blog.index',compact('recent_post'));
     }
 
