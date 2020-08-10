@@ -128,23 +128,8 @@
                 <div class="col-lg-2 col-md-6 col-sm-11 col-6 mx-auto mt-3">
                     <ul class="pagination px-1 py-1 text-secondary" style="background-color: transparent">
 
-                       <!-- <li class="border-secondary m-2">
-                            <a class="page-link shadow-lg" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li> -->
-
-                        <li class="page-item active border-secondary m-2"><a class="page-link shadow-lg" href="#">1</a></li>
-
-                        <li class="border-secondary m-2"><a class="page-link shadow-lg" href="#">2</a></li>
-
-                        <li class="border-secondary m-2"><a class="page-link shadow-lg" href="#">3</a></li>
-
-                       <!-- <li class="border-secondary m-2 rounded">
-                            <a class="page-link shadow-lg" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>  -->
+                    {{$recent_post->links()}}
+                       
                             </a>
                         </li>
                     </ul>
@@ -154,7 +139,7 @@
 
         </section>
         {{--    Pagination ends--}}
-            {{$recent_post->links()}}
+          
     </div>
 
 {{--===================================================================--}}
