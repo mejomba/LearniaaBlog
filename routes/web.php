@@ -25,7 +25,7 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 Route::get('/mail', 'MailController@store');
 
 Route::get('/test', 'ApiController@test');
-Route::get('/test/wellcome', 'TestController@wellcome');
+Route::get('/test/startgame', 'TestController@startgame');
 Route::get('/test/roadmap', 'TestController@roadmap');
 
 
