@@ -157,7 +157,7 @@ class TreeController extends Controller
                 if(request()->icon)
                 {
                   $icon = request()->file('icon');
-                  $icon_name = $pic->getClientOriginalName();
+                  $icon_name = $icon->getClientOriginalName();
                   $path = Storage::putFileAs( 'tree', $icon, $icon_name);
                   $tree->icon = $icon_name ;
                 }

@@ -25,8 +25,9 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 Route::get('/mail', 'MailController@store');
 
 Route::get('/test', 'ApiController@test');
-Route::get('/test/startgame', 'TestController@startgame');
-Route::get('/test/roadmap', 'TestController@roadmap');
+Route::get('/test/startgame', 'TestController@startgame')->name('startgame');
+Route::post('/test/roadmap', 'TestController@roadmap')->name('roadmap');
+Route::get('/test/roadmap', 'TestController@startgame');
 
 
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');

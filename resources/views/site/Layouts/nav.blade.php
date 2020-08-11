@@ -9,17 +9,19 @@
     <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="{{route('index')}}">
         <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image" width="60px">
     </a>
-    <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav d-flex justify-content-center" style="font-size:15px; font-weight:500;">
-            <li class="nav-item mr-lg-5 ml-lg-5"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
-            <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-           <li class="nav-item mr-lg-5 ml-lg-5 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
+    <div class="collapse navbar-collapse" id="nav"> <!-- justify-content-center -->
+        <ul class="navbar-nav d-flex col-md-6 col-12" style="font-size:15px; font-weight:500;">
+            <li class="nav-item mr-lg-4 ml-lg-4"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
+            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
+            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
+            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
+           <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
 
         </ul>
       <!-- ---- User Menu ---- -->
-                    <ul class="navbar-nav col-md-3 col-12 offset-lg-2" dir="ltr">
+      <!-- <ul class="navbar-nav col-md-3 col-12 offset-lg-2" dir="ltr">
+      </ul> -->
+                    <ul class="navbar-nav col-md-6 col-12" dir="ltr">
                     @guest
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -83,14 +85,17 @@
 
     $(".navbar-toggler").on("click",function () {
 
-        if($('.navbar-collapse').hasClass('show'))
+        $("#navbar").css("backgroundColor","#20c5ba")
+        $('.navbar-nav').css("backgroundColor","#20c5ba")
+
+       /* if($('.navbar-collapse').hasClass('show'))
         {
             $('.navbar-nav').css("backgroundColor","transparent")
         }
         else
         {
             $('.navbar-nav').css("backgroundColor","white")
-        }
+        } */
     });
 
     let status = 0 ;

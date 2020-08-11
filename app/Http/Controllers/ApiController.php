@@ -432,7 +432,6 @@ public function GenerateNewUuid()
     $newlog = new Log();
     $newlog->uuid = $uuid;
     $newlog->sort = '0';
-    $newlog->name = 'guest';
     $newlog->save();
     return response()->json([
         'uuid'=> $uuid
@@ -441,19 +440,18 @@ public function GenerateNewUuid()
 
 public function SetFamilyUser(Request $request)
 {
-    $log = Log::where('uuid',$_POST['Uuid'])->first();
-    $log->name = $_POST['Name'];
-    $log->sort = '1';
-    $log->save();
-    if(is_null($_POST['Name'])){
-    return response()->json([
-        'status'=> 'error'
-    ]);
-    }else{
-        return response()->json([
-            'status'=> 'ok'
-    ]);
+    if($_POST['Name'] == "")
+    {
+      return response()->json([ 'status'=> 'error' ]);                   
+    }
+    else
+    {
+        $log = Log::where('uuid',$_POST['Uuid'])->first();
+        $log->name = $_POST['Name'];
+        $log->sort = '1';
+        $log->save();
 
+        return response()->json(['status'=> 'ok' ]);
     }
 
 }
