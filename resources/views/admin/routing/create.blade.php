@@ -85,7 +85,6 @@
                           </div>
                           <input name="feedkey[]" class="form-control" placeholder="کلید جواب " type="text">
                         </div>           
-                       <span id="fooBar">&nbsp; </span>
                       </div>
                           <INPUT type="button" class="form-control" value="+" onclick="add()"/>
 
@@ -102,6 +101,7 @@
 
         </div>
 
+        <span id="fooBar">&nbsp; </span>
 
 
        

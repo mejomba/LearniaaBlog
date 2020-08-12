@@ -461,8 +461,7 @@ public function SetFamilyUser(Request $request)
 
 public function GetPopupData(Request $request)
 {
-    $log = Log::where('uuid',$_POST['Uuid'])->first();
-    if($log->uuid){
+    
         $route = Routing::where('Location_User_Id',$_POST['LocationUserId'])->first();
         $feedback = json_decode($route->feedback);
         return response()->json([
@@ -470,7 +469,7 @@ public function GetPopupData(Request $request)
             'question' =>$route->question,
             'feedback'=>$feedback
         ]);
-    }
+    
 }
 
 public function  SetAnswerUser(Request $request)
