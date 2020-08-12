@@ -1,5 +1,5 @@
 <style>@font-face {font-family: 'Shabnam'; src: url({{ asset("/font/Shabnam.ttf")}})}</style>
-
+<style>@font-face {font-family: 'DastNevis'; src: url({{ asset("/font/danstevis.otf")}})}</style>
    
 <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/Template/logo.png') }}">
 <link rel="icon" href="{{ asset('images/Template/logo.png')}}">

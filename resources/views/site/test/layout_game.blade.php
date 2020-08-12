@@ -33,7 +33,5 @@ gtag('js', new Date());gtag('config', 'UA-155041698-1');
 @yield('content')
 </div>
 
-@include('site.Layouts.footer')
-
 </body>
 </html>

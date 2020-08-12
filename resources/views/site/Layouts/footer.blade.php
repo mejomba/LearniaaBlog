@@ -96,25 +96,9 @@
                         <li>
                             <a href="{{route('PrivacyPolicy')}}" class="text-center">حریم خصوصی</a>
                         </li>
-                          <li>
-                          <a href="#!" class="text-center">همکاری با ما</a>
-                            </li>
-                          <li>
-                           <a href="#!" class="text-center">هیات علمی</a>
-                         </li>
-                       <li class="">
-                           <a href="#!">همکاری با ما</a>
-                       </li>
-                       <li class="">
-                           <a href="#!">هیئت علمی</a>
-                       </li>
-                       <li class="">
-                           <a href="#!">اساتید و مدرسین</a>
-                       </li>
+                         
                     </ul>
                 </div>
-
-
 
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">

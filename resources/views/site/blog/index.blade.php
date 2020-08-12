@@ -94,7 +94,7 @@
 
                         <div class="card-body px-4">
                             <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span>
-                            <a href="" class="">
+                            <a href="{{route('blog.detail', ['slug' => $one_post['pk_blog'] , 'desc' =>  $one_post['title'] ]  )}}" class="">
                                 <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h6>
                             </a>
 
