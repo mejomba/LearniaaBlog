@@ -59,9 +59,7 @@
                           <td>
                           {{ $route['question'] }} 
                           </td>
-                          <td>
-                          {{ $route['content'] }} 
-                          </td>
+                        
                           <td>
                           {{ $route['feedback'] }} 
                           </td>

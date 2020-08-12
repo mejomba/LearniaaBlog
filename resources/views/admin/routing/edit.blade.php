@@ -54,7 +54,7 @@
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control" name="type_question" placeholder="نوع سوال " type="text" value="{{$route->type_question}}">
+                      <input class="form-control" name="feedradepa" placeholder="آیدی رد پا " type="text" value="{{$route->type_question}}">
                     </div>
                   </div>
 
