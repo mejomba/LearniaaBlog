@@ -217,14 +217,14 @@ style="margin-top: -15px">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/Template/user_login.svg')}}" alt=""
+                             <img src="{{asset('images/learner/Afhami.jpeg')}}" alt=""
                               width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس شمسایی</h4>
-                        <p class="">برنامه نویسی پایتون</p>
+                        <h4 class="">مهندس افهمی</h4>
+                        <p class="">برنامه نویسی جاوا اسکریپت</p>
                        <!-- <i class="fa fa-instagram text-danger ml-3"></i>
                         <i class="fa fa-telegram text-info"></i> -->
                     </div>
@@ -236,14 +236,14 @@ style="margin-top: -15px">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/Template/user_login.svg')}}" alt=""
+                             <img src="{{asset('images/learner/Yosefvand.jpeg')}}" alt=""
                               width="150px" height="150px" class="rounded-circle" >
                         </span>
 
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">دکتر اسماعیلی</h4>
-                        <p class="">اصول برنامه نویسی</p>
+                        <h4 class="">مهندس یوسفوند</h4>
+                        <p class="">برنامه نویسی پایتون</p>
                      <!--   <i class="fa fa-instagram text-danger ml-3"></i>
                         <i class="fa fa-telegram text-info"></i> -->
                     </div>
@@ -255,7 +255,78 @@ style="margin-top: -15px">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/Template/user_login.svg') }}" alt="" 
+                             <img src="{{ asset('images/learner/Malek.png') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس محمد ملک</h4>
+                        <p class="">اصول و پیش نیازهای برنامه نویسی</p>
+                       <!-- <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>  -->
+                    </div>
+
+                </div> 
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/Soltanian.jpeg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس سلطانیان</h4>
+                        <p class="">برنامه نویسی پی اچ پی</p>
+                       <!-- <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>  -->
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/Esmaeili.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس اسماعیلی</h4>
+                        <p class="">ساختمان داده و طراحی الگوریتم</p>
+                       <!-- <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>  -->
+                    </div>
+                </div> 
+            </div>
+
+            
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/Soltanieh.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس سلطانیه</h4>
+                        <p class="">برنامه نویسی پی اچ پی</p>
+                       <!-- <i class="fa fa-instagram text-danger ml-3"></i>
+                        <i class="fa fa-telegram text-info"></i>  -->
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/AminZadeh.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
 
@@ -274,7 +345,7 @@ style="margin-top: -15px">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/Template/user_login.svg')}}" 
+                             <img src="{{asset('images/learner/Laghari.jpeg')}}" 
                              alt="" width="150px" height="150px" class="rounded-circle" >
                         </span>
 

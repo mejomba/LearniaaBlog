@@ -39,6 +39,12 @@
                               </div>
 <!-- ModalData Box --> 
 
+
+<form method="POST" id="Data" action="{{route('roadmap')}}" enctype="multipart/form-data">
+@csrf
+
+</form>
+
 <script>
 
 document.addEventListener('DOMContentLoaded',function()
