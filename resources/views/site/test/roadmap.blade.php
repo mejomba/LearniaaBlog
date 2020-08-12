@@ -12,8 +12,8 @@
 
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
-         <div class="modal-content">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+         <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
            <h5 class="modal-title" id="ModalLabelData">پیغام</h5> 
             </div>  
@@ -22,7 +22,7 @@
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
-                       <div class="col-12 col-md-12 col-lg-12">
+                       <div id="content" class="col-12 col-md-12 col-lg-12">
                       
                        
                       </div>
@@ -136,8 +136,10 @@ function GetPopupData(LocationUserId)
             dataType: 'json',
             success: function(data)
             {
+
                 OpenPopup();
-                console.log(data);
+                $("#content").html(data.content);
+               // console.log(data);
             },
             type: 'POST'
         });
