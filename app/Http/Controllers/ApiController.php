@@ -441,21 +441,32 @@ public function GenerateNewUuid()
 
 public function SetFamilyUser(Request $request)
 {
-    $log = Log::where('uuid',$_POST['Uuid'])->first();
-    $log->name = $_POST['Name'];
-    $log->sort = '1';
-    $log->save();
-    if(is_null($_POST['Name'])){
-    return response()->json([
-        'status'=> 'error'
-    ]);
-    }else{
-        return response()->json([
-            'status'=> 'ok'
-    ]);
+    $val = array('uuid'=>$_POST['Uuid'],'Name'=>$_POST['Name']);
+    $validator =  $this->roadmapvalidate($val);
 
-    }
+        if ($validator->fails())
+        {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+        }
+        else{
 
+            $log = Log::where('uuid',$_POST['Uuid'])->first();
+            if(is_null($_POST['Name'])){
+            return response()->json([
+                'status'=> 'error'
+            ]);
+            }else{
+                $log->name = $_POST['Name'];
+                $log->sort = '1';
+                $log->save();
+                return response()->json([
+                    'status'=> 'ok'
+            ]);
+
+            }
+        }
 }
 
 public function GetPopupData(Request $request)
@@ -501,6 +512,27 @@ public function  SetAnswerUser(Request $request)
         'feedback'=>$feedback
     ]);
 }
+
+public function roadmapvalidate(Request $request)
+    {
+
+        $rules =  [
+                    'name' => 'required|String|max:200',                 
+                 ];
+
+    $messages = [
+                 
+                'name.required' => 'نام  وارد نشده است',
+                'name.String' => 'نام  صحیح وارد نشده است',
+                'name.max' => 'نام  طولانی وارد شده است',
+
+                ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
 
 
 }

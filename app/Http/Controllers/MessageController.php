@@ -235,7 +235,6 @@ class MessageController extends Controller
 
         $rules =  [
             'email' => ['required', new validate], 
-            'name' => ['required | min:2']
         ];
 
         $messages = [
