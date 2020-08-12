@@ -158,10 +158,9 @@ function GetPopupData(LocationUserId)
                 Name.setAttribute('class', "btn btn-primary");
                 Name.textContent = item.caption ;
                 Name.setAttribute('key',item.key);
+                Name.setAttribute('redepa',item.radepa);
                 Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"')");
                 document.getElementById("feedback").append(Name);                        
-                console.log(item.key);
-
                 });
             },
             type: 'POST'

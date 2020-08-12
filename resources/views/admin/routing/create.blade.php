@@ -101,6 +101,17 @@
 
         </div>
 
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        
+                      </div>
+                      <input class="form-control" name="feedradepa[]" placeholder="آیدی رد پا " type="text">
+                    </div>
+                  </div>
+
+        </div>  
+
         <span id="fooBar">&nbsp; </span>
 
 
@@ -217,11 +228,21 @@ function add() {
   element.setAttribute("class", "form-control");
   element.setAttribute("placeholder", "جواب");
 
+
+  var feedradepa = document.createElement("input");
+
+//Assign different attributes to the element.
+feedradepa.setAttribute("type", "text");
+feedradepa.setAttribute("name", "feedradepa[]");
+feedradepa.setAttribute("class", "form-control");
+feedradepa.setAttribute("placeholder", "آیدی رد پا");
+
 	var foo = document.getElementById("fooBar");
 
 	//Append the element in page (in span).
 	foo.appendChild(key);
   foo.appendChild(element);
+  foo.appendChild(feedradepa);
 
 
 }</script>

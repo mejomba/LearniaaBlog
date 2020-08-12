@@ -52,11 +52,13 @@ class RoutingController extends Controller
         $feedback = array_merge($feedback,request()->feedback);
         $feedkey = [];
         $feedkey = array_merge($feedkey,request()->feedkey);
+        $feedradepa = [];
+        $feedradepa = array_merge($feedkey,request()->feedradepa);
         $answers = [];
         foreach($feedkey as $item => $value)
         {
             //$answers[$value] = $feedback[$item];
-            $feeds = ['key' => $value , 'caption' =>$feedback[$item]];
+            $feeds = ['key' => $value , 'caption' =>$feedback[$item],'radepa' => $feedradepa[$item]];
             $answers[$item] = $feeds;
         }
         $feed = json_encode($answers);
@@ -119,10 +121,12 @@ class RoutingController extends Controller
         $feedback = array_merge($feedback,request()->feedback);
         $feedkey = [];
         $feedkey = array_merge($feedkey,request()->feedkey);
+        $feedradepa = [];
+        $feedradepa = array_merge($feedkey,request()->feedradepa);
         foreach($feedkey as $item => $value)
         {
-            $feeds = ['key' => $value , 'caption' =>$feedback[$item]];
-            $answer[$item] = $feeds;   
+            $feeds = ['key' => $value , 'caption' =>$feedback[$item],'radepa' => $feedradepa[$item]];
+            $answers[$item] = $feeds;   
         }
        
         $feed = json_encode($answers);
