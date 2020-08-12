@@ -68,6 +68,7 @@
 
 
   <!-- Card -->
+  <div class="row">
   @foreach($nodes as $node)
                 <div class="col-lg-4 col-md-6 col-sm-8 col-11 ml-auto mr-auto">
                     <div class="single-services text-center mt-3 wow fadeIn" data-wow-duration="1s"
@@ -106,6 +107,7 @@
                     </div>
                 </div>
              @endforeach
+</div>
              <!-- Card -->
 
 
