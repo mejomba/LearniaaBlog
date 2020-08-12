@@ -50,7 +50,7 @@
                                    </div>
                                 </div>
                               </div>
-<!-- ModalError Box --> 
+    <!-- ModalError Box --> 
 
 <!-- ModalRegister Box -->                      
 <div class="modal fade" dir="rtl" id="ModalRegister" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalRegister" aria-hidden="true">  

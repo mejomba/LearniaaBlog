@@ -12,8 +12,8 @@
 
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
-         <div class="modal-content">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+         <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
            <h5 class="modal-title" id="ModalLabelData">پیغام</h5> 
             </div>  
@@ -27,11 +27,23 @@
                        
                       </div>
                  </div>
+                 <div class="row">  
+                       <div id="question" class="col-12 col-md-12 col-lg-12">
+                      
+                       
+                      </div>
+                 </div>
+                 <div class="row">  
+                       <div id="feedback" class="col-12 col-md-12 col-lg-12">
+                      
+                       
+                      </div>
+                 </div>
               </div>
                 <!-- Form &  Body -->
                              </div>
                                     <div class="modal-footer">
-                                        <button type="button" onclick="CloseModalErrorApi()" class="btn btn-primary"  
+                                        <button type="button" onclick="ClosePopup()" class="btn btn-primary"  
                                         data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
@@ -120,7 +132,6 @@ function GetPopupData(LocationUserId)
  {
      if(LocationUserId == last_location_user_id)
      {
-        console.log(LocationUserId);
         var uuid = $("#uuid").val();
 
         $.ajax({
@@ -136,9 +147,24 @@ function GetPopupData(LocationUserId)
             dataType: 'json',
             success: function(data)
             {
+
                 OpenPopup();
                 $("#content").html(data.content);
-                console.log(data);
+                $("#question").html(data.question);
+                data.feedback.forEach(function(item, index) 
+                {
+                let Name = document.createElement("button");
+                Name.setAttribute('type','button');
+                Name.setAttribute('value', item.caption);
+                Name.setAttribute('key',item.key);
+                Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"')");
+                document.getElementById("feedback").append(Name);                        
+                console.log(item.key);
+
+                });
+                //$("#feedback").html(data.feedback);
+
+               // console.log(data);
             },
             type: 'POST'
         });
