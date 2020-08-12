@@ -155,16 +155,14 @@ function GetPopupData(LocationUserId)
                 {
                 let Name = document.createElement("button");
                 Name.setAttribute('type','button');
-                Name.setAttribute('value', item.caption);
+                Name.setAttribute('class', "btn btn-primary");
+                Name.textContent = item.caption ;
                 Name.setAttribute('key',item.key);
                 Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"')");
                 document.getElementById("feedback").append(Name);                        
                 console.log(item.key);
 
                 });
-                //$("#feedback").html(data.feedback);
-
-               // console.log(data);
             },
             type: 'POST'
         });
