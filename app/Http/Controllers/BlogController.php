@@ -28,7 +28,7 @@ class BlogController extends Controller
         {
            // $recent_post = Blog::where('status', 'انتشار')->orderBy('pk_blog', 'desc')->get()->take(6);
 
-            $recent_post = Blog::where('status', 'انتشار')->paginate(1);
+            $recent_post = Blog::where('status', 'انتشار')->paginate(6);
            
         }
         else

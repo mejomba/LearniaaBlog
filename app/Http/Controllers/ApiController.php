@@ -432,7 +432,6 @@ public function GenerateNewUuid()
     $newlog = new Log();
     $newlog->uuid = $uuid;
     $newlog->sort = '0';
-    $newlog->name = 'guest';
     $newlog->save();
     return response()->json([
         'uuid'=> $uuid
@@ -441,32 +440,23 @@ public function GenerateNewUuid()
 
 public function SetFamilyUser(Request $request)
 {
-    $val = array('uuid'=>$_POST['Uuid'],'Name'=>$_POST['Name']);
-    $validator =  $this->roadmapvalidate($val);
+    if($_POST['Name'] == "")
+    {
+      return response()->json([ 'status'=> 'error' ]);                   
+    }
+    else
+    {
+        $log = Log::where('uuid',$_POST['Uuid'])->first();
+        $log->name = $_POST['Name'];
+        $log->sort = '1';
+        $log->save();
 
-        if ($validator->fails())
-        {
-                return redirect()->back()
-                            ->withErrors($validator)
-                            ->withInput();
-        }
-        else{
+        return response()->json(['status'=> 'ok' ]);
+    }
 
-            $log = Log::where('uuid',$_POST['Uuid'])->first();
-            if(is_null($_POST['Name'])){
-            return response()->json([
-                'status'=> 'error'
-            ]);
-            }else{
-                $log->name = $_POST['Name'];
-                $log->sort = '1';
-                $log->save();
-                return response()->json([
-                    'status'=> 'ok'
-            ]);
+            
+        
 
-            }
-        }
 }
 
 public function GetPopupData(Request $request)

@@ -11,11 +11,9 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function wellcome(Request $request)
+    public function startgame()
     {
-        $uuid = request()->uuid ;
-        $name=request()->name ; 
-      return view('site.test.wellcome',compact('name','uuid'));
+      return view('site.test.startgame');
     }
 
     /**
@@ -23,9 +21,11 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function roadmap()
+    public function roadmap(Request $request)
     {
-        return view('site.test.roadmap');
+        $uuid = request()->uuid ;
+        $name=request()->name ; 
+        return view('site.test.roadmap',compact('name','uuid'));
     }
 
     /**

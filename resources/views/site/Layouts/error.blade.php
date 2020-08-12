@@ -40,7 +40,8 @@
  <script>
  function ModalError_close()
  {document.getElementById("ModalError").setAttribute("style","");}
- document.addEventListener('DOMContentLoaded',function(){ if(document.getElementById("errors"))
+ document.addEventListener('DOMContentLoaded',function()
+ { if(document.getElementById("errors"))
  {document.getElementById("ModalError").setAttribute("style","display:block;opacity:100;");}}, false);  
  </script>                             
 <!-- Modal Error Box -->
