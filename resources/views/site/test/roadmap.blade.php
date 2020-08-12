@@ -27,11 +27,23 @@
                        
                       </div>
                  </div>
+                 <div class="row">  
+                       <div id="question" class="col-12 col-md-12 col-lg-12">
+                      
+                       
+                      </div>
+                 </div>
+                 <div class="row">  
+                       <div id="feedback" class="col-12 col-md-12 col-lg-12">
+                      
+                       
+                      </div>
+                 </div>
               </div>
                 <!-- Form &  Body -->
                              </div>
                                     <div class="modal-footer">
-                                        <button type="button" onclick="CloseModalErrorApi()" class="btn btn-primary"  
+                                        <button type="button" onclick="ClosePopup()" class="btn btn-primary"  
                                         data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
