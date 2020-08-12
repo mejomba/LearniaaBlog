@@ -22,7 +22,7 @@
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
-                       <div class="col-12 col-md-12 col-lg-12">
+                       <div id="content" class="col-12 col-md-12 col-lg-12">
                       
                        
                       </div>
@@ -137,6 +137,7 @@ function GetPopupData(LocationUserId)
             success: function(data)
             {
                 OpenPopup();
+                $("#content").html(data.content);
                 console.log(data);
             },
             type: 'POST'
