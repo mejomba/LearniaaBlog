@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'liara'),
+    'default' => env('FILESYSTEM_DRIVER', 'files'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 'liara'),
+    'cloud' => env('FILESYSTEM_CLOUD', 'files'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,17 @@ return [
             'url' => env('AWS_URL'),
         ],
 
-        'liara' => [
+        'files' => [
+            'driver' => 's3',
+            'region' => 'us-east-1',
+            'use_path_style_endpoint' => true,
+            'key' => 'ZF9H2EEMVVOAQBSGCAG17',
+            'secret' => 'SwiVtMv83KpDY9Sti0Iqf0TaPnnVuwNbdqHikh2Yp',
+            'bucket' => 'files',
+            'endpoint' => 'https://file.learniaa.com',
+        ],
+
+        'learniaa' => [
             'driver' => 's3',
             'region' => 'us-east-1',
             'use_path_style_endpoint' => true,

@@ -41,7 +41,7 @@ class CreateDirectory_CloudStorage extends Command
     {
         $Newdirectory = $this->argument('Newdirectory');
        // Storage::makeDirectory('course/'.$Newdirectory);
-       Storage::makeDirectory($Newdirectory);
+       Storage::makeDirectory('course/'.$Newdirectory);
         return "Directory Create Success";
     }
 }
