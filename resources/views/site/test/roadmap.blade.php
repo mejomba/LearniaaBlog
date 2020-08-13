@@ -127,6 +127,13 @@ function ClosePopup()
  {
      document.getElementById("ModalData").setAttribute("style","");
  }
+function deletecontent()
+{
+    $("#content").html('');
+    $("#question").html('');
+    $("#feedback").html('');
+
+}
 
 function GetPopupData(LocationUserId)
  {
@@ -147,7 +154,7 @@ function GetPopupData(LocationUserId)
             dataType: 'json',
             success: function(data)
             {
-
+                deletecontent();
                 OpenPopup();
                 $("#content").html(data.content);
                 $("#question").html(data.question);
@@ -157,9 +164,9 @@ function GetPopupData(LocationUserId)
                 Name.setAttribute('type','button');
                 Name.setAttribute('class', "btn btn-primary");
                 Name.textContent = item.caption ;
-                Name.setAttribute('key',item.key);
-                Name.setAttribute('redepa',item.radepa);
-                Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"')");
+                Name.setAttribute('SelectAnswerId',item.key);
+                Name.setAttribute('radepa',item.radepa);
+                Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"','"+item.radepa+"')");
                 document.getElementById("feedback").append(Name);                        
                 });
             },
@@ -170,6 +177,45 @@ function GetPopupData(LocationUserId)
 
      }
 }
+
+function Showitem(SelectAnswerId,radepa)
+ {
+    $('#'+SelectAnswerId).css('opacity','1');
+    $('#'+radepa).css('opacity','1');
+    last_location_user_id = SelectAnswerId;
+ }
+
+
+function SetAnswerUser(SelectAnswerId,radepa)
+ {
+        var uuid = $("#Uuid").val();
+        var dardepa = $("#radepa").val();
+        $.ajax({
+            url: '/api/SetAnswerUser',
+            data:
+            {
+                Uuid : uuid ,
+                LocationUserId : last_location_user_id,
+                SelectAnswerId:SelectAnswerId
+            },
+            error: function(err)
+            {
+            },
+            dataType: 'json',
+            success: function(data)
+            {
+
+                if(data.status = 'ok')
+                {
+                Showitem(SelectAnswerId,radepa);
+                ClosePopup();
+                }
+
+            },
+            
+            type: 'POST'
+        });
+ }
 
 </script>
 
