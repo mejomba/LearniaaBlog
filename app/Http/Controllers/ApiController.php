@@ -476,7 +476,6 @@ public function  SetAnswerUser(Request $request)
 {
     $log = Log::where('uuid',$_POST['Uuid'])->orderby('uuid','DESC')->first();
     $newlog = new Log();
-
     $newlog->uuid=$log->uuid;
     $newlog->name=$log->name;
     $newlog->location_user_id=$_POST['LocationUserId'];
@@ -485,6 +484,7 @@ public function  SetAnswerUser(Request $request)
     $newlog->save();
     $route = Routing::where('location_user_id',$_POST['LocationUserId'])->first();
     $feedback = json_decode($route->feedback);
+    /*$nextroute ='';
     foreach($feedback as $item)
     {
         if($item == $_POST['SelectAnswerId'])
@@ -494,11 +494,9 @@ public function  SetAnswerUser(Request $request)
 
         }
     }
-    $feedback = json_decode($nextroute->feedback);
+    $feedback = json_decode($nextroute->feedback);*/
     return response()->json([
-        'content'=> $nextroute->content,
-        'question' =>$nextroute->question,
-        'feedback'=>$feedback
+        'status'=> 'ok'
     ]);
 }
 
