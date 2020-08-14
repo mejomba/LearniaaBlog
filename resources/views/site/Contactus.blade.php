@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                         <div class="input-group input-group-alternative">
-                            <input name="email" id="email" class="form-control" placeholder="ایمیل" type="text">
+                            <input name="username" id="username" class="form-control" placeholder="ایمیل یا شماره موبایل" type="text">
                         </div>
                     </div>
 

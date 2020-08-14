@@ -6,16 +6,70 @@
     <meta name="keywords" content="نقشه راه لرنیا,چارت آموزشی لرنیا ,لرنیا آاکادمی">
 @endsection
 @section('content')
+<style>
+@keyframes pulse2
+    {0% { opacity: 0; }
+    50% {opacity: 0.5; } 
+    100% {opacity: 1; }
+    }
+</style>
 <section class="container-fluid" style="direction:ltr !important">
 <div class="row">
     <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:230px">
+
+<!-- ModalSandogh Box -->                      
+<div class="modal fade" dir="rtl" id="ModalSandogh" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalSandogh" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+         <div class="modal-content" style="width:60%">
+           <div class="modal-header"> 
+           <h5 class="modal-title" id="ModalLabelModalSandogh">صندوق گنج</h5> 
+            </div>  
+                                       
+            <div class="modal-body">                      
+                <!-- Form &  Body -->
+                 <div class="card-body px-lg-1 py-lg-1">
+                   <div class="row">  
+                       <div id="SectionPic" class="col-12 col-md-12 col-lg-12">
+                       <img src="{{ asset('images/Academy/roadmap/Ganj.png') }}" alt="Learniaa" height="120px" width="300px">
+                       <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center" style="font-family:DastNevis;font-size:45px">گنج یادگیری خودت رو پیدا کردی</h3>
+                      </div>
+                 </div>
+                 <div class="row">  
+                       <div  class="col-12 col-md-12 col-lg-12">
+                       <h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
+                        id="SectionTitle"
+                        style=""></h2>
+                       
+                      </div>
+                 </div>
+                 <div class="row">  
+                       <div  class="col-12 col-md-12 col-lg-12">
+                       <a class="btn btn-primary" id="SectionFeedBack" href="" 
+                        style="background-color:#ffe735;border-color:#ffe735;color:black">شروع یادگیری</a>
+                       
+                      </div>
+                 </div>
+              </div>
+                <!-- Form &  Body -->
+                             </div>
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="CloseSandogh()" class="btn btn-primary"  
+                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                    </div>
+                                   </div>
+                                </div>
+                              </div>
+<!-- ModalSandogh Box --> 
+
+
+
 
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
          <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelData">پیغام</h5> 
+           <h5 class="modal-title" id="ModalLabelData">اطلاعات تابلو</h5> 
             </div>  
                                        
             <div class="modal-body">                      
@@ -28,9 +82,9 @@
                       </div>
                  </div>
                  <div class="row">  
-                       <div id="question" class="col-12 col-md-12 col-lg-12">
-                      
-                       
+                       <div id="question" class="col-6 col-md-6 col-lg-6 mr-auto ml-auto"
+                       style="border: #20c5ba 3px solid;padding-top: 10px; padding-bottom: 10px;margin-top: 10px;margin-bottom: 10px;">
+    
                       </div>
                  </div>
                  <div class="row">  
@@ -44,7 +98,7 @@
                              </div>
                                     <div class="modal-footer">
                                         <button type="button" onclick="ClosePopup()" class="btn btn-primary"  
-                                        data-dismiss="modal">بستن</button>
+                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
                                 </div>
@@ -105,18 +159,9 @@ document.addEventListener('DOMContentLoaded',function()
     $("#radepa_to_sandogh_react").css('opacity','0');
     $("#radepa_to_sandogh_js").css('opacity','0');
 
-
-
-
-
+    $("#tablo_start").css('animation','pulse2 1.6s linear infinite');
+    
 }, false); 
-/* ShowItems($('#tablo2'));
-function ShowItems(item)
-{
-    item.css('transition','400ms'),
-    item.css('opacity','1');
-}
-*/
 
 function OpenPopup() 
 {
@@ -127,6 +172,17 @@ function ClosePopup()
  {
      document.getElementById("ModalData").setAttribute("style","");
  }
+
+ function OpenSandogh() 
+{
+    document.getElementById("ModalSandogh").setAttribute("style","display:block;opacity:100;");
+}
+
+function CloseSandogh()
+ {
+     document.getElementById("ModalSandogh").setAttribute("style","");
+ }
+
 function deletecontent()
 {
     $("#content").html('');
@@ -139,82 +195,142 @@ function GetPopupData(LocationUserId)
  {
      if(LocationUserId == last_location_user_id)
      {
-        var uuid = $("#uuid").val();
+        if(LocationUserId === 'sandogh_python'||
+        LocationUserId === 'sandogh_htmlcss'|| 
+        LocationUserId === 'sandogh_php'||
+        LocationUserId === 'sandogh_js'||
+        LocationUserId === 'sandogh_laravel'||
+        LocationUserId ===  'sandogh_react')
+    {
+        if(LocationUserId === 'sandogh_python' )
+        {
+            $("#SectionTitle").text('پایتون (Python)');
+            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=29');
+            OpenSandogh() ;
+        }
+        if(LocationUserId === 'sandogh_htmlcss' )
+        {
 
-        $.ajax({
-            url: '/api/GetPopupData',
-            data:
-            {
-                Uuid : uuid ,
-                LocationUserId : LocationUserId
-            },
-            error: function(err)
-            {
-            },
-            dataType: 'json',
-            success: function(data)
-            {
-                deletecontent();
-                OpenPopup();
-                $("#content").html(data.content);
-                $("#question").html(data.question);
-                data.feedback.forEach(function(item, index) 
+        }
+        if(LocationUserId === 'sandogh_php')
+        {
+            $("#SectionTitle").text('پی اچ پی (PHP)');
+            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=28');
+            OpenSandogh() ;
+        }
+        if(LocationUserId === 'sandogh_js')
+        {
+  
+        }
+        if(LocationUserId === 'sandogh_laravel')
+        {
+
+        }
+        if(LocationUserId === 'sandogh_react')
+        {
+
+        }
+    }
+         else
+         {
+            var uuid = $("#uuid").val();
+
+            $.ajax({
+                url: '/api/GetPopupData',
+                data:
                 {
-                let Name = document.createElement("button");
-                Name.setAttribute('type','button');
-                Name.setAttribute('class', "btn btn-primary");
-                Name.textContent = item.caption ;
-                Name.setAttribute('SelectAnswerId',item.key);
-                Name.setAttribute('radepa',item.radepa);
-                Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"','"+item.radepa+"')");
-                document.getElementById("feedback").append(Name);                        
-                });
-            },
-            type: 'POST'
-        });
-     }else
-     {
-
+                    Uuid : uuid ,
+                    LocationUserId : LocationUserId
+                },
+                error: function(err)
+                {
+                },
+                dataType: 'json',
+                success: function(data)
+                {
+                    deletecontent();
+                    OpenPopup();
+                    $("#content").html(data.content);
+                    $("#question").html(data.question);
+                    data.feedback.forEach(function(item, index) 
+                    {
+                    let Name = document.createElement("button");
+                    Name.setAttribute('type','button');
+                    Name.setAttribute('class', "btn btn-primary");
+                    Name.textContent = item.caption ;
+                    Name.setAttribute('SelectAnswerId',item.key);
+                    Name.setAttribute('id',item.key+'_feedback');
+                    Name.setAttribute('radepa',item.radepa);
+                    Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"','"+item.radepa+"')");
+                    document.getElementById("feedback").append(Name);   
+                    $('#'+item.key+'_feedback').css('margin-left','10px');                  
+                    });
+                },
+                type: 'POST'
+            });
+         }
      }
+     
+    else
+    {  
+    }
 }
 
 function Showitem(SelectAnswerId,radepa)
  {
+     console.log(SelectAnswerId);
     $('#'+SelectAnswerId).css('opacity','1');
     $('#'+radepa).css('opacity','1');
+    $('#'+last_location_user_id).css('animation','');
+    $('#'+SelectAnswerId).css('animation','pulse2 1.6s linear infinite');
     last_location_user_id = SelectAnswerId;
  }
 
 
 function SetAnswerUser(SelectAnswerId,radepa)
  {
-        var uuid = $("#Uuid").val();
-        var dardepa = $("#radepa").val();
-        $.ajax({
-            url: '/api/SetAnswerUser',
-            data:
-            {
-                Uuid : uuid ,
-                LocationUserId : last_location_user_id,
-                SelectAnswerId:SelectAnswerId
-            },
-            error: function(err)
-            {
-            },
-            dataType: 'json',
-            success: function(data)
-            {
-
-                if(data.status = 'ok')
+     
+    if(SelectAnswerId === 'sandogh_python'||
+       SelectAnswerId === 'sandogh_htmlcss'|| 
+       SelectAnswerId === 'sandogh_php'||
+       SelectAnswerId === 'sandogh_js'||
+       SelectAnswerId === 'sandogh_laravel'||
+       SelectAnswerId ===  'sandogh_react')
+    {
+        Showitem(SelectAnswerId,radepa);
+        ClosePopup();
+    }
+        
+        else
+        {
+            var uuid = $("#Uuid").val();
+            var dardepa = $("#radepa").val();
+            $.ajax({
+                url: '/api/SetAnswerUser',
+                data:
                 {
-                Showitem(SelectAnswerId,radepa);
-                ClosePopup();
-                }
+                    Uuid : uuid ,
+                    LocationUserId : last_location_user_id,
+                    SelectAnswerId:SelectAnswerId
+                },
+                error: function(err)
+                {
+                },
+                dataType: 'json',
+                success: function(data)
+                {
 
-            },
-            
-            type: 'POST'
-        });
+                    if(data.status = 'ok')
+                    {
+                    Showitem(SelectAnswerId,radepa);
+                    ClosePopup();
+                    }
+
+                },
+                
+                type: 'POST'
+            });
+       } 
  }
 
 </script>

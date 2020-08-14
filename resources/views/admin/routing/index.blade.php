@@ -56,16 +56,6 @@
                           {{ $route['type_question'] }} 
                           </td>
 
-                          <td>
-                          {{ $route['question'] }} 
-                          </td>
-                        
-                          <td>
-                          {{ $route['feedback'] }} 
-                          </td>
-
-                        
-                        
                        <td>
 
                         <span style="font-size: 1.3rem;color:black">
