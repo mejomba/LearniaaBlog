@@ -122,7 +122,7 @@ class RoutingController extends Controller
         $feedkey = [];
         $feedkey = array_merge($feedkey,request()->feedkey);
         $feedradepa = [];
-        $feedradepa = array_merge($feedkey,request()->feedradepa);
+        $feedradepa = array_merge($feedradepa,request()->feedradepa);
         foreach($feedkey as $item => $value)
         {
             $feeds = ['key' => $value , 'caption' =>$feedback[$item],'radepa' => $feedradepa[$item]];

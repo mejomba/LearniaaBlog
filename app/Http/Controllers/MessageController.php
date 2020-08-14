@@ -103,7 +103,7 @@ class MessageController extends Controller
                         return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
                     }
                 }
-                else
+                elseif(strlen(request()->email)==11)
                 {
                     $profile = Profile::where('pk_users',$user->pk_users)->first();
                     $profile->email = request()->email ; 

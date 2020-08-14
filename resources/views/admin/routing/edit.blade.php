@@ -54,7 +54,7 @@
                       <div class="input-group-prepend">
                         
                       </div>
-                      <input class="form-control" name="feedradepa" placeholder="آیدی رد پا " type="text" value="{{$route->type_question}}">
+                      <input class="form-control" name="type_question" placeholder="نوع سوال " type="text" value="{{$route->type_question}}">
                     </div>
                   </div>
 
@@ -85,9 +85,25 @@
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
                           </div>
-                          @foreach($feedback as $key =>$value )
+                          @foreach($feedback as $value )
 
-                          <input name="feedkey[]" class="form-control" placeholder="کلید جواب " type="text" value={{$key}}>
+                          <input name="feedkey[]" class="form-control" placeholder="کلید جواب " type="text" value="{{$value->key}}">
+                          @endforeach
+
+                        </div>           
+                      </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                          </div>
+                          @foreach($feedback as $value )
+
+                          <input name="feedback[]" class="form-control" placeholder="کلید جواب " type="text" value="{{$value->caption}}">
                           @endforeach
 
                         </div>           
@@ -100,8 +116,8 @@
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
                           </div>
-                          @foreach($feedback as $feed)
-                          <input name="feedback[]" class="form-control" placeholder="جواب " type="text" value="{{$feed}}">
+                          @foreach($feedback as $value)
+                          <input name="feedradepa[]" class="form-control" placeholder="جواب " type="text" value="{{$value->radepa}}">
                           @endforeach
 
                         </div>   
