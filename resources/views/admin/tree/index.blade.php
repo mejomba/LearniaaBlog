@@ -109,7 +109,8 @@
 
                                            
  <!---- Modal Delete -->                       
- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
     <div class="modal-content">
       <div class="modal-header">
@@ -124,10 +125,7 @@
        
           <div class="card-body px-lg-1 py-lg-1">
             <div class="row">   
-          
-
-
-
+          XS
             </div>
             </div>
 
@@ -163,7 +161,7 @@ function del()
                         
 
  <!---- Modal CreateNode -->                       
- <div class="modal fade" id="ModalCreateNode" tabindex="-1" role="dialog" aria-labelledby="ModalCreateNodeLabel" aria-hidden="true">
+ <div class="modal fade" id="ModalCreateNode" tabindex="-1" role="dialog" >
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
     <div class="modal-content">
       <div class="modal-header">
@@ -229,6 +227,8 @@ function Modal_CreateNode()
 {
   $("#ModalCreateNode").show();
   document.getElementById("ModalCreateNode").setAttribute("class","modal fade show");
+  document.getElementById("ModalCreateNode").setAttribute("style","display:block");
+  
 }
 
 function create()

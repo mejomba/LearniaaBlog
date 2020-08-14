@@ -6949,7 +6949,7 @@ a.close.disabled
 
 .modal-backdrop
 {
-    position: fixed;
+    
     z-index: 1040;
     top: 0;
     right: 0;
