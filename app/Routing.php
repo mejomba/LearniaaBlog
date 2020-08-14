@@ -16,9 +16,7 @@ class Routing extends Model
       return  [ 'pk_routing' => 'کلید مسیریابی',
                 'location_user_id' => 'آیدی مکان',
                 'type_question' => 'نوع سوال',
-                'question' => 'متن سوال',
-                'content' => 'محتوا',
-                'feedback' => 'جواب',
+              
                 ] ;
    }
 

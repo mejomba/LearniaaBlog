@@ -10,18 +10,19 @@
 <section class="container-fluid">
 
     <div class="row">
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:50px !important;
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:90px !important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;">
 
+<!--
 <div class="row">
             <div class="col-12 col-md-12 text-center">
                 <a href="{{route('academy.road',['pk_tree'=>$selected_road])}}">
                   <button class="btn btn-secondary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
                 </a>
                 </div>
-          </div>
-
+          </div>  -->
+ 
 
             <div class="card shadow border-0"  >
                 <div class="card-header" style="background-color:#20C5BA ">

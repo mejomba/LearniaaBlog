@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> ایجاد پست | لرنیا </title>
-  <meta  name="description" content=" ایجاد پست | لرنیا">
+<title> ایجاد مسیر | لرنیا </title>
+  <meta  name="description" content=" ایجاد مسیر | لرنیا">
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
             <div class="card shadow border-0">
               <div class="card-header" style="background-color:#20C5BA ">
                 <div class="text-center">
-                <h1>ایجاد پست</h1>
+                <h1>ایجاد مسیر</h1>
                 </div>
                 
               </div>

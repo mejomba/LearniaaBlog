@@ -228,6 +228,7 @@ var tree_parent = 0 ;
 function Modal_CreateNode()
 {
   $("#ModalCreateNode").show();
+  document.getElementById("ModalCreateNode").setAttribute("class","modal fade show");
 }
 
 function create()

@@ -14,44 +14,21 @@
         background-image: url("/images/Academy/roadmap/Register.svg") ;
         background-repeat: no-repeat;
         background-size: cover;
-         height: 290px;
-        
+         height: 290px; 
     }
+
     @keyframes pulse2
-    {
-        0% {
-        
-            opacity: 0;
-        }
-
-        50% {
-            
-            opacity: 0.5;
-        }
-
-        100% {
-            
-            opacity: 1;
-            }
+    {0% { opacity: 0; }
+    50% {opacity: 0.5; } 
+    100% {opacity: 1; }
     }
 
     @keyframes move
-    {
-        0% {
-            transform : scale(1);
-            opacity: 0;
-        }
-
-        50% {
-            transform : scale(0.75);
-            opacity: 0.5;
-        }
-
-        100% {
-            transform : scale(1);
-            opacity: 1;
-            }
-    }
+    {0% {transform : scale(1); opacity: 0;}
+     50% {transform : scale(0.75);opacity: 0.5;}
+     100% { transform : scale(1);opacity: 1;}   
+           
+   }
     
 
 
@@ -94,7 +71,7 @@
                              </div>
                                     <div class="modal-footer">
                                         <button type="button" onclick="CloseModalErrorApi()" class="btn btn-primary"  
-                                        data-dismiss="modal">بستن</button>
+                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
                                 </div>

@@ -126,7 +126,7 @@
                    @if($payment_status == 'Yes' || $current_course->isFree == 'Yes' )
                         <div class="col-md-12 text-center" >
                             <a style="padding-bottom : 5px" _target="blank"
-                               href="{{ $current_course['download_link'] }}"
+                               href="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}"
                                class="btn fourth btn-video btnblogPost">دانلود آموزش</a>
                         </div>
                         </div>
@@ -158,7 +158,7 @@
 
                             <video class="afterglow" id="my-video" width="1920" height="1080"
                                     poster="{{Storage::url('course/'. $package['folder'] .'/' .$current_course['pic_cover'])}}"
-                                    src="{{$current_course['download_link']}}">
+                                    src="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}">
                              </video>
 
                         </div>
