@@ -30,5 +30,10 @@ class Package extends Model
     {
      return $this->hasOne('App\Learner', 'pk_learner', 'pk_learner');
     }
+
+    public function tree()
+    {
+     return $this->hasOne('App\Tree', 'pk_tree', 'pk_tree');
+    }
     
 }

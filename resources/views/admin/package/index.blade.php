@@ -49,7 +49,7 @@
                           {{ $package['pk_package'] }} 
                           </td>
                           <td>
-                          {{ $package['pk_tree'] }} 
+                          {{ $package->tree['name'] }} 
                           </td>
                           
                           <td>
