@@ -60,6 +60,7 @@ Route::post('/message/newspaperMobile', 'MessageController@newspaperMobile')->na
 Route::post('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback')->name('login.google.callback');
 
+Route::get('/blog/rep', 'BlogController@replace');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function() 
 {
@@ -76,6 +77,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/blog/update/{id}', 'BlogController@update')->name('admin.blog.update');
     Route::get('/blog/delete/{id}', 'BlogController@destroy')->name('admin.blog.delete');
     Route::post('/blog/upload', 'BlogController@upload')->name('admin.blog.upload');
+
 
     Route::get('/category/index', 'CategoryController@index')->name('admin.category.index');
     Route::get('/category/create', 'CategoryController@create')->name('admin.category.create');

@@ -55,6 +55,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        dd(request()->content);
         $validator =  $this->validation($request);
 
         if ($validator->fails())
@@ -696,6 +697,7 @@ class BlogController extends Controller
         return $validator ;
     }
 
+    
 
     public function validationUpdate(Request $request)
     {
@@ -741,7 +743,7 @@ class BlogController extends Controller
               $pic = request()->file('upload');
               $pic_name = $pic->getClientOriginalName();
               $path = Storage::putFileAs( 'post', $pic, $pic_name);
-              $url2 = Storage::url('post/'.$pic_name);
+              dd($url2 = Storage::url('post/'.$pic_name));
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
               $url =   $url2 ;  
               $msg = 'تصویر با موفقیت اپلود شد';                 
