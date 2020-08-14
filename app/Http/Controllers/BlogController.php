@@ -42,6 +42,29 @@ class BlogController extends Controller
         return view('site.blog.index',compact('recent_post'));
     }
 
+    public function replace()
+    {
+      $blog = blog::get();
+      foreach($blog as $item)
+      {
+          $item->content = str_replace('5c76fd66bf6fa1001152cbea.storage.liara.ir/learniaa','file.learniaa.com/files',$item->content);
+          
+          dd($item->save());  
+
+      }
+
+      foreach($blog as $item)
+      {
+          $item->content = str_replace('file.learniaa.com/learniaa','file.learniaa.com/files',$item->content);
+          
+         dd($item->save());  
+         
+      }     
+      
+
+    }
+
+
 
     public function detail($slug,$desc)
     {  

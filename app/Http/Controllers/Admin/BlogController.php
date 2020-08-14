@@ -55,6 +55,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        dd(request()->content);
         $validator =  $this->validation($request);
 
         if ($validator->fails())
@@ -696,6 +697,7 @@ class BlogController extends Controller
         return $validator ;
     }
 
+    
 
     public function validationUpdate(Request $request)
     {
