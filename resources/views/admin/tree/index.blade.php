@@ -125,7 +125,8 @@
        
           <div class="card-body px-lg-1 py-lg-1">
             <div class="row">   
-          XS
+         
+            
             </div>
             </div>
 
