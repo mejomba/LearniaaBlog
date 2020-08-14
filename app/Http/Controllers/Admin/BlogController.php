@@ -739,12 +739,24 @@ class BlogController extends Controller
             if($request->hasFile('upload')) 
             {
               $pic = request()->file('upload');
-              $pic_name = $pic->getClientOriginalName();
-              $path = Storage::putFileAs( 'post', $pic, $pic_name);
+              $mimeType = $pic->getMimeType();
+              $pic_name = uniqid();
+            
+             if($mimeType == 'image/jpeg')
+             {
+               $path = Storage::putFileAs( 'post', $pic, $pic_name.'.jpg');
+               $pic_name = $pic_name.'.jpg' ;
+             }  
+             elseif($mimeType == 'image/png')
+             {
+               $path = Storage::putFileAs( 'post', $pic, $pic_name.'.png');
+               $pic_name =  $pic_name.'.png' ;
+             }
+
               $url2 = Storage::url('post/'.$pic_name);
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
               $url =   $url2 ;  
-              $msg = 'تصویر با موفقیت اپلود شد';                 
+              $msg = 'تصویر با موفقیت اپلود شد'; 
               @header('Content-type: text/html; charset=utf-8');
               return   $response = [
                 "uploaded" => 1,

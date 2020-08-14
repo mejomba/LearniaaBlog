@@ -162,7 +162,14 @@ class CourseController extends Controller
      */
     public function repair()
     {
-        
+        $courses = Course::orderBy('pk_course','ASC')->get();
+        foreach ($courses as $course )
+         { 
+             $row = Course::find($course['pk_course']);
+             $str = substr($row['download_link'],9,strlen($row['download_link']));
+             $row['download_link'] = $str ;
+             $row->save();
+         }
     }
 
     /**

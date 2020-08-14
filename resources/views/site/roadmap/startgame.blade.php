@@ -1,4 +1,4 @@
-@extends('site.test.layout_game')
+@extends('site.roadmap.layout_game')
 @section('Head')
     <title> لرنیا آکادمی | لرنیا </title>
     <meta name="description" content="لرنیا آکادمی  | لرنیا ">

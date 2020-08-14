@@ -1,5 +1,5 @@
 
-@extends('site.test.layout_game')
+@extends('site.roadmap.layout_game')
 @section('Head')
     <title> لرنیا آکادمی | لرنیا </title>
     <meta name="description" content="لرنیا آکادمی  | لرنیا ">
@@ -205,37 +205,37 @@ function GetPopupData(LocationUserId)
         if(LocationUserId === 'sandogh_python' )
         {
             $("#SectionTitle").text('پایتون (Python)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=29');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=29');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_htmlcss' )
         {
             $("#SectionTitle").text('اچ تی ام ال - سی اس اس (HTML-CSS)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=31');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=31');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_php')
         {
             $("#SectionTitle").text('پی اچ پی (PHP)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=28');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=28');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_js')
         {
             $("#SectionTitle").text('جاوا اسکریپت (JAVASCRIPT)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=32');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=32');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_laravel')
         {
             $("#SectionTitle").text('لاراول (LARAVEL)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=30');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=30');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_react')
         {
             $("#SectionTitle").text('ری اکت (REACT)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=33');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=33');
             OpenSandogh() ;
         }
     }

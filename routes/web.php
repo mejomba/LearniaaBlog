@@ -13,6 +13,8 @@ Route::get('/academy/road', 'AcademyController@road')->name('academy.road');
 Route::get('/academy/mylearn', 'AcademyController@start_mylearn')->name('academy.mylearn');
 Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')->name('academy.course');
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
+Route::post('/academy/roadmap', 'AcademyController@roadmap')->name('roadmap');
+Route::get('/academy/roadmap', 'AcademyController@detail');
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
 Route::get('/package/insertDataCourseAdobeXD', 'PackageController@insertDataCourseAdobeXD')->name('package.insertDataCourseAdobeXD');
@@ -25,9 +27,7 @@ Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackf
 Route::get('/mail', 'MailController@store');
 
 Route::get('/test', 'ApiController@test');
-Route::get('/test/startgame', 'TestController@startgame')->name('startgame');
-Route::post('/test/roadmap', 'TestController@roadmap')->name('roadmap');
-Route::get('/test/roadmap', 'TestController@startgame');
+
 
 
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
@@ -192,6 +192,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/course/update/{id}', 'CourseController@update')->name('admin.course.update');
     Route::get('/course/delete/{id}', 'CourseController@destroy')->name('admin.course.delete');
     Route::get('/course/duplicate/{id}', 'CourseController@duplicate')->name('admin.course.duplicate');
+    Route::get('/course/repair', 'CourseController@repair')->name('admin.course.repair');
 
     Route::get('/error/index', 'ErrorController@index')->name('admin.errors.index');
     Route::get('/error/show', 'ErrorController@show')->name('admin.errors.show');

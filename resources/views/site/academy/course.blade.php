@@ -55,7 +55,7 @@
                                <div class="row"> 
                                    <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
                                    <div class="col-md-4" style="margin-top:10px"> 
-                                    <img class=" img-border" src="{{ asset('images/Academy/Money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                                    <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
                                     {{$package['price']}} تومان </div>        
                                     <div class="col-md-4">  <button class="btn btnGreen" type="button"
                                      onclick="CheckUserLogin()">خرید دوره  </button>         
@@ -65,7 +65,7 @@
                                <div class="row"> 
                                    <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
                                    <div class="col-md-4" style="margin-top:10px"> 
-                                    <img class=" img-border" src="{{ asset('images/Academy/Money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                                    <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
                                     {{$package['price']}} تومان </div>        
                                     <div class="col-md-4">  <button type="button" class="btn btnGreen" disabled >خرید دوره</button>         
                                     </div>
