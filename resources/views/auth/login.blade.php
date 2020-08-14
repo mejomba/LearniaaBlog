@@ -30,7 +30,11 @@
                         <div class="form-group d-flex mt-2">
                             <img class="rounded-circle mr-1"
                                  src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
-                            <input type="hidden" name="username" value="{{ $_GET['username'] }}">
+                                 @if(isset($_GET['username']))
+                                 <input type="hidden" name="username" value="{{ $_GET['username'] }}">
+                                 @else
+                                 <script>window.location = "/reset/showcallbackloginform";</script>
+                                 @endif
                             <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور">
 
                         </div>
