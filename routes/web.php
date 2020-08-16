@@ -21,14 +21,8 @@ Route::get('/package/insertDataCourseAdobeXD', 'PackageController@insertDataCour
 
 Route::get('/Transaction/store', 'TransactionController@store')->name('transaction.store');
 Route::get('/Transaction/show', 'TransactionController@show')->name('transaction.show');
-Route::get('/Transaction/callback', 'TransactionController@callback')->name('transaction.callback');
-Route::get('/Transaction/showcallbackform', 'TransactionController@showcallbackform')->name('transaction.showcallbackform');
 
 Route::get('/mail', 'MailController@store');
-
-Route::get('/test', 'ApiController@test');
-
-
 
 Route::get('/assist', 'HomeController@ShowAssist')->name('assist');
 Route::get('/search', 'HomeController@search')->name('search.index');
@@ -39,7 +33,7 @@ Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
-Route::get('/post/{slug}/{desc}', 'BlogController@detail')->name('blog.detail');
+Route::get('/blog/{title}', 'BlogController@show')->name('blog.show');
 Route::get('/blog/category/{slug}', 'BlogController@postByCategory')->name('blog.category');
 Route::get('/blog/tag/{slug}', 'BlogController@postByTag')->name('blog.tag');
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');

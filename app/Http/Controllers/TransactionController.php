@@ -20,208 +20,106 @@ use Carbon\Carbon;
 class TransactionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $instance_Model_transaction = new Transaction();
-        $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
-        $user =  Auth::user() ;
-        $transactions = Transaction::where('pk_users', $user->pk_users)->get();
-        return view('user.transaction.index',compact('transactions','names'));
-    }
-
-    /**
-     * 
-     *  انتقال به صفحه افزایش موجودی
-     *
-     */
-    public function create()
-    {
-        $user =  Auth::user() ;
-        $profile = Profile::where('pk_users', $user->pk_users)->first();   
-        $wallet = $profile->wallet;
-        return view('user.transaction.create',compact('wallet'));
-        
-    }
-
-    /**
-     *    ثبت درخواست افزایش موجودی و انتقال به صفحه بانک 
+     *    ثبت تراکنش مالی و ارجاع به دروازه پرداخت برای مشتری
      */
 
-    public function store(Request $request)
-    {
+ public function store(Request $request)
+ {
         $validator =  $this->validation($request);
         if ($validator->fails())
         {   return redirect()->back()
             ->withErrors($validator)
-            ->withInput(); }                                  
-        else
-        {       
-                 $invoice = (new Invoice)->amount( (int) request()->price);
-                  $driver = $invoice->getDriver();
-                  $url= route('transaction.show');
-                  if($invoice)
-                  {   
-                        return Payment::callbackUrl($url)->purchase($invoice, function($driver, $transactionId) 
-                        {
-                            
-                            $transaction = new Transaction();
-                            $user =  Auth::user() ;
-                            $transaction->pk_users =  $user->pk_users ;
-                            $transaction->pk_package = request()->pk_package;
-                            $transaction->digital_receipt = $transactionId ;
-                            $transaction->price = request()->price;
-                            
-                            $data_extras = array();
-                            $data_extras["problem"] = 'عملیات موفق';
-                            $transaction->extras =  json_encode($data_extras,false) ; 
-                            $transaction->type = request()->type;
-                            $transaction->status = 'در انتظار تایید';
-                            $transaction->redirectFromURL = request()->redirectFromURL;
-                           
-                            $verta = Verta::now();
-                            $date =  $verta->year . '/' . $verta->month . '/' .    $verta->day ;
-                            $transaction->date= $date;
-                            
-                            $now = Carbon::now();
-                            $transaction->time =$now->toDateString();
+            ->withInput();
+        }                                  
+         else
+         {       
+                $user =  Auth::user() ;
+                $profile = Profile::where('pk_users', $user->pk_users)->first();   
+                 $wallet = $profile->wallet;
+                if( (int) $wallet >= (int) request()->price)
+                {
+                    $transaction = new Transaction();
+                    $transaction->pk_users =  $user->pk_users ;
+                    $transaction->pk_package = request()->pk_package;
+                    $transaction->digital_receipt = uniqid() ;
+                    $transaction->price = request()->price;
+                    $transaction->type = request()->type;
+                    $transaction->status = 'عملیات موفق';
+                    $transaction->redirectFromURL = request()->redirectFromURL;
+                    $verta = Verta::now();
+                    $date =  $verta->year . '/' . $verta->month . '/' .    $verta->day ;
+                    $transaction->date= $date;
+                    $now = Carbon::now();
+                    $transaction->time =$now->toDateString();
+                    $transaction->save(); 
+                    return redirect($transaction['redirectFromURL'])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید'); 
+                }   
+                else
+                {
+                    $invoice = (new Invoice)->amount( (int) request()->price);
+                    $driver = $invoice->getDriver();
+                    $url= route('transaction.show');
+                    if($invoice)
+                    {   
+                            return Payment::callbackUrl($url)->purchase($invoice, function($driver, $transactionId) 
+                            {
+                                $transaction = new Transaction();
+                                $user =  Auth::user() ;
+                                $transaction->pk_users =  $user->pk_users ;
+                                $transaction->pk_package = request()->pk_package;
+                                $transaction->digital_receipt = $transactionId ;
+                                $transaction->price = request()->price;
+                                $transaction->type = request()->type;
+                                $transaction->status = 'در انتظار تایید';
+                                $transaction->redirectFromURL = request()->redirectFromURL;
+                                $verta = Verta::now();
+                                $date =  $verta->year . '/' . $verta->month . '/' .    $verta->day ;
+                                $transaction->date= $date;
+                                $now = Carbon::now();
+                                $transaction->time =$now->toDateString();
+                                $transaction->save();  
+                            })->pay();
+                    }
+                    else
+                    {
+                        return redirect()->back()->with('report','خطا : مشکل در انجام عملیات انتقال به بانک');
+                    }
+                }
+        }
+ }
 
-                            $transaction->save();
-                            
-                        })->pay();
-                  }
-                  else
-                  {
-                      return redirect()->back()->with('report','خطا : مشکل در انجام عملیات انتقال به بانک');
-                  }
+    /*
+    * بررسی صحت تراکنش و پرداخت توسط مشتری و ارجاع به صفحه مربوطه
+    */
 
-              }
-          
-    }
-
-    
     public function show()
     {
-        try {
-            $transaction = "";
-            $user =  Auth::user() ;    
-            //  $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();
-            // OR 
-            $transaction =  Transaction::where('digital_receipt', $_GET['Authority'] )->get()->first();
-
+       try{
+           $transaction = "";
+           $user =  Auth::user() ;    
+           $transaction =  Transaction::where('digital_receipt', $_GET['Authority'] )->get()->first();
            Payment::amount( (int)$transaction->price)->transactionId($transaction->digital_receipt)->verify();
-
            $status_transaction =  $transaction::find( $transaction['pk_transaction']);
            $status_transaction->status = 'عملیات موفق';
-           $status_transaction->save();
-           
-            // Finalize Success Payment From Bank //
-               
-              /*   if($transaction->type == 'افزایش موجودی کیف پول')
-                    {
-                        // Update & Process Wallet Or Transaction  //
-                        $profile = Profile::where('pk_users', $user->pk_users)->get()->first();
-                        $profile->wallet =   (int) $profile->wallet + (int)$transaction->price ;
-                        $profile->save();
-
-                       // Redirect User To Target Page //
-                        return redirect()->route('user.transaction.create')->with('success','عملیات بانکی با موفقیت انجام شد');      
-                    } */
-                    
-                    
-                    if($transaction->type == 'خرید دوره آموزشی')
-                    {
-                       //$package = Package::find($transaction->pk_package);
-                       // $course = Course::where('pk_package',$transaction->pk_package)->first();
-
-                        return redirect($transaction['redirectFromURL'])
-                        ->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید'); 
-
-                     //    return redirect()->route('academy.show',
-                    //    ['id' => $transaction->pk_package , 'desc' =>  $course['name'] ])
-                            
-                           
-                    }    
-                }
+           $status_transaction->save();                    
+           return redirect($transaction['redirectFromURL'])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید');              
+        }
 
             catch (InvalidPaymentException $exception)
              {
                 $transaction = "";
-                $user =  Auth::user() ;    
-                //  $transaction =  Transaction::where('pk_users', $user->pk_users )->orderBy('pk_transaction', 'DESC')->get()->first();
-                // OR 
+                $user =  Auth::user() ;     
                 $transaction =  Transaction::where('digital_receipt', $_GET['Authority'] )->get()->first();
+                $transaction->status = 'نا معتبر';
+                $data_extras = array();
+                $data_extras["problem"] =  $exception->getMessage();
+                $transaction->extras =  json_encode($data_extras,false) ;    
+                $transaction->save();
+                return redirect($transaction['redirectFromURL'])->with('report','  مشکل در انجام عملیات بانکی');  
+            } 
+      }
 
-                 // process extras --> save all option to array And save to $new_instance
-                 $transaction->status = 'نا معتبر';
-                 
-                   $data_extras = array();
-                    $data_extras["problem"] =  $exception->getMessage();
-                    $transaction->extras =  json_encode($data_extras,false) ;    
-                    $transaction->save();
-
-                    if($transaction->type == 'خرید دوره آموزشی')
-                    {
-                        return redirect($transaction['redirectFromURL'])
-                        ->with('report','  مشکل در انجام عملیات بانکی');  
-                    } 
-           }
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function callback(Request $request)
-    {
-         
-       return redirect(route('transaction.showcallbackform',
-       ['pk_package' => request()->pk_package ,
-        'title' =>  request()->title ,
-        'digital_receipt'=>  request()->digital_receipt
-        ]))->with('success','برای مشاهده و دریافت دوره آموزشی  تلفن همراه را وارد نمایید');    
-
-      
-    }
-
-    public function showcallbackform(Request $request)
-    {
-        return view('auth.callbackpayment');
-    }
-
+     
     public function validation(Request $request)
     {
         $rules =  [
@@ -240,16 +138,4 @@ class TransactionController extends Controller
         return $validator ;
     }
 
-    public function packagelist()
-    {
-        $user =  Auth::user() ;
-        $names = [ 
-            'شماره محصول' ,
-            'نام محصول',
-            'قیمت',
-            'مشاهده',
-        ];
-        $transactions =  Transaction::where('type', 'خرید دوره آموزشی' )->where('pk_users', $user->pk_users)->get();
-        return view('user.transaction.packagelist',compact('names','transactions'));
-    }
 }

@@ -38,7 +38,7 @@
                         <img src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Logo_Of_Learniaa" width="120px" height="120px">
                     </a>
                     <div class="mt-3">
-                        <span class="text-center offset-1 text-white text-justify w-75">در لرنیا جمع شده ایم تا مسیر یادگیری شما را هر چه راحت تر و سریع تر مشخص کرده و با کمک شما پیش بریم</span>
+                        <span class="text-center offset-1 text-white text-justify w-75" style="display: inline-block;">در لرنیا جمع شده ایم تا مسیر یادگیری شما را هر چه راحت تر و سریع تر مشخص کرده و با شما پیش بریم</span>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
 

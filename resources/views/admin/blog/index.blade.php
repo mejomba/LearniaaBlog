@@ -69,7 +69,7 @@
 
                             @if($blog['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('blog.detail',  ['slug' => $blog['pk_blog'] , 'desc' =>  $blog['title'] ] )}}"> 
+                            <a target="_blank" href="{{route('blog.show',  ['title' =>  $blog['title'] ] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                             </a>
                             </span>

@@ -25,7 +25,7 @@
            <h5 class="modal-title" id="ModalLabelModalSandogh">صندوق گنج</h5> 
             </div>  
                                        
-            <div class="modal-body">                      
+            <div class="modal-body"  id="ModalSandoghBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
@@ -72,7 +72,7 @@
            <h5 class="modal-title" id="ModalLabelData">اطلاعات تابلو</h5> 
             </div>  
                                        
-            <div class="modal-body">                      
+            <div class="modal-body" id="ModalDataBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
@@ -165,7 +165,9 @@ document.addEventListener('DOMContentLoaded',function()
 
 function OpenPopup() 
 {
+    
     document.getElementById("ModalData").setAttribute("style","display:block;opacity:100;");
+    $('#ModalData').animate({ scrollTop: 0 }, 'fast');
 }
 
 function ClosePopup()
@@ -176,6 +178,7 @@ function ClosePopup()
  function OpenSandogh() 
 {
     document.getElementById("ModalSandogh").setAttribute("style","display:block;opacity:100;");
+    $('#ModalSandogh').animate({ scrollTop: 0 }, 'fast');
 }
 
 function CloseSandogh()
@@ -257,7 +260,6 @@ function GetPopupData(LocationUserId)
                 success: function(data)
                 {
                     deletecontent();
-                    OpenPopup();
                     $("#content").html(data.content);
                     $("#question").html(data.question);
                     data.feedback.forEach(function(item, index) 
@@ -273,6 +275,7 @@ function GetPopupData(LocationUserId)
                     document.getElementById("feedback").append(Name);   
                     $('#'+item.key+'_feedback').css('margin-left','10px');                  
                     });
+                    OpenPopup();
                 },
                 type: 'POST'
             });
