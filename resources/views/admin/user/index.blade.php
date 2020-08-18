@@ -58,6 +58,9 @@
                           <td>
                           {{ $user['username'] }} 
                           </td>
+                          <td>
+                          {{ $user->profile['wallet'] }} 
+                          </td>
 
                          
                          

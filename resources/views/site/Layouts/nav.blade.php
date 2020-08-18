@@ -1,7 +1,6 @@
  
 <div class="banner-bg" style="direction: rtl">
-    <img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
-{{--    <img src="{{asset('images/header-teamwork.svg')}}" class="learn-bg" alt="">--}}
+<img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
 <nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
@@ -9,7 +8,7 @@
     <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="{{route('index')}}">
         <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image" width="60px">
     </a>
-    <div class="collapse navbar-collapse" id="nav"> <!-- justify-content-center -->
+    <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex col-md-6 col-12" style="font-size:15px; font-weight:500;">
             <li class="nav-item mr-lg-4 ml-lg-4"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
             <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
@@ -18,24 +17,21 @@
            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
 
         </ul>
-      <!-- ---- User Menu ---- -->
-      <!-- <ul class="navbar-nav col-md-3 col-12 offset-lg-2" dir="ltr">
-      </ul> -->
-                    <ul class="navbar-nav col-md-6 col-12" dir="ltr">
-                    @guest
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
-                                       style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
-                                       data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
-                                    <span>ثبت نام / ورود</span>
-                                    </a>
-                                </li>
-                            @endif
-                        @else
+            <ul class="navbar-nav col-md-6 col-12" dir="ltr" style="align-items: center;">
+             @guest
+             @if (Route::has('register'))
+                      <li class="nav-item">
+                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
+                        style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
+                        data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
+                        <span>ثبت نام / ورود</span>
+                     </a>
+                   </li>
+                @endif
+                  @else
                             <li class="nav-item dropdown" style="border-radius:1.2rem;">
                                 <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button"
-                                   style=" border-radius: 50%; width: 50px; height: 50px;"
+                                   style=" border-radius: 50%; width: 50px; height: 50px;margin-left:45px;"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image"
                                          height="35px" width="35px">
@@ -43,20 +39,28 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @if(Auth::user()->type == "مدیر")
+                                    <a class="dropdown-item" href="#" style="float:left">موجودی کیف
+                                     <img src="{{ asset('images/Academy/money.svg') }}"
+                                     width="35px" height="35px"></a>
+                                    <label class="dropdown-item" style="font-family:Dastnevis;fontsize:10px">
+                                     <label  style="font-family:Dastnevis;fontsize:10px"> تومان   </label>
+                                      {{ Auth::user()->profile['wallet'] }} 
+                                      </label>
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
-                                        <a class="dropdown-item" href="{{route('admin.blog.index')}}"> پست</a>
-                                        <a class="dropdown-item" href="{{route('admin.category.index')}}"> دسته بندی</a>
-                                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> محصول</a>
-                                        <a class="dropdown-item" href="{{route('admin.tree.index')}}"> درخت</a>
-                                        <a class="dropdown-item" href="{{route('admin.transaction.packagelist')}}">خریداری شده</a>
+                                        <a class="dropdown-item" href="{{route('admin.blog.index')}}"> بلاگ</a>
+                                        <a class="dropdown-item" href="{{route('admin.package.index')}}"> پکیج</a>
+                                        <a class="dropdown-item" href="{{route('admin.course.index')}}"> درس</a>
+                                        <a class="dropdown-item" href="{{route('admin.routing.index')}}">مسیر</a>
                                     @endif
 
                                     @if(Auth::user()->type == "کاربر")
-                                    {{-- <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a> --}}
-                                    {{--  <a class="dropdown-item" href="{{route('user.profile.edit')}}"> پروفایل</a> --}}
-                                    {{-- <a class="dropdown-item" href="{{route('user.transaction.packagelist')}}">خریداری شده</a> --}}
-                                    {{-- <a class="dropdown-item" href="{{route('user.transaction.create')}}"> کیف پول</a> --}}
-                                    {{--  <a class="dropdown-item" href="{{route('user.transaction.index')}}"> تراکنش</a> --}}
+                                    <a class="dropdown-item" href="#" style="float:left">موجودی کیف
+                                     <img src="{{ asset('images/Academy/money.svg') }}"
+                                     width="35px" height="35px"></a>
+                                    <label class="dropdown-item" style="font-family:Dastnevis;fontsize:10px">
+                                     <label  style="font-family:Dastnevis;fontsize:10px"> تومان   </label>
+                                      {{ Auth::user()->profile['wallet'] }} 
+                                      </label>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">خروج </a>
@@ -66,7 +70,6 @@
                             </li>
                         @endguest
                     </ul>
-        <!-- ---- User Menu ---- -->
                 </div>
             </div>
       </nav>
@@ -82,25 +85,13 @@
             }
         });
     });
-
-    $(".navbar-toggler").on("click",function () {
-
-        $("#navbar").css("backgroundColor","#20c5ba")
-        $('.navbar-nav').css("backgroundColor","#20c5ba")
-
-       /* if($('.navbar-collapse').hasClass('show'))
-        {
-            $('.navbar-nav').css("backgroundColor","transparent")
-        }
-        else
-        {
-            $('.navbar-nav').css("backgroundColor","white")
-        } */
-    });
-
+$(".navbar-toggler").on("click",function ()
+ {
+  $("#navbar").css("backgroundColor","#20c5ba")
+  $('.navbar-nav').css("backgroundColor","#20c5ba")});
     let status = 0 ;
-
-    $('.navbar-toggler').on('click',function () {
+    $('.navbar-toggler').on('click',function ()
+     {
         var icon = $('.navbar-toggler i') ;
         if(status===0)
         {

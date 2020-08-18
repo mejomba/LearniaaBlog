@@ -62,8 +62,6 @@
 <!-- ModalSandogh Box --> 
 
 
-
-
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 

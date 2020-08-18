@@ -29,20 +29,33 @@ class GapController extends Controller
         {
             foreach ($_POST as $param_name => $param_val)
             {
-               $gap->sendText("+989901918193", $param_name . '-' . $param_val);
+               $gap->sendText("+989300471406", $param_name . '-' . $param_val);
             }
         }
 
         if ( $type == 'text' && $message == '/listdraftpost' ) 
         {
-            $results = Blog::where('status','پیش نویس')->select('pk_post', 'title','status')->get();
+            $results = Blog::where('status','پیش نویس')->select('pk_blog', 'title','status')->get();
           
             foreach($results as $one_post)
             { 
-                $gap->sendText("+989901918193", $one_post['pk_post'].' '.$one_post['title']); 
+                $gap->sendText("+989300471406", $one_post['pk_post'].' '.$one_post['title']); 
             }
           
         }
+
+        
+        if ( $type == 'text') 
+        {
+            $post = Blog::find($message);
+            $post->status = "انتشار";
+            $post->save();
+          
+            $gap->sendText($post->title);  
+            $gap->sendText("+989300471406", "پست منتشر شد");   
+        }
+
+
     }
 
     

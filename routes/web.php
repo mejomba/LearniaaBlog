@@ -17,7 +17,6 @@ Route::post('/academy/roadmap', 'AcademyController@roadmap')->name('roadmap');
 Route::get('/academy/roadmap', 'AcademyController@detail');
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
-Route::get('/package/insertDataCourseAdobeXD', 'PackageController@insertDataCourseAdobeXD')->name('package.insertDataCourseAdobeXD');
 
 Route::get('/Transaction/store', 'TransactionController@store')->name('transaction.store');
 Route::get('/Transaction/show', 'TransactionController@show')->name('transaction.show');

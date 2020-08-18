@@ -5,26 +5,20 @@
 @endsection
 @section('content')
 <div class="row ">
-
-<div class="auth-card col-lg-4 col-md-7 col-sm-8 col-9 offset-1 wow fadeInUp" data-wow-delay="0.5s" style=" margin-top: 100px!important;
-    border-bottom-right-radius: 50px!important;
-    border-bottom-left-radius: 50px!important;" >
+<div class="auth-card col-lg-4 col-md-7 col-sm-8 col-9 offset-1 wow fadeInUp" data-wow-delay="0.5s" style=" margin-top: 100px!important;border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;" >
 <div class="card shadow border-0">
 <div class="card-header" style="background-color:#20C5BA ">
 <div class="text-center"><h3>ثبت نام کاربران</h3></div>
 </div>
 <div class="card-body pr-3 py-3">
-    <form class="form" method="POST" action="{{route('register')}}">
-    @csrf
-
-    @if(isset($_GET['redirectFromURL']))
-    <input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">
-    @endif
-
-    @if(isset($_GET['pk_package']))
-    <input type="hidden" name="pk_package" value="{{$_GET['pk_package']}}">
-    @endif
-
+<form class="form" method="POST" action="{{route('register')}}">
+@csrf
+@if(isset($_GET['redirectFromURL']))
+<input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">
+@endif
+@if(isset($_GET['pk_package']))
+<input type="hidden" name="pk_package" value="{{$_GET['pk_package']}}">
+@endif
 <div class="form-group">
 <div class="input-group input-group-alternative">
 <div class="input-group-prepend">

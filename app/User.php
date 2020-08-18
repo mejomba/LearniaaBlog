@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     public function profile()
     {
-       return $this->hasOne(Profile::class);
+       return $this->hasOne(Profile::class,'pk_users','pk_users');
     }
 
     public function learner()
@@ -65,7 +65,7 @@ class User extends Authenticatable
                  'type' => 'نوع',
                  'name' => 'نام کاربر',
                  'mobile' => 'شماره موبایل',
-                 
+                 'Wallet'=> 'موجودی',
                 
 
                  ] ;
