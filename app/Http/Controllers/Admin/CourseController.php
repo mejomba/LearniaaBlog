@@ -84,30 +84,7 @@ class CourseController extends Controller
 
             /* SEO */
             /* Metatags */
-            $htmlmeta=array(
-                "keywords" => request()->keywords,
-                "description" => request()->description,
-                "author" => request()->author,
-                "refresh" => request()->refresh,
-                "viewport" => request()->viewport
-    
-            );
-            $openg=array(
-                "og_title" => request()->og_title,
-                "og_image" => request()->og_image,
-                "og_description" => request()->og_description,
-                "og_type" => request()->og_type,
-                "og_article" => request()->og_article
-            );
-            $twitter=array(
-                "twitter_card" => request()->twitter_card,
-                "twitter_site" => request()->twitter_site,
-                "twitter_description" => request()->twitter_description,
-                "twitter_title" => request()->twitter_title,
-            );
-            $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
-
-            $new_instance->metatag=json_encode($metatags);
+          
             /* Metatags */
 
             /* Schema Product */
@@ -223,30 +200,7 @@ class CourseController extends Controller
 
             /* SEO */
             /* Metatags */
-            $htmlmeta=array(
-                "keywords" => request()->keywords,
-                "description" => request()->description,
-                "author" => request()->author,
-                "refresh" => request()->refresh,
-                "viewport" => request()->viewport
-    
-            );
-            $openg=array(
-                "og_title" => request()->og_title,
-                "og_image" => request()->og_image,
-                "og_description" => request()->og_description,
-                "og_type" => request()->og_type,
-                "og_article" => request()->og_article
-            );
-            $twitter=array(
-                "twitter_card" => request()->twitter_card,
-                "twitter_site" => request()->twitter_site,
-                "twitter_description" => request()->twitter_description,
-                "twitter_title" => request()->twitter_title,
-            );
-            $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
-
-            $course->metatag=json_encode($metatags);
+           
             /* Metatags */
 
             /* Schema Product */
