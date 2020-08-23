@@ -1,5 +1,5 @@
 
-@extends('site.test.layout_game')
+@extends('site.roadmap.layout_game')
 @section('Head')
     <title> لرنیا آکادمی | لرنیا </title>
     <meta name="description" content="لرنیا آکادمی  | لرنیا ">
@@ -25,7 +25,7 @@
            <h5 class="modal-title" id="ModalLabelModalSandogh">صندوق گنج</h5> 
             </div>  
                                        
-            <div class="modal-body">                      
+            <div class="modal-body"  id="ModalSandoghBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
@@ -62,8 +62,6 @@
 <!-- ModalSandogh Box --> 
 
 
-
-
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
@@ -72,7 +70,7 @@
            <h5 class="modal-title" id="ModalLabelData">اطلاعات تابلو</h5> 
             </div>  
                                        
-            <div class="modal-body">                      
+            <div class="modal-body" id="ModalDataBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
@@ -165,7 +163,9 @@ document.addEventListener('DOMContentLoaded',function()
 
 function OpenPopup() 
 {
+    
     document.getElementById("ModalData").setAttribute("style","display:block;opacity:100;");
+    $('#ModalData').animate({ scrollTop: 0 }, 'fast');
 }
 
 function ClosePopup()
@@ -176,6 +176,7 @@ function ClosePopup()
  function OpenSandogh() 
 {
     document.getElementById("ModalSandogh").setAttribute("style","display:block;opacity:100;");
+    $('#ModalSandogh').animate({ scrollTop: 0 }, 'fast');
 }
 
 function CloseSandogh()
@@ -205,37 +206,37 @@ function GetPopupData(LocationUserId)
         if(LocationUserId === 'sandogh_python' )
         {
             $("#SectionTitle").text('پایتون (Python)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=29');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=29');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_htmlcss' )
         {
             $("#SectionTitle").text('اچ تی ام ال - سی اس اس (HTML-CSS)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=31');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=31');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_php')
         {
             $("#SectionTitle").text('پی اچ پی (PHP)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=28');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=28');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_js')
         {
             $("#SectionTitle").text('جاوا اسکریپت (JAVASCRIPT)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=32');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=32');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_laravel')
         {
             $("#SectionTitle").text('لاراول (LARAVEL)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=30');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=30');
             OpenSandogh() ;
         }
         if(LocationUserId === 'sandogh_react')
         {
             $("#SectionTitle").text('ری اکت (REACT)');
-            $("#SectionFeedBack").attr("href",' http://127.0.0.1:8000/academy/mylearn?pk_tree=33');
+            $("#SectionFeedBack").attr("href",' https://learniaa.com/academy/mylearn?pk_tree=33');
             OpenSandogh() ;
         }
     }
@@ -257,7 +258,6 @@ function GetPopupData(LocationUserId)
                 success: function(data)
                 {
                     deletecontent();
-                    OpenPopup();
                     $("#content").html(data.content);
                     $("#question").html(data.question);
                     data.feedback.forEach(function(item, index) 
@@ -273,6 +273,7 @@ function GetPopupData(LocationUserId)
                     document.getElementById("feedback").append(Name);   
                     $('#'+item.key+'_feedback').css('margin-left','10px');                  
                     });
+                    OpenPopup();
                 },
                 type: 'POST'
             });

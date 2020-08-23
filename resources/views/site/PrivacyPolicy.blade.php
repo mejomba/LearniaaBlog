@@ -1,45 +1,33 @@
 @extends('site.Layouts.layout_main')
-
 @section('Head')
 <title> حریم خصوصی | لرنیا </title>
-  <meta  name="description" content="حریم خصوصی | لرنیا">
-  <meta  name="keywords"    content="حریم خصوصی" >
+<meta  name="description" content="حریم خصوصی | لرنیا">
+<meta  name="keywords"    content="حریم خصوصی" >
 @endsection
-
 @section('content')
-
-
-  <!-- Section -->
-           <div class="container-fluid" >
-          <div class="row text-center">
-          <div class="col-md-12">
-            <div class="row text-center">
-                   <div class="col-md-3">
-                   </div>
-
-                    <div class="col-md-6">
-                    <img class="img-fluid rounded-circle " style="padding-top:40px;border-radius:20% !important;"
-                    src="{{ asset('images/Template/privacypolicy.svg') }}"
-                    width="600px" height="200px" alt="Learniaa" >
-                    </div>
-
-                    <div class="col-md-3">
-                    </div>
-                </div>
-
-                <h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">حریم خصوصی
-                </h1>
-            </div>
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" style="padding-top:30px;text-align: justify;margin-left:10px;margin-right:10px">
-            <div class="row" style="font-size:15px">
-            <div class="container-fluid">
-            <p style="font-size:18px;line-height: 26pt;">
+<div class="container-fluid" >
+<div class="row text-center">
+<div class="col-md-12">
+<div class="row text-center">
+<div class="col-md-3">
+</div>
+<div class="col-md-6">
+<img class="img-fluid rounded-circle " style="padding-top:40px;border-radius:20% !important;" src="{{ asset('images/Template/privacypolicy.svg') }}" width="600px" height="200px" alt="Learniaa" >
+</div>
+<div class="col-md-3">
+</div>
+</div>
+<h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">حریم خصوصی</h1>          
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+</div>
+<div class="col-md-6" style="padding-top:30px;text-align: justify;margin-left:10px;margin-right:10px">
+<div class="row" style="font-size:15px">
+<div class="container-fluid">
+<p style="font-size:18px;line-height: 26pt;">
             سیاست حفظ حریم خصوصی
 وب‌سایت وب‌جامه طبق قوانین جرایم رایانه‌ای متعهد می‌شود که اطلاعات کاربران را با تمام امکاناتی که در اختیار دارد محافظت کند و به هیچ‌عنوان این اطلاعات را در اختیار سازمان‌ها و مراکز دیگر به منظور تبلیغات یا خدمات دیگر ارائه ندهد.
 همچنین ما این امکان را در اختیار کاربران قرار داده‌ایم تا کاربران در صورت عضویت در سایت وب‌جامه بتوانند، اطلاعات خود را ویرایش کنند یا در صورت درخواست برای حذف کاربری خود با ارسال درخواست به تیم پشتیبان این امکان برای آنها فراهم گردد.
@@ -65,28 +53,17 @@
 اگر در این وبسایت، صاحب حساب کاربری باشید، یا نظری به اشتراک بگذارید، حق درخواست فایل داده‌های شخصی خود -یعنی داده‌هایی که ما از شما دریافت و نگهداری کرده‌ایم- را دارید. این داده‌ها شامل هر چیزی است که در وبسایت بر جای گذاشته‌اید. ضمنا حق درخواست برای پاک کردن تمام داده‌های شخصی‌تان نیز کاملا محفوظ است. البته این داده‌ها مواردی را که برای اهداف مدیریتی، قانونی و امنیتی در اختیار داریم، شامل نمی‌شود.
 تغییرات در سیاست حفظ حریم خصوصی کاربران
 باتوجه به اینکه تغییرات در این برگه بسیار کم است، اما امکان دارد باتوجه به تغییرات در سایت این دسترسی‌ها تغییر بکند و ما ناچار به اعمال تغییرات جدید باشیم که در این صفحه تمام آنها افزوده خواهند شد و استفاده شما از این وب‌سایت به منظور پذیرش این قوانین است. در صورت داشتن هرگونه سوال یا ابهام درباره موارد بالا می‌توانید آنها را به اطلاع ما برسانید تا پاسخ تمام پرسش‌های شما ارسال گردد.
-
-</div> </div>
-
-                                    <div class="row" style="padding-top:35px">
-                                                <div class="col-md-4">
-                                                </div>
-                                                <div class="col-md-4">
-                                              </div>
-                                              <div class="col-md-4">
-                                              </div>
-                                </div>
-                                </div>
-                            <div class="col-md-3">
-                            </div>
-            </div>
-
-
-
-
- <!-- Section -->
-
-
-
-
+</div></div>
+<div class="row" style="padding-top:35px">
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+<div class="col-md-3">
+</div>
+</div>
 @endsection

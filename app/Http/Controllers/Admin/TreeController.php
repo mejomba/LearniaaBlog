@@ -222,22 +222,32 @@ class TreeController extends Controller
     {
             if($request->hasFile('upload')) 
             {
-               
-              $pic = request()->file('upload');
-              $pic_name = $pic->getClientOriginalName();
-              $path = Storage::putFileAs( 'tree', $pic, $pic_name);
-              $url2 = Storage::url('tree/'.$pic_name);
-              $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-              $url =   $url2 ;   
-              $msg = 'اپلود تصویر با موفقیت انجام شد';  
-             @header('Content-type: text/html; charset=utf-8');
-
-           return   $response = [
-             "uploaded" => 1,
-             "filename" =>  $pic_name,
-             "url" => $url,
-             "error" => $msg
-             ];
+                $pic = request()->file('upload');
+                $mimeType = $pic->getMimeType();
+                $pic_name = uniqid();
+              
+               if($mimeType == 'image/jpeg')
+               {
+                 $path = Storage::putFileAs( 'tree', $pic, $pic_name.'.jpg');
+                 $pic_name = $pic_name.'.jpg' ;
+               }  
+               elseif($mimeType == 'image/png')
+               {
+                 $path = Storage::putFileAs( 'tree', $pic, $pic_name.'.png');
+                 $pic_name =  $pic_name.'.png' ;
+               }
+  
+                $url2 = Storage::url('tree/'.$pic_name);
+                $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+                $url =   $url2 ;  
+                $msg = 'تصویر با موفقیت اپلود شد'; 
+                @header('Content-type: text/html; charset=utf-8');
+                return   $response = [
+                  "uploaded" => 1,
+                  "filename" =>  $pic_name,
+                  "url" => $url,
+                  "error" => $msg
+                  ];
           }
     }
 

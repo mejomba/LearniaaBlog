@@ -5,6 +5,10 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Routing;
+use Validator;
+use Auth;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class RoutingController extends Controller
 {
@@ -168,40 +172,32 @@ class RoutingController extends Controller
     {
             if($request->hasFile('upload')) 
             {
-              /*
-              $originName = $request->file('upload')->getClientOriginalName();
-              $fileName = pathinfo($originName, PATHINFO_FILENAME);
-              $extension = $request->file('upload')->getClientOriginalExtension();
-              $fileName = $fileName.'_'.time().'.'.$extension;
-              $request->file('upload')->move(public_path('images'), $fileName);
-              */
-
               $pic = request()->file('upload');
-              $pic_name = $pic->getClientOriginalName();
-              $path = Storage::putFileAs( 'routing', $pic, $pic_name);
+              $mimeType = $pic->getMimeType();
+              $pic_name = uniqid();
+            
+             if($mimeType == 'image/jpeg')
+             {
+               $path = Storage::putFileAs( 'routing', $pic, $pic_name.'.jpg');
+               $pic_name = $pic_name.'.jpg' ;
+             }  
+             elseif($mimeType == 'image/png')
+             {
+               $path = Storage::putFileAs( 'routing', $pic, $pic_name.'.png');
+               $pic_name =  $pic_name.'.png' ;
+             }
 
               $url2 = Storage::url('routing/'.$pic_name);
-               
-         
-
               $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-          /*    $url = 'https://5c76fd66bf6fa1001152cbea.storage.liara.ir/post/'.$pic_name; */
               $url =   $url2 ;  
               $msg = 'تصویر با موفقیت اپلود شد'; 
-           //   $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
-                
               @header('Content-type: text/html; charset=utf-8');
-
               return   $response = [
                 "uploaded" => 1,
                 "filename" =>  $pic_name,
                 "url" => $url,
                 "error" => $msg
                 ];
-
-
-              
-            //  return $response;
           }
     }
 }

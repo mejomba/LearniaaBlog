@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('insertDatapackageAdobeXD', 'ApiController@insertDatapackage_AdobeXD');
-Route::post('insertDataCourseAdobeXD', 'ApiController@insertDataCourse_AdobeXD');
 
 Route::get('blog_posts', 'ApiController@index');
 Route::get('writers/{id}', 'ApiController@writer');

@@ -33,8 +33,19 @@ class AcademyController extends Controller
 
     public function detail(Request $request)
     {
+        /*
          $nodes = Tree::where( ['level' => '0' ] )->get();
-         return view('site.academy.detail',compact('nodes'));
+         return view('site.academy.detail',compact('nodes')); 
+         */
+
+         return view('site.roadmap.startgame');
+    }
+
+    public function roadmap(Request $request)
+    {
+        $uuid = request()->uuid ;
+        $name=request()->name ; 
+        return view('site.roadmap.roadmap',compact('name','uuid'));
     }
 
     public function road(Request $request)

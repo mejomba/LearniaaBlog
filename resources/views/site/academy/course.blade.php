@@ -1,21 +1,13 @@
 @extends('site.Layouts.layout_main')
 @section('Head')
-    <title> لرنیا آکادمی | لرنیا </title>
-    <meta name="description" content="لرنیا آکادمی  | لرنیا ">
-    <meta name="keywords" content="نقشه راه لرنیا,چارت آموزشی لرنیا ,لرنیا آاکادمی">
+<title> لرنیا آکادمی | لرنیا </title>
+<meta name="description" content="لرنیا آکادمی  | لرنیا ">
+<meta name="keywords" content="نقشه راه لرنیا,چارت آموزشی لرنیا ,لرنیا آاکادمی">
 @endsection
 @section('content')
-
-<!-- Blog Posts -->
-
-
 <section class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:50px !important;
-    border-bottom-right-radius: 50px!important;
-    border-bottom-left-radius: 50px!important;">
-
-
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:50px !important;border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
             <div class="row">
             <div class="col-12 col-md-12 text-center">
                 <a href="{{route('academy.mylearn',['pk_tree'=>$selected_road])}}">
@@ -23,7 +15,6 @@
                 </a>
                 </div>
           </div>
-
             <div class="card shadow border-0"  >
                 <div class="card-header" style="background-color:#20C5BA ">
                     <div class="text-center">
@@ -37,9 +28,7 @@
                     <h5 class="card-title "></h5>
                     <p class="card-text">
                     </p>
-                    <!-- Full Pack Sale -->
                 </div>
-
                 <div class=" p-3  ml-2 mr-2 mb-3" style="border-radius: 20px;text-align: center;border:3px solid  #20c5ba;">
                  <form id="PackagePay" action="{{route('transaction.store',['pk_package' => $package['pk_package']]  )}}" method="GET">
                    @csrf
@@ -49,13 +38,12 @@
                    <input type="hidden" name="price"  id="price"  value="{{$package['price']}}">
                    <input type="hidden" name="redirectFromURL"  id="redirectFromURL"  value="{{url()->current()}}">
                    <input type="hidden" name="type"  id="redirectFromURL"  value="خرید دوره آموزشی">
-
-                                
+ 
                                @if($payment_status != 'Yes')
                                <div class="row"> 
                                    <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
                                    <div class="col-md-4" style="margin-top:10px"> 
-                                    <img class=" img-border" src="{{ asset('images/Academy/Money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                                    <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
                                     {{$package['price']}} تومان </div>        
                                     <div class="col-md-4">  <button class="btn btnGreen" type="button"
                                      onclick="CheckUserLogin()">خرید دوره  </button>         
@@ -65,48 +53,30 @@
                                <div class="row"> 
                                    <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
                                    <div class="col-md-4" style="margin-top:10px"> 
-                                    <img class=" img-border" src="{{ asset('images/Academy/Money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                                    <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
                                     {{$package['price']}} تومان </div>        
                                     <div class="col-md-4">  <button type="button" class="btn btnGreen" disabled >خرید دوره</button>         
                                     </div>
                                </div>
                                @endif
-
-                            </form> 
-               
+                        </form> 
                 </div>
-               
             </div>
         </div>
     </div>
-
 <!-- JS Function -->
 <script>
 function CheckUserLogin()
- {
-    $pk_user = document.getElementById("UserLogin").value ;
-    if($pk_user == 'Null')
-    {
-        document.getElementById("ModalConfirmLogin").setAttribute("style","display:block;opacity:100;");
-    }
-    else
-    {
-        document.getElementById("PackagePay").submit();
-    }
- }
-
+ {$pk_user = document.getElementById("UserLogin").value ;
+ if($pk_user == 'Null'){document.getElementById("ModalConfirmLogin").setAttribute("style","display:block;opacity:100;"); }
+ else{document.getElementById("PackagePay").submit();} }
  function ModalConfirmLogin_close()
  {document.getElementById("ModalConfirmLogin").setAttribute("style","");}
-
  function RedirectToLogin()
-  {
-   location.replace("{{ route('reset.showcallbackloginform',['pk_package' => $package->pk_package , 'redirectFromURL' => url()->current() ] ) }}");
-  }
-
+ { location.replace("{{ route('reset.showcallbackloginform',['pk_package' => $package->pk_package , 'redirectFromURL' => url()->current() ] ) }}");}
 </script>
 <!-- JS Function -->
 
-<!-- Modal -->
 <!-- Modal Confirm Login -->                      
 <div class="modal fade" dir="rtl" id="ModalConfirmLogin" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelConfirmLogin" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
@@ -115,13 +85,11 @@ function CheckUserLogin()
            <h5 class="modal-title" id="ModalLabelConfirmLogin">پیغام فرایند خرید</h5> 
             </div>                              
             <div class="modal-body">                      
-                                    <!-- Form &  Body -->
-                                        <div class="card-body px-lg-1 py-lg-1">
-                                            <div class="row">   
-                                             <b style="color:red">برای انجام فرایند خرید لازم است ابتدا ثبت نام کنید </b>
-                                            </div>
-                                            </div>
-                                        <!-- Form &  Body -->
+                          <div class="card-body px-lg-1 py-lg-1">
+                          <div class="row">   
+                         <b style="color:red">برای انجام فرایند خرید لازم است ابتدا ثبت نام کنید </b>
+                          </div>
+                           </div>
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" onclick="RedirectToLogin()"
@@ -135,34 +103,21 @@ function CheckUserLogin()
                                 </div>
                                 </div>                           
 <!-- Modal Confirm Login -->
-<!-- Modal -->
 
-
-
-
-{{--================================TimeLine starts===========================--}}
-
+{{-- TimeLine starts --}}
                 <div class="row " style="margin-top:60px">
                     <div class="col-lg-8 col-md-10 col-sm-11 col-11 border rounded-lg m-4 p-2 mx-auto"  >
                     <ul class="timeline">
                     @php $row_counter = 1 ; @endphp
                     @foreach($courses as $course)   
-                        <li>
-                         <!-- Data -->
+                     <li>
                             <div class="row" id="row">
-                            <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3 hover-style k-cursor-pointer"
-                             style="border: solid 1px #20C5BA ; border-radius: 5px">
-
+                            <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3 hover-style k-cursor-pointer"  style="border: solid 1px #20C5BA ; border-radius: 5px">  
                                 <div class="card-title">
                                         <div class="row">
-                                         
                                             <div class="col-md-4 col-12 text-center" style="margin-top:15px">
-                                            <a class="mb-0">
-                                                قسمت {{$row_counter}} :
-                                                {{$course['name']}}
-                                               
-                                            </a>
-                                                </div>
+                                            <a class="mb-0"> قسمت {{$row_counter}} :{{$course['name']}}  </a>
+                                           </div>
 
                                             <div class="col-md-4 col-12 text-center" style="margin-top:13px">
                                             @if($payment_status == 'Yes' || $course['isFree'] == 'Yes')
@@ -186,32 +141,17 @@ function CheckUserLogin()
                                                class="btn fourth btn-round">مشاهده</a>
                                                @else
                                                @endif
-                                            
-                                            </div>
-
-                                      </div>
-
+                                           </div>
+                                     </div>
                                 </div>
-
-                               
                             </div>
-                        <!-- Data -->
-                            </div>
-                            
-                       </li>
+                       </div>  
+                    </li>
                @php $row_counter =  $row_counter + 1 ; @endphp     
                @endforeach
                 </ul>
-               </div>
-               
-             </div>
-             
-{{--======================timeLine ends===================--}}
-
-
- <!-- container -->
+               </div> 
+             </div>         
+{{-- timeLine ends --}}
 </section>
-<!-- End BLog Posts -->
-
-
 @endsection

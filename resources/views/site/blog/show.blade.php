@@ -1,67 +1,19 @@
 @extends('site.Layouts.layout_main')
-
 @section('Head')
-
-    <title>{{ $one_post['title'] }}</title>
-
-    @php $meta=json_decode($one_post['metatag'],true) @endphp
-
-    <!-- HTML Meta -->
-  
-    @foreach($meta['htmlmeta'] as $key => $value)
-
-    <meta  name="{{$key}}" content="{{$value}}" >
-
-    @endforeach
-    <!-- OpenGraph Meta -->
-    @foreach($meta['opengraph'] as $key => $value)
-
-    <meta  name="{{$key}}" content="{{$value}}" >
-
-    @endforeach
-    <!-- Twitter Meta -->
-
-    @foreach($meta['twitter'] as $key => $value)
-
-    <meta  name="{{$key}}" content="{{$value}}" >
-
-    @endforeach
-
-    <!-- Schema Meta -->
-
-    @php $meta=json_decode($one_post['schema_markup'],true) @endphp
-
-    @foreach($meta as $key => $value)
-
-    <meta  name="{{$key}}" content="{{$value}}" >
-
-    @endforeach
-
-    @if($one_post['video'] == 'yes')
-    @php $videometa=json_decode($one_post['video_schema'],true) @endphp
-
-    <!-- Video meta -->
-
-    <script type="application/ld+json">
-    {
-    @foreach($videometa as $key => $value)
-    "{{$key}}" {{':'}} "{{$value}}",
-    @endforeach
-
-    }
-    </script>
-    @endif
-
-
+<title>{{ $one_post['title'] }}</title>
+@php $meta=json_decode($one_post['metatag'],true) @endphp
+@foreach($meta['htmlmeta'] as $key => $value)<meta  name="{{$key}}" content="{{$value}}" >@endforeach
+@foreach($meta['opengraph'] as $key => $value)<meta  name="{{$key}}" content="{{$value}}" >@endforeach
+@foreach($meta['twitter'] as $key => $value)<meta  name="{{$key}}" content="{{$value}}" >@endforeach
+@php $meta=json_decode($one_post['schema_markup'],true) @endphp
+@foreach($meta as $key => $value)<meta  name="{{$key}}" content="{{$value}}" > @endforeach
+@if($one_post['video'] == 'yes') @php $videometa=json_decode($one_post['video_schema'],true) @endphp
+<script type="application/ld+json">{@foreach($videometa as $key => $value)"{{$key}}" {{':'}} "{{$value}}",@endforeach}</script>@endif
 @endsection
-
 @section('content')
-
 <section class="show-novel">
     <div class="container-fluid" style="padding-top:50px;">
         <div class="row">
-           
-
            <div class="col-lg-7 col-md-12 order-lg-0 order-md-0 order-sm-0 order-0" style="padding-left:50px;">
                 <div class="novel-image">
                     <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" 
@@ -76,7 +28,6 @@
                 @else         
                 <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                 @endif
-                
                 {{$one_post->writer['name']}}
                 </h1>
                 <hr class="dash mx-auto" style="height: 1px ; width: 90% ; background-color: #a7a5a5 ;"> 
@@ -88,20 +39,14 @@
                      <span style="color: WHITE;background-color:#20c5ba;border-radius: 5px;padding:3px!important">{{ $one_post->category['name'] }}</span></span>
                 </div>
             </div>
-
-       
         </div>
     </div>
 </section>
-
 <!-- Main Content -->
-
 <div class="row " style="margin-top:40px">
                     <div class="col-md-10 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
                     @php echo htmlspecialchars_decode($one_post['content']) ; @endphp
                </div>
              </div>
 <!-- Main Content -->
-
-
 @endsection

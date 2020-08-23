@@ -1,44 +1,33 @@
 @extends('site.Layouts.layout_main')
-
 @section('Head')
 <title> قوانین استفاده | لرنیا  </title>
-  <meta  name="description" content="قوانین استفاده | لرنیا">
-  <meta  name="keywords"    content="قوانین استفاده" >
+<meta  name="description" content="قوانین استفاده | لرنیا">
+<meta  name="keywords"    content="قوانین استفاده" >
 @endsection
-
 @section('content')
-
-  <!-- Section -->
-            <div class="container-fluid" >
-            <div class="row text-center">
-            <div class="col-md-12">
-              <div class="row text-center">
-                    <div class="col-md-3">
-                    </div>
-
-                    <div class="col-md-6">
-                    <img class="img-fluid rounded-circle " style="padding-top:40px;border-radius:20% !important;"
-                    src="{{ asset('images/Template/TermsOfService.svg') }}"
-                    width="600px" height="200px" alt="Learniaa" >
-                    </div>
-
-                    <div class="col-md-3">
-                    </div>
-                </div>
-
-                <h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">قوانین استفاده
-                </h1>
-            </div>
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" style="padding-top:30px;text-align: justify;margin-left:10px;margin-right:10px">
-            <div class="row" style="font-size:15px">
-            <div class="container-fluid">
-            <p style="font-size:18px;line-height: 26pt;">
+<div class="container-fluid" >
+<div class="row text-center">
+<div class="col-md-12">
+<div class="row text-center">
+<div class="col-md-3">
+</div>
+ <div class="col-md-6">
+<img class="img-fluid rounded-circle " style="padding-top:40px;border-radius:20% !important;"  src="{{ asset('images/Template/TermsOfService.svg') }}" width="600px" height="200px" alt="Learniaa" >
+</div>
+<div class="col-md-3">
+</div>
+</div>
+<h1 class="title" style="padding-right: 30px;font-size:30px;color: #303030">قوانین استفاده</h1>     
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+</div>
+<div class="col-md-6" style="padding-top:30px;text-align: justify;margin-left:10px;margin-right:10px">
+<div class="row" style="font-size:15px">
+<div class="container-fluid">
+<p style="font-size:18px;line-height: 26pt;">
             به لرنیا خوش آمدید!
 این بخش دربارهٔ قراردادی است که با استفاده از وبسایت لرنیا، با ما می‌بندید. معنی کلمات کلیدی (که در متن با قلمِ بولد یا برجسته نوشته شده‌اند) را در انتهای این متن توضیح داده‌ایم.
 1.	سلام. به لرنیا خوش آمدید.
@@ -177,24 +166,17 @@
 11.	فایل منبع - هر نوع فایل کمکی که در کنار ویدیوهای آموزشی برای دریافت کردن ارائه شود، که می‌تواند شامل فایل کد برنامه، فایل‌های مدیا و فایل‌های کاری نرم‌افزارهای مختلف، کتاب الکترونیک و موارد مشابه باشد.
 12.	دارایی (asset) - هر چیز ملموس یا ناملموسی که قابلیت مالکیت یا کنترل در جهت تولید ارزش دارد و دارای ارزش اقتصادی تصور می‌شود، دارایی محسوب می‌گردد. این شامل تمامی فایل‌ها و محتوای دریافتی شما از وبسایت نیز می‌شود.
 13.	تبریک می‌گوییم! شما به آخر توافقنامه رسیدید. از اینکه این وقت را گذاشتید تا دربارهٔ شرایط و قوانین استفادهٔ لرنیا بدانید، از شما ممنونیم.
-
-</div>  </div>
-
-                                    <div class="row" style="padding-top:35px">
-                                                <div class="col-md-4">
-                                                </div>
-                                                <div class="col-md-4">
-                                              </div>
-                                              <div class="col-md-4">
-                                              </div>
-                                </div>
-                                </div>
-                            <div class="col-md-3">
-                            </div>
-            </div>
-          
-
-
- <!-- Section -->
-
+</div></div>
+<div class="row" style="padding-top:35px">
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+<div class="col-md-3">
+</div>
+</div>
 @endsection

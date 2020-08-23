@@ -49,7 +49,11 @@
                           {{ $package['pk_package'] }} 
                           </td>
                           <td>
+                            @if($package['pk_tree'] != 0)
                           {{ $package->tree['name'] }} 
+                          @else
+                            کوئیک لرن
+                          @endif
                           </td>
                           
                           <td>
