@@ -111,11 +111,15 @@ class BlogController extends Controller
                       {
                         $path = Storage::putFileAs( 'post', $pic, request()->title.'.jpg');
                         $new_instance->pic_content = request()->title.'.jpg' ;
+                        $og_image = $path ;
+
                       }  
                       elseif($mimeType == 'image/png')
                       {
                         $path = Storage::putFileAs( 'post', $pic, request()->title.'.png');
                         $new_instance->pic_content = request()->title.'.png' ;
+                        $og_image = $path ;
+
                       }
                 }
              
@@ -148,10 +152,12 @@ class BlogController extends Controller
                 $last_sort_category = Blog::where('pk_category',request()->pk_category)->orderBy('pk_blog', 'desc')->first();
                 $new_instance->sort_category = $last_sort_category->sort_category + 1 ;
                 
+
                 // SEO Process 
+
+                $author = User::select('name')->where('pk_users',request()->pk_users)->first();
                 $keywords = " ";
                 $description = " ";
-                $author = " ";
                 $refresh = " ";
                 $viewport = " ";
 
@@ -160,98 +166,49 @@ class BlogController extends Controller
                   $keywords = request()->keywords ;
                 }
 
-                if(request()->description != null)
+                if(request()->desc_short != null)
                 {
-                  $description = request()->description ;
+                  $description = request()->desc_short ;
                 }
-
-                if(request()->author != null)
-                {
-                  $author = request()->author ;
-                }
-
-                if(request()->refresh != null)
-                {
-                  $refresh = request()->refresh ;
-                }
-
-                if(request()->viewport != null)
-                {
-                  $viewport = request()->viewport ;
-                }
-    
                $htmlmeta=array(
                 "keywords" => $keywords ,
                 "description" => $description,
-                "author" => $author,
-                "refresh" => $refresh,
-                "viewport" => $viewport
+                "author" => $author->name,
+                "refresh" => 0,
                 );
 
                 $og_title = " ";
-                $og_image = " ";
+                //$og_image = " ";
                 $og_description = " ";
                 $og_type = " ";
                 $og_article = " ";
 
-                if(request()->og_title != null)
+                
+                  $og_title = request()->title ;
+                
+                if(request()->desc_short != null)
                 {
-                  $og_title = request()->og_title ;
+                  $og_description = request()->desc_short ;
                 }
 
-                if(request()->og_image != null)
-                {
-                  $og_image = request()->og_image ;
-                }
+                  $og_type = 'text.article' ;
 
-                if(request()->og_description != null)
-                {
-                  $og_description = request()->og_description ;
-                }
-
-                if(request()->og_type != null)
-                {
-                  $og_type = request()->og_type ;
-                }
-
-                if(request()->og_article != null)
-                {
-                  $og_article = request()->og_article ;
-                }
-
-                $openg=array(
-                    "og_title" => $og_title,
-                    "og_image" => $og_image,
-                    "og_description" => $og_description,
-                    "og_type" => $og_type,
-                    "og_article" => $og_article
-                );
+               
+                  $og_article = $author->name ;
+                  $openg=array(
+                      "og_title" => $og_title,
+                      "og_image" => $og_image,
+                      "og_description" => $og_description,
+                      "og_type" => $og_type,
+                      "og_article" => $og_article
+                  );
 
 
-                $twitter_card = " ";
-                $twitter_site = " ";
-                $twitter_description = " ";
-                $twitter_title = " ";
-
-                if(request()->twitter_card != null)
-                {
-                  $twitter_card = request()->twitter_card ;
-                }
-
-                if(request()->twitter_site != null)
-                {
-                  $twitter_site = request()->twitter_site ;
-                }
-
-                if(request()->twitter_description != null)
-                {
-                  $twitter_description = request()->twitter_description ;
-                }
-
-                if(request()->twitter_title != null)
-                {
-                  $twitter_title = request()->twitter_title ;
-                }
+                $twitter_card = 'summary';
+                $twitter_site = 'https://learniaa.com' ;             
+                $twitter_description = request()->desc_short ;
+                $twitter_title = request()->title ;
+                
 
                 $twitter=array(
                     "twitter_card" => $twitter_card,
@@ -272,7 +229,7 @@ class BlogController extends Controller
                 }
                 else { $new_instance->desc_short = " " ; }
 
-                $author = User::select('name')->where('pk_users',request()->pk_users)->first();
+                //$author = User::select('name')->where('pk_users',request()->pk_users)->first();
                 $now = Carbon::now();
                 
                 $schema = [
@@ -385,7 +342,6 @@ class BlogController extends Controller
         else
           {
             $blog = Blog::find($id);
-           
             if(request()->pk_tags != null)
             {    
                   foreach (request()->pk_tags as $key => $tag) 
@@ -430,12 +386,21 @@ class BlogController extends Controller
                    {
                      $path = Storage::putFileAs( 'post', $pic, request()->title.'.jpg');
                      $blog->pic_content = request()->title.'.jpg' ;
+                     $og_image = $path ;
+
                    }  
                    elseif($mimeType == 'image/png')
                    {
                      $path = Storage::putFileAs( 'post', $pic, request()->title.'.png');
                      $blog->pic_content = request()->title.'.png' ;
+                     $og_image = $path ;
+
                    }
+             }else
+             {
+              
+              $og_image =Storage::url('post/'.$blog->pic_content);
+
              }
           
 
@@ -468,122 +433,90 @@ class BlogController extends Controller
              $blog->sort_category = $last_sort_category->sort_category + 1 ;
              
              // SEO Process 
-             $keywords = " ";
-             $description = " ";
-             $author = " ";
-             $refresh = " ";
-             $viewport = " ";
+             $author = User::select('name')->where('pk_users',request()->pk_users)->first();
+                $keywords = " ";
+                $description = " ";
+                $refresh = " ";
+                $viewport = " ";
 
-             if(request()->keywords != null)
-             {
-               $keywords = request()->keywords ;
-             }
+                if(request()->keywords != null)
+                {
+                  $keywords = request()->keywords ;
+                }
 
-             if(request()->description != null)
-             {
-               $description = request()->description ;
-             }
+                if(request()->desc_short != null)
+                {
+                  $description = request()->desc_short ;
+                }
+               $htmlmeta=array(
+                "keywords" => $keywords ,
+                "description" => $description,
+                "author" => $author->name,
+                "refresh" => 0,
+                );
 
-             if(request()->author != null)
-             {
-               $author = request()->author ;
-             }
+                $og_title = " ";
+                //$og_image = " ";
+                $og_description = " ";
+                $og_type = " ";
+                $og_article = " ";
 
-             if(request()->refresh != null)
-             {
-               $refresh = request()->refresh ;
-             }
+                
+                  $og_title = request()->title ;
+                
+                if(request()->desc_short != null)
+                {
+                  $og_description = request()->desc_short ;
+                }
 
-             if(request()->viewport != null)
-             {
-               $viewport = request()->viewport ;
-             }
- 
-            $htmlmeta=array(
-             "keywords" => $keywords ,
-             "description" => $description,
-             "author" => $author,
-             "refresh" => $refresh,
-             "viewport" => $viewport
-             );
+                  $og_type = 'text.article' ;
 
-             $og_title = " ";
-             $og_image = " ";
-             $og_description = " ";
-             $og_type = " ";
-             $og_article = " ";
-
-             if(request()->og_title != null)
-             {
-               $og_title = request()->og_title ;
-             }
-
-             if(request()->og_image != null)
-             {
-               $og_image = request()->og_image ;
-             }
-
-             if(request()->og_description != null)
-             {
-               $og_description = request()->og_description ;
-             }
-
-             if(request()->og_type != null)
-             {
-               $og_type = request()->og_type ;
-             }
-
-             if(request()->og_article != null)
-             {
-               $og_article = request()->og_article ;
-             }
-
-             $openg=array(
-                 "og_title" => $og_title,
-                 "og_image" => $og_image,
-                 "og_description" => $og_description,
-                 "og_type" => $og_type,
-                 "og_article" => $og_article
-             );
+               
+                  $og_article = $author->name ;
+                  $openg=array(
+                      "og_title" => $og_title,
+                      "og_image" => $og_image,
+                      "og_description" => $og_description,
+                      "og_type" => $og_type,
+                      "og_article" => $og_article
+                  );
 
 
-             $twitter_card = " ";
-             $twitter_site = " ";
-             $twitter_description = " ";
-             $twitter_title = " ";
+                $twitter_card = 'summary';
+                $twitter_site = 'https://learniaa.com' ;             
+                $twitter_description = request()->desc_short ;
+                $twitter_title = request()->title ;
+                
 
-             if(request()->twitter_card != null)
-             {
-               $twitter_card = request()->twitter_card ;
-             }
-
-             if(request()->twitter_site != null)
-             {
-               $twitter_site = request()->twitter_site ;
-             }
-
-             if(request()->twitter_description != null)
-             {
-               $twitter_description = request()->twitter_description ;
-             }
-
-             if(request()->twitter_title != null)
-             {
-               $twitter_title = request()->twitter_title ;
-             }
-
-             $twitter=array(
-                 "twitter_card" => $twitter_card,
-                 "twitter_site" => $twitter_site,
-                 "twitter_description" => $twitter_description,
-                 "twitter_title" => $twitter_title,
-             );
-             $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
+                $twitter=array(
+                    "twitter_card" => $twitter_card,
+                    "twitter_site" => $twitter_site,
+                    "twitter_description" => $twitter_description,
+                    "twitter_title" => $twitter_title,
+                );
+                $metatags=["htmlmeta"=>$htmlmeta ,"opengraph" => $openg , "twitter"=>$twitter];
              $blog->metatag=json_encode($metatags);
  
              // schema
              $desc_short = " ";
 
+             if($blog->status == 'پیش نویس' && request()->status == 'انتشار')
+                {
+                  $now = Carbon::now();
+                  $datePublished =$now->toDateString();
+                  $dateModified = $now->toDateString();
+                }
+                elseif($blog->status == 'انتشار' && request()->status == 'انتشار')
+                {
+                  $now = Carbon::now();
+                  $datePublished =$blog->created_at->format('y-m-d');
+                  $dateModified = $now->toDateString();
+                } elseif($blog->status == 'پیش نویس' && request()->status == 'پیش نویس')
+                {
+                  $now = Carbon::now();
+                  $datePublished =$blog->created_at->format('y-m-d');
+                  $dateModified = $blog->updated_at->format('y-m-d');
+                }
              if(request()->desc_short != null)
              {
                $desc_short = request()->desc_short ;
@@ -606,8 +539,8 @@ class BlogController extends Controller
                "publisher_name" => "learnia",
                "logo_type" =>"ImageObject",
                "logo_url" => "https://learniaa.com/images/Template/Circlelogo.svg",
-               "datePublished" => $now->toDateString(),
-               "dateModified" =>$now->toDateString()
+               "datePublished" => $datePublished,
+               "dateModified" =>$dateModified
            ];
  
              $blog->schema_markup = json_encode($schema);
