@@ -67,4 +67,6 @@ Route::post('/SetAnswerUser', 'ApiController@SetAnswerUser')->name('api.routing.
 Route::post('/SetEndRoadMap', 'ApiController@SetEndRoadMap')->name('api.SetEndRoadMap');
 
 
+Route::post('/GetDraftPost', 'ApiController@GetDraftPost')->name('api.routing.GetDraftPost');
+
 

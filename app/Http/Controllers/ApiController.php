@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Validator;
 use Auth;
 use App\Category;
-use App\Post;
+use App\Blog;
 use App\User;
 use App\Discount;
 use App\Package;
@@ -46,6 +46,11 @@ class ApiController extends Controller
           }
     }
 
+    public function GetDraftPost()
+    {
+        $post = Blog::find($_POST['pk_blog']);
+        return response()->json($post);
+    }
 
     public function TelegramGetListDraftPost()
     {
