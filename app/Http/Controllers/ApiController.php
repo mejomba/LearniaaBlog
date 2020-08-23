@@ -426,7 +426,7 @@ public function GetPopupData(Request $request)
 
 public function  SetAnswerUser(Request $request)
 {
-    $log = Log::where('uuid',$_POST['Uuid'])->orderby('uuid','DESC')->first();
+    $log = Log::where('uuid',$_POST['Uuid'])->orderby('sort','DESC')->first();
     $newlog = new Log();
     $newlog->uuid=$log->uuid;
     $newlog->name=$log->name;

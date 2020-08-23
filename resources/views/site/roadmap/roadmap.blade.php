@@ -203,7 +203,7 @@ function GetPopupData(LocationUserId)
         LocationUserId === 'sandogh_laravel'||
         LocationUserId ===  'sandogh_react')
     {
-        //SetEndRoadMap(LocationUserId);
+        SetEndRoadMap(LocationUserId);
         if(LocationUserId === 'sandogh_python' )
         {
             $("#SectionTitle").text('پایتون (Python)');
