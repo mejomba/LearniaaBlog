@@ -46,6 +46,12 @@
 <div class="row " style="margin-top:40px">
                     <div class="col-md-10 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
                     @php echo htmlspecialchars_decode($one_post['content']) ; @endphp
+                    @if($one_post['video'] == 'yes')
+                    <div class="col-md-6  p-3  ml-auto mr-auto" >
+                    <p style="font-size:20px;color:#20c5ba;text-align:center"> ویدیو خلاصه مقاله </p>
+                    <video class="afterglow" id="my-video" width="800" height="600" src="{{ Storage::url('VideoPosts/'.$one_post['address_video']) }}"> </video>
+                    </div>
+                    @endif
                </div>
              </div>
 <!-- Main Content -->

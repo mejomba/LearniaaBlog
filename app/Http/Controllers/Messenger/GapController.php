@@ -39,7 +39,7 @@ class GapController extends Controller
           
             foreach($results as $one_post)
             { 
-                $gap->sendText("+989300471406", $one_post['pk_post'].' '.$one_post['title']); 
+                $gap->sendText("+989300471406", $one_post['pk_blog'].'=='.$one_post['title']); 
             }
           
         }

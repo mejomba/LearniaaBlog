@@ -14,7 +14,7 @@ use App\Search;
 use App\Profile;
 use App\Course;
 use App\History;
-
+use App\Blog;
 
 class AcademyController extends Controller
 {
@@ -25,10 +25,10 @@ class AcademyController extends Controller
      */
     public function index()
     {
-       // $last_posts =  Package::select('pk_post','title','pic_content','extras')->orderby('pk_post','DESC')->take(3)->get();
-        $last_posts = array();
-
-        return view('site.academy.index',compact('last_posts'));
+        $recent_post = array();
+        $recent_post =  Blog::orderby('pk_blog','DESC')->take(3)->get();
+        
+        return view('site.academy.index',compact('recent_post'));
     }
 
     public function detail(Request $request)

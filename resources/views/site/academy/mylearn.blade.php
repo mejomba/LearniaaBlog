@@ -51,24 +51,32 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
 </div>
 
 @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
-<div class="col-md-3 col-12 text-center" style="margin-top:13px">
-<img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
-<span style="color:green">  {{$road_packages[$no]['data'][$package]['price']}} </span>
-<span style="color:green">   تومان </span>
-@endif
-@if($road_packages[$no]['data'][$package]['price'] == 0)
-<span style="color:green">   رایگان </span>
-@endif
-</div>
 
 <div class="col-md-3 col-12 text-center" style="margin-top:13px">
-<img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
-{{ $road_packages[$no]['data'][$package]['time'] }} ساعت
-</div>
-       
-<div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-<a href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}"  class="btn fourth btn-round">مشاهده</a>
-</div>
+    @if($road_packages[$no]['data'][$package]['price'] == 0)
+    <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
+    <span style="color:green">   رایگان </span>
+    @else
+    <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
+    <span style="color:green">  {{$road_packages[$no]['data'][$package]['price']}} </span>
+    <span style="color:green">   تومان </span>
+   </div>
+    @endif
+
+
+    @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
+    <div class="col-md-3 col-12 text-center" style="margin-top:13px">
+    <img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
+    {{ $road_packages[$no]['data'][$package]['time'] }} ساعت
+    </div>
+    @endif
+
+    @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
+    <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+    <a href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}"  class="btn fourth btn-round">مشاهده</a>
+    </div>
+    @endif
+
 @else
 <div class="col-md-3 col-12 text-center" style="margin-top:13px">
 </div>
