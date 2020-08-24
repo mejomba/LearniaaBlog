@@ -41,11 +41,16 @@
  
                                @if($payment_status != 'Yes')
                                <div class="row"> 
-                                   <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
-                                   <div class="col-md-4" style="margin-top:10px"> 
+                                   <div class="col-md-3" style="margin-top:10px"> قیمت خرید دوره : </div>
+                                   <div class="col-md-3" style="margin-top:10px"> 
                                     <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
                                     {{$package['price']}} تومان </div>        
-                                    <div class="col-md-4">  <button class="btn btnGreen" type="button"
+                                    <div class="col-md-3">
+                                     <button class="btn btnGreen" type="button" style="border-color:#c0bec0;background-image:linear-gradient(45deg, #c0bec0 50%, transparent 50%)"
+                                     onclick="OpenPopUpDiscount()">کد تخفیف  </button>         
+                                    </div>
+                                    <div class="col-md-3">
+                                     <button class="btn btnGreen" type="button"
                                      onclick="CheckUserLogin()">خرید دوره  </button>         
                                     </div>
                                </div>
