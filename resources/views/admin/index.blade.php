@@ -54,23 +54,16 @@
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
                        <div id="content" class="col-12 col-md-12 col-lg-12">
-                      
-                       
+                       <select id="pk_package" class="form-control">
+                                  @foreach ($packages as $package)
+                                  <option value="{{ $package->pk_package }}">{{ $package->fa_name }}</option>
+                                  @endforeach
+                                  </select>
                       </div>
+                      <button type="button" onclick="getdata()" class="btn btn-primary"  
+                      style="background-color:brown;border-color:brown" data-dismiss="modal">نمایش</button>
                  </div>
 
-                 <div class="row">  
-                       <div id="question" class="col-6 col-md-6 col-lg-6 mr-auto ml-auto"
-                       style="border: #20c5ba 3px solid;padding-top: 10px; padding-bottom: 10px;margin-top: 10px;margin-bottom: 10px;">
-    
-                      </div>
-                 </div>
-                 <div class="row">  
-                       <div id="feedback" class="col-12 col-md-12 col-lg-12">
-                      
-                       
-                      </div>
-                 </div>
               </div>
                 <!-- Form &  Body -->
                              </div>
@@ -90,43 +83,18 @@ function OpenPopup()
     document.getElementById("ModalData").setAttribute("style","display:block;opacity:100;");
     $('#ModalData').animate({ scrollTop: 0 }, 'fast');
 
-    $.ajax({
-                url: '/api/GetPopupData',
-                data:
-                {
-                    
-                },
-                error: function(err)
-                {
-                },
-                dataType: 'json',
-                success: function(data)
-                {
-                    deletecontent();
-                    $("#content").html(data.content);
-                    $("#question").html(data.question);
-                    data.feedback.forEach(function(item, index) 
-                    {
-                    let Name = document.createElement("button");
-                    Name.setAttribute('type','button');
-                    Name.setAttribute('class', "btn btn-primary");
-                    Name.textContent = item.caption ;
-                    Name.setAttribute('SelectAnswerId',item.key);
-                    Name.setAttribute('id',item.key+'_feedback');
-                    Name.setAttribute('radepa',item.radepa);
-                    Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"','"+item.radepa+"')");
-                    document.getElementById("feedback").append(Name);   
-                    $('#'+item.key+'_feedback').css('margin-left','10px');                  
-                    });
-                    OpenPopup();
-                },
-                type: 'POST'
-            });
 }
 
 function ClosePopup()
  {
      document.getElementById("ModalData").setAttribute("style","");
+ }
+
+ function getdata()
+ {
+   var x =  $('#pk_package').val();
+  window.location.href = "http://127.0.0.1:8000/admin/course/list/"+x;
+
  }
  </script>
 

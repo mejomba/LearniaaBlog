@@ -197,7 +197,7 @@ class BlogController extends Controller
                   $og_article = $author->name ;
                   $openg=array(
                       "og_title" => $og_title,
-                      "og_image" => $og_image,
+                      "og_image" => Storage::url('post/'.$pic_name),
                       "og_description" => $og_description,
                       "og_type" => $og_type,
                       "og_article" => $og_article
