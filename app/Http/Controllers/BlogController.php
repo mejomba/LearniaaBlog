@@ -30,9 +30,9 @@ class BlogController extends Controller
     }
 
 
-    public function show($title)
+    public function show($en_title)
     {  
-        $one_post = Blog::where('title', $title)->first();
+        $one_post = Blog::where('en_title', $en_title)->first();
         /* $recent_post = Blog::where('status', 'انتشار')->orderBy('pk_blog', 'desc')->get()->take(6); */
         $recent_post = array();
         /* Meta Keyword */

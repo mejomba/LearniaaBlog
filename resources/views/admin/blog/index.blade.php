@@ -76,7 +76,7 @@
                             
 
                             @else
-                            <button type="button" onclick="GetDraftPost('{{ $blog['pk_blog'] }}')">
+                            <button class="btn" type="button" onclick="GetDraftPost('{{ $blog['pk_blog'] }}')">
                             <span style="font-size: 1.3rem;color:gray">
                             <img src="{{ asset('images/Template/draft.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
 
@@ -204,7 +204,6 @@ function GetDraftPost(pk_blog)
                 {
                     deletecontent();
                     $("#content").html(data.content);
-                 console.log(data);
                     OpenPopup();
                 },
                 type: 'POST'

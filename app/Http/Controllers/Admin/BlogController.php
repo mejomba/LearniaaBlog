@@ -86,6 +86,7 @@ class BlogController extends Controller
 
               $new_instance->pk_category = request()->pk_category ;
               $new_instance->title = request()->title ;
+              $new_instance->en_title = request()->en_title ;
               $new_instance->content = request()->content ;
               $new_instance->status = request()->status ;
               $new_instance->pk_writers = request()->pk_users ;
@@ -197,7 +198,7 @@ class BlogController extends Controller
                   $og_article = $author->name ;
                   $openg=array(
                       "og_title" => $og_title,
-                      "og_image" => $og_image,
+                      "og_image" => Storage::url('post/'.$pic_name),
                       "og_description" => $og_description,
                       "og_type" => $og_type,
                       "og_article" => $og_article
@@ -361,6 +362,7 @@ class BlogController extends Controller
 
              $blog->pk_category = request()->pk_category ;
              $blog->title = request()->title ;
+             $blog->en_title = request()->en_title ;
              $blog->content = request()->content ;
              $blog->status = request()->status ;
              $blog->pk_writers = request()->pk_users ;
@@ -475,7 +477,7 @@ class BlogController extends Controller
                   $og_article = $author->name ;
                   $openg=array(
                       "og_title" => $og_title,
-                      "og_image" => $og_image,
+                      "og_image" => Storage::url('post/'.$pic_name),
                       "og_description" => $og_description,
                       "og_type" => $og_type,
                       "og_article" => $og_article
@@ -612,6 +614,7 @@ class BlogController extends Controller
         $rules =  [
                      'pk_category' => 'required|numeric', 
                      'title' => 'required', 
+                     'en_title' => 'required',
                      'content' => 'required',
                      'status' => 'required',  
                  ];
@@ -620,6 +623,7 @@ class BlogController extends Controller
                 'pk_category.required' => 'دسته بندی وارد نشده است',
                 'pk_category.numeric' => 'دسته بندی  صحیح نمی باشد',
                 'title.required' => 'عنوان  وارد نشده است',
+                'en_title.required' => 'عنوان  خارجی URL وارد نشده است',
                 'content.required' => 'محتوا  وارد نشده است',
                 'status.required' => 'وضعیت  وارد نشده است',
                 ];

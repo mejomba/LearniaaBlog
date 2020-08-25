@@ -46,6 +46,12 @@ class ApiController extends Controller
           }
     }
 
+    public function GetContentRouting()
+    {
+        $route = Routing::find($_POST['pk_routing']);
+        return response()->json($route);
+    }
+
     public function GetDraftPost()
     {
         $post = Blog::find($_POST['pk_blog']);

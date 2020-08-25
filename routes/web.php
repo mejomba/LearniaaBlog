@@ -32,7 +32,7 @@ Route::get('/Aboutus', 'HomeController@show_Aboutus')->name('Aboutus');
 Route::get('/sitemap', 'HomeController@SitemapCreate')->name('sitemap');
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
-Route::get('/blog/{title}', 'BlogController@show')->name('blog.show');
+Route::get('/blog/{en_title}', 'BlogController@show')->name('blog.show');
 Route::get('/blog/category/{slug}', 'BlogController@postByCategory')->name('blog.category');
 Route::get('/blog/tag/{slug}', 'BlogController@postByTag')->name('blog.tag');
 Route::post('/behavior/store', 'BehaviorController@store')->name('behavior.store');

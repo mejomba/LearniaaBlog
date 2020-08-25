@@ -67,4 +67,6 @@ Route::post('/SetAnswerUser', 'ApiController@SetAnswerUser')->name('api.routing.
 
 Route::post('/GetDraftPost', 'ApiController@GetDraftPost')->name('api.routing.GetDraftPost');
 
+Route::post('/GetContentRouting', 'ApiController@GetContentRouting')->name('api.routing.GetContentRouting');
+
 
