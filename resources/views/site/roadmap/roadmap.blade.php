@@ -203,6 +203,7 @@ function GetPopupData(LocationUserId)
         LocationUserId === 'sandogh_laravel'||
         LocationUserId ===  'sandogh_react')
     {
+        SetEndRoadMap(LocationUserId);
         if(LocationUserId === 'sandogh_python' )
         {
             $("#SectionTitle").text('پایتون (Python)');
@@ -295,7 +296,29 @@ function Showitem(SelectAnswerId,radepa)
     last_location_user_id = SelectAnswerId;
  }
 
+ function SetEndRoadMap(LocationUserId)
+{
+    var uuid = $("#Uuid").val();
+    $.ajax({
+                url: '/api/SetEndRoadMap',
+                data:
+                {
+                    Uuid : uuid ,
+                    LocationUserId:LocationUserId
+                },
+                error: function(err)
+                {
+                },
+                dataType: 'json',
+                success: function(data)
+                {
 
+                },
+                
+                type: 'POST'
+            });
+
+}
 function SetAnswerUser(SelectAnswerId,radepa)
  {
      
@@ -308,6 +331,7 @@ function SetAnswerUser(SelectAnswerId,radepa)
     {
         Showitem(SelectAnswerId,radepa);
         ClosePopup();
+        
     }
         
         else

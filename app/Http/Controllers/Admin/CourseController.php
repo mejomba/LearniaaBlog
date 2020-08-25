@@ -361,4 +361,11 @@ class CourseController extends Controller
             return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
         }
     }
+    public function list($id)
+    {
+        $instance_Model_course = new Course();
+        $names =   $instance_Model_course->GetListAllNameColumns_ForTable();
+        $courses = Course::where('pk_package',$id)->orderBy('pk_course','ASC')->get();
+        return view('admin.course.index',compact('courses','names'));         
+    }
 }

@@ -188,6 +188,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/course/delete/{id}', 'CourseController@destroy')->name('admin.course.delete');
     Route::get('/course/duplicate/{id}', 'CourseController@duplicate')->name('admin.course.duplicate');
     Route::get('/course/repair', 'CourseController@repair')->name('admin.course.repair');
+    Route::get('/course/list/{id}', 'CourseController@list')->name('admin.course.list');
 
     Route::get('/error/index', 'ErrorController@index')->name('admin.errors.index');
     Route::get('/error/show', 'ErrorController@show')->name('admin.errors.show');
