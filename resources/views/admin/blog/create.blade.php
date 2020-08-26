@@ -32,6 +32,16 @@
               </div>
         </div>
 
+        <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">     
+                      </div>
+                      <input class="form-control" name="en_title" placeholder="عنوان خارجی (URL) " type="text">
+                    </div>
+              </div>
+        </div>
+
 
           <!-- Select Box -->
           <div class="col-md-4">

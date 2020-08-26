@@ -45,7 +45,7 @@
                  <div class="row">  
                        <div  class="col-12 col-md-12 col-lg-12">
                        <a class="btn btn-primary" id="SectionFeedBack" href="" 
-                        style="background-color:#ffe735;border-color:#ffe735;color:black">شروع یادگیری</a>
+                        style="background-color:#ffe735;border-color:#ffe735;color:black">ثبت نام و مشاهده دوره ها</a>
                        
                       </div>
                  </div>

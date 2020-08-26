@@ -1,10 +1,17 @@
 @extends('site.Layouts.layout_main')
 @section('Head')
-<title> لرنیا آکادمی | لرنیا </title>
+<title> مسیر یادگیری شما آکادمی | لرنیا </title>
 <meta name="description" content="لرنیا آکادمی  | لرنیا ">
 <meta name="keywords" content="نقشه راه لرنیا,چارت آموزشی لرنیا ,لرنیا آاکادمی">
 @endsection
 @section('content')
+
+<!-- Validation Register Before Show RoadMap MyLEarn -->
+@if(Auth::user() == null)
+<script>window.location = "/reset/showcallbackloginform";</script>
+@endif
+<!-- Validation Register Before Show RoadMap MyLEarn -->
+
 <section class="container-fluid">
 <div class="row">
 <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:90px !important;border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
