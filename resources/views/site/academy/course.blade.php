@@ -245,7 +245,12 @@ function ClosePopUpDiscount()
                         if(data == 'login required')
                         {  
                             ClosePopUpDiscount();
-                        }else
+                        }
+                        if(data=='not vaild')
+                        {
+                            ClosePopUpDiscount();
+                        }
+                        else
                         {
                             document.getElementById("packageprice").innerHTML=data.price;
                             document.getElementById("price").setAttribute("value",data.price);
