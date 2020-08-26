@@ -55,4 +55,79 @@
                </div>
              </div>
 <!-- Main Content -->
+
+
+<div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="section-title text-center pb-40">
+                    <div class="line mt-4 mx-auto rounded-lg"></div>
+                    <h3 class="title mt-2">دیدگاه و نظرات</h3>
+                </div> <!-- section title -->
+            </div>
+        </div>
+<!-- Comment Box -->
+<div class="row " style="margin-top:40px">
+                    <div class="col-md-8 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
+                   <!--New Comment -->
+                   @if(Auth::user() != null)
+                   <div class="subscribe-form mt-50" style="">
+                        <form method="POST" action="{{route('behavior.store')}}">
+                           @csrf
+                            <button class="main-btn" style="">ثبت نظر </button>
+                            <input type="text" class="" name="content" placeholder="اینجا نظرت رو بنویس" 
+                            style="text-align: center;">
+                            <input type="hidden" name="type_entity" value="پست">
+                            <input type="hidden" name="pk_entity" value="{{$one_post['pk_blog']}}">
+                            <input type="hidden" name="type_behavior" value="کامنت">
+                        </form>
+                    </div>
+                    @else
+                    <a href="{{route('reset.showcallbackloginform')}}" class="main-btn" style="">برای ثبت نظر باید ثبت نام/ورود کنید</a>
+                    @endif
+                   <!-- NEw Comment -->
+
+               <!--Foreach -->
+              
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto mt-1">
+                @foreach($behaviors as $behavior)
+                    <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 02px black;border-style: none">
+                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
+                        </div>
+                        <div class="card-body px-4" style="margin-bottom:10px">
+                            @if($behavior->profile['pic'])
+                            <img  src="{{  Storage::url('profile/'.$behavior->profile['pic']) }}"  
+                            alt="Profile" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                            @else         
+                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
+                            @endif
+                            <i class="fa fa-circle mr-2 text-warning"></i>
+                            {{$behavior->user['name']}}
+                            <br>
+                            <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$behavior->content}}</p>
+                       
+                   <!-- Reply -->
+                   @if($behavior->reply != null)
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto mt-1">
+                    <div class="card border-none mt-2 mr-2" style="border-radius: 20px;box-shadow: 0px 0px 5px #20c5ba;border-style: none">
+                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
+                        </div>
+                     <div class="card-body px-4">    
+                            <img  src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Learniaa" height="40px" width="40px">
+                            <i class="fa fa-circle mr-2 text-info"></i>
+                           مدیر سایت
+                            <br>
+                            <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$behavior->reply}} </p>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            @endif
+                        <!-- Reply -->
+                        </div>
+              <!--Foreach -->
+               </div>
+               @endforeach
+             </div>
+<!-- Comment Box -->
+
 @endsection

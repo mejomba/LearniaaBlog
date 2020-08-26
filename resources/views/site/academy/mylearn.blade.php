@@ -59,7 +59,7 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
 
 @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
 
-<div class="col-md-3 col-12 text-center" style="margin-top:13px">
+<div class="col-md-3 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
     @if($road_packages[$no]['data'][$package]['price'] == 0)
     <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
     <span style="color:green">   رایگان </span>
@@ -72,14 +72,14 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
 
 
     @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
-    <div class="col-md-3 col-12 text-center" style="margin-top:13px">
+    <div class="col-md-3 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
     <img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
     {{ $road_packages[$no]['data'][$package]['time'] }} ساعت
     </div>
     @endif
 
     @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
-    <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+    <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3" style="padding-top:10px">
     <a href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}"  class="btn fourth btn-round">مشاهده</a>
     </div>
     @endif
@@ -99,7 +99,9 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
 <div id="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}" class="collapse" 
 aria-labelledby="{{'id'.$road_packages[$no]['data'][$package]['pk_package']}}" data-parent="#row">
 <div class="card-text">
+@if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
 @php echo $road_packages[$no]['data'][$package]['desc'] ; @endphp
+@endif
 </div>
 </div>
 </div>

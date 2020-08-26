@@ -33,6 +33,7 @@ class BlogController extends Controller
     public function show($en_title)
     {  
         $one_post = Blog::where('en_title', $en_title)->first();
+        $behaviors = Behavior::where(['pk_entity'=>$one_post->pk_blog , 'type_entity'=>'پست' ])->get();
         /* $recent_post = Blog::where('status', 'انتشار')->orderBy('pk_blog', 'desc')->get()->take(6); */
         $recent_post = array();
         /* Meta Keyword */
@@ -40,7 +41,7 @@ class BlogController extends Controller
         $meta_keywords = array();
         foreach($data_search as $keyword){array_push($meta_keywords,$keyword->tag['fa_name']) ;}
         /* Meta Keyword */
-        return view('site.blog.show',compact('one_post','recent_post','meta_keywords'));
+        return view('site.blog.show',compact('one_post','recent_post','meta_keywords','behaviors'));
     }
 
 

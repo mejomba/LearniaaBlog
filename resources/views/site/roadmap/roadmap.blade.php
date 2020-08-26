@@ -118,7 +118,8 @@
     var last_location_user_id = 'tablo_start';
 
 document.addEventListener('DOMContentLoaded',function()
-{   document.querySelector('.header-bg').style.display = 'none';
+{   
+    document.querySelector('.header-bg').style.display = 'none';
     $("#tablo_webprograming").css('opacity','0');
     $("#tablo_python").css('opacity','0');
     $("#tablo_frontend").css('opacity','0');

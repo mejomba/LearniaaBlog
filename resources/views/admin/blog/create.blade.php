@@ -37,7 +37,7 @@
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">     
                       </div>
-                      <input class="form-control" name="en_title" placeholder="عنوان خارجی (URL) " type="text">
+                      <input class="form-control" name="en_title" placeholder="عنوان خارجی (URL) " style="direction:ltr" type="text">
                     </div>
               </div>
         </div>

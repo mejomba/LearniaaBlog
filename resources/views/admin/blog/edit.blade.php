@@ -39,7 +39,7 @@
                       <div class="input-group-prepend"> 
                       <span>عنوان خارجی (URL)</span> 
                       </div>
-                      <input class="form-control" value="{{ $blog['en_title'] }}" name="en_title" placeholder="عنوان خارجی (URL) " type="text">
+                      <input class="form-control" value="{{ $blog['en_title'] }}" name="en_title" style="direction:ltr" placeholder="عنوان خارجی (URL) " type="text">
                     </div>
               </div>
         </div>

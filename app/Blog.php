@@ -15,6 +15,7 @@ class Blog extends Model
                 'pk_category' => 'کلید دسته بندی',
                 'pk_tags' => 'کلید تگ',
                 'title' => 'عنوان',
+                'en_title' => 'URL',
                 'pk_writers' => 'کلید نویسنده',
                 'pic_content' => 'تصویر شاخص',
                 'status' => 'وضعیت',

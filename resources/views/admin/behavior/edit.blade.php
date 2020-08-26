@@ -31,71 +31,24 @@
         @csrf
 
      <div class="row">   
-
-        <div class="col-md-4">
-
+        <div class="col-md-12" style="font-size: 13px;">
         <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      
+                    <div class="input-group input-group-alternative">   
                       <input class="form-control" disabled name="content" type="text" value="{{ $behavior['content'] }}"
                        placeholder="محتوا کاربر" type="text">
                     </div>
                   </div>
-
         </div>
 
-        <div class="col-md-4">
 
-        @php  $json = json_decode($behavior->extras,false);  @endphp  
-          
+        <div class="col-md-12">
         <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input  name="reply" type="text" value="{{ $json->reply ?? '' }}" class="form-control" placeholder="پاسخ" type="text">
-                    </div>
+        <span> پاسخ</span>    
+                <textarea name="reply" class="form-control" >{{ $behavior['reply'] }}</textarea>
                   </div>
-
         </div>
 
-
-    
-   <!-- Select Box -->
-   <div class="col-md-4">
-        <div class="row">
-
-
-                        <div class="col-md-3">
-                        <span>وضعیت</span> 
-                        </div>
-                        <div class="col-md-9">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                  <select  name="status" class="form-control">
-                                  <option  value="رد نظر"
-                                  @if($behavior->status == "رد نظر" )
-                                  selected="selected"
-                                  @endif
-                                   >رد نظر</option>
-                                  <option value="تایید شده"
-                                  @if($behavior->status == "تایید شده" )
-                                  selected="selected"
-                                  @endif
-                                  >تایید شده</option>
-                                  </select>
-                                  </div>
-                                </div>
-                     </div>
-            
-   
-        </div>
-        </div>
-         <!-- Select Box -->
-    
-  
-                
+       
                   <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت درخواست</button>
                   </div>

@@ -17,63 +17,18 @@ class BehaviorController extends Controller
      */
     public function index()
     {
-        $behavior = Behavior::get();
+        $behavior = Behavior::where('type_behavior','کامنت')->get();
         $instance_Model_Behavior =new Behavior();
         $names = $instance_Model_Behavior->GetListAllNameColumns_ForTable();
         return view('admin.behavior.index', compact('names','behavior'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $behavior = Behavior::find($id);
         return view('admin.behavior.edit',compact('behavior'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validator =  $this->validation($request);
@@ -88,23 +43,8 @@ class BehaviorController extends Controller
         else
           {  
             $behavior = Behavior::find($id);
-            $behavior->status = request()->status;
+            $behavior->reply = request()->reply;
            
-            $data_extras = array();
-
-            if(request()->reply)
-            { 
-                $data_extras["reply"] =  request()->reply  ;
-                
-            }
-
-            if($data_extras != null)
-                {
-                    $behavior->extras =  json_encode($data_extras,false) ;
-                }
-
-      /////////////////////////////////////////////
-    
             if($behavior->save())
             {
                     return redirect(route('admin.behavior.index'))->with('success','نظر با موفقیت ویرایش شد');
@@ -133,9 +73,7 @@ class BehaviorController extends Controller
 
         $rules =  [
                     'reply' => 'nullable|String',  
-                   
-               
-                 ];
+                ];
 
     $messages = [
                

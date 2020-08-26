@@ -56,6 +56,10 @@
                           </td>
 
                           <td>
+                          {{ $blog['en_title'] }} 
+                          </td>
+
+                          <td>
                           {{ $blog['pk_writers'] }} 
                           </td>
                           
@@ -69,7 +73,7 @@
 
                             @if($blog['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('blog.show',  ['title' =>  $blog['title'] ] )}}"> 
+                            <a target="_blank" href="{{route('blog.show',  ['en_title' =>  $blog['en_title'] ] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                             </a>
                             </span>
