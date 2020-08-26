@@ -11,9 +11,15 @@
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:50px !important;border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
             <div class="row">
             <div class="col-12 col-md-12 text-center">
+                @if($selected_road != 0)
                 <a href="{{route('academy.mylearn',['pk_tree'=>$selected_road])}}">
                   <button class="btn btn-secondary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
                 </a>
+                @else
+                <a href="{{route('academy.quicklearn')}}">
+                  <button class="btn btn-secondary mt-4 d-inline" style="font-size:15px;margin-bottom:10px">بازگشت</button>
+                </a>
+                @endif
                 </div>
           </div>
             <div class="card shadow border-0"  >
@@ -82,12 +88,6 @@ function CheckUserLogin()
  { location.replace("{{ route('reset.showcallbackloginform',['pk_package' => $package->pk_package , 'redirectFromURL' => url()->current() ] ) }}");}
 </script>
 <!-- JS Function -->
-
-
-
-
-
-
 
 
 <!-- Modal Confirm Login -->                      
@@ -167,8 +167,9 @@ function CheckUserLogin()
              </div>         
 {{-- timeLine ends --}}
 
+<!-- ModalDiscount Box --> 
 <div class="modal fade" dir="rtl" id="ModalDiscount" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalDiscount" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
          <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
            <h5 class="modal-title" id="ModalLabelDiscount">ثبت کد تخفیف</h5> 
@@ -177,24 +178,16 @@ function CheckUserLogin()
             <div class="modal-body" id="ModalDiscountBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
-                   <div class="row">  
-                       <div id="content" class="col-12 col-md-12 col-lg-12">
-                       <div class="modal-footer">
-                            <div class="form-group">
-                                <div class="input-group input-group-alternative">
-                                <div class="input-group-prepend">
-                                </div>
-                                <input class="form-control" id ="discountcode"name="discountcode" placeholder="کد تخفیف " type="text">
-                                </div>
-                                <button type="button" onclick="DiscountSub()" class="btn btn-primary form-control"  
-                                            style="background-color:brown;border-color:brown" data-dismiss="modal">ثبت کد تخفیف</button>
-                        </div>
-                </div>  
-                                    
-                      </div>
-                     
+                   <div class="row">
+                   <div class="col-md-12 card p-3  ml-auto mr-auto"  >
+                   <!--New Comment -->
+                  
+                    <div class="subscribe-form mt-50" style="">
+                                <button class="main-btn" onclick="DiscountSub()" style="">ثبت کد </button>
+                                <input type="text" id ="discountcode"name="discountcode" placeholder="کد تخفیف"
+                                style="text-align: center;">
+                        </div>   
                  </div>
-
               </div>
                 <!-- Form &  Body -->
                              </div>
@@ -205,19 +198,86 @@ function CheckUserLogin()
                                    </div>
                                 </div>
                               </div>
-<!-- ModalData Box --> 
+<!-- ModalDiscount Box --> 
 
 </section>
+
+
+<!-- Comment Box -->
+<div class="row " style="margin-top:40px">
+                    <div class="col-md-8 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
+                   <!--New Comment -->
+                   @if(Auth::user() != null)
+                   <div class="subscribe-form mt-50" style="">
+                        <form method="POST" action="{{route('behavior.store')}}">
+                           @csrf
+                            <button class="main-btn" style="">ثبت نظر </button>
+                            <input type="text" class="" name="content" placeholder="اینجا نظرت رو بنویس" 
+                            style="text-align: center;">
+                            <input type="hidden" name="type_entity" value="درس">
+                            <input type="hidden" name="pk_entity" value="{{$package['pk_package']}}">
+                            <input type="hidden" name="type_behavior" value="کامنت">
+                        </form>
+                    </div>
+                    @else
+                    <a href="{{route('reset.showcallbackloginform')}}" class="main-btn" style="">برای ثبت نظر باید ثبت نام/ورود کنید</a>
+                    @endif
+                   <!-- NEw Comment -->
+
+               <!--Foreach -->
+              
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto mt-1">
+                @foreach($behaviors as $behavior)
+                    <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 02px black;border-style: none">
+                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
+                        </div>
+                        <div class="card-body px-4" style="margin-bottom:10px">
+                            @if($behavior->profile['pic'])
+                            <img  src="{{  Storage::url('profile/'.$behavior->profile['pic']) }}"  
+                            alt="Profile" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
+                            @else         
+                            <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
+                            @endif
+                            <i class="fa fa-circle mr-2 text-warning"></i>
+                            {{$behavior->user['name']}}
+                            <br>
+                            <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$behavior->content}}</p>
+                       
+                   <!-- Reply -->
+                   @if($behavior->reply != null)
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto mt-1">
+                    <div class="card border-none mt-2 mr-2" style="border-radius: 20px;box-shadow: 0px 0px 5px #20c5ba;border-style: none">
+                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
+                        </div>
+                     <div class="card-body px-4">    
+                            <img  src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Learniaa" height="40px" width="40px">
+                            <i class="fa fa-circle mr-2 text-info"></i>
+                           مدیر سایت
+                            <br>
+                            <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$behavior->reply}} </p>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            @endif
+                        <!-- Reply -->
+                        </div>
+              <!--Foreach -->
+               </div>
+               @endforeach
+             </div>
+<!-- Comment Box -->
+<!-- Comment Section -->
+
+
 
 
 <script>
 
 function OpenPopUpDiscount()
-{
-    
+{ 
     document.getElementById("ModalDiscount").setAttribute("style","display:block;opacity:100;");
     $('#ModalDiscount').animate({ scrollTop: 0 }, 'fast');
-
 }
 
 function ClosePopUpDiscount()

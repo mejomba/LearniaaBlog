@@ -15,7 +15,7 @@ Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 Route::post('/academy/roadmap', 'AcademyController@roadmap')->name('roadmap');
 Route::get('/academy/roadmap', 'AcademyController@detail');
-Route::get('/academy/quicklearn', 'AcademyController@quicklearn');
+Route::get('/academy/quicklearn', 'AcademyController@quicklearn')->name('academy.quicklearn');
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
 

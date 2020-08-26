@@ -159,7 +159,8 @@ class AcademyController extends Controller
         $selected_road = $pk_tree ; 
         $courses =  Course::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
         $package = Package::where('pk_package',$pk_package)->first();
-        return view('site.academy.course',compact('courses','selected_road','payment_status','package','pk_user'));
+        $behaviors = Behavior::where(['pk_entity'=>$pk_package , 'type_entity'=>'پست' ])->get();
+        return view('site.academy.course',compact('courses','selected_road','payment_status','package','pk_user','behaviors'));
     }
 
 
@@ -273,7 +274,7 @@ $messages = [
     }
     public function quicklearn()
     {
-        $packages = package::where('pk_tree',0)->paginate(3);
+        $packages = package::where('pk_tree',0)->paginate(6);
         return view('site.academy.quicklearn',compact('packages'));
     }
 

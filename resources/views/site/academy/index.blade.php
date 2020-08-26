@@ -246,14 +246,14 @@
                 <div class="col-lg-4 col-md-6 col-sm-11 col-12 mx-auto mt-3">
                     <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
-                            <a href="{{route('blog.show', ['title' =>  $one_post['title'] ]  )}}">
+                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                                 <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
                                  class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:30vh">
                             </a>
                         </div>
                         <div class="card-body px-4">
                             <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span>
-                            <a href="{{route('blog.show', ['title' =>  $one_post['title'] ]  )}}" class="">
+                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
                             <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
                             </a>
                             <p class="mt-2 text-secondary" style="line-height:25px !important">
@@ -265,7 +265,7 @@
                             <br>
                             <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span><i class="fa fa-circle mr-2 text-info  "></i>
                             <a class="btn btn-primary float-right px-4 py-2" 
-                            href="{{route('blog.show', ['title' =>  $one_post['title'] ]  )}}">
+                            href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                             مشاهده</a>
                         </div>
                     </div>
