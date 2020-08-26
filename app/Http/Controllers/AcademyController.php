@@ -271,6 +271,11 @@ $messages = [
 
         return $validator ;
     }
+    public function quicklearn()
+    {
+        $packages = package::where('pk_tree',0)->paginate(3);
+        return view('site.academy.quicklearn',compact('packages'));
+    }
 
 
  }

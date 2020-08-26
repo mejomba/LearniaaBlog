@@ -19,12 +19,12 @@ class BlogController extends Controller
         if(isset($_GET['category'])) { $category = $_GET['category']; }
         if(isset($_GET['offset'])) { $offset = $_GET['offset']; }
        
-        if($category == "عمومی") {$recent_post = Blog::where('status', 'انتشار')->paginate(6);}   
+        if($category == "عمومی") {$recent_post = Blog::where('status', 'انتشار')->orderby('pk_blog','DESC')->paginate(6);}   
         else
         {
             $select_category = Category::where('name', $category )->first();
             $recent_post = Blog::where(['status'=> 'انتشار' , 'pk_category' => $select_category->pk_category])
-            ->whereBetween('sort_category', [$offset, $offset * 5])->paginate(1);
+            ->whereBetween('sort_category', [$offset, $offset * 5])->orderby('pk_blog','DESC')->paginate(1);
         }
         return view('site.blog.index',compact('recent_post'));
     }

@@ -64,20 +64,14 @@
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.course.index')}}"
+     id="tabs-text-2-tab"   href="# "  onclick="OpenPopup()"
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
     <img src="{{ asset('images/Template/icon_course.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     درس</a>
   </li>
 
 
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="#"   onclick="OpenPopup()"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/icon_course.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-   2 درس</a>
-  </li>
+
 
 
   <li class="nav-item primary">

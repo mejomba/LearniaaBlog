@@ -15,6 +15,7 @@ Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 Route::post('/academy/roadmap', 'AcademyController@roadmap')->name('roadmap');
 Route::get('/academy/roadmap', 'AcademyController@detail');
+Route::get('/academy/quicklearn', 'AcademyController@quicklearn');
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
 
@@ -180,7 +181,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
 
 
 
-    Route::get('/course/index', 'CourseController@index')->name('admin.course.index');
+    Route::get('/course/index/{id}', 'CourseController@index')->name('admin.course.index');
     Route::get('/course/create', 'CourseController@create')->name('admin.course.create');
     Route::post('/course/store', 'CourseController@store')->name('admin.course.store');
     Route::get('/course/edit/{id}', 'CourseController@edit')->name('admin.course.edit');

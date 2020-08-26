@@ -67,7 +67,7 @@ class ApiController extends Controller
     }
 
 
-    public function  DiscountCalculator (Request $request)
+    public function  Discount (Request $request)
     {
           $discount_code =  $_POST['discount_code'] ;  
           $discount_type=Discount::select('type')->where('discount_code',$discount_code)->first();
@@ -244,6 +244,81 @@ class ApiController extends Controller
             }
         }
     
+    }
+    
+    public function DiscountCalculator(Request $request)
+    {
+        $discount_code =  $_POST['discount_code'] ;  
+        if(isset($_POST['pk_user']) != TRUE )
+        {           
+            return response()->json('login required');
+        }else{
+
+            $discount_row = Discount::where('discount_code', $discount_code)->first();
+            $package = Discount::select('pk_package')->where('discount_code', $discount_code)->first();
+            $package_row = package::where(['pk_package'=> $package->pk_package])->first();
+            if($discount_row != null)
+            {
+                $package_price =  $package_row->price ;
+                $client = new \GuzzleHttp\Client();
+                $response = $client->request('POST', 'https://learniaa.com/api/DateTime/CheckTarikhIsLastFromNow', [
+                    'form_params' => [ 'DateRequest' => $discount_row->date_Expire ] ]);
+                $response = $response->getBody()->getContents();
+                $checkTarikh = json_decode( $response);
+                    
+                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&  $package_price >= $discount_row->minimum_buy )
+                    {
+                        if( $discount_row->limit == null)
+                        {
+                            $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
+                            if($discount_row->maxdiscount >= $price_discount )
+                            {
+                                $package_priceByDiscount = $package_price - $price_discount ;
+                            }
+                            else
+                            {
+                                $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
+                            }
+                           
+                            return response()->json([
+                                'pk_package'=>$package->pk_package,
+                                'price'=>$package_priceByDiscount
+                            ]);
+                            }
+                        else
+                        {
+                            if($discount_row->limit > 0)
+                            {
+                                $new_limit = $discount_row->limit - 1 ;
+                                $update_discount = Discount::find($discount_row->pk_discount);
+                                $update_discount->limit =  $new_limit ;
+                                $update_discount->save();
+
+                                /////
+                                $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
+                                if($discount_row->maxdiscount >= $price_discount )
+                                {
+                                    $package_priceByDiscount = $package_price - $price_discount ;
+                                }
+                                else
+                                {
+                                    $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
+                                }
+                               ;
+                                return response()->json([
+                                    'pk_package'=>$package->pk_package,
+                                    'price'=>$package_priceByDiscount
+                                ]);
+
+                            }
+                            else
+                            {
+                                return response()->json("Not Valid");
+                            } 
+                        }
+                    }
+                }
+            }
     }
        
  public function SendSms(Request $request)

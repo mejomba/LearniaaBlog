@@ -49,7 +49,7 @@
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">سامانه مدیریت</a>
                                         <a class="dropdown-item" href="{{route('admin.blog.index')}}"> بلاگ</a>
                                         <a class="dropdown-item" href="{{route('admin.package.index')}}"> پکیج</a>
-                                        <a class="dropdown-item" href="{{route('admin.course.index')}}"> درس</a>
+                                        <a class="dropdown-item" href="{{route('admin.course.index',['id' => 0])}}"> درس</a>
                                         <a class="dropdown-item" href="{{route('admin.routing.index')}}">مسیر</a>
                                     @endif
 
