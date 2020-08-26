@@ -58,6 +58,8 @@
                                   @foreach ($packages as $package)
                                   <option value="{{ $package->pk_package }}">{{ $package->fa_name }}</option>
                                   @endforeach
+                                  <option value="{{ 0 }}">همه موارد </option>
+
                                   </select>
                       </div>
                       <button type="button" onclick="getdata()" class="btn btn-primary"  
@@ -93,7 +95,7 @@ function ClosePopup()
  function getdata()
  {
    var x =  $('#pk_package').val();
-  window.location.href = "http://127.0.0.1:8000/admin/course/list/"+x;
+  window.location.href = "http://127.0.0.1:8000/admin/course/index/"+x;
 
  }
  </script>

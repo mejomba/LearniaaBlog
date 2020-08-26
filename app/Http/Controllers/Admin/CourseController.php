@@ -21,14 +21,23 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         //
+        if($id==0)
+        {
         $instance_Model_course = new Course();
         $names =   $instance_Model_course->GetListAllNameColumns_ForTable();
         $courses = Course::orderBy('pk_course','ASC')->get();
-      
-        return view('admin.course.index',compact('courses','names')); 
+        return view('admin.course.index',compact('courses','names'));         
+
+        }else{
+
+        $instance_Model_course = new Course();
+        $names =   $instance_Model_course->GetListAllNameColumns_ForTable();
+        $courses = Course::where('pk_package',$id)->orderBy('pk_course','ASC')->get();
+        return view('admin.course.index',compact('courses','names'));         
+        }
     }
 
     /**
@@ -363,9 +372,6 @@ class CourseController extends Controller
     }
     public function list($id)
     {
-        $instance_Model_course = new Course();
-        $names =   $instance_Model_course->GetListAllNameColumns_ForTable();
-        $courses = Course::where('pk_package',$id)->orderBy('pk_course','ASC')->get();
-        return view('admin.course.index',compact('courses','names'));         
+        
     }
 }

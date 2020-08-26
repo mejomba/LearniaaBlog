@@ -5,6 +5,7 @@
 <meta name="keywords" content="نقشه راه لرنیا,چارت آموزشی لرنیا ,لرنیا آاکادمی">
 @endsection
 @section('content')
+
 <section class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 " style="margin-top:50px !important;border-bottom-right-radius: 50px!important;border-bottom-left-radius: 50px!important;">
@@ -44,7 +45,7 @@
                                    <div class="col-md-3" style="margin-top:10px"> قیمت خرید دوره : </div>
                                    <div class="col-md-3" style="margin-top:10px"> 
                                     <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                                    {{$package['price']}} تومان </div>        
+                                    <span id="packageprice">{{$package['price']}}</span> تومان </div>        
                                     <div class="col-md-3">
                                      <button class="btn btnGreen" type="button" style="border-color:#c0bec0;background-image:linear-gradient(45deg, #c0bec0 50%, transparent 50%)"
                                      onclick="OpenPopUpDiscount()">کد تخفیف  </button>         
@@ -59,7 +60,7 @@
                                    <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
                                    <div class="col-md-4" style="margin-top:10px"> 
                                     <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                                    {{$package['price']}} تومان </div>        
+                                    <span id="packageprice">{{$package['price']}}</span> تومان </div>        
                                     <div class="col-md-4">  <button type="button" class="btn btnGreen" disabled >خرید دوره</button>         
                                     </div>
                                </div>
@@ -81,6 +82,13 @@ function CheckUserLogin()
  { location.replace("{{ route('reset.showcallbackloginform',['pk_package' => $package->pk_package , 'redirectFromURL' => url()->current() ] ) }}");}
 </script>
 <!-- JS Function -->
+
+
+
+
+
+
+
 
 <!-- Modal Confirm Login -->                      
 <div class="modal fade" dir="rtl" id="ModalConfirmLogin" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelConfirmLogin" aria-hidden="true">  
@@ -158,5 +166,102 @@ function CheckUserLogin()
                </div> 
              </div>         
 {{-- timeLine ends --}}
+
+<div class="modal fade" dir="rtl" id="ModalDiscount" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalDiscount" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+         <div class="modal-content" style="width:90%">
+           <div class="modal-header"> 
+           <h5 class="modal-title" id="ModalLabelDiscount">ثبت کد تخفیف</h5> 
+            </div>  
+                                       
+            <div class="modal-body" id="ModalDiscountBody">                      
+                <!-- Form &  Body -->
+                 <div class="card-body px-lg-1 py-lg-1">
+                   <div class="row">  
+                       <div id="content" class="col-12 col-md-12 col-lg-12">
+                       <div class="modal-footer">
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input class="form-control" id ="discountcode"name="discountcode" placeholder="کد تخفیف " type="text">
+                                </div>
+                                <button type="button" onclick="DiscountSub()" class="btn btn-primary form-control"  
+                                            style="background-color:brown;border-color:brown" data-dismiss="modal">ثبت کد تخفیف</button>
+                        </div>
+                </div>  
+                                    
+                      </div>
+                     
+                 </div>
+
+              </div>
+                <!-- Form &  Body -->
+                             </div>
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="ClosePopUpDiscount()" class="btn btn-primary"  
+                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                    </div>
+                                   </div>
+                                </div>
+                              </div>
+<!-- ModalData Box --> 
+
 </section>
+
+
+<script>
+
+function OpenPopUpDiscount()
+{
+    
+    document.getElementById("ModalDiscount").setAttribute("style","display:block;opacity:100;");
+    $('#ModalDiscount').animate({ scrollTop: 0 }, 'fast');
+
+}
+
+function ClosePopUpDiscount()
+ {
+     document.getElementById("ModalDiscount").setAttribute("style","");
+ }
+
+ function DiscountSub()
+ {
+     var code = $('#discountcode').val();
+     var user = $('#UserLogin').val();
+    $.ajax({
+                url: '/api/calculator',
+                data:
+                {
+                    discount_code : code ,
+                    pk_user:user
+                },
+                error: function(err)
+                {
+                },
+                dataType: 'json',
+                success: function(data)
+                {
+                        if(data == 'login required')
+                        {  
+                            ClosePopUpDiscount();
+                        }
+                        if(data=='not vaild')
+                        {
+                            ClosePopUpDiscount();
+                        }
+                        else
+                        {
+                            document.getElementById("packageprice").innerHTML=data.price;
+                            document.getElementById("price").setAttribute("value",data.price);
+                            ClosePopUpDiscount();
+
+                        }
+                },
+                
+                type: 'POST'
+            });
+ }
+ </script>
+
 @endsection
