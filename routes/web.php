@@ -212,6 +212,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/routing/delete/{id}', 'RoutingController@destroy')->name('admin.routing.delete');
     Route::post('/routing/upload', 'RoutingController@upload')->name('admin.routing.upload');
 
+    Route::get('/section/index', 'SectionController@index')->name('admin.section.index');
+    Route::get('/section/create', 'SectionController@create')->name('admin.section.create');
+    Route::post('/section/store', 'SectionController@store')->name('admin.section.store');
+    Route::get('/section/edit/{id}', 'SectionController@edit')->name('admin.section.edit');
+    Route::post('/section/update/{id}', 'SectionController@update')->name('admin.section.update');
+    Route::get('/section/delete/{id}', 'SectionController@destroy')->name('admin.section.delete');
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 

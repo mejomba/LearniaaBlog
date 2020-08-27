@@ -49,9 +49,7 @@ class GapController extends Controller
         {
             $post = Blog::find($message);
             $post->status = "انتشار";
-            $post->save();
-          
-            $gap->sendText($post->title);  
+            $post->save(); 
             $gap->sendText("+989300471406", "پست منتشر شد");   
         }
 

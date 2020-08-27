@@ -56,7 +56,7 @@
              </div>
 <!-- Main Content -->
 
-
+<!-- Comment Section -->
 <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
@@ -129,5 +129,5 @@
                @endforeach
              </div>
 <!-- Comment Box -->
-
+<!-- Comment Section -->
 @endsection

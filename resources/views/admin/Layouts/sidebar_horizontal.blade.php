@@ -197,6 +197,14 @@
     مدرس</a>
   </li>
 
+  
+  <li class="nav-item">
+    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab"  href="{{route('admin.section.index')}}" 
+     role="tab" aria-controls="tabs-text-3" aria-selected="false">
+    <img src="{{ asset('images/Template/icon_package.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    سکشن</a>
+  </li>
+
   </ul>
 
   

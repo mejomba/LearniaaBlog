@@ -95,7 +95,7 @@ function ClosePopup()
  function getdata()
  {
    var x =  $('#pk_package').val();
-  window.location.href = "http://127.0.0.1:8000/admin/course/index/"+x;
+  window.location.href = "/admin/course/index/"+x;
 
  }
  </script>

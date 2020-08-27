@@ -42,7 +42,7 @@ class BlogController extends Controller
     {
         $categories = Category::where('type','پست')->get();
         $tags = Tag::where('type','پست')->get();
-        $users = User::get();
+        $users = User::where('type','مدیر')->Orwhere('type','نویسنده')->get();
         return view('admin.blog.create',compact('categories','tags','users'));
         
     }

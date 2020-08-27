@@ -174,7 +174,7 @@ class PagesController extends Controller
         $pages->data=request()->data;
         if(  $pages->save())
         {
-            return redirect(route('admin.pages.index' ))->with('success','برگه با موفقیت ثبت شد ');
+            return redirect(route('admin.pages.index' ))->with('success','برگه با موفقیت ویرایش شد ');
         }
         else
         {
