@@ -43,7 +43,7 @@ style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color
               </div>
                     </div>
                      <div class="modal-footer">
-                      <button type="button" onclick="CloseModalErrorApi()" class="btn btn-primary"style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>  
+                      <button type="button" onclick="CloseModalErrorApi()" class="btn btnLearniaa"style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>  
                                     </div>
                                    </div>
                                 </div>
@@ -68,7 +68,7 @@ style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color
                     <div class="row"> 
                        <div class="col-12 col-lg-12 col-md-12 text-center">  
                        <button type="button" onclick="SetFamilyUser()" 
-                       style="margin-top: 30px" class="btn btn-primary" data-dismiss="modal">شروع کن</button>
+                       style="margin-top: 30px" class="btn btnLearniaa" data-dismiss="modal">شروع کن</button>
                       </div>
                     </div>   
              </div>

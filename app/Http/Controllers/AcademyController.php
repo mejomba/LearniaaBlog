@@ -15,6 +15,7 @@ use App\Profile;
 use App\Course;
 use App\History;
 use App\Blog;
+use App\Section;
 
 class AcademyController extends Controller
 {
@@ -157,10 +158,19 @@ class AcademyController extends Controller
         /* Auth */
 
         $selected_road = $pk_tree ; 
-        $courses =  Course::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
         $package = Package::where('pk_package',$pk_package)->first();
         $behaviors = Behavior::where(['pk_entity'=>$pk_package , 'type_entity'=>'پست' ])->get();
-        return view('site.academy.course',compact('courses','selected_road','payment_status','package','pk_user','behaviors'));
+        $sections= Section::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
+
+        $DataSection = array();
+        foreach ($sections as $key => $section) 
+        {
+           $courses = Course::where('pk_package',$pk_package)->whereBetween('sort',
+                       [$section->part_from, $section->part_to])->get();
+
+           array_push($DataSection,['Section' => $section , 'Courses' => $courses ]) ; 
+        }
+        return view('site.academy.course',compact('selected_road','payment_status','package','pk_user','behaviors','DataSection'));
     }
 
 

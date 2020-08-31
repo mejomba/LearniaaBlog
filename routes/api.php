@@ -65,7 +65,7 @@ Route::post('/SetFamilyUser', 'ApiController@SetFamilyUser')->name('api.log.SetF
 Route::post('/GetPopupData', 'ApiController@GetPopupData')->name('api.routing.GetPopupData');
 Route::post('/SetAnswerUser', 'ApiController@SetAnswerUser')->name('api.routing.SetAnswerUser');
 Route::post('/SetEndRoadMap', 'ApiController@SetEndRoadMap')->name('api.SetEndRoadMap');
-
+Route::post('/GetVideoIntro', 'ApiController@GetVideoIntro')->name('api.GetVideoIntro');
 
 Route::post('/GetDraftPost', 'ApiController@GetDraftPost')->name('api.routing.GetDraftPost');
 

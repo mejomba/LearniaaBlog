@@ -33,7 +33,7 @@ ul.timeline>li:before {
     display: inline-block;
     position: absolute;
     border-radius: 50%;
-    border: 3px solid #22c0e8;
+    border: 3px solid #ffe735;
     right: 20px;
     width: 20px;
     height: 20px;
@@ -43,6 +43,48 @@ ul.timeline>li:before {
 
 
 /* End of Timeline */
+
+
+
+/* timeline Course */
+
+ul.timelineCourse {
+    list-style-type: none;
+    position: relative
+}
+
+ul.timelineCourse:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    right: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400
+}
+
+ul.timelineCourse>li {
+    margin: 20px 0;
+    padding-right: 45px;
+}
+
+ul.timelineCourse>li:before {
+    content: ' ';
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #20c5ba;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+    margin-top: 15px
+}
+
+
+/* End of timeline Course */
 
 html {
     font-family: "shabnam", sans-serif !important;

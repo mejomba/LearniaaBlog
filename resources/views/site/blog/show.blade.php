@@ -48,8 +48,17 @@
                     @php echo htmlspecialchars_decode($one_post['content']) ; @endphp
                     @if($one_post['video'] == 'yes')
                     <div class="col-md-6  p-3  ml-auto mr-auto" >
-                    <p style="font-size:20px;color:#20c5ba;text-align:center"> ویدیو خلاصه مقاله </p>
-                    <video class="afterglow" id="my-video" width="800" height="600" src="{{ Storage::url('VideoPosts/'.$one_post['address_video']) }}"> </video>
+                    
+             <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="section-title text-center pb-40">
+                    <div class="line mt-4 mx-auto rounded-lg"></div>
+                    <h3 class="title mt-2">ویدیو مقاله</h3>
+                </div> <!-- section title -->
+            </div>
+        </div>
+                 <!--   <p style="font-size:20px;color:#20c5ba;text-align:center"> ویدیو خلاصه مقاله </p> -->
+                    <video style="margin-top:20px" class="afterglow" id="my-video" poster="{{ Storage::url('PosterVideoPosts/'.$one_post['poster_video']) }}" width="1200" height="800" src="{{ Storage::url('VideoPosts/'.$one_post['address_video']) }}"> </video>
                     </div>
                     @endif
                </div>
@@ -130,4 +139,5 @@
              </div>
 <!-- Comment Box -->
 <!-- Comment Section -->
+</div>
 @endsection

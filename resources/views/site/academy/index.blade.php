@@ -69,7 +69,7 @@
 <!-- Blog Posts -->
 
 <section id="masters" class="pt-120">
-    <div class="container wow fadeIn" data-wow-delay="1s">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="section-title text-center pb-40">
@@ -80,7 +80,7 @@
         </div>
         <!-- row -->
         <div class="row mt-2">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeIn">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 ">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -99,7 +99,7 @@
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -118,7 +118,7 @@
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -137,7 +137,7 @@
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -154,7 +154,7 @@
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -172,7 +172,7 @@
             </div>
 
             
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -189,7 +189,7 @@
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -208,7 +208,7 @@
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInDown">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
@@ -264,7 +264,7 @@
                         <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span><i class="fa fa-circle mr-2 text-warning  "></i>
                             <br>
                             <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span><i class="fa fa-circle mr-2 text-info  "></i>
-                            <a class="btn btn-primary float-right px-4 py-2" 
+                            <a class="btn btnLearniaa float-right px-4 py-2" 
                             href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                             مشاهده</a>
                         </div>

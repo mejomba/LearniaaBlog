@@ -20,4 +20,9 @@ class Section extends Model
                 'intro' => 'ویدیو معرفی',
                 ] ;
    }
+
+   public function course($part_from,$part_to)
+   {
+    return $this->hasMany('App\Course', 'pk_package', 'pk_package')->whereBetween('sort', [$part_from, $part_to]);
+   }
 }

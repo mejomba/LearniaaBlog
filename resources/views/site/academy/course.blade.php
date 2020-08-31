@@ -117,15 +117,97 @@ function CheckUserLogin()
                                 </div>                           
 <!-- Modal Confirm Login -->
 
+
+
+<!-- ModalIntro Box -->                      
+<div class="modal fade" dir="rtl" id="ModalIntro" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalIntro" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+         <div class="modal-content" style="width:50%">
+           <div class="modal-header"> 
+           <h3 class="modal-title ml-auto mr-auto" id="ModalLabelIntro">معرفی دوره</h3> 
+            </div>  
+                                       
+            <div class="modal-body" id="ModalIntroBody">                      
+                <!-- Form &  Body -->
+                 <div class="card-body px-lg-1 py-lg-1">
+                   <div class="row">  
+                       <div id="content afterglow" class="col-12 col-md-12 col-lg-12 text-center">
+<section class="row main-video d-flex justify-content-center mb-5">
+<a href="#video3" class="afterglow text-center"> 
+<img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
+<i class="fa fa-play fa-4x text-center" style="left:23vw !important"></i>
+</a>
+
+<video id="video3" controls  width="640" height="360" preload="none">
+    <source id="VideoIntro" src="" type="video/mp4" /></video>
+</section>
+                       
+                      </div>
+                 </div>
+              </div>
+                <!-- Form &  Body -->
+                             </div>
+                                    <div class="modal-footer">
+                                        <div class="row text-center ml-auto mr-auto">
+                                        <button type="button" onclick="ClosePopupIntro()" class="btn btn-primary"  
+                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                        </div>
+                                    </div>
+                                   </div>
+                                </div>
+                              </div>
+<!-- ModalIntro Box -->
+
 {{-- TimeLine starts --}}
-                <div class="row " style="margin-top:60px">
-                    <div class="col-lg-8 col-md-10 col-sm-11 col-11 border rounded-lg m-4 p-2 mx-auto"  >
-                    <ul class="timeline">
-                    @php $row_counter = 1 ; @endphp
-                    @foreach($courses as $course)   
+        <div class="row " style="margin-top:60px">
+         <div class="col-lg-8 col-md-10 col-sm-11 col-11 border rounded-lg m-4 p-2 mx-auto"  >
+
+    <ul class="timeline" id="timeline">
+     @php $section_counter = 1 ; @endphp
+     @php $row_counter = 1 ; @endphp
+     @foreach($DataSection as $section)   
+     <li>
+       <div class="row" id="row">
+       <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3"  style="border: solid 1px #20C5BA ; border-radius: 5px">  
+        <div class="card-title">
+         <div class="row">
+          <div class="col-md-4 col-12 text-center" style="margin-top:15px">
+           <a class="mb-0"> بخش {{$section_counter}} :{{$section['Section']['name']}}</a>
+           </div>
+           <div class="col-md-4 col-12 text-center" style="margin-top:15px">
+          
+           </div>
+
+           <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+           
+                <button class="btn btnLearniaa btn-round" style="white-space:normal; " data-toggle="collapse"
+                aria-expanded="false"  
+                data-target="#{{'collapse'.$section['Section']['pk_section']}}" 
+                aria-controls="{{'collapse'.$section['Section']['pk_section']}}">
+                مشاهده
+                </button>
+            </div>
+
+            <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+           
+                <button type="button" class="btn fourth btn-round" onclick="GetVideoIntro({{$section['Section']['pk_section']}})" style="white-space:normal;padding:15px 10px" >
+                معرفی دوره
+                </button>
+            </div>
+
+            </div>
+            <div class="row">
+            <div class="col-11 col-md-11 col-lg-11 col-sm-11">
+            <!-- Courses -->
+            <div id="{{'collapse'.$section['Section']['pk_section']}}" class="collapse" 
+                aria-labelledby="{{'id'.$section['Section']['pk_section']}}" data-parent="#row">
+                <div class="card-text">
+                
+                    <ul class="timelineCourse">
+                    @foreach($section['Courses'] as $course)   
                      <li>
                             <div class="row" id="row">
-                            <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3 hover-style k-cursor-pointer"  style="border: solid 1px #20C5BA ; border-radius: 5px">  
+                            <div class="col-lg-12 col-md-12 col-sm-10 col-10 pt-3 ml-3 "  style="border: solid 1px #20C5BA ; border-radius: 5px">  
                                 <div class="card-title">
                                         <div class="row">
                                             <div class="col-md-4 col-12 text-center" style="margin-top:15px">
@@ -146,26 +228,44 @@ function CheckUserLogin()
                                             @endif
                                             </div>
 
-                                          <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+                                          <div class="col-md-4 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
                                           @if($payment_status == 'Yes' || $course['isFree'] == 'Yes' )
                                             <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,
                                                  'desc' => $course['name'] , 'sort' => $course['sort'] ,
                                                  'pk_package' => $course['pk_package']  ]) }}"
-                                               class="btn fourth btn-round">مشاهده</a>
+                                               class="btn btnLearniaa btn-round">شروع</a>
                                                @else
                                                @endif
                                            </div>
-                                     </div>
-                                </div>
-                            </div>
-                       </div>  
-                    </li>
-               @php $row_counter =  $row_counter + 1 ; @endphp     
-               @endforeach
-                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>  
+                            </li>
+                    @php $row_counter =  $row_counter + 1 ; @endphp     
+                    @endforeach
+                        </ul>
+
+              </div>
+             </div>
+         
+    <!---- Courses --------->
+
+            </div>
+        </div>
+        </div>
+    </div>  
+    </li>
+  @php $section_counter =  $section_counter + 1 ; @endphp     
+  @endforeach
+  </ul>
+
+
                </div> 
              </div>         
 {{-- timeLine ends --}}
+
+
 
 <!-- ModalDiscount Box --> 
 <div class="modal fade" dir="rtl" id="ModalDiscount" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalDiscount" aria-hidden="true">  
@@ -203,6 +303,9 @@ function CheckUserLogin()
 </section>
 
 
+
+
+
 <!-- Comment Box -->
 <div class="row " style="margin-top:40px">
                     <div class="col-md-8 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
@@ -211,7 +314,7 @@ function CheckUserLogin()
                    <div class="subscribe-form mt-50" style="">
                         <form method="POST" action="{{route('behavior.store')}}">
                            @csrf
-                            <button class="main-btn" style="">ثبت نظر </button>
+                            <button class="main-btn" style="z-index:auto">ثبت نظر </button>
                             <input type="text" class="" name="content" placeholder="اینجا نظرت رو بنویس" 
                             style="text-align: center;">
                             <input type="hidden" name="type_entity" value="درس">
@@ -268,11 +371,45 @@ function CheckUserLogin()
              </div>
 <!-- Comment Box -->
 <!-- Comment Section -->
-
+</div>
 
 
 
 <script>
+
+function OpenPopupIntro() 
+{
+    document.getElementById("timeline").setAttribute("style","z-index:-1 !important");
+    document.getElementById("ModalIntro").setAttribute("style","display:block;opacity:100;");
+    $('#ModalIntro').animate({ scrollTop: 0 }, 'fast');
+    
+    
+}
+
+function ClosePopupIntro()
+ {
+    document.getElementById("timeline").setAttribute("style","");
+     document.getElementById("ModalIntro").setAttribute("style","");
+ }
+
+ function GetVideoIntro(pk_section)
+ {
+    $.ajax({
+                url: '/api/GetVideoIntro',
+                data:
+                { pk_section : pk_section},
+                error: function(err){},
+                dataType: 'json',
+                success: function(data)
+                {
+                    console.log(data) ;
+                            document.getElementById("VideoIntro").setAttribute("src",data);
+                            OpenPopupIntro();     
+                },
+                
+                type: 'POST'
+            });
+ }
 
 function OpenPopUpDiscount()
 { 

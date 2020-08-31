@@ -26,7 +26,7 @@
 </div>
 </div>
 <div class="modal-footer">
-<button type="button" onclick="ModalError_close()" class="btn btn-primary" data-dismiss="modal">بستن</button> 
+<button type="button" onclick="ModalError_close()" class="btn btnLearniaa" data-dismiss="modal">بستن</button> 
 </div>
 </div>
 </div>

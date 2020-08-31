@@ -48,7 +48,7 @@
                             <br>
                             <span style="font-family:Dastnevis;font-size:25px" class="mt-1">مدت زمان  :  {{ $package['time'] }} دقیقه </span>
                             <img src="{{ asset('images/Template/video-camera.svg') }}"  alt="Learniaa" width="30px" height="30px"> 
-                            <a class="btn btn-primary float-right px-4 py-2" 
+                            <a class="btn btnLearniaa float-right px-4 py-2" 
                             href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                             مشاهده</a>
                         </div>
