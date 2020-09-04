@@ -48,12 +48,10 @@ style="border: solid 1px #20C5BA ; border-radius: 5px">
 <div class="row">
 <div class="col-md-4 col-12 text-center">
 <a class="mb-0">
-<button class="btn btn-link dropdown-toggle" style="white-space:normal; " data-toggle="collapse" aria-expanded="false"  
-data-target="#{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}" 
-aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}">
+<p>
 گام {{$row_counter}} :
 {{$road_packages[$no]['data'][$package]['fa_name']}}
-</button>
+</p>
 </a>
 </div>
 
@@ -65,7 +63,7 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
     <span style="color:green">   رایگان </span>
     @else
     <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
-    <span style="color:green">  {{$road_packages[$no]['data'][$package]['price']}} </span>
+    <span style="color:green"> @php echo number_format($road_packages[$no]['data'][$package]['price'],0) @endphp </span>
     <span style="color:green">   تومان </span>
    </div>
     @endif
@@ -74,7 +72,7 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
     @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
     <div class="col-md-3 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
     <img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
-    {{ $road_packages[$no]['data'][$package]['time'] }} ساعت
+    {{ $road_packages[$no]['data'][$package]['time'] }} 
     </div>
     @endif
 
@@ -96,14 +94,7 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
 </div>
 </div>
 
-<div id="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}" class="collapse" 
-aria-labelledby="{{'id'.$road_packages[$no]['data'][$package]['pk_package']}}" data-parent="#row">
-<div class="card-text">
-@if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
-@php echo $road_packages[$no]['data'][$package]['desc'] ; @endphp
-@endif
-</div>
-</div>
+
 </div>
 </div>
 </li>

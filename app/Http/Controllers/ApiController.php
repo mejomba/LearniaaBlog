@@ -53,6 +53,12 @@ class ApiController extends Controller
         return response()->json($route);
     }
 
+    public function  GetTextIntro()
+    {
+        $Package =Package::find($_POST['pk_package']);
+        return response()->json($Package->desc);
+    }
+   
 
     public function GetVideoIntro()
     {

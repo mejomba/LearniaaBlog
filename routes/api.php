@@ -68,6 +68,8 @@ Route::post('/SetEndRoadMap', 'ApiController@SetEndRoadMap')->name('api.SetEndRo
 Route::post('/GetVideoIntro', 'ApiController@GetVideoIntro')->name('api.GetVideoIntro');
 
 Route::post('/GetDraftPost', 'ApiController@GetDraftPost')->name('api.routing.GetDraftPost');
+Route::post('/GetTextIntro', 'ApiController@GetTextIntro')->name('api.routing.GetTextIntro');
+
 
 Route::post('/GetContentRouting', 'ApiController@GetContentRouting')->name('api.routing.GetContentRouting');
 

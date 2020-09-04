@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Profile;
 use App\Behavior;
 use Validator;
 use Hash;
-use App\Classes\PayamakSefid\SendSms;
+
 
 class UserController extends Controller
 {
@@ -57,6 +58,16 @@ class UserController extends Controller
                     $id = User::where('username',request()->username)->first();
                    
                     $profile->pk_users =  $id['pk_users'] ;
+                    
+                    if(request()->pic)
+                     {
+                        $pic = request()->file('pic');
+                        $pic_name = $pic->getClientOriginalName();
+                        $path = Storage::putFileAs( 'profile', $pic, $pic_name);
+                        $profile->pic = $pic_name ;
+                     } 
+
+                    $profile->extras =  request()->extras ;
                     $profile->save();
 
                        return redirect(route('admin.user.index'))->with('success','کاربر با موفقیت ایجاد شد');
@@ -105,6 +116,15 @@ class UserController extends Controller
             /* Update Wallet Manually By Admin */
             $profile = Profile::where('pk_users', $user->pk_users)->get()->first();
             $profile->wallet = request()->wallet ;
+            if(request()->pic)
+            {
+               $pic = request()->file('pic');
+               $pic_name = $pic->getClientOriginalName();
+               $path = Storage::putFileAs( 'profile', $pic, $pic_name);
+               $profile->pic = $pic_name ;
+            } 
+
+           $profile->extras =  request()->extras ;
             $profile->save();
             /* Update Wallet Manually By Admin */
 

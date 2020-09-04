@@ -11,20 +11,28 @@
 @keyframes move{0% {transform : scale(1); opacity: 0;} 50% {transform : scale(0.75);opacity: 0.5;} 100% { transform : scale(1);opacity: 1;}}  
 </style>
 
+<!--
 <h1 class="font-weight-bolder text-center font-weight-bolder"
 style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color: #20c5ba;">
 <span class="mr-3" style="color:#ffe735 !important">لرنیا</span>
 <span class="" style="color:white">آکادمی</span>
-</h1>
-<h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
- style="font-family:DastNevis;font-size:45px">نقشه یادگیریت اینجاست</h3>
+</h1> 
+<span class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
+ style="font-family:DastNevis;font-size:45px">نقشه یادگیریت اینجاست</span>
  <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
  <img src="{{ asset('images/Template/downFlash.svg') }}" alt="Learniaa" height="80px" width="80px">
- </h6>
+ </h6> -->
+
 
 <section class="container-fluid" style="direction:ltr !important">
 <div class="row">
-    <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:230px">
+    <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:50px">
+    <span class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
+ style="font-family:DastNevis;font-size:45px">نقشه یادگیریت اینجاست</span>
+    </div>
+
+    <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:160px">
+    
 
 <!-- ModalError Box -->                      
 <div class="modal fade" dir="rtl" id="ModalErrorApi" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalErrorApi" aria-hidden="true">  
@@ -43,7 +51,7 @@ style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color
               </div>
                     </div>
                      <div class="modal-footer">
-                      <button type="button" onclick="CloseModalErrorApi()" class="btn btnLearniaa"style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>  
+                      <button type="button" onclick="CloseModalErrorApi()" class="btn btn-primary" style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>  
                                     </div>
                                    </div>
                                 </div>
@@ -77,8 +85,10 @@ style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color
                                 </div>
                               </div>                           
 <!-- ModalRegister Box -->
+   
+   <!--
     </div>
-</div>
+</div> -->
 
 <form method="POST" id="Data" action="{{route('roadmap')}}" enctype="multipart/form-data">
 @csrf

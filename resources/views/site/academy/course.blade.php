@@ -25,7 +25,7 @@
             <div class="card shadow border-0"  >
                 <div class="card-header" style="background-color:#20C5BA ">
                     <div class="text-center">
-                        <h2 style="font-size:30px">دوره {{$package['fa_name']}}</h2>
+                        <h2 style="font-size:30px">{{$package['fa_name']}}</h2>
                     </div>
                 </div> 
                 <img class="card-img-top img-border"
@@ -48,10 +48,10 @@
  
                                @if($payment_status != 'Yes')
                                <div class="row"> 
-                                   <div class="col-md-3" style="margin-top:10px"> قیمت خرید دوره : </div>
+                                   <div class="col-md-3"  style="margin-top:10px;font-weight:bold;font-size:20px"> قیمت خرید دوره : </div>
                                    <div class="col-md-3" style="margin-top:10px"> 
                                     <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                                    <span id="packageprice">{{$package['price']}}</span> تومان </div>        
+                                    <span id="packageprice" style="font-family:Dastnevis;font-size:25px">@php echo number_format($package['price'],0) @endphp</span> تومان </div>        
                                     <div class="col-md-3">
                                      <button class="btn btnGreen" type="button" style="border-color:#c0bec0;background-image:linear-gradient(45deg, #c0bec0 50%, transparent 50%)"
                                      onclick="OpenPopUpDiscount()">کد تخفیف  </button>         
@@ -63,10 +63,10 @@
                                </div>
                                @else
                                <div class="row"> 
-                                   <div class="col-md-4" style="margin-top:10px"> قیمت خرید دوره : </div>
+                                   <div class="col-md-4" style="margin-top:10px;font-weight:bold;font-size:20px"> قیمت خرید دوره : </div>
                                    <div class="col-md-4" style="margin-top:10px"> 
                                     <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                                    <span id="packageprice">{{$package['price']}}</span> تومان </div>        
+                                    <span id="packageprice" style="font-family:Dastnevis;font-size:25px">{{$package['price']}}</span> تومان </div>        
                                     <div class="col-md-4">  <button type="button" class="btn btnGreen" disabled >خرید دوره</button>         
                                     </div>
                                </div>
@@ -109,7 +109,8 @@ function CheckUserLogin()
                                      class="btn btnGreen">ثبت نام و خرید دوره</button> 
                                      
                                      <button type="button" onclick="ModalConfirmLogin_close()"
-                                     class="btn btn-primary"  data-dismiss="modal">بستن</button> 
+                                     class="btn btn-primary" style="background-color:brown;border-color:brown"
+                                       data-dismiss="modal">بستن</button> 
                                        
                                     </div>
                                     </div>
@@ -132,18 +133,24 @@ function CheckUserLogin()
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
                        <div id="content afterglow" class="col-12 col-md-12 col-lg-12 text-center">
-<section class="row main-video d-flex justify-content-center mb-5">
-<a href="#video3" class="afterglow text-center"> 
-<img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
-<i class="fa fa-play fa-4x text-center" style="left:23vw !important"></i>
-</a>
+                            <section class="row main-video d-flex justify-content-center">
+                            <a href="#video3" class="afterglow text-center"> 
+                            <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
+                            <i class="fa fa-play fa-4x text-center" style="left:23vw !important"></i>
+                            </a>
 
-<video id="video3" controls  width="640" height="360" preload="none">
-    <source id="VideoIntro" src="" type="video/mp4" /></video>
-</section>
+                            <video id="video3" controls  width="640" height="360" preload="none">
+                                <source id="VideoIntro" src="" type="video/mp4" data-skin="dark" /></video>
+                            </section>
                        
                       </div>
                  </div>
+                 <div class="row"> 
+                    <div class="col-12 col-md-12 col-lg-12 text-center" id="TextIntro"> 
+                   
+                    </div>
+                 </div>
+
               </div>
                 <!-- Form &  Body -->
                              </div>
@@ -180,7 +187,7 @@ function CheckUserLogin()
 
            <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
            
-                <button class="btn btnLearniaa btn-round" style="white-space:normal; " data-toggle="collapse"
+                <button class="btn btnGreen btn-round" style="white-space:normal; " data-toggle="collapse"
                 aria-expanded="false"  
                 data-target="#{{'collapse'.$section['Section']['pk_section']}}" 
                 aria-controls="{{'collapse'.$section['Section']['pk_section']}}">
@@ -189,10 +196,16 @@ function CheckUserLogin()
             </div>
 
             <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-           
-                <button type="button" class="btn fourth btn-round" onclick="GetVideoIntro({{$section['Section']['pk_section']}})" style="white-space:normal;padding:15px 10px" >
+            @if($section['Section']['intro'] != 'ندارد')
+                <button type="button" class="btn fourth btn-round" onclick="GetVideoIntro({{$section['Section']['pk_section']}},{{$section['Section']['pk_package']}})" style="white-space:normal;padding:15px 10px" >
                 معرفی دوره
                 </button>
+                @else
+                <button type="button" disabled class="btn  btn-round"
+                 style="background-color:beige;border-color:beige;white-space:normal;padding:15px 10px">معرفی دوره
+                 </button>
+
+                @endif
             </div>
 
             </div>
@@ -206,7 +219,7 @@ function CheckUserLogin()
                     <ul class="timelineCourse">
                     @foreach($section['Courses'] as $course)   
                      <li>
-                            <div class="row" id="row">
+                            <div class="row" id="row" style="margin-top:10px">
                             <div class="col-lg-12 col-md-12 col-sm-10 col-10 pt-3 ml-3 "  style="border: solid 1px #20C5BA ; border-radius: 5px">  
                                 <div class="card-title">
                                         <div class="row">
@@ -216,10 +229,19 @@ function CheckUserLogin()
 
                                             <div class="col-md-4 col-12 text-center" style="margin-top:13px">
                                             @if($payment_status == 'Yes' || $course['isFree'] == 'Yes')
-                                            <img class=" img-border"
-                                            src="{{ asset('images/Academy/YesPay.svg') }}"
-                                            width="30px" height="30px" alt="Card image cap">
-                                            <span style="color:#20c5ba">  فعال </span>
+                                        
+                                                @if($payment_status == 'Yes')
+                                                <img class=" img-border"
+                                                src="{{ asset('images/Academy/YesPay.svg') }}"
+                                                width="30px" height="30px" alt="Card image cap">
+                                                <span style="color:#20c5ba">  فعال </span>
+                                                @else
+                                                <img class=" img-border"
+                                                src="{{ asset('images/Academy/FreePay.svg') }}"
+                                                width="30px" height="30px" alt="Card image cap">
+                                                <span style="color:#20c5ba">  رایگان </span>
+                                                @endif
+
                                             @else
                                             <img class=" img-border"
                                             src="{{ asset('images/Academy/NoPay.svg') }}"
@@ -392,8 +414,26 @@ function ClosePopupIntro()
      document.getElementById("ModalIntro").setAttribute("style","");
  }
 
- function GetVideoIntro(pk_section)
- {
+ function GetVideoIntro(pk_section,pk_package)
+ {  
+    $.ajax({
+                url: '/api/GetTextIntro',
+                data:
+                { pk_package : pk_package},
+                error: function(err){},
+                dataType: 'json',
+                success: function(data)
+                {
+                    console.log(data) ;
+                   $("#TextIntro").html(' <p style="font-size: 25px;color: #20c5ba;text-align: center;font-weight: bold;">درباره دوره</p>' + data);
+                                 
+                },
+                
+                type: 'POST'
+            });
+
+
+
     $.ajax({
                 url: '/api/GetVideoIntro',
                 data:
@@ -402,9 +442,8 @@ function ClosePopupIntro()
                 dataType: 'json',
                 success: function(data)
                 {
-                    console.log(data) ;
-                            document.getElementById("VideoIntro").setAttribute("src",data);
-                            OpenPopupIntro();     
+                    document.getElementById("VideoIntro").setAttribute("src",data);
+                    OpenPopupIntro();     
                 },
                 
                 type: 'POST'

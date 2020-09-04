@@ -56,9 +56,29 @@ class ResetPasswordController extends Controller
                                 'title' => 'کد تایید فراموشی رمز   | لرنیا',
                                 'body' => $Random_Generate
                             ];
+                              /*
                                 $type ='Resetpassword';
                                $address = 'www.'.$username->username;
-                            \Mail::to($address)->send(new SendMail($details,$type));
+                            \Mail::to($address)->send(new SendMail($details,$type));  */
+                            $email = new \SendGrid\Mail\Mail(); 
+                            $email->setFrom("support@learniaa.com", "Support");
+                            $email->setSubject("Sending with SendGrid is Fun");
+                            $email->addTo("maxmoler1376@gmail.com.com", "maxmoler1376");
+                            $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+                            $email->addContent(
+                                "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+                            );
+                            $sendgrid = new \SendGrid('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');
+                            try {
+                                $response = $sendgrid->send($email);
+                                print $response->statusCode() . "\n";
+                                print_r($response->headers());
+                                print $response->body() . "\n";
+                            } catch (Exception $e) {
+                                echo 'Caught exception: '. $e->getMessage() ."\n";
+                            }
+
+
                             }
                             return redirect(route('reset.show',compact('pk_user')));                                    
                         }

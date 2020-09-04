@@ -56,10 +56,8 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
 @include('admin.Layouts.nav')
 
 
-  <div class="card shadow border-21" 
-  style="direction: rtl;margin-left:15px;margin-right: 15px;margin-top:110px;padding-bottom: 60px;margin-bottom: 15px;">
+  <div class="container-fluid" style="direction:rtl;margin-top:110px;margin-bottom: 25px;"> 
   
-              
               <div class="container-fluid" style="margin-top:15px">
 
                 @include('admin.Layouts.error')
@@ -71,18 +69,18 @@ s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v2/yn-33531-adv/rg.comple
             <div class="container-fluid" style="margin-top:15px">
 
                   <div class="row">
-                  <div class="col-md-12">
-                  @include('admin.Layouts.sidebar_horizontal')
-                  </div>
-                  </div>
+                    <div class="col-md-2">
+                      <div class="card shadow border-21">
+                      @include('admin.Layouts.sidebar_horizontal')
+                      </div>
+                    </div>
+                    <div class="col-md-10" style="min-height:285px;padding-left: 0px;padding-right: 0px;">  
+                    @yield('content')
+                   </div>
+                </div>
 
-                  <div class="row" style="padding-top:15px">
-                  <div class="col-md-12" style="min-height:285px">  
-
-                      @yield('content')
-
-                  </div>
-                  </div>
+                 
+                 
             </div>
 
             <!-- Full Container Page Content -->

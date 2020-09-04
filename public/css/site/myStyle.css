@@ -1930,14 +1930,14 @@ p {
 
 .single-comment {
     border-radius: 12px;
-    box-shadow: #34ce57 1px 1px 30px;
+    box-shadow: #20c5ba 1px 1px 30px;
     transition: 200ms;
     outline: none;
 }
 
 .single-comment:hover {
     cursor: pointer;
-    box-shadow: #34ce57 1px 1px 10px;
+    box-shadow: #ffe735 1px 1px 10px;
 }
 
 .single-comment .fa-star {

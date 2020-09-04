@@ -16,10 +16,10 @@ class Package extends Model
                  'pk_tree' => 'کلید درخت ',
                  'pk_category' => 'کلید دسته بندی  ',
                  'fa_name' => 'نام فارسی',
-                 'en_name' => 'نام انگلیسی',
+                 
                  'sort_tree' => 'شماره اولویت ',
                  'price' => 'قیمت  ',
-                 'time' => 'مدت زمان',
+                
                  'count' => 'تعداد قسمت',
                  'download_count' => 'تعداد دانلود',
                  'status' => 'وضعیت',

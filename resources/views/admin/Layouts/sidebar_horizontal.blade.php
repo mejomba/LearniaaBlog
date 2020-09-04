@@ -1,7 +1,6 @@
+<style> .nav-fill .nav-item {text-align : center !important ;flex :  none !important ;}</style>
 
-<!-- Row 1 -->
-
-<ul class="nav nav-pills nav-fill flex-column flex-sm-row" id="tabs-text" role="tablist">
+<ul class="nav nav-pills nav-fill flex-column flex-sm-row" id="tabs-text" role="tablist" style="background-color :ghostwhite">
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0"
      id="tabs-text-1-tab"  href="{{route('admin.home')}}" 
@@ -10,7 +9,6 @@
      داشبورد</a>
   </li>
   
-
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab"  href="{{route('admin.blog.index')}}" 
      role="tab" aria-controls="tabs-text-3" aria-selected="false">
@@ -18,15 +16,12 @@
     بلاگ</a>
   </li>
 
-
   <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"  href="{{route('admin.tag.index')}}" 
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
     <img src="{{ asset('images/Template/icon_tag.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     تگ</a>
   </li>
-
-@if( $user =  Auth::user()->type == 'مدیر')
 
 <li class="nav-item">
     <a class="nav-link mb-sm-3 mb-md-0"
@@ -36,13 +31,35 @@
      دسته بندی</a>
   </li>
 
-  
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
      id="tabs-text-2-tab"   href="{{route('admin.package.index')}}"
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
     <img src="{{ asset('images/Template/icon_package.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     پکیج</a>
+  </li>
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="# "  onclick="OpenPopup()"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/icon_course.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    درس</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab"  href="{{route('admin.section.index')}}" 
+     role="tab" aria-controls="tabs-text-3" aria-selected="false">
+    <img src="{{ asset('images/Template/icon_package.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    سکشن</a>
+  </li>
+
+  <li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.order.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/icon_basket.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+     سفارش</a>
   </li>
 
   <li class="nav-item primary">
@@ -61,19 +78,6 @@
     برگه</a>
   </li>
 
-
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="# "  onclick="OpenPopup()"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/icon_course.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    درس</a>
-  </li>
-
-
-
-
-
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"   href="{{route('admin.user.index')}}" 
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
@@ -87,19 +91,6 @@
     <img src="{{ asset('images/Template/icon_behavior.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     رفتار</a>
   </li>
-
-
-@endif
-
-
-
-  
-
-</ul>
-
-<!-- Row 2 -->
-
-<ul class="nav nav-pills nav-fill flex-column flex-sm-row" id="tabs-text" role="tablist" style="margin-top:5px">
 
 <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
@@ -117,7 +108,6 @@
     کیف پول</a>
   </li>
 
-
 <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
      id="tabs-text-2-tab"   href="{{route('admin.transaction.index')}}"
@@ -125,8 +115,6 @@
     <img src="{{ asset('images/Template/icon_transaction.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     تراکنش </a>
   </li>
-
-
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
@@ -146,30 +134,11 @@
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.order.index')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/icon_basket.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-     سفارش</a>
-  </li>
-
-
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
      id="tabs-text-2-tab"   href="{{route('admin.routing.index')}}"
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
     <img src="{{ asset('images/Template/icon_routing.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
      مسیرها</a>
   </li>
-
-
-  <li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.assist.index')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/icon_help.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-     همکاری با ما</a>
-  </li>
-
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
@@ -179,16 +148,6 @@
      اررور ها</a>
   </li>
 
-  
-<li class="nav-item primary">
-    <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="{{route('admin.discount.index')}}"
-     role="tab" aria-controls="tabs-text-2" aria-selected="false">
-    <img src="{{ asset('images/Template/icon_discount.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    بن تخفیف</a>
-  </li>
-
-
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
      id="tabs-text-2-tab"   href="{{route('admin.learner.index')}}"
@@ -197,19 +156,21 @@
     مدرس</a>
   </li>
 
-  
-  <li class="nav-item">
-    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab"  href="{{route('admin.section.index')}}" 
-     role="tab" aria-controls="tabs-text-3" aria-selected="false">
-    <img src="{{ asset('images/Template/icon_package.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-    سکشن</a>
+<li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.assist.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/icon_help.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+     همکاری با ما</a>
   </li>
 
-  </ul>
-
-  
-<!-- Row 3 -->
-<ul class="nav nav-pills nav-fill flex-column flex-sm-row" id="tabs-text" role="tablist" style="margin-top:5px;border-bottom :4px dotted #20c5ba">
+<li class="nav-item primary">
+    <a class="nav-link mb-sm-3 mb-md-0"
+     id="tabs-text-2-tab"   href="{{route('admin.discount.index')}}"
+     role="tab" aria-controls="tabs-text-2" aria-selected="false">
+    <img src="{{ asset('images/Template/icon_discount.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
+    بن تخفیف</a>
+  </li>
 
 </ul>
 

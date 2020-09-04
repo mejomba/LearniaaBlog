@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول رفتارها </h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_behavior.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                رفتار </h1>
                   <p class="card-category text-center">
                   </p>
                 </div>

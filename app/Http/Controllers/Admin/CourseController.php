@@ -131,7 +131,7 @@ class CourseController extends Controller
 
                 if($new_instance->save())
                 {
-                    return redirect(route('admin.course.index'))->with('success','درس با موفقیت ایجاد شد ');
+                    return redirect(route('admin.course.index',request()->pk_package))->with('success','درس با موفقیت ایجاد شد ');
                 }
                 else
                 {
@@ -254,7 +254,7 @@ class CourseController extends Controller
 
                 if($course->save())
                 {
-                    return redirect(route('admin.course.index'))->with('success','درس با موفقیت ویرایش شد ');
+                    return redirect(route('admin.course.index',request()->pk_package))->with('success','درس با موفقیت ویرایش شد ');
                 }
                 else
                 {
@@ -293,10 +293,7 @@ class CourseController extends Controller
                     'pic_cover' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
                     'sort' => 'required',
                     'Alt_cover' => 'required',
-                    'download_link' => 'required',
-                    'keywords' => 'required',
-                    'description' => 'required',
-                    
+                    'download_link' => 'required',                    
                  ];
 
     $messages = [
@@ -310,8 +307,6 @@ class CourseController extends Controller
                 'sort.required' => 'ترتیب  وارد نشده است',
                 'Alt_cover.required' => 'ALT  وارد نشده است',
                 'download_link.required' => 'لینک دانلود  وارد نشده است',
-                'keywords.required' => 'keywords  وارد نشده است',
-                'description.required' => 'description   وارد نشده است',
                
                ];
 

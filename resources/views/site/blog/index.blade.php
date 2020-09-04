@@ -54,9 +54,11 @@
                             </p>
                         </div>
                         <div class="card-end px-4 mt-3 py-2">
-                        <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span><i class="fa fa-circle mr-2 text-warning  "></i>
+                        <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span>
+                        <i class="fa fa-circle mr-2 text-warning  "></i>
                             <br>
-                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span><i class="fa fa-circle mr-2 text-info  "></i>
+                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
+                            <i class="fa fa-circle mr-2 text-info  "></i>
                             <a class="btn btnLearniaa float-right px-4 py-2" 
                             href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                             مشاهده</a>

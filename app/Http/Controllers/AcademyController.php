@@ -131,7 +131,7 @@ class AcademyController extends Controller
                 compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
             }
 
-            return redirect()->back()->with('report',' خطا : به علت پرداخت ننمودن هزینه به این قسمت دسترسی ندارید');
+            return redirect()->back()->with('report','به علت خریداری نکردن دوره به این قسمت دسترسی نداری به قسمت لیست پخش برو');
 
 
     }

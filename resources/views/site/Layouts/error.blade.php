@@ -1,6 +1,6 @@
 <!-- Modal Error Box -->                      
 <div class="modal fade" dir="rtl" id="ModalError" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalError" aria-hidden="true">  
-<div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
+<div class="modal-dialog modal-dialog-centered" role="document" style="max-width:500px"> 
 <div class="modal-content">
 <div class="modal-header"> 
 <h5 class="modal-title" id="ModalLabelError">پیغام</h5></div>                             
@@ -26,7 +26,9 @@
 </div>
 </div>
 <div class="modal-footer">
-<button type="button" onclick="ModalError_close()" class="btn btnLearniaa" data-dismiss="modal">بستن</button> 
+<button type="button" onclick="ModalError_close()" class="btn btn-primary"
+ style="background-color:brown;border-color:brown"
+>بستن</button>  
 </div>
 </div>
 </div>

@@ -15,7 +15,7 @@
 @csrf
 <div class="form-group d-flex mt-2">
 <img class="rounded-circle mr-1" src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-<input name="username" id="username" type="text" class="form-control" placeholder=" تلفن همراه">
+<input name="username" id="username" type="text" class="form-control" placeholder=" تلفن همراه یا پست الکترونیکی">
 </div>
 <input type="submit" class="btn btn-primary text-white text-center mt-3" value="تایید">
 </form>
