@@ -25,7 +25,6 @@
 <input type="hidden" name="name" value="{{ $_GET['name'] }}">
 <input type="hidden" name="password" value="{{ $_GET['password'] }}">
 <input type="hidden" name="attract" value="{{ $_GET['attract'] }}">
-<input type="hidden" name="confirmcode" value="{{ $Random_Generate }}">
 
 
 <img class="rounded-circle mr-1" src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="40px" width="40px">

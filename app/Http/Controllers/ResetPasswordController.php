@@ -158,6 +158,10 @@ class ResetPasswordController extends Controller
                         if($check!=='09')
                         { 
                             $Random_Generate = rand(0,999999);
+                            $newcode = new reset();
+                            $newcode->pk_user = $_GET['username'];
+                            $newcode->token = $Random_Generate;
+                            $newcode->save();
                             if($_GET['username'])
                             {
                             $details = [
@@ -172,6 +176,11 @@ class ResetPasswordController extends Controller
                         }
                         else
                         {
+                            $newcode = new reset();
+                            $newcode->pk_user = $_GET['username'];
+                            $newcode->token = $Random_Generate;
+                            $newcode->save();
+                            
                             $client = new \IPPanel\Client('ai8RCfgBRB4EMq_WdlVq36Pw7DbmqyBQQRMsYBxh8wc=');
                             $client->send(
                                 "+9850009589",          // originator
