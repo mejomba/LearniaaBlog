@@ -31,7 +31,7 @@
 </div>
 </div>
 <div class="text-center form-group" >
-<input type="submit" class="btn btn-primary" value="ارسال پیام">
+<input type="submit" class="btn btnLearniaa" value="ارسال پیام">
 </div>
 </form>
 </div>

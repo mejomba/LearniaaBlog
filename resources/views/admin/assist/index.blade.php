@@ -1,8 +1,8 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> نمایش همکار ها | لرنیا </title>
-  <meta  name="description" content=" نمایش همکار ها | لرنیا">
+<title>همکار ها | لرنیا </title>
+  <meta  name="description" content=" همکار ها | لرنیا">
 @endsection
 
 @section('content')
@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول همکار ها</h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_help.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                همکار ها</h1>
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.product.create')}}" class="btn btn-primary btn-round" 

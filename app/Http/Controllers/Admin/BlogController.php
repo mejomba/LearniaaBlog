@@ -42,7 +42,7 @@ class BlogController extends Controller
     {
         $categories = Category::where('type','پست')->get();
         $tags = Tag::where('type','پست')->get();
-        $users = User::get();
+        $users = User::where('type','مدیر')->Orwhere('type','نویسنده')->get();
         return view('admin.blog.create',compact('categories','tags','users'));
         
     }
@@ -257,12 +257,13 @@ class BlogController extends Controller
                   $video = 'yes';
                   $new_instance->video = 'yes';
                   $new_instance->address_video = request()->address_video;
+                  $new_instance->poster_video = request()->poster_video;
                   $videoschema=[
                     "@context"=> "https://schema.org",
                     "@type"=> "VideoObject",
                     "name"=>  request()->title,
                     "description"=> $desc_short ,
-                    "thumbnailUrl"=> Storage::url('post/'.$pic_name),
+                    "thumbnailUrl"=> Storage::url('PosterVideoPosts/'.request()->poster_video),
                     "uploadDate" => $now->toDateString()
     
                   ];
@@ -552,12 +553,13 @@ class BlogController extends Controller
                $video = 'yes';
                $blog->video = 'yes';
                $blog->address_video = request()->address_video;
+               $blog->poster_video = request()->poster_video;
                $videoschema=[
                  "@context"=> "https://schema.org",
                  "@type"=> "VideoObject",
                  "name"=>  request()->title,
                  "description"=> $desc_short ,
-                 "thumbnailUrl"=> Storage::url('post/'.$pic_name),
+                 "thumbnailUrl"=> Storage::url('PosterVideoPosts/'.request()->poster_video),
                  "uploadDate" => $now->toDateString()
  
                ];

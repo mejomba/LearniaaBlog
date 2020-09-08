@@ -11,8 +11,11 @@
 <h3 class="p-2" style="background-color:#20C5BA"> فراموشی رمز عبور</h3>
 </div>
 </div>
-<form class="form px-1 py-5" method="POST" action="{{route('reset.delete',$pk_user)}}">
+<form class="form px-1 py-2" method="POST" action="{{route('reset.delete',$pk_user)}}">
 @csrf
+<div class="form-group text-center">
+<span>رمز عبور جدید دلخواه را وارد نمایید </span>
+</div>
 <div class="form-group d-flex mt-2">
 <img class="rounded-circle mr-1" src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="40px" width="40px">
 <input name="newpassword" id="newpassword" type="text" class="form-control" placeholder="رمز عبور جدید" />

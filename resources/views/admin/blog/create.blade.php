@@ -25,9 +25,10 @@
       <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">     
+                      <div class="input-group-prepend"> 
+                      <span>عنوان فارسی</span>    
                       </div>
-                      <input class="form-control" name="title" placeholder="عنوان " type="text">
+                      <input class="form-control" name="title" placeholder="عنوان فارسی" type="text">
                     </div>
               </div>
         </div>
@@ -35,9 +36,10 @@
         <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">     
+                      <div class="input-group-prepend">  
+                      <span>عنوان خارجی (URL)</span>    
                       </div>
-                      <input class="form-control" name="en_title" placeholder="عنوان خارجی (URL) " type="text">
+                      <input class="form-control" name="en_title" placeholder="عنوان خارجی (URL) " style="direction:ltr" type="text">
                     </div>
               </div>
         </div>
@@ -90,34 +92,8 @@
         </div>
         </div>
          <!-- Select Box -->
-         
 
-        <!-- Check Box -->
-        <div class="col-md-12">
-        <div class="row">
-                 <div class="col-md-1">
-                        <span>تگ ها</span> 
-                        </div>
-                        <div class="col-md-11">
-                      <div class="form-group focused">
-                                  <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">  
-                                    </div>
-                                    @foreach($tags as $tag)                                
-                                <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
-                                <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
-                                name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" >                            
-                                <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }} |</label>
-                               </div>
-                            @endforeach 
-                       </div>
-                    </div>
-                 </div>
-        </div>
-        </div>
-      <!-- Check Box -->
-        
-       <!-- Select Box -->
+           <!-- Select Box -->
         <div class="col-md-4">
         <div class="row">
                         <div class="col-md-3">
@@ -138,9 +114,9 @@
         </div>
          <!-- Select Box -->
 
-         
+    
       <!-- Picture Box -->
-        <div class="col-md-4">
+      <div class="col-md-4">
         <div class="row">
                         <div class="col-md-3">
                         <span>تصویر </span> 
@@ -157,14 +133,14 @@
         </div>
         </div>
          <!-- Picture Box -->
-
-
+         
          <div class="col-md-4">
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
+                      <span>alt تصویر </span>
                       </div>
-                      <input class="form-control" name="alt" placeholder="alt pic " type="text">
+                      <input class="form-control" name="alt" placeholder="alt تصویر" type="text">
                     </div>
                </div>
         </div>  
@@ -174,6 +150,7 @@
         <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
+                      <span>مدت زمان مطالعه</span>
                       </div>
                       <input name="readtime" class="form-control" placeholder="مدت زمان مطالعه " type="text">
                     </div>
@@ -185,6 +162,7 @@
             <div class="form-group">
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
+                          <span>تاریخ ایجاد</span>
                           </div>
                           <input name="create_at" class="form-control" placeholder="تاریخ ایجاد " type="text">
                       </div>
@@ -192,10 +170,11 @@
           </div>
 
 
-        <div class="col-md-4">
+          <div class="col-md-4">
             <div class="form-group">
                         <div class="input-group input-group-alternative">
                           <div class="input-group-prepend">
+                          <span>توضیح کوتاه</span>
                           </div>
                           <input name="desc_short" class="form-control" placeholder="توضیح کوتاه" type="text">
                         </div>
@@ -229,8 +208,20 @@
             <div class="form-group">
             <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
+                  <span>ادرس فایل ویدئو</span>
                      </div>
-                       <textarea name="address_video" id="video" type="text" class="form-control" placeholder="ادرس ویدئو"></textarea>
+                       <textarea name="address_video" id="video" type="text" class="form-control" placeholder="ادرس فایل ویدئو"></textarea>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+            <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                  <span>ادرس عکس ویدئو</span>
+                     </div>
+                       <textarea name="poster_video" id="video" type="text" class="form-control" placeholder="ادرس عکس ویدئو"></textarea>
                   </div>
             </div>
         </div>
@@ -255,8 +246,44 @@
         </div>
          <!-- Picture Box -->
            
+                                              
+                <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend"> 
+                                  <span>کلمات کلیدی </span>  
+                                  </div>
+                                  <input class="form-control" name="keywords"  placeholder="keywords کلمات کلیدی" type="text" >
+                                </div>
+                          </div>
+                    </div>
 
 
+        <!-- Check Box -->
+        <div class="col-md-12">
+        <div class="row">
+                 <div class="col-md-1">
+                        <span>تگ ها</span> 
+                        </div>
+                        <div class="col-md-11">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    @foreach($tags as $tag)                                
+                                <div style="margin-right:8px" class="custom-control custom-checkbox mb-3">
+                                <input class="custom-control-input" id="{{ $tag->pk_tags }}" 
+                                name="pk_tags[]" type="checkbox" value="{{ $tag->pk_tags }}" >                            
+                                <label class="custom-control-label" for="{{ $tag->pk_tags }}"> {{ $tag->fa_name }} |</label>
+                               </div>
+                            @endforeach 
+                       </div>
+                    </div>
+                 </div>
+        </div>
+        </div>
+      <!-- Check Box -->
+        
         <div class="col-md-12" style="min-height:700px">
                <span> محتوا</span>  
                             <!-- ckeditor -->
@@ -290,50 +317,10 @@
 } );
         </script> 
      <!-- ckeditor -->    
-
-
-                <!-- SEO Tools (MetaTag) -->
-               
-
-                <h2 class="text-center">تنظیمات متاتگ های سئو تکنیکال</h2>
-
-              <div class="row">                                      
-                <div class="col-md-4">
-                    <div class="form-group">
-                                <div class="input-group input-group-alternative">
-                                  <div class="input-group-prepend">   
-                                  </div>
-                                  <input class="form-control" name="keywords"  placeholder="keywords کلمات کلیدی" type="text" >
-                                </div>
-                          </div>
-                    </div>
-
-
-               
-              <!-- SEO Tools (MetaTag) -->
-
-              <!-- SEO Tools (Open Graph) -->
-
-
-             
-
-          
-
-                  
-              <!-- SEO Tools (Open Graph) -->
-
-              <!-- SEO Tools (Twitter Card) -->
-                  
-             
-              
-
-               
+      
       </div> 
    </div>
-
-
-
-           </div>         
+     
                <div class="text-center" style="padding-top:20px">
                     <button type="submit" class="btn btn-primary">ثبت درخواست</button>
                   </div>

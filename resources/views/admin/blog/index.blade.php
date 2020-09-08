@@ -11,7 +11,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h1 class="card-title text-center">جدول پست ها</h1>
+                  <h1 class="card-title text-center">
+                  <img src="{{ asset('images/Template/icon_blog.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                 بلاگ</h1>
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.blog.create')}}" class="btn btn-primary btn-round" 
@@ -47,12 +49,14 @@
                           <td>
                           {{ $blog['pk_category'] }} 
                           </td>
-                          <td>
-                          {{ $blog['pk_tags'] }} 
-                          </td>
+                          
 
                           <td>
                           {{ $blog['title'] }} 
+                          </td>
+
+                          <td>
+                          {{ $blog['en_title'] }} 
                           </td>
 
                           <td>
@@ -69,14 +73,14 @@
 
                             @if($blog['status'] == 'انتشار')
                             <span style="font-size: 1.3rem;color:gray">
-                            <a target="_blank" href="{{route('blog.show',  ['title' =>  $blog['title'] ] )}}"> 
+                            <a target="_blank" href="{{route('blog.show',  ['en_title' =>  $blog['en_title'] ] )}}"> 
                             <img src="{{ asset('images/Template/world.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                             </a>
                             </span>
                             
 
                             @else
-                            <button class="btn" type="button" onclick="GetDraftPost('{{ $blog['pk_blog'] }}')">
+                            <button class="btn" type="button" style="padding:0;" onclick="GetDraftPost('{{ $blog['pk_blog'] }}')">
                             <span style="font-size: 1.3rem;color:gray">
                             <img src="{{ asset('images/Template/draft.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
 

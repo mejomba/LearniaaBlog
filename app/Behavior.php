@@ -14,6 +14,11 @@ class Behavior extends Model
        return $this->belongsTo(User::class,'pk_users','pk_users');
     }
 
+    public function profile()
+    {
+       return $this->hasOne('App\Profile','pk_users','pk_users');
+    }
+
     public function post()
     {
        return $this->hasOne(Post::class,'pk_posts');
@@ -23,12 +28,12 @@ class Behavior extends Model
     public function GetListAllNameColumns_ForTable()
    {
       return  [ 'pk_behavior' => 'کلید رفتار ',
+                'type_entity' => 'نوع موجودیت',
                 'pk_entity' => 'کلید موجودیت',
                 'pk_users' => 'کلید کاربر',
-                'type' => 'نوع',
+                'type_behavior' => 'نوع رفتار',
                 'content'=> 'محتوا',
-                'status'=> 'وضعیت',
-
+                'reply'=> 'وضعیت پاسخ',
                 ] ;
    }
 

@@ -48,38 +48,36 @@ style="border: solid 1px #20C5BA ; border-radius: 5px">
 <div class="row">
 <div class="col-md-4 col-12 text-center">
 <a class="mb-0">
-<button class="btn btn-link dropdown-toggle" style="white-space:normal; " data-toggle="collapse" aria-expanded="false"  
-data-target="#{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}" 
-aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}">
+<p>
 گام {{$row_counter}} :
 {{$road_packages[$no]['data'][$package]['fa_name']}}
-</button>
+</p>
 </a>
 </div>
 
 @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
 
-<div class="col-md-3 col-12 text-center" style="margin-top:13px">
+<div class="col-md-3 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
     @if($road_packages[$no]['data'][$package]['price'] == 0)
     <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
     <span style="color:green">   رایگان </span>
     @else
     <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
-    <span style="color:green">  {{$road_packages[$no]['data'][$package]['price']}} </span>
+    <span style="color:green"> @php echo number_format($road_packages[$no]['data'][$package]['price'],0) @endphp </span>
     <span style="color:green">   تومان </span>
    </div>
     @endif
 
 
     @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
-    <div class="col-md-3 col-12 text-center" style="margin-top:13px">
+    <div class="col-md-3 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
     <img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
-    {{ $road_packages[$no]['data'][$package]['time'] }} ساعت
+    {{ $road_packages[$no]['data'][$package]['time'] }} 
     </div>
     @endif
 
     @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
-    <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+    <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3" style="padding-top:10px">
     <a href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}"  class="btn fourth btn-round">مشاهده</a>
     </div>
     @endif
@@ -96,12 +94,7 @@ aria-controls="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}
 </div>
 </div>
 
-<div id="{{'collapse'.$road_packages[$no]['data'][$package]['pk_package']}}" class="collapse" 
-aria-labelledby="{{'id'.$road_packages[$no]['data'][$package]['pk_package']}}" data-parent="#row">
-<div class="card-text">
-@php echo $road_packages[$no]['data'][$package]['desc'] ; @endphp
-</div>
-</div>
+
 </div>
 </div>
 </li>

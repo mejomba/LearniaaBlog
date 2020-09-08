@@ -6,42 +6,45 @@
 @endsection
 
 @section('content')
-<div class="col-md-12 text-center" dir="rtl" style="padding-top:100px">
-    <div class="row">
-       
-        <div class="col-4">  
-       
+
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_dashboard.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                داشبورد</h1>
+                  <p class="card-category text-center">
+                    
+                 <!-- <a href="{{route('admin.user.create')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem;"> ایجاد کاربر
+                  </a>  -->              
+
+                    </p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                     
+                    <thead class=" text-primary">
+                      
+                    </thead>
+
+        <tbody>
+             
+       </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
         </div>
 
-        <div class="col-4">
-        <img src="{{ asset('images/Template/logo.png') }}" alt="Thumbnail Image" width="100px" height="100px ">
-      
-        </div>
-        
-        <div class="col-4">
-        </div>
 
-
-  </div>
-
-  <div class="row">
-
-<div class="col-4">  
-
-</div>
-
- <div class="col-4">  
- <span > به زودی ... </span>
- </div>
-
-  <div class="col-4">  
-
- </div>       
-
-
-</div>
-
-</div>
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
          <div class="modal-content" style="width:90%">
@@ -95,7 +98,7 @@ function ClosePopup()
  function getdata()
  {
    var x =  $('#pk_package').val();
-  window.location.href = "http://127.0.0.1:8000/admin/course/index/"+x;
+  window.location.href = "/admin/course/index/"+x;
 
  }
  </script>

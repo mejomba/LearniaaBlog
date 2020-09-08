@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول بن تخفیف ها</h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_discount.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+               کد تخفیف</h1>
                   <p class="card-discount text-center">
                     
                   <a href="{{route('admin.discount.create')}}" class="btn btn-primary btn-round" 

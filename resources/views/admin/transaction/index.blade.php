@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">لیست تراکنش ها</h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_wallet.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+              تراکنش</h1>
                   <p class="card-category text-center">
                     
                     </p>

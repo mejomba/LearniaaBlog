@@ -110,6 +110,46 @@
     <!-- Select Box -->
 
 
+       <!-- Select Box -->
+       <div class="col-md-4">
+        <div class="row">
+                        <div class="col-md-3">
+                        <span>تصویر </span> 
+                        </div>
+                        <div class="col-md-9">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <input  type="file" id="pic" name="pic">
+                                  </div>
+                            </div>
+                     </div>
+        </div>
+        </div>
+      <!-- Select Box -->
+
+
+       <!-- textarea Box -->
+       <div class="col-md-12">
+        <div class="row">
+                        <div class="col-md-1">
+                        <span>درباره من </span> 
+                        </div>
+                        <div class="col-md-11">
+                      <div class="form-group focused">
+                                  <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">  
+                                    </div>
+                                    <textarea name="extras" class="form-control"></textarea>
+                                  </div>
+                            </div>
+                     </div>
+        </div>
+        </div>
+      <!-- textarea Box -->
+
+
 
     </div>
 

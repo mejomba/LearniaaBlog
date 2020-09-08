@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول مسیرها</h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_routing.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                مسیر</h1>
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.routing.create')}}" class="btn btn-primary btn-round" 
@@ -64,7 +66,7 @@
                        </a>
                         </span>
 
-                        <button class="btn" type="button" onclick="GetContentRouting('{{ $route['pk_routing'] }}')">
+                        <button class="btn" type="button" style="padding:0;" onclick="GetContentRouting('{{ $route['pk_routing'] }}')">
                             <span style="font-size: 1.3rem;color:gray">
                             <img src="{{ asset('images/Template/draft.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
 

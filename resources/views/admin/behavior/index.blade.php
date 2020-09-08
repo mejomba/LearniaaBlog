@@ -13,17 +13,11 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول رفتارها </h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_behavior.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                رفتار </h1>
                   <p class="card-category text-center">
-                    
-
-                   <!--
-                  <a href="{{route('admin.behavior.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;background: linear-gradient(to right, #1aafd0 0%, #1aafd0 51%, #1aafd0 100%);"> ایجاد تگ
-                  </a> 
-                  -->               
-
-                    </p>
+                  </p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -53,6 +47,10 @@
                           </td>
 
                           <td>
+                          {{ $behavior_one['type_entity'] }} 
+                          </td>
+
+                          <td>
                           {{ $behavior_one['pk_entity'] }} 
                           </td>
 
@@ -61,14 +59,20 @@
                           </td>
 
                           <td>
-                          {{ $behavior_one['type'] }} 
+                          {{ $behavior_one['type_behavior'] }} 
                           </td>
 
                           <td>
                           {{ $behavior_one['content'] }} 
                           </td>
 
-                          
+                          <td>
+                           @if($behavior_one['reply'] != null)
+                            پاسخ داده شده
+                           @else
+                            بدون پاسخ   
+                           @endif 
+                          </td>
                       
                           <td>
 

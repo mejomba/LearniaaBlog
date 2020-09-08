@@ -19,6 +19,7 @@ use App\Delivery;
 use Verta;
 use App\Log;
 use App\Routing;
+use App\Section;
 
 use App\CustomClass\SmsSender;
 use App\Mail\SendMail;
@@ -50,6 +51,19 @@ class ApiController extends Controller
     {
         $route = Routing::find($_POST['pk_routing']);
         return response()->json($route);
+    }
+
+    public function  GetTextIntro()
+    {
+        $Package =Package::find($_POST['pk_package']);
+        return response()->json($Package->desc);
+    }
+   
+
+    public function GetVideoIntro()
+    {
+        $Section =Section::find($_POST['pk_section']);
+        return response()->json($Section->intro);
     }
 
     public function GetDraftPost()

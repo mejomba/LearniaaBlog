@@ -5,11 +5,11 @@
 <meta  name="keywords"    content="اخبار,مقالات,بلاگ,لرنیا" >
 @endsection
 @section('text_landing')
-<h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">بلاگ</span></h1>
-<h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد</h3>
+<h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">پک</span></h1>
+<h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">ما در لرنیا پک پکیج هایی برای آموزش سریع شما ساخته ایم</h3>
 @endsection
 @section('pic_landing')
-<img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/blogNew.svg')}}" alt="" style="margin-top: -15px">
+<img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/quicklearn.svg')}}" alt="" style="margin-top:-65px;width:600px !important">
 @endsection
 @section('content')
 <!-- Category Posts -->
@@ -24,15 +24,6 @@
 {{--</section> --}}
 <!-- Category Posts -->
 <div class="container-fluid">
-<div class="row mt-5 mb-4" style="padding-top:20px;">
-<div class="col-12 mx-auto text-center">
-<span style="font-size: 20px ; font-weight: 900">
-<img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
-بخوانید ، بدانید ، لذت ببرید
-<img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
-</span>
-</div>
-</div>
     <div class="row p-2" id="ListOfData" style="font-size:15px">
             @foreach($packages as $package)
                 <div class="col-lg-4 col-md-6 col-sm-11 col-12 mx-auto mt-3">
@@ -49,12 +40,15 @@
                             </a>
                           
                         </div>
-                        <div class="card-end px-4 mt-3 py-2">
+                        <div class="card-end px-4 py-2">
                             <br>
-                            <span class="mt-1">قیمت :  {{ $package['price'] }} </span><i class="fa fa-circle mr-2 text-warning  "></i>
+                            <span style="font-family:Dastnevis;font-size:25px" class="mt-1">قیمت :  {{ $package['price'] }} تومان </span>
+                            <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
+                            
                             <br>
-                            <span class="mt-1">مدت زمان  :  {{ $package['time'] }} ساعت </span><i class="fa fa-circle mr-2 text-info  "></i>
-                            <a class="btn btn-primary float-right px-4 py-2" 
+                            <span style="font-family:Dastnevis;font-size:25px" class="mt-1">مدت زمان  :  {{ $package['time'] }} دقیقه </span>
+                            <img src="{{ asset('images/Template/video-camera.svg') }}"  alt="Learniaa" width="30px" height="30px"> 
+                            <a class="btn btnLearniaa float-right px-4 py-2" 
                             href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                             مشاهده</a>
                         </div>

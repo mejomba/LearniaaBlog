@@ -15,6 +15,7 @@ use App\Profile;
 use App\Course;
 use App\History;
 use App\Blog;
+use App\Section;
 
 class AcademyController extends Controller
 {
@@ -130,7 +131,7 @@ class AcademyController extends Controller
                 compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
             }
 
-            return redirect()->back()->with('report',' خطا : به علت پرداخت ننمودن هزینه به این قسمت دسترسی ندارید');
+            return redirect()->back()->with('report','به علت خریداری نکردن دوره به این قسمت دسترسی نداری به قسمت لیست پخش برو');
 
 
     }
@@ -157,9 +158,19 @@ class AcademyController extends Controller
         /* Auth */
 
         $selected_road = $pk_tree ; 
-        $courses =  Course::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
         $package = Package::where('pk_package',$pk_package)->first();
-        return view('site.academy.course',compact('courses','selected_road','payment_status','package','pk_user'));
+        $behaviors = Behavior::where(['pk_entity'=>$pk_package , 'type_entity'=>'پست' ])->get();
+        $sections= Section::where('pk_package',$pk_package)->orderby('sort','ASC')->get();
+
+        $DataSection = array();
+        foreach ($sections as $key => $section) 
+        {
+           $courses = Course::where('pk_package',$pk_package)->whereBetween('sort',
+                       [$section->part_from, $section->part_to])->get();
+
+           array_push($DataSection,['Section' => $section , 'Courses' => $courses ]) ; 
+        }
+        return view('site.academy.course',compact('selected_road','payment_status','package','pk_user','behaviors','DataSection'));
     }
 
 
@@ -273,7 +284,7 @@ $messages = [
     }
     public function quicklearn()
     {
-        $packages = package::where('pk_tree',0)->paginate(3);
+        $packages = package::where('pk_tree',0)->paginate(6);
         return view('site.academy.quicklearn',compact('packages'));
     }
 

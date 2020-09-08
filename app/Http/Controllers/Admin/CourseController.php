@@ -131,7 +131,7 @@ class CourseController extends Controller
 
                 if($new_instance->save())
                 {
-                    return redirect(route('admin.course.index'))->with('success','درس با موفقیت ایجاد شد ');
+                    return redirect(route('admin.course.index',request()->pk_package))->with('success','درس با موفقیت ایجاد شد ');
                 }
                 else
                 {
@@ -254,7 +254,7 @@ class CourseController extends Controller
 
                 if($course->save())
                 {
-                    return redirect(route('admin.course.index'))->with('success','درس با موفقیت ویرایش شد ');
+                    return redirect(route('admin.course.index',request()->pk_package))->with('success','درس با موفقیت ویرایش شد ');
                 }
                 else
                 {
@@ -293,21 +293,7 @@ class CourseController extends Controller
                     'pic_cover' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
                     'sort' => 'required',
                     'Alt_cover' => 'required',
-                    'download_link' => 'required',
-                    'keywords' => 'required',
-                    'description' => 'required',
-                    'author' => 'required',
-                    'refresh' => 'required',
-                    'viewport' => 'required',
-                    'og_title' => 'required',
-                    'og_image' => 'required',
-                    'og_description' => 'required',
-                    'og_type' => 'required',
-                    'og_article' => 'required',
-                    'twitter_card' => 'required',
-                    'twitter_site' => 'required',
-                    'twitter_description' => 'required',
-                    'twitter_title' => 'required',
+                    'download_link' => 'required',                    
                  ];
 
     $messages = [
@@ -321,20 +307,7 @@ class CourseController extends Controller
                 'sort.required' => 'ترتیب  وارد نشده است',
                 'Alt_cover.required' => 'ALT  وارد نشده است',
                 'download_link.required' => 'لینک دانلود  وارد نشده است',
-                'keywords.required' => 'keywords  وارد نشده است',
-                'description.required' => 'description   وارد نشده است',
-                'author.required' => 'author  وارد نشده است',
-                'refresh.required' => 'refresh  وارد نشده است',
-                'viewport.required' => 'viewport  وارد نشده است',
-                'og_title.required' => 'og_title  وارد نشده است',
-                'og_image.required' => 'og_image  وارد نشده است',
-                'og_description.required' => 'og_description  وارد نشده است',
-                'og_type.required' => 'og_type  وارد نشده است',
-                'og_article.required' =>  'og_article  وارد نشده است',
-                'twitter_card.required' => 'twitter_card  وارد نشده است',
-                'twitter_site.required' => 'twitter_site  وارد نشده است',
-                'twitter_description.required' =>'twitter_description  وارد نشده است',
-                'twitter_title.required' =>'twitter_title  وارد نشده است',
+               
                ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
@@ -370,8 +343,5 @@ class CourseController extends Controller
             return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
         }
     }
-    public function list($id)
-    {
-        
-    }
+ 
 }

@@ -44,7 +44,7 @@
                  </div>
                  <div class="row">  
                        <div  class="col-12 col-md-12 col-lg-12">
-                       <a class="btn btn-primary" id="SectionFeedBack" href="" 
+                       <a class="btn btnLearniaa" id="SectionFeedBack" href="" 
                         style="background-color:#ffe735;border-color:#ffe735;color:black">ثبت نام و مشاهده دوره ها</a>
                        
                       </div>
@@ -53,7 +53,7 @@
                 <!-- Form &  Body -->
                              </div>
                                     <div class="modal-footer">
-                                        <button type="button" onclick="CloseSandogh()" class="btn btn-primary"  
+                                        <button type="button" onclick="CloseSandogh()" class="btn btnLearniaa"  
                                         style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
@@ -95,7 +95,7 @@
                 <!-- Form &  Body -->
                              </div>
                                     <div class="modal-footer">
-                                        <button type="button" onclick="ClosePopup()" class="btn btn-primary"  
+                                        <button type="button" onclick="ClosePopup()" class="btn btnLearniaa"  
                                         style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
@@ -118,7 +118,8 @@
     var last_location_user_id = 'tablo_start';
 
 document.addEventListener('DOMContentLoaded',function()
-{   document.querySelector('.header-bg').style.display = 'none';
+{   
+    document.querySelector('.header-bg').style.display = 'none';
     $("#tablo_webprograming").css('opacity','0');
     $("#tablo_python").css('opacity','0');
     $("#tablo_frontend").css('opacity','0');
@@ -265,7 +266,7 @@ function GetPopupData(LocationUserId)
                     {
                     let Name = document.createElement("button");
                     Name.setAttribute('type','button');
-                    Name.setAttribute('class', "btn btn-primary");
+                    Name.setAttribute('class', "btn btnLearniaa");
                     Name.textContent = item.caption ;
                     Name.setAttribute('SelectAnswerId',item.key);
                     Name.setAttribute('id',item.key+'_feedback');

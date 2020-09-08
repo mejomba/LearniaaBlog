@@ -15,7 +15,7 @@ Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')
 Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name('academy.saveprofile');
 Route::post('/academy/roadmap', 'AcademyController@roadmap')->name('roadmap');
 Route::get('/academy/roadmap', 'AcademyController@detail');
-Route::get('/academy/quicklearn', 'AcademyController@quicklearn');
+Route::get('/academy/quicklearn', 'AcademyController@quicklearn')->name('academy.quicklearn');
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
 
@@ -212,6 +212,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/routing/update/{id}', 'RoutingController@update')->name('admin.routing.update');
     Route::get('/routing/delete/{id}', 'RoutingController@destroy')->name('admin.routing.delete');
     Route::post('/routing/upload', 'RoutingController@upload')->name('admin.routing.upload');
+
+    Route::get('/section/index', 'SectionController@index')->name('admin.section.index');
+    Route::get('/section/create', 'SectionController@create')->name('admin.section.create');
+    Route::post('/section/store', 'SectionController@store')->name('admin.section.store');
+    Route::get('/section/edit/{id}', 'SectionController@edit')->name('admin.section.edit');
+    Route::post('/section/update/{id}', 'SectionController@update')->name('admin.section.update');
+    Route::get('/section/delete/{id}', 'SectionController@destroy')->name('admin.section.delete');
 
 });
 

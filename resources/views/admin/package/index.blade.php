@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول پکیج</h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_package.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                پکیج</h1>
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.package.create')}}" class="btn btn-primary btn-round" 
@@ -63,9 +65,7 @@
                           <td>
                           {{ $package['fa_name'] }} 
                           </td>
-                          <td>
-                          {{ $package['en_name'] }} 
-                          </td>
+                         
                           <td>
                           {{ $package['sort_tree'] }} 
                           </td>
@@ -86,10 +86,7 @@
                                 @endphp
                           </td>
 
-                          <td>
-                          {{ $package['time'] }} 
-                          </td>
-
+                         
                          
                           <td>
                           {{ $package['count'] }} 

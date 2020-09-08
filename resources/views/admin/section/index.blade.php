@@ -1,27 +1,25 @@
 @extends('admin.Layouts.layout_main')
 
 @section('Head')
-<title> نمایش نظرسنجی | لرنیا </title>
-  <meta  name="description" content=" نمایش نظرسنجی | لرنیا">
-    
-  
+<title> نمایش سکشن ها | لرنیا </title>
+  <meta  name="description" content=" نمایش سکشن ها | لرنیا">
 @endsection
 
 @section('content')
 
-<!--#########-->
+
 <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
                 <h1 class="card-title text-center">
-                <img src="{{ asset('images/Template/icon_politics.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
-               نظرسنجی</h1>
+                <img src="{{ asset('images/Template/icon_package.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                سکشن</h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.vote.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد نظرسنجی
+                  <a href="{{route('admin.section.create')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem;"> ایجاد سکشن
                   </a>                
 
                     </p>
@@ -46,31 +44,44 @@
                     </thead>
 
                       <tbody>
-                      @foreach($votes as $vote)
+                      @foreach($sections as $section)
                         <tr>
                           
                           <td>
-                          {{ $vote['pk_vote'] }} 
+                          {{ $section['pk_section'] }} 
+                          </td>
+                          
+                          <td>
+                          {{ $section['pk_package'] }} 
+                          </td>
+                      
+                          <td>
+                          {{ $section['sort'] }} 
                           </td>
                           <td>
-                          {{ $vote['name_vote'] }} 
-                          </td>
-                          <td>
-                          {{ $vote['question'] }} 
-                          </td>
-
-                          <td>
-                          @php  $json = json_decode($vote['extras'],false)  @endphp 
-                        گزینه اول :  {{ $json[0]->option1 ?? ''  }}  ------
-                        گزینه دوم :    {{  $json[0]->option2 ?? ''}} <br></br>
-                        گزینه سوم :    {{ $json[0]->option3 ?? ''}}   ------
-                        گزینه چهارم :    {{  $json[0]->option4 ?? '' }} 
+                          {{ $section['name'] }} 
                           </td>
 
                           <td>
+                          {{ $section['part_from'] }} 
+                          </td>
 
+                          <td>
+                          {{ $section['part_to'] }} 
+                          </td>
+
+                          <td>
+                          @if( $section['intro'] != null)
+                          دارای ویدیو
+                          @else
+                          بدون ویدیو
+                          @endif
+                          </td>
+
+                         
+                       <td>
                         <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.edit', $vote['pk_vote']) }}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.section.edit',$section['pk_section']) }}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
@@ -79,25 +90,17 @@
 
                         <span style="font-size: 1.3rem;color:black;">
                         <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $vote['pk_vote'] }} )" >
+                         onclick="Modal_Delete( {{$section['pk_section'] }})" >
                       <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
                       </button>
                         </span>
-
-                        
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.showmore', $vote['pk_vote']) }}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-                        
 
                         </td>
                           
                         </tr>
                         @endforeach
                         
- 
+          
  <!---- Modal Delete -->                       
  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
@@ -144,12 +147,10 @@ function del()
 { 
   var getUrl = window.location;
   var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" ;
-  location.replace( baseUrl + "admin/vote/delete/"+ id);
+  location.replace( baseUrl + "admin/section/delete/"+ id);
 }
 </script>
 <!---- Modal Delete -->                            
-                        
-                                       
                         
                         
                         

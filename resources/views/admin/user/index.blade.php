@@ -13,7 +13,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                <h1 class="card-title text-center">جدول کاربر ها</h1>
+                <h1 class="card-title text-center">
+                <img src="{{ asset('images/Template/icon_user.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                کاربر</h1>
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.user.create')}}" class="btn btn-primary btn-round" 
