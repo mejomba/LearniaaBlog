@@ -248,7 +248,7 @@ class BlogController extends Controller
                   "datePublished" => $now->toDateString(),
                   "dateModified" =>$now->toDateString()
               ];
-    
+
                 $new_instance->schema_markup = json_encode($schema);
     
     
@@ -544,7 +544,6 @@ class BlogController extends Controller
                "datePublished" => $datePublished,
                "dateModified" =>$dateModified
            ];
- 
              $blog->schema_markup = json_encode($schema);
  
  

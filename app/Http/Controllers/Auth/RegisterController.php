@@ -78,11 +78,14 @@ class RegisterController extends Controller
      */
         protected function create(array $data)
         { 
-                $user =  User::create(['name' => $data['name'],
-                'username' => $data['username'],
-                'password' => Hash::make($data['password']),
+            
+            if(request()->confirmcode == request()->code)
+            {
+                $user =  User::create(['name' => request()->name,
+                'username' => request()->username,
+                'password' => Hash::make(request()->password),
                 'type' => 'کاربر',
-                'attract' => $data['attract']
+                'attract' => request()->attract
                 ]);
 
                 $new_user = User::where('username',$data['username'])->first();
@@ -104,5 +107,11 @@ class RegisterController extends Controller
                 }
                 
                 return $user;
-       }
+            }else
+            {
+                return redirect()->back()->withErrors('کد تایید صحیح وارد نشده است');
+            }
+            
+        }
+       
 } 
