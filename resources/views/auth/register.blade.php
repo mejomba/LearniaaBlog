@@ -11,7 +11,7 @@
 <div class="text-center"><h3>ثبت نام کاربران</h3></div>
 </div>
 <div class="card-body pr-3 py-3">
-<form class="form" method="POST" action="{{route('register')}}">
+<form class="form" method="GET" action="{{route('registerconfirm')}}">
 @csrf
 @if(isset($_GET['redirectFromURL']))
 <input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">
@@ -49,6 +49,8 @@ src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" hei
 <img class="img-raised rounded-circle img-fluid"
 src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">
 </div>
+
+
 <select name="attract" class="form-control custom-select">
 <option class="" value="Instagram"  > آشنایی با ما از اینستاگرام </option>
 <option class="" value="PhysicalAdvertise"  > آشنایی با ما از تراکت،بروشور،پوستر</option>
@@ -60,6 +62,13 @@ src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" heigh
 <option class="" value="SMS"  >آشنایی با ما از پیامک</option>
 <option class="" value="Telegram"  >آشنایی با ما از تلگرام</option>
 </select>
+</div>
+@php $id = rand(1,10) @endphp
+<input type="hidden" name="picid" value="{{ $id }}">
+<div class="input-group-prepend">
+<img class="img-raised img-fluid"
+src="{{ asset('RECAPTCHA/'.$id.'.jpg')}}" alt="Thumbnail Image" height="250px" width="250px">
+<input name="confirm" id="confirm" type="confirm" class="form-control" placeholder=" اعداد داخل کادر را وارد کنید ">
 </div>
 </div>
 <div class="text-center mt-1">

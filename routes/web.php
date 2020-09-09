@@ -46,6 +46,7 @@ Route::get('/reset/update/{id}', 'ResetPasswordController@update')->name('reset.
 Route::post('/reset/delete/{id}', 'ResetPasswordController@destroy')->name('reset.delete');
 Route::post('/reset/callbacklogin', 'ResetPasswordController@callbacklogin')->name('reset.callbacklogin');
 Route::get('/reset/showcallbackloginform', 'ResetPasswordController@showcallbackloginform')->name('reset.showcallbackloginform');
+Route::get('/registerconfirm', 'ResetPasswordController@registerconfirm')->name('registerconfirm');
 
 Route::post('/message/store', 'MessageController@store')->name('message.store');
 Route::post('/message/newspaper', 'MessageController@newspaper')->name('message.newspaper');

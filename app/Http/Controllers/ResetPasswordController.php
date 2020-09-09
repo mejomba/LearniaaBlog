@@ -97,6 +97,106 @@ class ResetPasswordController extends Controller
 
     }
 
+    public function registercode(Request $request)
+    {
+        return view('auth.registerconfirm');
+
+    }
+
+    public function registerconfirm(Request $request)
+    {
+        $validator =  $this->validation($request);
+        $confirm = '';
+        
+        if ($validator->fails())
+           {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+          }else
+          {  
+                if(request()->picid == 1 && request()->confirm == 76432)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 2 && request()->confirm == 14481)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 3 && request()->confirm == 32077)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 4 && request()->confirm == 45179)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 5 && request()->confirm == 81024)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 6 && request()->confirm == 18990)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 7 && request()->confirm == 57186)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 8 && request()->confirm == 96212)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 9 && request()->confirm == 18173)
+                {
+                    $confirm = 'OK';
+                }elseif(request()->picid== 10 && request()->confirm == 50329)
+                {
+                    $confirm = 'OK';
+                }
+                if($confirm == 'OK')
+                {
+           
+
+                        $Random_Generate = rand(0,9999);
+                        
+                    
+                        // Send data
+                        $check = substr($_GET['username'],'0','2');
+                        if($check!=='09')
+                        { 
+                            $Random_Generate = rand(0,999999);
+                            $newcode = new reset();
+                            $newcode->pk_user = $_GET['username'];
+                            $newcode->token = $Random_Generate;
+                            $newcode->save();
+                            if($_GET['username'])
+                            {
+                            $details = [
+                                'title' => 'کد تایید    | لرنیا',
+                                'body' => $Random_Generate
+                            ];
+                                $type ='Resetpassword';
+                               $address = $_GET['username'];
+                            \Mail::to($address)->send(new SendMail($details,$type));
+                            }
+                            return view('auth.registerconfirm',compact('Random_Generate'));
+                        }
+                        else
+                        {
+                            $newcode = new reset();
+                            $newcode->pk_user = $_GET['username'];
+                            $newcode->token = $Random_Generate;
+                            $newcode->save();
+                            
+                            $client = new \IPPanel\Client('ai8RCfgBRB4EMq_WdlVq36Pw7DbmqyBQQRMsYBxh8wc=');
+                            $client->send(
+                                "+9850009589",          // originator
+                                [$_GET['username']],    // recipients
+                               "لرنیا - کد شما برابر با  $Random_Generate"// message
+                            );           
+                            return view('auth.registerconfirm',compact('Random_Generate'));
+                        }
+                    }elseif($confirm=='')
+                    {
+                        return redirect()->back()->withErrors('اعداد صحیح وارد نشده است');
+                    }
+         }
+
+    }
+
     /**
      * Display the specified resource.
      *
@@ -200,13 +300,21 @@ class ResetPasswordController extends Controller
 
         $rules =  [
             
-                     'username' => ['required',new validate]
+                     'username' => ['required',new validate],
+                     'name'=>'required|min:2',
+                     'password'=>'required',
+                     'confirm'=>'required'
                  ];
 
             $messages = [                      
                             'username.required' => 'نام کاربری وارد نشده است',
                             'username.validate' => ' نام کاربری صحیح وارد نشده است',
-                            'useranme.exists' => ' شماره تلفن همراه شما ثبت نام نشده است ',    
+                            'useranme.exists' => ' شماره تلفن همراه شما ثبت نام نشده است ',
+                            'name.required' => 'نام  وارد نشده است',
+                            'name.validate' => ' نام  صحیح وارد نشده است',   
+                            'password.required' => 'رمز عبور  وارد نشده است',
+                            'confirm.required' => 'اعداد داخل کادر  وارد نشده است',
+
                        ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
@@ -254,6 +362,7 @@ class ResetPasswordController extends Controller
                         'username' =>request()->username ,
                         'redirectFromURL' => $redirect ,
                         'pk_package' => $pk_package
+                       
                     ]));    
                 }
                 else

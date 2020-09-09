@@ -10,8 +10,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Profile;
 use App\Transaction;
 use App\Package;
-use App\Rules\validate;
+use App\Rules\registercode;
 use App\Course;
+
 
 class RegisterController extends Controller
 {
@@ -51,7 +52,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+   /* protected function validator(Request $request)
     {
         $messages = [
             'name.required' => 'نام  وارد نشده است',
@@ -68,7 +69,7 @@ class RegisterController extends Controller
             'username' =>  ['required', new validate],
             'password' => ['required', 'string', 'min:3'],
         ], $messages);
-    }
+    }*/
 
     /**
      * Create a new user instance after a valid registration.
@@ -78,31 +79,59 @@ class RegisterController extends Controller
      */
         protected function create(array $data)
         { 
-                $user =  User::create(['name' => $data['name'],
-                'username' => $data['username'],
-                'password' => Hash::make($data['password']),
+            $validator =  $this->Checkcode($request);
+
+        if ($validator->fails())
+           {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+          }else{
+                $user =  User::create(['name' => request()->name,
+                'username' => request()->username,
+                'password' => Hash::make(request()->password),
                 'type' => 'کاربر',
-                'attract' => $data['attract']
+                'attract' => request()->attract
                 ]);
 
-                $new_user = User::where('username',$data['username'])->first();
+                $new_user = User::where('username',request()->username)->first();
                 $profile = new Profile();
                 $profile->pk_users = $new_user->pk_users ;
                 $profile->save();
 
-                $check = substr($data['username'],'0','2');
-                if(isset($data['pk_package']))
-                {   if($data['pk_package'] != 'Null')
+                $check = substr(request()->username,'0','2');
+                if(isset(request()->pk_package))
+                {   if(request()->pk_package != 'Null')
                     {
-                        $this->redirectTo = route('package.pay',['pk_package' => $data['pk_package'] ,
-                        'redirectFromURL' => $data['redirectFromURL'] ]);
+                        $this->redirectTo = route('package.pay',['pk_package' => request()->pk_package ,
+                        'redirectFromURL' => request()->redirectFromURL ]);
                     }  
                 }
                 else
                 {
-                   $this->redirectTo = $data['redirectFromURL'];
+                   $this->redirectTo = request()->redirectFromURL;
                 }
                 
                 return $user;
-       }
+          }
+            
+        }
+
+    public function Checkcode(Request $request)
+    {
+        
+
+        $rules =  [  'code' => [ new registercode(request()->username )]  ];
+            
+            $messages = [  ];
+
+                   
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+
+
+    }
+       
 } 

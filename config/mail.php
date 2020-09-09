@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'maxmoler1376@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'learniaa@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'LEARNIA | لرنیا'),
     ],
 
@@ -84,9 +84,13 @@ return [
     |
     */
 
-    'username' => 'maxmoler1376@gmail.com',
+    'username' => 'learniaa@gmail.com',
 
-    'password' => 'scqtnoylmiixurrv',
+    'password' => 'ezzthplbcsbescnu',
+
+    /*'username' => 'maxmoler1376@gmail.com',
+
+    'password' => 'scqtnoylmiixurrv',*/
 
     /*
     |--------------------------------------------------------------------------
