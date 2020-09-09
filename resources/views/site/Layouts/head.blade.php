@@ -7,9 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 @yield('Head')
 <link href="{{ asset('css/site/bootstrap/bootstrap.css') }}" rel="stylesheet">
-<link href="{{ asset('css/site/bootstrap/bootstrap-reboot.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('css/site/font-awesome.min.css')}}">
+<!-- <link href="{{ asset('css/site/bootstrap/bootstrap-reboot.css') }}" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="{{asset('css/site/font-awesome.min.css')}}"> -->
 <link rel="stylesheet" href="{{asset('css/site/slick.css')}}">
 <link rel="stylesheet" href="{{asset('css/site/slick-theme.css')}}">
 <link rel="stylesheet" href="{{asset('css/site/animate.css')}}">
-<link href="{{ asset('css/site/myStyle.css') }}" rel="stylesheet">
+<!-- <link href="{{ asset('css/site/myStyle.css') }}" rel="stylesheet"> -->
+<!-- Minify My Style -->
+<link href="{{ asset('css/site/myStyle-minify.css') }}" rel="stylesheet"> 

@@ -28,16 +28,44 @@ class ApiController extends Controller
 {
     public function insertDataPackage_AdobeXD()
     {   
-        for ($row = 1; $row <= 263; $row++)
+        for ($row = 1; $row <= 189; $row++)
         {
              $course = new Course();
-             $course->pk_package =  16 ;
-             $course->pk_learner =  15 ;
-             $course->name = "دوره آموزش اچ تی ام ال - سی اس اس - قسمت $row" ;
+             $course->pk_package =  21 ;
+             
+             if($row >= 1 && $row <= 109)
+             {
+                $course->pk_learner =  18 ;
+             }
+             if($row >= 110 && $row <= 189)
+             {
+                $course->pk_learner =  19 ;
+             }
+             
+             if($row == 3){ continue ;}
+             if($row == 41){ continue ;}
+             if($row == 42){ continue ;}
+             if($row == 129){ continue ;}  
+             if($row == 134){ continue ;}
+             if($row == 135){ continue ;}
+             if($row == 136){ continue ;}
+             if($row == 137){ continue ;}
+             if($row == 138){ continue ;}
+             if($row == 139){ continue ;}
+             if($row == 140){ continue ;}
+             if($row == 148){ continue ;}
+             if($row == 149){ continue ;}
+             if($row == 150){ continue ;}
+             if($row == 151){ continue ;}
+             if($row == 152){ continue ;}
+             if($row == 153){ continue ;}
+             if($row == 154){ continue ;}
+
+             $course->name = "دوره آموزش پایتون - قسمت $row" ;
              $course->sort =  $row ;
-             $course->pic_cover = "HtmlCss$row.JPG";
-             $course->Alt_cover = "دوره آموزش اچ تی ام ال $row" ;
-             $course->download_link ="learniaa/Videos_FrontEnd_HTMLCSS/FrontEnd_HTMLCSS$row.mp4";
+             $course->pic_cover = "Python$row.jpg";
+             $course->Alt_cover = "دوره آموزش پایتون $row" ;
+             $course->download_link ="learniaa/Videos_System_Python/Python$row.mp4";
              $course->schema_markup='{"@context":"https:\/\/schema.org","@type":"Product","name":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","image":"https:\/\/5c76fd66bf6fa1001152cbea.liara.space\/learniaa\/packageTree_Beginner_Design.jpg","description":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","offer_type":"Offer","priceCurrency":"IRR","price":100000,"itemCondition":"https:\/\/schema.org\/NewCondition","datePublished":"2020-07-27","dateModified":"2020-07-27"}';
              $course->metatag='{"htmlmeta":{"keywords":"1","description":"1","author":"1","refresh":"1","viewport":"1"},"opengraph":{"og_title":"1","og_image":"1","og_description":"1","og_type":"1","og_article":"1"},"twitter":{"twitter_card":"1","twitter_site":"1","twitter_description":"1","twitter_title":"1"}}';
              $course->video_schema = '{"@context":"https:\/\/schema.org","@type":"VideoObject","name":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","description":"\u0622\u0645\u0648\u0632\u0634 \u0645\u0641\u0627\u0647\u06cc\u0645 \u0648 \u0627\u0635\u0648\u0644 \u0637\u0631\u0627\u062d\u06cc","thumbnailUrl":"https:\/\/5c76fd66bf6fa1001152cbea.liara.space\/learniaa\/course\/Images_Beginner_Design1.jpg","uploadDate":"2020-07-27"}';

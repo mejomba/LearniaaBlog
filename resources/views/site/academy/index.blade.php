@@ -534,7 +534,7 @@
 <!-- Posts -->
 
 <script>
-$('.slider').slick({infinite: true,slidesToShow: 3,slidesToScroll: 1 ,autoplay : true ,arrows : false ,dots:true ,draggable:true,autoplaySpeed: 3000 ,responsive: [{breakpoint: 1200,settings: {slidesToShow: 3,slidesToScroll: 1,infinite: true,dots: true}},{breakpoint:980,settings: {slidesToShow: 2,slidesToScroll:1,infinite: true,dots: true}},{breakpoint:730,settings: {slidesToShow: 1,slidesToScroll:1,infinite: true,dots: true}},]}) ;
+$('.slider').slick({infinite: true,slidesToShow: 3,slidesToScroll: 1 ,autoplay : true ,arrows : false ,dots:false ,draggable:true,autoplaySpeed: 3000 ,responsive: [{breakpoint: 1200,settings: {slidesToShow: 3,slidesToScroll: 1,infinite: true,dots: true}},{breakpoint:980,settings: {slidesToShow: 2,slidesToScroll:1,infinite: true,dots: true}},{breakpoint:730,settings: {slidesToShow: 1,slidesToScroll:1,infinite: true,dots: true}},]}) ;
 </script>
 <script>window.addEventListener('load', (event) => {$("#Pre-loader").delay(500).fadeOut();});</script>
 @endsection

@@ -196,7 +196,7 @@ class LearnerController extends Controller
 
         $rules =  [
                     'pic' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
-                    'desc' => 'nullable|string|min:3|max:300',
+                    'desc' => 'nullable|string|min:3',
                     'job' => 'required|string|min:3|max:300'
                  ];
 
