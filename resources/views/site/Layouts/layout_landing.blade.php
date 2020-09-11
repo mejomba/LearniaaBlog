@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
- @include('site.Layouts.head')
+@include('site.Layouts.head')
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'UA-155041698-1');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>

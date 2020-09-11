@@ -1,6 +1,6 @@
 @extends('site.Layouts.layout_main')
 @section('Head')
-<title>لرنیا | {{$package['title']}} </title>
+<title>لرنیا|{{$package['title']}}</title>
 <meta name="description" content="{{$package['desc']}}">
 <meta name="keywords" content="@php echo implode(',',$meta_keywords); @endphp">
 @endsection

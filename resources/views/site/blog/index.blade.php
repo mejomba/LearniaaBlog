@@ -1,8 +1,19 @@
 @extends('site.Layouts.layout_landing')
 @section('Head')
-<title> بلاگ | لرنیا  </title>
+<title>بلاگ |لرنیا</title>
 <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
-<meta  name="keywords"    content="اخبار,مقالات,بلاگ,لرنیا" >
+<meta  name="keywords"    content="مقاله لرنیا,اخبار,لرنیا بلاگ,بلاگ,بلاگ لرنیا" >
+<meta property="og:title" content="بلاگ|لرنیا"/>
+<meta property="og:url" content="{{Request::url()}}"/>
+<meta property="og:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
+<meta property="og:type" content="website"/>
+<meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+<meta property="og:locale" content="fa_IR"/>
+<meta name="twitter:card" content="article" /> 
+<meta name="twitter:site" content="{{Request::url()}}" /> 
+<meta name="twitter:title" content="بلاگ|لرنیا" /> 
+<meta name="twitter:description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد" /> 
+<meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
 @endsection
 @section('text_landing')
 <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px"><span class="text-warning mr-3">لرنیا</span><span class="text-info">بلاگ</span></h1>
