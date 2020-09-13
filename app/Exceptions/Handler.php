@@ -7,6 +7,10 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Log; 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
+use Auth;
+use Carbon\Carbon;
+use App\Errors;
+
 
 class Handler extends ExceptionHandler
 {
@@ -49,15 +53,44 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-       
+       // dd($exception);
         if ($exception instanceof \Exception) 
         {
             Log::error($exception->getMessage());
-            $status_code = $exception->getCode();
+            if (method_exists($exception, 'getStatusCode')) {
+                $statusCode = $exception->getStatusCode();
+            } else {
+                $statusCode = 500;
+            }
+            $user =  Auth::user();
+            $date = Carbon::now('IRAN')->format('y-m-d');
+            $time = Carbon::now('IRAN')->format('h:i:s');
+            if($user != null)
+            {
+                $pkuser=$user->pk_users;
 
-           if( $status_code == '500' || $status_code == '404'  )  
+            }
+            else
+            {
+                $pkuser='guest';
+            }
+            $message = $exception->getMessage();
+            if($statusCode == '404')
+            {
+                $message = 'page not found';
+            }
+            $newerror = new Errors();
+            $newerror->user = $pkuser;
+            $newerror->date = $date;
+            $newerror->time = $time;
+            $newerror->error_code = $statusCode;
+            $newerror->error_message = $message;
+            $newerror->logname = 'laravel-'.$date.'.log';
+            $newerror->save();
+           if(  $statusCode == '500' || $statusCode == '404')  
             { 
-                return response()->view('error.500', [], 500);
+               
+                return redirect()->back()->withErrors('خطایی رخ داده است با پشتیبانی در ارتباط باشید .');
             }
         }
        
