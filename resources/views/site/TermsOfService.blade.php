@@ -1,8 +1,19 @@
 @extends('site.Layouts.layout_main')
 @section('Head')
-<title> قوانین استفاده | لرنیا  </title>
-<meta  name="description" content="قوانین استفاده | لرنیا">
+<title>شرایط و قوانین|لرنیا</title>
+<meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
 <meta  name="keywords"    content="قوانین استفاده" >
+<meta property="og:title" content="شرایط و قوانین|لرنیا"/>
+<meta property="og:url" content="{{Request::url()}}"/>
+<meta property="og:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
+<meta property="og:type" content="website"/>
+<meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+<meta property="og:locale" content="fa_IR"/>
+<meta name="twitter:card" content="summary" /> 
+<meta name="twitter:site" content="{{Request::url()}}" /> 
+<meta name="twitter:title" content="شرایط و قوانین|لرنیا" /> 
+<meta name="twitter:description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد" /> 
+<meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}"> 
 @endsection
 @section('content')
 <div class="container-fluid" >

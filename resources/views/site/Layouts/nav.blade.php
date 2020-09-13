@@ -11,8 +11,8 @@
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex col-md-6 col-12" style="font-size:15px; font-weight:500;">
             <li class="nav-item mr-lg-4 ml-lg-4"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
-            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.detail')}}">آکادمی آموزش</a></li>
-            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.quicklearn')}}">لرنیا پک</a></li>
+            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.detail')}}">لرنیا آکادمی</a></li>
+            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.quicklearn')}}">لرنیا پکیج</a></li>
             <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
             <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 

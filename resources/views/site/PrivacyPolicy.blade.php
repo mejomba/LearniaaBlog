@@ -1,8 +1,19 @@
 @extends('site.Layouts.layout_main')
 @section('Head')
-<title> حریم خصوصی | لرنیا </title>
-<meta  name="description" content="حریم خصوصی | لرنیا">
+<title>حریم خصوصی|لرنیا</title>
+<meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
 <meta  name="keywords"    content="حریم خصوصی" >
+<meta property="og:title" content="حریم خصوصی|لرنیا"/>
+<meta property="og:url" content="{{Request::url()}}"/>
+<meta property="og:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
+<meta property="og:type" content="website"/>
+<meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+<meta property="og:locale" content="fa_IR"/>
+<meta name="twitter:card" content="summary" /> 
+<meta name="twitter:site" content="{{Request::url()}}" /> 
+<meta name="twitter:title" content="حریم خصوصی|لرنیا" /> 
+<meta name="twitter:description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد" /> 
+<meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}"> 
 @endsection
 @section('content')
 <div class="container-fluid" >

@@ -1,8 +1,19 @@
 @extends('site.Layouts.layout_landing')
 @section('Head')
-<title> لرنیا | وب سایت آموزش آنلاین </title>
+<title>لرنیا|آکادمی مجازی آموزش</title>
 <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
-<meta name="keywords" content="آموزش آنلاین,آموزش مبتدی کامپیوتر,یادگیری,لرنیا">
+<meta name="keywords" content="آموزش آنلاین,آموزش لرنیا,آکادمی لرنیا,لرنیا">
+<meta property="og:title" content="لرنیا|آکادمی مجازی آموزش"/>
+<meta property="og:url" content="{{Request::url()}}"/>
+<meta property="og:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
+<meta property="og:type" content="website"/>
+<meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
+<meta property="og:locale" content="fa_IR"/>
+<meta name="twitter:card" content="summary" /> 
+<meta name="twitter:site" content="{{Request::url()}}" /> 
+<meta name="twitter:title" content="لرنیا|آکادمی مجازی آموزش" /> 
+<meta name="twitter:description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد" /> 
+<meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
 @endsection
 @section('text_landing')
 <h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px">
@@ -22,7 +33,8 @@
 <!-- Video -->
 <section class="row main-video d-flex justify-content-center mb-5"> <a href="#video3" class="afterglow text-center"> 
 <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw"><i class="fa fa-play fa-4x text-center"></i></a>
-<video id="video3" controls  width="640" height="360" preload="none" data-skin="dark"><source src="{{ asset('images/Academy/LEARNIA-INTRO-1.5.2-C.mp4') }}" type="video/mp4" /></video>
+<video id="video3" controls  width="640" height="360" preload="none" data-skin="dark">
+<source src="https://file.learniaa.com/files/SectionIntroVideo/LEARNIA_INTRO.mp4" type="video/mp4" /></video>
 </section>
 <!-- Video -->
 
@@ -534,7 +546,7 @@
 <!-- Posts -->
 
 <script>
-$('.slider').slick({infinite: true,slidesToShow: 3,slidesToScroll: 1 ,autoplay : true ,arrows : false ,dots:true ,draggable:true,autoplaySpeed: 3000 ,responsive: [{breakpoint: 1200,settings: {slidesToShow: 3,slidesToScroll: 1,infinite: true,dots: true}},{breakpoint:980,settings: {slidesToShow: 2,slidesToScroll:1,infinite: true,dots: true}},{breakpoint:730,settings: {slidesToShow: 1,slidesToScroll:1,infinite: true,dots: true}},]}) ;
+$('.slider').slick({infinite: true,slidesToShow: 3,slidesToScroll: 1 ,autoplay : true ,arrows : false ,dots:false ,draggable:true,autoplaySpeed: 3000 ,responsive: [{breakpoint: 1200,settings: {slidesToShow: 3,slidesToScroll: 1,infinite: true,dots: true}},{breakpoint:980,settings: {slidesToShow: 2,slidesToScroll:1,infinite: true,dots: true}},{breakpoint:730,settings: {slidesToShow: 1,slidesToScroll:1,infinite: true,dots: true}},]}) ;
 </script>
 <script>window.addEventListener('load', (event) => {$("#Pre-loader").delay(500).fadeOut();});</script>
 @endsection
