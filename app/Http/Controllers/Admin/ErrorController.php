@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use File;
+use Auth;
+
 class ErrorController extends Controller
 {
     /**
@@ -15,7 +17,9 @@ class ErrorController extends Controller
      */
     public function index()
     {
-        //
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */       
         return view('admin.errors.index');
     }
 

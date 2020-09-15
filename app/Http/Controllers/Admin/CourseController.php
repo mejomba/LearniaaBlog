@@ -11,7 +11,7 @@ use Illuminate\Http\File;
 use App\Course;
 use App\Package;
 use App\Learner;
-
+use Auth;
 
 
 class CourseController extends Controller
@@ -23,7 +23,9 @@ class CourseController extends Controller
      */
     public function index($id)
     {
-        //
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         if($id==0)
         {
         $instance_Model_course = new Course();
@@ -47,6 +49,9 @@ class CourseController extends Controller
      */
     public function create()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $packages = Package::get();
         $learners = Learner::get();
         return view('admin.course.create',compact('packages','learners'));       
@@ -166,6 +171,9 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $course = Course::find($id);
         $packages = Package::get();
         $learners = Learner::get();

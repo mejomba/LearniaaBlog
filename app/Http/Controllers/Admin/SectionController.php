@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Validator;
 use App\Package;
 use App\Section;
+use Auth;
 
 class SectionController extends Controller
 {
@@ -17,6 +18,9 @@ class SectionController extends Controller
      */
     public function index()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $instance_Model_blog = new Section();
         $names =   $instance_Model_blog->GetListAllNameColumns_ForTable();
         $sections = Section::orderBy('pk_section', 'ASC')->get();

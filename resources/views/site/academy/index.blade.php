@@ -1,4 +1,4 @@
-@extends('site.Layouts.layout_landing')
+@extends('Layouts.layout_landing_site')
 @section('Head')
 <title>لرنیا|آکادمی مجازی آموزش</title>
 <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">

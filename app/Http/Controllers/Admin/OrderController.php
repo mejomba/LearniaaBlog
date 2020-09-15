@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use App\OrderPackage;
 use App\Package;
-
+use Auth;
 
 class OrderController extends Controller
 {
@@ -18,6 +18,9 @@ class OrderController extends Controller
      */
     public function index()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $instance_Model_order = new Order();
         $names =   $instance_Model_order->GetListAllNameColumns_ForTable();
         $orders = Order::get();

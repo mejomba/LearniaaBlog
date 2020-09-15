@@ -1,5 +1,5 @@
 
-@extends('site.roadmap.layout_game')
+@extends('Layouts.layout_main_roadmap')
 @section('Head')
 <title>نقشه راه|لرنیا</title>
 <meta name="description" content="نقشه راه|لرنیا">

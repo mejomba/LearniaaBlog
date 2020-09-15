@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-@include('site.Layouts.head')
+@include('Layouts.head')
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'UA-155041698-1');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
@@ -16,13 +16,20 @@
 <!--END RAYCHAT CODE-->
 </head>
 <body>
-@include('site.Layouts.nav')
-<div class="container-fluid">
-@include('site.Layouts.error')
+@include('Layouts.nav')
+<div class="container-fluid" style="z-index:10001">
+@include('Layouts.error')
 </div>
-<div style="direction: rtl;" >
+<div style="direction: rtl" class="d-flex justify-content-around">
+<div class="learn-style mt-5">
+    <h1 class="mt-5"></h1>
+    @yield('text_landing')
+</div>
+<div class="learn-style">
+    @yield('pic_landing')
+</div>
+</div>
 @yield('content')
-</div>
-@include('site.Layouts.footer')
+@include('Layouts.footer')
 </body>
 </html>

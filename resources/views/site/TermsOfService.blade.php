@@ -1,4 +1,4 @@
-@extends('site.Layouts.layout_main')
+@extends('Layouts.layout_main_site')
 @section('Head')
 <title>شرایط و قوانین|لرنیا</title>
 <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">

@@ -20,6 +20,9 @@ class TagController extends Controller
      */
     public function index()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $user =  Auth::user() ;
 
         if($user->type == 'مدیر')

@@ -1,4 +1,3 @@
- 
 <div class="banner-bg" style="direction: rtl">
 <img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
 <nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
@@ -62,6 +61,8 @@
                                      <label  style="font-family:Dastnevis;fontsize:10px"> تومان   </label>
                                       {{ Auth::user()->profile['wallet'] }} 
                                       </label>
+                                      <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
+
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">خروج </a>

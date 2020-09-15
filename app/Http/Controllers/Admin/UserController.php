@@ -13,15 +13,22 @@ use Validator;
 use Hash;
 
 
+
 class UserController extends Controller
 {
     public function create()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         return view('admin.user.create');
     }
 
     public function index()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       /* Security Admin Panel */        
         $users = User::get();
         $instance_Model_user =new User();
         $names =  $instance_Model_user->GetListAllNameColumns_ForTable();
@@ -82,6 +89,9 @@ class UserController extends Controller
 
     public function edit($id)
     {
+       /* Security Admin Panel */
+       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $user = User::find($id);
         $profile = Profile::where('pk_users', $user->pk_users)->get()->first();
         $wallet =  $profile->wallet ;

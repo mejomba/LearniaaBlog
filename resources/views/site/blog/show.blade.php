@@ -1,4 +1,4 @@
-@extends('site.Layouts.layout_main')
+@extends('Layouts.layout_main_site')
 @section('Head')
 <title>{{ $one_post['title'] }}</title>
 @php $meta=json_decode($one_post['metatag'],true) @endphp

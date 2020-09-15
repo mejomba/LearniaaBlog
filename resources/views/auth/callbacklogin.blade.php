@@ -1,4 +1,4 @@
-@extends('site.Layouts.layout_main')
+@extends('Layouts.layout_main_site')
 @section('Head')
 <title>  حساب کاربری | لرنیا</title>
 <meta  name="description" content="حساب کاربری| لرنیا">
