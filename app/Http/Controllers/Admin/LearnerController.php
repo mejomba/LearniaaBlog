@@ -20,6 +20,9 @@ class LearnerController extends Controller
      */
     public function index()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $instance_Model_learner = new learner();
         $names =   $instance_Model_learner->GetListAllNameColumns_ForTable();
         $learners = Learner::get();

@@ -13,36 +13,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
-{
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        ////
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-    /*
-
+{    
     public function store(Request $request)
     {
       
@@ -89,45 +60,20 @@ class ProfileController extends Controller
     
     /*
         
-        
-
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    
      public function edit()
     {
         $user =  Auth::user() ; 
         $profile = Profile::where('pk_users',$user->pk_users)->first();
-        
-       return view('user.profile.edit',compact('profile'));
+        return view('user.profile.edit',compact('profile'));
     }
    
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request,$id)
     {
         $validator =  $this->validation($request);
@@ -211,10 +157,6 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function validation_Update(Request $request)
     {
@@ -257,10 +199,6 @@ $messages = [
         return $validator ;
     }
 
-    
-
-
-    
     public function validation_Store(Request $request)
     {
 
@@ -278,7 +216,6 @@ $messages = [
                     'password' => 'nullable|min:6'  ,
          ];
 
-     
 $messages = [
                 'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
                 'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',

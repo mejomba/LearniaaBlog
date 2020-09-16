@@ -1,4 +1,4 @@
-@extends('admin.Layouts.layout_main')
+@extends('Layouts.layout_main_admin')
 
 @section('Head')
 <title> نمایش کاربر | لرنیا </title>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
 use Validator;
+use Auth;
 
 class CategoryController extends Controller
 {
@@ -16,6 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+       /* Security Admin Panel */
+       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       /* Security Admin Panel */
         $categories = Category::get();
         $instance_Model_category =new Category();
         $names = $instance_Model_category->GetListAllNameColumns_ForTable();
@@ -29,6 +33,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
+       /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       /* Security Admin Panel */
         return view('admin.category.create');
     }
 
@@ -89,6 +96,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */
         $category = Category::find($id);
         return view('admin.category.edit',compact('category'));
     }

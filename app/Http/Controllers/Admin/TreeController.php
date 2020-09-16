@@ -8,6 +8,7 @@ use App\Tree;
 use App\Package;
 use Validator;
 use Illuminate\Support\Facades\Storage;
+use Auth;
 
 class TreeController extends Controller
 {
@@ -18,6 +19,9 @@ class TreeController extends Controller
      */
     public function index_Tree()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $nodes = Tree::get();
         $instance_Model_Tree =new Tree();
         $names = $instance_Model_Tree->GetListAllNameColumns_ForTable();
@@ -31,7 +35,9 @@ class TreeController extends Controller
      */
     public function create_Tree()
     {
-
+       /* Security Admin Panel */
+       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       /* Security Admin Panel */
         return view('admin.tree.create');
     }
 
@@ -256,6 +262,9 @@ class TreeController extends Controller
 
   public function create_Node($tree_parent)
   {
+     /* Security Admin Panel */
+     if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+     /* Security Admin Panel */      
      $packages = Package::get();
      return view('admin.tree.node.create',compact('packages','tree_parent'));
   }
@@ -319,6 +328,9 @@ class TreeController extends Controller
 
   public function edit_Node($id)
   {
+      /* Security Admin Panel */
+     if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+      /* Security Admin Panel */      
       $tree = Tree::find($id);
       $packages = Package::get();
       return view('admin.tree.node.edit',compact('tree','packages'));

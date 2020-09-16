@@ -1,4 +1,4 @@
-@extends('site.roadmap.layout_game')
+@extends('Layouts.layout_main_roadmap')
 @section('Head')
 <title>لرنیاآکادمی|لرنیا</title>
 <meta name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">

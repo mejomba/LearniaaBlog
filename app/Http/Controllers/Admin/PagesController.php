@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Pages;
 use Validator;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -16,7 +17,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        //
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $instance_Model_order = new Pages();
         $names =   $instance_Model_order->GetListAllNameColumns_ForTable();
         $pages = Pages::get();

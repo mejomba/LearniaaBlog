@@ -7,17 +7,12 @@ use App\Notification;
 
 class NotificationController extends Controller
 {
-
-
-
     public function create()
     {
         $Notification = Notification::get();
        
         return view('user.notification.create',compact('Notification'));
     }
-
-
 
     public function store(Request $request)
     {
@@ -34,18 +29,10 @@ class NotificationController extends Controller
         else
           {
              $new_instance = new Notification();
-    
-           
- 
              }
-
              $new_instance->day = request()->day ;
              $new_instance->duration = request()->duration;
            
-            
-            
-
-
                 if(  $new_instance->save())
                 {
                     return redirect(route('user.home'))->with('success','برنامه یادگیری با موفقیت ایجاد شد ');
@@ -57,7 +44,6 @@ class NotificationController extends Controller
           }
     
     
-        
           public function edit()
           {
               $user =  Auth::user() ; 
@@ -65,10 +51,6 @@ class NotificationController extends Controller
               
              return view('user.profile.edit',compact('profile'));
           }
-
-
-
-
 
 
           public function update(Request $request,$id)
@@ -120,7 +102,6 @@ class NotificationController extends Controller
                   }
           }
       
-
           public function validation(Request $request)
           {
       
@@ -129,19 +110,15 @@ class NotificationController extends Controller
                           'duration' => 'nullable|numeric|digits:4', 
                        
                ];
-      
-           
+
       $messages = [
                       'month_birthday.numeric' => ' ماه تاریخ تولد صحیح وارد نشده است',
                       'day_birthday.numeric' => ' روز تاریخ تولد صحیح وارد نشده است',
                       'year_birthday.numeric' => 'سال تاریخ تولد صحیح وارد نشده است',
-                      'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',
-                      
-                  
+                      'year_birthday.digits' => 'سال تاریخ تولد 4 رقمی وارد نشده است',    
               ];
       
               $validator = Validator::make($request->all(),$rules,$messages);
-      
               return $validator ;
           }
       

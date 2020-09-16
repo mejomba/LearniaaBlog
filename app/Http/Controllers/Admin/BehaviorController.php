@@ -17,6 +17,9 @@ class BehaviorController extends Controller
      */
     public function index()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */
         $behavior = Behavior::where('type_behavior','کامنت')->get();
         $instance_Model_Behavior =new Behavior();
         $names = $instance_Model_Behavior->GetListAllNameColumns_ForTable();
@@ -24,7 +27,10 @@ class BehaviorController extends Controller
     }
 
     public function edit($id)
-    {
+    {        
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */
         $behavior = Behavior::find($id);
         return view('admin.behavior.edit',compact('behavior'));
     }

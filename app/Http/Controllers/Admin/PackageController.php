@@ -11,6 +11,7 @@ use App\Category;
 use App\Tag;
 use App\Search;
 use Validator;
+use Auth;
 
 class PackageController extends Controller
 {
@@ -21,6 +22,9 @@ class PackageController extends Controller
      */
     public function index()
     {
+       /* Security Admin Panel */
+       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $Model_Package = new Package();
         $names =   $Model_Package->GetListAllNameColumns_ForTable();
         $packages = Package::orderBy('pk_package', 'desc')->get();

@@ -20,15 +20,13 @@ class VoteController extends Controller
      */
     public function index()
     {
-
-
+       /* Security Admin Panel */
+       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       /* Security Admin Panel */
         $instance_Model_vote = new Vote();
         $names =   $instance_Model_vote->GetListAllNameColumns_ForTable();
         $votes = Vote::orderBy('pk_vote', 'desc')->get();
         return view('admin.vote.index',compact('votes','names'));
-        
-           
-        
     }
 
     /**
@@ -38,8 +36,10 @@ class VoteController extends Controller
      */
     public function create()
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         return view('admin.vote.create');
-
     }
 
     /**
@@ -93,22 +93,19 @@ class VoteController extends Controller
      $vote->question = request()->question ;
      $vote->extras =  json_encode($req) ;
                                        
-                                
-                                        if($vote->save())
-                                        {
-                                                return redirect(route('admin.vote.index'))->with('success','نظرسنجی با موفقیت ایجاد شد');
-                                        }
-                                        else
-                                        {
-                                            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-                                        }
+     if($vote->save())
+     {
+      return redirect(route('admin.vote.index'))->with('success','نظرسنجی با موفقیت ایجاد شد');
+     }
+      else
+       {
+         return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+       }
 
                                     
-             }
+     }
 
-        }
-        
-
+  }
 
     /**
      * Display the specified resource.
@@ -129,6 +126,9 @@ class VoteController extends Controller
      */
     public function edit($id)
     {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        /* Security Admin Panel */        
         $vote = Vote::find($id);
         return view('admin.vote.edit',compact('vote'));
     }

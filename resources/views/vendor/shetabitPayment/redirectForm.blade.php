@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Forwarding to secure payment provider</title>
+        <title>در حال انتقال به صفحه...</title>
         <style>
             .text-center {
                 text-align: center;
@@ -61,9 +61,9 @@
             <div class="bounce3"></div>
         </div>
         <form class="text-center mt-2" method="{{ $method }}" action="{{ $action }}">
-            <p>Forwarding to secure payment provider.</p>
+            <p>در حال انتقال به صفحه...</p>
             <p>
-                If you are not automatically redirected to the payment website with in
+                اگر به صفحه منتقل شدید پس از گذشت تایمر کلیک کنید
                 <span id="countdown">10</span>
                 seconds...
             </p>
