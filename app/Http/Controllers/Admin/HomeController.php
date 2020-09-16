@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function index()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $packages = Package::get();
         return view('admin.index',compact('packages'));   

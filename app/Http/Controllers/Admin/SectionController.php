@@ -19,7 +19,7 @@ class SectionController extends Controller
     public function index()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $instance_Model_blog = new Section();
         $names =   $instance_Model_blog->GetListAllNameColumns_ForTable();

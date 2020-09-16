@@ -24,7 +24,7 @@ class CourseController extends Controller
     public function index($id)
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         if($id==0)
         {
@@ -50,7 +50,7 @@ class CourseController extends Controller
     public function create()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $packages = Package::get();
         $learners = Learner::get();
@@ -172,7 +172,7 @@ class CourseController extends Controller
     public function edit($id)
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $course = Course::find($id);
         $packages = Package::get();

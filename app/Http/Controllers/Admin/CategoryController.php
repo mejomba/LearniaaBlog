@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         $categories = Category::get();
         $instance_Model_category =new Category();
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     public function create()
     {
        /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         return view('admin.category.create');
     }
@@ -97,7 +97,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */
         $category = Category::find($id);
         return view('admin.category.edit',compact('category'));

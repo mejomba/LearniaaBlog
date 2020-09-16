@@ -27,7 +27,7 @@ class BlogController extends Controller
     public function index()
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         $instance_Model_blog = new Blog();
         $names =   $instance_Model_blog->GetListAllNameColumns_ForTable();
@@ -44,7 +44,7 @@ class BlogController extends Controller
     public function create()
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         $categories = Category::where('type','پست')->get();
         $tags = Tag::where('type','پست')->get();
@@ -317,7 +317,7 @@ class BlogController extends Controller
     public function edit($id)
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         $blog = Blog::find($id);
         $categories = Category::where('type','پست')->get();

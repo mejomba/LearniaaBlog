@@ -18,7 +18,7 @@ class DiscountController extends Controller
     public function index()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $discounts = Discount::get();
         $instance_Model_discount =new Discount();

@@ -20,7 +20,7 @@ class TreeController extends Controller
     public function index_Tree()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $nodes = Tree::get();
         $instance_Model_Tree =new Tree();
@@ -36,7 +36,7 @@ class TreeController extends Controller
     public function create_Tree()
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         return view('admin.tree.create');
     }
@@ -263,7 +263,7 @@ class TreeController extends Controller
   public function create_Node($tree_parent)
   {
      /* Security Admin Panel */
-     if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+     if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
      /* Security Admin Panel */      
      $packages = Package::get();
      return view('admin.tree.node.create',compact('packages','tree_parent'));
@@ -329,7 +329,7 @@ class TreeController extends Controller
   public function edit_Node($id)
   {
       /* Security Admin Panel */
-     if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+     if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
       /* Security Admin Panel */      
       $tree = Tree::find($id);
       $packages = Package::get();

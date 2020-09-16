@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-@include('site.Layouts.head')
+@include('Layouts.head')
 <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'UA-155041698-1');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
@@ -12,12 +12,12 @@
 <script src="{{ asset('js/core/tooltip.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
-@include('site.Layouts.preloader')
+@include('Layouts.preloader')
 </head>
 <body>
-@include('site.Layouts.nav')
+@include('Layouts.nav')
 <div class="container-fluid">
-@include('site.Layouts.error')
+@include('Layouts.error')
 </div>
 <div>
 @yield('content')

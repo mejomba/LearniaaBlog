@@ -19,7 +19,7 @@ class OrderController extends Controller
     public function index()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $instance_Model_order = new Order();
         $names =   $instance_Model_order->GetListAllNameColumns_ForTable();
