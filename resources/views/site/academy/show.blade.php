@@ -114,7 +114,7 @@
                                   <div class="col-md-12 col-12 col-lg-12 col-sm-12 text-center mt-3">
                                   @if($payment_status == 'Yes' || $current_course->isFree == 'Yes' )
                                   <a style="padding-bottom : 5px" _target="blank"
-                                   href="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}"
+                                   href="{{ route('api.downloadcount',$current_course['pk_course'])}}"
                                     class="btn btnGreen btn-video btnblogPost">دانلود ویدیو</a>                            
                                     @else
                                     <a href="{{ route('academy.course', ['pk_tree' => $tree->pk_tree ,'pk_package' =>  $package->pk_package ]) }}"

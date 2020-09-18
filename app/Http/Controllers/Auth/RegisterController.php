@@ -52,24 +52,19 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-   /* protected function validator(Request $request)
+    protected function validator(array $data)
     {
-        $messages = [
-            'name.required' => 'نام  وارد نشده است',
-            'name.min' => 'نام صحیح نمی باشد',
-            'username.required' => 'نام کاربری وارد نشده است',
-            'username.validate' => ' نام کاربری صحیح وارد نشده است',
-            'username.unique' => 'شماره تلفن همراه قبلا ثبت نام شده است',
-            'password.required' => 'رمز عبور وارد نشده است',
-            'password.min' => 'رمز عبور صحیح وارد نشده است',
-        ];
+        $rules =  [  'code' => [ new registercode($data['username'] )]  ];
+            
+            $messages = [  ];
 
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'min:5'],
-            'username' =>  ['required', new validate],
-            'password' => ['required', 'string', 'min:3'],
-        ], $messages);
-    }*/
+                   
+
+        $validator = Validator::make($data,$rules,$messages);
+
+        return $validator ;
+
+    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -79,7 +74,7 @@ class RegisterController extends Controller
      */
         protected function create(array $data)
         { 
-            $validator =  $this->Checkcode($request);
+            $validator =  $this->validator($data);
 
         if ($validator->fails())
            {
@@ -117,21 +112,5 @@ class RegisterController extends Controller
             
         }
 
-    public function Checkcode(Request $request)
-    {
-        
-
-        $rules =  [  'code' => [ new registercode(request()->username )]  ];
-            
-            $messages = [  ];
-
-                   
-
-        $validator = Validator::make($request->all(),$rules,$messages);
-
-        return $validator ;
-
-
-    }
-       
+    
 } 

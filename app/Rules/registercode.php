@@ -33,9 +33,9 @@ class registercode implements Rule
         $row = reset::where(['pk_user'=>$this->username , 'token'=>$value])->count();
         if($row != 0 )
         {
-           return FALSE;
+           return true;
         }
-        return TRUE;
+        return false;
     }
 
     /**

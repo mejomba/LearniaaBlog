@@ -20,6 +20,7 @@ use Verta;
 use App\Log;
 use App\Routing;
 use App\Section;
+use Illuminate\Support\Facades\Storage;
 
 use App\CustomClass\SmsSender;
 use App\Mail\SendMail;
@@ -513,10 +514,11 @@ class ApiController extends Controller
 
 public function downloadcounter($id)
 {
-    $package= package::find($id);
-    $count = $package->download_count + 1;
-    $package->download_count = $count;
-    $package->save();
+    $course= course::find($id);
+    $count = $course->download_count + 1;
+    $course->download_count = $count;
+    $course->save();
+    return redirect(Storage::disk('learniaa')->temporaryUrl( $course['download_link'], now()->addMinutes(120)));
 }
 
 public function filter()
