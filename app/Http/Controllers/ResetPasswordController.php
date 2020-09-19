@@ -11,7 +11,6 @@ use App\Transaction;
 use Hash;
 use SoapClient;
 use App\Rules\validate;
-require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 //use phpmailer\phpmailer;
 
@@ -175,14 +174,18 @@ class ResetPasswordController extends Controller
                            // \Mail::to($address)->send(new SendMail($details,$type));
                             # Include the Autoloader (see "Libraries" for install instructions)
                                 # Instantiate the client.
-                                $mgClient = new Mailgun('75e8289e2fa0eb12f7b8ea9b0933c93e-d5e69b0b-24661c6e');
-                                $domain = "sandbox18969003b5b541d6ac0c7c34fa77b93e.mailgun.org";
+
+                                //require 'vendor/autoload.php';
+                               // $client = new \Http\Adapter\Guzzle6\Client();
+                                //$mgClient = new \Mailgun\Mailgun('75e8289e2fa0eb12f7b8ea9b0933c93e-d5e69b0b-24661c6e', $client);
+                                $mgClient = Mailgun::create('6f3a3ac31544396f5188a504dc6d88dc-d5e69b0b-508c51b0');
+                                $domain = "sandbox0551d83c266a40358e22495d40755c27.mailgun.org";
                                 # Make the call to the client.
-                                $result = $mgClient->sendMessage($domain, array(
-                                    'from'	=> 'Excited User <mailgun@sandbox18969003b5b541d6ac0c7c34fa77b93e.mailgun.org>',
-                                    'to'	=> 'Baz <YOU@amirhosseinjoyandeh@gmail.com>',
+                                $result = $mgClient->messages()->send($domain, array(
+                                    'from'	=> 'Learniaa <learniaa@gmail.com>',
+                                    'to'	=> 'Baz <'.$_GET['username'].'>',
                                     'subject' => 'Hello',
-                                    'text'	=> 'Testing some Mailgun awesomness!'
+                                    'text'	=>  ''.$Random_Generate.''
                                 ));
 
 
