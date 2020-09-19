@@ -25,9 +25,8 @@
 </div>
 </div>
 </div>
-<div class="modal-footer">
-<button type="button" onclick="ModalError_close()" class="btn btn-primary"
- style="background-color:brown;border-color:brown"
+<div class="modal-footer mx-auto">
+<button type="button" onclick="ModalError_close()" class="btn btnClose"
 >بستن</button>  
 </div>
 </div>

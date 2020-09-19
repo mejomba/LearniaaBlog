@@ -22,59 +22,29 @@
 @keyframes move{0% {transform : scale(1); opacity: 0;} 50% {transform : scale(0.75);opacity: 0.5;} 100% { transform : scale(1);opacity: 1;}}  
 </style>
 
-<!--
-<h1 class="font-weight-bolder text-center font-weight-bolder"
-style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color: #20c5ba;">
-<span class="mr-3" style="color:#ffe735 !important">لرنیا</span>
-<span class="" style="color:white">آکادمی</span>
-</h1> 
-<span class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
- style="font-family:DastNevis;font-size:45px">نقشه یادگیریت اینجاست</span>
- <h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
- <img src="{{ asset('images/Template/downFlash.svg') }}" alt="Learniaa" height="80px" width="80px">
- </h6> -->
-
-
 <section class="container-fluid" style="direction:ltr !important">
 <div class="row">
     <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:50px">
     <span class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
  style="font-family:DastNevis;font-size:45px">نقشه یادگیریت اینجاست</span>
     </div>
-
-    <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:160px">
+ <div class="col-md-12  ml-auto mr-auto text-center" style="margin-top:160px">
     
-
-<!-- ModalError Box -->                      
-<div class="modal fade" dir="rtl" id="ModalErrorApi" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalErrorApi" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
-         <div class="modal-content">
-           <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelErrorApi">پیغام</h5> 
-            </div>                       
-            <div class="modal-body">                      
-                 <div class="card-body px-lg-1 py-lg-1">
-                   <div class="row">  
-                       <div class="col-12 col-md-12 col-lg-12">
-                       <b style="color:red" id="TextError"></b>
-                        </div>
-                 </div>
-              </div>
-                    </div>
-                     <div class="modal-footer">
-                      <button type="button" onclick="CloseModalErrorApi()" class="btn btn-primary" style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>  
-                                    </div>
-                                   </div>
-                                </div>
-                              </div>
-<!-- ModalError Box --> 
-
 <!-- ModalRegister Box -->                      
 <div class="modal fade" dir="rtl" id="ModalRegister" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalRegister" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px;"> 
          <div class="modal-content" style="width:400px">
            <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelError"></h5> 
+                <div class="row">
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" > 
+                    </div>
+                    <div class="col-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                      <h5 class="modal-title" id="ModalLabelError">شروع مسیریابی</h5>
+                    </div>
+                </div>
             </div>  
             <div class="modal-body popupSvg">                      
                 <div class="card-body px-lg-1 py-lg-1">
@@ -96,10 +66,31 @@ style="font-size:9vw;margin-top: 60px;border: #20c5ba 2px solid;background-color
                                 </div>
                               </div>                           
 <!-- ModalRegister Box -->
-   
-   <!--
-    </div>
-</div> -->
+
+<!-- ModalError Box -->                      
+<div class="modal fade" dir="rtl" id="ModalErrorApi" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalErrorApi" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
+         <div class="modal-content text-center">
+           <div class="modal-header"> 
+                 <h5 class="modal-title" id="ModalLabelError">پیغام</h5>    
+            </div>                       
+            <div class="modal-body">                      
+                 <div class="card-body px-lg-1 py-lg-1">
+                   <div class="row">  
+                       <div class="col-12 col-md-12 col-lg-12">
+                       <b style="color:red" id="TextError"></b>
+                        </div>
+                 </div>
+              </div>
+                    </div>
+                     <div class="modal-footer mx-auto">
+                      <button type="button" onclick="CloseModalErrorApi()" class="btn btnClose" data-dismiss="modal">بستن</button>  
+                                    </div>
+                                   </div>
+                                </div>
+                           </div>
+<!-- ModalError Box --> 
+
 
 <form method="POST" id="Data" action="{{route('roadmap')}}" enctype="multipart/form-data">
 @csrf
