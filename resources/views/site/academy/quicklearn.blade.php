@@ -52,16 +52,43 @@
                           
                         </div>
                         <div class="card-end px-4 py-2">
-                            <br>
-                            <span style="font-family:Dastnevis;font-size:25px" class="mt-1">قیمت :  {{ $package['price'] }} تومان </span>
-                            <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                            
-                            <br>
-                            <span style="font-family:Dastnevis;font-size:25px" class="mt-1">مدت زمان  :  {{ $package['time'] }} دقیقه </span>
-                            <img src="{{ asset('images/Template/video-camera.svg') }}"  alt="Learniaa" width="30px" height="30px"> 
-                            <a class="btn btnLearniaa float-right px-4 py-2" 
-                            href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
-                            مشاهده</a>
+                         <div class="row" style="direction:rtl">
+                                        @if($package['status'] == "انتشار")
+                                            <div class="col-md-4 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
+                                            @if($package['price'] == 0)
+                                            <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
+                                            <span style="color:green">   رایگان </span>
+                                            @else
+                                            <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
+                                            <span style="color:green"> @php echo number_format($package['price'],0) @endphp </span>
+                                            <span style="color:green">   تومان </span>
+                                        </div>
+                                            @endif
+
+                                            @if($package['status'] == "انتشار")
+                                            <div class="col-md-4 col-12 text-center" style="margin-top:13px;font-family: Dastnevis;font-size: 20px;">
+                                            <img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
+                                            {{ $package['time'] }} 
+                                            </div>
+                                            @endif
+
+                                            @if($package['status'] == 'انتشار')
+                                            <div class="col-md-4 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3" style="padding-top:10px">
+                                            <a href="{{ route('academy.course', ['pk_tree' => $package['pk_tree'],'pk_package' =>$package['pk_package'] ]) }}"  class="btn fourth btn-round">مشاهده</a>
+                                            </div>
+                                            @endif
+
+                                        @else
+                                        <div class="col-md-3 col-12 text-center" style="margin-top:13px">
+                                        </div>
+                                        <div class="col-md-3 col-12 text-center" style="margin-top:13px">
+                                        </div>
+                                        <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+                                        <button type="button" disabled class="btn  btn-round" style="background-color:beige;border-color:beige">به زودی</button>
+                                        </div>
+                                        @endif
+                               
+                               </div>
                         </div>
                     </div>
                 </div>

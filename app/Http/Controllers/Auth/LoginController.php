@@ -37,7 +37,17 @@ class LoginController extends Controller
     {
         if ( $user->type == "مدیر" )
         {
-           return redirect('admin/home/index');
+                if(request()->redirectFromURL == 'http://127.0.0.1:8000/reset/showcallbackloginform' || 
+                    request()->redirectFromURL == 'https://learniaa.com/reset/showcallbackloginform' )
+                 {
+                     return redirect(route('index'));
+                 }
+
+                if(request()->redirectFromURL == 'https://learniaa.com/' || request()->redirectFromURL == 'http://127.0.0.1:8000/' )
+               {
+                return redirect('admin/home/index');
+               } 
+               return redirect(request()->redirectFromURL); 
         }
         
         elseif ($user->type == "کاربر")

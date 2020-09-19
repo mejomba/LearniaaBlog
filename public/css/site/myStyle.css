@@ -457,6 +457,22 @@ btn-loginSign:focus {
     background-position: 100%;
 }
 
+.btnClose {
+    border-color: brown;
+    color: white;
+    background-image: linear-gradient(45deg, brown 50%, transparent 50%);
+    background-position: 0;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+    background-color : white ;
+    border-color : brown ;
+}
+
+.btnClose:hover {
+    background-position: 100%;
+}
+
 .learniaaColor {
     padding-top: 10px;
     border-color: #20c5ba;

@@ -106,7 +106,16 @@ function CheckUserLogin()
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
          <div class="modal-content">
            <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelConfirmLogin">پیغام فرایند خرید</h5> 
+               <div class="row">
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ModalConfirmLogin_close()" > 
+                    </div>
+                    <div class="col-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                    <h5 class="modal-title" id="ModalLabelConfirmLogin">پیغام فرایند خرید</h5> 
+                    </div>
+              </div>
             </div>                              
             <div class="modal-body">                      
                           <div class="card-body px-lg-1 py-lg-1">
@@ -115,12 +124,12 @@ function CheckUserLogin()
                           </div>
                            </div>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer  mx-auto">
                                     <button type="button" onclick="RedirectToLogin()"
                                      class="btn btnGreen">ثبت نام و خرید دوره</button> 
                                      
                                      <button type="button" onclick="ModalConfirmLogin_close()"
-                                     class="btn btn-primary" style="background-color:brown;border-color:brown"
+                                     class="btn btnClose"
                                        data-dismiss="modal">بستن</button> 
                                        
                                     </div>
@@ -136,9 +145,17 @@ function CheckUserLogin()
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
          <div class="modal-content" style="width:50%">
            <div class="modal-header"> 
-           <h3 class="modal-title ml-auto mr-auto" id="ModalLabelIntro">معرفی دوره</h3> 
-            </div>  
-                                       
+             <div class="row">
+                 <div class="col-2 col-md-2 col-lg-2">
+                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopupIntro()" > 
+                    </div>
+                    <div class="col-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                    <h3 class="modal-title ml-auto mr-auto" id="ModalLabelIntro">معرفی دوره</h3> 
+                    </div>
+               </div>  
+            </div>                         
             <div class="modal-body" id="ModalIntroBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
@@ -165,10 +182,9 @@ function CheckUserLogin()
               </div>
                 <!-- Form &  Body -->
                              </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer mx-auto">
                                         <div class="row text-center ml-auto mr-auto">
-                                        <button type="button" onclick="ClosePopupIntro()" class="btn btn-primary"  
-                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                        <button type="button" onclick="ClosePopupIntro()" class="btn btnClose" data-dismiss="modal">بستن</button>
                                         </div>
                                     </div>
                                    </div>
@@ -305,7 +321,16 @@ function CheckUserLogin()
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
          <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelDiscount">ثبت کد تخفیف</h5> 
+           <div class="row">
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopUpDiscount()" > 
+                    </div>
+                    <div class="col-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                    <h5 class="modal-title" id="ModalLabelDiscount">ثبت کد تخفیف</h5> 
+                    </div>
+              </div>
             </div>  
                                        
             <div class="modal-body" id="ModalDiscountBody">                      
@@ -324,9 +349,8 @@ function CheckUserLogin()
               </div>
                 <!-- Form &  Body -->
                              </div>
-                                    <div class="modal-footer">
-                                        <button type="button" onclick="ClosePopUpDiscount()" class="btn btn-primary"  
-                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                    <div class="modal-footer mx-auto">
+                                        <button type="button" onclick="ClosePopUpDiscount()" class="btn btnClose" data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
                                 </div>

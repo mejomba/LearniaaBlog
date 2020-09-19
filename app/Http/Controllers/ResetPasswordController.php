@@ -12,7 +12,6 @@ use Hash;
 use SoapClient;
 use App\Rules\validate;
 use Mailgun\Mailgun;
-//use phpmailer\phpmailer;
 
 
 class ResetPasswordController extends Controller
@@ -187,18 +186,6 @@ class ResetPasswordController extends Controller
                                     'subject' => 'Hello',
                                     'text'	=>  ''.$Random_Generate.''
                                 ));
-
-
-
-
-                                
-
-
-
-
-
-
-
 
                             }
                             return view('auth.registerconfirm',compact('Random_Generate'));

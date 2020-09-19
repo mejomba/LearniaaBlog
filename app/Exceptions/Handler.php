@@ -53,6 +53,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        /*
        // dd($exception);
         if ($exception instanceof \Exception) 
         {
@@ -95,8 +96,7 @@ class Handler extends ExceptionHandler
                 return redirect()->back()->withErrors('خطایی رخ داده است با پشتیبانی در ارتباط باشید .');
             }
         }
-        }
-       
+       */
         
         return parent::render($request, $exception);
     }

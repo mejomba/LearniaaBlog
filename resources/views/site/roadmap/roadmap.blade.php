@@ -33,9 +33,17 @@
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
          <div class="modal-content" style="width:60%">
            <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelModalSandogh">صندوق گنج</h5> 
-            </div>  
-                                       
+              <div class="row">
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <img src="{{ asset('images/Template/close.svg') }}" onclick="CloseSandogh()" > 
+                    </div>
+                    <div class="col-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                    <h5 class="modal-title" id="ModalLabelModalSandogh">صندوق گنج</h5> 
+                    </div>
+                </div>
+            </div>                         
             <div class="modal-body"  id="ModalSandoghBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
@@ -63,9 +71,9 @@
               </div>
                 <!-- Form &  Body -->
                              </div>
-                                    <div class="modal-footer">
-                                        <button type="button" onclick="CloseSandogh()" class="btn btnLearniaa"  
-                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                    <div class="modal-footer mx-auto">
+                                        <button type="button" onclick="CloseSandogh()" class="btn btnClose" data-dismiss="modal">بستن</button>  
+                                        
                                     </div>
                                    </div>
                                 </div>
@@ -78,36 +86,38 @@
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
          <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
-           <h5 class="modal-title" id="ModalLabelData">اطلاعات تابلو</h5> 
-            </div>  
-                                       
+           <div class="row">
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" > 
+                    </div>
+                    <div class="col-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                    <h5 class="modal-title" id="ModalLabelData">اطلاعات مسیر</h5> 
+                    </div>
+                </div>
+            </div>                       
             <div class="modal-body" id="ModalDataBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
                    <div class="row">  
                        <div id="content" class="col-12 col-md-12 col-lg-12">
-                      
-                       
                       </div>
                  </div>
                  <div class="row">  
                        <div id="question" class="col-6 col-md-6 col-lg-6 mr-auto ml-auto"
                        style="border: #20c5ba 3px solid;padding-top: 10px; padding-bottom: 10px;margin-top: 10px;margin-bottom: 10px;">
-    
                       </div>
                  </div>
                  <div class="row">  
                        <div id="feedback" class="col-12 col-md-12 col-lg-12">
-                      
-                       
                       </div>
                  </div>
               </div>
                 <!-- Form &  Body -->
                              </div>
-                                    <div class="modal-footer">
-                                        <button type="button" onclick="ClosePopup()" class="btn btnLearniaa"  
-                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                    <div class="modal-footer mx-auto">
+                                        <button type="button" onclick="ClosePopup()" class="btn btnClose" data-dismiss="modal">بستن</button>
                                     </div>
                                    </div>
                                 </div>

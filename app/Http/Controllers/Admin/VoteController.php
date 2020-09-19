@@ -21,7 +21,7 @@ class VoteController extends Controller
     public function index()
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
        /* Security Admin Panel */
         $instance_Model_vote = new Vote();
         $names =   $instance_Model_vote->GetListAllNameColumns_ForTable();
@@ -37,7 +37,7 @@ class VoteController extends Controller
     public function create()
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         return view('admin.vote.create');
     }
@@ -127,7 +127,7 @@ class VoteController extends Controller
     public function edit($id)
     {
         /* Security Admin Panel */
-        if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $vote = Vote::find($id);
         return view('admin.vote.edit',compact('vote'));

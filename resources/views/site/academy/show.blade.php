@@ -140,7 +140,7 @@
                         
                         <div class="card-body px-4">
                         <div class="row">
-                                <div class="col-md-12 col-12 col-lg-12 col-sm-12 ">
+                                <div class="col-md-12 col-12 col-lg-12 col-sm-12 text-center">
 
                             <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 02px black;border-style: none">
                             <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
@@ -148,18 +148,21 @@
                             <div class="card-body px-4" style="margin-bottom:10px">
                                 @if($current_course->learner['pic'])
                                 <img  src="{{  Storage::url('learner/'.$current_course->learner['pic'])  }}"  
-                                alt="Profile" class="img-raised rounded-circle img-fluid" style="width: 90px;height: 90px;" >
+                                alt="Profile" class="img-raised rounded-circle img-fluid" style="width: 120px;height: 120px;" >
+                                <p style="font-size:25px;font-family:dastnevis" style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$current_course->learner['desc']}}</p>
+
                                 @else         
                                 <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
+                                <p style="font-weight:bold;font-size:25px;font-family:dastnevis" style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$current_course->learner['desc']}}</p>
+
                                 @endif
                                 <br>
-                               <i class="fa fa-circle mr-2 text-warning"></i>
-                                {{$current_course->learner->user['name']}}
+                               <i class="fa fa-circle mr-2" style="color:#20c5ba"></i>
+                               <span style="font-weight:bold;font-size:22px;font-family:shabnam;color:#20c5ba"> {{$current_course->learner->user['name']}} </span>
                                  
-                                <i class="fa fa-circle mr-2 text-info"></i>
-                                {{$current_course->learner['job']}} 
+                                <i class="fa fa-circle mr-2" style="color:#ffe735"></i>
+                               <span style="font-weight:bold;font-size:22px;font-family:shabnam;color:#20c5ba"> {{$current_course->learner['job']}}  </span>
                                 <br>
-                                <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$current_course->learner['desc']}}</p>
                                 </div>
                             <!--Foreach -->
                             </div>

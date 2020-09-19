@@ -23,7 +23,7 @@ class PackageController extends Controller
     public function index()
     {
        /* Security Admin Panel */
-       if(Auth::user()->type != 'Admin'){ return redirect()->back(); }
+       if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $Model_Package = new Package();
         $names =   $Model_Package->GetListAllNameColumns_ForTable();
