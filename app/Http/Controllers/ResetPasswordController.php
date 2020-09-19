@@ -11,9 +11,7 @@ use App\Transaction;
 use Hash;
 use SoapClient;
 use App\Rules\validate;
-require 'vendor/autoload.php';
 use Mailgun\Mailgun;
-//use phpmailer\phpmailer;
 
 
 class ResetPasswordController extends Controller
@@ -175,7 +173,7 @@ class ResetPasswordController extends Controller
                            // \Mail::to($address)->send(new SendMail($details,$type));
                             # Include the Autoloader (see "Libraries" for install instructions)
                                 # Instantiate the client.
-                                $mgClient = new Mailgun('75e8289e2fa0eb12f7b8ea9b0933c93e-d5e69b0b-24661c6e');
+                                $mgClient = Mailgun::create('75e8289e2fa0eb12f7b8ea9b0933c93e-d5e69b0b-24661c6e');
                                 $domain = "sandbox18969003b5b541d6ac0c7c34fa77b93e.mailgun.org";
                                 # Make the call to the client.
                                 $result = $mgClient->sendMessage($domain, array(
@@ -184,18 +182,6 @@ class ResetPasswordController extends Controller
                                     'subject' => 'Hello',
                                     'text'	=> 'Testing some Mailgun awesomness!'
                                 ));
-
-
-
-
-                                
-
-
-
-
-
-
-
 
                             }
                             return view('auth.registerconfirm',compact('Random_Generate'));
