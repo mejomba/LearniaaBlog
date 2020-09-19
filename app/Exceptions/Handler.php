@@ -87,11 +87,14 @@ class Handler extends ExceptionHandler
             $newerror->error_message = $message;
             $newerror->logname = 'laravel-'.$date.'.log';
             $newerror->save();
+            if (env('APP_URL') !== 'http://localhost')
+            {
            if( $statusCode == '500' || $statusCode == '404')  
             { 
                
                 return redirect()->back()->withErrors('خطایی رخ داده است با پشتیبانی در ارتباط باشید .');
             }
+        }
         }
        
         

@@ -1,4 +1,4 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> نمایش سفارشات | لرنیا  </title>
@@ -18,9 +18,7 @@
                سفارش </h1>
                   <p class="card-category text-center">
                     
-                  <a href="{{route('admin.order.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem"> ایجاد سفارش
-                  </a>                
+                 
 
                     </p>
                 </div>

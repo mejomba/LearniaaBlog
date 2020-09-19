@@ -1,4 +1,4 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> گزارش نظرسنجی | لرنیا </title>

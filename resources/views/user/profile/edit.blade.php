@@ -1,4 +1,4 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> ویرایش پروفایل | لرنیا </title>
@@ -27,7 +27,7 @@
               <div class="card-body px-lg-5 py-lg-5">
                 
               
-   <form method="POST" action="{{route('admin.profile.update',$profile['pk_profiles'])}}" 
+   <form method="POST" action="{{route('user.profile.update',$profile['pk_profiles'])}}" 
    enctype="multipart/form-data" style="min-height:270px;">
         @csrf
 
