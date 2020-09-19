@@ -23,6 +23,7 @@ class TransactionController extends Controller
      *    ثبت تراکنش مالی و ارجاع به دروازه پرداخت برای مشتری
      */
 
+   
  public function store(Request $request)
  {
         $validator =  $this->validation($request);

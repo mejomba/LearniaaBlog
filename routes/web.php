@@ -224,9 +224,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 
 {
-    Route::get('/home', 'HomeController@index')->name('user.home');
+    //Route::get('/home', 'HomeController@index')->name('user.home');
 
     Route::get('/home/index', 'HomeController@index')->name('user.home');
+
+    Route::get('/order/index', 'orderController@index')->name('user.order.index');
 
     Route::get('/Profile/edit/', 'ProfileController@edit')->name('user.profile.edit');
     Route::post('/Profile/update/{id}', 'ProfileController@update')->name('user.profile.update');
@@ -238,14 +240,22 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/Transaction/create', 'TransactionController@create')->name('user.transaction.create');
     Route::get('/Transaction/store', 'TransactionController@store')->name('user.transaction.store');
     Route::get('/Transaction/show', 'TransactionController@show')->name('user.transaction.show');
-    Route::get('/Transaction/packagelist', 'TransactionController@packagelist')->name('user.transaction.packagelist');
-   
+    Route::get('/Transaction/packagelist', 'TransactionController@ShowPackagesList')->name('user.transaction.packagelist');
+    Route::get('/Transaction/addwalletmoney', 'TransactionController@AddWalletMoney')->name('user.transaction.addwalletmoney');
+    Route::get('/Transaction/checkcallbackwalletmoney', 'TransactionController@CheckCallBackWalletMoney')->name('user.transaction.checkcallbackwalletmoney');
+
+    
+    
     Route::post('/ReportVotes/store/{id}', 'ReportVotesController@store')->name('user.reportvotes.store');
 
     Route::post('/Notification/create/{id}', 'NotificationController@create')->name('user.Notification.create');
     Route::post('/Notification/store/{id}', 'NotificationController@store')->name('user.Notification.store');
     Route::post('/Notification/edit/{id}', 'NotificationController@edit')->name('user.Notification.edit');
     Route::post('/Notification/update/{id}', 'NotificationController@update')->name('user.Notification.update');
+
+
+    Route::get('/vote/index', 'VoteController@index')->name('user.vote.index');
+    Route::get('/vote/show/{id}', 'VoteController@show')->name('user.vote.show');
 
 
 

@@ -1,10 +1,10 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> لیست تراکنش ها | لرنیا </title>
   <meta  name="description" content=" لیست تراکنش ها | لرنیا">
 @endsection
-
+ 
 @section('content')
 
 

@@ -18,4 +18,13 @@ class Vote extends Model
             
                  ] ;
     }
+    public function GetListAllNameColumns_ForTableforuser()
+    {
+       return  [
+                 'name' => 'نام نظرسنجی ',
+                 'question' => 'سوال نظرسنجی ',
+                 
+            
+                 ] ;
+    }
 }

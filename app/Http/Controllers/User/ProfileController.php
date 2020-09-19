@@ -58,7 +58,7 @@ class ProfileController extends Controller
                 }
           }
     
-    /*
+    
         
  
     public function show($id)
@@ -76,7 +76,7 @@ class ProfileController extends Controller
 
     public function update(Request $request,$id)
     {
-        $validator =  $this->validation($request);
+        $validator =  $this->validation_Update($request);
 
         if ($validator->fails())
            {
@@ -98,7 +98,7 @@ class ProfileController extends Controller
                 $profile->job =  request()->job   ;
                 $profile->favourite =  request()->favourite   ;
                 $profile->amount_time =  request()->amount_time   ;
-                $profile->area =  request()->area   ;
+                $profile->address =  request()->area   ;
                 $profile->pk_users =  $user->pk_users ;
 
                 if(request()->pic)

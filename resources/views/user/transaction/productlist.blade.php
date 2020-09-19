@@ -1,4 +1,4 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> لیست خریداری شده ها | لرنیا </title>
@@ -36,33 +36,29 @@
                     </thead>
 
                       <tbody>
-                      @foreach($transactions as $transaction)
+                      @foreach($packagelist as $package)
                       <!--                json process            -->  
-                      @php  $json = json_decode($transaction->extras,false)  @endphp 
 
                         <tr>
                           
                           <td>
-                          {{ $transaction['pk_product'] }} 
+                          {{ $package['fa_name'] }} 
                           </td>
 
                           <td>
-                          {{ $transaction->product['title'] }} 
+                          {{ $package['en_name'] }} 
                           </td>
 
                           <td>
-                          @if($transaction->product['price'] == 0)
-                          رایگان
-                          @else
-                          {{ $transaction->product['price'] }} 
-                          @endif
+                          {{ $package['price'] }} 
                           </td>
 
                           <td>
-                          <a style="margin-bottom: 15px;" href="{{route('product.detail',[$transaction['pk_product'] , $transaction->product['title'] ] )}}" 
-                          class="btn btn-primary btn-round" >  مشاهده  </a>
+                          {{$package['count']}}
+                         
                           </td>
 
+                         
                          
     
                          

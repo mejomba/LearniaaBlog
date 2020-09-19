@@ -1,4 +1,4 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> افزایش موجودی کیف  | لرنیا  </title>
@@ -25,7 +25,7 @@
               <div class="card-body px-lg-5 py-lg-5">
                 
               
-   <form method="GET" action="{{ route('admin.transaction.addwalletmoney') }}"
+   <form method="GET" action="{{ route('user.transaction.addwalletmoney') }}"
    enctype="multipart/form-data" style="min-height:270px;">
         @csrf
         <input type="hidden" name="type" value="افزایش موجودی کیف پول"/> 

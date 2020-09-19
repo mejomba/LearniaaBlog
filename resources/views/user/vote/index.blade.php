@@ -1,4 +1,4 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
 <title> نمایش نظرسنجی | لرنیا </title>
@@ -21,7 +21,7 @@
                   <p class="card-category text-center">
                     
                   <a href="{{route('admin.vote.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد نظرسنجی
+                  style="font-size:1.0rem;"> نظرسنجی
                   </a>                
 
                     </p>
@@ -50,47 +50,24 @@
                         <tr>
                           
                           <td>
-                          {{ $vote['pk_vote'] }} 
-                          </td>
-                          <td>
                           {{ $vote['name_vote'] }} 
                           </td>
                           <td>
                           {{ $vote['question'] }} 
                           </td>
 
-                          <td>
-                          @php  $json = json_decode($vote['extras'],false)  @endphp 
-                        گزینه اول :  {{ $json[0]->option1 ?? ''  }}  ------
-                        گزینه دوم :    {{  $json[0]->option2 ?? ''}} <br></br>
-                        گزینه سوم :    {{ $json[0]->option3 ?? ''}}   ------
-                        گزینه چهارم :    {{  $json[0]->option4 ?? '' }} 
-                          </td>
+                          
 
                           <td>
 
                         <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.edit', $vote['pk_vote']) }}"> 
+                      <a class="btn" style="color:#00bcd4" href="{{ route('user.vote.show', $vote['pk_vote']) }}"> 
                       <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                        </a>
                         </span>
 
                        
 
-                        <span style="font-size: 1.3rem;color:black;">
-                        <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $vote['pk_vote'] }} )" >
-                      <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                      </button>
-                        </span>
-
-                        
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.showmore', $vote['pk_vote']) }}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-                        
 
                         </td>
                           

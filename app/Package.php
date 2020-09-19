@@ -25,7 +25,16 @@ class Package extends Model
                  'status' => 'وضعیت',
                  ] ;
     }
+    public function GetListAllNameColumns_ForTableforuser()
+    {
+       return  [ 
+                 'fa_name' => 'نام فارسی',
+                 'en_name' => 'نام انگلیسی',
 
+                 'price' => 'قیمت  ',
+                 'count' => 'تعداد قسمت',
+                 ] ;
+    }
     public function learner()
     {
      return $this->hasOne('App\Learner', 'pk_learner', 'pk_learner');
