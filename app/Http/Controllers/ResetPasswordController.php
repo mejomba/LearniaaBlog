@@ -177,7 +177,7 @@ class ResetPasswordController extends Controller
                                 //require 'vendor/autoload.php';
                                // $client = new \Http\Adapter\Guzzle6\Client();
                                 //$mgClient = new \Mailgun\Mailgun('75e8289e2fa0eb12f7b8ea9b0933c93e-d5e69b0b-24661c6e', $client);
-                                $mgClient = Mailgun::create('6f3a3ac31544396f5188a504dc6d88dc-d5e69b0b-508c51b0');
+                               /* $mgClient = Mailgun::create('key-d79cc38bbba8516339271cf47c37a136');
                                 $domain = "sandbox0551d83c266a40358e22495d40755c27.mailgun.org";
                                 # Make the call to the client.
                                 $result = $mgClient->messages()->send($domain, array(
@@ -185,7 +185,7 @@ class ResetPasswordController extends Controller
                                     'to'	=> 'Baz <'.$_GET['username'].'>',
                                     'subject' => 'Hello',
                                     'text'	=>  ''.$Random_Generate.''
-                                ));
+                                ));*/
 
                             }
                             return view('auth.registerconfirm',compact('Random_Generate'));
