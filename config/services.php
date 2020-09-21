@@ -13,6 +13,10 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    
+    'mandrill' => [
+        'secret' => 'x9A1WmgnFOAoh_QxR_XFyw',
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
