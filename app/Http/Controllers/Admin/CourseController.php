@@ -98,7 +98,7 @@ class CourseController extends Controller
 
             /* SEO */
             /* Metatags */
-          
+            $new_instance->metatag = '{"htmlmeta":{"keywords":"1","description":"1","author":"1","refresh":"1","viewport":"1"},"opengraph":{"og_title":"1","og_image":"1","og_description":"1","og_type":"1","og_article":"1"},"twitter":{"twitter_card":"1","twitter_site":"1","twitter_description":"1","twitter_title":"1"}}';
             /* Metatags */
 
             /* Schema Product */
@@ -224,7 +224,7 @@ class CourseController extends Controller
 
             /* SEO */
             /* Metatags */
-           
+            $new_instance->metatag = '{"htmlmeta":{"keywords":"1","description":"1","author":"1","refresh":"1","viewport":"1"},"opengraph":{"og_title":"1","og_image":"1","og_description":"1","og_type":"1","og_article":"1"},"twitter":{"twitter_card":"1","twitter_site":"1","twitter_description":"1","twitter_title":"1"}}';
             /* Metatags */
 
             /* Schema Product */

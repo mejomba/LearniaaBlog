@@ -64,7 +64,7 @@
                             @php echo substr($one_post['desc_short'],0,144) @endphp
                             </p>
                         </div>
-                        <div class="card-end px-4 mt-3 py-2">
+                        <div class="card-end px-4 mt-3 py-2" style="line-height:30px">
                         <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span>
                         <i class="fa fa-circle mr-2 text-warning  "></i>
                             <br>
