@@ -88,6 +88,14 @@
                           {{ $error['error_message'] }} 
                           </td>
 
+                          <td>
+                          {{ $error['error_file'] }} 
+                          </td>
+
+                          <td>
+                          {{ $error['error_line'] }} 
+                          </td>
+
 
                           <td>
                           {{ $error['logname'] }} 
