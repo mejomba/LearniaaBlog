@@ -29,9 +29,6 @@ style="margin-top:150px !important;border-bottom-right-radius: 50px !important;b
 <input type="hidden" name="name" value="{{ $_GET['name'] }}">
 <input type="hidden" name="password" value="{{ $_GET['password'] }}">
 <input type="hidden" name="attract" value="{{ $_GET['attract'] }}">
-
-
-<img class="rounded-circle mr-1" src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
 <input name="code" id="code" type="text" class="form-control" placeholder=" کد تایید ">
 </div>
 <input type="submit" class="btn btn-primary text-white text-center mt-3" value="تایید">

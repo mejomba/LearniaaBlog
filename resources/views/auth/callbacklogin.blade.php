@@ -24,7 +24,6 @@ style="margin-top:150px !important;border-bottom-right-radius: 50px !important;b
 <input type="hidden" name="pk_package" value="{{$_GET['pk_package']}}">
 @endif
 <div class="form-group d-flex mt-3">
-<img class="rounded-circle mr-1" src="{{ asset('images/Template/phone_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px">
 <input name="username" id="username" type="text" class="form-control" placeholder=" تلفن همراه یا پست الکترونیکی">
 </div>
 <input type="submit" class="btn btn-primary text-white text-center mb-5 mt-4" value="تایید">

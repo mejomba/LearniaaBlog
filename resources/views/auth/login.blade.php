@@ -25,7 +25,6 @@ style="margin-top:150px !important;border-bottom-right-radius: 50px !important;b
 <input type="hidden" name="pk_package" value="{{$_GET['pk_package']}}">
 @endif
 <div class="form-group d-flex mt-3">
-<img class="rounded-circle mr-1" src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px">                             
 @if(isset($_GET['username']))
 <input type="hidden" name="username" value="{{ $_GET['username'] }}">
 @else

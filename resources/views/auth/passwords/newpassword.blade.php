@@ -18,7 +18,6 @@ style="margin-top:150px !important;border-bottom-right-radius: 50px !important;b
 <span>رمز عبور جدید دلخواه را وارد نمایید </span>
 </div>
 <div class="form-group d-flex mt-3">
-<img class="rounded-circle mr-1" src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="40px" width="40px">
 <input name="newpassword" id="newpassword" type="text" class="form-control" placeholder="رمز عبور جدید" />
 </div>
 <input type="submit" class="btn btn-primary text-white text-center mt-3" value="تایید">
