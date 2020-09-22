@@ -8,16 +8,16 @@
         <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image" width="60px">
     </a>
     <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav d-flex col-md-6 col-12" style="font-size:15px; font-weight:500;">
-            <li class="nav-item mr-lg-4 ml-lg-4"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
-            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.detail')}}">لرنیا آکادمی</a></li>
-            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('academy.quicklearn')}}">لرنیا پکیج</a></li>
-            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
-            <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-           <li class="nav-item mr-lg-4 ml-lg-4 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
+        <ul class="navbar-nav d-flex col-md-7 col-12" style="font-size:15px; font-weight:500;">
+            <li class="nav-item mr-lg-2 ml-lg-2"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('academy.detail')}}">لرنیا آکادمی</a></li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('academy.quicklearn')}}">لرنیا پکیج</a></li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
+           <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
 
         </ul>
-            <ul class="navbar-nav col-md-6 col-12" dir="ltr" style="align-items: center;">
+            <ul class="navbar-nav col-md-5 col-12" dir="ltr" style="align-items: center;height:40px">
              @guest
              @if (Route::has('register'))
                       <li class="nav-item">
