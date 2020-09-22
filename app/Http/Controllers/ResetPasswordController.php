@@ -12,7 +12,7 @@ use Hash;
 use SoapClient;
 use App\Rules\validate;
 use Mailgun\Mailgun;
-
+use App\Rules\registercode;
 
 class ResetPasswordController extends Controller
 {
@@ -208,7 +208,7 @@ class ResetPasswordController extends Controller
             $reset = Reset::where('pk_user',$id)->orderBy('pk_reset', 'DESC')->first();
 
 
-            $validator =  $this->check_token($request,$reset->token);
+            $validator =  $this->token($request,$pk_user);
 
             if ($validator->fails())
                {
@@ -387,10 +387,19 @@ class ResetPasswordController extends Controller
          }
 
     }
+    public function token(Request $request,$pk_user)
+{
+    $rules =  [  'username' => [ new registercode($pk_user)]  ];
+            
+    $messages = [  ];
 
+           
 
+$validator = Validator::make($request->all(),$rules,$messages);
 
+return $validator ;
 
+}
   
 
 }

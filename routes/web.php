@@ -277,6 +277,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
 
     Route::get('/vote/index', 'VoteController@index')->name('user.vote.index');
     Route::get('/vote/show/{id}', 'VoteController@show')->name('user.vote.show');
+    Route::get('/vote/store/{id}', 'VoteController@store')->name('user.vote.store');
 
 
 
