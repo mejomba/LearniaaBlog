@@ -22,8 +22,6 @@
                     <div class="form-group">
                         <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
-                    <!-- <img class="img-raised rounded-circle img-fluid"
-                    src="{{ asset('images/Template/user_login.svg') }}" alt="Thumbnail Image" height="45px" width="45px"> -->
                         </div>
                     <input name="name" id="name" type="text" class="form-control" placeholder="نام و نام خانوادگی ">
                     </div>
@@ -32,8 +30,6 @@
                 <div class="form-group">
                 <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                <!-- <img class="img-raised rounded-circle img-fluid"
-                src="{{ asset('images/Template/password_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px"> -->
                     </div>
                 <input name="password" id="password" type="password" class="form-control" placeholder="رمز عبور دلخواه شما">
                     </div>
@@ -51,8 +47,6 @@
                 <div class="form-group">
                    <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
-                <!-- <img class="img-raised rounded-circle img-fluid"
-                src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px"> -->
                       </div>
                     <select name="attract" class="form-control custom-select">
                     <option class="" value="Instagram"  > آشنایی با ما از اینستاگرام </option>
@@ -89,7 +83,6 @@
                 <input name="confirm" id="confirm" type="confirm" class="form-control" placeholder=" اعداد تصویر بالا را وارد نمایید ">
                 </div>
             </div>
-
 
                 <div class="text-center mt-1">
                 <button type="submit" class="btn btn-primary">ثبت نام</button>
