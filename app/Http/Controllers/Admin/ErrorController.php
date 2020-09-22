@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use File;
 use Auth;
+use App\Errors;
 
 class ErrorController extends Controller
 {
@@ -19,8 +20,11 @@ class ErrorController extends Controller
     {
         /* Security Admin Panel */
         if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
-        /* Security Admin Panel */       
-        return view('admin.errors.index');
+        /* Security Admin Panel */     
+        $errors = new Errors();
+        $names =  $errors->GetListAllNameColumns_ForTable();
+        $allerrors = Errors::orderby('pk_error','desc')->get();
+        return view('admin.errors.index',compact('names','allerrors'));
     }
 
     /**

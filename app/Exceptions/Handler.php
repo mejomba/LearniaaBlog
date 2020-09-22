@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
             }
             $user =  Auth::user();
             $date = Carbon::now('IRAN')->format('y-m-d');
-            $time = Carbon::now('IRAN')->format('h:i:s');
+            $time = Carbon::now('IRAN')->format('g:i A');
             if($user != null)
             {
                 $pkuser=$user->pk_users;

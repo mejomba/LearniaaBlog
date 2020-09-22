@@ -65,12 +65,17 @@ src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" heigh
 </div>
 @php $id = rand(1,10) @endphp
 <input type="hidden" name="picid" value="{{ $id }}">
+
+<div class="form-group">
+<div class="input-group input-group-alternative">
 <div class="input-group-prepend">
 <img class="img-raised img-fluid"
-src="{{ asset('RECAPTCHA/'.$id.'.jpg')}}" alt="Thumbnail Image" height="250px" width="250px">
+src="{{ asset('RECAPTCHA/'.$id.'.jpg')}}" alt="Thumbnail Image" height="100px" width="45px">
+</div>
 <input name="confirm" id="confirm" type="confirm" class="form-control" placeholder=" اعداد داخل کادر را وارد کنید ">
 </div>
 </div>
+
 <div class="text-center mt-1">
 <button type="submit" class="btn btn-primary">ثبت نام</button>
 </div>

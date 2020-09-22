@@ -24,63 +24,34 @@
               <div class="card-body px-lg-5 py-lg-5">
                 
               
-   <form method="POST" action="" enctype="multipart/form-data" style="min-height:270px;">
+   <form method="GET" action="{{route('user.vote.store',$votes->pk_vote)}}" enctype="multipart/form-data" style="min-height:270px;">
         @csrf
 
-     <div class="row">   
-
+        <div class="text-center"><h3>{{$votes->question}}</h3></div>
+                
+                @php $answers = json_decode($votes->extras,false) @endphp
+                                    
+              
+              @foreach($answers[0] as $answer => $value)
      <div class="col-md-4">
         <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">    
-                      </div>
-                      <label>گزینه1 </label>
-                      <input class="form-control" id="Option1" value="{{ $ResultOption1 }}" name="ResultOption1" placeholder="گزینه1" type="text">
+                   
+                      
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="{{$answer}}">
+                      <label class="form-check-label" for="exampleRadios1">
+                      {{$value}}
                     </div>
                   </div>
-        </div>
+               @endforeach
 
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">    
-                      </div>
-                      <label>گزینه2 </label>
-                      <input class="form-control" id="Option2" value="{{ $ResultOption2 }}" name="ResultOption2" placeholder="گزینه2" type="text">
-                    </div>
-                  </div>
-        </div>
 
 
  <!--                json process            -->  
  
-        <div class="col-md-4">
-        <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                      </div>
-                      <label>گزینه3 </label>
-                      <input name="ResultOption3" id="Option3" value="{{$ResultOption3}}" class="form-control" placeholder="گزینه3 " type="text">
-                    </div>
-                  </div>
-        </div>
-
-
-        <div class="col-md-4">
-<div class="form-group">
-            <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">     
-              </div>
-              <label>گزینه4 </label>
-              <input class="form-control" id="Option4" value="{{$ResultOption4}}" name="ResultOption4" placeholder=" گزینه4 " type="text">
-            </div>
-          </div>
-</div>
-
-
+      
                 
                   <div class="text-center" style="padding-top:20px">
-                  <!--  <button type="submit" class="btn btn-primary">ثبت درخواست</button> -->
+                   <button type="submit" class="btn btn-primary">ثبت درخواست</button> 
                   </div>
                 </form>
               </div>

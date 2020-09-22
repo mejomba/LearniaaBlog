@@ -74,3 +74,4 @@ Route::post('/GetTextIntro', 'ApiController@GetTextIntro')->name('api.routing.Ge
 Route::post('/GetContentRouting', 'ApiController@GetContentRouting')->name('api.routing.GetContentRouting');
 
 
+

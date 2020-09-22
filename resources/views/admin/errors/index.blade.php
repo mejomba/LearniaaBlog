@@ -15,9 +15,9 @@
                 <div class="card-header card-header-primary">
                 <h1 class="card-title text-center">
                 <img src="{{ asset('images/Template/icon_error.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
-                ارور</h1>
+                اررور</h1>
                   <p class="card-category text-center">
-                    
+                    <!--
                   <a href="{{route('admin.errors.show')}}" class="btn btn-primary btn-round" 
                   style="font-size:1.0rem;"> مشاهده آخرین اررور
                   </a>
@@ -42,6 +42,69 @@
                     @endif
                    
                     </p>
+
+-->
+                    <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                     
+                    <thead class=" text-primary">
+                        <tr>
+                            @foreach($names as $name)
+                          <th>
+                         {{ $name }} 
+                        </th>
+                        @endforeach
+                      
+                        
+                      </tr>
+
+                    </thead>
+
+                      <tbody>
+                      @foreach($allerrors as $error)
+                        <tr>
+                          
+                          <td>
+                          {{ $error['pk_error'] }} 
+                          </td>
+                          <td>
+                          {{ $error['user'] }} 
+                          </td>
+
+                          <td>
+                          {{ $error['date'] }} 
+                          </td>
+
+                          <td>
+                          {{ $error['time'] }} 
+                          </td>
+
+                          <td>
+                          {{ $error['error_code'] }} 
+                          </td>
+
+                          <td>
+                          {{ $error['error_message'] }} 
+                          </td>
+
+
+                          <td>
+                          {{ $error['logname'] }} 
+                          </td>
+                         
+
+                        
+                         
+                         
+                          
+                  
+                      
+                          
+                        </tr>
+                        @endforeach
+
+       
 
                         
           

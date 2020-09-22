@@ -61,7 +61,7 @@
                                      <label  style="font-family:Dastnevis;fontsize:10px"> تومان   </label>
                                       {{ Auth::user()->profile['wallet'] }} 
                                       </label>
-                                      <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a>
+                                    {{-- <a class="dropdown-item" href="{{ route('user.home') }}">سامانه کاربری</a> --}}  
 
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"

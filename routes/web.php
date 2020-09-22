@@ -6,6 +6,27 @@ Route::get('/', 'HomeController@index')->name('index');
 */
 /*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
 
+Route::get('/EmailTest', function()
+{
+    $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
+    $phpMailer->isSMTP();
+    $phpMailer->Host = "smtp.zoho.com";
+    $phpMailer->SMTPAuth = true;
+    $phpMailer->Username = "info@learniaa.com";
+    $phpMailer->Password = "Mohammad1376";
+    $phpMailer->SMTPSecure = "tls";
+    $phpMailer->Port = 587;
+    $phpMailer->isHTML(true);
+    $phpMailer->CharSet = "UTF-8";
+    $phpMailer->setFrom("info@learniaa.com", "Info Of Learniaa");
+    $phpMailer->addAddress("maxmoler1376@gmail.com");
+    $phpMailer->Subject = "کد تایید ثبت نام";
+    $phpMailer->Body = "کد شما برابر 55555";
+    $phpMailer->send();
+   
+}
+);
+
 Route::get('/', 'AcademyController@index')->name('index');
 Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
 Route::get('/academy/show/{pk_course}/{desc}/{sort}/{pk_package}', 'AcademyController@show')->name('academy.show');
@@ -256,6 +277,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
 
     Route::get('/vote/index', 'VoteController@index')->name('user.vote.index');
     Route::get('/vote/show/{id}', 'VoteController@show')->name('user.vote.show');
+    Route::get('/vote/store/{id}', 'VoteController@store')->name('user.vote.store');
 
 
 

@@ -53,7 +53,6 @@ class VoteController extends Controller
         //
         $votes= vote::find($id);
         return view('user.vote.show',compact('votes'));
-
     }
 
     /**

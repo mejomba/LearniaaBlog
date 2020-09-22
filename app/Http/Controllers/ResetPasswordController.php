@@ -12,7 +12,7 @@ use Hash;
 use SoapClient;
 use App\Rules\validate;
 use Mailgun\Mailgun;
-
+use App\Rules\registercode;
 
 class ResetPasswordController extends Controller
 {
@@ -24,7 +24,7 @@ class ResetPasswordController extends Controller
 
     public function store(Request $request)
     {
-        $validator =  $this->validation($request);
+        $validator =  $this->validationReset($request);
 
         if ($validator->fails())
            {
@@ -48,36 +48,25 @@ class ResetPasswordController extends Controller
                         $check = substr(request()->username,'0','2');
                         if($check!=='09')
                         { 
-                            $Random_Generate = rand(0,999999);
                             $username = User::select('username')->where('username',request()->username)->first();
                             if($username->username)
                             {
-                            $details = [
-                                'title' => 'کد تایید فراموشی رمز   | لرنیا',
-                                'body' => $Random_Generate
-                            ];
-                              /*
-                                $type ='Resetpassword';
-                               $address = 'www.'.$username->username;
-                            \Mail::to($address)->send(new SendMail($details,$type));  */
-                            $email = new \SendGrid\Mail\Mail(); 
-                            $email->setFrom("support@learniaa.com", "Support");
-                            $email->setSubject("Sending with SendGrid is Fun");
-                            $email->addTo("maxmoler1376@gmail.com.com", "maxmoler1376");
-                            $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-                            $email->addContent(
-                                "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-                            );
-                            $sendgrid = new \SendGrid('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');
-                            try {
-                                $response = $sendgrid->send($email);
-                                print $response->statusCode() . "\n";
-                                print_r($response->headers());
-                                print $response->body() . "\n";
-                            } catch (Exception $e) {
-                                echo 'Caught exception: '. $e->getMessage() ."\n";
-                            }
-
+                                $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
+                                $phpMailer->isSMTP();
+                                $phpMailer->Host = "smtp.zoho.com";
+                                $phpMailer->SMTPAuth = true;
+                                $phpMailer->Username = "info@learniaa.com";
+                                $phpMailer->Password = "Mohammad1376";
+                                $phpMailer->SMTPSecure = "tls";
+                                $phpMailer->Port = 587;
+                                $phpMailer->isHTML(true);
+                                $phpMailer->CharSet = "UTF-8";
+                                $phpMailer->setFrom("info@learniaa.com", "'کد تایید | لرنیا'");
+                                $phpMailer->addAddress($username->username);
+                                $phpMailer->Subject = "'کد تایید | لرنیا'";
+                                $phpMailer->Body = "کد تایید : $Random_Generate";
+                                $phpMailer->send();
+ 
 
                             }
                             return redirect(route('reset.show',compact('pk_user')));                                    
@@ -148,46 +137,32 @@ class ResetPasswordController extends Controller
                 }
                 if($confirm == 'OK')
                 {
-           
-
                         $Random_Generate = rand(0,9999);
-                        
-                    
-                        // Send data
                         $check = substr($_GET['username'],'0','2');
+
                         if($check!=='09')
                         { 
-                            $Random_Generate = rand(0,999999);
                             $newcode = new reset();
                             $newcode->pk_user = $_GET['username'];
                             $newcode->token = $Random_Generate;
                             $newcode->save();
-                            if($_GET['username'])
-                            {
-                            $details = [
-                                'title' => 'کد تایید    | لرنیا',
-                                'body' => $Random_Generate
-                            ];
-                                $type ='Resetpassword';
-                               $address = $_GET['username'];
-                           // \Mail::to($address)->send(new SendMail($details,$type));
-                            # Include the Autoloader (see "Libraries" for install instructions)
-                                # Instantiate the client.
 
-                                //require 'vendor/autoload.php';
-                               // $client = new \Http\Adapter\Guzzle6\Client();
-                                //$mgClient = new \Mailgun\Mailgun('75e8289e2fa0eb12f7b8ea9b0933c93e-d5e69b0b-24661c6e', $client);
-                               /* $mgClient = Mailgun::create('key-d79cc38bbba8516339271cf47c37a136');
-                                $domain = "sandbox0551d83c266a40358e22495d40755c27.mailgun.org";
-                                # Make the call to the client.
-                                $result = $mgClient->messages()->send($domain, array(
-                                    'from'	=> 'Learniaa <learniaa@gmail.com>',
-                                    'to'	=> 'Baz <'.$_GET['username'].'>',
-                                    'subject' => 'Hello',
-                                    'text'	=>  ''.$Random_Generate.''
-                                ));*/
+                               $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
+                               $phpMailer->isSMTP();
+                               $phpMailer->Host = "smtp.zoho.com";
+                               $phpMailer->SMTPAuth = true;
+                               $phpMailer->Username = "info@learniaa.com";
+                               $phpMailer->Password = "Mohammad1376";
+                               $phpMailer->SMTPSecure = "tls";
+                               $phpMailer->Port = 587;
+                               $phpMailer->isHTML(true);
+                               $phpMailer->CharSet = "UTF-8";
+                               $phpMailer->setFrom("info@learniaa.com", "'کد تایید | لرنیا'");
+                               $phpMailer->addAddress($_GET['username']);
+                               $phpMailer->Subject = "'کد تایید | لرنیا'";
+                               $phpMailer->Body = "کد تایید : $Random_Generate";
+                               $phpMailer->send();
 
-                            }
                             return view('auth.registerconfirm',compact('Random_Generate'));
                         }
                         else
@@ -205,9 +180,11 @@ class ResetPasswordController extends Controller
                             );           
                             return view('auth.registerconfirm',compact('Random_Generate'));
                         }
-                    }elseif($confirm=='')
+
+                    }
+                    elseif($confirm=='')
                     {
-                        return redirect()->back()->withErrors('اعداد صحیح وارد نشده است');
+                        return redirect()->back()->withErrors('کد تصویری صحیح وارد نشده است');
                     }
          }
 
@@ -231,7 +208,7 @@ class ResetPasswordController extends Controller
             $reset = Reset::where('pk_user',$id)->orderBy('pk_reset', 'DESC')->first();
 
 
-            $validator =  $this->check_token($request,$reset->token);
+            $validator =  $this->token($request,$pk_user);
 
             if ($validator->fails())
                {
@@ -305,6 +282,24 @@ class ResetPasswordController extends Controller
             'newpassword.min' => 'رمز عبور کوتاه تر از حد مجاز است', ];
 
                    
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        return $validator ;
+    }
+
+
+    public function validationReset(Request $request)
+    {
+
+        $rules =  [
+                     'username' => ['required',new validate],
+                 ];
+
+            $messages = [                      
+                            'username.required' => 'نام کاربری وارد نشده است',
+                            'username.validate' => ' نام کاربری صحیح وارد نشده است',
+                       ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
 
@@ -392,10 +387,19 @@ class ResetPasswordController extends Controller
          }
 
     }
+    public function token(Request $request,$pk_user)
+{
+    $rules =  [  'username' => [ new registercode($pk_user)]  ];
+            
+    $messages = [  ];
 
+           
 
+$validator = Validator::make($request->all(),$rules,$messages);
 
+return $validator ;
 
+}
   
 
 }

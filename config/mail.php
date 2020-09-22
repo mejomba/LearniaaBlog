@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'mandrill',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => 'smtp.mandrillapp.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 465),
+    'port' => 587,
 
     /*
     |--------------------------------------------------------------------------
@@ -54,11 +54,8 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
+    'from' => array('address' => 'maxmoler1376@learniaa.com', 'name' => 'maxmoler1376'),
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'learniaa@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'LEARNIA | لرنیا'),
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -71,8 +68,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-
+    'encryption' => 'tls',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -84,13 +80,9 @@ return [
     |
     */
 
-    'username' => 'learniaa@gmail.com',
+    'username' => 'LEARNIAA',
 
-    'password' => 'ezzthplbcsbescnu',
-
-    /*'username' => 'maxmoler1376@gmail.com',
-
-    'password' => 'scqtnoylmiixurrv',*/
+    'password' => 'x9A1WmgnFOAoh_QxR_XFyw',
 
     /*
     |--------------------------------------------------------------------------
@@ -104,6 +96,8 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
+
+    'pretend' => false,
 
     /*
     |--------------------------------------------------------------------------
