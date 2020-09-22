@@ -41,8 +41,16 @@
 
                 <div class="form-group">
                 <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend mx-auto">
+                   دوست خوبم از چه راهی با لرنیا آشنا شدی ؟
+                       </div>
+                  </div>
+                </div>
+                
+
+                <div class="form-group">
+                <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
-                راه آشنایی شما با لرنیا ؟
                 <!-- <img class="img-raised rounded-circle img-fluid"
                 src="{{ asset('images/Template/invite_login.svg')}}" alt="Thumbnail Image" height="45px" width="45px"> -->
                 </div>
@@ -60,14 +68,17 @@
                 </div>
                 </div>
 
+
+
         @php $id = rand(1,10) @endphp
         <input type="hidden" name="picid" value="{{ $id }}">
-            <div class="form-group">
+          
+        <div class="form-group">
                 <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
                 </div>  
-                <img class="img-raised img-fluid"
-                src="{{ asset('RECAPTCHA/'.$id.'.jpg')}}" alt="Thumbnail Image" height="250px" width="250px">
+                <img class="img-raised img-fluid mx-auto"
+                src="{{ asset('RECAPTCHA/'.$id.'.jpg')}}" alt="Thumbnail Image" height="170px" width="170px">
                 </div>
             </div>
 
