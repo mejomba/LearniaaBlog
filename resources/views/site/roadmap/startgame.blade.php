@@ -35,18 +35,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px;"> 
          <div class="modal-content" style="width:400px">
            <div class="modal-header"> 
-                <div class="row">
-                    <div class="col-2 col-md-2 col-lg-2">
-                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" > 
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6">
-                      <h5 class="modal-title" id="ModalLabelError">شروع مسیریابی</h5>
-                    </div>
-                </div>
-            </div>  
-            <div class="modal-body popupSvg">                      
+            <div class="modal-body popupSvg"> 
+            <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" style="width:40px">                     
                 <div class="card-body px-lg-1 py-lg-1">
                    <div class="row"> 
                        <div class="col-12 col-lg-12 col-md-12 text-center"> 
@@ -101,6 +91,7 @@
 document.addEventListener('DOMContentLoaded',function()
 {   document.querySelector('.header-bg').style.display = 'none';
     GenerateNewUuid();
+    $("#Pre-loader").hide();
 }, false);  
 
 function GenerateNewUuid()

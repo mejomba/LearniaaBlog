@@ -106,16 +106,7 @@ function CheckUserLogin()
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
          <div class="modal-content">
            <div class="modal-header"> 
-               <div class="row">
-                    <div class="col-2 col-md-2 col-lg-2">
-                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ModalConfirmLogin_close()" > 
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6">
-                    <h5 class="modal-title" id="ModalLabelConfirmLogin">پیغام فرایند خرید</h5> 
-                    </div>
-              </div>
+              <img src="{{ asset('images/Template/close.svg') }}" onclick="ModalConfirmLogin_close()" style="width:40px"  >    
             </div>                              
             <div class="modal-body">                      
                           <div class="card-body px-lg-1 py-lg-1">
@@ -143,40 +134,38 @@ function CheckUserLogin()
 <!-- ModalIntro Box -->                      
 <div class="modal fade" dir="rtl" id="ModalIntro" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalIntro" aria-hidden="true">  
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
-         <div class="modal-content" style="width:50%">
+         <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
-             <div class="row">
-                 <div class="col-2 col-md-2 col-lg-2">
-                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopupIntro()" > 
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6">
-                    <h3 class="modal-title ml-auto mr-auto" id="ModalLabelIntro">معرفی دوره</h3> 
-                    </div>
-               </div>  
+           <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopupIntro()" style="width:40px">    
             </div>                         
             <div class="modal-body" id="ModalIntroBody">                      
                 <!-- Form &  Body -->
                  <div class="card-body px-lg-1 py-lg-1">
+
+                 <div class="row"> 
+                    <div class="col-12 col-md-12 col-lg-12 text-center" id="TextIntro"> 
+                   
+                    </div>
+                 </div>
+
+                 <div class="row"> 
+                    <div class="col-12 col-md-12 col-lg-12 text-center" > 
+                    <p style="font-size: 25px;color: #20c5ba;text-align: center;font-weight: bold;">معرفی دوره از زبان خود مدرس!</p>
+
+                    </div>
+                 </div>
+
                    <div class="row">  
                        <div id="content afterglow" class="col-12 col-md-12 col-lg-12 text-center">
                             <section class="row main-video d-flex justify-content-center">
                             <a href="#video3" class="afterglow text-center"> 
                             <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
-                            <i class="fa fa-play fa-4x text-center" style="left:23vw !important"></i>
+                            <i class="fa fa-play fa-4x text-center" style="left:41vw !important"></i>
                             </a>
-
                             <video id="video3" controls  width="640" height="360" preload="none">
                                 <source id="VideoIntro" src="" type="video/mp4" data-skin="dark" /></video>
                             </section>
-                       
                       </div>
-                 </div>
-                 <div class="row"> 
-                    <div class="col-12 col-md-12 col-lg-12 text-center" id="TextIntro"> 
-                   
-                    </div>
                  </div>
 
               </div>
@@ -321,16 +310,7 @@ function CheckUserLogin()
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
          <div class="modal-content" style="width:90%">
            <div class="modal-header"> 
-           <div class="row">
-                    <div class="col-2 col-md-2 col-lg-2">
-                      <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopUpDiscount()" > 
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6">
-                    <h5 class="modal-title" id="ModalLabelDiscount">ثبت کد تخفیف</h5> 
-                    </div>
-              </div>
+           <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopUpDiscount()" style="width:40px"> 
             </div>  
                                        
             <div class="modal-body" id="ModalDiscountBody">                      
@@ -460,7 +440,7 @@ function ClosePopupIntro()
                 success: function(data)
                 {
                     console.log(data) ;
-                   $("#TextIntro").html(' <p style="font-size: 25px;color: #20c5ba;text-align: center;font-weight: bold;">درباره دوره</p>' + data);
+                   $("#TextIntro").html(' <p style="font-size: 25px;color: #20c5ba;text-align: center;font-weight: bold;">میخوایم راجب این دوره بهتون بگیم که :</p>' + data);
                                  
                 },
                 

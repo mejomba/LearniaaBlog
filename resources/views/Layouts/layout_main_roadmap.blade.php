@@ -19,8 +19,7 @@
         <script src="{{ asset('js/videoplayer/afterglow.min.js') }}" type="text/javascript"></script>
         <script src="https://kit.fontawesome.com/171e40aa76.js" crossorigin="anonymous"></script>
         <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'UA-155041698-1');</script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>
-    @include('Layouts.preloader')
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>   
 </head>
 <body>
 @include('Layouts.nav')
