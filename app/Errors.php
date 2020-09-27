@@ -18,6 +18,8 @@ class Errors extends Model
                  'time' => 'زمان اررور',
                  'error_code' => 'کد اررور',
                  'error_message' => 'متن اررور',
+                 'error_file' => 'فایل اررور',
+                 'error_line' => 'خط اررور',
                  'logname' => 'فایل لاگ اررور',
                  ] ;
     }

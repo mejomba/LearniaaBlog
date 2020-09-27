@@ -86,6 +86,8 @@ class Handler extends ExceptionHandler
             $newerror->time = $time;
             $newerror->error_code = $statusCode;
             $newerror->error_message = $message;
+            $newerror->error_file =$exception->getfile();
+            $newerror->error_line =$exception->getline();
             $newerror->logname = 'laravel-'.$date.'.log';
             $newerror->save();
             if (env('APP_URL') !== 'http://localhost')
