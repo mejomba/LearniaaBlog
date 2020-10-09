@@ -169,7 +169,7 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس یوسفوند</h4>
-                        <p class="">مدرس لرنیا آکادمی</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
                     </div>
 
                 </div> 
@@ -180,13 +180,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Esmaeili.jpg') }}" alt="" 
+                             <img src="{{ asset('images/learner/AliKhademi.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس اسماعیلی</h4>
-                        <p class="">مدرس لرنیا آکادمی</p>
+                        <h4 class="">مهندس خادمی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مشاور مارکتینگ و مربی کوچینگ</p>
                     </div>
                 </div> 
             </div>
@@ -202,7 +202,7 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس امین زاده</h4>
-                        <p class="">مدرس لرنیا آکادمی</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و مشاور علمی پایتون</p>
                     </div>
                 </div> 
             </div>
@@ -217,7 +217,22 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس علی ترکی</h4>
-                        <p class="">برنامه نویس و مدیر جی اس تهران</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدیر جی اس تهران</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/NimaArefi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس نیما عارفی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدیر ری اکت تهران</p>
                     </div>
                 </div> 
             </div>
@@ -232,7 +247,38 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس سالار نصیری</h4>
-                        <p class="">کافه بازار و دیوار   (DevOps)متخصص</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">کافه بازار و دیوار   (DevOps)متخصص</p>
+                    </div>
+                </div> 
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/MehdiGhaemi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس مهدی قائمی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/MehdiFarahzadi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس مهدی قائمی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
                     </div>
                 </div> 
             </div>
@@ -247,7 +293,7 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس لاغری</h4>
-                        <p class="">مدرس لرنیا آکادمی</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
                     </div>
 
                 </div> 
@@ -277,13 +323,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Shaygan.jpg')}}" alt="" 
+                             <img src="{{asset('images/learner/ShabnamShaygan.jpg')}}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">خانم شایگان </h4>
-                        <p style="margin-top:0px"> هم بنیانگذار و هیات مدیره و طراح ارشد </p>
+                        <h4 class="">خانم شبنم شایگان </h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و طراح ارشد </p>
                     </div>
                 </div> 
             </div>
@@ -292,12 +338,12 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Mahdavi.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/Mahdavi.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">آقای مهدوی </h4>
+                        <h4 class="">مهندس محمدرضا مهدوی </h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و مدیر مارکتینگ </p>
                     </div>
                 </div> 
@@ -307,12 +353,12 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Malek.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/Malek.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">آقای ملک</h4>
+                        <h4 class="">مهندس محمد ملک</h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و مدیریت محصول  </p>
                     </div>
                 </div> 
@@ -322,13 +368,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Alavian.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/Alavian.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">خانم علویان</h4>
-                        <p style="margin-top:0px"> مدیریت محصول و هیات مدیره </p>
+                        <h4 class="">مهندس مهدیه علویان</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> مدیریت محصول و هیات مدیره </p>
                     </div>
                 </div> 
             </div>
@@ -338,13 +384,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Faghan.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/Faghan.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">آقای فغان </h4>
-                        <p style="margin-top:0px"> برنامه نویس ارشد </p>
+                        <h4 class="">مهندس امیرحسین فغان </h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> برنامه نویس بک اند </p>
                     </div>
                 </div> 
             </div>
@@ -353,44 +399,28 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Setayesh.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/Setayesh.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">آقای ستایش </h4>
-                        <p style="margin-top:0px"> محتوا نویس و طراح و تدوین گر </p>
+                        <p style="margin-top:0px;line-height: 25px !important;"> محتوا نویس و طراح و تدوین گر </p>
                     </div>
                 </div> 
             </div>
-
-            
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 ">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Baradaran.jpg')}}" alt=""
-                              width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای برادران</h4>
-                        <p style="margin-top:0px">محتوا نویس و ویراستار </p>
-                    </div>
-                </div> 
-                </div> 
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Farokh.jpg')}}" alt=""
+                             <img src="{{ asset('images/learner/Farokh.jpg') }}" alt=""
                               width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">آقای فرخ </h4>
-                        <p style="margin-top:0px">محتوا نویس و مشاور سوشال مارکتینگ </p>
+                        <p style="margin-top:0px;line-height: 25px !important;">محتوا نویس و مشاور سوشال مارکتینگ </p>
                     </div>
                 </div> 
             </div>
@@ -399,7 +429,7 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Jamali.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/Jamali.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
@@ -410,47 +440,18 @@
                 </div> 
             </div>
 
+           
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Misaghpoor.jpg')}}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای میثاق پور</h4>
-                        <p style="margin-top:0px">محتوا نویس و ویراستار  </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Neko.jpg')}}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای نکو</h4>
-                        <p style="margin-top:0px">محتوا نویس و ویراستار  </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'AliMosavi.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/AliMosavi.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">آقای موسوی </h4>
-                        <p style="margin-top:0px"> طراح و متخصص رابط کاربری </p>
+                        <p style="margin-top:0px;line-height: 25px !important;"> طراح و متخصص رابط کاربری </p>
                     </div>
                 </div> 
             </div>
@@ -460,43 +461,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'FarhanZarei.jpg')}}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای زارعی </h4>
-                        <p style="margin-top:0px"> طراح و متخصص رابط و تجربه کاربری </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'DrDehghani.jpg')}}" alt="" 
+                             <img src="{{ asset('images/learner/DrDehghani.jpg') }}" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">آقای دهقانی </h4>
-                        <p style="margin-top:0px"> دکترای حقوق و مشاور حقوقی </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 ">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Golmakani.jpg')}}" alt=""
-                              width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">خانم گلمکانی</h4>
-                        <p style="margin-top:0px">محتوا نویس و ویراستار </p>
+                        <p style="margin-top:0px;line-height: 25px !important;"> دکترای حقوق و مشاور حقوقی </p>
                     </div>
                 </div> 
             </div>
@@ -505,13 +476,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ Storage::url('profile/'.'Nadaf.jpg')}}" 
+                             <img src="{{  asset('images/learner/Nadaf.jpg') }}" 
                              alt="" width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">آقای ندّاف</h4>
-                        <p style="margin-top:0px"> مشاور مارکتینگ و رشد فردی  </p>
+                        <p style="margin-top:0px;line-height: 25px !important;"> مشاور مارکتینگ و رشد فردی  </p>
                     </div>
                 </div> 
             </div>

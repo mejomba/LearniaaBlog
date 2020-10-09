@@ -1,8 +1,8 @@
 @extends('Layouts.layout_main_user')
 
 @section('Head')
-<title> داشبورد مدیریتی | لرنیا </title>
-  <meta  name="description" content=" داشبورد مدیریتی | لرنیا">
+<title> سامانه کاربری | لرنیا </title>
+  <meta  name="description" content=" سامانه کاربری | لرنیا">
 @endsection
 
 @section('content')

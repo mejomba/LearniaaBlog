@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        
+        /*
        // dd($exception);
         if ($exception instanceof \Exception) 
         {
@@ -99,7 +99,7 @@ class Handler extends ExceptionHandler
             }
         }
         }
-       
+        */
         
         return parent::render($request, $exception);
     }
