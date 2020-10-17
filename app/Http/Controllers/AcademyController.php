@@ -28,8 +28,9 @@ class AcademyController extends Controller
     {
         $recent_post = array();
         $recent_post =  Blog::orderby('pk_blog','DESC')->take(4)->get();
+        $packages = package::where('status','انتشار')->orderby('pk_package','DESC')->paginate(4);
         
-        return view('site.academy.index',compact('recent_post'));
+        return view('site.academy.index',compact('recent_post','packages'));
     }
 
     public function detail(Request $request)

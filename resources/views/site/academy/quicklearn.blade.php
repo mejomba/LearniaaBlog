@@ -39,6 +39,7 @@
 {{--</div> --}}
 {{--</section> --}}
 
+<!-- Intro Academy -->
 <div class="subscribe-area wow fadeIn container mx-auto" style="padding:10px 50px 20px;direction:rtl;margin-top:100px;box-shadow: 0px 0px 20px black;border-style: none;background-color:#20c5ba">
             <div class="row">
                 <div class="col-lg-6">
@@ -55,6 +56,7 @@
                 </div>
             </div>
         </div>
+<!-- Intro Academy -->
 
 <!-- Category Posts -->
 <div class="container-fluid">
