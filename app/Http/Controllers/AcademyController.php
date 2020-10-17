@@ -284,7 +284,7 @@ $messages = [
     }
     public function quicklearn()
     {
-        $packages = package::where('pk_tree',0)->paginate(6);
+        $packages = package::where('status','انتشار')->paginate(8);
         return view('site.academy.quicklearn',compact('packages'));
     }
 
