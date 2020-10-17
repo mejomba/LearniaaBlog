@@ -132,7 +132,6 @@
                                 </a>
                             </div>
                             <div class="card-body px-4">
-                            <!--  <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span> -->
                                 <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
                                 <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
                                 </a>

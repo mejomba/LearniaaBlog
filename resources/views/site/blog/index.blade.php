@@ -41,13 +41,6 @@
 <div class="container-fluid">
 <div class="row mt-5 mb-4" style="padding-top:20px;">
 <div class="col-12 mx-auto text-center">
-<!--
-<span style="font-size: 20px ; font-weight: 900">
-    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
-    بخوانید ، بدانید ، لذت ببرید
-    <img src="{{ asset('images/Template/blog.svg') }}" alt="Learniaa" height="25px" width="25px">
-</span> 
--->
 </div>
 </div>
     <div class="row p-2" id="ListOfData" style="font-size:15px">
@@ -62,7 +55,6 @@
                             </a>
                         </div>
                         <div class="card-body px-4">
-                          <!--  <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span> -->
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
                             <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
                             </a>
@@ -70,10 +62,7 @@
                             @php echo substr($one_post['desc_short'],0,300) . '...' @endphp
                             </p>
                         </div>
-                        <div class="card-end px-4 py-2" style="line-height:30px">
-                        <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span>
-                        <img src="{{ asset('images/icons/User.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                            <br>
+                        <div class="card-end px-4 py-4" style="line-height:30px">
                             <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
                             <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
                         </div>
