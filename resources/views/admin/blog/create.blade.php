@@ -228,7 +228,7 @@
 
 
           <!-- Picture Box -->
-          <div class="col-md-4">
+        <!--  <div class="col-md-4">
         <div class="row">
                 <div class="col-md-3">
                         <span>فایل PDF </span> 
@@ -243,8 +243,21 @@
                        </div>
                  </div>
         </div>
-        </div>
+        </div>  -->
          <!-- Picture Box -->
+
+         <div class="col-md-4">
+                    <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend"> 
+                                  <span>رده بندی </span>  
+                                  </div>
+                                  <input class="form-control" name="level"  placeholder="رده بندی" type="text" >
+                                </div>
+                          </div>
+                    </div>
+
+         
            
                                               
                 <div class="col-md-4">

@@ -19,7 +19,7 @@ class BlogController extends Controller
         if(isset($_GET['category'])) { $category = $_GET['category']; }
         if(isset($_GET['offset'])) { $offset = $_GET['offset']; }
        
-        if($category == "عمومی") {$recent_post = Blog::where('status', 'انتشار')->orderby('pk_blog','DESC')->paginate(6);}   
+        if($category == "عمومی") {$recent_post = Blog::where('status', 'انتشار')->orderby('pk_blog','DESC')->paginate(8);}   
         else
         {
             $select_category = Category::where('name', $category )->first();
@@ -34,8 +34,7 @@ class BlogController extends Controller
     {  
         $one_post = Blog::where('en_title', $en_title)->first();
         $behaviors = Behavior::where(['pk_entity'=>$one_post->pk_blog , 'type_entity'=>'پست' ])->get();
-        /* $recent_post = Blog::where('status', 'انتشار')->orderBy('pk_blog', 'desc')->get()->take(6); */
-        $recent_post = array();
+         $recent_post = Blog::where(['status'=>'انتشار' , 'pk_category'=>$one_post->pk_category ])->orderBy('pk_blog', 'desc')->get()->take(6); 
         /* Meta Keyword */
         $data_search = Search::where('pk_search',$one_post['pk_search'])->get();
         $meta_keywords = array();

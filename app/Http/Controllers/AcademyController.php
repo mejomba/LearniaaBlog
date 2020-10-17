@@ -27,7 +27,7 @@ class AcademyController extends Controller
     public function index()
     {
         $recent_post = array();
-        $recent_post =  Blog::orderby('pk_blog','DESC')->take(3)->get();
+        $recent_post =  Blog::orderby('pk_blog','DESC')->take(4)->get();
         
         return view('site.academy.index',compact('recent_post'));
     }

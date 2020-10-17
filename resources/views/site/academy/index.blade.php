@@ -217,7 +217,7 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس علی ترکی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدیر جی اس تهران</p>
+                        <p style="margin-top:0px;line-height: 25px !important;"> JS Tehran برنامه نویس ارشد حصین و مدیر</p>
                     </div>
                 </div> 
             </div>
@@ -232,7 +232,7 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس نیما عارفی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدیر ری اکت تهران</p>
+                        <p style="margin-top:0px;line-height: 25px !important;direction:rtl">متخصص برنامه نویسی و DevOps و مدیر React Tehran</p>
                     </div>
                 </div> 
             </div>
@@ -277,8 +277,8 @@
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدی قائمی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
+                        <h4 class="">مهندس مهدی فرحزادی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">اسکرام مستر فناپ و مدرس</p>
                     </div>
                 </div> 
             </div>
@@ -293,7 +293,7 @@
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس لاغری</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدرس طراحی سایت و برنامه نویسی</p>
                     </div>
 
                 </div> 
@@ -303,194 +303,6 @@
 </section>
 <!-- Learners -->
 
-
-<!-- Writers -->
-<section id="masters" class="pt-120">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="section-title text-center pb-40">
-                    <div class="line mt-5 mx-auto rounded-lg"></div>
-                    <h3 class="title mt-5">تیم لرنیایی ها</h3>
-                </div> <!-- section title -->
-            </div>
-        </div>
-        <!-- row -->
-
-            <div class="row mt-2">
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/ShabnamShaygan.jpg')}}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">خانم شبنم شایگان </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و طراح ارشد </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Mahdavi.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس محمدرضا مهدوی </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و مدیر مارکتینگ </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Malek.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس محمد ملک</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و مدیریت محصول  </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Alavian.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدیه علویان</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> مدیریت محصول و هیات مدیره </p>
-                    </div>
-                </div> 
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Faghan.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس امیرحسین فغان </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> برنامه نویس بک اند </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Setayesh.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای ستایش </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> محتوا نویس و طراح و تدوین گر </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Farokh.jpg') }}" alt=""
-                              width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای فرخ </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">محتوا نویس و مشاور سوشال مارکتینگ </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Jamali.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای جمالی </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">متخصص لینوکس و طراح سیستم عامل لرنیا </p>
-                    </div>
-                </div> 
-            </div>
-
-           
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliMosavi.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای موسوی </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> طراح و متخصص رابط کاربری </p>
-                    </div>
-                </div> 
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/DrDehghani.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای دهقانی </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> دکترای حقوق و مشاور حقوقی </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{  asset('images/learner/Nadaf.jpg') }}" 
-                             alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای ندّاف</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> مشاور مارکتینگ و رشد فردی  </p>
-                    </div>
-                </div> 
-            </div>
-        </div> 
-    </div>
-
-</section>
-<!-- Writer -->
 
 <!-- Posts -->
 <section>
@@ -505,30 +317,29 @@
 <div class="row p-2" id="ListOfData" style="font-size:15px">
             @foreach($recent_post as $one_post)
                 @php  $json = json_decode($one_post['extras'],false) @endphp
-                <div class="col-lg-4 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none">
+                <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none;max-height:400px;height:400px">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                                 <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
-                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:30vh">
+                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:20vh">
                             </a>
                         </div>
                         <div class="card-body px-4">
-                            <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span>
+                         <!-- <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span> -->
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
-                            <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
+                            <h2 class="mt-2" style="direction:rtl;font-size:17px">{{ $one_post['title'] }}</h2>
                             </a>
-                            <p class="mt-2 text-secondary" style="line-height:25px !important">
-                            @php echo substr($one_post['desc_short'],0,144) @endphp
+                            <p class="mt-2 text-secondary" style="line-height:25px !important;font-size:14px;direction:rtl">
+                            @php echo substr($one_post['desc_short'],0,300) . '...' @endphp
                             </p>
                         </div>
-                        <div class="card-end px-4 mt-3 py-2" style="line-height:30px">
-                        <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span><i class="fa fa-circle mr-2 text-warning  "></i>
+                        <div class="card-end px-4  py-2" style="line-height:30px">
+                        <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span>
+                         <img src="{{ asset('images/icons/User.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
                             <br>
-                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span><i class="fa fa-circle mr-2 text-info  "></i>
-                            <a class="btn btnLearniaa float-right px-4 py-2" 
-                            href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
-                            مشاهده</a>
+                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
+                            <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
                         </div>
                     </div>
                 </div>
