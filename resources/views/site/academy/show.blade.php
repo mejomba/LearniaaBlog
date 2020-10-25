@@ -197,7 +197,7 @@
                             <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
                             </div>
                             <div class="card-body px-4" style="margin-bottom:10px">
-                            <video class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{Storage::url('course/'. $package['folder'] .'/' .$current_course['pic_cover'])}}" src="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}"> </video>
+                            <video  class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{Storage::url('course/'. $package['folder'] .'/' .$current_course['pic_cover'])}}" src="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}"> </video>
 
                                 </div>
                             <!--Foreach -->

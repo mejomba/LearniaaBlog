@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
-                        <h6 style="font-size:24px;text-align:center" class="">برای آگاهی از تخفیف ها و جشنواره ها پست الکترونیکی خود را وارد نمایید</h6>
+                        <h6 style="font-size:24px;text-align:center" class="">برای دریافت مشاوره رایگان تلفن همراه خود را وارد نمایید</h6>
                     </div>
                 </div>
             <div class="col-lg-6" style="margin-top:20px">
@@ -12,8 +12,8 @@
                         <form method="POST" action="{{route('message.newspaper')}}">
                             @csrf
                             <input  type="hidden" name="name" id="name" value="ناشناس" class="form-control">
-                            <input type="hidden" name="message" id="message" value="درخواست خبرنامه"  class="form-control">
-                            <input type="text" class="ml-lg-5 ml-md-5 text-sm-center text-center" name="username" placeholder="ایمیل یا شماره موبایل خود را وارد نمایید">
+                            <input type="hidden" name="message" id="message" value="درخواست مشاوره"  class="form-control">
+                            <input type="text" class="ml-lg-5 ml-md-5 text-sm-center text-center" name="username" placeholder="شماره موبایل خود را وارد نمایید">
                             <button class="main-btn" style="z-index:auto">ثبت نام</button>
                         </form>
                     </div>
@@ -73,7 +73,7 @@
                     <ul class="list-unstyled mt-2">
                         <li class=""><a href="#!">learniaa@gmail.com</a></li>
                         <li><a href="#!">021-33195733</a></li>
-                        <li><a href="https://t.me/learniaa_support" target="_blank"><span class="d-flex">learniaa_support@ <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white" src="{{asset('images/footer_telegram.svg')}}" alt=""></span></a></li>
+                        <li><a href="https://t.me/learniaaSupport" target="_blank"><span class="d-flex">learniaa_support@ <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white" src="{{asset('images/footer_telegram.svg')}}" alt=""></span></a></li>
                     </ul>
                 </div>
                 <hr class="clearfix w-100 d-md-none">

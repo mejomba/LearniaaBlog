@@ -32,11 +32,27 @@
 
 @section('content')
 <!-- Video -->
-<section class="row main-video d-flex justify-content-center mb-5"> <a href="#video3" class="afterglow text-center"> 
-<img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw"><i class="fa fa-play fa-4x text-center"></i></a>
-<video id="video3" controls  width="640" height="360" preload="none" data-skin="dark">
-<source src="https://file.learniaa.com/files/SectionIntroVideo/LEARNIA_INTRO.mp4" type="video/mp4" /></video>
-</section>
+<div class="row">
+<div class="col-lg-9 col-md-6 col-sm-11 col-12 mx-auto" style="margin-top:20px !important">
+ <div class="card-body">
+   <div class="row">
+     <div class="col-md-12 col-12 col-lg-12 col-sm-12 ">
+     <h2 class="font-weight-bolder text-center font-weight-bolder" style="font-size:6vw;margin-top: -30px">
+      <span class="text-warning mr-1" style="color: #20c5ba !important;">لــرنیا</span>
+       <span class="text-warning mr-1" style="color: #ffe735 !important;">چیه؟</span>
+    </h2>
+        <div class="card-body" style="margin-bottom:10px;border:5px solid #20c5ba">
+        <video style="color:yellow !important"  class="afterglow" id="my-video" width="630" height="355"
+         data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}"
+          src="https://file.learniaa.com/files/SectionIntroVideo/LEARNIA_INTRO.mp4">
+       </video>     
+         </div>
+     </div>
+   </div>
+  </div>
+ </div>
+</div>    
+</div>
 <!-- Video -->
 
 <!-- Intro Academy -->
@@ -44,13 +60,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
-                        <h6 style="font-size:24px;text-align:center;color:white" class="">اگه مسیر و گام های یادگیری یه کماندوی برنامه نویسی رو بلد نیستی بزن روی نقشه راه یادگیری</h6>
+                        <h6 style="font-size:24px;text-align:center;color:white" class="">اگه مسیر و گام های یادگیری یه  برنامه نویس شدن رو بلد نیستی بزن روی نقشه راه یادگیری</h6>
                     </div>
                 </div>
             <div class="col-lg-6 text-center" style="margin-top:40px;direction:rtl">
             <a style="border-radius:10px;border-color: #ffe735;color: #000000;background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%);background-position: 0;background-size: 400%;padding-right:30px;padding-top:15px;padding-bottom:15px" class="nav-link  btn  mt-4 d-inline" target="_parent" rel="tooltip" title="" data-placement="bottom"
              href="{{route('academy.detail')}}" dideo-checked="true">
-                        <img src="http://127.0.0.1:8000/images/icons/Item.svg" alt="Thumbnail Image" height="30px" width="30px">
+                        <img src="{{ asset('images/icons/Item.svg')  }}" alt="Thumbnail Image" height="30px" width="30px">
                         <span style="font-size:15px">نقشه راه یادگیری</span>
                      </a>
                 </div>
@@ -69,7 +85,7 @@
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
                             <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                                 <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}"
-                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:30vh">
+                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:20vh">
                             </a>
                         </div>
                         <div class="card-body px-4 pt-2 text-center">
@@ -426,7 +442,7 @@
             </div>
             <div class="col-12 col-md-12" style="direction:rtl">
             <a style="font-size:20px;font-family:dastnevis"><img style="display:inherit;border-radius:50px" src="{{Storage::url('profile/'.'Laghari.jpg')}}"
-               alt="userImg"  width="60px">مهندس لاغری (مدرس  مجتمع فنی ) </a>
+               alt="userImg"  width="60px">مهندس لاغری</a>
             </div>
         </div>
     </div>

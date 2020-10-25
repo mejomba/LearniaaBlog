@@ -15,7 +15,7 @@ use App\Transaction;
 use App\Package;
 use App\Rules\validate;
 use App\User;
-
+use App\Reset;
 use Socialite;
 
 
@@ -42,6 +42,12 @@ class LoginController extends Controller
                  {
                      return redirect(route('index'));
                  }
+
+                 if( substr(request()->redirectFromURL, 0, strlen('http://127.0.0.1:8000/register')) === 'http://127.0.0.1:8000/register' ||
+                     substr(request()->redirectFromURL, 0, strlen('https://learniaa.com/register')) ===  'https://learniaa.com/register' )
+                     {
+                        return redirect(route('index'));
+                     }
 
                 if(request()->redirectFromURL == 'https://learniaa.com/' || request()->redirectFromURL == 'http://127.0.0.1:8000/' )
                {

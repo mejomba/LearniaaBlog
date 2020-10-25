@@ -50,7 +50,7 @@
             <div class="col-lg-6 text-center" style="margin-top:40px;direction:rtl">
             <a style="border-radius:10px;border-color: #ffe735;color: #000000;background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%);background-position: 0;background-size: 400%;padding-right:30px;padding-top:15px;padding-bottom:15px" class="nav-link  btn  mt-4 d-inline" target="_parent" rel="tooltip" title="" data-placement="bottom"
              href="{{route('academy.detail')}}" dideo-checked="true">
-                        <img src="http://127.0.0.1:8000/images/icons/Item.svg" alt="Thumbnail Image" height="30px" width="30px">
+                        <img src="{{ asset('images/icons/Item.svg')  }}" alt="Thumbnail Image" height="30px" width="30px">
                         <span style="font-size:15px">نقشه راه یادگیری</span>
                      </a>
                 </div>
@@ -67,7 +67,7 @@
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
                             <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                                 <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}"
-                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:30vh">
+                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:20vh">
                             </a>
                         </div>
                         <div class="card-body px-4 pt-2 text-center">
