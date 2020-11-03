@@ -13,11 +13,20 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                 <h1 class="card-title text-center">
-                به سامانه کاربری لرنیا خوش آمدید</h1>
+                <img src="{{ asset('images/Template/icon_dashboard.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
+                داشبورد</h1>
                   <p class="card-category text-center">
                  </p>
                 </div>
-               
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                    <thead class=" text-primary">
+                    </thead>
+                      <tbody>  
+                    </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>

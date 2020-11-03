@@ -14,6 +14,11 @@ class HomeController extends Controller
         return view('user.index');
     }
 
+    public function dashboard()
+    {
+        return view('user.dashboard');
+    }
+
     public function create()
     {
         //
