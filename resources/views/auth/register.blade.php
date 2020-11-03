@@ -90,8 +90,6 @@
         </div>
                     @if(isset($_GET['username']))
                     <input type="hidden" name="username" value="{{ $_GET['username'] }}">
-                    @else
-                    <input type="hidden" name="username" value="{{ $email }}">
                     @endif
                     @if(isset($_GET['redirectFromURL']))
                     <input type="hidden" name="redirectFromURL" value="{{$_GET['redirectFromURL']}}">

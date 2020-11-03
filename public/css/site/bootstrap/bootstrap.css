@@ -207,7 +207,7 @@ a:hover
 {
     text-decoration: underline;
 
-    color: #0056b3;
+    color: black;
 }
 
 a:not([href]):not([tabindex])
@@ -5852,7 +5852,8 @@ input[type='button'].btn-block
 {
     z-index: 1;
     color: #fff;
-    background-color: #007bff;
+    background-color: #20c5ba;
+    border-radius : 18px;
 }
 
 .page-item.disabled .page-link

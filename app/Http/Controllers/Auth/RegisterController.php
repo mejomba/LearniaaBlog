@@ -12,7 +12,7 @@ use App\Transaction;
 use App\Package;
 use App\Rules\registercode;
 use App\Course;
-
+use App\Reset;
 
 class RegisterController extends Controller
 {

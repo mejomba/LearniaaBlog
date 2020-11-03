@@ -368,7 +368,7 @@ function CheckUserLogin()
               
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto mt-1">
                 @foreach($behaviors as $behavior)
-                    <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 02px black;border-style: none">
+                    <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
                         </div>
                         <div class="card-body px-4" style="margin-bottom:10px">

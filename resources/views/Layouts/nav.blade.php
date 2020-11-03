@@ -5,34 +5,38 @@
         <i class="fa fa-bars"></i>
     </button>
     <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="{{route('index')}}">
-        <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image" width="60px">
+        <img class="d-flex" src="{{ asset('images/Template/LEARNIA.png') }}" alt="Thumbnail Image" width="60px">
     </a>
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex col-md-7 col-12" style="font-size:15px; font-weight:500;">
-            <li class="nav-item mr-lg-2 ml-lg-2"> <a class="nav-link" href="{{route('index')}}">خانه</a></li>
-            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('academy.detail')}}">لرنیا آکادمی</a></li>
-            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('academy.quicklearn')}}">لرنیا پکیج</a></li>
-            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('Aboutus')}}">درباره ی ما</a> </li>
-            <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li>
-           <li class="nav-item mr-lg-2 ml-lg-2 "> <a class="nav-link" href="{{route('blog.index')}}" >بلاگ</a></li> 
+            <li class="nav-item mr-lg-2 ml-lg-2"><a class="nav-link" href="{{route('index')}}">خانه</a></li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "><a class="nav-link" href="{{route('academy.detail')}}">نقشه راه یادگیری</a></li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "><a class="nav-link" href="{{route('academy.quicklearn')}}">دوره های آموزشی</a></li>
+            <li class="nav-item mr-lg-2 ml-lg-2 "><a class="nav-link" href="{{route('Aboutus')}}">تیم لرنیا</a> </li>
+           <!-- <li class="nav-item mr-lg-2 ml-lg-2 "><a class="nav-link" href="{{route('Contactus')}}" >تماس با ما</a></li> -->
+           <li class="nav-item mr-lg-2 ml-lg-2 "><a class="nav-link" href="{{route('blog.index')}}" >وبلاگ</a></li> 
 
         </ul>
-            <ul class="navbar-nav col-md-5 col-12" dir="ltr" style="align-items: center;height:40px">
+            <ul class="navbar-nav col-md-5 col-12" dir="ltr" style="align-items:center;height:40px;margin-bottom:7.5px">
              @guest
              @if (Route::has('register'))
                       <li class="nav-item">
-                     <a class="nav-link bg-white btn fourth mt-4 d-inline" target="_parent"
+                     <a style="border-radius:10px;border-color: #ffe735;color: #000000;background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%);background-position: 0;background-size: 400%;"
+                        class="nav-link  btn  mt-4 d-inline" target="_parent"
                         style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
                         data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
-                        <span>ثبت نام / ورود</span>
+                        <span style="font-size:15px">ورود و ثبت نام</span>
+                        <img src="{{ asset('images/icons/LoginUser.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                        
                      </a>
                    </li>
                 @endif
                   @else
                             <li class="nav-item dropdown" style="border-radius:1.2rem;">
                                 <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button"
-                                   style=" border-radius: 50%; width: 50px; height: 50px;margin-left:45px;"
+                                   style=" border-radius: 8%; height: 45px;background-color:black !important"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                   <span style="color:white">پنل کاربری</span>  
                                     <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image"
                                          height="35px" width="35px">
                                     <span class="caret"></span>

@@ -2,8 +2,16 @@
 @font-face {font-family: 'DastNevis'; src: url('../../font/danstevis.otf') } 
 
 p {
-    line-height: 1.5cm !important;
+    line-height: 1.1cm !important;
+    color:black;
+    font-size: 14.0pt;
 }
+
+p>span {
+   
+    color:black !important;
+}
+
 /* Timeline */
 ul.timeline {
     list-style-type: none;
@@ -1626,11 +1634,7 @@ p {
     color: #005cbf;
 }
 
-.description h4,
-p {
-    color: #626262;
-    margin-top: 14px;
-}
+
 
 .description i {
     font-size: 20px;

@@ -24,4 +24,9 @@ class HomeController extends Controller
         return view('admin.index',compact('packages'));   
     }  
 
+    public function Page500()
+    {
+        return view('error.500')->with('report','ارور');
+    }
+
 }

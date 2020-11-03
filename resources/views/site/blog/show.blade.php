@@ -14,55 +14,145 @@
 <section class="show-novel">
     <div class="container-fluid" style="padding-top:50px;">
         <div class="row">
-           <div class="col-lg-7 col-md-12 order-lg-0 order-md-0 order-sm-0 order-0" style="padding-left:50px;">
+      <!-- Start Section -->      
+           <div class="col-lg-6 col-md-12 order-lg-0 order-md-0 order-sm-0 order-0" style="padding-left:50px;">
                 <div class="novel-image">
                     <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" 
-                    alt="" class="w-100 m-3 p-3" style="width:820px !important;height:400px;border-radius: 50px;">
+                    alt="" class="w-100 m-3 p-3" style="width:820px !important;height:50%;border-radius: 50px;">
                 </div>
-                <h1 class="mr-auto mt-1 ml-5" style="font-size:20px">{{$one_post['title']}}
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                نویسنده :
-                @if($one_post->profile['pic'])
-                <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
-                alt="{{$one_post->writer['name']}}" class="img-raised rounded-circle img-fluid" style="width: 60px;height: 60px;" >
-                @else         
-                <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
-                @endif
-                {{$one_post->writer['name']}}
-                </h1>
-                <hr class="dash mx-auto" style="height: 1px ; width: 90% ; background-color: #a7a5a5 ;"> 
-                <div class="row mt-3 text-center">
-                    <span class="col-lg-2 col-md-2 col-sm-8 col-4 order-lg-0 order-md-0 order-sm-2 order-2">100 <i class="fa fa-heart text-danger"></i></span>
-                    <span class="col-lg-3 col-md-3 col-sm-4 col-8 order-lg-1 order-md-1 order-sm-3 order-3"> زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه </span></span>
-                    <span class="col-lg-4 col-md-4 col-sm-8 col-8 order-lg-2 order-md-2 order-sm-0 order-0">به روز شده در :  {{ $one_post['create_at'] }}</span>
-                    <span class="col-lg-3 col-md-3 col-sm-4 col-4 order-lg-3 order-md-3 order-sm-1 order-1" >
-                     <span style="color: WHITE;background-color:#20c5ba;border-radius: 5px;padding:3px!important">{{ $one_post->category['name'] }}</span></span>
-                </div>
+               
             </div>
-        </div>
+            <!-- End Section -->
+
+            <!-- Start Section -->
+            <div class="col-lg-5 col-md-6 col-sm-11 col-12 mx-auto mt-3">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;max-height:435px;height:435px">
+                    
+                        <div class="card-body px-4">
+                          <div class="row">
+                           <div class="col-md-4 mx-auto text-center">
+                            @if($one_post->profile['pic'])
+                                <img  src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
+                                alt="{{$one_post->writer['name']}}" class="img-raised rounded-circle img-fluid"  style="width:150px;height:150px;" >
+                                @else         
+                                <img  src="{{ asset('images/Template/user.svg') }}" class="img-raised rounded-circle img-fluid"  alt="Learniaa"  style="width:150px;height:150px;">
+                                @endif
+                             </div> 
+                           </div> 
+
+                           <div class="row">
+                             <div class="col-md-4 mx-auto text-center">
+                             <span class="text-center">   {{$one_post->writer['name']}} </span>
+                             </div> 
+                           </div>
+
+                           <div class="row">
+                             <div class="col-md-12" style="margin-top: 10px;">
+                             <img src="{{ asset('images/icons/Page.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  موضوع :
+                             </div>
+                             <div class="col-md-12 text-center" style="background-color: #20C5BA;margin-top:5px;border-radius:15px">
+                             <p  style="direction:rtl;font-size:20px;color:white;margin-top:10px !important;margin-bottom:10px !important;"> {{ $one_post['title'] }}</p>
+                             
+                             </div> 
+                           </div>
+
+                       <div class="row">
+                         <div class="col-md-6" style="margin-top: 20px;">
+                             <img src="{{ asset('images/icons/Category.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  دسته بندی :
+                              <span>  {{ $one_post->category['name'] }}  </span>
+                            </div>
+
+                            <div class="col-md-6" style="margin-top: 20px;">
+                             <img src="{{ asset('images/icons/Level.svg') }}" alt="Thumbnail Image" height="30px" width="30px"> رده بندی :
+                              <span>  {{ $one_post['level'] }}  </span>
+                            </div>
+                         
+                           <div class="col-md-6" style="margin-top: 20px;">
+                             <img src="{{ asset('images/icons/Calender.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  تاریخ انتشار :
+                              <span>  {{ $one_post['create_at'] }} </span>
+                            </div>
+
+                            <div class="col-md-6" style="margin-top: 20px;">
+                             <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  زمان مطالعه :
+                              <span>  {{ $one_post['readtime'] }} دقیقه </span>
+                            </div>
+
+                         </div> 
+
+                       </div>
+
+                        
+                    </div>
+                </div>
+            <!-- End Section -->
+
+
+      </div>
     </div>
 </section>
 <!-- Main Content -->
-<div class="row " style="margin-top:40px">
-                    <div class="col-md-10 card p-3  ml-auto mr-auto" style="border: 3px dotted #20c5ba" >
+<div class="container-fluid">
+  <div class="row">
+ 
+  <!-- This Magazine -->
+         <div class="col-lg-9">
+            <div class="card border-none p-2 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
                     @php echo htmlspecialchars_decode($one_post['content']) ; @endphp
                     @if($one_post['video'] == 'yes')
-                    <div class="col-md-6  p-3  ml-auto mr-auto" >
-                    
-             <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <div class="section-title text-center pb-40">
-                    <div class="line mt-4 mx-auto rounded-lg"></div>
-                    <h3 class="title mt-2">ویدیو مقاله</h3>
-                </div> <!-- section title -->
-            </div>
-        </div>
-                 <!--   <p style="font-size:20px;color:#20c5ba;text-align:center"> ویدیو خلاصه مقاله </p> -->
-                    <video style="margin-top:20px" class="afterglow" id="my-video" poster="{{ Storage::url('PosterVideoPosts/'.$one_post['poster_video']) }}" width="1200" height="800" src="{{ Storage::url('VideoPosts/'.$one_post['address_video']) }}"> </video>
+                        <div class="row justify-content-center">
+                        <div class="col-lg-7 ml-auto mr-auto">
+                            <div class="section-title text-center pb-40">
+                                <div class="line mt-4 mx-auto rounded-lg"></div>
+                                <h3 class="title mt-2">ویدیو مقاله</h3>
+                            </div> <!-- section title -->
+                    <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video" poster="{{ Storage::url('PosterVideoPosts/'.$one_post['poster_video']) }}" width="800" height="600" src="{{ Storage::url('VideoPosts/'.$one_post['address_video']) }}"> </video>
                     </div>
                     @endif
+                 </div>
                </div>
-             </div>
+            </div>
+ <!-- This Magazine -->
+
+  <!-- Others Magazine -->
+           <div class="col-lg-3 mt-4">
+               <div class="row text-center" style="">
+               <div class="col-lg-12 text-center" style="">
+                <span style="direction:rtl;font-size: 18.0pt;color: #20c5ba;margin-top:10px !important;margin-bottom:10px !important;border-bottom: 2px double;font-weight: bold;">مطالب مرتبط </span>
+                </div>
+            </div>
+                <div class="row p-2" id="ListOfData" style="font-size:15px">
+                @foreach($recent_post as $one_post)
+                    @php  $json = json_decode($one_post['extras'],false) @endphp
+                    <div class="col-lg-12 col-md-12 col-sm-11 col-12 mx-auto mt-3">
+                        <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;max-height:400px;height:400px">
+                            <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
+                                <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
+                                    <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
+                                    class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:20vh">
+                                </a>
+                            </div>
+                            <div class="card-body px-4">
+                                <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
+                                <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
+                                </a>
+                                <p class="mt-2 text-secondary" style="line-height:25px !important;font-size:14px;direction:rtl">
+                                @php echo substr($one_post['desc_short'],0,300) . '...' @endphp
+                                </p>
+                            </div>
+                            <div class="card-end px-4 py-2" style="line-height:30px">
+                            <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span>
+                            <img src="{{ asset('images/icons/User.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                                <br>
+                                <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
+                                <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        <!-- Others Magazine -->
+       </div>
+   </div>
 <!-- Main Content -->
 
 <!-- Comment Section -->
@@ -99,7 +189,7 @@
               
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto mt-1">
                 @foreach($behaviors as $behavior)
-                    <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 02px black;border-style: none">
+                    <div class="card border-none mt-3" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
                         </div>
                         <div class="card-body px-4" style="margin-bottom:10px">

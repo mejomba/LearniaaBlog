@@ -93,6 +93,7 @@ class BlogController extends Controller
               $new_instance->pk_category = request()->pk_category ;
               $new_instance->title = request()->title ;
               $new_instance->en_title = request()->en_title ;
+              $new_instance->level = request()->level ;
               $new_instance->content = request()->content ;
               $new_instance->status = request()->status ;
               $new_instance->pk_writers = request()->pk_users ;
@@ -373,6 +374,7 @@ class BlogController extends Controller
              $blog->pk_category = request()->pk_category ;
              $blog->title = request()->title ;
              $blog->en_title = request()->en_title ;
+             $blog->level = request()->level ;
              $blog->content = request()->content ;
              $blog->status = request()->status ;
              $blog->pk_writers = request()->pk_users ;
