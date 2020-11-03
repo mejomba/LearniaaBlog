@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Rules;
-use App\reset;
+use App\Reset;
 use Validator;
 
 use Illuminate\Contracts\Validation\Rule;
@@ -30,7 +30,7 @@ class registercode implements Rule
     public function passes($attribute, $value)
     {
         //
-        $row = reset::where(['pk_user'=>$this->username , 'token'=>$value])->count();
+        $row = Reset::where(['pk_user'=>$this->username , 'token'=>$value])->count();
         if($row != 0 )
         {
            return true;

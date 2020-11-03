@@ -58,6 +58,163 @@
 
 
 
+<!-- Learners -->
+<section id="masters" class="pt-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="section-title text-center pb-40">
+                    <div class="line mt-5 mx-auto rounded-lg"></div>
+                    <h3 class="title mt-5">هیات علمی و مدرسین</h3>
+                </div> <!-- section title -->
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row mt-2">
+           
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{asset('images/learner/Yosefvand.jpg')}}" alt=""
+                              width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس یوسفوند</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
+                    </div>
+
+                </div> 
+            </div>
+
+         
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/AliKhademi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس خادمی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مشاور مارکتینگ و مربی کوچینگ</p>
+                    </div>
+                </div> 
+            </div>
+
+            
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/AminZadeh.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس امین زاده</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و مشاور علمی پایتون</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/AliTorki.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس علی ترکی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> JS Tehran برنامه نویس ارشد حصین و مدیر</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/NimaArefi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس نیما عارفی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;direction:rtl">متخصص برنامه نویسی و DevOps و مدیر React Tehran</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/SalarNasiri.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس سالار نصیری</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">کافه بازار و دیوار   (DevOps)متخصص</p>
+                    </div>
+                </div> 
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/MehdiGhaemi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس مهدی قائمی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{ asset('images/learner/MehdiFarahzadi.jpg') }}" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس مهدی فرحزادی</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">اسکرام مستر فناپ و مدرس</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="{{asset('images/learner/Laghari.jpg')}}" 
+                             alt="" width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مهندس لاغری</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدرس طراحی سایت و برنامه نویسی</p>
+                    </div>
+
+                </div> 
+            </div>
+        </div> 
+    </div>
+</section>
+<!-- Learners -->
 
 <!-- Writers -->
 <section id="masters" class="pt-120">

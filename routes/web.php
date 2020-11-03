@@ -4,7 +4,7 @@
 Route::get('/', 'HomeController@index')->name('index');
 
 */
-/*  Route::get('/500', 'HomeController@Page500')->name('Page500'); */
+  Route::get('/500', 'HomeController@Page500')->name('Page500'); 
 
 Route::get('/EmailTest', function()
 {

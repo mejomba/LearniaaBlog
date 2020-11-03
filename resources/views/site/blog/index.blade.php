@@ -47,7 +47,7 @@
             @foreach($recent_post as $one_post)
                 @php  $json = json_decode($one_post['extras'],false) @endphp
                 <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none;max-height:400px;height:400px">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;max-height:400px;height:400px">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                                 <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"

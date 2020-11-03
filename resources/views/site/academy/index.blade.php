@@ -56,7 +56,7 @@
 <!-- Video -->
 
 <!-- Intro Academy -->
-<div class="subscribe-area wow fadeIn container mx-auto" style="padding:10px 50px 20px;direction:rtl;margin-top:100px;box-shadow: 0px 0px 20px black;border-style: none;background-color:#20c5ba">
+<div class="subscribe-area wow fadeIn container mx-auto" style="padding:10px 50px 20px;direction:rtl;margin-top:100px;box-shadow: 0px 0px 8px #0000002b;border-style: none;background-color:#20c5ba">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
@@ -81,11 +81,11 @@
     <div class="row p-2" id="ListOfData" style="font-size:15px">
             @foreach($packages as $package)
                 <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none;height:300px;max-height:300px">
-                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;height:350px;max-height:350px">
+                        <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none;height:300px">
                             <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                                 <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}"
-                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:20vh">
+                                 class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:30vh">
                             </a>
                         </div>
                         <div class="card-body px-4 pt-2 text-center">
@@ -161,7 +161,7 @@
             @foreach($recent_post as $one_post)
                 @php  $json = json_decode($one_post['extras'],false) @endphp
                 <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none;max-height:400px;height:400px">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;max-height:400px;height:400px">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
                                 <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
@@ -189,163 +189,6 @@
 <!-- Posts -->
 
 
-<!-- Learners -->
-<section id="masters" class="pt-120">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="section-title text-center pb-40">
-                    <div class="line mt-5 mx-auto rounded-lg"></div>
-                    <h3 class="title mt-5">هیات علمی و مدرسین</h3>
-                </div> <!-- section title -->
-            </div>
-        </div>
-        <!-- row -->
-        <div class="row mt-2">
-           
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/Yosefvand.jpg')}}" alt=""
-                              width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس یوسفوند</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
-                    </div>
-
-                </div> 
-            </div>
-
-         
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliKhademi.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس خادمی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مشاور مارکتینگ و مربی کوچینگ</p>
-                    </div>
-                </div> 
-            </div>
-
-            
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AminZadeh.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس امین زاده</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و مشاور علمی پایتون</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliTorki.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس علی ترکی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> JS Tehran برنامه نویس ارشد حصین و مدیر</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/NimaArefi.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس نیما عارفی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;direction:rtl">متخصص برنامه نویسی و DevOps و مدیر React Tehran</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/SalarNasiri.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس سالار نصیری</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">کافه بازار و دیوار   (DevOps)متخصص</p>
-                    </div>
-                </div> 
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/MehdiGhaemi.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدی قائمی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/MehdiFarahzadi.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدی فرحزادی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">اسکرام مستر فناپ و مدرس</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/Laghari.jpg')}}" 
-                             alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس لاغری</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدرس طراحی سایت و برنامه نویسی</p>
-                    </div>
-
-                </div> 
-            </div>
-        </div> 
-    </div>
-</section>
-<!-- Learners -->
 
 
 <!-- Customer Say -->

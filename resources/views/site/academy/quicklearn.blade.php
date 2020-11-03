@@ -40,7 +40,7 @@
 {{--</section> --}}
 
 <!-- Intro Academy -->
-<div class="subscribe-area wow fadeIn container mx-auto" style="padding:10px 50px 20px;direction:rtl;margin-top:100px;box-shadow: 0px 0px 20px black;border-style: none;background-color:#20c5ba">
+<div class="subscribe-area wow fadeIn container mx-auto" style="padding:10px 50px 20px;direction:rtl;margin-top:100px;box-shadow: 0px 0px 8px #0000002b;border-style: none;background-color:#20c5ba">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-3">
@@ -63,7 +63,7 @@
     <div class="row p-2" id="ListOfData" style="font-size:15px">
             @foreach($packages as $package)
                 <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 20px black;border-style: none;height:300px;max-height:300px">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;height:300px;max-height:300px">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
                             <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                                 <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}"

@@ -1,20 +1,20 @@
-<footer id="footer" class="footer-area pt-120 " style="margin-top:180px;z-index:auto">
+<footer id="footer" class="footer-area pt-120 " style="margin-top:180px;z-index:auto;direction:rtl">
 <div class="container-fluid">
         <div class="subscribe-area wow fadeIn container mx-auto">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="subscribe-content mt-3">
-                        <h6 style="font-size:24px;text-align:center" class="">برای دریافت مشاوره رایگان تلفن همراه خود را وارد نمایید</h6>
+                <div class="col-lg-6"> <br>
+                    <div class="subscribe-content" style="margin-top:-1rem !important">
+                        <h6 style="font-size:24px;text-align:center;dircetion:rtl" class=""> مشاوره رایگان میخوای تا بهتر تصمیم بگیری <br>  شماره موبایلت رو وارد کن</h6>
                     </div>
                 </div>
             <div class="col-lg-6" style="margin-top:20px">
-                    <div class="subscribe-form mt-50">
+                    <div class="subscribe-form mt-50" style="direction:ltr">
                         <form method="POST" action="{{route('message.newspaper')}}">
                             @csrf
                             <input  type="hidden" name="name" id="name" value="ناشناس" class="form-control">
                             <input type="hidden" name="message" id="message" value="درخواست مشاوره"  class="form-control">
                             <input type="text" class="ml-lg-5 ml-md-5 text-sm-center text-center" name="username" placeholder="شماره موبایل خود را وارد نمایید">
-                            <button class="main-btn" style="z-index:auto">ثبت نام</button>
+                            <button class="main-btn" style="z-index:auto">ثبت </button>
                         </form>
                     </div>
                 </div>
