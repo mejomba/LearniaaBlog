@@ -72,11 +72,8 @@ body
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-
     margin: 0;
-
     text-align: right;
-
     color: #212529;
     background-color: #fff;
 }
@@ -199,14 +196,12 @@ sup
 a
 {
     text-decoration: none;
-
     color:black;
     background-color: transparent;
 }
 a:hover
 {
     text-decoration: underline;
-
     color: black;
 }
 
@@ -5482,14 +5477,10 @@ input[type='button'].btn-block
 .card
 {
     position: relative;
-
     display: flex;
     flex-direction: column;
-
     min-width: 0;
-
     word-wrap: break-word;
-
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
     background-color: #fff;
@@ -5514,7 +5505,6 @@ input[type='button'].btn-block
 .card-body
 {
     padding: 0.40rem;
-
     flex: 1 1 auto;
 }
 
@@ -5531,7 +5521,6 @@ input[type='button'].btn-block
 
 .card-text:last-child
 {
-
     margin-bottom: 0;
 }
 
@@ -5549,7 +5538,6 @@ input[type='button'].btn-block
 {
     margin-bottom: 0;
     padding: .75rem 1.25rem;
-
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     background-color: rgba(0, 0, 0, .03);
 }
@@ -5565,7 +5553,6 @@ input[type='button'].btn-block
 .card-footer
 {
     padding: .75rem 1.25rem;
-
     border-top: 1px solid rgba(0, 0, 0, .125);
     background-color: rgba(0, 0, 0, .03);
 }
@@ -5603,7 +5590,6 @@ input[type='button'].btn-block
 .card-img
 {
     width: 100%;
-
     border-radius: calc(.25rem - 1px);
 }
 
