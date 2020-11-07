@@ -28,7 +28,7 @@ class AcademyController extends Controller
     {
         $recent_post = array();
         $recent_post =  Blog::orderby('pk_blog','DESC')->take(4)->get();
-        $packages = package::where('status','انتشار')->orderby('pk_package','DESC')->paginate(4);
+        $packages = package::where('status','انتشار')->orderby('pk_package','DESC')->paginate(8);
         
         return view('site.academy.index',compact('recent_post','packages'));
     }
@@ -285,7 +285,7 @@ $messages = [
     }
     public function quicklearn()
     {
-        $packages = package::where('status','انتشار')->paginate(8);
+        $packages = package::where('status','انتشار')->paginate(16);
         return view('site.academy.quicklearn',compact('packages'));
     }
 

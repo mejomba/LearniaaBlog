@@ -5,7 +5,7 @@
         <i class="fa fa-bars"></i>
     </button>
     <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="{{route('index')}}">
-        <img class="d-flex" src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Thumbnail Image" width="60px">
+        <img class="d-flex" src="{{ asset('images/Template/LEARNIA.png') }}" alt="Thumbnail Image" width="60px">
     </a>
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav d-flex col-md-7 col-12" style="font-size:15px; font-weight:500;">
@@ -17,7 +17,7 @@
            <li class="nav-item mr-lg-2 ml-lg-2 "><a class="nav-link" href="{{route('blog.index')}}" >وبلاگ</a></li> 
 
         </ul>
-            <ul class="navbar-nav col-md-5 col-12" dir="ltr" style="align-items: center;height:40px">
+            <ul class="navbar-nav col-md-5 col-12" dir="ltr" style="align-items:center;height:40px;margin-bottom:7.5px">
              @guest
              @if (Route::has('register'))
                       <li class="nav-item">
@@ -34,8 +34,9 @@
                   @else
                             <li class="nav-item dropdown" style="border-radius:1.2rem;">
                                 <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button"
-                                   style=" border-radius: 50%; width: 50px; height: 50px;margin-left:45px;"
+                                   style=" border-radius: 8%; height: 45px;background-color:black !important"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                   <span style="color:white">پنل کاربری</span>  
                                     <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image"
                                          height="35px" width="35px">
                                     <span class="caret"></span>

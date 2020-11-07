@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        /*
+        
        // dd($exception);
         if ($exception instanceof \Exception) 
         {
@@ -94,12 +94,14 @@ class Handler extends ExceptionHandler
             {
            if( $statusCode == '500' || $statusCode == '404')  
             { 
-               
-                return redirect()->back()->withErrors('خطایی رخ داده است با پشتیبانی در ارتباط باشید .');
+                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+               //return redirect()->back()->withErrors('errors','خطا : مشکل درعملیات پایگاه داده');
+               // return redirect('/500')->with('report',' خطا : مشکل درعملیات پایگاه داده');
+                //return redirect(route('Page500'));
+            }
             }
         }
-        }
-        */
+        
         
         return parent::render($request, $exception);
     }

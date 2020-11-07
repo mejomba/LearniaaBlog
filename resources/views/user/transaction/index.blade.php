@@ -31,9 +31,7 @@
                          {{ $name }} 
                         </th>
                         @endforeach
-                        <th>
-                    عملیات
-                        </th>
+                       
                         
                       </tr>
 
@@ -81,11 +79,7 @@
 
                           <td>
 
-                        <span style="font-size: 1.3rem;color:black">
-                      <a style="color:#00bcd4" href="{{ route('admin.transaction.show', $transaction['pk_transaction']) }}"> 
-                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
+                      
 
                         </td>
                           
