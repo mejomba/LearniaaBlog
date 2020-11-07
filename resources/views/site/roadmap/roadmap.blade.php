@@ -179,6 +179,8 @@ function GetPopupData(LocationUserId)
                     deletecontent();
                     $("#content").html(data.content);
                     $("#question").html(data.question);
+                    document.getElementsById("my-video").setAttribute("poster", "{{ Storage::url("+data.poster_video+") }}"); 
+                    document.getElementsById("my-video").setAttribute("src", "{{ Storage::url("+data.address_video+") }}"); 
                     data.feedback.forEach(function(item, index) 
                     {
                     let Name = document.createElement("button");
@@ -353,10 +355,23 @@ function SetAnswerUser(SelectAnswerId,radepa)
             </div>                       
             <div class="modal-body" id="ModalDataBody">                      
                 <!-- Form &  Body -->
-                 <div class="card-body px-lg-1 py-lg-1">
-                   <div class="row">  
+                <div class="col-lg-9">
+            <div class="card border-none p-2 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
+                        <div class="row justify-content-center">
+                        <div class="col-lg-7 ml-auto mr-auto">
+                            <div class="section-title text-center pb-40">
+                                <div class="line mt-4 mx-auto rounded-lg"></div>
+                                <h3 class="title mt-2">ویدیو مقاله</h3>
+                            </div> <!-- section title -->
+                    <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video" poster="" width="800" height="600" src=""> </video>
+                    </div>
+                 </div>
+               </div>
+            </div>
+                       <!--
                        <div id="content" class="col-12 col-md-12 col-lg-12">
                       </div>
+                      -->
                  </div>
                  <div class="row">  
                        <div id="question" class="col-6 col-md-6 col-lg-6 mr-auto ml-auto"

@@ -568,6 +568,8 @@ public function GetPopupData(Request $request)
         $feedback = json_decode($route->feedback);
         return response()->json([
             'content'=> $route->content,
+            'address_video' => $route->address_video,
+            'poster_video' => $route->poster_video,
             'question' =>$route->question,
             'feedback'=>$feedback
         ]);

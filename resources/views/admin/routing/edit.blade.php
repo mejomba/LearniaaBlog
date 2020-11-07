@@ -77,6 +77,27 @@
 
         </div>
 
+        <div class="col-md-4">
+            <div class="form-group">
+            <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                  <span>ادرس فایل ویدئو</span>
+                     </div>
+                       <textarea name="address_video" id="video" type="text" class="form-control" placeholder="ادرس فایل ویدئو"  value="{{$route->address_video}}"></textarea>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+            <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                  <span>ادرس عکس ویدئو</span>
+                     </div>
+                       <textarea name="poster_video" id="video" type="text" class="form-control" placeholder="ادرس عکس ویدئو"  value="{{$route->poster_video}}"></textarea>
+                  </div>
+            </div>
+        </div>
 
 
         </div>
