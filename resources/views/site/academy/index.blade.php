@@ -18,11 +18,22 @@
 @section('text_landing')
 <h1 class="font-weight-bolder text-center font-weight-bolder text-landing">
     <span class=" mr-3 main-color-blue" >لــرنیا</span>
-    <span class="mr-3 main-color-yellow" >آکادمی</span>
+  <!--  <span class="mr-3 main-color-yellow" >آکادمی</span> -->
 </h1>
-<h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center">
-    لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد
-</h3>
+<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center text-landing-quick">
+ کماندوی برنامه نویسی شو با لرنیا
+</h2>
+<div class="text-justify p-lg-1 p-md-4 p-sm-4 p-4  text-center">
+ لرنیا یه آکادمی آموزش مجازیه که بهت کمک میکنه تا 
+ </div>
+ <div class="text-justify p-lg-1 p-md-4 p-sm-4 p-4  text-center">
+ برنامه نویسی و مهارت های نرم و سخت یه کماندوی 
+ </div>
+ <div class="text-justify p-lg-1 p-md-4 p-sm-4 p-4  text-center">
+ برنامه نویسی شدن رو خوب یاد بگیری </div>
+
+
+
 <!--<h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
 </h6>-->
 @endsection
@@ -36,15 +47,19 @@
     <div class="col-lg-9 col-md-10 col-sm-11 col-12 mx-auto mt-5" >
         <div class="card-body">
              <div class="row">
-                <div class="col-md-12 col-12 col-lg-12 col-sm-12 ">
-                    <h2 class="font-weight-bolder text-center font-weight-bolder videoTitle" >
-                        <span class="text-warning mr-1 main-color-blue" >لــرنیا</span>
+                <div class="col-md-12 col-12 col-lg-12 col-sm-12  ">
+                    <h2 class="font-weight-bolder text-center font-weight-bolder videoTitle " >
+                        <span class="text-warning mr-1 main-color-yellow" >لــرنیا</span>
                         <span class="text-warning mr-1 main-color-yellow" >چیه؟</span>
                     </h2>
+                  <!--  <h3 class="font-weight-bolder text-center" >
+                    فیلم رو ببین تا بیشتر با ما آشنا بشی 
+                    </h3> -->
                     <div class="card-body videoBody" >
                         <video  class="afterglow" id="my-video" width="630" height="355"
-                            data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}"
-                            src="https://file.learniaa.com/files/SectionIntroVideo/LEARNIA_INTRO.mp4">
+                         data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}">
+                            <source type="video/mp4"  
+                            src="https://file.learniaa.com/files/SectionIntroVideo/LEARNIA_INTRO.mp4" />
                         </video>     
                     </div>
                 </div>
@@ -54,23 +69,56 @@
 </div>    
 <!-- Video -->
 
-<!-- Intro Academy -->
+
+<!-- FrontEnd RoadMap -->
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
-        <div class="col-lg-6">
-            <div class="subscribe-content mt-3">
-                <h6 class="roadMap-text">اگه مسیر و گام های یادگیری یه  برنامه نویس شدن رو بلد نیستی بزن روی نقشه راه یادگیری</h6>
-            </div>
-        </div>
-        <div class="col-lg-6 text-center mt-5" >
-            <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
-                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
-                <span >نقشه راه یادگیری</span>
+
+    <div class="col-lg-4 text-center mt-2 " >
+            <a  target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/FrontEnd_Course.jpg')}}" alt="Thumbnail Image" width="350px" height="218px" >   
             </a>
+        </div>
+        <div class="col-lg-8">
+            <div class="subscribe-content">
+               <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی وب فرانت اند ( Front-End )  </h2>
+                <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی فرانت اند وب بشی و  ساخت صفحات وب و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
+                <br>
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                <span >مشاهده مسیر</span>
+            </a>
+            </div>
         </div>
     </div>
 </div>
-<!-- Intro Academy -->
+<!-- FrontEnd RoadMap -->
+
+
+
+<!-- Python RoadMap -->
+<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+    <div class="row">
+
+    <div class="col-lg-4 text-center mt-2 " >
+            <a  target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/Python_Course.jpg')}}" alt="Thumbnail Image" width="350px" height="218px" >   
+            </a>
+        </div>
+        <div class="col-lg-8">
+            <div class="subscribe-content">
+               <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی پایتون  ( Python )  </h2>
+                <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی پایتون بشی و  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
+                <br>
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                <span >مشاهده مسیر</span>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Python RoadMap -->
 
 <!-- Packages -->
 <div class="container-fluid mb-5">
