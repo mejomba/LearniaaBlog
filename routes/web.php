@@ -248,8 +248,9 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     //Route::get('/home', 'HomeController@index')->name('user.home');
 
     Route::get('/home/index', 'HomeController@index')->name('user.home');
+    Route::get('/home/dashboard', 'HomeController@dashboard')->name('user.dashboard');
 
-    Route::get('/order/index', 'orderController@index')->name('user.order.index');
+   // Route::get('/order/index', 'orderController@index')->name('user.order.index');
 
     Route::get('/Profile/edit/', 'ProfileController@edit')->name('user.profile.edit');
     Route::post('/Profile/update/{id}', 'ProfileController@update')->name('user.profile.update');

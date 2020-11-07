@@ -19,10 +19,7 @@
                 <img src="{{ asset('images/Template/icon_politics.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
                نظرسنجی</h1>
                   <p class="card-category text-center">
-                    
-                  <a href="{{route('admin.vote.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> نظرسنجی
-                  </a>                
+                
 
                     </p>
                 </div>

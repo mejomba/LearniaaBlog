@@ -20,9 +20,7 @@
 <div class="row text-center">
 <div class="col-md-12">
 <div class="row text-center">
-
 <img  src="{{ asset('images/Template/Page500.png') }}" alt="Error Image" height="100%" width="100%">
-
 @if(Session::has('report'))
 <input type="hidden" name="errors[]" value ="{{ Session::get('report') }}" id="errors">
 <b style="color:red">پیام خطا: {{ Session::get('report') }} </b>
