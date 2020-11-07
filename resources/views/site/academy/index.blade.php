@@ -81,7 +81,7 @@
     <div class="row p-2" id="ListOfData" style="font-size:15px">
             @foreach($packages as $package)
                 <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;height:350px;max-height:350px">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;height:370px;max-height:370px">
                         <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none;height:300px">
                             <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                                 <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}"

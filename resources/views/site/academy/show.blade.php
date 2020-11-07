@@ -133,6 +133,37 @@
 <!-- Test -->
 </div>
 
+<!-- Test 3 -->
+<div class="row">
+<div class="col-lg-9 col-md-6 col-sm-11 col-12 mx-auto" style="margin-top:20px !important">
+                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none">
+                        
+                        <div class="card-body px-4">
+                        <div class="row">
+                                <div class="col-md-12 col-12 col-lg-12 col-sm-12 ">
+
+                            <div class="card border-none mt-3" style="border-radius: 20px;box-shadow:0px 0px 8px #0000002b;border-style: none">
+                            <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
+                            </div>
+                            <div class="card-body px-4" style="margin-bottom:10px">
+                            <video  class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{Storage::url('course/'. $package['folder'] .'/' .$current_course['pic_cover'])}}" src="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}"> </video>
+
+                                </div>
+                            <!--Foreach -->
+                            </div>
+                            
+                            </div>
+
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>    
+</div>
+<!-- Test 3 -->
+
+
 <div class="row">
 <!-- Test 2 -->
 <div class="col-lg-8 col-md-6 col-sm-11 col-12 mx-auto" style="margin-top:20px !important">
@@ -183,37 +214,6 @@
 
 
 
-
-<div class="row">
-<!-- Test 3 -->
-<div class="col-lg-9 col-md-6 col-sm-11 col-12 mx-auto" style="margin-top:20px !important">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none">
-                        
-                        <div class="card-body px-4">
-                        <div class="row">
-                                <div class="col-md-12 col-12 col-lg-12 col-sm-12 ">
-
-                            <div class="card border-none mt-3" style="border-radius: 20px;box-shadow:0px 0px 8px #0000002b;border-style: none">
-                            <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none"> 
-                            </div>
-                            <div class="card-body px-4" style="margin-bottom:10px">
-                            <video  class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{Storage::url('course/'. $package['folder'] .'/' .$current_course['pic_cover'])}}" src="{{ Storage::disk('learniaa')->temporaryUrl( $current_course['download_link'], now()->addMinutes(120))}}"> </video>
-
-                                </div>
-                            <!--Foreach -->
-                            </div>
-                            
-                            </div>
-
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>    
-<!-- Test 3 -->
-
-</div>
 
 <div class="row">
 <!-- Test 4 -->
