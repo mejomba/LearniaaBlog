@@ -73,10 +73,9 @@
 <!-- FrontEnd RoadMap -->
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
-
     <div class="col-lg-4 text-center mt-2 " >
-            <a  target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
-                <img src="{{ asset('images/Academy/Landing/FrontEnd_Course.jpg')}}" alt="Thumbnail Image" width="350px" height="218px" >   
+            <a  target="_parent" href="https://learniaa.com/academy/mylearn?pk_tree=31" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/FrontEnd_Course.jpg')}}" alt="Thumbnail Image"  >   
             </a>
         </div>
         <div class="col-lg-8">
@@ -84,7 +83,7 @@
                <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی وب فرانت اند ( Front-End )  </h2>
                 <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی فرانت اند وب بشی و  ساخت صفحات وب و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=31" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده مسیر</span>
             </a>
@@ -99,10 +98,9 @@
 <!-- Python RoadMap -->
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
-
     <div class="col-lg-4 text-center mt-2 " >
-            <a  target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
-                <img src="{{ asset('images/Academy/Landing/Python_Course.jpg')}}" alt="Thumbnail Image" width="350px" height="218px" >   
+            <a target="_parent" href="https://learniaa.com/academy/mylearn?pk_tree=29" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/Python_Course.jpg')}}" alt="Thumbnail Image"  >   
             </a>
         </div>
         <div class="col-lg-8">
@@ -110,7 +108,7 @@
                <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی پایتون  ( Python )  </h2>
                 <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی پایتون بشی و  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=29" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده مسیر</span>
             </a>
@@ -119,6 +117,34 @@
     </div>
 </div>
 <!-- Python RoadMap -->
+
+
+<!-- RoadMap -->
+<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+    <div class="row">
+    <div class="col-lg-4 text-center mt-2 " >
+            <a  target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/Roadmap.jpg')}}" alt="Thumbnail Image" >   
+            </a>
+        </div>
+        <div class="col-lg-8">
+            <div class="subscribe-content">
+               <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی تازه کار ها</h2>
+                <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی بشی ولی نمیدونی چه زبان برنامه نویسی برات مناسبه و میخوای  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی شروع مسیریابی بزن</h4>
+                <br>
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                <span >شروع مسیریابی</span>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- RoadMap -->
+
+
+
+
 
 <!-- Packages -->
 <div class="container-fluid mb-5">

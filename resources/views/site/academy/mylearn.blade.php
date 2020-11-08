@@ -18,14 +18,14 @@
 @endsection
 
 @section('content')
-<!-- Validation Register Before Show RoadMap MyLEarn -->
-@if(Auth::user() == null)
+<!-- Validation Register Before Show RoadMap MyLEarn 
+if(Auth::user() == null)
 <script>window.location = "/reset/showcallbackloginform";</script>
-@endif
-
+endif
+-->
 <section class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 ">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 learn-style ">
             <div class="card shadow border-0"  >
                 <div class="card-header blue-background" >
                     <div class="text-center">

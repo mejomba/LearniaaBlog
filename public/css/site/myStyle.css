@@ -24,7 +24,7 @@ body{
     font-style: normal;
     color: #6A6972;
     overflow-x: hidden;
-    background-color: #fafafa17;
+    background-color: #fafafa;
 }
 
 p {
@@ -66,7 +66,7 @@ button:focus{
 }
 .shadow{
     border-radius: 20px;
-    box-shadow: 0px 0px 20px black !important;
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14) !important;
     border-style: none;
 }
 .hr{
@@ -146,7 +146,7 @@ button:focus{
 /* pakages */
 .pakage-content{
     border-radius: 20px;
-    box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
     border-style: none;
     height:300px;
     max-height:300px;
@@ -181,7 +181,7 @@ button:focus{
 /* Posts */
 .post-content{
     border-radius: 20px;
-    box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
     border-style: none;
     max-height:400px;
     height:400px;
@@ -565,7 +565,7 @@ btn-loginSign:focus {
 
 .learn-style {
     position: relative;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .txt-title {
@@ -1508,9 +1508,9 @@ ol {
 
 .single-services {
     background-color: #fff;
-    -webkit-box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
-    -moz-box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
-    box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
     -ms-transition: all 0.3s ease-out 0s;
@@ -1742,9 +1742,9 @@ ol {
 ===========================*/
 
 .single-team {
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
-    -moz-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
-    box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
+    -webkit-box-shadow:0px 0px 8px 0px rgba(50, 77, 215, 0.14);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
     overflow: hidden;
     border-radius: 10px;
 }
@@ -1829,14 +1829,14 @@ ol {
 
 .single-comment {
     border-radius: 12px;
-    box-shadow: #20c5ba 1px 1px 30px;
+    box-shadow: #20c5ba 1px 1px 7px;
     transition: 200ms;
     outline: none;
 }
 
 .single-comment:hover {
     cursor: pointer;
-    box-shadow: black 1px 1px 10px;
+    box-shadow:0px 0px 8px 0px rgba(50, 77, 215, 0.14);
 }
 
 .single-comment .fa-star {
@@ -1945,9 +1945,9 @@ ol {
 
 .subscribe-area {
     padding: 40px 50px 90px;
-    -webkit-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
-    -moz-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
-    box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
     border-radius: 10px;
     background-color: #fff;
 }

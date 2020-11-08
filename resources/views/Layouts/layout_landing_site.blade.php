@@ -33,7 +33,7 @@
 <div class="container-fluid" style="z-index:10001">
 @include('Layouts.error')
 </div>
-<div style="direction: rtl" class="d-flex justify-content-around">
+<div style="direction: rtl;" class="d-flex justify-content-around">
 <div class="learn-style mt-5">
     <h1 class="mt-5" style="margin-top:5rem !important"></h1>
     @yield('text_landing')
