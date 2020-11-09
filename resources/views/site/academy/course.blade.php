@@ -212,20 +212,23 @@
 
 
 <!-- Intro Videos -->
+
 <div class="row mt-4 ">
    <div class="col-lg-6 mx-auto text-center">
-      <h3 class="main-color-blue">معرفی دوره از زبان مدرسین</h3>
+      <h3 class="main-color-blue">معرفی دوره </h3>
    </div>
 </div>
-@foreach($DataSection as $section) 
+    @foreach($DataSection as $section) 
+    @if($section['Section']['intro'] != 'ندارد')
+    <div class="row mt-3">
+    <div class="col-lg-8 col-md-10 col-sm-11 col-11  rounded-lg m-4 p-2 mx-auto">
+    <video  class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}" src="{{$section['Section']['intro']}}">
+    </video>
+    </div>
+    </div>
+    @endif
+    @endforeach
 
-<div class="row mt-3">
-  <div class="col-lg-8 col-md-10 col-sm-11 col-11  rounded-lg m-4 p-2 mx-auto">
-  <video  class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}" src="{{$section['Section']['intro']}}">
- </video>
-  </div>
-</div>
-@endforeach
 <!-- Intro VIdeos -->
 
 
@@ -244,7 +247,7 @@
      @php $row_counter = 1 ; @endphp
      @foreach($DataSection as $section) 
 </div>
-<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap ">
     <div class="row">
 
          <div class="col-lg-3 text-center mt-2 " >
@@ -293,7 +296,7 @@
                 <div class="col-lg-2">
                 @if($payment_status == 'Yes' || $course['isFree'] == 'Yes' )
                 <button class="btn btnGreen btn-round btn-collapse">
-                <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,'desc' => $course['name'] , 'sort' => $course['sort'] ,'pk_package' => $course['pk_package']  ]) }}">
+                <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,'desc' => $course['name'] , 'sort' => $course['sort'] ,'pk_package' => $course['pk_package'] , 'pk_section' => $section['Section']['pk_section']  ]) }}">
                 <img src="{{ asset('images/icons/Play.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                  </a>
                 </button>

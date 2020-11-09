@@ -208,6 +208,13 @@ button:focus{
     border-style: none;
     max-height:400px;
     height:400px;
+    background-color : #fff;
+}
+
+.single-comment 
+{
+    background-color : #fff;
+
 }
 
 .post-banner{

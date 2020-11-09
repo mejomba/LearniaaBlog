@@ -29,7 +29,7 @@ Route::get('/EmailTest', function()
 
 Route::get('/', 'AcademyController@index')->name('index');
 Route::get('/academy/detail', 'AcademyController@detail')->name('academy.detail');
-Route::get('/academy/show/{pk_course}/{desc}/{sort}/{pk_package}', 'AcademyController@show')->name('academy.show');
+Route::get('/academy/show/{pk_course}/{desc}/{sort}/{pk_package}/{pk_section}', 'AcademyController@show')->name('academy.show');
 Route::get('/academy/road', 'AcademyController@road')->name('academy.road');
 Route::get('/academy/mylearn', 'AcademyController@start_mylearn')->name('academy.mylearn');
 Route::get('/academy/course/{pk_tree}/{pk_package}', 'AcademyController@course')->name('academy.course');

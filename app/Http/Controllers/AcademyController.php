@@ -84,7 +84,7 @@ class AcademyController extends Controller
     }
 
   
-    public function show($pk_course,$desc,$sort,$pk_package)
+    public function show($pk_course,$desc,$sort,$pk_package,$pk_section)
     {
             /* course */
             $current_course = Course::find($pk_course);
@@ -95,6 +95,45 @@ class AcademyController extends Controller
             $next_course  = Course::where('sort',$current_course->sort + 1)
             ->where('pk_package',$current_course->pk_package)->first();
             /* course */
+
+            /* PlayList */
+            $sections= Section::where('pk_section',$pk_section)->orderby('sort','ASC')->first();
+
+            $DataSection = array();
+         //   foreach ($sections as $key => $section) 
+          //  {
+               $courses = Course::where('pk_package',$pk_package)->whereBetween('sort',
+                           [$sections->part_from, $sections->part_to])->get();
+    
+               array_push($DataSection,['Section' => $sections , 'Courses' => $courses , 'Current_Course' => $current_course ]) ; 
+           // }
+
+            
+
+
+            /*
+            $DataSection = array();
+
+            for ($row = $current_course->sort; $row < $current_course->sort - 10 ; $row--) 
+            {
+              $search_course =   Course::where('sort',$current_course->sort + 1)
+                ->where('pk_package',$current_course->pk_package)->first();
+
+                array_push($DataSection,[ 'Courses' => $search_course ]) ; 
+            }
+
+            array_push($DataSection,[ 'Courses' =>  $current_course ]) ;
+
+            for ($row = $current_course->sort; $row < $current_course->sort + 10 ; $row++) 
+            {
+              $search_course =   Course::where('sort',$current_course->sort + 1)
+                ->where('pk_package',$current_course->pk_package)->first();
+
+                array_push($DataSection,[ 'Courses' => $search_course ]) ; 
+            }
+            */
+            /* PlayList */
+
 
             $package = Package::find($pk_package);
             $tree = Tree::where('pk_tree',$package->pk_tree)->first();
@@ -121,7 +160,7 @@ class AcademyController extends Controller
                     $payment_status ="Yes";
 
                     return view('site.academy.show',
-                    compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
+                    compact('DataSection','payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
         
                 }
             }
@@ -129,7 +168,7 @@ class AcademyController extends Controller
             if($current_course['isFree'] == 'Yes')
             {
                 return view('site.academy.show',
-                compact('payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
+                compact('DataSection','payment_status','meta_keywords','previous_course','current_course','next_course','package','tree'));
             }
 
             return redirect()->back()->with('report','به علت خریداری نکردن دوره به این قسمت دسترسی نداری به قسمت لیست پخش برو');
@@ -225,7 +264,7 @@ class AcademyController extends Controller
             }
             else
             {
-                return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+               /* return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده'); */
             }
            
         }
