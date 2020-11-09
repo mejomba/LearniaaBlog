@@ -11,40 +11,11 @@ use App\Learner;
 class User extends Authenticatable
 {
     use Notifiable; 
-
     protected $primaryKey = 'pk_users';
     protected $table = 'users';
-    
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'type', 'name', 'username','attract', 'extras' , 'password'
-    ];
-
-    
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-         
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        
-    ];
-
+    protected $fillable = ['type', 'name', 'username','attract', 'extras' , 'password'];
+    protected $hidden = [];
+    protected $casts = [];
 
     public function profile()
     {
@@ -56,9 +27,6 @@ class User extends Authenticatable
        return $this->hasOne(Learner::class,'pk_user');
     }
 
-
-
-
     public function GetListAllNameColumns_ForTable()
     {
        return  [ 'pk_users' => 'کلید کاربر ها',
@@ -66,8 +34,6 @@ class User extends Authenticatable
                  'name' => 'نام کاربر',
                  'mobile' => 'شماره موبایل',
                  'Wallet'=> 'موجودی',
-                
-
-                 ] ;
+                ] ;
     }
 }

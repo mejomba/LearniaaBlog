@@ -14,47 +14,13 @@ use App\Errors;
 
 class Handler extends ExceptionHandler
 {
-    /**
-     * A list of the exception types that are not reported.
-     *
-     * @var array
-     */
-    protected $dontReport = [
-        //
-    ];
-
-    /**
-     * A list of the inputs that are never flashed for validation exceptions.
-     *
-     * @var array
-     */
-    protected $dontFlash = [
-        'password',
-        'password_confirmation',
-    ];
-
-    /**
-     * Report or log an exception.
-     *
-     * @param  \Exception  $exception
-     * @return void
-     */
-    public function report(Exception $exception)
+  protected $dontReport = [ ];
+  protected $dontFlash = ['password','password_confirmation',];
+  
+  public function report(Exception $exception){ parent::report($exception); }
+  
+  public function render($request, Exception $exception)
     {
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Exception $exception)
-    {
-        
-       // dd($exception);
         if ($exception instanceof \Exception) 
         {
             Log::error($exception->getMessage());
@@ -95,14 +61,9 @@ class Handler extends ExceptionHandler
            if( $statusCode == '500' || $statusCode == '404')  
             { 
                 return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-               //return redirect()->back()->withErrors('errors','خطا : مشکل درعملیات پایگاه داده');
-               // return redirect('/500')->with('report',' خطا : مشکل درعملیات پایگاه داده');
-                //return redirect(route('Page500'));
             }
             }
         }
-        
-        
         return parent::render($request, $exception);
     }
 }

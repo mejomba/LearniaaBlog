@@ -8,43 +8,16 @@ use Illuminate\Contracts\Validation\Rule;
 
 class registercode implements Rule
 {
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
     public $username;
-    public function __construct($username)
-    {
-        //
-        $this->username =  $username;
-    }
+    public function __construct($username){$this->username =  $username;}
 
-    /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
-     */
     public function passes($attribute, $value)
     {
-        //
-        $row = Reset::where(['pk_user'=>$this->username , 'token'=>$value])->count();
-        if($row != 0 )
-        {
-           return true;
-        }
+        $row = Reset::where(['pk_user'=>$this->username,'token'=>$value])->count();
+        if($row != 0 ){return true;}
         return false;
     }
 
-    /**
-     * Get the validation error message.
-     *
-     * @return string
-     */
     public function message()
-    {
-        return 'کد وارد شده صحیح نمی باشد';
-    }
+    { return 'کد وارد شده صحیح نمی باشد';}
 }
