@@ -15,18 +15,24 @@
 <meta name="twitter:description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد" /> 
 <meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
 @endsection
+
 @section('text_landing')
-<h1 class="font-weight-bolder text-center font-weight-bolder" style="font-size:9vw;margin-top: -30px">
-<span style="color: #ffe735 !important;" class="text-info">وبلاگ</span>
-<span style="color: #20c5ba !important;" class="text-warning mr-3">لــرنیا</span>
+<h1 class="font-weight-bolder text-center font-weight-bolder text-landing" >
+ <span class="text-info main-color-blue">وبلاگ</span>
+ <span class="text-warning mr-3 main-color-yellow">لـرنیا</span>
 </h1>
-<h3  style="font-size:20px;background-color:#20c5ba;color:white;border-radius:95px" class="text-justify p-lg-1 p-md-4 p-sm-4 p-5 text-center">
-وبلاگ لرنیا جایی است برای علاقه مندان به مطالعه ی  <br> مقالات و آگاه شدن از تکنولوژی و  فناوری های جدید  <br>زبان های برنامه نویسی روز دنیا</h3>
+
+<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-4 text-center text-landing-quick">
+تخصصی ترین مقالات با لرنیا
+</h2>
 @endsection
+
 @section('pic_landing')
-<img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/blogNew.svg')}}" alt="" style="margin-top: -15px">
+<img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Template/blogNew.svg')}}"  style="margin-top: -15px">
 @endsection
+
 @section('content')
+
 <!-- Category Posts -->
 {{-- <section class="MainTopics"> --}}
 {{--<div class="d-flex justify-content-around flex-wrap mt-5" id="topics_Of_novels"> --}}
@@ -38,8 +44,26 @@
 {{--</div> --}}
 {{--</section> --}}
 <!-- Category Posts -->
+
+<!-- Terms -->
+<div class="row">
+    <div class="col-lg-9 col-md-10 col-sm-11 col-12 mx-auto mt-5" >
+        <div class="card-body">
+             <div class="row">
+                <div class="col-md-7 col-12 col-lg-7 col-sm-12 mx-auto  text-center Terms ">
+                وبلاگ لرنیا جایی است برای علاقه مندان به مطالعه ی
+                مقالات و آگاه شدن از تکنولوژی و  فناوری های جدید
+                زبان های برنامه نویسی روز دنیا
+                </div>
+            </div>
+          </div>
+      </div>
+ </div>
+<!-- Terms -->
+
+
 <div class="container-fluid">
-<div class="row mt-5 mb-4" style="padding-top:20px;">
+<div class="row">
 <div class="col-12 mx-auto text-center">
 </div>
 </div>
@@ -72,8 +96,8 @@
         </div>
 <section class="Pagination">
 <div class="row mx-auto">
-<div class="col-lg-2 col-md-6 col-sm-11 col-6 mx-auto mt-3">
-<ul class="pagination px-1 py-1 text-secondary" style="background-color: transparent">
+<div class="col-lg-2 col-md-2 col-sm-12 col-12 mx-auto mt-3">
+<ul class="pagination px-1 py-1 text-secondary">
 {{$recent_post->links()}}
 </a>
 </li>

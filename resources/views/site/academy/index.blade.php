@@ -18,24 +18,11 @@
 @section('text_landing')
 <h1 class="font-weight-bolder text-center font-weight-bolder text-landing">
     <span class=" mr-3 main-color-blue" >لــرنیا</span>
-  <!--  <span class="mr-3 main-color-yellow" >آکادمی</span> -->
 </h1>
-<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center text-landing-quick">
+<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-4 text-center text-landing-quick">
  کماندوی برنامه نویسی شو با لرنیا
 </h2>
-<div class="text-justify p-lg-1 p-md-4 p-sm-4 p-4  text-center">
- لرنیا یه آکادمی آموزش مجازیه که بهت کمک میکنه تا 
- </div>
- <div class="text-justify p-lg-1 p-md-4 p-sm-4 p-4  text-center">
- برنامه نویسی و مهارت های نرم و سخت یه کماندوی 
- </div>
- <div class="text-justify p-lg-1 p-md-4 p-sm-4 p-4  text-center">
- برنامه نویسی شدن رو خوب یاد بگیری </div>
 
-
-
-<!--<h6 class="d-flex justify-content-center mt-lg-3 mt-md-3 mt-sm-3 mt-0">
-</h6>-->
 @endsection
 @section('pic_landing')
 <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/Academy_index.svg')}}" alt="" />
@@ -47,14 +34,19 @@
     <div class="col-lg-9 col-md-10 col-sm-11 col-12 mx-auto mt-5" >
         <div class="card-body">
              <div class="row">
+                <div class="col-md-7 col-12 col-lg-7 col-sm-12 mx-auto  text-center Terms ">
+                لرنیا یه آکادمی آموزش مجازیه که بهت کمک میکنه تا 
+                برنامه نویسی و مهارت های نرم و سخت یه کماندوی 
+                برنامه نویسی شدن رو خوب یاد بگیری
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12 col-12 col-lg-12 col-sm-12  ">
-                    <h2 class="font-weight-bolder text-center font-weight-bolder videoTitle " >
-                        <span class="text-warning mr-1 main-color-yellow" >لــرنیا</span>
-                        <span class="text-warning mr-1 main-color-yellow" >چیه؟</span>
+                    <h2 class="text-center font-weight-bolder videoTitle" >
+                        <span class="text-warning mr-1 main-color-yellow Gray-style" >لــرنیا چیه؟</span>
+                        
                     </h2>
-                  <!--  <h3 class="font-weight-bolder text-center" >
-                    فیلم رو ببین تا بیشتر با ما آشنا بشی 
-                    </h3> -->
+                 
                     <div class="card-body videoBody" >
                         <video  class="afterglow" id="my-video" width="630" height="355"
                          data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}">
@@ -228,7 +220,6 @@
                             </a>
                         </div>
                         <div class="px-4">
-                         <!-- <span class="d-block text-secondary">{{ $one_post->category['name'] }}</span> -->
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
                             <h2 class="mt-2 post-title">{{ $one_post['title'] }}</h2>
                             </a>
@@ -248,158 +239,7 @@
 <!-- Posts -->
 
 
-<!-- Teachers -->
-<!--
-<section id="masters" class="pt-120">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="section-title text-center pb-40">
-                    <div class="line mt-5 mx-auto rounded-lg"></div>
-                    <h3 class="title mt-5">هیات علمی و مدرسین</h3>
-                </div> 
-            </div>
-        </div>
-        
-        <div class="row mt-2">  
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/Yosefvand.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس یوسفوند</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
-                    </div>
-
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliKhademi.jpg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس خادمی</h4>
-                        <p class="teacher-craft">مشاور مارکتینگ و مربی کوچینگ</p>
-                    </div>
-                </div> 
-            </div>
-
-            
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AminZadeh.jpg') }}" alt=""  width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس امین زاده</h4>
-                        <p class="teacher-craft">مدرس و مشاور علمی پایتون</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliTorki.jpg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس علی ترکی</h4>
-                        <p class="teacher-craft"> JS Tehran برنامه نویس ارشد حصین و مدیر</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/NimaArefi.jpg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس نیما عارفی</h4>
-                        <p class="teacher-craft" dir="rtl">متخصص برنامه نویسی و DevOps و مدیر React Tehran</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/SalarNasiri.jpg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس سالار نصیری</h4>
-                        <p class="teacher-craft">کافه بازار و دیوار   (DevOps)متخصص</p>
-                    </div>
-                </div> 
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/MehdiGhaemi.jpg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدی قائمی</h4>
-                        <p class="teacher-craft">مدرس لرنیا آکادمی</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/MehdiFarahzadi.jpg') }}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدی فرحزادی</h4>
-                        <p class="teacher-craft">اسکرام مستر فناپ و مدرس</p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/Laghari.jpg')}}" alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس لاغری</h4>
-                        <p class="teacher-craft">برنامه نویس و مدرس طراحی سایت و برنامه نویسی</p>
-                    </div>
-
-                </div> 
-            </div>
-        </div> 
-    </div>
-</section>
--->
-<!-- teachers -->
-
-
 <!-- Customer Say -->
-
 <div class="row justify-content-center">
     <div class="col-lg-5">
         <div class="section-title text-center pb-40">
@@ -432,7 +272,6 @@
             </div>
         </div>
     </div>
- 
 <!-- FeedBack -->
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body" >
         <div class="row"> 
@@ -455,7 +294,6 @@
             </div>
         </div>
     </div>
-
 <!-- FeedBack -->
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body" >
         <div class="row"> 
@@ -478,7 +316,6 @@
             </div>
         </div>
     </div>
-
  <!-- FeedBack -->
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body">
         <div class="row"> 

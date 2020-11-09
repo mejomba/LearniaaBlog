@@ -3,9 +3,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
 
 * {
-    direction: :rtl !important;
-    margin: 0;
-    padding: 0;
+   /* direction:rtl !important; */
+    margin:0;
+    padding:0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -77,7 +77,7 @@ button:focus{
     border: 3px dotted #20c5ba;
 }
 .text-landing{
-    font-size:5vw;
+    font-size:50px;
     margin-top: -30px;
 }
 .text-landing-quick{
@@ -89,9 +89,24 @@ button:focus{
 
 /*Video of index page */
 .videoTitle{
-    font-size:4vw;
-    margin-top: -30px
+    font-size:35px;
 }
+
+.Gray-style
+{
+    background-color: gray;
+    border-radius: 10px;
+    padding: 6px ; 
+   
+}
+
+.page-link
+{
+    background-color : transparent;
+}
+
+.page-item.disabled .page-link  {background-color : transparent !important}
+
 .videoBody{
     margin-bottom:10px;
     border:5px solid #20c5ba
@@ -100,6 +115,14 @@ button:focus{
     color:yellow !important;
 }
 
+.Terms
+{    font-size:1.7rem; 
+    line-height : 1.73;
+    max-width : 1000px ;
+    color : #424750 ;
+    margin-bottom: 30px;
+
+}
 
 /* Intro Academy */
 .roadMap{
@@ -1536,9 +1559,7 @@ ol {
     border-radius: 8px;
 }
 
-@media (max-width: 767px) {
-    .single-services {}
-}
+@media (max-width: 767px) {  }
 
 .single-services .services-icon {
     display: inline-block;

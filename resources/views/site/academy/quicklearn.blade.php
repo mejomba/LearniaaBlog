@@ -16,28 +16,37 @@
 <meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
 @endsection
 @section('text_landing')
-    <h1 class="font-weight-bolder text-center font-weight-bolder text-landing" >
-        <span class="text-info main-color-blue">دوره های</span>
-        <span class="text-warning mr-3 main-color-yellow">لـرنیا</span>
-    </h1>
-    <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-5 text-center text-landing-quick">
-        ما در دوره های آموزشی لرنیا تمام سعی مان را کردیم تا جامع ترین <br>سرفصل آموزشی را به کمک چندین تن از اساتید خوب کشور عزیزمان<br> برای شما آماده کنیم تا برای ورود به بازار کار دیگر نگران نباشید
-    </h3>
+<h1 class="font-weight-bolder text-center font-weight-bolder text-landing" >
+ <span class="text-info main-color-blue">دوره های</span>
+ <span class="text-warning mr-3 main-color-yellow">لـرنیا</span>
+</h1>
+
+<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-4 text-center text-landing-quick">
+جامع ترین آموزش ها با لرنیا
+</h2>
 @endsection
+
 @section('pic_landing')
-    <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/quicklearn.svg')}}" alt="" >
+ <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/quicklearn.svg')}}">
 @endsection
+
 @section('content')
-<!-- Category Posts -->
-{{-- <section class="MainTopics"> --}}
-{{--<div class="d-flex justify-content-around flex-wrap mt-5" id="topics_Of_novels"> --}}
-{{--<div class="m-2"><a href="{{route('category.show','توسعه مهارت های شخصی')}}" class="btn  btn-round btnblog btn-1">توسعه مهارت های شخصی </a></div> --}}
-{{--<div class="m-2"><a href="{{route('category.show','دنیای دیجیتال')}}" class="btn  btn-round btnblog btn-2">دنیای دیجیتال </a></div> --}}
-{{--<div class="m-2"><a href="{{route('category.show','برنامه نویسی')}}" class="btn  btn-round btnblog btn-3"> برنامه نویسی</a></div> --}}
-{{--<div class="m-2"><a href="{{route('category.show','وب')}}" class="btn  btn-round btnblog btn-4">وب</a></div> --}}
-{{--<div class="m-2"><a href="{{route('category.show','هک و امنیت')}}" class="btn  btn-round btnblog btn-5"> هک و امنیت </a></div> --}}
-{{--</div> --}}
-{{--</section> --}}
+
+<!-- Terms -->
+<div class="row">
+    <div class="col-lg-9 col-md-10 col-sm-11 col-12 mx-auto mt-5" >
+        <div class="card-body">
+             <div class="row">
+                <div class="col-md-7 col-12 col-lg-7 col-sm-12 mx-auto  text-center Terms ">
+                ما در دوره های آموزشی لرنیا تمام سعی مان را کردیم تا جامع ترین 
+                سرفصل آموزشی را به کمک چندین تن از اساتید خوب کشور عزیزمان
+                برای شما آماده کنیم تا برای ورود به بازار کار دیگر نگران نباشید
+                </div>
+            </div>
+          </div>
+      </div>
+ </div>
+<!-- Terms -->
 
 <!-- pakages  -->
 <div class="container-fluid">

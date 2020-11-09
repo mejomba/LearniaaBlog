@@ -20,6 +20,9 @@
         <script src="https://kit.fontawesome.com/171e40aa76.js" crossorigin="anonymous"></script>
         <script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'UA-155041698-1');</script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>   
+        <!-- WEB & Mobile Conferance -->
+       <script> !function (e, t, a) { "use strict"; var s = t.head || t.getElementsByTagName("head")[0], p = t.createElement("script"); e.iwmfBadge = a, p.async = true, p.src = "{{ asset('js/WebMobile.js') }}", s.appendChild(p) }(window, document, "b-bottom-left"); </script> 
+       <!-- WEB & Mobile Conferance -->
 </head>
 <body>
 <div style="direction: rtl">
