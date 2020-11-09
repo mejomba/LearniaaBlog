@@ -22,15 +22,9 @@
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 course mx-auto" >
             <div class="row">
                 <div class="col-12 col-md-12 text-center">
-                    @if($selected_road != 0)
-                        <a href="{{route('academy.mylearn',['pk_tree'=>$selected_road])}}">
+                        <a href="{{redirect()->back()->getTargetUrl() }}">
                             <button class="btn btn-secondary mt-4 d-inline mb-4" >بازگشت</button>
                         </a>
-                    @else
-                        <a href="{{route('academy.quicklearn')}}">
-                            <button class="btn btn-secondary mt-4 d-inline mb-4">بازگشت</button>
-                        </a>
-                    @endif
                 </div>
             </div>
 

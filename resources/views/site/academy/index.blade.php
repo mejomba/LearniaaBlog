@@ -62,6 +62,31 @@
 <!-- Video -->
 
 
+
+<!-- Python RoadMap -->
+<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+    <div class="row">
+    <div class="col-lg-4 text-center mt-2 " >
+            <a target="_parent" href="https://learniaa.com/academy/mylearn?pk_tree=29" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/Python_Course.jpg')}}" alt="Thumbnail Image"  >   
+            </a>
+        </div>
+        <div class="col-lg-8">
+            <div class="subscribe-content">
+               <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی پایتون  ( Python )  </h2>
+                <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی پایتون بشی و  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
+                <br>
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=29" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                <span >مشاهده مسیر</span>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Python RoadMap -->
+
+
 <!-- FrontEnd RoadMap -->
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
@@ -86,21 +111,20 @@
 <!-- FrontEnd RoadMap -->
 
 
-
-<!-- Python RoadMap -->
+<!-- ICDL RoadMap -->
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
     <div class="col-lg-4 text-center mt-2 " >
-            <a target="_parent" href="https://learniaa.com/academy/mylearn?pk_tree=29" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
-                <img src="{{ asset('images/Academy/Landing/Python_Course.jpg')}}" alt="Thumbnail Image"  >   
+            <a target="_parent" href="https://learniaa.com/academy/course/0/8" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
+                <img src="{{ asset('images/Academy/Landing/ICDL_Course.jpg')}}" alt="Thumbnail Image"  >   
             </a>
         </div>
         <div class="col-lg-8">
             <div class="subscribe-content">
-               <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی پایتون  ( Python )  </h2>
-                <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی پایتون بشی و  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
+               <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری کامپیوتر برای تازه کار ها  ( مهارت های پایه و اولیه )  </h2>
+                <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه فرد ماهر در کار کردن وانجام انواع نیازهای رایانه ای خودت باشی روی مشاهده مسیر بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=29" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/course/0/8" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده مسیر</span>
             </a>
@@ -108,7 +132,8 @@
         </div>
     </div>
 </div>
-<!-- Python RoadMap -->
+<!-- ICDL RoadMap -->
+
 
 
 <!-- RoadMap -->
