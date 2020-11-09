@@ -104,7 +104,7 @@ button:focus{
 /* Intro Academy */
 .roadMap{
     direction:rtl;
-    margin:100px 10px  100px;
+    margin:0px 10px  25px;
    /* box-shadow: 0px 0px 20px black !important; */
     border-style: none;
    /* background-color:#20c5ba !important; */
@@ -140,7 +140,7 @@ button:focus{
     padding-bottom:15px"
 }
 .roadMap span{
-    font-size: 15px;
+    font-size: 12px;
 }
 
 /* pakages */
@@ -170,7 +170,7 @@ button:focus{
 }
 .pakage-footer{
     font-family: Dastnevis;
-    font-size: 20px;
+    font-size: 23px;
     direction: rtl;
 }
 .pakage-soon{
@@ -244,7 +244,7 @@ button:focus{
 
 /* coursees  */
 .course{
-    margin-top:150px !important;
+    margin-top:70px !important;
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;
 }
@@ -253,6 +253,7 @@ button:focus{
     border-radius: 20px;
     text-align: center;
     border:3px solid  #20c5ba;
+    background-color: white;
 }
 /* comment  */
 .comment-p{
@@ -272,6 +273,20 @@ button:focus{
     border-bottom-right-radius: 50px!important;
     border-bottom-left-radius: 50px!important;
 }
+
+/* btn-takhfif */
+.btn-takhfif {
+    color : #20c5ba !important ;
+    background-color: transparent;
+
+}
+/* btn-collapse */
+.btn-collapse
+{
+    padding : 10px 10px !important ;
+}
+
+
 
 
 /* Timeline */
@@ -693,9 +708,9 @@ btn-loginSign:focus {
 }
 
 .btnGreen {
-    border-color: #30d533;
-    color: #000000;
-    background-image: linear-gradient(45deg, #30d533 50%, transparent 50%);
+    border-color: #1fbd50;
+    color: white;
+    background-image: linear-gradient(45deg, #1fbd50 50%, transparent 50%);
     background-position: 0;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;

@@ -39,24 +39,6 @@
 {{--</div> --}}
 {{--</section> --}}
 
-<!-- Intro Academy -->
-<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="subscribe-content mt-3">
-                <h6 class="roadMap-text">اگه مسیر و گام های یادگیری یه  برنامه نویس شدن رو بلد نیستی بزن روی نقشه راه یادگیری</h6>
-            </div>
-        </div>
-        <div class="col-lg-6 text-center mt-5" >
-            <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
-                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
-                <span >نقشه راه یادگیری</span>
-            </a>
-        </div>
-    </div>
-</div>
-<!-- Intro Academy -->
-
 <!-- pakages  -->
 <div class="container-fluid">
     <div class="row p-2" id="ListOfData" >

@@ -22,7 +22,9 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155041698-1"></script>   
 </head>
 <body>
+<div style="direction: rtl">
 @include('Layouts.nav')
+</div>
 <div class="container-fluid">
 @include('Layouts.error')
 </div>

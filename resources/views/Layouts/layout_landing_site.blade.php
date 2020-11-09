@@ -29,7 +29,10 @@
 
 </head>
 <body>
+<div class="banner-bg" style="direction: rtl">
+<img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
 @include('Layouts.nav')
+</div>
 <div class="container-fluid" style="z-index:10001">
 @include('Layouts.error')
 </div>

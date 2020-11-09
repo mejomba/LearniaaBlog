@@ -1,5 +1,4 @@
-<div class="banner-bg" style="direction: rtl">
-<img style="" class="header-bg" src="{{asset('images/testimonials-background.jpg')}}" alt="">
+
 <nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
@@ -34,11 +33,9 @@
                   @else
                             <li class="nav-item dropdown" style="border-radius:1.2rem;">
                                 <a id="navbarDropdown" class="nav-link  profileMenu bg-white" href="#" role="button"
-                                   style=" border-radius: 8%; height: 45px;background-color:black !important"
+                                   style=" border-radius: 8%; height: 45px;background-color:#545b62 !important"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   <span style="color:white">پنل کاربری</span>  
-                                    <img src="{{ asset('images/Template/user.svg') }}" alt="Thumbnail Image"
-                                         height="35px" width="35px">
+                                   <span style="color:white">سامانه کاربری</span>  
                                     <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -79,7 +76,7 @@
                 </div>
             </div>
       </nav>
-</div>
+
 
 <script>
     $(document).ready(function(){

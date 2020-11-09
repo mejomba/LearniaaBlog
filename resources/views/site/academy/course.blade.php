@@ -19,7 +19,7 @@
 @section('content')
 <section class="container-fluid">
     <div class="row">
-        <div class="col-lg-7 col-md-8 col-sm-10 col-12 course" >
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 course mx-auto" >
             <div class="row">
                 <div class="col-12 col-md-12 text-center">
                     @if($selected_road != 0)
@@ -33,13 +33,15 @@
                     @endif
                 </div>
             </div>
-            <div class="card shadow border-0"  >
-                <div class="card-header blue-background" >
+
+          <!-- Payment Section -->
+            <div class="">
+                <div class="" >
                     <div class="text-center">
                         <h2>{{$package['fa_name']}}</h2>
                     </div>
                 </div> 
-                <img class="card-img-top img-border" src="{{ Storage::url('package/'.$package->pic)  }}" width="900px" height="250px" alt="Card image cap">
+                <img class="card-img-top img-border" src="{{ Storage::url('package/'.$package->pic)  }}" width="900px" height="320px" alt="Card image cap">
                 <div class="card-body text-center ">
                     <h5 class="card-title "></h5>
                     <p class="card-text"></p>
@@ -55,26 +57,33 @@
                             <input type="hidden" name="type"  id="redirectFromURL"  value="خرید دوره آموزشی">
                         @if($payment_status != 'Yes')
                             <div class="row"> 
-                                <div class="col-md-3 mt-2" ><h4 class="text-muted"> قیمت خرید دوره : </h4></div>
-                                <div class="col-md-3 mt-2"> 
-                                    <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                                    <span id="packageprice" class="feedback-link"><h4 class="text-muted d-inline">@php echo number_format($package['price'],0) @endphp</h4></span> تومان 
-                                </div>        
-                                <div class="col-md-3">
-                                    <button class="btn btn-secondary" type="button" onclick="OpenPopUpDiscount()">کد تخفیف  </button>         
+                                <div class="col-md-5 mt-2" ><h5><img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"
+                                  width="30px" height="30px" alt="Card image cap"> قیمت :  
+                                    <span id="packageprice" class="feedback-link">
+                                        <h4 class=" d-inline pakage-footer ">@php echo number_format($package['price'],0) @endphp</h4>
+                                    </span  class="pakage-footer"> تومان  </h5>
                                 </div>
-                                <div class="col-md-3">
+                                
+                                <div class="col-md-4 mt-1">
+                                    <button class="btn btn-takhfif" type="button" onclick="OpenPopUpDiscount()"> افزودن کد تخفیف </button>         
+                                </div>
+                                <div class="col-md-3 mt-1">
                                     <button class="btn btnGreen" type="button" onclick="CheckUserLogin()">خرید دوره  </button>         
                                 </div>
                             </div>
                         @else
                             <div class="row"> 
-                                <div class="col-md-3 mt-2" ><h4 class="text-muted"> قیمت خرید دوره : </h4></div>
-                                <div class="col-md-4 mt2"> 
-                                    <img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"  width="30px" height="30px" alt="Card image cap">
-                                    <span id="packageprice" class="feedback-link">{{$package['price']}}</span> تومان 
-                                </div>        
-                                <div class="col-md-4">  
+                                <div class="col-md-5 mt-2" >
+                                    <h5><img class=" img-border" src="{{ asset('images/Academy/money.svg') }}"
+                                  width="30px" height="30px" alt="Card image cap"> قیمت :  
+                                    <span id="packageprice" class="feedback-link">
+                                        <h4 class=" d-inline pakage-footer">@php echo number_format($package['price'],0) @endphp</h4>
+                                    </span  class="pakage-footer"> تومان  </h5>
+                                </div>   
+                                <div class="col-md-4 mt-1">
+                                    <button class="btn btn-takhfif" type="button" onclick="OpenPopUpDiscount()"> افزودن کد تخفیف </button>         
+                                </div>     
+                                <div class="col-md-3 mt-1">  
                                     <button type="button" class="btn btnGreen" disabled >خرید دوره</button>         
                                 </div>
                            </div>
@@ -82,9 +91,59 @@
                     </form> 
                 </div>
             </div>
-        </div>
+          <!-- Payment Section -->
+
+        <!-- Information Section -->
+        <div class="">
+                <div class="card-body text-center ">
+                    <h5 class="card-title "></h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class=" p-3  ml-2 mr-2 mb-3  course-form">
+                            <div class="row"> 
+                                <div class="col-md-4 mt-1" >
+                                    <img class="card-img-top img-border" src="{{ asset('images/icons/Time.svg')}}"
+                                    width="30px" height="30px" alt="Card image cap">
+                                    <span class="pakage-footer" > {{ $package['time'] }}</span>
+                                </div>
+                                <div class="col-md-4 mt-1" >
+                                    <img class="card-img-top img-border" src="{{ asset('images/icons/Page.svg')}}"
+                                    width="30px" height="30px" alt="Card image cap">
+                                    <span class="pakage-footer" >{{ $package['count'] }} </span><span class="pakage-footer"> قسمت</span>
+                                </div>
+                                <div class="col-md-4 mt-1" >
+                                    <img class="card-img-top img-border" src="{{ asset('images/icons/Message.svg')}}"
+                                    width="30px" height="30px" alt="Card image cap">
+                                    <span class="pakage-footer" >ارتباط با مدرس دوره</span>
+                                </div>
+                            </div>
+                </div>
+            </div>
+          <!-- Information Section -->
+
+       </div>
     </div>
 </section>
+
+ <!-- About Course -->
+ <div class="row mt-4 ">
+            <div class="col-lg-6 mx-auto text-center">
+                <h3 class="main-color-blue">درباره دوره</h3>
+        </div>
+      </div>
+
+ <div class="container-fluid">
+     <div class="row">
+       <div class="col-lg-9 mx-auto">
+                <div class="card border-none p-2 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
+                @php echo htmlspecialchars_decode($package['desc']) ; @endphp     
+                 </div>
+               </div>
+             </div>
+          </div>
+<!-- About Course -->
+
+
 
 <!-- Modal Confirm Login -->                      
 <div class="modal fade" dir="rtl" id="ModalConfirmLogin" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelConfirmLogin" aria-hidden="true">  
@@ -151,96 +210,120 @@
 </div>
 <!-- ModalIntro Box -->
 
-{{-- TimeLine starts --}}
-    <div class="row mt-5 ">
-        <div class="col-lg-8 col-md-10 col-sm-11 col-11 border rounded-lg m-4 p-2 mx-auto"  >
-            <ul class="timeline" id="timeline">
-                @php $section_counter = 1 ; @endphp
-                @php $row_counter = 1 ; @endphp
-                @foreach($DataSection as $section)   
-                <li>
-                    <div class="row" id="row">
-                        <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3"  style="">  
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-md-4 col-12 text-center mt-3">
-                                        <a class="mb-0"> بخش {{$section_counter}} :{{$section['Section']['name']}}</a>
-                                    </div>
-                                    <div class="col-md-4 col-12 text-center mt-3"></div>
-                                <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-                                    <button class="btn btnGreen btn-round" data-toggle="collapse" aria-expanded="false" data-target="#{{'collapse'.$section['Section']['pk_section']}}" aria-controls="{{'collapse'.$section['Section']['pk_section']}}">
-                                       مشاهده
-                                    </button>
-                                </div>
-                                <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-                                    @if($section['Section']['intro'] != 'ندارد')
-                                        <button type="button" class="btn fourth btn-round" onclick="GetVideoIntro({{$section['Section']['pk_section']}},{{$section['Section']['pk_package']}})" style="white-space:normal;padding:15px 10px" >
-                                          معرفی دوره
-                                        </button>
-                                    @else
-                                        <button type="button" disabled class="btn  btn-round" style="background-color:beige;border-color:beige;white-space:normal;padding:15px 10px">
-                                            معرفی دوره
-                                        </button>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-11 col-md-11 col-lg-11 col-sm-11">  <!-- Courses -->
-                                    <div id="{{'collapse'.$section['Section']['pk_section']}}" class="collapse" aria-labelledby="{{'id'.$section['Section']['pk_section']}}" data-parent="#row">
-                                        <div class="card-text">
-                                            <ul class="timelineCourse">
-                                                @foreach($section['Courses'] as $course)   
-                                                <li>
-                                                    <div class="row" id="row" style="margin-top:10px">
-                                                        <div class="col-lg-12 col-md-12 col-sm-10 col-10 pt-3 ml-3 blue-border" >  
-                                                            <div class="card-title">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-12 text-center mt-2">
-                                                                        <a class="mb-0"> قسمت {{$row_counter}} :{{$course['name']}}  </a>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-12 text-center mt-2">
-                                                                        @if($payment_status == 'Yes' || $course['isFree'] == 'Yes')
-                                                                             @if($payment_status == 'Yes')
-                                                                                <img class=" img-border"src="{{ asset('images/Academy/YesPay.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                                                                <span class="main-color-blue">  فعال </span>
-                                                                             @else
-                                                                                <img class=" img-border"src="{{ asset('images/Academy/FreePay.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                                                                <span class="main-color-blue">  رایگان </span>
-                                                                            @endif
-                                                                        @else
-                                                                            <img class=" img-border" src="{{ asset('images/Academy/NoPay.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                                                            <span class="text-secondery">  خریداری نشده </span>
-                                                                        @endif
-                                                                    </div>
-                                                                    <div class="col-md-4 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-                                                                        @if($payment_status == 'Yes' || $course['isFree'] == 'Yes' )
-                                                                            <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,'desc' => $course['name'] , 'sort' => $course['sort'] ,'pk_package' => $course['pk_package']  ]) }}" class="btn btnLearniaa btn-round">
-                                                                                شروع
-                                                                            </a>
-                                                                        @else
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>  
-                                                </li>
-                                                @php $row_counter =  $row_counter + 1 ; @endphp     
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>  <!---- Courses --------->
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-                </li>
-                @php $section_counter =  $section_counter + 1 ; @endphp     
-                @endforeach
-            </ul>
-        </div> 
-    </div>         
-{{-- timeLine ends --}}
+
+<!-- Intro Videos -->
+<div class="row mt-4 ">
+   <div class="col-lg-6 mx-auto text-center">
+      <h3 class="main-color-blue">معرفی دوره از زبان مدرسین</h3>
+   </div>
+</div>
+@foreach($DataSection as $section) 
+
+<div class="row mt-3">
+  <div class="col-lg-8 col-md-10 col-sm-11 col-11  rounded-lg m-4 p-2 mx-auto">
+  <video  class="afterglow" id="my-video" width="1920" height="1080" data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}" src="{{$section['Section']['intro']}}">
+ </video>
+  </div>
+</div>
+@endforeach
+<!-- Intro VIdeos -->
+
+
+
+<!-- New TimeLine -->
+<div class="row mt-4 ">
+   <div class="col-lg-6 mx-auto text-center">
+      <h3 class="main-color-blue">فیلم های آموزشی دوره</h3>
+   </div>
+</div>
+
+<div class="row mt-3">
+        <div class="col-lg-8 col-md-10 col-sm-11 col-11  rounded-lg m-4 p-2 mx-auto"  >
+
+@php $section_counter = 1 ; @endphp
+     @php $row_counter = 1 ; @endphp
+     @foreach($DataSection as $section) 
+</div>
+<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+    <div class="row">
+
+         <div class="col-lg-3 text-center mt-2 " >
+           <h2 class="roadMap-text-right main-color-blue">بخش {{$section_counter}}</h2>
+        </div>
+
+        <div class="col-lg-7 mt-2">
+            <div class="subscribe-content">
+              <h4 class="roadMap-text-small main-color-black mt-2">
+              {{$section['Section']['name']}}
+             </h4> 
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+        <button class="btn btnGreen btn-round btn-collapse" data-toggle="collapse" aria-expanded=""
+         data-target="#{{'collapse'.$section['Section']['pk_section']}}"
+         aria-controls="{{'collapse'.$section['Section']['pk_section']}}">
+          <img src="{{ asset('images/icons/DownFlash.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+        </button>
+      </div>
+
+      <!-- Row 2 -->
+     
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 mt-2">  <!-- Courses -->
+         <div id="{{'collapse'.$section['Section']['pk_section']}}" class="collapse" 
+         aria-labelledby="{{'id'.$section['Section']['pk_section']}}" data-parent="#{{'collapse'.$section['Section']['pk_section']}}">
+        
+         @foreach($section['Courses'] as $course)   
+
+                <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+            <div class="row">
+
+                <div class="col-lg-3 text-center mt-2 " >
+                <h2 class="roadMap-text-right main-color-blue">قسمت {{$row_counter}}</h2>
+                </div> 
+
+                <div class="col-lg-7 mt-2">
+                    <div class="subscribe-content">
+                    <h4 class="roadMap-text-small main-color-black mt-2">
+                    {{$course['name']}}
+                    </h4> 
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                @if($payment_status == 'Yes' || $course['isFree'] == 'Yes' )
+                <button class="btn btnGreen btn-round btn-collapse">
+                <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,'desc' => $course['name'] , 'sort' => $course['sort'] ,'pk_package' => $course['pk_package']  ]) }}">
+                <img src="{{ asset('images/icons/Play.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                 </a>
+                </button>
+                @else
+                <button class="btn  btn-round btn-collapse">
+                <img src="{{ asset('images/icons/Lock.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                </button>
+                @endif
+            </div>
+ 
+         </div>
+      </div>
+
+      @php $row_counter =  $row_counter + 1 ; @endphp     
+       @endforeach
+         <!-- Row 2-->
+         </div>     
+</div>
+</div>
+ @php $row_counter =  $row_counter + 1 ; @endphp       
+ @php $section_counter =  $section_counter + 1 ; @endphp
+ @endforeach
+ </div>
+   
+  </div>
+ </div>
+</div>
+<!-- New TimeLine -->
+
+
 
 <!-- ModalDiscount Box --> 
 <div class="modal fade" dir="rtl" id="ModalDiscount" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalDiscount" aria-hidden="true">  

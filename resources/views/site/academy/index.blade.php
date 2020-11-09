@@ -147,6 +147,7 @@
 
 
 <!-- Packages -->
+<!--
 <div class="container-fluid mb-5">
     <div class="row p-2" id="ListOfData" >
         @foreach($packages as $package)
@@ -202,6 +203,7 @@
         </div>
     </section>
 </div>
+-->
 <!-- Packages -->
 
 
@@ -247,6 +249,7 @@
 
 
 <!-- Teachers -->
+<!--
 <section id="masters" class="pt-120">
     <div class="container">
         <div class="row justify-content-center">
@@ -254,10 +257,10 @@
                 <div class="section-title text-center pb-40">
                     <div class="line mt-5 mx-auto rounded-lg"></div>
                     <h3 class="title mt-5">هیات علمی و مدرسین</h3>
-                </div> <!-- section title -->
+                </div> 
             </div>
         </div>
-        <!-- row -->
+        
         <div class="row mt-2">  
             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
@@ -391,6 +394,7 @@
         </div> 
     </div>
 </section>
+-->
 <!-- teachers -->
 
 

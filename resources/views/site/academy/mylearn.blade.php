@@ -25,7 +25,7 @@ endif
 -->
 <section class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 learn-style ">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 learn-style mx-auto">
             <div class="card shadow border-0"  >
                 <div class="card-header blue-background" >
                     <div class="text-center">
@@ -44,61 +44,54 @@ endif
         </div>
     </div>
     <div class="row mt-5">
-        <div class="col-lg-8 col-md-10 col-sm-11 col-11 border rounded-lg m-4 p-2 mx-auto"  >
-            <ul class="timeline">
-                @php $row_counter = 1 ; @endphp @php $no = 0 ; @endphp
-                @foreach($road_nodes as $node)   
-                @for ($package = 0; $package < $road_packages[$no]['data']->count() ; $package++)  
-                <li>
-                    <div class="row" id="row">
-                        <div class="col-lg-11 col-md-10 col-sm-11 col-11 pt-3 ml-3 k-cursor-pointer blue-border">
-                            <div class="card-title" id="{{'id'.$road_packages[$no]['data'][$package]['pk_package']}}">
-                                <div class="row">
-                                    <div class="col-md-4 col-12 text-center">
-                                        <a class="mb-0">
-                                            <p> گام {{$row_counter}} :  {{$road_packages[$no]['data'][$package]['fa_name']}}</p>
-                                        </a>
-                                    </div>
-                                    @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
-                                    <div class="col-md-3 col-12 text-center mt-3 pakage-footer" >
-                                        @if($road_packages[$no]['data'][$package]['price'] == 0)
-                                            <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                            <span style="color:green">   رایگان </span>
-                                        @else
-                                            <img class="card-img-top img-border" src="{{ asset('images/Academy/money.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                            <span class="text-success" > @php echo number_format($road_packages[$no]['data'][$package]['price'],0) @endphp </span>
-                                            <span class="text-success" >   تومان </span>
-                                        @endif
-                                    </div>
-                                    @if($road_packages[$no]['data'][$package]['status'] == "انتشار")
-                                        <div class="col-md-3 col-12 text-center  mt-3 pakage-footer" >
-                                            <img class="card-img-top img-border" src="{{ asset('images/Academy/clock.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                                {{ $road_packages[$no]['data'][$package]['time'] }} 
-                                        </div>
-                                    @endif
-                                    @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
-                                        <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3 pt-2" >
-                                            <a href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}"  class="btn fourth btn-round">مشاهده</a>
-                                        </div>
-                                    @endif
-                                    @else
-                                        <div class="col-md-3 col-12 text-center mt-2" ></div>
-                                        <div class="col-md-3 col-12 text-center mt-2" ></div>
-                                        <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-                                            <button type="button" disabled class="btn  btn-round" style="background-color:beige;border-color:beige">به زودی</button>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                @php $row_counter =  $row_counter + 1 ; @endphp       
-                @endfor
-                @php $no = $no + 1 ; @endphp 
-                @endforeach
-            </ul>
+        <div class="col-lg-8 col-md-10 col-sm-11 col-11  rounded-lg m-4 p-2 mx-auto"  >
+
+      
+
+<!--  RoadMap -->
+@php $row_counter = 1 ; @endphp @php $no = 0 ; @endphp
+@foreach($road_nodes as $node)   
+@for ($package = 0; $package < $road_packages[$no]['data']->count() ; $package++)  
+
+<div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
+    <div class="row">
+    <div class="col-lg-4 text-center mt-2 " >
+            <a target="_parent" href="https://learniaa.com/academy/mylearn?pk_tree=31" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
+              <img src="{{ Storage::url('package/'.$road_packages[$no]['data'][$package]['pic'])  }}" alt="Thumbnail Image" width="350px"  >   
+            </a>
         </div>
+        <div class="col-lg-5 mt-2">
+            <div class="subscribe-content">
+               <h2 class="roadMap-text-right main-color-blue">گام شماره {{$row_counter}}</h2>
+              <h4 class="roadMap-text-small main-color-black mt-2">
+                 {{$road_packages[$no]['data'][$package]['fa_name']}}
+             </h4> 
+            </div>
+        </div>
+
+        <div class="col-lg-2 mt-4">
+        @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
+                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3"
+                href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                <span >مشاهده دوره </span>
+                </a>
+               @else
+                 <button type="button" disabled class="btn  btn-round"
+                  style="background-color:beige;border-color:beige">به زودی</button>                     
+                 @endif
+        </div>
+
+    </div>
+</div>
+
+ @php $row_counter =  $row_counter + 1 ; @endphp       
+ @endfor
+ @php $no = $no + 1 ; @endphp 
+ @endforeach
+<!--  RoadMap -->
+
+      </div>
     </div>
 </section>
 @endsection

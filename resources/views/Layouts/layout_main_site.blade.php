@@ -28,7 +28,9 @@
 
 </head>
 <body>
+<div style="direction: rtl">
 @include('Layouts.nav')
+</div>
 <div class="container-fluid">
 @include('Layouts.error')
 </div>
