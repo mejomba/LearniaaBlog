@@ -159,71 +159,6 @@
 </div>
 <!-- RoadMap -->
 
-
-
-
-
-<!-- Packages -->
-<!--
-<div class="container-fluid mb-5">
-    <div class="row p-2" id="ListOfData" >
-        @foreach($packages as $package)
-            <div class="col-lg-3 col-md-10 col-sm-11 col-12 mx-auto mt-3 ">
-                <div class="card border-none mt-4 pakage-content">
-                    <div class="card-header p-0 overflow-hidden pakage-header" >
-                        <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
-                            <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}" class="imageBlog pakage-image" />
-                        </a>
-                    </div>
-                    <div class="card-body px-4 pt-2 text-center">
-                        <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}" class="">
-                            <h2 class="mt-2 pakage-title" >{{ $package['fa_name'] }}</h2>
-                        </a>
-                    </div>
-                    <div class="card-end px-4 py-3">
-                         <div class="row" >
-                            @if($package['status'] == "انتشار")
-                                <div class="col-md-6 col-6 text-center pakage-footer" >
-                                    @if($package['price'] == 0)
-                                        <img class="card-img-top img-border" src="{{ asset('images/icons/Wallet.svg')  }}" width="30px" height="30px" alt="Card image cap">
-                                        <span >   رایگان </span>
-                                         @else
-                                        <img class="card-img-top img-border" src="{{ asset('images/icons/Wallet.svg')  }}" width="30px" height="30px" alt="Card image cap">
-                                        <span > @php echo number_format($package['price'],0) @endphp </span>
-                                        <span >   تومان </span>
-                                    @endif
-                                </div>
-                            @if($package['status'] == "انتشار")
-                                <div class="col-md-6 col-6 text-center pakage-footer" >
-                                    <img class="card-img-top img-border" src="{{ asset('images/icons/Time.svg') }}" width="30px" height="30px" alt="Card image cap">
-                                    {{ $package['time'] }} 
-                                </div>
-                                @endif
-                                @else
-                                    <div class="col-md-2 col-12 text-center mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-                                        <button type="button" disabled class="btn  btn-round pakage-soon" >به زودی</button>
-                                    </div>
-                             @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-         @endforeach
-    </div>
-    <section class="Pagination">
-        <div class="row mx-auto">
-            <div class="col-lg-2 col-md-6 col-sm-11 col-6 mx-auto mt-3">
-                <div class="pagination px-1 py-1 text-secondary" >
-                    {{$packages->links()}}
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
--->
-<!-- Packages -->
-
-
 <!-- Posts -->
 <section>
     <div class="row justify-content-center">
@@ -277,12 +212,12 @@
 <section class="slider"> 
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body">
         <div class="row"> 
-            <div class="col-6 col-md-6">  
-                <i class="fa fa-quote-right float-right main-color-blue"></i>
+        <div class="col-6 col-md-6"> 
+            <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px"> 
             </div>
             <div class="col-6 col-md-6">  
-                <span class="float-left ">
-                    <i class="fa fa-quote-right float-right main-color-blue"></i>
+                <span class="float-left">
+                <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
                 </span>
             </div>
             <div class="col-12 col-md-12">
@@ -300,12 +235,12 @@
 <!-- FeedBack -->
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body" >
         <div class="row"> 
-            <div class="col-6 col-md-6">  
-                <i class="fa fa-quote-right float-right main-color-blue"></i>
+        <div class="col-6 col-md-6"> 
+            <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px"> 
             </div>
             <div class="col-6 col-md-6">  
                 <span class="float-left">
-                     <i class="fa fa-quote-right float-right main-color-blue"></i>
+                <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
                 </span>
             </div>
             <div class="col-12 col-md-12">
@@ -322,12 +257,12 @@
 <!-- FeedBack -->
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body" >
         <div class="row"> 
-             <div class="col-6 col-md-6">  
-                <i class="fa fa-quote-right float-right main-color-blue"></i>
+        <div class="col-6 col-md-6"> 
+            <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px"> 
             </div>
             <div class="col-6 col-md-6">  
                 <span class="float-left">
-                    <i class="fa fa-quote-right float-right main-color-blue"></i>
+                <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
                 </span>
             </div>
             <div class="col-12 col-md-12">
@@ -344,12 +279,12 @@
  <!-- FeedBack -->
     <div class="single-comment text-center pb-3 pt-3 px-3 m-5 feedback-body">
         <div class="row"> 
-            <div class="col-6 col-md-6">  
-                <i class="fa fa-quote-right float-right main-color-blue"></i>
+            <div class="col-6 col-md-6"> 
+            <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px"> 
             </div>
             <div class="col-6 col-md-6">  
                 <span class="float-left">
-                    <i class="fa fa-quote-right float-right main-color-blue"></i>
+                <img class="d-flex" src="{{ asset('images/icons/quote.svg') }}" alt="Thumbnail Image" height="25px" width="25px">  
                 </span>
             </div>
             <div class="col-12 col-md-12">

@@ -199,7 +199,7 @@
                             @else         
                             <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                             @endif
-                            <i class="fa fa-circle mr-2 text-warning"></i>
+                          
                             {{$behavior->user['name']}}
                             <br>
                             <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$behavior->content}}</p>
@@ -212,7 +212,7 @@
                         </div>
                      <div class="card-body px-4">    
                             <img  src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Learniaa" height="40px" width="40px">
-                            <i class="fa fa-circle mr-2 text-info"></i>
+                          
                            مدیر سایت
                             <br>
                             <p style="font-size:15px;color:#20c5ba;line-height:25px !important">{{$behavior->reply}} </p>

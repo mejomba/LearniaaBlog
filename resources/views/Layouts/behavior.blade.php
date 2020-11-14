@@ -35,7 +35,6 @@
                             @php  $json = json_decode($one_behavior['extras'],false) @endphp
                             <li>
                             <span class="text-muted float-right" style="display:contents">
-                            <i class="fas fa-user"></i>
                             {{$one_behavior->user->name }}
                             </span>
                             <p>{{ $one_behavior['content'] }} </p>

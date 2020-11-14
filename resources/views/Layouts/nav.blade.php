@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
+    <img class="d-flex" src="{{ asset('images/icons/menu_bars.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
     </button>
     <a class="navbar-brand d-lg-block d-md-block d-sm-block d-block mr-sm-auto mr-auto" href="{{route('index')}}">
         <img class="d-flex" src="{{ asset('images/Template/LEARNIA.png') }}" alt="Thumbnail Image" width="60px">

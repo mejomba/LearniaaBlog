@@ -184,7 +184,8 @@
                             <section class="row main-video d-flex justify-content-center">
                                 <a href="#video3" class="afterglow text-center"> 
                                     <img src="{{ asset('images/video-frame.svg') }}" alt="" class="mt-lg-5 mt-md-5 mt-sm-5 mt-5" width="1000vw">
-                                    <i class="fa fa-play fa-4x text-center" style="left:41vw !important"></i>
+                                    <img class="d-flex text-center" style="left:41vw !important" src="{{ asset('images/icons/play_button.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
+                                       
                                 </a>
                                 <video id="video3" controls  width="640" height="360" preload="none">
                                     <source id="VideoIntro" src="" type="video/mp4" data-skin="dark" />
@@ -291,7 +292,7 @@
                 @if($payment_status == 'Yes' || $course['isFree'] == 'Yes' )
                 <button class="btn btnGreen btn-round btn-collapse">
                 <a href="{{ route('academy.show', ['pk_course' => $course['pk_course'] ,'desc' => $course['name'] , 'sort' => $course['sort'] ,'pk_package' => $course['pk_package'] , 'pk_section' => $section['Section']['pk_section']  ]) }}">
-                <img src="{{ asset('images/icons/Play.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
+                <img src="{{ asset('images/icons/Play.svg')}}" alt="Thumbnail Image" height="35px" width="35px">
                  </a>
                 </button>
                 @else
@@ -375,7 +376,7 @@
                         @else         
                             <img  src="{{ asset('images/Template/user.svg') }}" alt="Learniaa" height="40px" width="40px">
                         @endif
-                            <i class="fa fa-circle mr-2 text-warning"></i>
+                          
                             {{$behavior->user['name']}}
                             <br>
                             <p class="comment-p">{{$behavior->content}}</p>  
@@ -385,7 +386,7 @@
                                     <div class="card-header p-0 overflow-hidden pakage-header"> </div>
                                     <div class="card-body px-4">    
                                         <img  src="{{ asset('images/Template/Circlelogo.svg') }}" alt="Learniaa" height="40px" width="40px">
-                                        <i class="fa fa-circle mr-2 text-info"></i>
+                                       
                                             مدیر سایت
                                         <br>
                                         <p class="comment-p">{{$behavior->reply}} </p>
