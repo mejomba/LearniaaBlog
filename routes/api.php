@@ -60,11 +60,11 @@ Route::post('/Behavior/AddDisslike', 'BehaviorController@AddDisslike')->name('Be
 Route::post('/Behavior/AddComment', 'BehaviorController@AddComment')->name('Behavior.Vote.AddComment');
 Route::post('/Behavior/ShareContent', 'BehaviorController@ShareContent')->name('Behavior.Vote.ShareContent');
 
-Route::post('/GenerateNewUuid', 'ApiController@GenerateNewUuid')->name('api.GenerateNewUuid');
-Route::post('/SetFamilyUser', 'ApiController@SetFamilyUser')->name('api.log.SetFamilyUser');
-Route::post('/GetPopupData', 'ApiController@GetPopupData')->name('api.routing.GetPopupData');
-Route::post('/SetAnswerUser', 'ApiController@SetAnswerUser')->name('api.routing.SetAnswerUser');
-Route::post('/SetEndRoadMap', 'ApiController@SetEndRoadMap')->name('api.SetEndRoadMap');
+Route::get('/GenerateNewUuid', 'ApiController@GenerateNewUuid')->name('api.GenerateNewUuid');
+Route::get('/SetFamilyUser', 'ApiController@SetFamilyUser')->name('api.log.SetFamilyUser');
+Route::get('/GetPopupData', 'ApiController@GetPopupData')->name('api.routing.GetPopupData');
+Route::get('/SetAnswerUser', 'ApiController@SetAnswerUser')->name('api.routing.SetAnswerUser');
+Route::get('/SetEndRoadMap', 'ApiController@SetEndRoadMap')->name('api.SetEndRoadMap');
 Route::post('/GetVideoIntro', 'ApiController@GetVideoIntro')->name('api.GetVideoIntro');
 
 Route::post('/GetDraftPost', 'ApiController@GetDraftPost')->name('api.routing.GetDraftPost');
@@ -73,5 +73,8 @@ Route::post('/GetTextIntro', 'ApiController@GetTextIntro')->name('api.routing.Ge
 
 Route::post('/GetContentRouting', 'ApiController@GetContentRouting')->name('api.routing.GetContentRouting');
 
-
+Route::group(['namespace' => 'Messenger'], function() 
+{
+Route::get('/tele', 'TelegrambotController@send');
+});
 

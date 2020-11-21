@@ -34,7 +34,7 @@ var last_location_user_id = 'tablo_start';
 document.addEventListener('DOMContentLoaded',function()
 {   
     $("#Layer_1").css('display','none');
-    document.querySelector('.header-bg').style.display = 'none';
+    //document.querySelector('.header-bg').style.display = 'none';
     $("#tablo_webprograming").css('opacity','0');
     $("#tablo_python").css('opacity','0');
     $("#tablo_frontend").css('opacity','0');
@@ -161,7 +161,8 @@ function GetPopupData(LocationUserId)
     }
          else
          {
-            var uuid = $("#uuid").val();
+            var uuid = $("#Uuid").val();
+            var radepa = $("#radepa").val();
 
             $.ajax({
                 url: '/api/GetPopupData',
@@ -179,8 +180,18 @@ function GetPopupData(LocationUserId)
                     deletecontent();
                     $("#content").html(data.content);
                     $("#question").html(data.question);
-                    document.getElementsById("my-video").setAttribute("poster", "{{ Storage::url("+data.poster_video+") }}"); 
-                    document.getElementsById("my-video").setAttribute("src", "{{ Storage::url("+data.address_video+") }}"); 
+                    document.getElementById("my-video").setAttribute("poster", "{{ Storage::url("+data.poster_video+") }}"); 
+                    document.getElementById("my-video").setAttribute("src", "{{ Storage::url("+data.address_video+") }}"); 
+                    
+                   if(LocationUserId!='tablo_start')
+                   {
+                    let Name = document.createElement("button");
+                    Name.setAttribute('type','button');
+                    Name.setAttribute('class', "btn btnLearniaa");
+                    Name.textContent = "تابلو قبلی" ;
+                    Name.setAttribute('onclick',"SetAnswerUser('"+data.lasttablo+"')");
+                    document.getElementById("feedback").append(Name); 
+                   }                     
                     data.feedback.forEach(function(item, index) 
                     {
                     let Name = document.createElement("button");
@@ -196,7 +207,7 @@ function GetPopupData(LocationUserId)
                     });
                     OpenPopup();
                 },
-                type: 'POST'
+                type: 'GET'
             });
          }
      }
@@ -215,6 +226,8 @@ function Showitem(SelectAnswerId,radepa)
     $('#'+SelectAnswerId).css('animation','pulse2 1.6s linear infinite');
     last_location_user_id = SelectAnswerId;
  }
+
+ 
 
  function SetEndRoadMap(LocationUserId)
 {
@@ -235,7 +248,7 @@ function Showitem(SelectAnswerId,radepa)
 
                 },
                 
-                type: 'POST'
+                type: 'GET'
             });
 
 }
@@ -281,7 +294,7 @@ function SetAnswerUser(SelectAnswerId,radepa)
 
                 },
                 
-                type: 'POST'
+                type: 'GET'
             });
        } 
  }

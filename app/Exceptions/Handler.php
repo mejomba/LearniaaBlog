@@ -21,7 +21,7 @@ class Handler extends ExceptionHandler
   
   public function render($request, Exception $exception)
     {
-        /*
+        
             if ($exception instanceof \Exception) 
             {
                 Log::error($exception->getMessage());
@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
                 }
                 }
         }
-        */
+        
         return parent::render($request, $exception);
     }
 }
