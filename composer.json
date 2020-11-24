@@ -15,6 +15,7 @@
         "guzzlehttp/psr7": "^1.6",
         "hekmatinasser/verta": "^1.10",
         "ippanel/php-rest-sdk": "^1.0",
+        "irazasyed/telegram-bot-sdk": "dev-develop",
         "kriswallsmith/buzz": "^1.1",
         "laravel/framework": "5.8.*",
         "laravel/socialite": "^4.3",

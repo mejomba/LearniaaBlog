@@ -89,7 +89,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',function()
-{   document.querySelector('.header-bg').style.display = 'none';
+{   //document.querySelector('.header-bg').style.display = 'none';
     GenerateNewUuid();
     $("#Pre-loader").hide();
 }, false);  
@@ -112,7 +112,7 @@ function GenerateNewUuid()
             uuid.setAttribute("name", "uuid");
             document.getElementById("Data").append(uuid);
          },
-        type: 'POST'
+        type: 'GET'
     });
 }
 
@@ -174,7 +174,7 @@ function SetFamilyUser()
                 
             }
             },
-            type: 'POST'
+            type: 'GET'
         });
     }
     else

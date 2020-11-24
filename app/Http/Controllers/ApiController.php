@@ -562,14 +562,14 @@ public function GenerateNewUuid()
 
 public function SetFamilyUser(Request $request)
 {
-    if($_POST['Name'] == "")
+    if($_GET['Name'] == "")
     {
       return response()->json([ 'status'=> 'error' ]);                   
     }
     else
     {
-        $log = Log::where('uuid',$_POST['Uuid'])->first();
-        $log->name = $_POST['Name'];
+        $log = Log::where('uuid',$_GET['Uuid'])->first();
+        $log->name = $_GET['Name'];
         $log->sort = '1';
         $log->save();
 
@@ -583,30 +583,30 @@ public function SetFamilyUser(Request $request)
 
 public function GetPopupData(Request $request)
 {
-    
-        $route = Routing::where('Location_User_Id',$_POST['LocationUserId'])->first();
+        $route = Routing::where('Location_User_Id',$_GET['LocationUserId'])->first();
         $feedback = json_decode($route->feedback);
         return response()->json([
             'content'=> $route->content,
             'address_video' => $route->address_video,
             'poster_video' => $route->poster_video,
             'question' =>$route->question,
-            'feedback'=>$feedback
+            'feedback'=>$feedback,
+            'lasttablo'=>$route->last_table
         ]);
     
 }
 
 public function  SetAnswerUser(Request $request)
 {
-    $log = Log::where('uuid',$_POST['Uuid'])->orderby('sort','DESC')->first();
+    $log = Log::where('uuid',$_GET['Uuid'])->orderby('sort','DESC')->first();
     $newlog = new Log();
     $newlog->uuid=$log->uuid;
     $newlog->name=$log->name;
-    $newlog->location_user_id=$_POST['LocationUserId'];
-    $newlog->answer=$_POST['SelectAnswerId'];
+    $newlog->location_user_id=$_GET['LocationUserId'];
+    $newlog->answer=$_GET['SelectAnswerId'];
     $newlog->sort = $log->sort+1;
     $newlog->save();
-    $route = Routing::where('location_user_id',$_POST['LocationUserId'])->first();
+    $route = Routing::where('location_user_id',$_GET['LocationUserId'])->first();
     $feedback = json_decode($route->feedback);
     /*$nextroute ='';
     foreach($feedback as $item)
@@ -645,11 +645,11 @@ public function roadmapvalidate(Request $request)
     }
     public function SetEndRoadMap(Request $request)
     {
-        $log = Log::where('uuid',$_POST['Uuid'])->orderby('uuid','DESC')->first();
+        $log = Log::where('uuid',$_GET['Uuid'])->orderby('uuid','DESC')->first();
         $newlog = new Log();
         $newlog->uuid=$log->uuid;
         $newlog->name=$log->name;
-        $newlog->location_user_id=$_POST['LocationUserId'];
+        $newlog->location_user_id=$_GET['LocationUserId'];
         $newlog->answer='endgame';
         $newlog->sort = $log->sort+1;
         $newlog->save();
