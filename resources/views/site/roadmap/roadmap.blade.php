@@ -180,9 +180,11 @@ function GetPopupData(LocationUserId)
                     deletecontent();
                     $("#content").html(data.content);
                     $("#question").html(data.question);
-                    document.getElementById("my-video").setAttribute("poster", "{{ Storage::url("+data.poster_video+") }}"); 
-                    document.getElementById("my-video").setAttribute("src", "{{ Storage::url("+data.address_video+") }}"); 
+                    document.getElementById("my-video").setAttribute("poster", data.poster_video); 
+                    document.getElementById("my-video").setAttribute("src", data.address_video); 
                     
+                    document.getElementById("my-video_html5_api").setAttribute("poster", data.poster_video); 
+                    document.getElementById("my-video_html5_api").setAttribute("src", data.address_video); 
                    if(LocationUserId!='tablo_start')
                    {
                     let Name = document.createElement("button");
@@ -376,7 +378,7 @@ function SetAnswerUser(SelectAnswerId,radepa)
                                 <div class="line mt-4 mx-auto rounded-lg"></div>
                                 <h3 class="title mt-2">ویدیو مقاله</h3>
                             </div> <!-- section title -->
-                    <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video" poster="" width="800" height="600" src=""> </video>
+                    <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video"  width="800" height="600" > </video>
                     </div>
                  </div>
                </div>

@@ -55,25 +55,9 @@ class RoutingController extends Controller
         $new_route->question = request()->question;
         $new_route->content = request()->content;
        
-        if(request()->file('poster_video') != null)
-        {
-            $pic = request()->file('poster_video');
-            $pic_name = $pic->getClientOriginalName();
-            $mimeType = $pic->getMimeType();
 
-              if($mimeType == 'image/jpeg')
-              {
-                $path = Storage::putFileAs( 'post', $pic, request()->title.'.jpg');
-                $new_route->poster_video = request()->title.'.jpg' ;
+        $new_route->poster_video = request()->poster_video ;
 
-              }  
-              elseif($mimeType == 'image/png')
-              {
-                $path = Storage::putFileAs( 'post', $pic, request()->title.'.png');
-                $new_route->poster_video = request()->title.'.png' ;
-
-              }
-        }
 
         $new_route->address_video = request()->address_video;
 
@@ -146,25 +130,7 @@ class RoutingController extends Controller
         $new_route->question = request()->question;
         $new_route->content = request()->content;
         //dd(request()->feedback);
-
-        if(request()->file('poster_video') != null)
-        {
-            $pic = request()->file('poster_video');
-            $pic_name = $pic->getClientOriginalName();
-
-              if($mimeType == 'image/jpeg')
-              {
-                $path = Storage::putFileAs( 'routing', $pic, $pic_name.'.jpg');
-                $new_route->poster_video = $pic_name.'.jpg' ;
-
-              }  
-              elseif($mimeType == 'image/png')
-              {
-                $path = Storage::putFileAs( 'routing', $pic, $pic_name.'.png');
-                $new_route->poster_video = $pic_name.'.png' ;
-
-              }
-        }
+        $new_route->poster_video = request()->poster_video ;
 
         $new_route->address_video = request()->address_video;
 
