@@ -8,6 +8,7 @@ use Validator;
 use Auth;
 use App\Profile;
 use App\Rules\validate;
+use GuzzleHttp\Client;
 
 class MessageController extends Controller
 {
@@ -58,6 +59,17 @@ class MessageController extends Controller
 
                     if($Message->save())
                     {
+
+                         // Send Bot Log //
+                        $client = new \GuzzleHttp\Client();
+                        $response = $client->request('POST', 'https://lrnia.ir/SendNotificationMentoringRegister', [
+                            'form_params' => [
+                                            'username' => request()->username ,
+                                            ]]);
+                        $response = $response->getBody()->getContents();
+                        // Send Bot Log //
+
+
                         return redirect(route('index'))->with('success','عضویت در خبرنامه با موفقیت انجام شد');
                     }
                     else

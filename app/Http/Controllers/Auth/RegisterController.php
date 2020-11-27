@@ -13,6 +13,7 @@ use App\Package;
 use App\Rules\registercode;
 use App\Course;
 use App\Reset;
+use GuzzleHttp\Client;
 
 class RegisterController extends Controller
 {
@@ -106,6 +107,17 @@ class RegisterController extends Controller
                 {
                    $this->redirectTo = request()->redirectFromURL;
                 }
+
+        // Send Bot Log //
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('POST', 'https://lrnia.ir/SendNotificationUserRegister', [
+            'form_params' => [
+                              'username' => request()->username ,
+                              'name' => request()->name,
+                              'attract' => request()->attract
+                             ]]);
+        $response = $response->getBody()->getContents();
+        // Send Bot Log //
                 
                 return $user;
           }
