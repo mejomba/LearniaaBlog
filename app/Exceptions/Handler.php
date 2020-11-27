@@ -10,6 +10,8 @@ use Illuminate\Database\QueryException;
 use Auth;
 use Carbon\Carbon;
 use App\Errors;
+use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 
 
 class Handler extends ExceptionHandler
@@ -21,13 +23,15 @@ class Handler extends ExceptionHandler
   
   public function render($request, Exception $exception)
     {
-        
             if ($exception instanceof \Exception) 
             {
                 Log::error($exception->getMessage());
-                if (method_exists($exception, 'getStatusCode')) {
+                if (method_exists($exception, 'getStatusCode')) 
+                {
                     $statusCode = $exception->getStatusCode();
-                } else {
+                }
+                else
+                {
                     $statusCode = 500;
                 }
                 $user =  Auth::user();
@@ -57,12 +61,28 @@ class Handler extends ExceptionHandler
                 $newerror->error_line =$exception->getline();
                 $newerror->logname = 'laravel-'.$date.'.log';
                 $newerror->save();
+
+                // Send Bot Log //
+                $client = new \GuzzleHttp\Client();
+                $response = $client->request('POST', 'https://lrnia.ir/SendNotificationErrorWebsite', [
+                    'form_params' => [
+                                    'user' =>$pkuser ,
+                                    'date' =>$date ,
+                                    'time' =>$time ,
+                                    'error_code' =>$statusCode ,
+                                    'error_message' =>$message ,
+                                    'error_file' =>$exception->getfile() ,
+                                    'error_line' =>$exception->getfile() ,
+                                    'filename' => 'laravel-'.$date.'.log' ,
+
+                                    ]]);
+                $response = $response->getBody()->getContents();
+                // Send Bot Log //
+
+
                 if (env('APP_ENV') !== 'local')
                 {
-                if( $statusCode == '500' || $statusCode == '404')  
-                { 
-                    return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
-                }
+                    return redirect()->back()->with('report',' خطا : مشکلی پیش آمده است با پشتیبان سایت در چت آنلاین گفتگو کنید');
                 }
         }
         
