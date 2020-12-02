@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/Template/logo.png') }}">
+       
         <link rel="icon" href="{{ asset('images/Template/logo.png')}}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +33,12 @@
         <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="06120c99-d579-4a39-b5c6-b0044acc0b01";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
         <!--END RAYCHAT CODE-->
 
+        <!-- PWA -->
+        <link rel="manifest" href="{{ asset('manifest.json') }}" />
+        <script>if("serviceWorker" in navigator){ navigator.serviceWorker .register("{{asset('serviceWorker.js')}}").then(reg => {console.log("Service worker registred successfully", reg);}).catch(err => {console.log("service worker not registred !!", err);});} </script>
+        <meta name="theme-color" content="#fafafa">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/Template/logo.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('images/Template/logo.png') }}">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

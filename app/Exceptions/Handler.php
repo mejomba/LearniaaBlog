@@ -19,7 +19,12 @@ class Handler extends ExceptionHandler
   protected $dontReport = [ ];
   protected $dontFlash = ['password','password_confirmation',];
   
-  public function report(Exception $exception){ parent::report($exception); }
+  public function report(Exception $exception)
+  { 
+       
+
+      parent::report($exception);
+  }
   
   public function render($request, Exception $exception)
     {
@@ -62,7 +67,7 @@ class Handler extends ExceptionHandler
                 $newerror->logname = 'laravel-'.$date.'.log';
                 $newerror->save();
 
-                // Send Bot Log //
+                /* Send Bot Log 
                 $client = new \GuzzleHttp\Client();
                 $response = $client->request('POST', 'https://lrnia.ir/SendNotificationErrorWebsite', [
                     'form_params' => [
@@ -77,7 +82,7 @@ class Handler extends ExceptionHandler
 
                                     ]]);
                 $response = $response->getBody()->getContents();
-                // Send Bot Log //
+                */
 
 
                 if (env('APP_ENV') !== 'local')
