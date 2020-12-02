@@ -1,5 +1,5 @@
-const staticCacheName = "LearniaaWPA";
-const cacheAssets = [
+var staticCacheName = "LearniaaWPA";
+var cacheAssets = [
   "https://learniaa.com/index.php",
   "https://learniaa.com/500",
   "https://learniaa.com/academy/detail/",
