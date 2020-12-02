@@ -1,17 +1,12 @@
 {
   "name": "Learniaa",
   "short_name": "Learniaa",
-  "start_url": "https://learniaa.com",
+  "start_url": "https://learniaa.com/index.php",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#fafafa",
   "orientation": "portrait-primary",
   "icons": [
-    {
-      "src": "/images/Template/LEARNIA.png",
-      "type": "image/png",
-      "sizes": "72x72"
-    } ,
     {
       "src": "/images/Template/LEARNIA.png",
       "type": "image/png",
