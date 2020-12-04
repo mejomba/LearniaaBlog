@@ -34,11 +34,14 @@
         <!--END RAYCHAT CODE-->
 
         <!-- PWA -->
-        <link rel="manifest" href="https://learniaa.com/manifest.json" />
+        @if(Request::url() === 'https://learniaa.com/')
+          <link rel="manifest" href="https://learniaa.com/manifest.json" />
         <script>if("serviceWorker" in navigator){ navigator.serviceWorker .register("https://learniaa.com/serviceWorker.js").then(reg => {console.log("Service worker registred successfully", reg);}).catch(err => {console.log("service worker not registred !!", err);});} </script>
         <meta name="theme-color" content="#fafafa">
         <link rel="apple-touch-icon" sizes="76x76" href="https://learniaa.com/images/Template/logo.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://learniaa.com/images/Template/logo.png">
+@endif
+       
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
