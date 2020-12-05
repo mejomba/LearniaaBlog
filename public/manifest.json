@@ -1,7 +1,7 @@
 {
-  "name": "Learniaa",
-  "short_name": "Learniaa",
-  "start_url": "https://learniaa.com/index.php",
+  "name": "LearniaaWPA",
+  "short_name": "LearniaaWPA",
+  "start_url": "https://learniaa.com/",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#fafafa",

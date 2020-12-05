@@ -1,10 +1,8 @@
 var staticCacheName = "LearniaaWPA";
 var cacheAssets = [
-  "https://learniaa.com/index.php",
-  "https://learniaa.com/500",
-  "https://learniaa.com/academy/detail/",
-  "https://learniaa.com/academy/show/",
- "https://learniaa.com/academy/road/",
+  "/",
+  "./academy/show/",
+ "./academy/road/",
   "https://learniaa.com/academy/mylearn/",
  "https://learniaa.com/academy/course/",
   "https://learniaa.com/academy/saveprofile/",

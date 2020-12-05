@@ -71,6 +71,7 @@
                                     @if($package['price'] == 0)
                                         <img class="card-img-top img-border" src="{{ asset('images/icons/Wallet.svg')  }}" width="30px" height="30px" alt="Card image cap">
                                         <span >   رایگان </span>
+                                    </div>
                                     @else
                                         <img class="card-img-top img-border" src="{{ asset('images/icons/Wallet.svg')  }}" width="30px" height="30px" alt="Card image cap">
                                         <span > @php echo number_format($package['price'],0) @endphp </span>
