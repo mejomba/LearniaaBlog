@@ -9,6 +9,7 @@ use Validator;
 use Auth;
 use App\Profile;
 use App\User;
+use App\package;
 use Illuminate\Support\Facades\Storage;
 
 class LearnerController extends Controller
@@ -38,8 +39,9 @@ class LearnerController extends Controller
      */
     public function create()
     {
+        $packages=package::get();
         $users = User::get();  
-        return view('admin.learner.create',compact('users'));  
+        return view('admin.learner.create',compact('users','packages'));  
     }
 
     /**
@@ -69,9 +71,7 @@ class LearnerController extends Controller
              $new_instance->pk_profile = $profile->pk_profiles ;
              $new_instance->desc = request()->desc ;
              $new_instance->job = request()->job ;
-
-
-    
+            $new_instance->extras=json_encode(request()->package);
              /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
     
              if(request()->pic)
@@ -117,10 +117,9 @@ class LearnerController extends Controller
     public function edit($id)
     {
         $learner = Learner::find($id);
-      
+        $packages=package::get();
         $users = User::get();
-
-        return view('admin.learner.edit',compact('users','learner'));  
+        return view('admin.learner.edit',compact('users','learner','packages'));  
     }
 
     /**
@@ -148,7 +147,8 @@ class LearnerController extends Controller
 
              $learner->desc = request()->desc ;
              $learner->job = request()->job ;
-     
+             $learner->extras=json_encode(request()->package);
+
              if(request()->pic)
              {
                 $pic = request()->file('pic');

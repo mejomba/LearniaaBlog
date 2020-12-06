@@ -4,6 +4,9 @@
 Route::get('/', 'HomeController@index')->name('index');
 
 */
+use App\Exceptions\customException;
+
+
   Route::get('/500', 'HomeController@Page500')->name('Page500'); 
 
 Route::get('/EmailTest', function()
@@ -37,6 +40,9 @@ Route::post('/academy/saveprofile/{id}', 'AcademyController@saveprofile')->name(
 Route::post('/academy/roadmap', 'AcademyController@roadmap')->name('roadmap');
 Route::get('/academy/roadmap', 'AcademyController@detail');
 Route::get('/academy/quicklearn', 'AcademyController@quicklearn')->name('academy.quicklearn');
+
+
+
 
 Route::get('/package/pay/{pk_package}', 'PackageController@pay')->name('package.pay');
 
@@ -241,6 +247,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::post('/section/update/{id}', 'SectionController@update')->name('admin.section.update');
     Route::get('/section/delete/{id}', 'SectionController@destroy')->name('admin.section.delete');
 
+    Route::get('/roadmaplog/index', 'RoadmaplogController@index')->name('admin.roadmaplog.index');
+    Route::get('/roadmaplog/show/{id}', 'RoadmaplogController@show')->name('admin.roadmaplog.show');
+
 });
 
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], function() 
@@ -277,6 +286,7 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
 
 
     Route::get('/vote/index', 'VoteController@index')->name('user.vote.index');
+    Route::get('/vote/history', 'VoteController@history')->name('user.vote.history');
     Route::get('/vote/show/{id}', 'VoteController@show')->name('user.vote.show');
     Route::get('/vote/store/{id}', 'VoteController@store')->name('user.vote.store');
 

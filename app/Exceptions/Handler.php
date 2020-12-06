@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Errors;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use App\Exceptions\customException;
 
 
 class Handler extends ExceptionHandler
@@ -49,6 +50,7 @@ class Handler extends ExceptionHandler
                 $message = $exception->getMessage();
                 if($statusCode == '404')
                 {
+                    //throw new customException;
                     $message = 'page not found';
                 }
                 $newerror = new Errors();
@@ -63,7 +65,7 @@ class Handler extends ExceptionHandler
                 $newerror->save();
 
                 // Send Bot Log //
-                $client = new \GuzzleHttp\Client();
+                /*$client = new \GuzzleHttp\Client();
                 $response = $client->request('POST', 'https://lrnia.ir/SendNotificationErrorWebsite', [
                     'form_params' => [
                                     'user' =>$pkuser ,
@@ -78,8 +80,8 @@ class Handler extends ExceptionHandler
                                     ]]);
                 $response = $response->getBody()->getContents();
                 // Send Bot Log //
-
-
+*/
+                //Log::error(['error message'=>$message,'error code'=>$statusCode]);
                 if (env('APP_ENV') !== 'local')
                 {
                     return redirect()->back()->with('report',' خطا : مشکلی پیش آمده است با پشتیبان سایت در چت آنلاین گفتگو کنید');

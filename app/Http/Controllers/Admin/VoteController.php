@@ -50,6 +50,7 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
+      
         $validator =  $this->validation($request);
 
         if ($validator->fails())
@@ -87,12 +88,13 @@ class VoteController extends Controller
 
     );
                                                                                
-                         
+    
      $vote = new Vote();
      $vote->name_vote = request()->name_vote ;
      $vote->question = request()->question ;
      $vote->extras =  json_encode($req) ;
-                                       
+     $vote->rewardname= request()->rewardname;                      
+     $vote->reward= request()->reward;                      
      if($vote->save())
      {
       return redirect(route('admin.vote.index'))->with('success','نظرسنجی با موفقیت ایجاد شد');
@@ -130,6 +132,7 @@ class VoteController extends Controller
         if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
         /* Security Admin Panel */        
         $vote = Vote::find($id);
+    
         return view('admin.vote.edit',compact('vote'));
     }
 
@@ -180,6 +183,8 @@ class VoteController extends Controller
         "option4" => request()->option4
      ]
     );
+    $vote->rewardname= request()->rewardname;                      
+    $vote->reward= request()->reward;                                            
     $vote->name_vote = request()->name_vote ; 
     $vote->question = request()->question ;
     $vote->extras =  json_encode($req) ;

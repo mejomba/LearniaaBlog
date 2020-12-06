@@ -14,7 +14,6 @@ class ReportVote extends Model
        return  [ 'pk_reportvote' => 'کلید نظرسنجی',
                  'name_vote' => 'نام نظرسنجی  ',
                  'pk_user' => ' کلید کاربر',
-                 'page' => ' پیج',
                  'answer' => ' [پاسخ]',
 
 
