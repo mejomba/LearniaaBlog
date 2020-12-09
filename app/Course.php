@@ -21,6 +21,17 @@ class Course extends Model
                 'sort'=> ' شماره قسمت',
             ] ;
     }
+
+    public function GetListAllNameColumns_ForLearner()
+    {
+
+    return  [   'pk_course' => 'کلید درس',
+                'name'=> 'عنوان درس',
+                'sort'=> ' شماره قسمت',
+                'download_count'=> ' تعداد دانلود',
+
+            ] ;
+    }
     public function package()
     {
      return $this->hasOne('App\Package', 'pk_package', 'pk_package');

@@ -16,6 +16,9 @@ use App\Course;
 use App\History;
 use App\Blog;
 use App\Section;
+use Carbon\Carbon;
+use Verta;
+use App\UserLog;
 
 class AcademyController extends Controller
 {
@@ -26,6 +29,19 @@ class AcademyController extends Controller
      */
     public function index()
     {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $recent_post = array();
         $recent_post =  Blog::orderby('pk_blog','DESC')->take(4)->get();
         $packages = package::where('status','انتشار')->orderby('pk_package','DESC')->paginate(8);
@@ -63,6 +79,19 @@ class AcademyController extends Controller
 
     public function start_mylearn(Request $request)
     {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $pk_tree = $_GET['pk_tree'] ;
         $selected_road = $pk_tree ;
         $tree = Tree::where('pk_tree',$pk_tree)->first();
@@ -86,6 +115,19 @@ class AcademyController extends Controller
   
     public function show($pk_course,$desc,$sort,$pk_package,$pk_section)
     {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
             /* course */
             $current_course = Course::find($pk_course);
             
@@ -178,6 +220,19 @@ class AcademyController extends Controller
 
     public function course($pk_tree,$pk_package)
     {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         /* Auth */
         $user =  Auth::user() ;
         $pk_user = "Null";
@@ -324,6 +379,19 @@ $messages = [
     }
     public function quicklearn()
     {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $packages = package::where('status','انتشار')->paginate(16);
         return view('site.academy.quicklearn',compact('packages'));
     }

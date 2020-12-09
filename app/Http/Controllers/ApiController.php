@@ -21,7 +21,8 @@ use App\Log;
 use App\Routing;
 use App\Section;
 use Illuminate\Support\Facades\Storage;
-
+use App\UserLog;
+use Carbon\Carbon;
 use App\CustomClass\SmsSender;
 use App\Mail\SendMail;
 
@@ -591,7 +592,8 @@ public function GetPopupData(Request $request)
             'poster_video' => $route->poster_video,
             'question' =>$route->question,
             'feedback'=>$feedback,
-            'lasttablo'=>$route->last_table
+            'last_location_user_id'=>$route->last_location_user_id,
+            'last_radepa'=>$route->last_radepa
         ]);
     
 }

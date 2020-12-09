@@ -53,6 +53,24 @@ class ResetPasswordController extends Controller
                                 $username = User::select('username')->where('username',request()->username)->first();
                                 if($username->username)
                                 {
+                                    
+                                    $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
+                                    $phpMailer->isSMTP();
+                                    $phpMailer->Host = "smtp.iran.liara.ir";
+                                    $phpMailer->SMTPAuth = true;
+                                    $phpMailer->Username = "learniaa";
+                                    $phpMailer->Password = "b7459b74-ac35-46df-9a22-1fa240dbdc02";
+                                    $phpMailer->SMTPSecure = "tls";
+                                    $phpMailer->Port = 587;
+                                    $phpMailer->isHTML(true);
+                                    $phpMailer->CharSet = "UTF-8";
+                                    $phpMailer->setFrom("info@learniaa.com", "'کد تایید | لرنیا'");
+                                    $phpMailer->addAddress($username->username);
+                                    $phpMailer->Subject = "'کد تایید | لرنیا'";
+                                    $phpMailer->Body = "کد تایید : $Random_Generate";
+                                    $phpMailer->send();
+
+                                    /*
                                     $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
                                     $phpMailer->isSMTP();
                                     $phpMailer->Host = "smtp.zoho.com";
@@ -68,6 +86,7 @@ class ResetPasswordController extends Controller
                                     $phpMailer->Subject = "'کد تایید | لرنیا'";
                                     $phpMailer->Body = "کد تایید : $Random_Generate";
                                     $phpMailer->send();
+                                    */
      
     
                                 }
@@ -156,6 +175,25 @@ class ResetPasswordController extends Controller
                             $newcode->token = $Random_Generate;
                             $newcode->save();
 
+
+                            $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
+                            $phpMailer->IsSMTP();
+                            $phpMailer->Host = "smtp.iran.liara.ir";
+                            $phpMailer->SMTPAuth = true;
+                            $phpMailer->Username = "learniaa";
+                            $phpMailer->Password = "b7459b74-ac35-46df-9a22-1fa240dbdc02";
+                            $phpMailer->SMTPSecure = "TLS";
+                            $phpMailer->Port = 587;
+                            $phpMailer->isHTML(true);
+                            $phpMailer->CharSet = "UTF-8";
+                            $phpMailer->setFrom("info@learniaa.com", "'کد تایید | لرنیا'");
+                            $phpMailer->addAddress($_GET['username']);
+                            $phpMailer->Subject = "'کد تایید | لرنیا'";
+                            $phpMailer->Body = "کد تایید : $Random_Generate";
+                            $phpMailer->MsgHTML("کد تایید : $Random_Generate");
+                            $phpMailer->send();
+
+                            /*
                                $phpMailer = new  \PHPMailer\PHPMailer\PHPMailer(true);
                                $phpMailer->IsSMTP();
                                $phpMailer->Host = "smtp.zoho.com";
@@ -172,6 +210,7 @@ class ResetPasswordController extends Controller
                                $phpMailer->Body = "کد تایید : $Random_Generate";
                                $phpMailer->MsgHTML("کد تایید : $Random_Generate");
                                $phpMailer->send();
+                               */
 
                             return view('auth.registerconfirm',compact('Random_Generate'));
                         }

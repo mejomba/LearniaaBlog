@@ -35,6 +35,20 @@ class Package extends Model
                  'count' => 'تعداد قسمت',
                  ] ;
     }
+
+
+    public function GetListAllNameColumns_ForLearner()
+    {
+       return  [ 'pk_package' => 'کلید پکیج',
+                 'fa_name' => 'نام پکیج',
+                 'price' => 'قیمت پکیج',
+                 'time'=> 'مدت پکیج',
+                 'count' => 'تعداد قسمت',
+                 'desc'=> 'توضیحات',
+                 'download_count' => 'تعداد دانلود',
+
+                 ] ;
+    }
     public function learner()
     {
      return $this->hasOne('App\Learner', 'pk_learner', 'pk_learner');
@@ -44,5 +58,7 @@ class Package extends Model
     {
      return $this->hasOne('App\Tree', 'pk_tree', 'pk_tree');
     }
+
+    
     
 }

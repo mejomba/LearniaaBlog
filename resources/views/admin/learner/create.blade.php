@@ -110,7 +110,7 @@
 
                       <div class="input-group-prepend">
 
-                      <input type="checkbox" id="vehicle1" name="package[]" value="{{$package->fa_name}}">
+                      <input type="checkbox" name="package[]" value="{{$package->pk_package}}">
                       <label for="{{$package->fa_name}}"> {{$package->fa_name}}</label><br>
                     </div>
                     @endforeach

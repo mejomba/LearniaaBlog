@@ -86,6 +86,11 @@
                                 <img id = 'jxlzfukzjzpeesgtesgtapfu' class="text-center mx-auto mt-4" style = ' cursor:pointer;width:90px !important ; display: block!important;'
                                 onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=167005&p=rfthgvkajyoeobpdobpddshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=230, top=30")' alt = 'logo-samandehi'
                                     src = 'https://logo.samandehi.ir/logo.aspx?id=167005&p=nbpdwlbqyndtlymalymaujyn' />
+                        
+                                    <script> !function (e, t, a) { "use strict"; var s = t.head || t.getElementsByTagName("head")[0], p = t.createElement("script"); e.certificateBadge = a, p.async = true, p.src = "https://cdn.iwmf.ir/js/certificates/certificate.js", s.appendChild(p) }(window, document, "light"); </script>
+<div id="iwmf-certificate"></div>
+                        
+                        
                         </div>
                      </div>
                   </div>

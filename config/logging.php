@@ -5,8 +5,8 @@ use Monolog\Handler\SyslogUdpHandler;
 
 return [
 
-    /* Default Log Channel */
-    'default' => env('LOG_CHANNEL', 'stack'),
+    /* Default Log Channel  */
+    'default' => env('LOG_CHANNEL', 'stack'), 
 
     /* Log Channels | Available Drivers: "single", "daily", "slack", "syslog","errorlog", "monolog","custom", "stack" */
     'channels' => [
@@ -15,6 +15,7 @@ return [
             'channels' => ['daily'],
             'ignore_exceptions' => false,
         ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),

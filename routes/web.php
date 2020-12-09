@@ -290,6 +290,8 @@ Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>'auth'], fu
     Route::get('/vote/show/{id}', 'VoteController@show')->name('user.vote.show');
     Route::get('/vote/store/{id}', 'VoteController@store')->name('user.vote.store');
 
+    Route::get('/package/list', 'LearnerController@report')->name('user.package');
+    Route::get('/package/details/{id}', 'LearnerController@details')->name('user.package.details');
 
 
 });

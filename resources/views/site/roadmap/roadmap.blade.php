@@ -30,9 +30,24 @@
 <script>
 
 var last_location_user_id = 'tablo_start';
+var last_radepa = '';
+var Data = '';
+var location_user_id = '';
 
 document.addEventListener('DOMContentLoaded',function()
 {   
+    // change color menu by scroll modal box to top //
+    $(document).ready(function(){
+        $("#ModalData").scroll(function() { 
+            if ($("#ModalData").scrollTop() > 5) { 
+                $(".navbar").css("background-color", "#20c5ba"); 
+            } else {
+                $(".navbar").css("background-color", "transparent"); 
+            }
+        });
+    });
+    // change color menu by scroll modal box to top //
+
     $("#Layer_1").css('display','none');
     //document.querySelector('.header-bg').style.display = 'none';
     $("#tablo_webprograming").css('opacity','0');
@@ -185,15 +200,24 @@ function GetPopupData(LocationUserId)
                     
                     document.getElementById("my-video_html5_api").setAttribute("poster", data.poster_video); 
                     document.getElementById("my-video_html5_api").setAttribute("src", data.address_video); 
-                   if(LocationUserId!='tablo_start')
-                   {
-                    let Name = document.createElement("button");
-                    Name.setAttribute('type','button');
-                    Name.setAttribute('class', "btn btnLearniaa");
-                    Name.textContent = "تابلو قبلی" ;
-                    Name.setAttribute('onclick',"SetAnswerUser('"+data.lasttablo+"')");
-                    document.getElementById("feedback").append(Name); 
-                   }                     
+                 
+                    if(LocationUserId!='tablo_start')
+                    {
+                        let Name = document.createElement("button");
+                        Name.setAttribute('type','button');
+                        Name.setAttribute('id','back');
+                        Name.setAttribute('class', "btn btnClose");
+                        Name.textContent = "برگشت به عقب" ;
+                       
+                        location_user_id =  LocationUserId
+                        Data = data ;
+
+                        Name.setAttribute('onclick','BackAnswerUser()');
+                        document.getElementById("feedback").append(Name); 
+                        $('#back').css('margin-left','10px');
+                        $('#back').css('margin-top','10px');     
+                    } 
+
                     data.feedback.forEach(function(item, index) 
                     {
                     let Name = document.createElement("button");
@@ -205,7 +229,8 @@ function GetPopupData(LocationUserId)
                     Name.setAttribute('radepa',item.radepa);
                     Name.setAttribute('onclick',"SetAnswerUser('"+item.key+"','"+item.radepa+"')");
                     document.getElementById("feedback").append(Name);   
-                    $('#'+item.key+'_feedback').css('margin-left','10px');                  
+                    $('#'+item.key+'_feedback').css('margin-left','10px');
+                    $('#'+item.key+'_feedback').css('margin-top','10px');                    
                     });
                     OpenPopup();
                 },
@@ -221,7 +246,6 @@ function GetPopupData(LocationUserId)
 
 function Showitem(SelectAnswerId,radepa)
  {
-     console.log(SelectAnswerId);
     $('#'+SelectAnswerId).css('opacity','1');
     $('#'+radepa).css('opacity','1');
     $('#'+last_location_user_id).css('animation','');
@@ -229,7 +253,6 @@ function Showitem(SelectAnswerId,radepa)
     last_location_user_id = SelectAnswerId;
  }
 
- 
 
  function SetEndRoadMap(LocationUserId)
 {
@@ -255,8 +278,7 @@ function Showitem(SelectAnswerId,radepa)
 
 }
 function SetAnswerUser(SelectAnswerId,radepa)
- {
-     
+ {  
     if(SelectAnswerId === 'sandogh_python'||
        SelectAnswerId === 'sandogh_htmlcss'|| 
        SelectAnswerId === 'sandogh_php'||
@@ -289,7 +311,7 @@ function SetAnswerUser(SelectAnswerId,radepa)
                 {
 
                     if(data.status = 'ok')
-                    {
+                    {   
                     Showitem(SelectAnswerId,radepa);
                     ClosePopup();
                     }
@@ -299,6 +321,52 @@ function SetAnswerUser(SelectAnswerId,radepa)
                 type: 'GET'
             });
        } 
+ }
+
+
+
+
+ function BackAnswerUser()
+ {  
+        current = location_user_id ;
+        SelectAnswerId =  Data.last_location_user_id ;
+        last_radepa =  Data.last_radepa ;
+
+        console.log(current);
+        console.log(SelectAnswerId);
+        console.log(last_radepa);
+
+            var uuid = $("#Uuid").val();
+          
+            $.ajax({
+                url: '/api/SetAnswerUser',
+                data:
+                {
+                    Uuid : uuid ,
+                    LocationUserId : last_location_user_id,
+                    SelectAnswerId:SelectAnswerId
+                },
+                error: function(err)
+                {
+                },
+                dataType: 'json',
+                success: function(data)
+                {
+
+                    if(data.status = 'ok')
+                    {   
+                        $('#'+current).css('opacity','0');
+                        $('#'+last_radepa).css('opacity','0');
+                        $('#'+last_location_user_id).css('animation','');
+                        $('#'+SelectAnswerId).css('animation','pulse2 1.6s linear infinite');
+                        last_location_user_id = SelectAnswerId;
+                        ClosePopup();
+                    }
+
+                },
+                
+                type: 'GET'
+            });
  }
 
 </script>
@@ -319,42 +387,25 @@ function SetAnswerUser(SelectAnswerId,radepa)
 
 <!-- ModalSandogh Box -->                      
 <div class="modal fade" dir="rtl" id="ModalSandogh" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalSandogh" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
-         <div class="modal-content" style="width:60%">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:600px"> 
+         <div class="modal-content" style="width:100%">
            <div class="modal-header">   
                 <img src="{{ asset('images/Template/close.svg') }}" onclick="CloseSandogh()" style="width:50px">  
             </div>                         
             <div class="modal-body"  id="ModalSandoghBody">                      
                 <!-- Form &  Body -->
-                 <div class="card-body px-lg-1 py-lg-1">
-                   <div class="row">  
-                       <div id="SectionPic" class="col-12 col-md-12 col-lg-12">
+                <div class="col-10 col-md-6 col-lg-6 mr-auto ml-auto">
+                
                        <img src="{{ asset('images/Academy/roadmap/Ganj.png') }}" alt="Learniaa" height="120px" width="300px">
-                       <h3 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center" style="font-family:DastNevis;font-size:45px">گنج یادگیری خودت رو پیدا کردی</h3>
-                      </div>
-                 </div>
-                 <div class="row">  
-                       <div  class="col-12 col-md-12 col-lg-12">
-                       <h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center"
-                        id="SectionTitle"
-                        style=""></h2>
+                       <h3 id="SectionTitle" class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-2 text-center" style="font-family: 'Shabnam';font-size:20px;"></h3>
                        
-                      </div>
-                 </div>
-                 <div class="row">  
-                       <div  class="col-12 col-md-12 col-lg-12">
-                       <a class="btn btnLearniaa" id="SectionFeedBack" href="" 
-                        style="background-color:#ffe735;border-color:#ffe735;color:black">ثبت نام و مشاهده دوره ها</a>
-                       
-                      </div>
-                 </div>
+                       <a style="margin-bottom:10px" class="btn btnGreen"
+                        id="SectionFeedBack" href="">مشاهده مسیر یادگیری</a>
+                    
               </div>
                 <!-- Form &  Body -->
                              </div>
-                                    <div class="modal-footer mx-auto">
-                                        <button type="button" onclick="CloseSandogh()" class="btn btnClose" data-dismiss="modal">بستن</button>  
-                                        
-                                    </div>
+                                   
                                    </div>
                                 </div>
                               </div>
@@ -363,46 +414,35 @@ function SetAnswerUser(SelectAnswerId,radepa)
 
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
-         <div class="modal-content" style="width:90%">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1000px"> 
+         <div class="modal-content" style="width:100%">
            <div class="modal-header"> 
            <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" style="width:50px"  > 
             </div>                       
             <div class="modal-body" id="ModalDataBody">                      
                 <!-- Form &  Body -->
-                <div class="col-lg-9">
-            <div class="card border-none p-2 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
-                        <div class="row justify-content-center">
-                        <div class="col-lg-7 ml-auto mr-auto">
-                            <div class="section-title text-center pb-40">
-                                <div class="line mt-4 mx-auto rounded-lg"></div>
-                                <h3 class="title mt-2">ویدیو مقاله</h3>
-                            </div> <!-- section title -->
-                    <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video"  width="800" height="600" > </video>
-                    </div>
+                <div class="row">  
+                       <div id="question" class="col-11 col-md-6 col-lg-6 mr-auto ml-auto"
+                       style="border: #20c5ba 3px solid;padding-top: 5px; padding-bottom: 5px;margin-top: 5px;margin-bottom: 5px;">
+                      </div>
                  </div>
-               </div>
-            </div>
+                <div class="col-10 col-md-9 col-lg-9 mr-auto ml-auto">
+                
+                            <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video"  width="800" height="600" > </video>
+                  
                        <!--
                        <div id="content" class="col-12 col-md-12 col-lg-12">
                       </div>
                       -->
                  </div>
-                 <div class="row">  
-                       <div id="question" class="col-6 col-md-6 col-lg-6 mr-auto ml-auto"
-                       style="border: #20c5ba 3px solid;padding-top: 10px; padding-bottom: 10px;margin-top: 10px;margin-bottom: 10px;">
-                      </div>
-                 </div>
+               
                  <div class="row">  
                        <div id="feedback" class="col-12 col-md-12 col-lg-12">
                       </div>
                  </div>
               </div>
                 <!-- Form &  Body -->
-                             </div>
-                                    <div class="modal-footer mx-auto">
-                                        <button type="button" onclick="ClosePopup()" class="btn btnClose" data-dismiss="modal">بستن</button>
-                                    </div>
+                            
                                    </div>
                                 </div>
                               </div>

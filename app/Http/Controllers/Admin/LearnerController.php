@@ -65,13 +65,16 @@ class LearnerController extends Controller
           {
              $new_instance = new Learner();
     
-
+             $user = User::find(request()->pk_users);
+             $user->type = 'مدرس';
+             $user->save();
              $new_instance->pk_user = request()->pk_users ;
              $profile = Profile::where('pk_users', request()->pk_users)->get()->first();
              $new_instance->pk_profile = $profile->pk_profiles ;
              $new_instance->desc = request()->desc ;
              $new_instance->job = request()->job ;
             $new_instance->extras=json_encode(request()->package);
+            
              /// process pic --> uploading And move to Web storage And Change Name And Save to $new_instance
     
              if(request()->pic)

@@ -11,7 +11,7 @@ return [
     'debug' => env('APP_DEBUG', false),
 
     /* Application URL  */
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://learniaa.com'),
     'asset_url' => env('ASSET_URL', null),
 
     /* Application Timezone */

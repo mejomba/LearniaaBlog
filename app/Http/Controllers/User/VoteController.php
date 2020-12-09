@@ -8,6 +8,9 @@ use App\Vote;
 use App\ReportVote;
 use auth;
 use App\Profile;
+use App\UserLog;
+use Carbon\Carbon;
+use Verta;
 class VoteController extends Controller
 {
     /**
@@ -16,7 +19,19 @@ class VoteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         //
         $report = ReportVote::select('pk_vote')->where('pk_user',auth::user()->pk_users)->get();
         $votes = new Vote();
@@ -49,6 +64,19 @@ class VoteController extends Controller
     public function store($id,Request $request)
     {
         //
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $votename = vote::find($id);
         $setvote=new ReportVote();
         $setvote->pk_vote = $id;
@@ -80,6 +108,19 @@ class VoteController extends Controller
     public function show($id)
     {
         //
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $report = ReportVote::where(['pk_vote'=>$id,'pk_user'=>auth::user()->pk_users])->first();
         if($report)
         {
@@ -128,6 +169,19 @@ class VoteController extends Controller
     public function history()
     {
         //
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $report = ReportVote::select('pk_vote')->where('pk_user',auth::user()->pk_users)->get();
         $votes = new Vote();
         $names = $votes->GetListAllNameColumns_ForTableforuser();

@@ -1,0 +1,13 @@
+{
+  "disks": [
+    {
+      "name": "public",
+      "mountTo": "storage/logs"
+    }
+,
+{
+      "name": "root",
+      "mountTo": "public/"
+    }
+  ]
+}
