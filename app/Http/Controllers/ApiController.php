@@ -339,14 +339,10 @@ class ApiController extends Controller
     public function DiscountCalculator(Request $request)
     {
         $discount_code =  $_POST['discount_code'] ;  
-        if(isset($_POST['pk_user']) != TRUE )
-        {           
-            return response()->json('login required');
-        }else{
-
-            $discount_row = Discount::where('discount_code', $discount_code)->first();
+         $discount_row = Discount::where('discount_code', $discount_code)->first();
             $package = Discount::select('pk_package')->where('discount_code', $discount_code)->first();
             $package_row = package::where(['pk_package'=> $package->pk_package])->first();
+           
             if($discount_row != null)
             {
                 $package_price =  $package_row->price ;
@@ -408,7 +404,7 @@ class ApiController extends Controller
                         }
                     }
                 }
-            }
+            
     }
        
  public function SendSms(Request $request)
