@@ -41,7 +41,7 @@
 
   <li class="nav-item primary">
     <a class="nav-link mb-sm-3 mb-md-0"
-     id="tabs-text-2-tab"   href="# "  onclick="OpenPopup()"
+     id="tabs-text-2-tab"   href="#"  onclick="OpenPopup()"
      role="tab" aria-controls="tabs-text-2" aria-selected="false">
     <img src="{{ asset('images/Template/icon_course.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
     درس</a>
@@ -182,3 +182,91 @@
 
 </ul>
 
+<div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:none"> 
+         <div class="modal-content" style="width:90%">
+           <div class="modal-header"> 
+           <h5 class="modal-title" id="ModalLabelData">اطلاعات تابلو</h5> 
+            </div>  
+                                       
+            <div class="modal-body" id="ModalDataBody">                      
+                <!-- Form &  Body -->
+                 <div class="card-body px-lg-1 py-lg-1">
+                   <div class="row">  
+                       <div id="content" class="col-12 col-md-12 col-lg-12">
+                      <!-- <select id="pk_package" class="form-control">
+                                  
+                                  <option value="0"></option>
+                                  <option value="0">همه موارد </option>
+
+                                  </select>-->
+                      </div>
+                      <button type="button" onclick="redirect()" class="btn btn-primary"  
+                      style="background-color:brown;border-color:brown" data-dismiss="modal">نمایش</button>
+                 </div>
+              </div>
+                <!-- Form &  Body -->
+                             </div>
+                                  <div class="modal-footer">
+                                        <button type="button" onclick="ClosePopup()" class="btn btn-primary"  
+                                        style="background-color:brown;border-color:brown" data-dismiss="modal">بستن</button>
+                                    </div>
+                                   </div>
+                                </div>
+                              </div>
+<!-- ModalData Box --> 
+<script>
+function OpenPopup() 
+{
+    document.getElementById("ModalData").setAttribute("style","display:block;opacity:100;");
+    $('#ModalData').animate({ scrollTop: 0 }, 'fast');
+    getdata();
+   
+}
+function ClosePopup()
+ {
+     document.getElementById("ModalData").setAttribute("style","");
+ }
+
+ function getdata()
+{
+  $.ajax({
+                url: '/api/courselist',
+                data:
+                {
+                   
+                },
+                error: function(err)
+                {
+                },
+                dataType: 'json',
+                success: function(data)
+                {
+                  if (!document.getElementById("pk_package")) 
+                  {
+                  let Name = document.createElement("select");
+                        Name.setAttribute('type','select');
+                        Name.setAttribute('id','pk_package');
+                        Name.setAttribute('class', "form-control");
+                        document.getElementById("content").append(Name); 
+                  data.packages.forEach(function(item, index) 
+                    {
+                      let Name = document.createElement("option");
+                        Name.setAttribute('type','option');
+                        Name.setAttribute('id',item.pk_package);
+                        Name.textContent =item.fa_name  ;
+                        document.getElementById("pk_package").append(Name); 
+                  });
+                  }
+                },
+                type: 'GET'
+            });
+
+}
+
+function redirect()
+ {
+   var x =  $('#pk_package').val();
+  window.location.href = "/admin/course/index/"+x;
+ }
+</script>

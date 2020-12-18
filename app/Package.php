@@ -45,7 +45,7 @@ class Package extends Model
                  'time'=> 'مدت پکیج',
                  'count' => 'تعداد قسمت',
                  'desc'=> 'توضیحات',
-                 'download_count' => 'تعداد دانلود',
+                 'download_count' => 'تعداد خرید',
 
                  ] ;
     }
