@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Learner;
 use Validator;
 use Auth;
+use App\package;
+use App\Course;
 
 class LearnerController extends Controller
 {
@@ -92,4 +94,21 @@ class LearnerController extends Controller
 
         return $validator ;
     }  
+    public function report()
+    {
+        $learner = Learner::where('pk_user',auth::user()->pk_users)->first();
+        $packs = json_decode($learner->extras);
+        $packages = Package::wherein('pk_package',$packs)->get();
+        $names = new Package();
+        $names =$names->GetListAllNameColumns_ForLearner();
+        return view('user.learner.coursereport',compact('packages','names'));
+
+    }
+    public function details($id)
+    {
+        $courses = course::where('pk_package',$id)->orderby('sort','asc')->get();
+        $names = new course();
+        $names =$names->GetListAllNameColumns_ForLearner();
+        return view('user.learner.details',compact('courses','names'));
+    }
 }

@@ -14,8 +14,10 @@ class Vote extends Model
        return  [ 'pk_vote' => 'کلید نظرسنجی',
                  'name' => 'نام نظرسنجی ',
                  'question' => 'سوال نظرسنجی ',
+                 'rewardname' => 'عنوان جایزه ',
+                 'reward' => 'جایزه ',
                  'extras' => 'گزینه ها',
-            
+                 
                  ] ;
     }
     public function GetListAllNameColumns_ForTableforuser()
@@ -23,8 +25,9 @@ class Vote extends Model
        return  [
                  'name' => 'نام نظرسنجی ',
                  'question' => 'سوال نظرسنجی ',
-                 
+                 'reward' =>'جایزه شما'
             
                  ] ;
     }
+    
 }

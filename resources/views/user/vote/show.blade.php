@@ -37,7 +37,7 @@
         <div class="form-group">
                    
                       
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="{{$answer}}">
+                      <input class="form-check-input" type="radio" name="answer" id="exampleRadios1" value="{{$value}}">
                       <label class="form-check-label" for="exampleRadios1">
                       {{$value}}
                     </div>

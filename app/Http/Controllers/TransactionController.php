@@ -53,6 +53,9 @@ class TransactionController extends Controller
                     $now = Carbon::now();
                     $transaction->time =$now->toDateString();
                     $transaction->save(); 
+                    $package = Package::find(request()->pk_package);
+                    $package->download_count = $package->download_count + 1 ;
+                    $package->save();
                     return redirect($transaction['redirectFromURL'])->with('success','خرید انجام شد . می توانید دوره آموزشی را مشاهده نمایید'); 
                 }   
                 else

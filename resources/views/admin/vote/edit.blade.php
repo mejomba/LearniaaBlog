@@ -99,6 +99,27 @@
           </div>
 
           </div>
+          <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input class="form-control" name="rewardname" placeholder="عنوان جایزه " type="text" value="{{ $vote['rewardname']}}">
+                    </div>
+                  </div>
+           </div>
+
+           <div class="col-md-4">
+        <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                      </div>
+                      <input class="form-control" name="reward" placeholder="جایزه " type="text" value="{{ $vote['reward']}}">
+                    </div>
+                  </div>
+           </div>
+
+           
           </div>
                 
                   <div class="text-center" style="padding-top:20px">

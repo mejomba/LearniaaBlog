@@ -102,6 +102,36 @@
           </div>
           </div>
 
+          <div class="col-md-4">
+        <div class="form-group">
+
+                    <div class="input-group input-group-alternative">
+                    @php $learnerpacks = json_decode($learner->extras) @endphp
+                    @foreach($packages as $package)
+
+                      @if($learnerpacks!= '' && in_array($package->fa_name,$learnerpacks) )
+
+                      <div class="input-group-prepend">
+
+                      <input type="checkbox" " name="package[]" value="{{$package->pk_package}}">
+                    <label for="{{$package->fa_name}}"> {{$package->fa_name}}</label><br>
+                    </div>
+
+                      @else
+                      <div class="input-group-prepend">
+
+                      <input type="checkbox"  name="package[]" value="{{$package->pk_package}}">
+                      <label for="{{$package->fa_name}}"> {{$package->fa_name}}</label><br>
+                    </div>
+                    @endif
+                    @endforeach
+
+                  </div>
+        </div>
+        </div>
+        </div>
+
+
 </div>
            
              <div class="text-center" style="padding-top:20px">

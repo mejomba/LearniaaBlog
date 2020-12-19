@@ -1,4 +1,6 @@
-(function(h,o,t,j,a,r){
+<!-- Hotjar Tracking Code for https://learniaa.com -->
+
+    (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:1691159,hjsv:6};
         a=o.getElementsByTagName('head')[0];

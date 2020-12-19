@@ -102,6 +102,26 @@
           </div>
           </div>
 
+          <div class="col-md-4">
+        <div class="form-group">
+
+                    <div class="input-group input-group-alternative">
+                    @foreach($packages as $package)
+
+                      <div class="input-group-prepend">
+
+                      <input type="checkbox" name="package[]" value="{{$package->pk_package}}">
+                      <label for="{{$package->fa_name}}"> {{$package->fa_name}}</label><br>
+                    </div>
+                    @endforeach
+
+                  </div>
+        </div>
+        </div>
+        </div>
+
+
+
 </div>
            
              <div class="text-center" style="padding-top:20px">

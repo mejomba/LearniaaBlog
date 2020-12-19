@@ -20,9 +20,8 @@
     <span class=" mr-3 main-color-blue" >لــرنیا</span>
 </h1>
 <h2 class="text-landing-quick">
- کماندوی برنامه نویسی شو با لرنیا
+ با لرنیا کماندوی برنامه نویسی شو 
 </h2>
-
 @endsection
 @section('pic_landing')
 <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/Academy_index.svg')}}" alt="" />
@@ -41,7 +40,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 col-12 col-lg-12 col-sm-12  ">
+                <div class="col-md-6 col-12 col-lg-6 col-sm-12 mx-auto ml-auto ">
                     <h2 class="text-center font-weight-bolder videoTitle" >
                         <span class="text-warning mr-1 main-color-yellow Gray-style" >لــرنیا چیه؟</span>
                         
@@ -49,7 +48,7 @@
                  
                     <div class="card-body videoBody" >
                         <video  class="afterglow" id="my-video" width="630" height="355"
-                         data-skin="dark" poster="{{asset('images/product/PosterIntro2.png')}}">
+                         data-skin="dark" poster="https://file.learniaa.com/files/PosterVideoPosts/intro.jpg">
                             <source type="video/mp4"  
                             src="https://file.learniaa.com/files/SectionIntroVideo/LEARNIA_INTRO.mp4" />
                         </video>     
@@ -227,7 +226,7 @@
             </div>
             <div class="col-12 col-md-12" dir="rtl">
                 <a class="feedback-link">
-                    <img class="feedback-image" src="{{Storage::url('profile/'.'Dr.zaghari.jpg')}}" alt="userImg"  width="60px">دکتر  زاغری   (بنیانگذار  سیناتدبیر)
+                   دکتر  زاغری   (بنیانگذار  سیناتدبیر)
                 </a>
             </div>
         </div>
@@ -250,7 +249,7 @@
             </div>
             <div class="col-12 col-md-12" dir="rtl">
                 <a class="feedback-link">
-                <img class="feedback-image" src="{{Storage::url('profile/'.'ArashmousaPour.jpg')}}" alt="userImg"  width="60px">مهندس موسی پور (مدیر فنی  ابر ارون)</a>
+                مهندس موسی پور (مدیر فنی  ابر ارون)</a>
             </div>
         </div>
     </div>
@@ -272,7 +271,7 @@
             </div>
             <div class="col-12 col-md-12" dir="rtl">
                 <a class="feedback-link">
-                    <img class="feedback-image" src="{{Storage::url('profile/'.'Shokri.jpg')}}" alt="userImg"  width="60px"> مهندس شکری زاده (مدرس کندو) </a>
+                     مهندس شکری زاده (مدرس کندو) </a>
             </div>
         </div>
     </div>
@@ -293,7 +292,7 @@
             </div>
             <div class="col-12 col-md-12">
                 <a class="feedback-link">
-                <img class="feedback-image" src="{{Storage::url('profile/'.'Laghari.jpg')}}" alt="userImg"  width="60px">مهندس لاغری</a>
+                مهندس لاغری</a>
             </div>
         </div>
     </div>

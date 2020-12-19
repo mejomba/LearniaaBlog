@@ -18,11 +18,6 @@
 @endsection
 
 @section('content')
-<!-- Validation Register Before Show RoadMap MyLEarn 
-if(Auth::user() == null)
-<script>window.location = "/reset/showcallbackloginform";</script>
-endif
--->
 <section class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 learn-style mx-auto">
@@ -46,8 +41,6 @@ endif
     <div class="row mt-5">
         <div class="col-lg-8 col-md-10 col-sm-11 col-11  rounded-lg m-4 p-2 mx-auto"  >
 
-      
-
 <!--  RoadMap -->
 @php $row_counter = 1 ; @endphp @php $no = 0 ; @endphp
 @foreach($road_nodes as $node)   
@@ -56,7 +49,7 @@ endif
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
     <div class="col-lg-4 text-center mt-2 " >
-            <a target="_parent" href="https://learniaa.com/academy/mylearn?pk_tree=31" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
+            <a target="_parent" href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
               <img src="{{ Storage::url('package/'.$road_packages[$no]['data'][$package]['pic'])  }}" alt="Thumbnail Image" width="350px"  >   
             </a>
         </div>
@@ -93,5 +86,67 @@ endif
 
       </div>
     </div>
+
+
+<!-- Section RoadMap & Help -->
+<script>
+
+
+function ClosePopup()
+ {
+     document.getElementById("ModalData").setAttribute("style","");
+ }
+
+ function OpenPopup() 
+{
+    
+    document.getElementById("ModalData").setAttribute("style","display:block;opacity:100;");
+    $('#ModalData').animate({ scrollTop: 0 }, 'fast');
+}
+
+function GetPopupData(Node)
+{
+            $.ajax({
+                url: '/api/GetTreeNodeHelp',
+                data:{ Node : Node},
+                error: function(err){},
+                dataType: 'json',
+                success: function(data)
+                {
+                    document.getElementById("my-video").setAttribute("poster", data.poster_video); 
+                    document.getElementById("my-video").setAttribute("src", data.address_video); 
+                    document.getElementById("my-video_html5_api").setAttribute("poster", data.poster_video); 
+                    document.getElementById("my-video_html5_api").setAttribute("src", data.address_video); 
+                    OpenPopup();
+                },
+                type: 'GET'
+            });
+}
+
+</script>
+
+<!-- ModalData Box -->                      
+<div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1000px"> 
+         <div class="modal-content" style="width:100%">
+           <div class="modal-header"> 
+           <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" style="width:50px"  > 
+            </div>      
+             <!-- Form &  Body -->                 
+            <div class="modal-body" id="ModalDataBody">                      
+                <div class="row">  
+                    <div class="col-10 col-md-9 col-lg-9 mr-auto ml-auto">
+                    <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video"  width="800" height="600" > </video>
+                    </div>
+                </div>
+            </div>
+            <!-- Form &  Body -->   
+      </div>
+    </div>
+</div>
+<!-- ModalData Box --> 
+
+
+
 </section>
 @endsection
