@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
 @endsection
 @section('text_landing')
-<<<<<<< HEAD
+
 <div class="text-center">
     <h1 class="font-weight-bolder mt-n5 display-4">
         <span class=" mr-3 main-color-blue" >لــرنیا</span>
@@ -27,14 +27,6 @@
     </h2>
 </div>
 
-=======
-<h1 class="font-weight-bolder text-center font-weight-bolder text-landing">
-    <span class=" mr-3 main-color-blue" >لــرنیا</span>
-</h1>
-<h2 class="text-landing-quick">
- با لرنیا کماندوی برنامه نویسی شو 
-</h2>
->>>>>>> 66266816b983bccc1166acbceb771eda636d623c
 @endsection
 @section('pic_landing')
 <img  class="d-md-block d-none w-50 ml-5" src="{{asset('images/Academy/Academy_index.svg')}}" alt="" />
