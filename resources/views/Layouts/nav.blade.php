@@ -20,11 +20,10 @@
              @guest
              @if (Route::has('register'))
                       <li class="nav-item">
-                     <a style="border-radius:10px;border-color: #ffe735;color: #000000;background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%);background-position: 0;background-size: 400%;"
-                        class="nav-link  btn  mt-4 d-inline" target="_parent"
-                        style="color:black;padding-left:5px;padding-right:5px" rel="tooltip" title=""
+                     <a style="border-radius:10px;border-color: #ffe735;"
+                        class="nav-link  btn btn-warning mt-4 d-inline" target="_parent" rel="tooltip" title=""
                         data-placement="bottom" href="{{route('reset.showcallbackloginform')}}">
-                        <span style="font-size:15px">ورود و ثبت نام</span>
+                        <span style="font-size:0.95rem">ورود و ثبت نام</span>
                         <img src="{{ asset('images/icons/LoginUser.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
                         
                      </a>
