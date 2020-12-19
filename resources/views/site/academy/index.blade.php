@@ -19,7 +19,7 @@
 <h1 class="font-weight-bolder text-center font-weight-bolder text-landing">
     <span class=" mr-3 main-color-blue" >لــرنیا</span>
 </h1>
-<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-4 text-center text-landing-quick">
+<h2 class="text-landing-quick">
  کماندوی برنامه نویسی شو با لرنیا
 </h2>
 

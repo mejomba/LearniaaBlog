@@ -87,10 +87,11 @@ button:focus {
     margin-top: -30px;
 }
 .text-landing-quick {
-    font-size: 20px;
+    font-size: 1.6rem;
     background-color: #20c5ba;
     color: white;
     border-radius: 95px;
+    padding: 0 25px;
 }
 
 /*Video of index page */
