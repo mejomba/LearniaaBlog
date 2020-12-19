@@ -12,7 +12,8 @@ use Carbon\Carbon;
 use App\Errors;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-
+use App\Exceptions\customException;
+use Verta;
 
 class Handler extends ExceptionHandler
 {
@@ -40,7 +41,8 @@ class Handler extends ExceptionHandler
                     $statusCode = 500;
                 }
                 $user =  Auth::user();
-                $date = Carbon::now('IRAN')->format('y-m-d');
+                $date = new Verta();
+                $date->timezone = 'Asia/Tehran';
                 $time = Carbon::now('IRAN')->format('g:i A');
                 if($user != null)
                 {
@@ -54,19 +56,22 @@ class Handler extends ExceptionHandler
                 $message = $exception->getMessage();
                 if($statusCode == '404')
                 {
+                    //throw new customException;
                     $message = 'page not found';
                 }
                 $newerror = new Errors();
                 $newerror->user = $pkuser;
-                $newerror->date = $date;
+                $newerror->date = $date->format('y/m/d');
                 $newerror->time = $time;
                 $newerror->error_code = $statusCode;
                 $newerror->error_message = $message;
-                $newerror->error_file =$exception->getfile();
+                $newerror->error_file= $exception->getfile();
                 $newerror->error_line =$exception->getline();
                 $newerror->logname = 'laravel-'.$date.'.log';
                 $newerror->save();
 
+                // Send Bot Log //
+                /*$client = new \GuzzleHttp\Client();
                 /* Send Bot Log 
                 $client = new \GuzzleHttp\Client();
                 $response = $client->request('POST', 'https://lrnia.ir/SendNotificationErrorWebsite', [
@@ -82,7 +87,10 @@ class Handler extends ExceptionHandler
 
                                     ]]);
                 $response = $response->getBody()->getContents();
-                */
+                // Send Bot Log //
+*/
+                //Log::error(['error message'=>$message,'error code'=>$statusCode]);
+                
 
 
                 if (env('APP_ENV') !== 'local')

@@ -8,12 +8,15 @@ use App\Transaction;
 use App\Profile;
 use App\Package;
 use App\Course;
-
+use App\UserLog;
+use Carbon\Carbon;
+use Verta;
 class PackageController extends Controller
 {
 
     public function pay($pk_package)
     {  
+
             $redirectFromURL = $_GET['redirectFromURL'] ;
             $user =  Auth::user() ;
             $package = Package::where('pk_package', $pk_package)->first();

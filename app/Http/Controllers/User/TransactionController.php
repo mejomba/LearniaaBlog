@@ -14,6 +14,8 @@ use Auth;
 use Validator;
 use Verta;
 use carbon\Carbon;
+use App\UserLog;
+
 class TransactionController extends Controller
 {
     /*
@@ -22,6 +24,19 @@ class TransactionController extends Controller
 
       public function ShowPackagesList()
       {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
           $package = new package();
           $names = $package->GetListAllNameColumns_ForTableforuser();
           //$packagelist;
@@ -43,6 +58,19 @@ class TransactionController extends Controller
     {
         /* Security Admin Panel */
         /* Security Admin Panel */        
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $instance_Model_transaction = new Transaction();
         $names =   $instance_Model_transaction->GetListAllNameColumns_ForTable();
         $user =  Auth::user() ;
@@ -53,6 +81,19 @@ class TransactionController extends Controller
 
     public function AddWalletMoney(Request $request)
      {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         $validator =  $this->validation($request);
         if ($validator->fails())
         {  return redirect()->back()
@@ -98,6 +139,19 @@ class TransactionController extends Controller
 
     public function CheckCallBackWalletMoney()
     {
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }
         try
          {
             $user =  Auth::user() ;    
@@ -130,7 +184,20 @@ class TransactionController extends Controller
     public function create()
     {
         /* Security Admin Panel */
-        /* Security Admin Panel */        
+        /* Security Admin Panel */  
+        if(auth::user())
+        {
+            $userlog = new UserLog();
+            $userlog->pk_user=auth::user()->pk_users;
+            $userlog->url=url()->current();
+            $date = new Verta();
+            $date->timezone = 'Asia/Tehran';
+            $time = Carbon::now('IRAN')->format('g:i A');
+            $userlog->date=$date->format('y/m/d');
+            $userlog->time=$time;
+            $userlog->save();
+
+        }      
         $user =  Auth::user() ;
         $profile = Profile::where('pk_users', $user->pk_users)->first();   
         $wallet = $profile->wallet;

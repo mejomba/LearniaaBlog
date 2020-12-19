@@ -41,18 +41,22 @@
                       </tr>
 
                     </thead>
-
+      
                       <tbody>
                       @foreach($votes as $vote)
                         <tr>
-                          
                           <td>
                           {{ $vote['name_vote'] }} 
                           </td>
                           <td>
                           {{ $vote['question'] }} 
                           </td>
-
+                          <td>
+                          {{ $vote['rewardname'] }} 
+                          </td>
+                          
+                        
+                        
                           
 
                           <td>
@@ -71,6 +75,15 @@
                         </tr>
                         @endforeach
                         
+
+                        </div>
+                        <p class="card-category text-center">
+                    
+                    <a href="{{route('user.vote.history')}}" class="btn btn-primary btn-round" 
+                    style="font-size:1.0rem;"> نظرسنجی های قبلی
+                    </a>                
+  
+                      </p>
  
  <!---- Modal Delete -->                       
  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

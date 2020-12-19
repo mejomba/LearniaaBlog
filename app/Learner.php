@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
-
+use App\Package;
 class Learner extends Model
 {
     protected $table = 'learners';
@@ -20,10 +20,18 @@ class Learner extends Model
                  ] ;
     }
 
+    
+
 
     public function user()
     {
      return $this->hasOne('App\User', 'pk_users', 'pk_user');
     }
+
+    public function package()
+    {
+     return $this->hasmany('App\Package', 'pk_package');
+    }
+
 
 }

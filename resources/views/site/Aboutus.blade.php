@@ -56,8 +56,6 @@
 </div>
 </div>
 
-
-
 <!-- Learners -->
 <section id="masters" class="pt-120">
     <div class="container">
@@ -76,24 +74,7 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/Yosefvand.jpg')}}" alt=""
-                              width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس یوسفوند</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
-                    </div>
-
-                </div> 
-            </div>
-
-         
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliKhademi.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/AliKhademi.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
@@ -104,27 +85,12 @@
                 </div> 
             </div>
 
-            
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AminZadeh.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس امین زاده</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و مشاور علمی پایتون</p>
-                    </div>
-                </div> 
-            </div>
 
             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliTorki.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/AliTorki.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
@@ -139,7 +105,7 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/NimaArefi.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/NimaArefi.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
@@ -154,29 +120,13 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/SalarNasiri.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس سالار نصیری</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">کافه بازار و دیوار   (DevOps)متخصص</p>
-                    </div>
-                </div> 
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/MehdiGhaemi.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/MehdiGhaemi.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس مهدی قائمی</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">مدرس لرنیا آکادمی</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و عضو هیات علمی</p>
                     </div>
                 </div> 
             </div>
@@ -185,7 +135,7 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/MehdiFarahzadi.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/MehdiFarahzadi.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
@@ -196,17 +146,32 @@
                 </div> 
             </div>
 
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="https://file.learniaa.com/files/learner/Nadaf.jpg" 
+                             alt="" width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">آقای ندّاف</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> مشاور مارکتینگ و رشد فردی  </p>
+                    </div>
+                </div> 
+            </div>
+
             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/Laghari.jpg')}}" 
+                             <img src="https://file.learniaa.com/files/learner/Laghari.jpg" 
                              alt="" width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
                         <h4 class="">مهندس لاغری</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">برنامه نویس و مدرس طراحی سایت و برنامه نویسی</p>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و عضو هیات علمی</p>
                     </div>
 
                 </div> 
@@ -235,12 +200,12 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{asset('images/learner/ShabnamShaygan.jpg')}}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/ShabnamShaygan.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">خانم شبنم شایگان </h4>
+                        <h4 class=""> شبنم شایگان </h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و طراح ارشد </p>
                     </div>
                 </div> 
@@ -250,12 +215,12 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Mahdavi.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/Mahdavi.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس محمدرضا مهدوی </h4>
+                        <h4 class=""> محمدرضا مهدوی </h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و مدیر مارکتینگ </p>
                     </div>
                 </div> 
@@ -265,12 +230,12 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Malek.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/Malek.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس محمد ملک</h4>
+                        <h4 class=""> محمد ملک</h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> هم بنیانگذار و هیات مدیره و مدیریت محصول  </p>
                     </div>
                 </div> 
@@ -280,28 +245,57 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Alavian.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/Alavian.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس مهدیه علویان</h4>
+                        <h4 class=""> مهدیه علویان</h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> مدیریت محصول و هیات مدیره </p>
                     </div>
                 </div> 
             </div>
 
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="https://file.learniaa.com/files/learner/Yosefvand.jpg" alt=""
+                              width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">رضا یوسفوند</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس و طراح تجربه کاربری</p>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="https://file.learniaa.com/files/learner/AminZadeh.jpg" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class="">مجتبی امین زاده</h4>
+                        <p style="margin-top:0px;line-height: 25px !important;">مدرس پایتون و عضو هیات مدیره</p>
+                    </div>
+                </div> 
+            </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Faghan.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/Faghan.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">مهندس امیرحسین فغان </h4>
+                        <h4 class=""> امیرحسین فغان </h4>
                         <p style="margin-top:0px;line-height: 25px !important;"> برنامه نویس بک اند </p>
                     </div>
                 </div> 
@@ -311,43 +305,44 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Setayesh.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/ArefMoazen.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">آقای ستایش </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> محتوا نویس و طراح و تدوین گر </p>
+                        <h4 class=""> عارف موذن </h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> گرافیست و تدوین گر </p>
                     </div>
                 </div> 
             </div>
+
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Farokh.jpg') }}" alt=""
-                              width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای فرخ </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;">محتوا نویس و مشاور سوشال مارکتینگ </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Jamali.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/Jamali.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">آقای جمالی </h4>
+                        <h4 class="">مانی جمالی </h4>
                         <p style="margin-top:0px;line-height: 25px !important;">متخصص لینوکس و طراح سیستم عامل لرنیا </p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="mt-sm-5 mt-5">
+                    <div class="master-img d-flex justify-content-center">
+                        <span class="background_img rounded-circle">
+                             <img src="https://file.learniaa.com/files/learner/arashtousi.jpg" alt="" 
+                             width="150px" height="150px" class="rounded-circle" >
+                        </span>
+                    </div>
+                    <div class="description mx-auto text-center">
+                        <h4 class=""> آرش طوسی </h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> هکر رشد </p>
                     </div>
                 </div> 
             </div>
@@ -357,77 +352,17 @@
                 <div class="mt-sm-5 mt-5">
                     <div class="master-img d-flex justify-content-center">
                         <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/AliMosavi.jpg') }}" alt="" 
+                             <img src="https://file.learniaa.com/files/learner/AhmadMirzaee.jpg" alt="" 
                              width="150px" height="150px" class="rounded-circle" >
                         </span>
                     </div>
                     <div class="description mx-auto text-center">
-                        <h4 class="">آقای موسوی </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> طراح و متخصص رابط کاربری </p>
+                        <h4 class=""> احمد میرزایی </h4>
+                        <p style="margin-top:0px;line-height: 25px !important;"> گرافیست و تدوین گر </p>
                     </div>
                 </div> 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/Gomar.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس گمار </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> برنامه نویس فرانت اند </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/RezaZadeh.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">مهندس رضازاده </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> برنامه نویس فرانت اند </p>
-                    </div>
-                </div> 
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{ asset('images/learner/DrDehghani.jpg') }}" alt="" 
-                             width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای دهقانی </h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> دکترای حقوق و مشاور حقوقی </p>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="mt-sm-5 mt-5">
-                    <div class="master-img d-flex justify-content-center">
-                        <span class="background_img rounded-circle">
-                             <img src="{{  asset('images/learner/Nadaf.jpg') }}" 
-                             alt="" width="150px" height="150px" class="rounded-circle" >
-                        </span>
-                    </div>
-                    <div class="description mx-auto text-center">
-                        <h4 class="">آقای ندّاف</h4>
-                        <p style="margin-top:0px;line-height: 25px !important;"> مشاور مارکتینگ و رشد فردی  </p>
-                    </div>
-                </div> 
-            </div>
         </div> 
     </div>
 

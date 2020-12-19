@@ -1,6 +1,6 @@
 @extends('Layouts.layout_main_site')
 @section('Head')
-<title>حریم خصوصی|لرنیا</title>
+<title>صفحه مورد نظر یافت نشد |لرنیا</title>
 <meta  name="description" content="لرنیا مسیر یادگیری شما را مشخص می کند و به آن سرعت می بخشد">
 <meta  name="keywords"    content="حریم خصوصی" >
 <meta property="og:title" content="حریم خصوصی|لرنیا"/>

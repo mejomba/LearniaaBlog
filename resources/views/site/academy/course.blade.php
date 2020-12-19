@@ -348,6 +348,34 @@
         </div>
     </div> 
 </div>
+<!-- ModalDiscount Box --> 
+
+
+
+<!-- ModalResultDiscount Box --> 
+<div class="modal fade" dir="rtl" id="ModalResultDiscount" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalResultDiscount" aria-hidden="true">  
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:400px"> 
+        <div class="modal-content" style="width:90%">
+            <div class="modal-header"> 
+                <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopUpResultDiscount()" style="width:35px"> 
+            </div>                            
+            <div class="modal-body" id="ModalResultDiscountBody">                
+                 <div class="card-body px-lg-1 py-lg-1">
+                    <div class="row">
+                        <div class="col-md-12 card p-3  ml-auto mr-auto">
+                        <b style="" id="result_discount"></b> 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mx-auto">
+                    <button type="button" onclick="ClosePopUpResultDiscount()" class="btn btnClose" data-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<!-- ModalResultDiscount Box --> 
+
 
 <!-- Comment Box -->
 <div class="row mt-5" >
@@ -480,36 +508,53 @@
         document.getElementById("ModalDiscount").setAttribute("style","");
     }
 
+    function OpenPopUpResultDiscount()
+    { 
+        document.getElementById("ModalResultDiscount").setAttribute("style","display:block;opacity:100;");
+        $('#ModalResultDiscount').animate({ scrollTop: 0 }, 'fast');
+    }
+
+    function ClosePopUpResultDiscount()
+    {
+        document.getElementById("ModalResultDiscount").setAttribute("style","");
+    }
+
     function DiscountSub()
     {
         var code = $('#discountcode').val();
-        var user = $('#UserLogin').val();
+      
         $.ajax({
             url: '/api/calculator',
             data:
             {
-                discount_code : code ,
-                pk_user:user
+                discount_code : code   
             },
             error: function(err)
             {
+                document.getElementById("result_discount").innerHTML='کد تخفیف وارد شده قابل استفاده نمی باشد';
+                document.getElementById("result_discount").setAttribute("style","color:red");
+                ClosePopUpDiscount();
+                OpenPopUpResultDiscount();
             },
             dataType: 'json',
             success: function(data)
-            {
-                if(data == 'login required')
-                {  
-                    ClosePopUpDiscount();
-                }
+            {   
                 if(data=='not vaild')
                 {
+                    document.getElementById("result_discount").innerHTML='کد تخفیف وارد شده قابل استفاده نمی باشد';
+                    document.getElementById("result_discount").setAttribute("style","color:red");
                     ClosePopUpDiscount();
+                    OpenPopUpResultDiscount();
                 }
                 else
-                {
+                { 
                     document.getElementById("packageprice").innerHTML=data.price;
+                    document.getElementById("packageprice").setAttribute("style","color:green");
                     document.getElementById("price").setAttribute("value",data.price);
+                    document.getElementById("result_discount").innerHTML='کد تخفیف اعمال شد';
+                    document.getElementById("result_discount").setAttribute("style","color:green");
                     ClosePopUpDiscount();
+                    OpenPopUpResultDiscount();
                 }
             },    
             type: 'POST'

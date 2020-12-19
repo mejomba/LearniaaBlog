@@ -1,8 +1,8 @@
-@extends('Layouts.layout_main_admin')
+@extends('Layouts.layout_main_user')
 
 @section('Head')
-<title> نمایش نظرسنجی | لرنیا </title>
-  <meta  name="description" content=" نمایش نظرسنجی | لرنیا">
+<title> نمایش گزارش دروس | لرنیا </title>
+  <meta  name="description" content=" نمایش گزارش دروس | لرنیا">
     
   
 @endsection
@@ -17,12 +17,9 @@
                 <div class="card-header card-header-primary">
                 <h1 class="card-title text-center">
                 <img src="{{ asset('images/Template/icon_politics.svg') }}" alt="Thumbnail Image" height="60px" width="60px">
-               نظرسنجی</h1>
+                گزارش دروس</h1>
                   <p class="card-category text-center">
-                    
-                  <a href="{{route('admin.vote.create')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> ایجاد نظرسنجی
-                  </a>                
+                
 
                     </p>
                 </div>
@@ -38,75 +35,56 @@
                         </th>
                         @endforeach
                         <th>
-                    عملیات
+                        جزئیات
                         </th>
-                        
                       </tr>
 
                     </thead>
-
+      
                       <tbody>
-                      @foreach($votes as $vote)
+                      @foreach($packages as $package)
                         <tr>
+                        <td>
+                          {{ $package['pk_package'] }} 
+                          </td>
+                          <td>
+                          {{ $package['fa_name'] }} 
+                          </td>
+                          <td>
+                          {{ $package['price'] }} 
+                          </td>
+                          <td>
+                          {{ $package['time'] }} 
+                          </td>
+                          <td>
+                          {{ $package['count'] }} 
+                          </td>
                           
                           <td>
-                          {{ $vote['pk_vote'] }} 
+                          {{ $package['desc'] }} 
                           </td>
                           <td>
-                          {{ $vote['name_vote'] }} 
+                          {{ $package['download_count'] }} 
                           </td>
-                          <td>
-                          {{ $vote['question'] }} 
-                          </td>
-
-                          <td>
-                          {{ $vote['rewardname'] }} 
-                          </td>
-                          <td>
-                          {{ $vote['reward'] }} 
-                          </td>
-
-
-                          <td>
-                          @php  $json = json_decode($vote['extras'],false)  @endphp 
-                        گزینه اول :  {{ $json[0]->option1 ?? ''  }}  ------
-                        گزینه دوم :    {{  $json[0]->option2 ?? ''}} <br></br>
-                        گزینه سوم :    {{ $json[0]->option3 ?? ''}}   ------
-                        گزینه چهارم :    {{  $json[0]->option4 ?? '' }} 
-                          </td>
-
-                          <td>
+                        
                           
 
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.edit', $vote['pk_vote']) }}"> 
-                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
+                          <td>
 
-                       
-
-                        <span style="font-size: 1.3rem;color:black;">
-                        <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $vote['pk_vote'] }} )" >
-                      <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                      </button>
-                        </span>
-
-                        
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.vote.showmore', $vote['pk_vote']) }}"> 
-                      <img src="{{ asset('images/Template/interface.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                       </a>
-                        </span>
-                        
-
+                            <span style="font-size: 1.3rem;color:black">
+                            <a class="btn" style="color:#00bcd4" href="{{ route('user.package.details', $package['pk_package']) }}"> 
+                            <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
+                            </a>
+                            </span>
                         </td>
                           
                         </tr>
                         @endforeach
                         
- 
+
+                        </div>
+              
+        
  <!---- Modal Delete -->                       
  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:300px">
