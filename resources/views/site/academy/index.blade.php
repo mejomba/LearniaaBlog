@@ -19,10 +19,9 @@
 <h1 class="font-weight-bolder text-center font-weight-bolder text-landing">
     <span class=" mr-3 main-color-blue" >لــرنیا</span>
 </h1>
-<h2 class="text-justify p-lg-1 p-md-4 p-sm-4 p-4 m-lg-4 text-center text-landing-quick">
-با لرنیا کماندوی برنامه نویسی شو 
+<h2 class="text-landing-quick">
+ با لرنیا کماندوی برنامه نویسی شو 
 </h2>
-
 @endsection
 @section('pic_landing')
 <img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/Academy_index.svg')}}" alt="" />
@@ -76,7 +75,7 @@
                <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی پایتون  ( Python )  </h2>
                 <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی پایتون بشی و  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=29" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <a class="nav-link  btn btn-warning mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=29" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده مسیر</span>
             </a>
@@ -100,7 +99,7 @@
                <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی وب فرانت اند ( Front-End )  </h2>
                 <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی فرانت اند وب بشی و  ساخت صفحات وب و کدنویسی  اون ها رو یاد بگیری روی مشاهده مسیر بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=31" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <a class="nav-link  btn btn-warning mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/mylearn?pk_tree=31" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده مسیر</span>
             </a>
@@ -124,7 +123,7 @@
                <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری کامپیوتر برای تازه کار ها  ( مهارت های پایه و اولیه )  </h2>
                 <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه فرد ماهر در کار کردن وانجام انواع نیازهای رایانه ای خودت باشی روی مشاهده مسیر بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/course/0/8" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <a class="nav-link  btn btn-warning mt-4 d-inline roadMap-link p-3" href="https://learniaa.com/academy/course/0/8" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده مسیر</span>
             </a>
@@ -149,7 +148,7 @@
                <h2 class="roadMap-text-right main-color-blue">مسیر یادگیری برنامه نویسی تازه کار ها</h2>
                 <h4 class="roadMap-text-small main-color-black mt-2">اگه دوست داری یه کماندوی برنامه نویسی بشی ولی نمیدونی چه زبان برنامه نویسی برات مناسبه و میخوای  ساخت برنامه های کاربردی  و کدنویسی  اون ها رو یاد بگیری روی شروع مسیریابی بزن</h4>
                 <br>
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
+                <a class="nav-link  btn btn-warning mt-4 d-inline roadMap-link p-3" target="_parent" rel="tooltip" title="" data-placement="bottom" href="{{route('academy.detail')}}" dideo-checked="true">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >شروع مسیریابی</span>
             </a>
