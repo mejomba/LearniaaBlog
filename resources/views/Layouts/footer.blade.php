@@ -50,8 +50,8 @@
                  </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-md-4 mb-3 text-white">دسترسی سریع</h5>
-                    <ul class="list-unstyled">
+                    <h5 class="font-weight-bold h2 mt-md-4 mb-3 text-white">دسترسی سریع</h5>
+                    <ul class="list-unstyled h5">
                         <li><a href="{{route('index')}}" >صفحه اصلی</a></li>
                         <li> <a href="{{route('academy.detail')}}" >آکادمی آموزش</a></li>
                         <li><a href="{{route('Aboutus')}}" >درباره ما</a></li>
@@ -60,17 +60,17 @@
                 </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-md-4 text-white text-center">صفحات متداول</h5>
-                   <ul class="list-unstyled mt-2" >
+                    <h5 class="font-weight-bold h2 mt-md-4 mb-3 text-white text-center">صفحات متداول</h5>
+                   <ul class="list-unstyled h5" >
                         <li><a href="{{route('TermsOfService')}}" class="text-center">قوانین استفاده</a></li>
                         <li><a href="{{route('PrivacyPolicy')}}" class="text-center">حریم خصوصی</a></li>  
                     </ul>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12 text-center d-inline-block">
-                    <h5 class="font-weight-bold text-uppercase mt-md-3 text-center text-white">ارتباط‌ با ما
+                    <h5 class="font-weight-bold h2 mt-md-4 mb-3 text-center text-white">ارتباط‌ با ما
                     </h5>
-                    <ul class="list-unstyled mt-2">
+                    <ul class="list-unstyled h5">
                         <li class=""><a href="#!">learniaa@gmail.com</a></li>
                         <li><a href="#!">021-33195733</a></li>
                         <li><a href="https://t.me/learniaaSupport" target="_blank"><span class="d-flex">learniaa_support@ <img class="ml-1 mr-1" style="height: 25px; width: 25px; color: white" src="{{asset('images/footer_telegram.svg')}}" alt=""></span></a></li>
