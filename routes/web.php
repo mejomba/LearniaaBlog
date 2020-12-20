@@ -137,6 +137,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/user/edit/{id}', 'UserController@edit')->name('admin.user.edit');
     Route::post('/user/update/{id}', 'UserController@update')->name('admin.user.update');
     Route::post('/user/store', 'UserController@store')->name('admin.user.store');
+    Route::get('/user/log', 'UserController@log')->name('admin.user.log');
 
 
     Route::get('/Profile/edit/', 'ProfileController@edit')->name('admin.profile.edit');
