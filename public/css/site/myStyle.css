@@ -1953,9 +1953,9 @@ ol {
 
 .imageBlog {
     /*overflow: hidden;*/
-    transition: 300ms;
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
+    transition: 200ms;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
 }
 
 .imageBlog:hover {
@@ -2528,4 +2528,23 @@ svg {
 .btn:hover {
     opacity: 0.85;
     transition: ease 0.4s;
+}
+@keyframes animation {
+    30% {
+        transform: scale(1.22);
+        -webkit-transform: scale(1.22);
+        -moz-transform: scale(1.22);
+    }
+    100% {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        color: yellow;
+    }
+}
+.social-hover:hover {
+    transition: 800ms;
+    animation: infinite animation 1200ms;
+    -webkit-animation: infinite animation 1200ms;
+    -moz-animation: infinite animation 1200ms;
 }

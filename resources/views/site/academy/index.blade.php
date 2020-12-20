@@ -203,12 +203,12 @@
                     <div class="card imageBlog">
                         <img class="card-img-top w-100 post-image" src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" >
                         <div class="card-body">
-                        <h5 class="card-title pb-1 pt-2 pr-2">
+                        <h5 class="card-title py-3 px-2">
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
                             <h2 class="mt-2 post-title">{{ $one_post['title'] }}</h2>
                             </a>                            
                         </h5>
-                        <p class="card-text post-summray text-justify pl-3 ">
+                        <p class="card-text post-summray text-justify px-2 ">
                             @php echo substr($one_post['desc_short'],0,200) . '...' @endphp
                         </p>
                         </div>

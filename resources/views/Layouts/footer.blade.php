@@ -31,19 +31,19 @@
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
                             <a href="https://t.me/learniaa_group" target="_blank">
-                            <img class="" style="height: 35px; width: 35px; color: white"
+                            <img class="social-hover" style="height: 35px; width: 35px; color: white"
                             src="{{asset('images/footer_telegram.svg')}}" alt="">
                             </a>
                              <a href="https://www.instagram.com/learniaa/" target="_blank">
-                             <img class="ml-3" style="height: 35px; width: 35px; "
+                             <img class="ml-3 social-hover" style="height: 35px; width: 35px; "
                              src="{{asset('images/footer_instagram.svg')}}" alt="">
                              </a>
                               <a href="https://linkedin.com/in/وب-سایت-آموزشی-لرنیا-3500b51a4" target="_blank">
-                              <img class="ml-3" style="height: 35px; width: 35px; color: white"
+                              <img class="ml-3 social-hover" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_linkden.svg')}}" alt="">
                              </a>
                              <a href="https://twitter.com/pfima8t3lU7P28a" target="_blank">
-                             <img class="ml-3" style="height: 35px; width: 35px; color: white"
+                             <img class="ml-3 social-hover" style="height: 35px; width: 35px; color: white"
                              src="{{asset('images/footer_twitter.svg')}}" alt="">
                              </a>
                        </div>
