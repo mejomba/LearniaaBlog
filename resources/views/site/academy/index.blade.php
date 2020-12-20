@@ -177,28 +177,6 @@
             <div class="card-group">
             @foreach($recent_post as $one_post)
                 @php  $json = json_decode($one_post['extras'],false) @endphp
-                <!-- <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class=" mt-4 post-content" >
-                        <div class=" p-0 overflow-hidden post-banner">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
-                                <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"  class="w-100 imageBlog post-image" >
-                            </a>
-                        </div>
-                        <div class="px-4">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
-                            <h2 class="mt-2 post-title">{{ $one_post['title'] }}</h2>
-                            </a>
-                            <p class="mt-2 text-secondary post-summray">
-                            @php echo substr($one_post['desc_short'],0,200) . '...' @endphp
-                            </p>
-                        </div>
-                        <div class="card-end px-4  py-4 post-footer">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="btn btn-primary">ادامه مطلب</a>
-                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
-                            <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                        </div>
-                    </div>
-                </div> -->
                 <div class="col-lg-3 col-md-6 col-12 d-flex p-1">
                     <div class="card imageBlog">
                         <img class="card-img-top w-100 post-image" src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" >
