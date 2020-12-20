@@ -34,7 +34,7 @@ body {
 }
 
 p {
-    line-height: 1.1cm !important;
+    line-height: 1cm !important;
     font-size: 16px;
     font-weight: 400;
     color: #6a6972;
@@ -87,11 +87,19 @@ button:focus {
     margin-top: -30px;
 }
 .text-landing-quick {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background-color: #20c5ba;
     color: white;
     border-radius: 95px;
-    padding: 0 25px;
+    padding: 5px 25px;
+}
+
+.text-landing-quick-sm {
+    font-size: 1.3rem;
+    background-color: #20c5ba;
+    color: white;
+    border-radius: 95px;
+    padding: 5px 25px;
 }
 
 /*Video of index page */
@@ -212,8 +220,7 @@ button:focus {
     border-radius: 20px;
     box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14);
     border-style: none;
-    max-height: 400px;
-    height: 400px;
+    height: 100%;
     background-color: #fff;
 }
 
@@ -229,9 +236,9 @@ button:focus {
 
 .post-image {
     display: inline-block;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 20vh;
+    /* border-top-left-radius: 20px; */
+    /* border-top-right-radius: 20px; */
+    height: 200px;
     width: 100% !important;
 }
 
@@ -242,7 +249,7 @@ button:focus {
 
 .post-summray {
     line-height: 25px !important;
-    font-size: 14px;
+    font-size: 1rem;
     direction: rtl;
 }
 
@@ -606,7 +613,7 @@ btn-loginSign:focus {
 .learn-bg {
     position: relative;
     left: 20px;
-    /*height: 500px;*/
+    height: 500px;
     width: 500px;
 }
 
@@ -1946,15 +1953,18 @@ ol {
 
 .imageBlog {
     /*overflow: hidden;*/
-    transition: 300ms;
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
+    transition: 200ms;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
 }
 
 .imageBlog:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
+    transform: scale(1.008);
+    -webkit-transform: scale(1.008);
+    -moz-transform: scale(1.008);
+    /* z-index: 100; */
+    border: 1px solid #0abfbc;
+    box-shadow: 0px 0px 8px 0px rgba(50, 77, 215, 0.14) !important;
 }
 
 .single-blog .blog-content {
@@ -2243,11 +2253,13 @@ ol {
     color: white;
     text-decoration: none;
     transition: 0.4s;
+    /* font-weight: 500; */
     margin-top: 12px;
 }
 
-.footer-List ul li a:hover {
-    color: rgba(229, 226, 230, 0.87);
+.footer-List ul li:hover {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 900;
 }
 
 .footer-copyright {
@@ -2514,4 +2526,27 @@ svg {
 .cardButtons .btn {
     margin: auto;
     padding: 20px 50px;
+}
+.btn:hover {
+    opacity: 0.85;
+    transition: ease 0.4s;
+}
+@keyframes animation {
+    30% {
+        transform: scale(1.22);
+        -webkit-transform: scale(1.22);
+        -moz-transform: scale(1.22);
+    }
+    100% {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        color: yellow;
+    }
+}
+.social-hover:hover {
+    transition: 800ms;
+    animation: infinite animation 1200ms;
+    -webkit-animation: infinite animation 1200ms;
+    -moz-animation: infinite animation 1200ms;
 }
