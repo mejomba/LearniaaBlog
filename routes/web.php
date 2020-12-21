@@ -221,8 +221,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
     Route::get('/course/list/{id}', 'CourseController@list')->name('admin.course.list');
 
     Route::get('/error/index', 'ErrorController@index')->name('admin.errors.index');
-    Route::get('/error/show', 'ErrorController@show')->name('admin.errors.show');
-    Route::get('/error/delete', 'ErrorController@destroy')->name('admin.errors.delete');
+    Route::get('/error/download/{name}', 'ErrorController@download')->name('admin.errors.download');
+    Route::get('/error/delete/{id}', 'ErrorController@destroy')->name('admin.errors.delete');
 
     Route::get('/pages/index', 'PagesController@index')->name('admin.pages.index');
     Route::get('/pages/create', 'PagesController@create')->name('admin.pages.create');

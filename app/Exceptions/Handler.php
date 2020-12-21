@@ -44,6 +44,7 @@ class Handler extends ExceptionHandler
                 $date = new Verta();
                 $date->timezone = 'Asia/Tehran';
                 $time = Carbon::now('IRAN')->format('g:i A');
+                $carbondate = Carbon::now()->format('Y-m-d');
                 if($user != null)
                 {
                     $pkuser=$user->pk_users;
@@ -61,13 +62,13 @@ class Handler extends ExceptionHandler
                 }
                 $newerror = new Errors();
                 $newerror->user = $pkuser;
-                $newerror->date = $date->format('y/m/d');
+                $newerror->date = $date->format('y-m-d');
                 $newerror->time = $time;
                 $newerror->error_code = $statusCode;
                 $newerror->error_message = $message;
                 $newerror->error_file= $exception->getfile();
                 $newerror->error_line =$exception->getline();
-                $newerror->logname = 'laravel-'.$date.'.log';
+                $newerror->logname = 'laravel-'.$carbondate.'.log';
                 $newerror->save();
 
                 // Send Bot Log //
