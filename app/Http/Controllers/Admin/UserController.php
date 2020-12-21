@@ -11,6 +11,8 @@ use App\Profile;
 use App\Behavior;
 use Validator;
 use Hash;
+use App\UserLog;
+
 
 
 
@@ -253,6 +255,17 @@ class UserController extends Controller
         return $validator ;
     }
 
+    public function log()
+    {
+        /* Security Admin Panel */
+        if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
+       /* Security Admin Panel */        
+        $users = UserLog::orderby('pk_userlog','desc')->get();
+        $instance_Model_user =new UserLog();
+        $names =  $instance_Model_user->GetListAllNameColumns_ForTable();
+        //dd($users);
+        return view('admin.user.userlog',compact('users','names'));
+    }
     
 
     

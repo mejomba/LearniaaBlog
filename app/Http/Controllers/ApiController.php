@@ -520,6 +520,7 @@ public function filter()
 
 public function GenerateNewUuid()
 {
+   
     $uuid= (string) str::uuid();
     $newlog = new Log();
     $newlog->uuid = $uuid;

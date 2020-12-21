@@ -22,10 +22,10 @@
                   style="font-size:1.0rem;"> ایجاد کاربر
                   </a>                
 
-
-                  <a href="{{route('admin.user.log')}}" class="btn btn-primary btn-round" 
-                  style="font-size:1.0rem;"> لاگ کاربران
+                  <a href="{{route('admin.user.index')}}" class="btn btn-primary btn-round" 
+                  style="font-size:1.0rem;"> بازگشت
                   </a>                
+                    </p>
                     </p>
                 </div>
                 <div class="card-body">
@@ -52,42 +52,25 @@
                         <tr>
                           
                           <td>
-                          {{ $user['pk_users'] }} 
+                          {{ $user['pk_userlog'] }} 
                           </td>
                           <td>
-                          {{ $user['type'] }} 
+                          {{ $user['pk_user'] }} 
+                          </td>
+                          <td>
+                          {{ $user['url'] }} 
                           </td>
 
                           <td>
-                          {{ $user['name'] }} 
+                          {{ $user['date'] }} 
                           </td>
                           <td>
-                          {{ $user['username'] }} 
+                          {{ $user['time'] }} 
                           </td>
-                          <td>
-                          {{ $user->profile['wallet'] }} 
-                          </td>
+                          
 
                          
                          
-
-                          <td>
-
-                        <span style="font-size: 1.3rem;color:black">
-                      <a class="btn" style="color:#00bcd4" href="{{ route('admin.user.edit', $user['pk_users']) }}"> 
-                      <img src="{{ asset('images/Template/edit.svg') }}" alt="Thumbnail Image" height="30px" width="30px">
-                        </a>
-                        </span>
-
-
-                        <span style="font-size: 1.3rem;color:black;">
-                        <button style="color:#e91e63" type="button" class="btn"
-                         onclick="Modal_Delete( {{ $user['pk_users'] }} )" >
-                      <img src="{{ asset('images/Template/delete.svg') }}" alt="Thumbnail Image" height="40px" width="40px">
-                      </button>
-                        </span>
-
-                        </td>
                           
                         </tr>
                         @endforeach

@@ -20,7 +20,8 @@ class ErrorController extends Controller
     {
         /* Security Admin Panel */
         if(Auth::user()->type != 'مدیر'){ return redirect()->back(); }
-        /* Security Admin Panel */     
+        /* Security Admin Panel */
+             
         $errors = new Errors();
         $names =  $errors->GetListAllNameColumns_ForTable();
         $allerrors = Errors::orderby('pk_error','desc')->get();
@@ -35,6 +36,13 @@ class ErrorController extends Controller
     public function create()
     {
         //
+    }
+
+    public function download($name)
+    {
+        //
+        return Response()->download(storage_path().'\logs\\'.$name);
+
     }
 
     /**
@@ -102,19 +110,19 @@ class ErrorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
         //
-        $now = Carbon::now();
-        $path = "..\storage\logs\laravel-".$now->toDateString().".log";
-        if(file_exists($path))
+        $Errors = Errors::find($id);
+        if($Errors->delete())
         {
-            unlink($path);
-            return redirect(route('admin.errors.index'))->with('message','حذف انجام شد');
-        }else
-        {
-            return redirect(route('admin.errors.index'))->with('message','هیچ ارروری برای حذف یافت نشد');
+            return redirect(route('admin.errors.index'))->with('success','ارورر با موفقیت حذف شد ');
         }
+        else
+        {
+            return redirect()->back()->with('report',' خطا : مشکل درعملیات پایگاه داده');
+        }
+
 
     }
 }
