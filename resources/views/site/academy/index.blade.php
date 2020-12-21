@@ -16,15 +16,20 @@
 <meta name="twitter:image" content="{{ asset('images/Template/Circlelogo.svg') }}">
 @endsection
 @section('text_landing')
-<h1 class="font-weight-bolder text-center font-weight-bolder text-landing">
-    <span class=" mr-3 main-color-blue" >لــرنیا</span>
-</h1>
-<h2 class="text-landing-quick">
- با لرنیا کماندوی برنامه نویسی شو 
-</h2>
+
+<div class="text-center">
+    <h1 class="font-weight-bolder mt-n5 display-4">
+        <span class=" mr-3 main-color-blue" >لــرنیا</span>
+    </h1>
+    <h2 >
+        <span class="text-landing-quick d-md-inline-block d-none">کماندوی برنامه نویسی شو با لرنیا</span>
+        <span class="text-landing-quick-sm d-md-none d-inline-block">کماندوی برنامه نویسی شو با لرنیا</span>
+    </h2>
+</div>
+
 @endsection
 @section('pic_landing')
-<img  class="learn-bg d-lg-block d-md-block d-sm-none d-none" src="{{asset('images/Academy/Academy_index.svg')}}" alt="" />
+<img  class="d-md-block d-none w-50 ml-5" src="{{asset('images/Academy/Academy_index.svg')}}" alt="" />
 @endsection
 
 @section('content')
@@ -161,39 +166,42 @@
 <!-- Posts -->
 <section>
     <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="section-title text-center pb-40">
-                    <div class="line mt-5 mx-auto rounded-lg"></div>
-                    <h3 class="title mt-5">آخرین مقالات</h3>
-                </div> <!-- section title -->
-            </div>
+        <div class="col-lg-5">
+            <div class="section-title text-center pb-40">
+                <div class="line mt-5 mx-auto rounded-lg"></div>
+                <h3 class="title mt-5">آخرین مقالات</h3>
+            </div> <!-- section title -->
         </div>
-    <div class="row p-2" id="ListOfData">
+    </div>
+    <div class="row m-3" id="ListOfData">
+            <div class="card-group">
             @foreach($recent_post as $one_post)
                 @php  $json = json_decode($one_post['extras'],false) @endphp
-                <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class=" mt-4 post-content" >
-                        <div class=" p-0 overflow-hidden post-banner">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
-                                <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"  class="w-100 imageBlog post-image" >
-                            </a>
-                        </div>
-                        <div class="px-4">
+                <div class="col-lg-3 col-md-6 col-12 d-flex p-1">
+                    <div class="card imageBlog">
+                        <img class="card-img-top w-100 post-image" src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" >
+                        <div class="card-body">
+                        <h5 class="card-title py-3 px-2">
                             <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
                             <h2 class="mt-2 post-title">{{ $one_post['title'] }}</h2>
-                            </a>
-                            <p class="mt-2 text-secondary post-summray">
-                            @php echo substr($one_post['desc_short'],0,300) . '...' @endphp
-                            </p>
+                            </a>                            
+                        </h5>
+                        <p class="card-text post-summray text-justify px-2 ">
+                            @php echo substr($one_post['desc_short'],0,200) . '...' @endphp
+                        </p>
                         </div>
-                        <div class="card-end px-4  py-4 post-footer">
-                            <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
-                            <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="btn btn-primary">مطالعه</a>
+                            <div>
+                                <small class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</small>
+                                <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>                              
             @endforeach
-        </div>
+            </div>
+    </div>
 </section>
 <!-- Posts -->
 
