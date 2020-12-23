@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Shabnam";
-    src: url("../../font/Shabnam.ttf");
+    src: url("https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css");
 }
 @font-face {
     font-family: "DastNevis";
@@ -18,10 +18,11 @@
 }
 
 html {
-    font-family: "shabnam", sans-serif !important;
+    font-family: "Shabnam", sans-serif !important;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -168,6 +169,7 @@ button:focus {
     border-radius: 10px;
     border-color: #ffe735;
     color: #000000;
+    font-weight: 700;
     /* background-image: linear-gradient(45deg, #ffe735 50%, transparent 50%); */
     /* background-position: 0; */
     /* background-size: 400%; */
@@ -176,7 +178,7 @@ button:focus {
     /* padding-bottom:15px" */
 }
 .roadMap span {
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 /* pakages */
@@ -884,34 +886,10 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "shabnam", sans-serif;
-    font-weight: 900;
+    font-family: "Shabnam", sans-serif;
+    /* font-weight: 600; */
     color: #2e2e2e;
     margin: 0px;
-}
-
-h1 {
-    font-size: 44px;
-}
-
-h2 {
-    font-size: 32px;
-}
-
-h3 {
-    font-size: 24px;
-}
-
-h4 {
-    font-size: 20px;
-}
-
-h5 {
-    font-size: 18px;
-}
-
-h6 {
-    font-size: 16px;
 }
 
 ul,
@@ -2549,4 +2527,26 @@ svg {
     animation: infinite animation 1200ms;
     -webkit-animation: infinite animation 1200ms;
     -moz-animation: infinite animation 1200ms;
+}
+
+/* go top button */
+#gotop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 120px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #ffe735;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#gotop:hover {
+    background-color: #fad623;
 }

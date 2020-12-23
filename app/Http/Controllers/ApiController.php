@@ -341,7 +341,7 @@ class ApiController extends Controller
         $discount_code =  $_POST['discount_code'] ;  
          $discount_row = Discount::where('discount_code', $discount_code)->first();
             $package = Discount::select('pk_package')->where('discount_code', $discount_code)->first();
-            $package_row = package::where(['pk_package'=> $package->pk_package])->first();
+            $package_row = package::where([ 'pk_package'=> $_POST['pk_package'] ])->first();
            
             if($discount_row != null)
             {
@@ -352,27 +352,8 @@ class ApiController extends Controller
                 $response = $response->getBody()->getContents();
                 $checkTarikh = json_decode( $response);
                     
-                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' &&  $package_price >= $discount_row->minimum_buy )
+                    if($discount_row->status =='فعال' && $checkTarikh == 'Valid' )
                     {
-                        if( $discount_row->limit == null)
-                        {
-                            $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
-                            if($discount_row->maxdiscount >= $price_discount )
-                            {
-                                $package_priceByDiscount = $package_price - $price_discount ;
-                            }
-                            else
-                            {
-                                $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
-                            }
-                           
-                            return response()->json([
-                                'pk_package'=>$package->pk_package,
-                                'price'=>$package_priceByDiscount
-                            ]);
-                            }
-                        else
-                        {
                             if($discount_row->limit > 0)
                             {
                                 $new_limit = $discount_row->limit - 1 ;
@@ -380,17 +361,9 @@ class ApiController extends Controller
                                 $update_discount->limit =  $new_limit ;
                                 $update_discount->save();
 
-                                /////
                                 $price_discount = ( $discount_row->percent_discount / 100) * $package_price;  
-                                if($discount_row->maxdiscount >= $price_discount )
-                                {
-                                    $package_priceByDiscount = $package_price - $price_discount ;
-                                }
-                                else
-                                {
-                                    $package_priceByDiscount = $package_price -  $discount_row->maxdiscount ;
-                                }
-                               ;
+                                $package_priceByDiscount = $package_price - $price_discount ;
+
                                 return response()->json([
                                     'pk_package'=>$package->pk_package,
                                     'price'=>$package_priceByDiscount
@@ -401,7 +374,7 @@ class ApiController extends Controller
                             {
                                 return response()->json("Not Valid");
                             } 
-                        }
+                        
                     }
                 }
             

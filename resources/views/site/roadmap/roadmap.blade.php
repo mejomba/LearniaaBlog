@@ -387,7 +387,7 @@ function SetAnswerUser(SelectAnswerId,radepa)
 
 <!-- ModalSandogh Box -->                      
 <div class="modal fade" dir="rtl" id="ModalSandogh" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalSandogh" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:600px"> 
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document" > 
          <div class="modal-content" style="width:100%">
            <div class="modal-header">   
                 <img src="{{ asset('images/Template/close.svg') }}" onclick="CloseSandogh()" style="width:50px">  
@@ -414,7 +414,7 @@ function SetAnswerUser(SelectAnswerId,radepa)
 
 <!-- ModalData Box -->                      
 <div class="modal fade" dir="rtl" id="ModalData" tabindex="-1" role="dialog"  aria-labelledby="ModalLabelModalData" aria-hidden="true">  
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1000px"> 
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document" > 
          <div class="modal-content" style="width:100%">
            <div class="modal-header"> 
            <img src="{{ asset('images/Template/close.svg') }}" onclick="ClosePopup()" style="width:50px"  > 

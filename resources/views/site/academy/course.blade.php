@@ -521,13 +521,16 @@
 
     function DiscountSub()
     {
+        var pk_package =  {{$package['pk_package']}} ;
         var code = $('#discountcode').val();
       
         $.ajax({
             url: '/api/calculator',
             data:
             {
-                discount_code : code   
+                discount_code : code ,
+                pk_package : pk_package
+
             },
             error: function(err)
             {
