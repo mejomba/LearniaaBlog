@@ -627,6 +627,14 @@ public function roadmapvalidate(Request $request)
         $newlog->save();
 
     }
+
+    public function list()
+    {
+        
+        $packages = Package::get();
+        return response()->json(['packages' => $packages]);   
+       
+    }  
     
 
 

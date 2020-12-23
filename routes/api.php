@@ -71,10 +71,9 @@ Route::post('/GetDraftPost', 'ApiController@GetDraftPost')->name('api.routing.Ge
 Route::post('/GetTextIntro', 'ApiController@GetTextIntro')->name('api.routing.GetTextIntro');
 
 
-Route::group(['namespace' => 'admin'], function() 
-{
-Route::get('/courselist', 'HomeController@list');
-});
+
+Route::get('/courselist', 'ApiController@list');
+
 
 
 Route::post('/GetContentRouting', 'ApiController@GetContentRouting')->name('api.routing.GetContentRouting');
