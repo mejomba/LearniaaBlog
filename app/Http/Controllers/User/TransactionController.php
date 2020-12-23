@@ -9,7 +9,7 @@ use Shetabit\Payment\Facade\Payment;
 use Shetabit\Payment\Exceptions\InvalidPaymentException;
 use App\Transaction;
 use App\Profile;
-use App\package;
+use App\Package;
 use Auth;
 use Validator;
 use Verta;
