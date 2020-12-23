@@ -2550,3 +2550,11 @@ svg {
 #gotop:hover {
     background-color: #fad623;
 }
+.msg {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -260px;
+    z-index: 1000;
+}

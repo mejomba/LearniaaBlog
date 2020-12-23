@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-md mx-auto text-center fixed-top" id="navbar" style="z-index: 100000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <img class="d-flex" src="{{ asset('images/icons/menu_bars.svg') }}" alt="Thumbnail Image" height="25px" width="25px">
@@ -75,7 +74,19 @@
                 </div>
             </div>
       </nav>
-
+<!-- برای فعال سازی پیام ورود موفق قطعه کد زیر را از کامنت خارج کنید -->
+<!-- <div class="msg">
+    <div class="d-flex justify-content-center mt-5 mx-2">
+        <div class="alert alert-info alert-dismissible fade show mt-5 py-3 px-5 text-center" role="alert">
+            <button type="button" class="close px-2 py-3" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            شما با موفقیت وارد شدید برای ورود به پنل از 
+            <a href="#" class="alert-link">این لینک</a>
+            . استفاده کنید
+        </div>
+    </div>
+</div> -->
 
 <script>
     $(document).ready(function(){
