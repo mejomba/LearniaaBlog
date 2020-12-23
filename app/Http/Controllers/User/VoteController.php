@@ -185,6 +185,8 @@ class VoteController extends Controller
         $report = ReportVote::select('pk_vote')->where('pk_user',auth::user()->pk_users)->get();
         $votes = new Vote();
         $names = $votes->GetListAllNameColumns_ForTableforuser();
+        $pk_vote=[];
+
         foreach($report as $i)
         {
             $pk_vote[]=$i->pk_vote;
