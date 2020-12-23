@@ -627,7 +627,7 @@ public function roadmapvalidate(Request $request)
         $newlog->save();
 
     }
-
+    
 
 
 }

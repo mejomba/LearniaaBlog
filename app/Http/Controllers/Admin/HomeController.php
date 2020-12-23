@@ -23,14 +23,18 @@ class HomeController extends Controller
         $packages = Package::get();
         return view('admin.index',compact('packages'));   
     }  
-
     public function list()
     {
-        /* Security Admin Panel */
-        /* Security Admin Panel */        
+        
         $packages = Package::get();
         return response()->json(['packages' => $packages]);   
+        
+        
+        /* Security Admin Panel */
+        /* Security Admin Panel */        
+       
     }  
+    
 
     public function Page500()
     {
