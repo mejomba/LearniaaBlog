@@ -51,19 +51,29 @@
 <!-- pakages  -->
 <div class="container-fluid">
     <div class="row p-2" id="ListOfData" >
+    <div class="card-group">
         @foreach($packages as $package)
-            <div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                <div class="card border-none mt-4 pakage-content" >
+            <div class="col-lg-3 col-md-6 col-12 mx-auto mt-3 p-2">
+                <div class="card border-none mt-4 pakage-content imageBlog" >
                     <div class="card-header p-0 overflow-hidden pakage-header" >
                         <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
-                            <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}" class="w-100 imageBlog pakage-image">
+                            <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}" class="w-100  pakage-image">
                         </a>
                     </div>
-                    <div class="card-body px-4 pt-2 text-center">
-                        <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}" class="">
-                            <h2 class="mt-2 pakage-title" >{{ $package['fa_name'] }}</h2>
-                        </a>
+                    <div class="card-body px-2">
+                        <div class="text-center my-4 title-height">
+                            <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}" class="">
+                                <h2 class="mt-4 pakage-title" >{{ $package['fa_name'] }}</h2>
+                            </a>
+                        </div>
+                        
+                        <hr>
+                        <div class="d-inline-block text-right">
+                            <a href="#" class="mx-1"><small>نام مدرس اینجا نوشته شود</small></a>
+                            <img src="https://www.w3schools.com/bootstrap4/newyork.jpg" alt="" class="rounded-circle tiny-image mx-2">
+                        </div>
                     </div>
+
                     <div class="card-end px-4 py-3">
                         <div class="row">
                             @if($package['status'] == "انتشار")
@@ -91,9 +101,13 @@
                             @endif
                         </div>
                     </div>
+                    <a href="#" class="card-footer main-btn btn-block">
+                        مشاهده دوره
+                    </a>
                 </div>
             </div>
         @endforeach
+        </div>
     </div>
     <section class="Pagination">
         <div class="row mx-auto">
@@ -105,6 +119,9 @@
         </div>
     </section>
 </div>
+
+
+
 
 @endsection
 
