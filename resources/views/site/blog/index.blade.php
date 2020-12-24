@@ -109,7 +109,7 @@
     </div>
 <section class="Pagination">
 <div class="row mx-auto">
-<div class="col-lg-2 col-md-2 col-sm-12 col-12 mx-auto mt-3">
+<div class="col-lg-2 col-md-2 col-sm-12 col-12 mx-auto mt-3 d-flex justify-content-center">
 <ul class="pagination px-1 py-1 text-secondary">
 {{$recent_post->links()}}
 </a>
@@ -120,60 +120,3 @@
 </section>
 </div>
 @endsection
-
-<!--  -->
- <!-- <div class="card-group">
-            @foreach($recent_post as $one_post)
-                @php  $json = json_decode($one_post['extras'],false) @endphp
-                <div class="col-lg-3 col-md-6 col-12 d-flex p-1">
-                    <div class="card imageBlog">
-                        <img class="card-img-top w-100 post-image" src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" >
-                        <div class="card-body">
-                        <h5 class="card-title py-3 px-2">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
-                            <h2 class="mt-2 post-title">{{ $one_post['title'] }}</h2>
-                            </a>                            
-                        </h5>
-                        <p class="card-text post-summray text-justify px-2 ">
-                            @php echo substr($one_post['desc_short'],0,200) . '...' @endphp
-                        </p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="btn btn-primary">مطالعه</a>
-                            <div>
-                                <small class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</small>
-                                <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                            </div>
-                        </div>
-                    </div>
-                </div>                              
-            @endforeach
-            </div> -->
-<!--  -->
-<!-- 
-<div class="col-lg-3 col-md-6 col-sm-11 col-12 mx-auto mt-3 px-1 my-5">
-                    <div class="card imageBlog article-content">
-                        <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
-                            <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" class="card-img-top w-100 post-image">
-                        </a>
-                        <div class="card-body px-4">
-                            <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
-                                <h2 class="mt-5" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
-                            </a>
-                            <p class="mt-2 text-secondary rtl-dir">
-                            @php echo substr($one_post['desc_short'],0,300) . '...' @endphp
-                            </p>
-                            <hr>
-                            <div class="mt-4 rtl-dir">
-                                <span> نویسنده: </span>    
-                                <span> <a href="#">نام نویسنده</a> </span>
-                            </div>
-                            <div class="my-4">
-                                <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
-                                <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="22px" width="22px">
-                            </div>
-                            
-                        </div>
-                        <a href="#" class="card-footer btn main-btn">مطالعه</a>
-                    </div>
-                </div> -->
