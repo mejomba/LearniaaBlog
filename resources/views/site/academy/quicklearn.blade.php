@@ -58,7 +58,9 @@
                     <div class="card-header p-0 overflow-hidden pakage-header" >
                         <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                             <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}" class="w-100  pakage-image">
-                            <span class="badge badge-warning label">رایگان</span>
+                            <!-- یه شرط روی این قسمت بزارید که با توجه به قیمت یکی از ایتم های زیر فعال بشه -->
+                            <span class="badge badge-success label">رایگان</span>
+                            <span class="badge badge-warning label">ویژه</span>
                         </a>
                         
                     </div>
