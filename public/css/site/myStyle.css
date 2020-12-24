@@ -2573,3 +2573,12 @@ svg {
     padding: 10px 0;
     min-width: 60px;
 }
+.rtl-dir {
+    direction: rtl;
+}
+.article-content {
+    min-height: 700px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-style: none;
+}
