@@ -58,7 +58,9 @@
                     <div class="card-header p-0 overflow-hidden pakage-header" >
                         <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}">
                             <img src="{{  Storage::url('package/'.$package['pic']) }}" alt="{{ $package['fa_name'] }}" class="w-100  pakage-image">
+                            <span class="badge badge-warning label">رایگان</span>
                         </a>
+                        
                     </div>
                     <div class="card-body px-2">
                         <div class="text-center my-4 title-height">
@@ -101,7 +103,7 @@
                             @endif
                         </div>
                     </div>
-                    <a href="#" class="card-footer main-btn btn-block">
+                    <a href="{{route('academy.course', ['pk_tree' =>  $package['pk_tree'],'pk_package' =>$package['pk_package'] ]  )}}" class="card-footer main-btn btn-block">
                         مشاهده دوره
                     </a>
                 </div>
