@@ -20,7 +20,6 @@
                     <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" 
                     alt="" class="w-100 m-3 p-3" style="width:820px !important;height:50%;border-radius: 50px;">
                 </div>
-               
             </div>
             <!-- End Section -->
 
@@ -76,16 +75,11 @@
                              <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  زمان مطالعه :
                               <span>  {{ $one_post['readtime'] }} دقیقه </span>
                             </div>
-
-                         </div> 
-
-                       </div>
-
-                        
+                        </div> 
+                       </div>                        
                     </div>
                 </div>
             <!-- End Section -->
-
 
       </div>
     </div>
@@ -96,7 +90,7 @@
  
   <!-- This Magazine -->
          <div class="col-lg-9">
-            <div class="card border-none p-2 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
+            <div class="card border-none pr-4 pl-3 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
                     @php echo htmlspecialchars_decode($one_post['content']) ; @endphp
                     @if($one_post['video'] == 'yes')
                         <div class="row justify-content-center">
@@ -115,40 +109,14 @@
   <!-- This Magazine -->               
   <!-- Others Magazine -->
            <div class="col-lg-3 mt-4">
-               <div class="row text-center" style="">
-               <div class="col-lg-12 text-center" style="">
+               <div class="row text-center">
+               <div class="col-lg-12 text-center">
                 <span style="direction:rtl;font-size: 18.0pt;color: #20c5ba;margin-top:10px !important;margin-bottom:10px !important;border-bottom: 2px double;font-weight: bold;">مطالب مرتبط </span>
                 </div>
             </div>
                 <div class="row p-2" id="ListOfData" style="font-size:15px">
                 @foreach($recent_post as $one_post)
                     @php  $json = json_decode($one_post['extras'],false) @endphp
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-11 col-12 mx-auto mt-3">
-                        <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style: none;max-height:400px;height:400px">
-                            <div class="card-header p-0 overflow-hidden" style="border-top-left-radius: 20px;border-top-right-radius: 20px;border-style: none">
-                                <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}">
-                                    <img src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}"
-                                    class="w-100 imageBlog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;height:20vh">
-                                </a>
-                            </div>
-                            <div class="card-body px-4">
-                                <a href="{{route('blog.show', ['en_title' =>  $one_post['en_title'] ]  )}}" class="">
-                                <h2 class="mt-2" style="direction:rtl;font-size:16px">{{ $one_post['title'] }}</h2>
-                                </a>
-                                <p class="mt-2 text-secondary" style="line-height:25px !important;font-size:14px;direction:rtl">
-                                @php echo substr($one_post['desc_short'],0,300) . '...' @endphp
-                                </p>
-                            </div>
-                            <div class="card-end px-4 py-2" style="line-height:30px">
-                            <span class="mt-1">نویسنده:  {{$one_post->writer['name']}}</span>
-                            <img src="{{ asset('images/icons/User.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                                <br>
-                                <span class="mt-1">زمان مطالعه:  {{ $one_post['readtime'] }} دقیقه</span>
-                                <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="20px" width="20px">
-                            </div>
-                        </div>
-                    </div> -->
-
                     <div class="col-lg-12 d-flex p-1">
                     <div class="card imageBlog my-4">
                          <img class="card-img-top w-100 post-image" src="{{  Storage::url('post/'.$one_post['pic_content']) }}" alt="{{ $one_post['title'] }}" >
