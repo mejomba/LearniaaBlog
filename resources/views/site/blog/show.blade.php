@@ -107,12 +107,12 @@
                             </div> <!-- section title -->
                     <video style="margin-top:20px;margin-bottom:20px" class="afterglow" id="my-video" poster="{{ Storage::url('PosterVideoPosts/'.$one_post['poster_video']) }}" width="800" height="600" src="{{ Storage::url('VideoPosts/'.$one_post['address_video']) }}"> </video>
                     </div>
+                    </div>
                     @endif
                  </div>
                </div>
-            </div>
- <!-- This Magazine -->
 
+  <!-- This Magazine -->               
   <!-- Others Magazine -->
            <div class="col-lg-3 mt-4">
                <div class="row text-center" style="">
@@ -153,6 +153,8 @@
         <!-- Others Magazine -->
        </div>
    </div>
+</div>
+
 <!-- Main Content -->
 
 <!-- Comment Section -->
