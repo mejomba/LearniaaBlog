@@ -64,7 +64,7 @@
 
         <div class="col-lg-2 mt-4">
         @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
-                <a class="nav-link  btn  mt-4 d-inline roadMap-link p-3"
+                <a class="nav-link  btn btn-warning mt-4 d-inline roadMap-link p-3"
                 href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}" target="_parent" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده دوره </span>
