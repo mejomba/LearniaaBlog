@@ -4,8 +4,8 @@
 <meta  name="description" content=" ورود| لرنیا">
 @endsection
 @section('content')
-<section class="login-users">
-<div class="row" >
+<section class="login-users my-5">
+<div class="row py-3" >
 <div class="auth-card col-lg-4 col-md-5 col-sm-6 col-11 mx-auto text-center bg-white shadow-lg" 
 style="margin-top:150px !important;border-bottom-right-radius: 50px !important;border-bottom-left-radius: 50px !important;">
 <div class="row">
@@ -39,3 +39,18 @@ style="margin-top:150px !important;border-bottom-right-radius: 50px !important;b
 </div>
 </section>
 @endsection
+
+<div class="area">
+    <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+</div>

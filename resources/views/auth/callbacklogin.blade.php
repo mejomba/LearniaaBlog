@@ -4,7 +4,7 @@
 <meta  name="description" content="حساب کاربری| لرنیا">
 @endsection
 @section('content')
-<div class="row" >
+<div class="row my-5" >
 <div class="auth-card col-lg-4 col-md-5 col-sm-6 col-11 mx-auto text-center bg-white shadow-lg" 
 style="margin-top:150px !important;border-bottom-right-radius: 50px !important;border-bottom-left-radius: 50px !important;">   
 <div class="row">
@@ -34,3 +34,17 @@ style="margin-top:150px !important;border-bottom-right-radius: 50px !important;b
 @endsection
 
 
+<div class="area">
+    <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+</div>

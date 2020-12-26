@@ -24,8 +24,50 @@
             <!-- End Section -->
 
             <!-- Start Section -->
-            <div class="col-lg-5 col-md-6 col-sm-11 col-12 mx-auto mt-3">
-                    <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;max-height:435px;height:435px">
+            <div class="col-lg-5 col-md-10 col-12 mx-auto mt-4">
+                    <div class="card my-2">
+                        <div class="text-center my-4">
+                            @if($one_post->profile['pic'])
+                                <img  class="img-raised rounded-circle" src="{{  Storage::url('profile/'.$one_post->profile['pic']) }}"  
+                                alt="{{$one_post->writer['name']}}" style="width:120px;height:120px;" >
+                                @else         
+                                <img class="img-raised rounded-circle" src="{{ asset('images/Template/user.svg') }}"  alt="Learniaa"  style="width:150px;height:150px;">
+                                @endif
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mx-auto text-center">
+                                    <span class="text-center">   {{$one_post->writer['name']}} </span>
+                                </div> 
+                            </div>
+
+                            <div class="col-md-12 text-center" style="background-color: #20C5BA;margin-top:5px;border-radius:15px">
+                               <p  style="direction:rtl;font-size:20px;color:white;margin-top:10px !important;margin-bottom:10px !important;"> {{ $one_post['title'] }}</p>
+                            </div> 
+
+                            <div class="row py-1">
+                                <div class="col-md-6 col-12 my-3">
+                                    <img src="{{ asset('images/icons/Category.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  دسته بندی :
+                                    <span>  {{ $one_post->category['name'] }}  </span>
+                                </div>
+                                <div class="col-md-6 col-12 my-3">
+                                    <img src="{{ asset('images/icons/Level.svg') }}" alt="Thumbnail Image" height="30px" width="30px"> رده بندی :
+                                    <span>  {{ $one_post['level'] }}  </span>
+                                </div>
+                                <div class="col-md-6 col-12 my-3">
+                                    <img src="{{ asset('images/icons/Calender.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  تاریخ انتشار :
+                                    <span>  {{ $one_post['create_at'] }} </span>
+                                </div>
+                                <div class="col-md-6 col-12 my-3">
+                                    <img src="{{ asset('images/icons/Time.svg') }}" alt="Thumbnail Image" height="30px" width="30px">  زمان مطالعه :
+                                    <span>  {{ $one_post['readtime'] }} دقیقه </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- =========================================== -->
+                    <!-- <div class="card border-none mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;max-height:435px;height:435px">
                     
                         <div class="card-body px-4">
                           <div class="row">
@@ -51,7 +93,6 @@
                              </div>
                              <div class="col-md-12 text-center" style="background-color: #20C5BA;margin-top:5px;border-radius:15px">
                              <p  style="direction:rtl;font-size:20px;color:white;margin-top:10px !important;margin-bottom:10px !important;"> {{ $one_post['title'] }}</p>
-                             
                              </div> 
                            </div>
 
@@ -78,7 +119,7 @@
                         </div> 
                        </div>                        
                     </div>
-                </div>
+                </div> -->
             <!-- End Section -->
 
       </div>
