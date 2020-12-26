@@ -129,7 +129,7 @@
  <div class="container-fluid">
      <div class="row">
        <div class="col-lg-9 mx-auto">
-                <div class="card border-none p-2 mt-4" style="border-radius: 20px;box-shadow: 0px 0px 8px #0000002b;border-style:none;">
+                <div class="card border-none p-3 mt-4 pakage-desc">
                 @php echo htmlspecialchars_decode($package['desc']) ; @endphp     
                  </div>
                </div>
