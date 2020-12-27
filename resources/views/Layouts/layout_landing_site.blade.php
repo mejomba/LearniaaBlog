@@ -61,7 +61,7 @@
   </div>
 
   <div class="col-md-6 mt-5">
-      <div class="">
+      <div id="animate-learnia">
           <h1 class="mt-5 pt-5">
           @yield('text_landing')
           </h1>

@@ -48,7 +48,7 @@
 
 <div class="subscribe-area wow fadeIn container mx-auto p-3 roadMap " >
     <div class="row">
-    <div class="col-lg-4 text-center mt-2 " >
+    <div class="col-lg-3 text-center mt-2 " >
             <a target="_parent" href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}" rel="tooltip" title="" data-placement="bottom"  dideo-checked="true">
               <img src="{{ Storage::url('package/'.$road_packages[$no]['data'][$package]['pic'])  }}" alt="Thumbnail Image" width="350px"  >   
             </a>
@@ -62,13 +62,17 @@
             </div>
         </div>
 
-        <div class="col-lg-2 mt-4">
+        <div class="col-lg-4 mt-4 d-flex flex-column">
         @if($road_packages[$no]['data'][$package]['status'] == 'انتشار')
-                <a class="nav-link  btn btn-warning mt-4 d-inline roadMap-link p-3"
-                href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}" target="_parent" rel="tooltip" title="" data-placement="bottom">
+                <a class="btn btn-warning mt-4 d-inline roadMap-link p-3"
+                href="{{ route('academy.course', ['pk_tree' => $selected_road , 'pk_package' =>  $road_packages[$no]['data'][$package]['pk_package'] ]) }}" target="_blank" rel="tooltip" title="" data-placement="bottom">
                 <img src="{{ asset('images/icons/Item.svg')}}" alt="Thumbnail Image" height="30px" width="30px">
                 <span >مشاهده دوره </span>
                 </a>
+                <a href="#python{{$row_counter}}" class="main-btn mt-2">
+                    توضیحات
+                </a>
+                
                @else
                  <button type="button" disabled class="btn  btn-round"
                   style="background-color:beige;border-color:beige">به زودی</button>                     
@@ -77,6 +81,7 @@
 
     </div>
 </div>
+<div>
 
  @php $row_counter =  $row_counter + 1 ; @endphp       
  @endfor
@@ -86,6 +91,7 @@
 
       </div>
     </div>
+
 
 
 <!-- Section RoadMap & Help -->
@@ -146,7 +152,54 @@ function GetPopupData(Node)
 </div>
 <!-- ModalData Box --> 
 
-
-
+<!-- RoudMap description  ---this is temporary--- -->
+<div class="row">
+    <div class="col-lg-11 mx-auto">
+        <div class="course-description p-3" id="python1" >
+            <div class="pt-5 mt-5">
+                <h3><span class="text-primary">گام شماره۱:</span> دوره جامع آموزش اصول برنامه نویسی ( مخصوص تازه وارد ها)</h3>
+            </div>
+            <p class="mt-4 ml-4 text-justify">
+                هر کاری اصول و قواعد خاص خودش رو داره برای ورود به دنیای برنامه نویسی حالا تو هر حوزه ای که بخوایی وارد بشید قطعاً باید یک سری اصول اولیه که عمومی و مشترک هست رو فرا بگیرید و هر چقدر که جلو تر میرید وارد جزئیات بیشتر بشید و روی یک مقوله خاص مثل برنامه نویسی پایتون با گرایش برنامه نویسی تحت وب کار کنید راستش این مثل مدرسه رفتن میمونه که همه باید سال های اولیه تحصیلی رو مشترک و مثل هم بگذرونن تا سواد اولیه رو بدست بیارن.
+            </p>
+        </div>
+        <!-- <a href="" class="btn-block main-btn">شروع کنیم</a> -->
+    </div>
+    <div class="col-lg-11 mx-auto">
+        <div id="python2" class="course-description p-3">
+            <div class="pt-5 mt-5">
+                <h3><span class="text-primary">گام شماره۲:</span> دوره جامع آموزش پایتون - مقدماتی</h3>
+            </div>
+            <p class="mt-4 ml-4 text-justify">
+                بدیهی هست که برای ورود به فضای تخصصی هر زبان برنامه نویسی باید ابتدا مسائل اولیه اون زبان رو فرا بگیرید. سرفصل های این دوره طبق استاندارد های بین المللی طراحی شده و تمام مباحث اولیه که باید درباره پایتون بدونید رو شامل میشه در عین حال بین قسمت های آموزشی کوئیز هایی رو برای شما طراحی کردیم که کمک میکنه تا بهتر مطالب براتون جا بیوفته برای مشاهده توصیحات تکمیلی وارد صفحه دوره بشید.            
+            </p>
+        </div>
+        <!-- <a href="" class="btn-block main-btn">شروع کنیم</a> -->
+    </div>
+    <div class="col-lg-11 mx-auto">
+        <div id="python3" class="course-description p-3">
+            <div class="pt-5 mt-5">
+                <h3><span class="text-primary">گام شماره۳:</span> دوره جامع آموزش پایتون – سطح میانی</h3>
+            </div>
+            <p class="mt-4 ml-4 text-justify">
+                بعد از یادگیری مباحث پایه حالا وقتشه که وارد فضای برنامه نویسی حرفه ای بشید. توی این دوره تمرکز روی ماژول ها، توابع و برنامه نویسی شی گرا هست. به عنوان یه برنامه نویس پایتون ازتون انتظار میره که حتما به این مسائل مسلط باشید. بعد از گذروندن این دوره حتی میتونید دید بهتری نسبت به مسیر آیندتون در دنیای پایتون داشته باشید. سرفصل های این دوره هم طبق استانداردهای بینالمللی هست و توی این دوره هم کوئیز داریم تا بهتر مطالب رو یاد بگیرید. برای دیدن توضیحات تکمیلی وارد صفحه دوره بشید.   
+            </p>
+        </div>
+        <!-- <a href="" class="btn-block main-btn">شروع کنیم</a> -->
+    </div>
+    <div class="col-lg-11 mx-auto">
+        <div id="python4" class="course-description p-3">
+            <div class="pt-5 mt-5">
+                <h3><span class="text-primary">گام شماره۴:</span> دوره جامع آموزش پایتون - پیشرفته</h3>
+            </div>
+            <p class="mt-4 ml-4 text-justify">
+                قطعا تا به این مرحله مطالب زیادی از پایتون میدونید چون برای ورود به این دوره بهشون نیاز دارید. بدون شک برنامه نویسی که از دیتابیس ندونه باید همینجا کارش رو تعطیل کنه و بره، اما نگران نباشید تمرکز این دوره روی دیتابیس و برنامه نویسی رابط کاربری هست و همچنین تمام مسائل در فضای شئ گرا مورد بررسی قرار میگیرن و تکنیک های نوشتن برنامه های پایتونیک رو میبینید (مثلا بعضی از سینتکس های پیشرفته که میشه توی یک خط برنامه کار 5 خط برنامه رو انجام داد). بازم از سرفصل های بین المللی استفاده کردیم و اینجا هم بین ویدیو ها کوئیز داریم. برای دیدن توضیحات تکمیلی وارد صفحه دوره بشید.            
+            </p>
+        </div>
+        <!-- <a href="" class="btn-block main-btn">شروع کنیم</a> -->
+    </div>
+</div>
+<!-- RoudMap description  ---this is temporary--- -->
 </section>
 @endsection
+

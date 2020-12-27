@@ -2722,3 +2722,7 @@ svg {
         border-radius: 50%;
     }
 }
+
+.course-description p {
+    font-size: 1.1rem;
+}
